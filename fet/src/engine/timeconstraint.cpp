@@ -8858,6 +8858,11 @@ bool ConstraintBasicCompulsoryTime::isRelatedToStudentsSet(Rules& r, const QStri
 	return false;
 }
 
+int ConstraintBasicCompulsoryTime::categoryOfTimeConstraint()
+{
+	return IS_BASIC_TIME_CONSTRAINT;
+}
+
 bool ConstraintBasicCompulsoryTime::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -9122,6 +9127,11 @@ bool ConstraintTeacherNotAvailableTimes::isRelatedToStudentsSet(Rules& r, const 
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherNotAvailableTimes::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherNotAvailableTimes::hasWrongDayOrHour(Rules& r)
@@ -9445,6 +9455,11 @@ bool ConstraintStudentsSetNotAvailableTimes::isRelatedToActivityTag(const QStrin
 bool ConstraintStudentsSetNotAvailableTimes::isRelatedToStudentsSet(Rules& r, const QString& s)
 {
 	return r.setsShareStudents(this->students, s);
+}
+
+int ConstraintStudentsSetNotAvailableTimes::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsSetNotAvailableTimes::hasWrongDayOrHour(Rules& r)
@@ -9784,6 +9799,11 @@ bool ConstraintActivitiesSameStartingTime::isRelatedToStudentsSet(Rules& r, cons
 	return false;
 }
 
+int ConstraintActivitiesSameStartingTime::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesSameStartingTime::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -10114,6 +10134,11 @@ bool ConstraintActivitiesNotOverlapping::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintActivitiesNotOverlapping::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesNotOverlapping::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -10374,6 +10399,11 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintActivityTagsNotOverlapping::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityTagsNotOverlapping::hasWrongDayOrHour(Rules& r)
@@ -10798,6 +10828,11 @@ bool ConstraintMinDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintMinDaysBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMinDaysBetweenActivities::hasWrongDayOrHour(Rules& r)
 {
 	if(r.mode!=MORNINGS_AFTERNOONS){
@@ -11152,6 +11187,11 @@ bool ConstraintMaxDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, const 
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintMaxDaysBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintMaxDaysBetweenActivities::hasWrongDayOrHour(Rules& r)
@@ -11527,6 +11567,11 @@ bool ConstraintActivitiesMaxHourlySpan::isRelatedToStudentsSet(Rules& r, const Q
 	return false;
 }
 
+int ConstraintActivitiesMaxHourlySpan::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesMaxHourlySpan::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHourlySpan>r.nHoursPerDay)
@@ -11838,6 +11883,11 @@ bool ConstraintMinGapsBetweenActivities::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintMinGapsBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMinGapsBetweenActivities::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>r.nHoursPerDay)
@@ -12146,6 +12196,11 @@ bool ConstraintMaxGapsBetweenActivities::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintMaxGapsBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMaxGapsBetweenActivities::hasWrongDayOrHour(Rules& r)
 {
 	if(maxGaps>r.nHoursPerDay)
@@ -12362,6 +12417,11 @@ bool ConstraintTeachersMaxHoursDaily::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -12584,6 +12644,11 @@ bool ConstraintTeacherMaxHoursDaily::isRelatedToStudentsSet(Rules& r, const QStr
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -12811,6 +12876,11 @@ bool ConstraintTeachersMaxHoursContinuously::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
@@ -13043,6 +13113,11 @@ bool ConstraintTeacherMaxHoursContinuously::isRelatedToStudentsSet(Rules& r, con
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
@@ -13315,6 +13390,11 @@ bool ConstraintTeachersActivityTagMaxHoursContinuously::isRelatedToStudentsSet(R
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersActivityTagMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersActivityTagMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
@@ -13594,6 +13674,11 @@ bool ConstraintTeacherActivityTagMaxHoursContinuously::isRelatedToStudentsSet(Ru
 	return false;
 }
 
+int ConstraintTeacherActivityTagMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherActivityTagMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursContinuously>r.nHoursPerDay)
@@ -13834,6 +13919,11 @@ bool ConstraintTeacherMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -14083,6 +14173,11 @@ bool ConstraintTeachersMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, const QS
 	return false;
 }
 
+int ConstraintTeachersMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(maxDaysPerWeek>r.nDaysPerWeek)
@@ -14288,6 +14383,11 @@ bool ConstraintTeachersMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, const QS
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxGapsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxGapsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -14502,6 +14602,11 @@ bool ConstraintTeacherMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, const QSt
 	return false;
 }
 
+int ConstraintTeacherMaxGapsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxGapsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(maxGaps>r.nDaysPerWeek*r.nHoursPerDay)
@@ -14706,6 +14811,11 @@ bool ConstraintTeachersMaxGapsPerDay::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxGapsPerDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxGapsPerDay::hasWrongDayOrHour(Rules& r)
@@ -14919,6 +15029,11 @@ bool ConstraintTeacherMaxGapsPerDay::isRelatedToStudentsSet(Rules& r, const QStr
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxGapsPerDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxGapsPerDay::hasWrongDayOrHour(Rules& r)
@@ -15142,6 +15257,11 @@ bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::isRelatedToStudentsSet(Rul
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxGapsPerMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -15372,6 +15492,11 @@ bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::isRelatedToStudentsSet(Rule
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxGapsPerMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -15633,6 +15758,11 @@ bool ConstraintBreakTimes::isRelatedToStudentsSet(Rules& r, const QString& s)
 	return false;
 }
 
+int ConstraintBreakTimes::categoryOfTimeConstraint()
+{
+	return IS_BREAK_TIME_CONSTRAINT;
+}
+
 bool ConstraintBreakTimes::hasWrongDayOrHour(Rules& r)
 {
 	assert(days.count()==hours.count());
@@ -15862,6 +15992,11 @@ bool ConstraintStudentsMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, const QS
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxGapsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxGapsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -16127,6 +16262,11 @@ bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, const
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxGapsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxGapsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(maxGaps>r.nDaysPerWeek*r.nHoursPerDay)
@@ -16374,6 +16514,11 @@ bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Ru
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
@@ -16674,6 +16819,11 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
 {
 	if(maxBeginningsAtSecondHour>r.nDaysPerWeek)
@@ -16876,6 +17026,11 @@ bool ConstraintStudentsMaxHoursDaily::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -17131,6 +17286,11 @@ bool ConstraintStudentsSetMaxHoursDaily::isRelatedToStudentsSet(Rules& r, const 
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>r.nHoursPerDay)
@@ -17358,6 +17518,11 @@ bool ConstraintStudentsMaxHoursContinuously::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
@@ -17637,6 +17802,11 @@ bool ConstraintStudentsSetMaxHoursContinuously::isRelatedToStudentsSet(Rules& r,
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursContinuously>r.nHoursPerDay)
@@ -17912,6 +18082,11 @@ bool ConstraintStudentsActivityTagMaxHoursContinuously::isRelatedToStudentsSet(R
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsActivityTagMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsActivityTagMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
@@ -18238,6 +18413,11 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::isRelatedToStudentsSe
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetActivityTagMaxHoursContinuously::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetActivityTagMaxHoursContinuously::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursContinuously>r.nHoursPerDay)
@@ -18542,6 +18722,11 @@ bool ConstraintStudentsMinHoursDaily::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -18900,6 +19085,11 @@ bool ConstraintStudentsSetMinHoursDaily::isRelatedToStudentsSet(Rules& r, const 
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
@@ -19176,6 +19366,11 @@ bool ConstraintActivityPreferredStartingTime::isRelatedToStudentsSet(Rules& r, c
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivityPreferredStartingTime::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityPreferredStartingTime::hasWrongDayOrHour(Rules& r)
@@ -19468,6 +19663,11 @@ bool ConstraintActivityPreferredTimeSlots::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintActivityPreferredTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityPreferredTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -19972,6 +20172,11 @@ bool ConstraintActivitiesPreferredTimeSlots::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivitiesPreferredTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesPreferredTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -20493,8 +20698,13 @@ bool ConstraintSubactivitiesPreferredTimeSlots::isRelatedToStudentsSet(Rules& r,
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintSubactivitiesPreferredTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintSubactivitiesPreferredTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -20799,8 +21009,13 @@ bool ConstraintActivityPreferredStartingTimes::isRelatedToStudentsSet(Rules& r, 
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivityPreferredStartingTimes::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityPreferredStartingTimes::hasWrongDayOrHour(Rules& r)
@@ -21292,6 +21507,11 @@ bool ConstraintActivitiesPreferredStartingTimes::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintActivitiesPreferredStartingTimes::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesPreferredStartingTimes::hasWrongDayOrHour(Rules& r)
@@ -21796,8 +22016,13 @@ bool ConstraintSubactivitiesPreferredStartingTimes::isRelatedToStudentsSet(Rules
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintSubactivitiesPreferredStartingTimes::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintSubactivitiesPreferredStartingTimes::hasWrongDayOrHour(Rules& r)
@@ -22141,6 +22366,11 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToStudentsSet(Rules& r, cons
 	return false;
 }
 
+int ConstraintActivitiesSameStartingHour::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesSameStartingHour::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -22454,6 +22684,11 @@ bool ConstraintActivitiesSameStartingDay::isRelatedToStudentsSet(Rules& r, const
 	return false;
 }
 
+int ConstraintActivitiesSameStartingDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesSameStartingDay::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -22726,6 +22961,11 @@ bool ConstraintTwoActivitiesConsecutive::isRelatedToStudentsSet(Rules& r, const 
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTwoActivitiesConsecutive::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintTwoActivitiesConsecutive::hasWrongDayOrHour(Rules& r)
@@ -23010,8 +23250,13 @@ bool ConstraintTwoActivitiesGrouped::isRelatedToStudentsSet(Rules& r, const QStr
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintTwoActivitiesGrouped::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintTwoActivitiesGrouped::hasWrongDayOrHour(Rules& r)
@@ -23383,6 +23628,11 @@ bool ConstraintThreeActivitiesGrouped::isRelatedToStudentsSet(Rules& r, const QS
 	return false;
 }
 
+int ConstraintThreeActivitiesGrouped::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintThreeActivitiesGrouped::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -23640,6 +23890,11 @@ bool ConstraintTwoActivitiesOrdered::isRelatedToStudentsSet(Rules& r, const QStr
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintTwoActivitiesOrdered::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintTwoActivitiesOrdered::hasWrongDayOrHour(Rules& r)
@@ -23994,6 +24249,11 @@ bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToStudentsSet(Rules& r, cons
 	return false;
 }
 
+int ConstraintTwoSetsOfActivitiesOrdered::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintTwoSetsOfActivitiesOrdered::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -24255,6 +24515,11 @@ bool ConstraintTwoActivitiesOrderedIfSameDay::isRelatedToStudentsSet(Rules& r, c
 	return false;
 }
 
+int ConstraintTwoActivitiesOrderedIfSameDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintTwoActivitiesOrderedIfSameDay::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -24467,6 +24732,11 @@ bool ConstraintActivityEndsStudentsDay::isRelatedToStudentsSet(Rules& r, const Q
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivityEndsStudentsDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityEndsStudentsDay::hasWrongDayOrHour(Rules& r)
@@ -24704,6 +24974,11 @@ bool ConstraintTeachersMinHoursDaily::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -24951,6 +25226,11 @@ bool ConstraintTeacherMinHoursDaily::isRelatedToStudentsSet(Rules& r, const QStr
 	return false;
 }
 
+int ConstraintTeacherMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
@@ -25158,6 +25438,11 @@ bool ConstraintTeacherMinDaysPerWeek::isRelatedToStudentsSet(Rules& r, const QSt
 	return false;
 }
 
+int ConstraintTeacherMinDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(minDaysPerWeek>r.nDaysPerWeek)
@@ -25361,6 +25646,11 @@ bool ConstraintTeachersMinDaysPerWeek::isRelatedToStudentsSet(Rules& r, const QS
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -25615,6 +25905,11 @@ bool ConstraintTeacherIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, c
 	return false;
 }
 
+int ConstraintTeacherIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -25866,6 +26161,11 @@ bool ConstraintTeachersIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, 
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -26178,6 +26478,11 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rules& 
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -26430,6 +26735,11 @@ bool ConstraintStudentsIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, 
 	Q_UNUSED(r);
 	Q_UNUSED(s);
 	return true;
+}
+
+int ConstraintStudentsIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -26774,6 +27084,11 @@ bool ConstraintActivitiesEndStudentsDay::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintActivitiesEndStudentsDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesEndStudentsDay::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -26986,6 +27301,11 @@ bool ConstraintActivityEndsTeachersDay::isRelatedToStudentsSet(Rules& r, const Q
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivityEndsTeachersDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityEndsTeachersDay::hasWrongDayOrHour(Rules& r)
@@ -27318,6 +27638,11 @@ bool ConstraintActivitiesEndTeachersDay::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintActivitiesEndTeachersDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesEndTeachersDay::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -27551,6 +27876,11 @@ bool ConstraintTeachersActivityTagMaxHoursDaily::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersActivityTagMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersActivityTagMaxHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -27797,6 +28127,11 @@ bool ConstraintTeacherActivityTagMaxHoursDaily::isRelatedToStudentsSet(Rules& r,
 	return false;
 }
 
+int ConstraintTeacherActivityTagMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherActivityTagMaxHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>r.nHoursPerDay)
@@ -28039,6 +28374,11 @@ bool ConstraintStudentsActivityTagMaxHoursDaily::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsActivityTagMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsActivityTagMaxHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -28332,6 +28672,11 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::isRelatedToStudentsSet(Rules
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetActivityTagMaxHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetActivityTagMaxHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>r.nHoursPerDay)
@@ -28578,6 +28923,11 @@ bool ConstraintTeachersActivityTagMinHoursDaily::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersActivityTagMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -28840,6 +29190,11 @@ bool ConstraintTeacherActivityTagMinHoursDaily::isRelatedToStudentsSet(Rules& r,
 	return false;
 }
 
+int ConstraintTeacherActivityTagMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
@@ -29100,6 +29455,11 @@ bool ConstraintStudentsActivityTagMinHoursDaily::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsActivityTagMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
@@ -29410,6 +29770,11 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::isRelatedToStudentsSet(Rules
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetActivityTagMinHoursDaily::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetActivityTagMinHoursDaily::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>r.nHoursPerDay)
@@ -29628,6 +29993,11 @@ bool ConstraintStudentsMaxGapsPerDay::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxGapsPerDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxGapsPerDay::hasWrongDayOrHour(Rules& r)
@@ -29893,6 +30263,11 @@ bool ConstraintStudentsSetMaxGapsPerDay::isRelatedToActivityTag(const QString& s
 bool ConstraintStudentsSetMaxGapsPerDay::isRelatedToStudentsSet(Rules& r, const QString& s)
 {
 	return r.setsShareStudents(this->students, s);
+}
+
+int ConstraintStudentsSetMaxGapsPerDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsSetMaxGapsPerDay::hasWrongDayOrHour(Rules& r)
@@ -30240,6 +30615,11 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::isRelatedToStudentsSet
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
@@ -30623,6 +31003,11 @@ bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::isRelatedToStudentsSet
 	return false;
 }
 
+int ConstraintActivitiesOccupyMinTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
 {
 	assert(selectedDays.count()==selectedHours.count());
@@ -30991,6 +31376,11 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::isRelatedToStudents
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -31377,6 +31767,11 @@ bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::isRelatedToStudents
 	return false;
 }
 
+int ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	assert(selectedDays.count()==selectedHours.count());
@@ -31739,6 +32134,11 @@ bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::isRelatedToStudents
 	return false;
 }
 
+int ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	assert(selectedDays.count()==selectedHours.count());
@@ -32033,6 +32433,11 @@ bool ConstraintActivitiesMaxInATerm::isRelatedToStudentsSet(Rules& r, const QStr
 	return false;
 }
 
+int ConstraintActivitiesMaxInATerm::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesMaxInATerm::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -32304,6 +32709,11 @@ bool ConstraintActivitiesOccupyMaxTerms::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintActivitiesOccupyMaxTerms::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesOccupyMaxTerms::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -32552,6 +32962,11 @@ bool ConstraintStudentsSetMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, const
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->maxDaysPerWeek>r.nDaysPerWeek)
@@ -32749,6 +33164,11 @@ bool ConstraintStudentsMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, const QS
 	Q_UNUSED(r);
 	Q_UNUSED(s);
 	return true;
+}
+
+int ConstraintStudentsMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -32967,6 +33387,11 @@ bool ConstraintTeacherMaxSpanPerDay::isRelatedToStudentsSet(Rules& r, const QStr
 	return false;
 }
 
+int ConstraintTeacherMaxSpanPerDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxSpanPerDay::hasWrongDayOrHour(Rules& r)
 {
 	if(maxSpanPerDay>r.nHoursPerDay)
@@ -33177,6 +33602,11 @@ bool ConstraintTeachersMaxSpanPerDay::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxSpanPerDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxSpanPerDay::hasWrongDayOrHour(Rules& r)
@@ -33424,6 +33854,11 @@ bool ConstraintStudentsSetMaxSpanPerDay::isRelatedToStudentsSet(Rules& r, const 
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxSpanPerDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxSpanPerDay::hasWrongDayOrHour(Rules& r)
 {
 	if(maxSpanPerDay>r.nHoursPerDay)
@@ -33616,6 +34051,11 @@ bool ConstraintStudentsMaxSpanPerDay::isRelatedToStudentsSet(Rules& r, const QSt
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxSpanPerDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxSpanPerDay::hasWrongDayOrHour(Rules& r)
@@ -33821,6 +34261,11 @@ bool ConstraintTeacherMinRestingHours::isRelatedToStudentsSet(Rules& r, const QS
 	return false;
 }
 
+int ConstraintTeacherMinRestingHours::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinRestingHours::hasWrongDayOrHour(Rules& r)
 {
 	if(minRestingHours>r.nHoursPerDay)
@@ -34018,6 +34463,11 @@ bool ConstraintTeachersMinRestingHours::isRelatedToStudentsSet(Rules& r, const Q
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinRestingHours::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinRestingHours::hasWrongDayOrHour(Rules& r)
@@ -34268,6 +34718,11 @@ bool ConstraintStudentsSetMinRestingHours::isRelatedToStudentsSet(Rules& r, cons
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinRestingHours::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinRestingHours::hasWrongDayOrHour(Rules& r)
 {
 	if(minRestingHours>r.nHoursPerDay)
@@ -34463,6 +34918,11 @@ bool ConstraintStudentsMinRestingHours::isRelatedToStudentsSet(Rules& r, const Q
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinRestingHours::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinRestingHours::hasWrongDayOrHour(Rules& r)
@@ -34795,6 +35255,11 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::isRelatedToSt
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>r.nHoursPerDay)
@@ -35068,6 +35533,11 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStude
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
@@ -35360,6 +35830,11 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStuden
 	return false;
 }
 
+int ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>r.nHoursPerDay)
@@ -35635,6 +36110,11 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::isRelatedToStude
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::hasWrongDayOrHour(Rules& r)
@@ -35959,6 +36439,11 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTag::isRelatedToStudentsSet(Rule
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinGapsBetweenActivityTag::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinGapsBetweenActivityTag::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>r.nHoursPerDay)
@@ -36225,6 +36710,11 @@ bool ConstraintStudentsMinGapsBetweenActivityTag::isRelatedToStudentsSet(Rules& 
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinGapsBetweenActivityTag::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinGapsBetweenActivityTag::hasWrongDayOrHour(Rules& r)
@@ -36509,6 +36999,11 @@ bool ConstraintTeacherMinGapsBetweenActivityTag::isRelatedToStudentsSet(Rules& r
 	return false;
 }
 
+int ConstraintTeacherMinGapsBetweenActivityTag::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinGapsBetweenActivityTag::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>r.nHoursPerDay)
@@ -36776,6 +37271,11 @@ bool ConstraintTeachersMinGapsBetweenActivityTag::isRelatedToStudentsSet(Rules& 
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintTeachersMinGapsBetweenActivityTag::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinGapsBetweenActivityTag::hasWrongDayOrHour(Rules& r)
@@ -37109,6 +37609,11 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::isR
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -37382,6 +37887,11 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::isRela
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -37674,6 +38184,11 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::isRelat
 	return false;
 }
 
+int ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -37949,6 +38464,11 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::isRela
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -38273,6 +38793,11 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::isRelatedToStuden
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -38539,6 +39064,11 @@ bool ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::isRelatedToStudentsS
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -38823,6 +39353,11 @@ bool ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::isRelatedToStudentsSe
 	return false;
 }
 
+int ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -39090,6 +39625,11 @@ bool ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::isRelatedToStudentsS
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -39425,6 +39965,11 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -39700,6 +40245,11 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndA
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -39994,6 +40544,11 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAf
 	return false;
 }
 
+int ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -40271,6 +40826,11 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndA
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -40589,6 +41149,11 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::i
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -40849,6 +41414,11 @@ bool ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::isRe
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -41127,6 +41697,11 @@ bool ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::isRel
 	return false;
 }
 
+int ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -41390,6 +41965,11 @@ bool ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::isRe
 	return false;
 }
 
+int ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minGaps>2*r.nHoursPerDay)
@@ -41616,6 +42196,11 @@ bool ConstraintTeachersMaxHoursDailyRealDays::isRelatedToStudentsSet(Rules& r, c
 	return false;
 }
 
+int ConstraintTeachersMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>2*r.nHoursPerDay)
@@ -41839,6 +42424,11 @@ bool ConstraintTeacherMaxHoursDailyRealDays::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
@@ -42088,6 +42678,11 @@ bool ConstraintTeacherMaxRealDaysPerWeek::isRelatedToStudentsSet(Rules& r, const
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxRealDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxRealDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -42343,6 +42938,11 @@ bool ConstraintTeachersMaxRealDaysPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	return false;
 }
 
+int ConstraintTeachersMaxRealDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxRealDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(maxDaysPerWeek>r.nDaysPerWeek/2)
@@ -42593,6 +43193,11 @@ bool ConstraintTeachersMaxGapsPerRealDay::isRelatedToStudentsSet(Rules& r, const
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxGapsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxGapsPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -42852,6 +43457,11 @@ bool ConstraintTeacherMaxGapsPerRealDay::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintTeacherMaxGapsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxGapsPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(maxGaps>2*r.nHoursPerDay)
@@ -43055,6 +43665,11 @@ bool ConstraintStudentsMaxHoursDailyRealDays::isRelatedToStudentsSet(Rules& r, c
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
@@ -43312,6 +43927,11 @@ bool ConstraintStudentsSetMaxHoursDailyRealDays::isRelatedToStudentsSet(Rules& r
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>2*r.nHoursPerDay)
@@ -43551,6 +44171,11 @@ bool ConstraintTeachersMinHoursPerMorning::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinHoursPerMorning::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinHoursPerMorning::hasWrongDayOrHour(Rules& r)
@@ -43799,6 +44424,11 @@ bool ConstraintTeacherMinHoursPerMorning::isRelatedToStudentsSet(Rules& r, const
 	return false;
 }
 
+int ConstraintTeacherMinHoursPerMorning::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinHoursPerMorning::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursPerMorning>r.nHoursPerDay)
@@ -44040,6 +44670,11 @@ bool ConstraintTeachersMinHoursDailyRealDays::isRelatedToStudentsSet(Rules& r, c
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
@@ -44290,6 +44925,11 @@ bool ConstraintTeacherMinHoursDailyRealDays::isRelatedToStudentsSet(Rules& r, co
 	return false;
 }
 
+int ConstraintTeacherMinHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursDaily>2*r.nHoursPerDay)
@@ -44494,6 +45134,11 @@ bool ConstraintTeacherMinRealDaysPerWeek::isRelatedToStudentsSet(Rules& r, const
 	return false;
 }
 
+int ConstraintTeacherMinRealDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinRealDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(minDaysPerWeek>r.nDaysPerWeek)
@@ -44694,6 +45339,11 @@ bool ConstraintTeachersMinRealDaysPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinRealDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinRealDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -44947,6 +45597,11 @@ bool ConstraintTeacherMorningIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rule
 	return false;
 }
 
+int ConstraintTeacherMorningIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMorningIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -45198,6 +45853,11 @@ bool ConstraintTeachersMorningIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rul
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMorningIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMorningIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -45460,6 +46120,11 @@ bool ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Ru
 	return false;
 }
 
+int ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -45713,6 +46378,11 @@ bool ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::isRelatedToStudentsSet(R
 	return false;
 }
 
+int ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -45961,6 +46631,11 @@ bool ConstraintTeachersActivityTagMaxHoursDailyRealDays::isRelatedToStudentsSet(
 	return false;
 }
 
+int ConstraintTeachersActivityTagMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersActivityTagMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>2*r.nHoursPerDay)
@@ -46204,6 +46879,11 @@ bool ConstraintTeacherActivityTagMaxHoursDailyRealDays::isRelatedToStudentsSet(R
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherActivityTagMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherActivityTagMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
@@ -46452,6 +47132,11 @@ bool ConstraintStudentsActivityTagMaxHoursDailyRealDays::isRelatedToStudentsSet(
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsActivityTagMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsActivityTagMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
@@ -46750,6 +47435,11 @@ bool ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::isRelatedToStudentsS
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursDaily>2*r.nHoursPerDay)
@@ -46979,6 +47669,11 @@ bool ConstraintStudentsMaxGapsPerRealDay::isRelatedToStudentsSet(Rules& r, const
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxGapsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxGapsPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -47260,6 +47955,11 @@ bool ConstraintStudentsSetMaxGapsPerRealDay::isRelatedToStudentsSet(Rules& r, co
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxGapsPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxGapsPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(maxGaps>2*r.nHoursPerDay)
@@ -47518,6 +48218,11 @@ bool ConstraintStudentsSetMaxRealDaysPerWeek::isRelatedToStudentsSet(Rules& r, c
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxRealDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxRealDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->maxDaysPerWeek>r.nDaysPerWeek/2)
@@ -47721,6 +48426,11 @@ bool ConstraintStudentsMaxRealDaysPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(r);
 	Q_UNUSED(s);
 	return true;
+}
+
+int ConstraintStudentsMaxRealDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxRealDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -47942,6 +48652,11 @@ bool ConstraintTeacherMaxSpanPerRealDay::isRelatedToStudentsSet(Rules& r, const 
 	return false;
 }
 
+int ConstraintTeacherMaxSpanPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxSpanPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(maxSpanPerDay>2*r.nHoursPerDay)
@@ -48155,6 +48870,11 @@ bool ConstraintTeachersMaxSpanPerRealDay::isRelatedToStudentsSet(Rules& r, const
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxSpanPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxSpanPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -48408,6 +49128,11 @@ bool ConstraintStudentsSetMaxSpanPerRealDay::isRelatedToStudentsSet(Rules& r, co
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxSpanPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxSpanPerRealDay::hasWrongDayOrHour(Rules& r)
 {
 	if(maxSpanPerDay>2*r.nHoursPerDay)
@@ -48606,6 +49331,11 @@ bool ConstraintStudentsMaxSpanPerRealDay::isRelatedToStudentsSet(Rules& r, const
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxSpanPerRealDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxSpanPerRealDay::hasWrongDayOrHour(Rules& r)
@@ -48853,6 +49583,11 @@ bool ConstraintTeacherMaxAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r, con
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -49106,6 +49841,11 @@ bool ConstraintTeachersMaxAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r, co
 	return false;
 }
 
+int ConstraintTeachersMaxAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(maxAfternoonsPerWeek>r.nDaysPerWeek/2)
@@ -49351,6 +50091,11 @@ bool ConstraintTeacherMaxMorningsPerWeek::isRelatedToStudentsSet(Rules& r, const
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxMorningsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -49604,6 +50349,11 @@ bool ConstraintTeachersMaxMorningsPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	return false;
 }
 
+int ConstraintTeachersMaxMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxMorningsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(maxMorningsPerWeek>r.nDaysPerWeek/2)
@@ -49833,6 +50583,11 @@ bool ConstraintTeacherMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rules
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxActivityTagsPerDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
@@ -50065,6 +50820,11 @@ bool ConstraintTeachersMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rule
 	return false;
 }
 
+int ConstraintTeachersMaxActivityTagsPerDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
 	return this->maxTags>r.nHoursPerDay;
@@ -50269,6 +51029,11 @@ bool ConstraintTeacherMinMorningsPerWeek::isRelatedToStudentsSet(Rules& r, const
 	return false;
 }
 
+int ConstraintTeacherMinMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinMorningsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(minMorningsPerWeek>r.nDaysPerWeek/2)
@@ -50469,6 +51234,11 @@ bool ConstraintTeachersMinMorningsPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinMorningsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -50675,6 +51445,11 @@ bool ConstraintTeacherMinAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r, con
 	return false;
 }
 
+int ConstraintTeacherMinAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(minAfternoonsPerWeek>r.nDaysPerWeek/2)
@@ -50875,6 +51650,11 @@ bool ConstraintTeachersMinAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -51144,6 +51924,11 @@ bool ConstraintTeacherMaxTwoConsecutiveMornings::isRelatedToStudentsSet(Rules& r
 	return false;
 }
 
+int ConstraintTeacherMaxTwoConsecutiveMornings::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxTwoConsecutiveMornings::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -51408,6 +52193,11 @@ bool ConstraintTeachersMaxTwoConsecutiveMornings::isRelatedToStudentsSet(Rules& 
 	return false;
 }
 
+int ConstraintTeachersMaxTwoConsecutiveMornings::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxTwoConsecutiveMornings::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -51669,6 +52459,11 @@ bool ConstraintTeacherMaxTwoConsecutiveAfternoons::isRelatedToStudentsSet(Rules&
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxTwoConsecutiveAfternoons::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxTwoConsecutiveAfternoons::hasWrongDayOrHour(Rules& r)
@@ -51936,6 +52731,11 @@ bool ConstraintTeachersMaxTwoConsecutiveAfternoons::isRelatedToStudentsSet(Rules
 	return false;
 }
 
+int ConstraintTeachersMaxTwoConsecutiveAfternoons::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeachersMaxTwoConsecutiveAfternoons::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -52182,6 +52982,11 @@ bool ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::isRelatedToStud
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
@@ -52441,6 +53246,11 @@ bool ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::isRelatedToStude
 	return false;
 }
 
+int ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
 {
 	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
@@ -52695,6 +53505,11 @@ bool ConstraintStudentsMinHoursPerMorning::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinHoursPerMorning::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinHoursPerMorning::hasWrongDayOrHour(Rules& r)
@@ -53002,6 +53817,11 @@ bool ConstraintStudentsSetMinHoursPerMorning::isRelatedToStudentsSet(Rules& r, c
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinHoursPerMorning::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinHoursPerMorning::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursPerMorning>r.nHoursPerDay)
@@ -53210,6 +54030,11 @@ bool ConstraintTeacherMaxZeroGapsPerAfternoon::isRelatedToStudentsSet(Rules& r, 
 	return false;
 }
 
+int ConstraintTeacherMaxZeroGapsPerAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxZeroGapsPerAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -53406,6 +54231,11 @@ bool ConstraintTeachersMaxZeroGapsPerAfternoon::isRelatedToStudentsSet(Rules& r,
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxZeroGapsPerAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxZeroGapsPerAfternoon::hasWrongDayOrHour(Rules& r)
@@ -53663,6 +54493,11 @@ bool ConstraintStudentsSetMaxAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r,
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->maxAfternoonsPerWeek>r.nDaysPerWeek/2)
@@ -53868,6 +54703,11 @@ bool ConstraintStudentsMaxAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -54128,6 +54968,11 @@ bool ConstraintStudentsSetMaxMorningsPerWeek::isRelatedToStudentsSet(Rules& r, c
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxMorningsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->maxMorningsPerWeek>r.nDaysPerWeek/2)
@@ -54333,6 +55178,11 @@ bool ConstraintStudentsMaxMorningsPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxMorningsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -54594,6 +55444,11 @@ bool ConstraintStudentsSetMinAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r,
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->minAfternoonsPerWeek>r.nDaysPerWeek/2)
@@ -54799,6 +55654,11 @@ bool ConstraintStudentsMinAfternoonsPerWeek::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinAfternoonsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinAfternoonsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -55059,6 +55919,11 @@ bool ConstraintStudentsSetMinMorningsPerWeek::isRelatedToStudentsSet(Rules& r, c
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinMorningsPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->minMorningsPerWeek>r.nDaysPerWeek/2)
@@ -55264,6 +56129,11 @@ bool ConstraintStudentsMinMorningsPerWeek::isRelatedToStudentsSet(Rules& r, cons
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinMorningsPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinMorningsPerWeek::hasWrongDayOrHour(Rules& r)
@@ -55566,6 +56436,11 @@ bool ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::isRelatedToStudentsSet(
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -55815,7 +56690,13 @@ bool ConstraintStudentsMorningIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rul
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
+
 	return true;
+}
+
+int ConstraintStudentsMorningIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMorningIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -56126,6 +57007,11 @@ bool ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::isRelatedToStudentsSe
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
 {
 	if(this->startHour>=r.nHoursPerDay)
@@ -56375,7 +57261,13 @@ bool ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::isRelatedToStudentsSet(R
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
+
 	return true;
+}
+
+int ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
@@ -56575,6 +57467,11 @@ bool ConstraintTeacherMaxHoursPerAllAfternoons::isRelatedToStudentsSet(Rules& r,
 	return false;
 }
 
+int ConstraintTeacherMaxHoursPerAllAfternoons::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxHoursPerAllAfternoons::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursPerAllAfternoons>r.nDaysPerWeek*r.nHoursPerDay/2)
@@ -56754,6 +57651,11 @@ bool ConstraintTeachersMaxHoursPerAllAfternoons::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxHoursPerAllAfternoons::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxHoursPerAllAfternoons::hasWrongDayOrHour(Rules& r)
@@ -56989,6 +57891,11 @@ bool ConstraintStudentsSetMaxHoursPerAllAfternoons::isRelatedToStudentsSet(Rules
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxHoursPerAllAfternoons::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxHoursPerAllAfternoons::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursPerAllAfternoons>r.nDaysPerWeek*r.nHoursPerDay/2)
@@ -57168,6 +58075,11 @@ bool ConstraintStudentsMaxHoursPerAllAfternoons::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxHoursPerAllAfternoons::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxHoursPerAllAfternoons::hasWrongDayOrHour(Rules& r)
@@ -57365,6 +58277,11 @@ bool ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::isRelatedToStud
 	return false;
 }
 
+int ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minRestingHours>2*r.nHoursPerDay)
@@ -57554,6 +58471,11 @@ bool ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::isRelatedToStu
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -57799,6 +58721,11 @@ bool ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::isRelatedTo
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minRestingHours>2*r.nHoursPerDay)
@@ -57989,6 +58916,11 @@ bool ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::isRelatedToStu
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
@@ -58241,6 +59173,11 @@ bool ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::isRelatedToStud
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
@@ -58544,6 +59481,11 @@ bool ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::isRelatedToS
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
 {
 	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
@@ -58764,6 +59706,11 @@ bool ConstraintTeachersMaxGapsPerWeekForRealDays::isRelatedToStudentsSet(Rules& 
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxGapsPerWeekForRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxGapsPerWeekForRealDays::hasWrongDayOrHour(Rules& r)
@@ -58989,6 +59936,11 @@ bool ConstraintTeacherMaxGapsPerWeekForRealDays::isRelatedToStudentsSet(Rules& r
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxGapsPerWeekForRealDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxGapsPerWeekForRealDays::hasWrongDayOrHour(Rules& r)
@@ -59218,6 +60170,11 @@ bool ConstraintStudentsMaxGapsPerWeekForRealDays::isRelatedToStudentsSet(Rules& 
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxGapsPerWeekForRealDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxGapsPerWeekForRealDays::hasWrongDayOrHour(Rules& r)
@@ -59497,6 +60454,11 @@ bool ConstraintStudentsSetMaxGapsPerWeekForRealDays::isRelatedToStudentsSet(Rule
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxGapsPerWeekForRealDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxGapsPerWeekForRealDays::hasWrongDayOrHour(Rules& r)
 {
 	if(maxGaps>r.nDaysPerWeek*r.nHoursPerDay)
@@ -59748,6 +60710,11 @@ bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStuden
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
@@ -60007,6 +60974,11 @@ bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStudent
 	return false;
 }
 
+int ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
 {
 	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
@@ -60257,6 +61229,11 @@ bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStuden
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
@@ -60560,6 +61537,11 @@ bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStu
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
 {
 	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
@@ -60767,6 +61749,11 @@ bool ConstraintTeacherMaxThreeConsecutiveDays::isRelatedToStudentsSet(Rules& r, 
 	return false;
 }
 
+int ConstraintTeacherMaxThreeConsecutiveDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxThreeConsecutiveDays::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -60968,6 +61955,11 @@ bool ConstraintTeachersMaxThreeConsecutiveDays::isRelatedToStudentsSet(Rules& r,
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxThreeConsecutiveDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxThreeConsecutiveDays::hasWrongDayOrHour(Rules& r)
@@ -61225,6 +62217,11 @@ bool ConstraintStudentsSetMaxThreeConsecutiveDays::isRelatedToStudentsSet(Rules&
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxThreeConsecutiveDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxThreeConsecutiveDays::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -61425,6 +62422,11 @@ bool ConstraintStudentsMaxThreeConsecutiveDays::isRelatedToStudentsSet(Rules& r,
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMaxThreeConsecutiveDays::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxThreeConsecutiveDays::hasWrongDayOrHour(Rules& r)
@@ -61818,6 +62820,11 @@ bool ConstraintMinHalfDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, co
 	return false;
 }
 
+int ConstraintMinHalfDaysBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMinHalfDaysBetweenActivities::hasWrongDayOrHour(Rules& r)
 {
 	if(minDays>=r.nDaysPerWeek)
@@ -62071,8 +63078,13 @@ bool ConstraintActivityPreferredDay::isRelatedToStudentsSet(Rules& r, const QStr
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivityPreferredDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityPreferredDay::hasWrongDayOrHour(Rules& r)
@@ -62359,6 +63371,11 @@ bool ConstraintActivitiesMinInATerm::isRelatedToStudentsSet(Rules& r, const QStr
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintActivitiesMinInATerm::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesMinInATerm::hasWrongDayOrHour(Rules& r)
@@ -62689,6 +63706,11 @@ bool ConstraintMaxTermsBetweenActivities::isRelatedToStudentsSet(Rules& r, const
 	return false;
 }
 
+int ConstraintMaxTermsBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMaxTermsBetweenActivities::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -62923,6 +63945,11 @@ bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(R
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxActivityTagsPerDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
 {
 	return this->maxTags>r.nHoursPerDay;
@@ -63148,6 +64175,11 @@ bool ConstraintStudentsMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rule
 	Q_UNUSED(s);
 	
 	return true;
+}
+
+int ConstraintStudentsMaxActivityTagsPerDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
@@ -63384,6 +64416,11 @@ bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(R
 	return false;
 }
 
+int ConstraintTeacherMaxActivityTagsPerRealDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
 	return this->maxTags>2*r.nHoursPerDay;
@@ -63615,6 +64652,11 @@ bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxActivityTagsPerRealDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
@@ -63858,6 +64900,11 @@ bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsS
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
 {
 	return this->maxTags>2*r.nHoursPerDay;
@@ -64086,6 +65133,11 @@ bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(
 	Q_UNUSED(s);
 	
 	return true;
+}
+
+int ConstraintStudentsMaxActivityTagsPerRealDayFromSet::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
@@ -64431,6 +65483,11 @@ bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, co
 	return false;
 }
 
+int ConstraintMaxHalfDaysBetweenActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintMaxHalfDaysBetweenActivities::hasWrongDayOrHour(Rules& r)
 {
 	if(maxDays>=r.nDaysPerWeek)
@@ -64644,8 +65701,13 @@ bool ConstraintActivityBeginsStudentsDay::isRelatedToStudentsSet(Rules& r, const
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivityBeginsStudentsDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityBeginsStudentsDay::hasWrongDayOrHour(Rules& r)
@@ -64974,8 +66036,13 @@ bool ConstraintActivitiesBeginStudentsDay::isRelatedToStudentsSet(Rules& r, cons
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivitiesBeginStudentsDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesBeginStudentsDay::hasWrongDayOrHour(Rules& r)
@@ -65188,8 +66255,13 @@ bool ConstraintActivityBeginsTeachersDay::isRelatedToStudentsSet(Rules& r, const
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivityBeginsTeachersDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityBeginsTeachersDay::hasWrongDayOrHour(Rules& r)
@@ -65518,8 +66590,13 @@ bool ConstraintActivitiesBeginTeachersDay::isRelatedToStudentsSet(Rules& r, cons
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivitiesBeginTeachersDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesBeginTeachersDay::hasWrongDayOrHour(Rules& r)
@@ -65759,6 +66836,11 @@ bool ConstraintTeachersMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMinHoursPerAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
@@ -66005,6 +67087,11 @@ bool ConstraintTeacherMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, con
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMinHoursPerAfternoon::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
@@ -66260,6 +67347,11 @@ bool ConstraintStudentsMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsMinHoursPerAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
@@ -66567,6 +67659,11 @@ bool ConstraintStudentsSetMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r,
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMinHoursPerAfternoon::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
 {
 	if(minHoursPerAfternoon>r.nHoursPerDay)
@@ -66815,6 +67912,11 @@ bool ConstraintTeacherMaxHoursDailyInInterval::isRelatedToStudentsSet(Rules& r, 
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherMaxHoursDailyInInterval::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherMaxHoursDailyInInterval::hasWrongDayOrHour(Rules& r)
@@ -67070,6 +68172,11 @@ bool ConstraintTeachersMaxHoursDailyInInterval::isRelatedToStudentsSet(Rules& r,
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxHoursDailyInInterval::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxHoursDailyInInterval::hasWrongDayOrHour(Rules& r)
@@ -67364,6 +68471,11 @@ bool ConstraintStudentsSetMaxHoursDailyInInterval::isRelatedToStudentsSet(Rules&
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxHoursDailyInInterval::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxHoursDailyInInterval::hasWrongDayOrHour(Rules& r)
 {
 	if(startHour>=r.nHoursPerDay)
@@ -67603,6 +68715,11 @@ bool ConstraintStudentsMaxHoursDailyInInterval::isRelatedToStudentsSet(Rules& r,
 	return true;
 }
 
+int ConstraintStudentsMaxHoursDailyInInterval::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsMaxHoursDailyInInterval::hasWrongDayOrHour(Rules& r)
 {
 	if(startHour>=r.nHoursPerDay)
@@ -67810,6 +68927,11 @@ bool ConstraintTeacherNoTwoConsecutiveDays::isRelatedToStudentsSet(Rules& r, con
 	return false;
 }
 
+int ConstraintTeacherNoTwoConsecutiveDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherNoTwoConsecutiveDays::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -68002,6 +69124,11 @@ bool ConstraintTeachersNoTwoConsecutiveDays::isRelatedToStudentsSet(Rules& r, co
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersNoTwoConsecutiveDays::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersNoTwoConsecutiveDays::hasWrongDayOrHour(Rules& r)
@@ -68250,6 +69377,11 @@ bool ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsSet(R
 	return false;
 }
 
+int ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	if(day1>=r.nDaysPerWeek)
@@ -68494,6 +69626,11 @@ bool ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsSet(
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -68759,6 +69896,11 @@ bool ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsS
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	if(day1>=r.nDaysPerWeek)
@@ -69003,6 +70145,11 @@ bool ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsSet(
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -69439,6 +70586,11 @@ bool ConstraintTwoSetsOfActivitiesSameSections::isRelatedToStudentsSet(Rules& r,
 	return false;
 }
 
+int ConstraintTwoSetsOfActivitiesSameSections::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintTwoSetsOfActivitiesSameSections::hasWrongDayOrHour(Rules& r)
 {
 	assert(oDays.count()==oHours.count());
@@ -69744,6 +70896,11 @@ bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsS
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	assert(selectedDays.count()==selectedHours.count());
@@ -70039,6 +71196,11 @@ bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(
 	return true;
 }
 
+int ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	assert(selectedDays.count()==selectedHours.count());
@@ -70332,6 +71494,11 @@ bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -70646,6 +71813,11 @@ bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::isRelatedToStudentsSet(R
 	return false;
 }
 
+int ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	assert(selectedDays.count()==selectedHours.count());
@@ -70858,6 +72030,11 @@ bool ConstraintTeacherMaxHoursPerTerm::isRelatedToStudentsSet(Rules& r, const QS
 	return false;
 }
 
+int ConstraintTeacherMaxHoursPerTerm::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
 bool ConstraintTeacherMaxHoursPerTerm::hasWrongDayOrHour(Rules& r)
 {
 	if(maxHoursPerTerm>r.nDaysPerTerm*r.nHoursPerDay)
@@ -71037,6 +72214,11 @@ bool ConstraintTeachersMaxHoursPerTerm::isRelatedToStudentsSet(Rules& r, const Q
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersMaxHoursPerTerm::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersMaxHoursPerTerm::hasWrongDayOrHour(Rules& r)
@@ -71337,6 +72519,11 @@ bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudent
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -71675,6 +72862,11 @@ bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStuden
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -72032,6 +73224,11 @@ bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStu
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	for(int k1=0; k1<selectedDays1.count(); k1++){
@@ -72368,6 +73565,11 @@ bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStuden
 	Q_UNUSED(s);
 
 	return true;
+}
+
+int ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
 }
 
 bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
@@ -72788,6 +73990,11 @@ bool ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStud
 	return false;
 }
 
+int ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	for(int k1=0; k1<selectedDays1.count(); k1++){
@@ -73151,6 +74358,11 @@ bool ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsSe
 	return false;
 }
 
+int ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
 {
 	if(day1>=r.nDaysPerWeek)
@@ -73473,6 +74685,11 @@ bool ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToStuden
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
@@ -73834,6 +75051,11 @@ bool ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToStudent
 	Q_UNUSED(s);
 
 	return false;
+}
+
+int ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
 }
 
 bool ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
@@ -74211,6 +75433,11 @@ bool ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToSt
 	return r.setsShareStudents(this->students, s);
 }
 
+int ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
 {
 	for(int q=0; q<selectedDays.count(); q++){
@@ -74571,6 +75798,11 @@ bool ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToStudent
 	return false;
 }
 
+int ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
 bool ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
 {
 	for(int q=0; q<selectedDays.count(); q++){
@@ -74893,6 +76125,11 @@ bool ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::isRelatedToStudentsSet
 	Q_UNUSED(s);
 	
 	return false;
+}
+
+int ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::hasWrongDayOrHour(Rules& r)
@@ -75287,6 +76524,11 @@ bool ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToStude
 	return false;
 }
 
+int ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
 {
 	for(int q=0; q<selectedDays.count(); q++){
@@ -75556,8 +76798,13 @@ bool ConstraintActivityBeginsOrEndsStudentsDay::isRelatedToStudentsSet(Rules& r,
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivityBeginsOrEndsStudentsDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityBeginsOrEndsStudentsDay::hasWrongDayOrHour(Rules& r)
@@ -75901,6 +77148,11 @@ bool ConstraintActivitiesBeginOrEndStudentsDay::isRelatedToStudentsSet(Rules& r,
 	return false;
 }
 
+int ConstraintActivitiesBeginOrEndStudentsDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
 bool ConstraintActivitiesBeginOrEndStudentsDay::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
@@ -76122,8 +77374,13 @@ bool ConstraintActivityBeginsOrEndsTeachersDay::isRelatedToStudentsSet(Rules& r,
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivityBeginsOrEndsTeachersDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivityBeginsOrEndsTeachersDay::hasWrongDayOrHour(Rules& r)
@@ -76462,8 +77719,13 @@ bool ConstraintActivitiesBeginOrEndTeachersDay::isRelatedToStudentsSet(Rules& r,
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-		
+
 	return false;
+}
+
+int ConstraintActivitiesBeginOrEndTeachersDay::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesBeginOrEndTeachersDay::hasWrongDayOrHour(Rules& r)
@@ -76808,8 +78070,13 @@ bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::isRelatedT
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	
+
 	return false;
+}
+
+int ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
 }
 
 bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)

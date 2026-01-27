@@ -269,21 +269,14 @@ install(TARGETS fet
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    qt_generate_deploy_app_script(
-        TARGET fet
-        OUTPUT_SCRIPT deploy_script
-        NO_TRANSLATIONS
-        NO_UNSUPPORTED_PLATFORM_ERROR
-        INCLUDE_PLUGINS wayland xcb
-    )
-else()
-    qt_generate_deploy_app_script(
-        TARGET fet
-        OUTPUT_SCRIPT deploy_script
-        NO_TRANSLATIONS
-        NO_UNSUPPORTED_PLATFORM_ERROR
-    )
-endif()
+qt_generate_deploy_app_script(
+    TARGET fet
+    OUTPUT_SCRIPT deploy_script
+    NO_TRANSLATIONS
+    NO_UNSUPPORTED_PLATFORM_ERROR
+    INCLUDE_PLUGINS ${extra_plugins}
+    EXCLUDE_PLUGIN_TYPES ${exclude_plugins}
+    DEPLOY_TOOL_OPTIONS ${deploy_tool_options_arg}
+)
 
 install(SCRIPT ${deploy_script})

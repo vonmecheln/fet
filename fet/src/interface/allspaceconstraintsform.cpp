@@ -73,14 +73,65 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 {
 	setupUi(this);
 
-	filterCheckBox->setChecked(false);
-	sortedCheckBox->setChecked(false);
+	/*miscellaneousCheckBox->setChecked(true);
+	teachersCheckBox->setChecked(true);
+	studentsCheckBox->setChecked(true);
+	activitiesCheckBox->setChecked(true);
+	roomsCheckBox->setChecked(true);
+	subjectsAndTagsCheckBox->setChecked(true);*/
+
+	/*filterCheckBox->setChecked(false);
+	sortedCheckBox->setChecked(false);*/
 	
 	currentConstraintTextEdit->setReadOnly(true);
 	
 	modifyConstraintPushButton->setDefault(true);
 	
 	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+
+	QString settingsName="AllSpaceConstraintsAdvancedFilterForm";
+
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+
+	descrDetDescr.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
+
+	/*useFilter=false;
+	
+	assert(filterCheckBox->isChecked()==false);
+	assert(sortedCheckBox->isChecked()==false);*/
+	
+	useFilter=settings.value(settingsName+"/list-filtered", "false").toBool();
+	sortedCheckBox->setChecked(settings.value(settingsName+"/list-sorted", "false").toBool());
+	filterCheckBox->setChecked(useFilter);
+
+	miscellaneousCheckBox->setChecked(settings.value(settingsName+"/list-miscellaneous-constraints", "true").toBool());
+	teachersCheckBox->setChecked(settings.value(settingsName+"/list-teachers-constraints", "true").toBool());
+	studentsCheckBox->setChecked(settings.value(settingsName+"/list-students-constraints", "true").toBool());
+	activitiesCheckBox->setChecked(settings.value(settingsName+"/list-activities-constraints", "true").toBool());
+	roomsCheckBox->setChecked(settings.value(settingsName+"/list-rooms-constraints", "true").toBool());
+	subjectsAndTagsCheckBox->setChecked(settings.value(settingsName+"/list-subjects-and-tags-constraints", "true").toBool());
 
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &AllSpaceConstraintsForm::constraintChanged);
 
@@ -93,6 +144,13 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::modifyConstraint);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &AllSpaceConstraintsForm::modifyConstraint);
 	connect(filterCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filter);
+
+	connect(miscellaneousCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
+	connect(teachersCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
+	connect(studentsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
+	connect(activitiesCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
+	connect(roomsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
+	connect(subjectsAndTagsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
 
 	connect(moveSpaceConstraintUpPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::moveSpaceConstraintUp);
 	connect(moveSpaceConstraintDownPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::moveSpaceConstraintDown);
@@ -158,39 +216,6 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 		//	weightsPushButton->setToolTip(QString("W"));
 	}
 
-	centerWidgetOnScreen(this);
-	restoreFETDialogGeometry(this);
-	//restore splitter state
-	QSettings settings(COMPANY, PROGRAM);
-	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
-		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
-
-	QString settingsName="AllSpaceConstraintsAdvancedFilterForm";
-
-	all=settings.value(settingsName+"/all-conditions", "true").toBool();
-
-	descrDetDescr.clear();
-	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
-	for(int i=0; i<n; i++)
-		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
-
-	contains.clear();
-	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
-	for(int i=0; i<n; i++)
-		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
-
-	text.clear();
-	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
-	for(int i=0; i<n; i++)
-		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
-
-	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
-
-	useFilter=false;
-	
-	assert(filterCheckBox->isChecked()==false);
-	assert(sortedCheckBox->isChecked()==false);
-	
 	filterChanged();
 }
 
@@ -221,10 +246,56 @@ AllSpaceConstraintsForm::~AllSpaceConstraintsForm()
 		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
 
 	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+
+	settings.setValue(settingsName+"/list-filtered", useFilter);
+	settings.setValue(settingsName+"/list-sorted", sortedCheckBox->isChecked());
+
+	settings.setValue(settingsName+"/list-miscellaneous-constraints", miscellaneousCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-teachers-constraints", teachersCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-students-constraints", studentsCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-activities-constraints", activitiesCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-rooms-constraints", roomsCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-subjects-and-tags-constraints", subjectsAndTagsCheckBox->isChecked());
 }
 
 bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 {
+	switch(ctr->categoryOfSpaceConstraint()){
+		case IS_BASIC_SPACE_CONSTRAINT:
+			if(!miscellaneousCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_ACTIVITY_SPACE_CONSTRAINT:
+			if(!activitiesCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_TEACHER_SPACE_CONSTRAINT:
+			if(!teachersCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_STUDENTS_SPACE_CONSTRAINT:
+			if(!studentsCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_ROOM_SPACE_CONSTRAINT:
+			if(!roomsCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT:
+			if(!subjectsAndTagsCheckBox->isChecked())
+				return false;
+			break;
+
+		default:
+			assert(0);
+			break;
+	}
+
 	if(!useFilter)
 		return true;
 
@@ -306,10 +377,10 @@ bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 
 void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 {
-	if(filterCheckBox->isChecked()){
+	/*if(filterCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Filter' check box must not be checked."));
 		return;
-	}
+	}*/
 	if(sortedCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Sorted' check box must not be checked."));
 		return;
@@ -326,11 +397,14 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 	QString s1=constraintsListWidget->item(i)->text();
 	QString s2=constraintsListWidget->item(i-1)->text();
 	
-	assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
+	/*assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
 	SpaceConstraint* sc1=gt.rules.spaceConstraintsList.at(i);
 	assert(sc1==visibleSpaceConstraintsList.at(i));
 	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i-1);
-	assert(sc2==visibleSpaceConstraintsList.at(i-1));
+	assert(sc2==visibleSpaceConstraintsList.at(i-1));*/
+
+	SpaceConstraint* sc1=visibleSpaceConstraintsList.at(i);
+	SpaceConstraint* sc2=visibleSpaceConstraintsList.at(i-1);
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
@@ -338,8 +412,27 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 	constraintsListWidget->item(i)->setText(s2);
 	constraintsListWidget->item(i-1)->setText(s1);
 	
-	gt.rules.spaceConstraintsList[i]=sc2;
-	gt.rules.spaceConstraintsList[i-1]=sc1;
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.spaceConstraintsList.count(); q++){
+		if(gt.rules.spaceConstraintsList.at(q)==sc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.spaceConstraintsList.at(q)==sc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k>j);
+	//gt.rules.spaceConstraintsList[i]=sc2;
+	//gt.rules.spaceConstraintsList[i-1]=sc1;
+	//std::rotate(&gt.rules.spaceConstraintsList[j], &gt.rules.spaceConstraintsList[k], &gt.rules.spaceConstraintsList[k+1]); -> might be unsafe/incorrect
+	for(int q=k; q>j; q--)
+		gt.rules.spaceConstraintsList[q]=gt.rules.spaceConstraintsList[q-1];
+	gt.rules.spaceConstraintsList[j]=sc1;
 	
 	visibleSpaceConstraintsList[i]=sc2;
 	visibleSpaceConstraintsList[i-1]=sc1;
@@ -370,10 +463,10 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 
 void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 {
-	if(filterCheckBox->isChecked()){
+	/*if(filterCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Filter' check box must not be checked."));
 		return;
-	}
+	}*/
 	if(sortedCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Sorted' check box must not be checked."));
 		return;
@@ -390,11 +483,14 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 	QString s1=constraintsListWidget->item(i)->text();
 	QString s2=constraintsListWidget->item(i+1)->text();
 	
-	assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
+	/*assert(gt.rules.spaceConstraintsList.count()==visibleSpaceConstraintsList.count());
 	SpaceConstraint* sc1=gt.rules.spaceConstraintsList.at(i);
 	assert(sc1==visibleSpaceConstraintsList.at(i));
 	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i+1);
-	assert(sc2==visibleSpaceConstraintsList.at(i+1));
+	assert(sc2==visibleSpaceConstraintsList.at(i+1));*/
+
+	SpaceConstraint* sc1=visibleSpaceConstraintsList.at(i);
+	SpaceConstraint* sc2=visibleSpaceConstraintsList.at(i+1);
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
@@ -402,8 +498,27 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 	constraintsListWidget->item(i)->setText(s2);
 	constraintsListWidget->item(i+1)->setText(s1);
 	
-	gt.rules.spaceConstraintsList[i]=sc2;
-	gt.rules.spaceConstraintsList[i+1]=sc1;
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.spaceConstraintsList.count(); q++){
+		if(gt.rules.spaceConstraintsList.at(q)==sc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.spaceConstraintsList.at(q)==sc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k<j);
+	//gt.rules.spaceConstraintsList[i]=sc2;
+	//gt.rules.spaceConstraintsList[i+1]=sc1;
+	//std::rotate(&gt.rules.spaceConstraintsList[k], &gt.rules.spaceConstraintsList[k+1], &gt.rules.spaceConstraintsList[j+1]); -> might be unsafe/incorrect
+	for(int q=k; q<j; q++)
+		gt.rules.spaceConstraintsList[q]=gt.rules.spaceConstraintsList[q+1];
+	gt.rules.spaceConstraintsList[j]=sc1;
 	
 	visibleSpaceConstraintsList[i]=sc2;
 	visibleSpaceConstraintsList[i+1]=sc1;

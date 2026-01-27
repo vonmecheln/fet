@@ -12078,29 +12078,7 @@ From Michael Chourdakis (on Facebook):
 
 The ability for fet-cl to save it's current state in a file then restart from it, say I reached 90% of a timetable, perhaps save this, stop fet and resume later.
 
-797--------------------------------------------------------
-From Michael Towers:
-
-It seems the current (binary) FET distribution doesn't include Wayland
-support on Linux. Apparently it still runs on a Wayland session (I
-tested it on a recent Fedora) by using XWayland, but by using a recent
-feature of CMake+Qt (for example) it is possible to include direct
-Wayland support in the FET package.
-
-Running FET on Linux using the binary distribution, the file system is
-accessed using Qt's own file dialogs, rather than the native ones, at
-least where I have tested it. This seems to have something to do with
-the packaging using linuxdeploy, which can also affect the styling. With
-my CMake-built package, the native file dialogs are used.
-
-FET doesn't use Qt's own translations. This is occasionally visible in a
-dialog (only in Linux, only the file dialogs?). It is probably a very
-minor issue.
-
-Because some of the features of CMake I have used are new, my CMake
-build files can only be used on very recent Qt versions. I have been
-testing with FET-7.6.4 and Qt6.10.1, compiling on MX Linux 23 (Debian
-12) and Windows 10.
+797--------------------DONE in FET-7.7.0--------------------
 
 798---------------------------------------------------------
 From GUEFFAZ REDA:
@@ -12111,6 +12089,10 @@ min half days instead of min days. Liviu proposed him to use the Advanced > Spre
 
 799---------------------------------------------------------
 From Eleni Damaskou and Vangelis Karafillidis:
+
+Initiated on Facebook, continued on the forum: https://lalescu.ro/liviu/fet/forum/index.php?topic=6721.0
+
+Facebook:
 
 The user should be able to modify a timetable with MINIMAL changes.
 
@@ -12127,3 +12109,519 @@ so the weight is not the most important parameter for the user.
 Liviu Lalescu:
 
 This must be implemented specially for each constraint, and is really complicated.
+
+Continuation from Vangelis Karafillidis:
+
+The user does not really care about the number of the attempts of the code - they actually care about either 
+a) the number of constraints that are going to be violated (for example activities locked in time) or
+b) about the number of violations of a single constraint (for example max hour daily)
+
+Liviu Lalescu:
+
+It is very difficult.
+
+Vangelis Karafillidis:
+
+both (a) and (b)?
+
+Liviu Lalescu:
+
+(b) is.
+About (a), for activity preferred starting time, it is actually possible. But only this.
+
+Vangelis Karafillidis:
+
+Activity preferred time slot?
+
+Liviu Lalescu:
+
+Yes, possible.
+
+Vangelis Karafillidis:
+
+So, it's some kind of "optimization".
+
+Liviu Lalescu:
+
+It is for a set of constraint activity(ies) preferred time(s), and works like activities occupy min time slots from selection.
+
+Maybe constraint max (n) broken activity(ies) preferred times from a set?
+
+Continued on the forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=6721.0):
+
+Liviu Lalescu:
+
+@Vangelis Karafillidis suggested two things:
+
+    Quote
+    The user does not really care about the number of the attempts of the code - they actually care about either
+    a) the number of constraints that are going to be violated (for example activities locked in time) or
+    b) about the number of violations of a single constraint (for example max hour daily)
+
+I think (b) is very complicated, but for (a) it might be possible, and deliver a nice result. It could work for the 7 preferred times constraints:
+activity preferred starting time, activity preferred starting times, activity preferred time slots, activities preferred starting times, activities
+preferred time slots, subactivities preferred starting times, and subactivities preferred time slots:
+
+The user selects n constraints of this type, which will only have 100% weight, and says that out of these constraints at least m activities will
+be correct (from the set t of total individual ID activities involved).
+
+Hmm... it is possible to implement, but there is a big problem: the constraints do not have an ID, to consider a set of constraints inside this constraint.
+
+Hmm... another big problem: we cannot say that an activity with 100% weight is to be skipped.
+
+If we managed to implement this it would be a nice feature, like: activities A1, A2, A3, at least two activities out of these three should be
+placed correctly, like A1 on Monday, A2 on Tuesday, and A3 on Wednesday. And more general options.
+
+Or we could just make a constraint m out of n which has also a list of accepted times for each involved activity. This might work.
+
+Vangelis Karafillidis:
+
+I seems to me the the last alternative is the safest. I am not a coder... but this option seems to be the clearest one... So, a constraint which
+places m activities out of n activities in the selected time slots. What do you think as a coder?
+
+But, is it possible to connect the "locked in time" activities of a generated timetable with this new constraint? Or maybe, "locked in time m out
+of n activities"? (n = the number of the selected activities).
+
+And my last question: Is it possible to implement the other feature we discussed some time ago? For example... is it possible for the user to select
+a "time window" of (let's say) -1 hour to +2 hours (two values) for the selected (locked in time) activities? The idea is like this: Each activity
+has its own time slot in the generated timetable. Sometimes, the user can accept solutions (modifications) with the activities placed in slightly
+different positions (time slots). So... if the user can select the activities, the minimum number of the activities that they demand to remain
+locked in time, PLUS a possible slightly different position of the m activities.
+
+800---------------------------------------------------------
+From Vangelis Karafillidis:
+
+I was thinking about:
+"Added the possibility of modifying multiple selected constraints at once, with a single click, for these types of time constraints: teacher min/max days per week,
+teacher min/max hours daily, teacher max hours continuously, and teacher max gaps per day/week (suggested by Vangelis Karafillidis)."
+
+1) I think that this feature could be extended to ANY possible type of constraint that can support the modification of multiple constraints
+
+2) I think that the options "Modify" and "Modify constraints" should be merged into one single option ("Modify"). if the user has selected one single constraint
+the code should be able to detect it and proceed to the modification of one single constraint. If the user has selected multiple constraints the code itself should
+be able to detect that there are multiple constraints selected, and proceed to the modification of multiple constraints.
+
+For example, the user can select many constraints, and click on "Modify". FET is going to modify the last selected constraint - under my perspective this is
+a quite strange behavior.
+
+Liviu Lalescu:
+
+I think the button should indicate that the user can modify a whole selection.
+
+Vangelis Karafillidis:
+
+801---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+When FET generates a tt and shows it in C:\Users\.... , you should open this folder immediately. Or the user has to manually navigate there.
+
+Liviu Lalescu:
+
+Sorry, I don't understand the problem.
+
+Michael Chourdakis:
+
+FET completes, it says HTML is ready. Open this folder with explorer (ShellExecute), don't just tell the user it's there.
+
+802---------------------------------------------------------
+From Michael Towers:
+
+He suggested to not distribute the qm translation files with the sources archive. This is unfortunately needed for QMake, so
+for the moment we'll keep the qm files included in the sources of FET.
+
+803---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot: In the All time/space constraints dialogs, move up/down should operate on the whole selection of constraints.
+
+Liviu Lalescu:
+
+Unfortunately, the selection can be noncontiguous...
+
+804---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+and now the complex problem I have:
+there's a lesson that doesn't have to be always the same teacher
+let me explain
+i have a lesson which is taught 1 hour / week, called "tambouras"
+this lesson is normally taught by one teacher to one student as the other individual lessons (piano etc), but we never have as needed as many teachers for that
+so, what we do in the school is to group people and have one teacher teach the entire group in 1 hour,
+the point is, the group needn't be the same all the time and the teacher needn't be the same all the time
+in TT 1, say monday/hour 2 has students 1 , 2 , 3 , 4 , 5. In TT 2 monday/hour 3 has students 1,2,6,8,9,10
+however they are placed , we don't care
+i only that a teacher (any of the teachers) to get assigned to that group
+currently, what I will be doing is to have FET generate the first time table without teachers, and then find out from the generated TT the available placement of that lesson, and create another FET which will then assign the teachers there.
+
+Liviu Lalescu:
+
+what is TT 1 and TT 2?
+same school?
+
+Michael Chourdakis:
+
+timetable 1 and 2
+first week's
+
+Liviu Lalescu:
+
+yes, but what do they represent?
+
+Michael Chourdakis:
+
+same school
+just another timetable
+the idea is that the group needn't be the same and the teacher needen't be the same
+
+Liviu Lalescu:
+
+but in TT 2 student 3 has no tambouras?
+
+Michael Chourdakis:
+
+it will have it in another day/hour
+with student 12,13,14
+
+Liviu Lalescu:
+OK
+
+Michael Chourdakis:
+
+i know i what i'm saying is complex programmatically
+
+Liviu Lalescu:
+
+it might be possible with activities occupy min/max time slots from selection and/or max simultaneous activities in selected slots.
+add tambouras activities for each student
+one for each student
+occupy max = say 2 (or 3, or more)
+max simultaneous = say 5 (or more)
+about the teacher...
+I think you can also add one for each teacher
+and not overlapping for teachers' tambouras
+and include teachers' tambouras in occupy max and max simult.
+hm... occupy max for teachers is not good.
+
+Michael Chourdakis:
+
+actually there will be 6 hours in the week for this
+2 for class A, 2 for class B, 2 for class C
+
+Liviu Lalescu:
+
+can you choose 6 teachers for FET?
+or FET should choose?
+
+Michael Chourdakis:
+
+it may be 2 or 10 teachers. IT doesn't matter, I just want to know that in monday 2 in which fet placed 12 students to have tamboura with 2 teachers. (so it will be 6/6)
+if FET assigns 3 teachers that day/hour, i will split them 4/4/4
+i think it is programmatically complex
+
+Liviu Lalescu:
+
+yes, it is too complex. Only if you know the exact number of hours of tamboura per week and max allowed students in a slot
+
+Michael Chourdakis:
+
+the exact number of hours per student is 1
+max allowed students doesn't matter
+
+Liviu Lalescu:
+
+which is best? 4+4+4 or 6+6?
+
+Michael Chourdakis:
+
+i don't care.
+
+listen what i have so far:
+so far it created 6 hours/week with some people doing tamboura at that hour
+now i want as many as fet wants teachers these hours. 
+if i have 10 teachers i may get 2-2-2-1-1-2, it doesn't matter
+
+Liviu Lalescu:
+
+you prefer less students per teacher, I suppose?
+
+Michael Chourdakis:
+
+yes but that's not restricting, if I have a teacher it takes the entire group
+if i have 2 they split it
+BUT -> If i have 2 - > 2 rooms needed
+if i have 3 teachers -> 3 rooms needed
+
+Liviu Lalescu:
+
+using virtual rooms, you can make an activity take place in more real rooms.
+my only thoughts are for activities occupy min/max and activities min/max simultaneous.
+you need to decide exactly for a number of tambouras per week
+and for a maximum number of students per hour of tamboura
+the hour of tamboura must be a single one in the week, at an exact day+hour, or you can have 6 time slots of tamboura?
+
+Michael Chourdakis:
+
+we have 3 levels, each one 3 classes = 9. These 9 classes 'kids do tamboura. Each of them splits to two groups for all other instruments so there will be "18" hours for any subgroup doing tamboura per week. So the assignments will be 18 hours. 
+basically i want to tell fet that a teacher may have student list ANY of a certain set of student lists
+but i do think that it's easier for me to resolve it with 2 FETS instead
+
+Liviu Lalescu:
+
+my idea is to add an activity subject=TAMB with duration 1 for each student, and an activity with subject=TAMB for some chosen teachers, with duration 1.
+and maybe constrain the teachers' preferences for students in some way...
+
+Michael Chourdakis:
+
+can fet do that ? match automatically subjects with same name ?
+
+Liviu Lalescu:
+
+no
+not same name
+
+Michael Chourdakis:
+
+same tag?
+
+Liviu Lalescu:
+
+no. but can ensure that some activities are simultaneous with activitiies occupy max slots from selection
+
+Michael Chourdakis:
+
+perhaps that's an easy todo for you then
+
+if a teachers'a activity has the same lesson with a student set activity 
+(even if the teacher isn't there)
+then match them
+
+Liviu Lalescu:
+
+my idea is, say, 4 students: Y1, Y2, Y3, Y4, add 4 activities, and 2 teachers, T1, T2, add 2 activities. Then all these 6 activities occupy max 2 slots from selected whole week, and max simultaneous in all selected slots of the week = 3. This is my idea, and we need to develop it.
+
+Michael Chourdakis:
+
+hmmm
+isn't what i suggested easier?
+to match activities based on lesson names 
+
+Liviu Lalescu:
+
+it might be possible as a new constraint, indeed.
+
+Michael Chourdakis:
+
+this opens door for this: to have FET match groups of students with groups of teachers without 1-1 matching
+
+Liviu Lalescu:
+but please let me get a perfectly correct idea
+
+Michael Chourdakis:
+for example i may like kid a being taught by teacher A or B, doesn't matter who
+this constraint would allow it.
+
+Liviu Lalescu:
+
+did you read anything about Block planning mode?
+
+Michael Chourdakis:
+
+no, not yet
+
+Liviu Lalescu:
+
+you could use BP mode if you only care about the assignment of students to teachers in a time slots.
+
+Michael Chourdakis:
+
+I will take a look
+ALSO
+a fet's plugin system would be very nice for me.
+VERY nice indeed
+
+Liviu Lalescu:
+
+no constraints about gaps, max hours per week...
+
+Liviu Lalescu:
+
+OK, I see.
+
+Michael Chourdakis:
+
+a DLL that you call my function to test activities
+if i return OK -> you use them
+IF i don't , you reject them
+this allows FET To be extended by a user
+
+Liviu Lalescu:
+
+sorry, I don't understand "DLL that...."
+
+Michael Chourdakis:
+
+you call my function from a dll
+passing activities to be tested
+that way I can extend fet
+
+Liviu Lalescu:
+
+tested for what?
+
+Michael Chourdakis:
+
+for inclusion or exclusion based on a custom rule
+that is up for the plugin to decide
+
+Liviu Lalescu:
+
+I understood!!! 🙂
+very interesting...
+
+Michael Chourdakis:
+
+yes
+i can easily tell you how to do that, it's very easy
+
+Liviu Lalescu:
+
+but you also need to send a subset from these activities as a rejection, and the rest of the activities from this set are OK.
+
+Michael Chourdakis:
+
+yea why not
+("State") sending
+
+805---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+Get rid of Qt classes in FET-CL.
+
+806---------------------------------------------------------
+From Michael Towers:
+
+The new snapshot seems to work. but I still have some suggestions that
+you may care to consider.
+
+I see that you have quite a lot of work (several files to change) to
+update to a new FET version! This seems like something that could be
+automated a bit ...
+
+One possibility: This might be horrible C++ (I'm not an expert!) but I
+thought, what about a header file with the stuff that changes? It needs
+to be shared by fet and fet-cl, so perhaps put it in the fetengine
+target. But it needs to be very visible, so I thought, put it in the
+"src" directory:
+
+src/VERSION.h:
+--------------
+
+#ifndef VERSION_H
+#define VERSION_H
+
+#define FET_VERSION_DEF "7.7.1.1"
+#define FET_COPYRIGHT "2002-2026"
+// + anything else useful
+
+#endif
+
+--------------
+
+Then we have in engine/CMakeLists.txt:
+
+qt_add_library(fetengine STATIC
+     ../VERSION.h
+
+   ...
+
+--------------
+
+Then, for example, in fetcl.cpp:
+
+#include "../VERSION.h"
+
+...
+
+//std::cout<<"FET version "<<qPrintable(FET_VERSION)<<std::endl;
+std::cout<<"FET version "<<FET_VERSION_DEF<<std::endl;
+
+...
+
+//std::cout<<"Copyright (C) 2002-2026 Liviu Lalescu, Volker
+Dirr"<<std::endl;
+std::cout<<"Copyright (C) "<<FET_COPYRIGHT<<" Liviu Lalescu, Volker
+Dirr"<<std::endl;
+
+--------------
+
+... and so on, wherever there is version-dependent stuff. You could use
+QLocale (e.g. QLocale::monthName) for some things.
+
+For the places in the documentation where there is something that needs
+to be updated with a new version you could use a little script. Indeed,
+the script could, for example, read an ini-file with the data and also
+write/update VERSION.h ...
+
+
+CMake can read the version from VERSION.h using a REGEX, but it needs
+CMake version 3.29 (the current version supplied with Qt is 3.30, so
+that's no problem).
+
+My latest version of the top-level CMakeLists.txt is attached:
+
+  - It uses CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT to set the
+default installation directory to fet-x.y.z in the build directory.
+
+  - It still has my separate lupdate and lrelease handling, which I like
+– it seems to work well.
+
+  - Regarding my splitting of lupdate and lrelease:  "5) I'll see your
+file, but in principle I prefer not to risk with the
+very important complete translation files..."
+
+My change doesn't touch the complete translation files, unless lupdate
+is used, and lupdate can only run on the full build, the same as your
+version.
+
+
+  - If NO_WINDOWS_CONSOLE is set, it doesn't include the translations, as
+I assume they would be unnecessary, perhaps even undesirable, in places
+where fet-clw is used. But I am not sure about this.
+
+
+I see you still have the plugins in the root directory in the latest
+test exe, so I have added an option for windeployqt to do this:
+
+     set(deploy_tool_options_arg
+         --plugindir .
+
+But this still generates the qt.conf file. I haven't found a way to stop
+this.
+
+
+  - qmake without .qm files?
+  Regarding "Unfortunately, Michael, we are still allowing and using
+QMake. I tried to remove the qm files from the sources archive, it
+worked with CMake, but QMake... I don't know if it is possible.":
+
+Where is the problem? If the .qm files are not there, you just need to
+run "lrelease *.ts" in the translations directory. Of course, you are
+welcome to ship .qm files with the source code, it's just that for me
+they are not really SOURCE.
+
+...
+
+About generating the qm files with QMake:
+
+You can put this in src/src.pro:
+
+LRELEASE_DIR=$$PWD/../translations
+CONFIG += lrelease
+
+I don't think there's a way to merge the Qt translations automatically.
+
+807---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu two modified screenshots: When adding a teacher not available times constraint (and in all types of teacher's constraints), and
+in students not available times, write Number of hours = ... .

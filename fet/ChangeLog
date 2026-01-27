@@ -1,3 +1,9 @@
+ 7.7.1
+	- Improved the CMake build files, by Michael Towers. Volker Dirr (assisted by Gemini and ChatGPT) also had some useful suggestions.
+	- The FET translations now include also the Qt translations (suggested by Michael Towers).
+	- Added more filters in the all time/space constraints dialogs: check boxes for miscellaneous, teachers, students, activities, subjects and tags,
+	and rooms constraints (suggested by GUEFFAZ REDA, who also reported some critical bugs, fixed before the official release).
+	Also, following a suggestion by GUEFFAZ REDA, the user selections for the check boxes are now saved/restored.
  7.7.0
 	- The sources and the GNU/Linux binaries are now archived with tar.xz (suggested by Michael Towers).
 	- It is now possible (and recommended) to build FET with CMake (minimum Qt version for CMake: 6.10) (suggested by Michael Towers, who also

@@ -504,7 +504,7 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 	}
 }
 
-void SomeQtTranslations()
+/*void SomeQtTranslations()
 {
 	//This function is never actually used
 	//It just contains some commonly used Qt strings, so that some Qt strings of FET are translated.
@@ -595,7 +595,7 @@ void SomeQtTranslations()
 	Q_UNUSED(s35);
 	QString s36=QCoreApplication::translate("QFontDialog", "Wr&iting System", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
 	Q_UNUSED(s36);
-}
+}*/
 
 /**
 FET-CL starts here

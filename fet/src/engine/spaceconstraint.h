@@ -144,6 +144,17 @@ const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET					=1066;
 const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET				=1067;
 const int CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET					=1068;
 
+///////
+
+const int IS_BASIC_SPACE_CONSTRAINT				=1000;
+const int IS_ACTIVITY_SPACE_CONSTRAINT			=1001;
+const int IS_TEACHER_SPACE_CONSTRAINT			=1002;
+const int IS_STUDENTS_SPACE_CONSTRAINT			=1003;
+const int IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT	=1004;
+const int IS_ROOM_SPACE_CONSTRAINT				=1005;
+
+///////
+
 bool spaceConstraintCanHaveAnyWeight(int type);
 
 /**
@@ -252,6 +263,8 @@ public:
 	*/
 	virtual bool isRelatedToRoom(const QString& r)=0;
 
+	virtual int categoryOfSpaceConstraint()=0;
+
 	virtual bool hasWrongDayOrHour(Rules& r)=0;
 	virtual bool canRepairWrongDayOrHour(Rules& r)=0;
 	virtual bool repairWrongDayOrHour(Rules& r)=0;
@@ -292,6 +305,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -343,6 +358,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -398,6 +415,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -465,6 +484,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -520,6 +541,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -566,6 +589,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -616,6 +641,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -662,6 +689,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -711,6 +740,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -763,6 +794,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -812,6 +845,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -866,6 +901,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -918,6 +955,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -966,6 +1005,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1012,6 +1053,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1057,6 +1100,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1096,6 +1141,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1144,6 +1191,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1185,6 +1234,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1233,6 +1284,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1274,6 +1327,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1322,6 +1377,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1363,6 +1420,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1411,6 +1470,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1452,6 +1513,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1497,6 +1560,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1536,6 +1601,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1581,6 +1648,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1620,6 +1689,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1664,6 +1735,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1712,6 +1785,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1753,6 +1828,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1801,6 +1878,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1842,6 +1921,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1890,6 +1971,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -1931,6 +2014,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -1979,6 +2064,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2021,6 +2108,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2060,6 +2149,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2105,6 +2196,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2144,6 +2237,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2189,6 +2284,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2228,6 +2325,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2274,6 +2373,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2313,6 +2414,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2358,6 +2461,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2397,6 +2502,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2442,6 +2549,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2481,6 +2590,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2526,6 +2637,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2565,6 +2678,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2610,6 +2725,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2649,6 +2766,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2694,6 +2813,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2733,6 +2854,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2784,6 +2907,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2832,6 +2957,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2871,6 +2998,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -2916,6 +3045,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -2960,6 +3091,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -3000,6 +3133,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -3039,6 +3174,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -3084,6 +3221,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -3128,6 +3267,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -3167,6 +3308,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
@@ -3222,6 +3365,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -3276,6 +3421,8 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	int categoryOfSpaceConstraint();
+
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
@@ -3329,6 +3476,8 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, const QString& s);
 
 	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);

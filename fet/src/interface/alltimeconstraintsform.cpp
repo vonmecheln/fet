@@ -73,14 +73,61 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
-	filterCheckBox->setChecked(false);
-	sortedCheckBox->setChecked(false);
+	/*miscellaneousCheckBox->setChecked(true);
+	teachersCheckBox->setChecked(true);
+	studentsCheckBox->setChecked(true);
+	activitiesCheckBox->setChecked(true);*/
+
+	/*filterCheckBox->setChecked(false);
+	sortedCheckBox->setChecked(false);*/
 	
 	currentConstraintTextEdit->setReadOnly(true);
 	
 	modifyConstraintPushButton->setDefault(true);
 	
 	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+	
+	QString settingsName="AllTimeConstraintsAdvancedFilterForm";
+	
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+	
+	descrDetDescr.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+	
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+	
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
+	
+	/*
+	useFilter=false;
+	
+	assert(filterCheckBox->isChecked()==false);
+	assert(sortedCheckBox->isChecked()==false);*/
+	useFilter=settings.value(settingsName+"/list-filtered", "false").toBool();
+	sortedCheckBox->setChecked(settings.value(settingsName+"/list-sorted", "false").toBool());
+	filterCheckBox->setChecked(useFilter);
+
+	miscellaneousCheckBox->setChecked(settings.value(settingsName+"/list-miscellaneous-constraints", "true").toBool());
+	teachersCheckBox->setChecked(settings.value(settingsName+"/list-teachers-constraints", "true").toBool());
+	studentsCheckBox->setChecked(settings.value(settingsName+"/list-students-constraints", "true").toBool());
+	activitiesCheckBox->setChecked(settings.value(settingsName+"/list-activities-constraints", "true").toBool());
 
 	connect(constraintsListWidget, &QListWidget::currentRowChanged, this, &AllTimeConstraintsForm::constraintChanged);
 
@@ -93,6 +140,11 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::modifyConstraint);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &AllTimeConstraintsForm::modifyConstraint);
 	connect(filterCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::filter);
+
+	connect(miscellaneousCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::filterChanged);
+	connect(teachersCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::filterChanged);
+	connect(studentsCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::filterChanged);
+	connect(activitiesCheckBox, &QCheckBox::toggled, this, &AllTimeConstraintsForm::filterChanged);
 
 	connect(moveTimeConstraintUpPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::moveTimeConstraintUp);
 	connect(moveTimeConstraintDownPushButton, &QPushButton::clicked, this, &AllTimeConstraintsForm::moveTimeConstraintDown);
@@ -157,39 +209,6 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 		//if(SHOW_TOOL_TIPS)
 		//	weightsPushButton->setToolTip(QString("W"));
 	}
-
-	centerWidgetOnScreen(this);
-	restoreFETDialogGeometry(this);
-	//restore splitter state
-	QSettings settings(COMPANY, PROGRAM);
-	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
-		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
-	
-	QString settingsName="AllTimeConstraintsAdvancedFilterForm";
-	
-	all=settings.value(settingsName+"/all-conditions", "true").toBool();
-	
-	descrDetDescr.clear();
-	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
-	for(int i=0; i<n; i++)
-		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
-	
-	contains.clear();
-	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
-	for(int i=0; i<n; i++)
-		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
-	
-	text.clear();
-	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
-	for(int i=0; i<n; i++)
-		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
-
-	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
-	
-	useFilter=false;
-	
-	assert(filterCheckBox->isChecked()==false);
-	assert(sortedCheckBox->isChecked()==false);
 	
 	filterChanged();
 }
@@ -221,10 +240,49 @@ AllTimeConstraintsForm::~AllTimeConstraintsForm()
 		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
 	
 	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+
+	settings.setValue(settingsName+"/list-filtered", useFilter);
+	settings.setValue(settingsName+"/list-sorted", sortedCheckBox->isChecked());
+
+	settings.setValue(settingsName+"/list-miscellaneous-constraints", miscellaneousCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-teachers-constraints", teachersCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-students-constraints", studentsCheckBox->isChecked());
+	settings.setValue(settingsName+"/list-activities-constraints", activitiesCheckBox->isChecked());
 }
 
 bool AllTimeConstraintsForm::filterOk(TimeConstraint* ctr)
 {
+	switch(ctr->categoryOfTimeConstraint()){
+		case IS_BASIC_TIME_CONSTRAINT:
+			if(!miscellaneousCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_BREAK_TIME_CONSTRAINT:
+			if(!miscellaneousCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_ACTIVITY_TIME_CONSTRAINT:
+			if(!activitiesCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_TEACHER_TIME_CONSTRAINT:
+			if(!teachersCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_STUDENTS_TIME_CONSTRAINT:
+			if(!studentsCheckBox->isChecked())
+				return false;
+			break;
+
+		default:
+			assert(0);
+			break;
+	}
+
 	if(!useFilter)
 		return true;
 
@@ -306,10 +364,10 @@ bool AllTimeConstraintsForm::filterOk(TimeConstraint* ctr)
 
 void AllTimeConstraintsForm::moveTimeConstraintUp()
 {
-	if(filterCheckBox->isChecked()){
+	/*if(filterCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a time constraint up, the 'Filter' check box must not be checked."));
 		return;
-	}
+	}*/
 	if(sortedCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a time constraint up, the 'Sorted' check box must not be checked."));
 		return;
@@ -326,11 +384,14 @@ void AllTimeConstraintsForm::moveTimeConstraintUp()
 	QString s1=constraintsListWidget->item(i)->text();
 	QString s2=constraintsListWidget->item(i-1)->text();
 	
-	assert(gt.rules.timeConstraintsList.count()==visibleTimeConstraintsList.count());
+	/*assert(gt.rules.timeConstraintsList.count()==visibleTimeConstraintsList.count());
 	TimeConstraint* tc1=gt.rules.timeConstraintsList.at(i);
 	assert(tc1==visibleTimeConstraintsList.at(i));
 	TimeConstraint* tc2=gt.rules.timeConstraintsList.at(i-1);
-	assert(tc2==visibleTimeConstraintsList.at(i-1));
+	assert(tc2==visibleTimeConstraintsList.at(i-1));*/
+
+	TimeConstraint* tc1=visibleTimeConstraintsList.at(i);
+	TimeConstraint* tc2=visibleTimeConstraintsList.at(i-1);
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
@@ -338,8 +399,27 @@ void AllTimeConstraintsForm::moveTimeConstraintUp()
 	constraintsListWidget->item(i)->setText(s2);
 	constraintsListWidget->item(i-1)->setText(s1);
 	
-	gt.rules.timeConstraintsList[i]=tc2;
-	gt.rules.timeConstraintsList[i-1]=tc1;
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.timeConstraintsList.count(); q++){
+		if(gt.rules.timeConstraintsList.at(q)==tc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.timeConstraintsList.at(q)==tc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k>j);
+	//gt.rules.timeConstraintsList[i]=tc2;
+	//gt.rules.timeConstraintsList[i-1]=tc1;
+	//std::rotate(&gt.rules.timeConstraintsList[j], &gt.rules.timeConstraintsList[k], &gt.rules.timeConstraintsList[k+1]); -> might be unsafe/incorrect
+	for(int q=k; q>j; q--)
+		gt.rules.timeConstraintsList[q]=gt.rules.timeConstraintsList[q-1];
+	gt.rules.timeConstraintsList[j]=tc1;
 	
 	visibleTimeConstraintsList[i]=tc2;
 	visibleTimeConstraintsList[i-1]=tc1;
@@ -370,10 +450,10 @@ void AllTimeConstraintsForm::moveTimeConstraintUp()
 
 void AllTimeConstraintsForm::moveTimeConstraintDown()
 {
-	if(filterCheckBox->isChecked()){
+	/*if(filterCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a time constraint down, the 'Filter' check box must not be checked."));
 		return;
-	}
+	}*/
 	if(sortedCheckBox->isChecked()){
 		QMessageBox::information(this, tr("FET information"), tr("To move a time constraint down, the 'Sorted' check box must not be checked."));
 		return;
@@ -390,11 +470,14 @@ void AllTimeConstraintsForm::moveTimeConstraintDown()
 	QString s1=constraintsListWidget->item(i)->text();
 	QString s2=constraintsListWidget->item(i+1)->text();
 	
-	assert(gt.rules.timeConstraintsList.count()==visibleTimeConstraintsList.count());
+	/*assert(gt.rules.timeConstraintsList.count()==visibleTimeConstraintsList.count());
 	TimeConstraint* tc1=gt.rules.timeConstraintsList.at(i);
 	assert(tc1==visibleTimeConstraintsList.at(i));
 	TimeConstraint* tc2=gt.rules.timeConstraintsList.at(i+1);
-	assert(tc2==visibleTimeConstraintsList.at(i+1));
+	assert(tc2==visibleTimeConstraintsList.at(i+1));*/
+
+	TimeConstraint* tc1=visibleTimeConstraintsList.at(i);
+	TimeConstraint* tc2=visibleTimeConstraintsList.at(i+1);
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
@@ -402,8 +485,27 @@ void AllTimeConstraintsForm::moveTimeConstraintDown()
 	constraintsListWidget->item(i)->setText(s2);
 	constraintsListWidget->item(i+1)->setText(s1);
 	
-	gt.rules.timeConstraintsList[i]=tc2;
-	gt.rules.timeConstraintsList[i+1]=tc1;
+	int j=-1;
+	int k=-1;
+	for(int q=0; q<gt.rules.timeConstraintsList.count(); q++){
+		if(gt.rules.timeConstraintsList.at(q)==tc2){
+			assert(j==-1);
+			j=q;
+		}
+		if(gt.rules.timeConstraintsList.at(q)==tc1){
+			assert(k==-1);
+			k=q;
+		}
+	}
+	assert(k>=0);
+	assert(j>=0);
+	assert(k<j);
+	//gt.rules.timeConstraintsList[i]=tc2;
+	//gt.rules.timeConstraintsList[i+1]=tc1;
+	//std::rotate(&gt.rules.timeConstraintsList[k], &gt.rules.timeConstraintsList[k+1], &gt.rules.timeConstraintsList[j+1]); -> might be unsafe/incorrect
+	for(int q=k; q<j; q++)
+		gt.rules.timeConstraintsList[q]=gt.rules.timeConstraintsList[q+1];
+	gt.rules.timeConstraintsList[j]=tc1;
 	
 	visibleTimeConstraintsList[i]=tc2;
 	visibleTimeConstraintsList[i+1]=tc1;

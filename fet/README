@@ -1,4 +1,4 @@
-This is FET version 7.7.0
+This is FET version 7.7.1
 
 
 Program description:
@@ -14,11 +14,11 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.3, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.5, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.12.0, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
-	Thunar Bulk Rename 4.20.4, Qt 6.10.1, QMake 3.1, CMake 4.1.3, Ninja 1.13.0, Qt Creator 18.0.1, GCC 15.2.1, Clang 21.1.6, GNU Make 4.4.1,
-	GDB 16.3, Valgrind 3.25.1, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.2,
-	GIMP 3.0.6, ImageMagick 7.1.2-12, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.1,
+	Thunar Bulk Rename 4.20.4, Qt 6.10.1, QMake 3.1, CMake 4.1.3, Ninja 1.13.0, Qt Creator 18.0.1, GCC 15.2.1, Clang 21.1.7, GNU Make 4.4.1,
+	GDB 16.3, Valgrind 3.26.0, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.2,
+	GIMP 3.0.6, ImageMagick 7.1.2-12, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.2,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 11 operating system,
@@ -139,6 +139,10 @@ Compiling FET:
 	and also if you did not use FET on this machine or if you remove the settings file/registry entry for FET (otherwise
 	FET will retain the language which was already saved in its settings).
 
+	Note: You can define also the options NO_WINDOWS_CONSOLE (so that fet-cl.exe will not open a console on Windows),
+	and COMMAND_LINE_ONLY, to only compile fet-cl, without fet. These options can be defined as above (qt-cmake -B build
+	-DNO_WINDOWS_CONSOLE=ON and qt-cmake -B build -DCOMMAND_LINE_ONLY=ON); you can define multiple options together, of course.
+
 	2. With QMake (old method, not recommended):
 
 	You will need a C++17 compliant C++ compiler to compile FET.
@@ -248,8 +252,9 @@ Installing FET:
 
 	1. With CMake:
 
-	Run "cmake --install build --prefix build". Then you might need to run windeployqt (on Windows) or macdeployqt (on macOS)
-	to make a universally runnable program.
+	Run "cmake --install build [--prefix PREFIX]", [--prefix PREFIX] being optional, and PREFIX is of your choice (might work
+	with relative paths, but the best is to give an absolute path). Then you might need to run windeployqt (on Windows) or
+	macdeployqt (on macOS) to make a universally runnable program.
 	Note: "build" can be changed to a name of your choice; the last "build" can be changed to another name.
 
 	2. With QMake (old method):

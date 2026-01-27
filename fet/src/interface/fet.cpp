@@ -151,7 +151,7 @@ EngineProgressDialog::EngineProgressDialog(QWidget* parent)
 EngineProgressDialog::~EngineProgressDialog()
 {
 	assert(qpd!=nullptr);
-	delete qpd;
+	delete qpd; //Needed, even if qpd has a parent, because parent might be nullptr in the constructor of EngineProgressDialog.
 }
 
 void EngineProgressDialog::setWindowTitle(const QString& title)
@@ -2161,7 +2161,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 		}
 }
 
-void SomeQtTranslations()
+/*void SomeQtTranslations()
 {
 	//This function is never actually used
 	//It just contains some commonly used Qt strings, so that some Qt strings of FET are translated.
@@ -2252,7 +2252,7 @@ void SomeQtTranslations()
 	Q_UNUSED(s35);
 	QString s36=QCoreApplication::translate("QFontDialog", "Wr&iting System", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
 	Q_UNUSED(s36);
-}
+}*/
 
 /**
 FET starts here
