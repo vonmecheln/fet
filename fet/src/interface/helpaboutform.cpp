@@ -83,7 +83,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2026").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "January")).arg("2026");
+	 .arg(QCoreApplication::translate("MonthsNames", "February")).arg("2026");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3.");
 	about+=QString("<br /><br />");
@@ -1547,6 +1547,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("corra");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Eleni Damaskou");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("kilindor");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

@@ -1,3 +1,8 @@
+ 7.7.4
+	- Updated to Qt 6.10.2.
+	- Bug fix: the human-readable text file should not have been shown if the user did not create or load a file (reported by GUEFFAZ REDA).
+	- Improved the colors handling in the human-readable data (by g.theodoroy).
+	- Minor improvements.
  7.7.3
 	- Compilation bug fixed: it was impossible to compile FET with the option USE_SYSTEM_LOCALE enabled (reported by g.theodoroy).
  7.7.2

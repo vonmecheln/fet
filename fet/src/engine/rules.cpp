@@ -5604,14 +5604,14 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 #else
 	QDataStream dsd(&descrBA, QIODevice::WriteOnly);
 #endif
-	if(description.length()<=50000){
+	if(description.length()<=100000){
 		dsd<<description;
 	}
 	else{
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
-		QString shortDescr=description.first(50000);
+		QString shortDescr=description.first(100000);
 #else
-		QString shortDescr=description.left(50000);
+		QString shortDescr=description.left(100000);
 #endif
 		shortDescr+=QString("<br />...");
 		dsd<<shortDescr;

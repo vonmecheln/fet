@@ -6628,7 +6628,7 @@ QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList
 	s+="<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n";
 	for(int rh=0; rh<(r.mode!=MORNINGS_AFTERNOONS?r.nHoursPerDay:r.nRealHoursPerDay); rh++){
 		int h=(r.mode!=MORNINGS_AFTERNOONS?rh:rh%r.nHoursPerDay);
-		s+="<tr>";
+		s+="<tr>\n";
 		for(int rd=0; rd<(r.mode!=MORNINGS_AFTERNOONS?r.nDaysPerWeek:r.nRealDaysPerWeek); rd++){
 			int d;
 			if(!LANGUAGE_STYLE_RIGHT_TO_LEFT)
@@ -6637,33 +6637,37 @@ QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList
 				d=(r.mode!=MORNINGS_AFTERNOONS?(r.nDaysPerWeek-1-rd):2*(r.nRealDaysPerWeek-1-rd)+(rh/r.nHoursPerDay));
 			if((direct && selectedTimesSet.contains(d+h*r.nDaysPerWeek)) || (!direct && !selectedTimesSet.contains(d+h*r.nDaysPerWeek))){
 				s+="<td width=\"20\" align=\"center\"";
-/*				if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1){
+				/*if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1){
 					s+=" border-bottom-width=\"2px\"";
 				}*/
 
 				if(colors){
 					if(notAvailable){
-						s+=" bgcolor=\"darkred\"";
+						//s+=" bgcolor=\"darkred\"";
+						s+=" style=\"background-color: darkred; color: lightgray;\"";
 					}
 					else{
-						s+=" bgcolor=\"darkcyan\"";
+						//s+=" bgcolor=\"darkcyan\"";
+						s+=" style=\"background-color: darkcyan; color: lightgray;\"";
 					}
 				}
 				s+=">";
 				s+=notAvailable?"X":"✓";
-				s+="</td>";
+				s+="</td>\n";
 			}
 			else{
 				s+="<td width=\"20\" align=\"center\"";
 				if(colors){
 					if(notAvailable){
-						s+=" bgcolor=\"darkgreen\"";
+						//s+=" bgcolor=\"darkgreen\"";
+						s+=" style=\"background-color: darkgreen;\"";
 					}
 					else{
-						s+=" bgcolor=\"darkgoldenrod\"";
+						//s+=" bgcolor=\"darkgoldenrod\"";
+						s+=" style=\"background-color: darkgoldenrod;\"";
 					}
 				}
-				s+=">&nbsp;</td>";
+				s+=">&nbsp;</td>\n";
 			}
 		}
 		s+="</tr>\n";
@@ -6703,7 +6707,7 @@ QString listsOfListsOfDaysAndHoursToTableOfNumbers(Rules& r, const QList<QList<i
 	s+="<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n";
 	for(int rh=0; rh<(r.mode!=MORNINGS_AFTERNOONS?r.nHoursPerDay:r.nRealHoursPerDay); rh++){
 		int h=(r.mode!=MORNINGS_AFTERNOONS?rh:rh%r.nHoursPerDay);
-		s+="<tr>";
+		s+="<tr>\n";
 		for(int rd=0; rd<(r.mode!=MORNINGS_AFTERNOONS?r.nDaysPerWeek:r.nRealDaysPerWeek); rd++){
 			int d;
 			if(!LANGUAGE_STYLE_RIGHT_TO_LEFT)
@@ -6714,90 +6718,93 @@ QString listsOfListsOfDaysAndHoursToTableOfNumbers(Rules& r, const QList<QList<i
 				s+="<td width=\"20\" align=\"center\"";
 				if(colors){
 					QString bgColor;
-					//QString fgColor;
+					QString fgColor;
 					
 					switch(a[d][h]){
 						case 1:
 							bgColor="darkblue";
-							//fgColor="white";
+							fgColor="white";
 
 							break;
 							
 						case 2:
 							bgColor="darkorange";
-							//fgColor="black";
+							fgColor="black";
 
 							break;
 							
 						case 3:
 							bgColor="darkcyan";
-							//fgColor="white";
+							fgColor="white";
 
 							break;
 							
 						case 4:
 							bgColor="darkmagenta";
-							//fgColor="white";
+							fgColor="white";
 
 							break;
 							
 						case 5:
 							bgColor="darksalmon";
-							//fgColor="black";
+							fgColor="black";
 
 							break;
 							
 						case 6:
 							bgColor="chartreuse";
-							//fgColor="black";
+							fgColor="black";
 
 							break;
 							
 						case 7:
 							bgColor="darkgrey";
-							//fgColor="black";
+							fgColor="black";
 
 							break;
 							
 						case 8:
 							bgColor="gold";
-							//fgColor="black";
+							fgColor="black";
 
 							break;
 							
 						case 9:
-							bgColor="#b25ec7"; //rgb(178, 94, 199)
-							//fgColor="black";
+							//bgColor="#b25ec7"; //rgb(178, 94, 199)
+							bgColor="rgb(178, 94, 199)";
+							fgColor="black";
 
 							break;
 							
 						case 10:
-							bgColor="#935f35"; //rgb(147, 95, 53)
-							//fgColor="white";
+							//bgColor="#935f35"; //rgb(147, 95, 53)
+							bgColor="rgb(147, 95, 53)";
+							fgColor="white";
 
 							break;
 							
 						default:
 							int r, g, b;
 							TimetableExport::stringToColor(QString::number(a[d][h]), r, g, b);
-							//double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
-							//bgColor="rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+")";
-							bgColor="#"+QString::number(r, 16)+QString::number(g, 16)+QString::number(b, 16);
-							/*if(brightness<127.5)
+							double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+							bgColor="rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+")";
+							//bgColor="#"+QString::number(r, 16)+QString::number(g, 16)+QString::number(b, 16);
+							if(brightness<127.5)
 								fgColor="white";
 							else
-								fgColor="black";*/
+								fgColor="black";
 
 							break;
 					}
-					s+=" bgcolor=\""+bgColor+"\"";// "fgcolor=\""+fgColor+"\""*/;
+					//s+=" bgcolor=\""+bgColor+"\"";// "fgcolor=\""+fgColor+"\""*/;
+					s+=" style=\"background-color: "+bgColor+"; color: "+fgColor+";\"";
 				}
 				s+=">";
 				s+=QString::number(a[d][h]);
-				s+="</td>";
+				s+="</td>\n";
 			}
 			else{
-				s+="<td width=\"20\" align=\"center\">&nbsp;</td>";
+				s+="<td width=\"20\" align=\"center\">&nbsp;</td>\n";
 			}
 		}
 		s+="</tr>\n";

@@ -168,7 +168,7 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 		
 		conflictsWeightList+=cl;
 		conflictsDescriptionList+=sl;
-	}	
+	}
 	for(int i=0; i<r.nInternalSpaceConstraints; i++){
 		QList<QString> sl;
 		QList<double> cl;

@@ -12210,6 +12210,16 @@ I think the button should indicate that the user can modify a whole selection.
 
 Vangelis Karafillidis:
 
+When the user selects many constraints, most likely they need to modify them all.
+
+Liviu Lalescu:
+
+I mean he might not know he can modify all selection, if it is not written on the button
+
+Vangelis Karafillidis:
+
+When the user selects one single constraint, they need to modify this one single constraint.
+
 801---------------------------------------------------------
 From Michael Chourdakis (on Facebook):
 
@@ -12708,3 +12718,63 @@ modify select Max/Min Days between activities
 
 Liviu Lalescu: GUEFFAZ REDA provided a modified screenshot, with modifying multiple constraints of type max days between activities,
 like the min variant (and also don't forget max half days between activities).
+
+818---------------------------------------------------------
+From kilindor (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6737.msg37353#msg37353
+
+It is about morning-evening mode.
+
+Is there a constraint preventing groups from studying only in the last two hours of the day?
+For instance, studying is from 9 to 1 PM, then from 2 to 6 PM.
+Some groups in some days only study from 4 to 6 PM, with the rest of the day free.
+
+I want to prevent this.
+
+I don't want to use "min hours 3" constraint because there is no problem for groups to study only 2 hours at day, BUT not the last two hours.
+
+Liviu Lalescu:
+
+Unfortunately, this is more complicated. We already have this in the TODO, I think, and it is a kind of conditional constraint: if the students
+set has an activity in the last slot, it must have at least 3 activities on that real day. I'll also add your suggestion in the TODO.
+
+819---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot: the CSV import should allow only the specific file name, so for example the user
+selects to import subjects only from files with the name containing the word "subject".
+
+820---------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+About my "optimization" idea (we have already discussed it in detail lately), what do you think?
+
+Liviu Lalescu:
+
+You mean to allow each activity an interval, or to say that n out of m constraints should be respected?
+
+Vangelis Karafillidis:
+
+I think BOTH.
+
+So, if the user could select BOTH the number of the broken locked in time activities + define an acceptable time window (an interval of RELATIVE hours)
+as broken constraint, this would be the best, and could be considered as "optimization".
+
+For example, if the user could select 50 activities of the generated timetable, and allow the locked in time constraints for these activities be broken
+for ANY 40 of these activities, and at the same time define as NOT broken the constraints when their respective activities are placed in the relative
+time window -1 hour to +2 hours relative to the initial time slot, then this would be some kind of "optimization".
+
+The user (most of the time) does not care so much about the weight percentage; this has to do with the way the algorithm works, but they do care
+about controlling the AMOUNT of modification of the timetable and AMOUNT = number of activities that are placed in different time slots + difference
+should be counted not literally, but with allowing some kind of flexibility.
+
+I was thinking about this "double" control, since this is what the user needs to control; so, if they can control both from the same dialog, they could
+achieve some kind of "optimization".
+
+821---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot: the timetable view students days horizontal dialog has a check box "Weight (percentage)", and the table
+cells contain the weights (100%, 99%, 99.75%). GUEFFAZ REDA told Liviu Lalescu that we would write the weights of the activities and rooms with
+small fonts in each cell.

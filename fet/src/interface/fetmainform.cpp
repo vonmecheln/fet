@@ -16257,6 +16257,12 @@ void FetMainForm::shortcutSaveAsPushButton_clicked()
 
 void FetMainForm::humanReadableText()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	HumanReadableDataForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();

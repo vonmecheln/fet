@@ -897,7 +897,7 @@ void tableViewSetHighlightHeader(QTableView* tableWidget)
 	//and in the Qt documentation.
 	QString bc=qApp->palette().highlight().color().name();
 	QString fc=qApp->palette().highlightedText().color().name();
-	tableWidget->setStyleSheet(QString("QHeaderView::section:checked { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
+	tableWidget->setStyleSheet(QString("QHeaderView::section:checked { background-color: ")+bc+QString("; color: ")+fc+QString("; }"));
 	//this->setStyleSheet(QString("QHeaderView::section:hover { background-color: ")+bc+QString("; color: ")+fc+QString(" }"));
 }
 
