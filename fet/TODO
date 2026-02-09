@@ -12778,3 +12778,51 @@ From GUEFFAZ REDA (on Facebook):
 He sent Liviu Lalescu a modified screenshot: the timetable view students days horizontal dialog has a check box "Weight (percentage)", and the table
 cells contain the weights (100%, 99%, 99.75%). GUEFFAZ REDA told Liviu Lalescu that we would write the weights of the activities and rooms with
 small fonts in each cell.
+
+822---------------------------------------------------------
+From Željko Vrabec (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6746.0
+
+It would be really nice if it's possible to open children dialogs simultaneously. Sometimes you have to adjust some data (let's say teachers not
+available time) by watching some other data (let's say students not available time, or activity planing).
+
+Željko Vrabec also attached a screenshot, showing the FET main window having the teachers' not available times dialog opened, and saying that
+he cannot open another dialog.
+
+823---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot: the 'Timetable' tab has instead of 'Conflicts' three items: 'Conflicts', 'View initial order of placing
+the activities', and 'View difficult activities'.
+
+824---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6752.0
+
+I have realized that depending on the names of subjects and teachers more so those sharing classes eg bio/cre/comp/hist/geo/hsc and teachers as
+23,5,26,9,41,10,43 if you more of this in a class, the timetable may appear to occupy like half a page of A4 size paper hence becoming a challenge
+for easy visibility. How can one handle this such that no matter what, the timetable fits the larger portion of the A4 size?
+
+Liviu Lalescu: Cyrus Ireri would prefer that very long combined names would be split across more lines, automatically.
+
+825---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot: it is important that the students' days horizontal timetable should show the long name or code of
+the teacher, as in print.
+
+(Note by Liviu Lalescu: please consider that the long names and codes might be empty or duplicate.)
+
+826---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot: the students days horizontal timetable to show more details about the number of activities and durations
+for the students set: instead of "No: 27   Dur: 33" show "No: 27/27   Dur: 33/33".
+
+827---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot, adding the buttons: lock/unlock all activities of a specified students set/teacher. He said he knew we could
+do this with filtering, but using drop-down lists is better.

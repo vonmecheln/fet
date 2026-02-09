@@ -6635,6 +6635,8 @@ QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList
 				d=(r.mode!=MORNINGS_AFTERNOONS?rd:2*rd+(rh/r.nHoursPerDay));
 			else
 				d=(r.mode!=MORNINGS_AFTERNOONS?(r.nDaysPerWeek-1-rd):2*(r.nRealDaysPerWeek-1-rd)+(rh/r.nHoursPerDay));
+
+			//The 'style='background-color: ...; color: ...;'' code was suggested by g.theodoroy.
 			if((direct && selectedTimesSet.contains(d+h*r.nDaysPerWeek)) || (!direct && !selectedTimesSet.contains(d+h*r.nDaysPerWeek))){
 				s+="<td width=\"20\" align=\"center\"";
 				/*if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1){
@@ -6671,10 +6673,10 @@ QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList
 			}
 		}
 		s+="</tr>\n";
-		if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1) //by g.theodoroy
-			s+="</table><table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-top:5;\">";
+		if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1) //By g.theodoroy.
+			s+="</table>\n<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-top:5;\">";
 	}
-	s+="</table>";
+	s+="</table>\n";
 	
 	return s;
 }
@@ -6797,6 +6799,7 @@ QString listsOfListsOfDaysAndHoursToTableOfNumbers(Rules& r, const QList<QList<i
 							break;
 					}
 					//s+=" bgcolor=\""+bgColor+"\"";// "fgcolor=\""+fgColor+"\""*/;
+					//The 'style='background-color: ...; color: ...;'' code was suggested by g.theodoroy.
 					s+=" style=\"background-color: "+bgColor+"; color: "+fgColor+";\"";
 				}
 				s+=">";
@@ -6808,10 +6811,10 @@ QString listsOfListsOfDaysAndHoursToTableOfNumbers(Rules& r, const QList<QList<i
 			}
 		}
 		s+="</tr>\n";
-		if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1) //by g.theodoroy
-			s+="</table><table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-top:5;\">";
+		if(r.mode==MORNINGS_AFTERNOONS && rh==r.nHoursPerDay-1) //By g.theodoroy.
+			s+="</table>\n<table align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-top:5;\">";
 	}
-	s+="</table>";
+	s+="</table>\n";
 	
 	return s;
 }

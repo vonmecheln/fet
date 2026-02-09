@@ -1,3 +1,10 @@
+ 7.7.5
+	- The command-line version now allows completely configuring the data to be printed in the HTML timetables, as in the GUI version
+	(suggested by hold_find).
+	- When choosing the data to print in the timetables, it was added a simple option to copy (propagate) all the settings from the
+	current tab to all the tabs from 4 to 21 (suggested by GUEFFAZ REDA).
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Minor improvements.
  7.7.4
 	- Updated to Qt 6.10.2.
 	- Bug fix: the human-readable text file should not have been shown if the user did not create or load a file (reported by GUEFFAZ REDA).

@@ -24,9 +24,6 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 {
 	setupUi(this);
 	
-	tabWidget->setUsesScrollButtons(true);
-	tabWidget->setCurrentIndex(0);
-	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
@@ -35,6 +32,13 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	connect(okPushButton, &QPushButton::clicked, this, &SettingsDataToPrintInTimetablesForm::wasAccepted);
 	connect(cancelPushButton, &QPushButton::clicked, this, &SettingsDataToPrintInTimetablesForm::wasCanceled);
 	
+	connect(applyToAll421PushButton, &QPushButton::clicked, this, &SettingsDataToPrintInTimetablesForm::applyToAll421);
+	connect(tabWidget, &QTabWidget::currentChanged, this, &SettingsDataToPrintInTimetablesForm::tabIndexChanged);
+	
+	tabWidget->setUsesScrollButtons(true);
+	tabWidget->setCurrentIndex(0);
+	tabIndexChanged(tabWidget->currentIndex());
+
 	subjectsCheckBox->setChecked(TIMETABLE_HTML_PRINT_SUBJECTS);
 	activityTagsCheckBox->setChecked(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	teachersCheckBox->setChecked(TIMETABLE_HTML_PRINT_TEACHERS);
@@ -1325,4 +1329,1312 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 void SettingsDataToPrintInTimetablesForm::wasCanceled()
 {
 	this->reject();
+}
+
+void SettingsDataToPrintInTimetablesForm::applyToAll421()
+{
+	assert(tabWidget->currentIndex()>=3 && tabWidget->currentIndex()<=20);
+	
+	bool daysNames;
+	bool daysLongNames;
+
+	bool hoursNames;
+	bool hoursLongNames;
+	
+	bool subjectsNames;
+	bool subjectsLongNames;
+	bool subjectsCodes;
+	
+	bool activityTagsNames;
+	bool activityTagsLongNames;
+	bool activityTagsCodes;
+	
+	bool teachersNames;
+	bool teachersLongNames;
+	bool teachersCodes;
+	
+	bool studentsNames;
+	bool studentsLongNames;
+	bool studentsCodes;
+
+	bool roomsNames;
+	bool roomsLongNames;
+	bool roomsCodes;
+	
+	bool subjectsLegend;
+	bool activityTagsLegend;
+	bool teachersLegend;
+	bool studentsLegend;
+	bool roomsLegend;
+	bool legendCodesFirst;
+	
+	switch(tabWidget->currentIndex()){
+		case 3:
+			daysNames=subgroupsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=subgroupsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=subgroupsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=subgroupsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=subgroupsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=subgroupsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=subgroupsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=subgroupsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=subgroupsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=subgroupsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=subgroupsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=subgroupsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=subgroupsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=subgroupsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=subgroupsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=subgroupsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=subgroupsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=subgroupsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=subgroupsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=subgroupsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=subgroupsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=subgroupsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=subgroupsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=subgroupsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=subgroupsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 4:
+			daysNames=subgroupsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=subgroupsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=subgroupsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=subgroupsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=subgroupsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=subgroupsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=subgroupsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=subgroupsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=subgroupsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=subgroupsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=subgroupsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=subgroupsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=subgroupsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=subgroupsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=subgroupsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=subgroupsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=subgroupsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=subgroupsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=subgroupsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=subgroupsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=subgroupsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=subgroupsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=subgroupsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=subgroupsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=subgroupsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 5:
+			daysNames=groupsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=groupsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=groupsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=groupsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=groupsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=groupsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=groupsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=groupsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=groupsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=groupsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=groupsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=groupsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=groupsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=groupsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=groupsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=groupsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=groupsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=groupsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=groupsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=groupsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=groupsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=groupsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=groupsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=groupsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=groupsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 6:
+			daysNames=groupsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=groupsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=groupsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=groupsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=groupsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=groupsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=groupsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=groupsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=groupsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=groupsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=groupsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=groupsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=groupsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=groupsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=groupsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=groupsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=groupsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=groupsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=groupsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=groupsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=groupsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=groupsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=groupsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=groupsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=groupsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 7:
+			daysNames=yearsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=yearsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=yearsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=yearsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=yearsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=yearsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=yearsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=yearsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=yearsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=yearsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=yearsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=yearsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=yearsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=yearsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=yearsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=yearsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=yearsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=yearsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=yearsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=yearsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=yearsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=yearsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=yearsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=yearsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=yearsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 8:
+			daysNames=yearsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=yearsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=yearsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=yearsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=yearsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=yearsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=yearsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=yearsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=yearsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=yearsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=yearsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=yearsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=yearsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=yearsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=yearsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=yearsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=yearsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=yearsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=yearsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=yearsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=yearsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=yearsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=yearsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=yearsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=yearsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 9:
+			daysNames=teachersDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=teachersDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=teachersDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=teachersDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=teachersDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=teachersDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=teachersDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=teachersDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=teachersDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=teachersDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=teachersDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=teachersDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=teachersDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=teachersDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=teachersDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=teachersDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=teachersDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=teachersDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=teachersDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=teachersDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=teachersDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=teachersDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=teachersDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=teachersDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=teachersDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 10:
+			daysNames=teachersTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=teachersTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=teachersTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=teachersTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=teachersTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=teachersTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=teachersTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=teachersTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=teachersTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=teachersTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=teachersTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=teachersTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=teachersTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=teachersTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=teachersTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=teachersTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=teachersTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=teachersTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=teachersTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=teachersTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=teachersTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=teachersTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=teachersTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=teachersTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=teachersTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 11:
+			daysNames=roomsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=roomsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=roomsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=roomsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=roomsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=roomsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=roomsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=roomsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=roomsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=roomsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=roomsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=roomsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=roomsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=roomsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=roomsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=roomsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=roomsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=roomsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=roomsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=roomsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=roomsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=roomsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=roomsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=roomsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=roomsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 12:
+			daysNames=roomsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=roomsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=roomsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=roomsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=roomsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=roomsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=roomsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=roomsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=roomsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=roomsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=roomsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=roomsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=roomsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=roomsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=roomsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=roomsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=roomsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=roomsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=roomsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=roomsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=roomsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=roomsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=roomsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=roomsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=roomsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 13:
+			daysNames=buildingsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=buildingsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=buildingsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=buildingsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=buildingsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=buildingsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=buildingsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=buildingsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=buildingsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=buildingsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=buildingsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=buildingsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=buildingsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=buildingsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=buildingsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=buildingsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=buildingsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=buildingsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=buildingsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=buildingsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=buildingsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=buildingsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=buildingsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=buildingsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=buildingsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 14:
+			daysNames=buildingsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=buildingsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=buildingsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=buildingsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=buildingsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=buildingsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=buildingsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=buildingsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=buildingsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=buildingsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=buildingsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=buildingsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=buildingsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=buildingsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=buildingsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=buildingsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=buildingsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=buildingsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=buildingsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=buildingsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=buildingsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=buildingsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=buildingsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=buildingsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=buildingsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 15:
+			daysNames=subjectsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=subjectsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=subjectsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=subjectsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=subjectsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=subjectsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=subjectsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=subjectsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=subjectsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=subjectsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=subjectsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=subjectsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=subjectsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=subjectsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=subjectsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=subjectsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=subjectsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=subjectsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=subjectsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=subjectsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=subjectsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=subjectsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=subjectsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=subjectsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=subjectsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 16:
+			daysNames=subjectsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=subjectsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=subjectsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=subjectsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=subjectsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=subjectsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=subjectsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=subjectsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=subjectsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=subjectsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=subjectsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=subjectsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=subjectsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=subjectsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=subjectsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=subjectsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=subjectsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=subjectsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=subjectsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=subjectsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=subjectsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=subjectsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=subjectsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=subjectsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=subjectsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 17:
+			daysNames=activityTagsDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=activityTagsDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=activityTagsDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=activityTagsDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=activityTagsDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=activityTagsDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=activityTagsDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=activityTagsDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=activityTagsDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=activityTagsDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=activityTagsDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=activityTagsDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=activityTagsDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=activityTagsDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=activityTagsDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=activityTagsDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=activityTagsDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=activityTagsDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=activityTagsDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=activityTagsDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=activityTagsDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=activityTagsDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=activityTagsDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=activityTagsDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=activityTagsDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 18:
+			daysNames=activityTagsTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=activityTagsTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=activityTagsTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=activityTagsTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=activityTagsTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=activityTagsTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=activityTagsTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=activityTagsTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=activityTagsTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=activityTagsTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=activityTagsTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=activityTagsTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=activityTagsTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=activityTagsTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=activityTagsTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=activityTagsTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=activityTagsTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=activityTagsTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=activityTagsTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=activityTagsTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=activityTagsTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=activityTagsTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=activityTagsTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=activityTagsTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=activityTagsTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		case 19:
+			daysNames=activitiesDaysHVDaysNamesCheckBox->isChecked();
+			daysLongNames=activitiesDaysHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=activitiesDaysHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=activitiesDaysHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=activitiesDaysHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=activitiesDaysHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=activitiesDaysHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=activitiesDaysHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=activitiesDaysHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=activitiesDaysHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=activitiesDaysHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=activitiesDaysHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=activitiesDaysHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=activitiesDaysHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=activitiesDaysHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=activitiesDaysHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=activitiesDaysHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=activitiesDaysHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=activitiesDaysHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=activitiesDaysHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=activitiesDaysHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=activitiesDaysHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=activitiesDaysHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=activitiesDaysHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=activitiesDaysHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+
+		case 20:
+			daysNames=activitiesTimeHVDaysNamesCheckBox->isChecked();
+			daysLongNames=activitiesTimeHVDaysLongNamesCheckBox->isChecked();
+
+			hoursNames=activitiesTimeHVHoursNamesCheckBox->isChecked();
+			hoursLongNames=activitiesTimeHVHoursLongNamesCheckBox->isChecked();
+			
+			subjectsNames=activitiesTimeHVSubjectsNamesCheckBox->isChecked();
+			subjectsLongNames=activitiesTimeHVSubjectsLongNamesCheckBox->isChecked();
+			subjectsCodes=activitiesTimeHVSubjectsCodesCheckBox->isChecked();
+			
+			activityTagsNames=activitiesTimeHVActivityTagsNamesCheckBox->isChecked();
+			activityTagsLongNames=activitiesTimeHVActivityTagsLongNamesCheckBox->isChecked();
+			activityTagsCodes=activitiesTimeHVActivityTagsCodesCheckBox->isChecked();
+			
+			teachersNames=activitiesTimeHVTeachersNamesCheckBox->isChecked();
+			teachersLongNames=activitiesTimeHVTeachersLongNamesCheckBox->isChecked();
+			teachersCodes=activitiesTimeHVTeachersCodesCheckBox->isChecked();
+			
+			studentsNames=activitiesTimeHVStudentsNamesCheckBox->isChecked();
+			studentsLongNames=activitiesTimeHVStudentsLongNamesCheckBox->isChecked();
+			studentsCodes=activitiesTimeHVStudentsCodesCheckBox->isChecked();
+			
+			roomsNames=activitiesTimeHVRoomsNamesCheckBox->isChecked();
+			roomsLongNames=activitiesTimeHVRoomsLongNamesCheckBox->isChecked();
+			roomsCodes=activitiesTimeHVRoomsCodesCheckBox->isChecked();
+
+			subjectsLegend=activitiesTimeHVSubjectsLegendCheckBox->isChecked();
+			activityTagsLegend=activitiesTimeHVActivityTagsLegendCheckBox->isChecked();
+			teachersLegend=activitiesTimeHVTeachersLegendCheckBox->isChecked();
+			studentsLegend=activitiesTimeHVStudentsLegendCheckBox->isChecked();
+			roomsLegend=activitiesTimeHVRoomsLegendCheckBox->isChecked();
+			legendCodesFirst=activitiesTimeHVLegendCodesFirstCheckBox->isChecked();
+			
+			break;
+			
+		default:
+			assert(0);
+	}
+	
+	/////subgroups days horizontal and days vertical.
+	subgroupsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	subgroupsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	subgroupsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	subgroupsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	subgroupsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	subgroupsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	subgroupsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	subgroupsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	subgroupsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	subgroupsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	subgroupsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	subgroupsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	subgroupsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	subgroupsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	subgroupsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	subgroupsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	subgroupsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	subgroupsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	subgroupsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	subgroupsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	subgroupsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	subgroupsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	subgroupsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	subgroupsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	subgroupsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////subgroups time horizontal and time vertical.
+	subgroupsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	subgroupsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	subgroupsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	subgroupsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	subgroupsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	subgroupsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	subgroupsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	subgroupsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	subgroupsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	subgroupsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	subgroupsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	subgroupsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	subgroupsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	subgroupsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	subgroupsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	subgroupsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	subgroupsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	subgroupsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	subgroupsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	subgroupsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	subgroupsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	subgroupsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	subgroupsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	subgroupsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	subgroupsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////groups days horizontal and days vertical.
+	groupsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	groupsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	groupsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	groupsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	groupsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	groupsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	groupsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	groupsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	groupsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	groupsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	groupsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	groupsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	groupsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	groupsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	groupsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	groupsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	groupsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	groupsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	groupsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	groupsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	groupsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	groupsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	groupsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	groupsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	groupsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////groups time horizontal and time vertical.
+	groupsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	groupsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	groupsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	groupsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	groupsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	groupsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	groupsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	groupsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	groupsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	groupsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	groupsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	groupsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	groupsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	groupsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	groupsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	groupsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	groupsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	groupsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	groupsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	groupsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	groupsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	groupsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	groupsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	groupsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	groupsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////years days horizontal and days vertical.
+	yearsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	yearsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	yearsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	yearsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	yearsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	yearsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	yearsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	yearsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	yearsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	yearsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	yearsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	yearsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	yearsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	yearsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	yearsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	yearsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	yearsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	yearsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	yearsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	yearsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	yearsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	yearsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	yearsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	yearsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	yearsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////years time horizontal and time vertical.
+	yearsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	yearsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	yearsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	yearsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	yearsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	yearsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	yearsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	yearsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	yearsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	yearsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	yearsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	yearsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	yearsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	yearsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	yearsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	yearsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	yearsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	yearsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	yearsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	yearsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	yearsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	yearsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	yearsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	yearsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	yearsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////teachers days horizontal and days vertical.
+	teachersDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	teachersDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	teachersDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	teachersDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	teachersDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	teachersDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	teachersDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	teachersDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	teachersDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	teachersDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	teachersDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	teachersDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	teachersDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	teachersDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	teachersDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	teachersDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	teachersDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	teachersDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	teachersDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	teachersDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	teachersDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	teachersDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	teachersDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	teachersDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	teachersDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////teachers time horizontal and time vertical.
+	teachersTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	teachersTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	teachersTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	teachersTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	teachersTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	teachersTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	teachersTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	teachersTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	teachersTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	teachersTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	teachersTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	teachersTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	teachersTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	teachersTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	teachersTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	teachersTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	teachersTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	teachersTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	teachersTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	teachersTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	teachersTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	teachersTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	teachersTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	teachersTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	teachersTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////rooms days horizontal and days vertical.
+	roomsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	roomsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	roomsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	roomsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	roomsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	roomsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	roomsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	roomsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	roomsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	roomsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	roomsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	roomsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	roomsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	roomsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	roomsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	roomsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	roomsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	roomsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	roomsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	roomsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	roomsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	roomsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	roomsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	roomsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	roomsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////rooms time horizontal and time vertical.
+	roomsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	roomsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	roomsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	roomsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	roomsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	roomsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	roomsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	roomsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	roomsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	roomsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	roomsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	roomsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	roomsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	roomsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	roomsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	roomsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	roomsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	roomsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	roomsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	roomsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	roomsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	roomsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	roomsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	roomsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	roomsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////buildings days horizontal and days vertical.
+	buildingsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	buildingsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	buildingsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	buildingsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	buildingsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	buildingsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	buildingsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	buildingsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	buildingsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	buildingsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	buildingsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	buildingsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	buildingsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	buildingsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	buildingsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	buildingsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	buildingsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	buildingsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	buildingsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	buildingsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	buildingsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	buildingsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	buildingsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	buildingsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	buildingsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////buildings time horizontal and time vertical.
+	buildingsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	buildingsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	buildingsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	buildingsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	buildingsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	buildingsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	buildingsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	buildingsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	buildingsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	buildingsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	buildingsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	buildingsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	buildingsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	buildingsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	buildingsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	buildingsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	buildingsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	buildingsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	buildingsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	buildingsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	buildingsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	buildingsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	buildingsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	buildingsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	buildingsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////subjects days horizontal and days vertical.
+	subjectsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	subjectsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	subjectsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	subjectsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	subjectsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	subjectsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	subjectsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	subjectsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	subjectsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	subjectsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	subjectsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	subjectsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	subjectsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	subjectsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	subjectsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	subjectsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	subjectsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	subjectsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	subjectsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	subjectsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	subjectsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	subjectsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	subjectsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	subjectsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	subjectsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////subjects time horizontal and time vertical.
+	subjectsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	subjectsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	subjectsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	subjectsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	subjectsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	subjectsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	subjectsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	subjectsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	subjectsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	subjectsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	subjectsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	subjectsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	subjectsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	subjectsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	subjectsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	subjectsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	subjectsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	subjectsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	subjectsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	subjectsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	subjectsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	subjectsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	subjectsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	subjectsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	subjectsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////activity tags days horizontal and days vertical.
+	activityTagsDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	activityTagsDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	activityTagsDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	activityTagsDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	activityTagsDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	activityTagsDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	activityTagsDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	activityTagsDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	activityTagsDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	activityTagsDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	activityTagsDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	activityTagsDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	activityTagsDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	activityTagsDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	activityTagsDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	activityTagsDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	activityTagsDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	activityTagsDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	activityTagsDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	activityTagsDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	activityTagsDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	activityTagsDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	activityTagsDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	activityTagsDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	activityTagsDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////activity tags time horizontal and time vertical.
+	activityTagsTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	activityTagsTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	activityTagsTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	activityTagsTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	activityTagsTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	activityTagsTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	activityTagsTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	activityTagsTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	activityTagsTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	activityTagsTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	activityTagsTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	activityTagsTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	activityTagsTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	activityTagsTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	activityTagsTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	activityTagsTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	activityTagsTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	activityTagsTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	activityTagsTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	activityTagsTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	activityTagsTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	activityTagsTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	activityTagsTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	activityTagsTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	activityTagsTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+
+	/////activities days horizontal and days vertical.
+	activitiesDaysHVDaysNamesCheckBox->setChecked(daysNames);
+	activitiesDaysHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	activitiesDaysHVHoursNamesCheckBox->setChecked(hoursNames);
+	activitiesDaysHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	activitiesDaysHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	activitiesDaysHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	activitiesDaysHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	activitiesDaysHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	activitiesDaysHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	activitiesDaysHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	activitiesDaysHVTeachersNamesCheckBox->setChecked(teachersNames);
+	activitiesDaysHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	activitiesDaysHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	activitiesDaysHVStudentsNamesCheckBox->setChecked(studentsNames);
+	activitiesDaysHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	activitiesDaysHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	activitiesDaysHVRoomsNamesCheckBox->setChecked(roomsNames);
+	activitiesDaysHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	activitiesDaysHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	activitiesDaysHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	activitiesDaysHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	activitiesDaysHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	activitiesDaysHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	activitiesDaysHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	activitiesDaysHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	/////activities time horizontal and time vertical.
+	activitiesTimeHVDaysNamesCheckBox->setChecked(daysNames);
+	activitiesTimeHVDaysLongNamesCheckBox->setChecked(daysLongNames);
+
+	activitiesTimeHVHoursNamesCheckBox->setChecked(hoursNames);
+	activitiesTimeHVHoursLongNamesCheckBox->setChecked(hoursLongNames);
+	
+	activitiesTimeHVSubjectsNamesCheckBox->setChecked(subjectsNames);
+	activitiesTimeHVSubjectsLongNamesCheckBox->setChecked(subjectsLongNames);
+	activitiesTimeHVSubjectsCodesCheckBox->setChecked(subjectsCodes);
+	
+	activitiesTimeHVActivityTagsNamesCheckBox->setChecked(activityTagsNames);
+	activitiesTimeHVActivityTagsLongNamesCheckBox->setChecked(activityTagsLongNames);
+	activitiesTimeHVActivityTagsCodesCheckBox->setChecked(activityTagsCodes);
+	
+	activitiesTimeHVTeachersNamesCheckBox->setChecked(teachersNames);
+	activitiesTimeHVTeachersLongNamesCheckBox->setChecked(teachersLongNames);
+	activitiesTimeHVTeachersCodesCheckBox->setChecked(teachersCodes);
+	
+	activitiesTimeHVStudentsNamesCheckBox->setChecked(studentsNames);
+	activitiesTimeHVStudentsLongNamesCheckBox->setChecked(studentsLongNames);
+	activitiesTimeHVStudentsCodesCheckBox->setChecked(studentsCodes);
+	
+	activitiesTimeHVRoomsNamesCheckBox->setChecked(roomsNames);
+	activitiesTimeHVRoomsLongNamesCheckBox->setChecked(roomsLongNames);
+	activitiesTimeHVRoomsCodesCheckBox->setChecked(roomsCodes);
+
+	activitiesTimeHVSubjectsLegendCheckBox->setChecked(subjectsLegend);
+	activitiesTimeHVActivityTagsLegendCheckBox->setChecked(activityTagsLegend);
+	activitiesTimeHVTeachersLegendCheckBox->setChecked(teachersLegend);
+	activitiesTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
+	activitiesTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
+	activitiesTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+}
+
+void SettingsDataToPrintInTimetablesForm::tabIndexChanged(int index)
+{
+	applyToAll421PushButton->setEnabled(index>=3 && index<=20);
 }

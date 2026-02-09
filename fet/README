@@ -1,4 +1,4 @@
-This is FET version 7.7.4
+This is FET version 7.7.5
 
 
 Program description:
@@ -14,9 +14,9 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.7, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.8, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.12.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
-	Thunar Bulk Rename 4.20.4, Qt 6.10.2, QMake 3.1, CMake 4.1.3, Ninja 1.13.2, Qt Creator 18.0.2, GCC 15.2.1, Clang 21.1.8, GNU Make 4.4.1,
+	Thunar Bulk Rename 4.20.4, Qt 6.10.2, QMake 3.1, CMake 4.2.3, Ninja 1.13.2, Qt Creator 18.0.2, GCC 15.2.1, Clang 21.1.8, GNU Make 4.4.1,
 	GDB 16.3, Valgrind 3.26.0, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.2,
 	GIMP 3.0.6, ImageMagick 7.1.2-13, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.2,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
@@ -36,7 +36,7 @@ Requirements:
 
 	GNU/Linux, macOS:
 	For running, you need only the archive of FET compiled for your operating system (which contains the necessary libraries).
-	CMake is the new recommended way to compile FET. QMake is the old and unrecommended way.
+	CMake is the new recommended way to compile FET. QMake is the old and not recommended way.
 	For compiling, you will need this software:
 		CMake 3.28 or later (for compiling with CMake).
 		GCC 15.2.1 or similar.
@@ -462,6 +462,530 @@ Running FET:
 		--fieldseparatorcsv=FSCSV
 			FSCSV is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here).
 			The default value is comma.
+
+		--separatedaysnamelongnamebybreak=B1
+		--separatehoursnamelongnamebybreak=B2
+		--separatesubjectsnamelongnamecodebybreak=B3
+		--separateactivitytagsnamelongnamecodebybreak=B4
+		--separateteachersnamelongnamecodebybreak=B5
+		--separatestudentsnamelongnamecodebybreak=B6
+		--separatebuildingsnamelongnamecodebybreak=B7
+		--separateroomsnamelongnamecodebybreak=B8
+			B1 to B8 are either true or false (default false).
+
+		--printsubjectscomments=B1
+		--printactivitytagscomments=B2
+		--printteacherscomments=B3
+		--printsubgroupscomments=B4
+		--printgroupscomments=B5
+		--printyearscomments=B6
+		--printbuildingscomments=B7
+		--printroomscomments=B8
+			B1 to B8 are either true or false (default false).
+
+		--subgroupsdayshvprintdaysnames=B1
+		--subgroupsdayshvprintdayslongnames=B2
+		--subgroupsdayshvprinthoursnames=B3
+		--subgroupsdayshvprinthourslongnames=B4
+		--subgroupsdayshvprintsubjectsnames=B5
+		--subgroupsdayshvprintsubjectslongnames=B6
+		--subgroupsdayshvprintsubjectscodes=B7
+		--subgroupsdayshvprintactivitytagsnames=B8
+		--subgroupsdayshvprintactivitytagslongnames=B9
+		--subgroupsdayshvprintactivitytagscodes=B10
+		--subgroupsdayshvprintteachersnames=B11
+		--subgroupsdayshvprintteacherslongnames=B12
+		--subgroupsdayshvprintteacherscodes=B13
+		--subgroupsdayshvprintstudentsnames=B14
+		--subgroupsdayshvprintstudentslongnames=B15
+		--subgroupsdayshvprintstudentscodes=B16
+		--subgroupsdayshvprintroomsnames=B17
+		--subgroupsdayshvprintroomslongnames=B18
+		--subgroupsdayshvprintroomscodes=B19
+		--subgroupsdayshvprintsubjectslegend=B20
+		--subgroupsdayshvprintactivitytagslegend=B21
+		--subgroupsdayshvprintteacherslegend=B22
+		--subgroupsdayshvprintstudentslegend=B23
+		--subgroupsdayshvprintroomslegend=B24
+		--subgroupsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--subgroupstimehvprintdaysnames=B1
+		--subgroupstimehvprintdayslongnames=B2
+		--subgroupstimehvprinthoursnames=B3
+		--subgroupstimehvprinthourslongnames=B4
+		--subgroupstimehvprintsubjectsnames=B5
+		--subgroupstimehvprintsubjectslongnames=B6
+		--subgroupstimehvprintsubjectscodes=B7
+		--subgroupstimehvprintactivitytagsnames=B8
+		--subgroupstimehvprintactivitytagslongnames=B9
+		--subgroupstimehvprintactivitytagscodes=B10
+		--subgroupstimehvprintteachersnames=B11
+		--subgroupstimehvprintteacherslongnames=B12
+		--subgroupstimehvprintteacherscodes=B13
+		--subgroupstimehvprintstudentsnames=B14
+		--subgroupstimehvprintstudentslongnames=B15
+		--subgroupstimehvprintstudentscodes=B16
+		--subgroupstimehvprintroomsnames=B17
+		--subgroupstimehvprintroomslongnames=B18
+		--subgroupstimehvprintroomscodes=B19
+		--subgroupstimehvprintsubjectslegend=B20
+		--subgroupstimehvprintactivitytagslegend=B21
+		--subgroupstimehvprintteacherslegend=B22
+		--subgroupstimehvprintstudentslegend=B23
+		--subgroupstimehvprintroomslegend=B24
+		--subgroupstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--groupsdayshvprintdaysnames=B1
+		--groupsdayshvprintdayslongnames=B2
+		--groupsdayshvprinthoursnames=B3
+		--groupsdayshvprinthourslongnames=B4
+		--groupsdayshvprintsubjectsnames=B5
+		--groupsdayshvprintsubjectslongnames=B6
+		--groupsdayshvprintsubjectscodes=B7
+		--groupsdayshvprintactivitytagsnames=B8
+		--groupsdayshvprintactivitytagslongnames=B9
+		--groupsdayshvprintactivitytagscodes=B10
+		--groupsdayshvprintteachersnames=B11
+		--groupsdayshvprintteacherslongnames=B12
+		--groupsdayshvprintteacherscodes=B13
+		--groupsdayshvprintstudentsnames=B14
+		--groupsdayshvprintstudentslongnames=B15
+		--groupsdayshvprintstudentscodes=B16
+		--groupsdayshvprintroomsnames=B17
+		--groupsdayshvprintroomslongnames=B18
+		--groupsdayshvprintroomscodes=B19
+		--groupsdayshvprintsubjectslegend=B20
+		--groupsdayshvprintactivitytagslegend=B21
+		--groupsdayshvprintteacherslegend=B22
+		--groupsdayshvprintstudentslegend=B23
+		--groupsdayshvprintroomslegend=B24
+		--groupsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--groupstimehvprintdaysnames=B1
+		--groupstimehvprintdayslongnames=B2
+		--groupstimehvprinthoursnames=B3
+		--groupstimehvprinthourslongnames=B4
+		--groupstimehvprintsubjectsnames=B5
+		--groupstimehvprintsubjectslongnames=B6
+		--groupstimehvprintsubjectscodes=B7
+		--groupstimehvprintactivitytagsnames=B8
+		--groupstimehvprintactivitytagslongnames=B9
+		--groupstimehvprintactivitytagscodes=B10
+		--groupstimehvprintteachersnames=B11
+		--groupstimehvprintteacherslongnames=B12
+		--groupstimehvprintteacherscodes=B13
+		--groupstimehvprintstudentsnames=B14
+		--groupstimehvprintstudentslongnames=B15
+		--groupstimehvprintstudentscodes=B16
+		--groupstimehvprintroomsnames=B17
+		--groupstimehvprintroomslongnames=B18
+		--groupstimehvprintroomscodes=B19
+		--groupstimehvprintsubjectslegend=B20
+		--groupstimehvprintactivitytagslegend=B21
+		--groupstimehvprintteacherslegend=B22
+		--groupstimehvprintstudentslegend=B23
+		--groupstimehvprintroomslegend=B24
+		--groupstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--yearsdayshvprintdaysnames=B1
+		--yearsdayshvprintdayslongnames=B2
+		--yearsdayshvprinthoursnames=B3
+		--yearsdayshvprinthourslongnames=B4
+		--yearsdayshvprintsubjectsnames=B5
+		--yearsdayshvprintsubjectslongnames=B6
+		--yearsdayshvprintsubjectscodes=B7
+		--yearsdayshvprintactivitytagsnames=B8
+		--yearsdayshvprintactivitytagslongnames=B9
+		--yearsdayshvprintactivitytagscodes=B10
+		--yearsdayshvprintteachersnames=B11
+		--yearsdayshvprintteacherslongnames=B12
+		--yearsdayshvprintteacherscodes=B13
+		--yearsdayshvprintstudentsnames=B14
+		--yearsdayshvprintstudentslongnames=B15
+		--yearsdayshvprintstudentscodes=B16
+		--yearsdayshvprintroomsnames=B17
+		--yearsdayshvprintroomslongnames=B18
+		--yearsdayshvprintroomscodes=B19
+		--yearsdayshvprintsubjectslegend=B20
+		--yearsdayshvprintactivitytagslegend=B21
+		--yearsdayshvprintteacherslegend=B22
+		--yearsdayshvprintstudentslegend=B23
+		--yearsdayshvprintroomslegend=B24
+		--yearsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--yearstimehvprintdaysnames=B1
+		--yearstimehvprintdayslongnames=B2
+		--yearstimehvprinthoursnames=B3
+		--yearstimehvprinthourslongnames=B4
+		--yearstimehvprintsubjectsnames=B5
+		--yearstimehvprintsubjectslongnames=B6
+		--yearstimehvprintsubjectscodes=B7
+		--yearstimehvprintactivitytagsnames=B8
+		--yearstimehvprintactivitytagslongnames=B9
+		--yearstimehvprintactivitytagscodes=B10
+		--yearstimehvprintteachersnames=B11
+		--yearstimehvprintteacherslongnames=B12
+		--yearstimehvprintteacherscodes=B13
+		--yearstimehvprintstudentsnames=B14
+		--yearstimehvprintstudentslongnames=B15
+		--yearstimehvprintstudentscodes=B16
+		--yearstimehvprintroomsnames=B17
+		--yearstimehvprintroomslongnames=B18
+		--yearstimehvprintroomscodes=B19
+		--yearstimehvprintsubjectslegend=B20
+		--yearstimehvprintactivitytagslegend=B21
+		--yearstimehvprintteacherslegend=B22
+		--yearstimehvprintstudentslegend=B23
+		--yearstimehvprintroomslegend=B24
+		--yearstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--teachersdayshvprintdaysnames=B1
+		--teachersdayshvprintdayslongnames=B2
+		--teachersdayshvprinthoursnames=B3
+		--teachersdayshvprinthourslongnames=B4
+		--teachersdayshvprintsubjectsnames=B5
+		--teachersdayshvprintsubjectslongnames=B6
+		--teachersdayshvprintsubjectscodes=B7
+		--teachersdayshvprintactivitytagsnames=B8
+		--teachersdayshvprintactivitytagslongnames=B9
+		--teachersdayshvprintactivitytagscodes=B10
+		--teachersdayshvprintteachersnames=B11
+		--teachersdayshvprintteacherslongnames=B12
+		--teachersdayshvprintteacherscodes=B13
+		--teachersdayshvprintstudentsnames=B14
+		--teachersdayshvprintstudentslongnames=B15
+		--teachersdayshvprintstudentscodes=B16
+		--teachersdayshvprintroomsnames=B17
+		--teachersdayshvprintroomslongnames=B18
+		--teachersdayshvprintroomscodes=B19
+		--teachersdayshvprintsubjectslegend=B20
+		--teachersdayshvprintactivitytagslegend=B21
+		--teachersdayshvprintteacherslegend=B22
+		--teachersdayshvprintstudentslegend=B23
+		--teachersdayshvprintroomslegend=B24
+		--teachersdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--teacherstimehvprintdaysnames=B1
+		--teacherstimehvprintdayslongnames=B2
+		--teacherstimehvprinthoursnames=B3
+		--teacherstimehvprinthourslongnames=B4
+		--teacherstimehvprintsubjectsnames=B5
+		--teacherstimehvprintsubjectslongnames=B6
+		--teacherstimehvprintsubjectscodes=B7
+		--teacherstimehvprintactivitytagsnames=B8
+		--teacherstimehvprintactivitytagslongnames=B9
+		--teacherstimehvprintactivitytagscodes=B10
+		--teacherstimehvprintteachersnames=B11
+		--teacherstimehvprintteacherslongnames=B12
+		--teacherstimehvprintteacherscodes=B13
+		--teacherstimehvprintstudentsnames=B14
+		--teacherstimehvprintstudentslongnames=B15
+		--teacherstimehvprintstudentscodes=B16
+		--teacherstimehvprintroomsnames=B17
+		--teacherstimehvprintroomslongnames=B18
+		--teacherstimehvprintroomscodes=B19
+		--teacherstimehvprintsubjectslegend=B20
+		--teacherstimehvprintactivitytagslegend=B21
+		--teacherstimehvprintteacherslegend=B22
+		--teacherstimehvprintstudentslegend=B23
+		--teacherstimehvprintroomslegend=B24
+		--teacherstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--roomsdayshvprintdaysnames=B1
+		--roomsdayshvprintdayslongnames=B2
+		--roomsdayshvprinthoursnames=B3
+		--roomsdayshvprinthourslongnames=B4
+		--roomsdayshvprintsubjectsnames=B5
+		--roomsdayshvprintsubjectslongnames=B6
+		--roomsdayshvprintsubjectscodes=B7
+		--roomsdayshvprintactivitytagsnames=B8
+		--roomsdayshvprintactivitytagslongnames=B9
+		--roomsdayshvprintactivitytagscodes=B10
+		--roomsdayshvprintteachersnames=B11
+		--roomsdayshvprintteacherslongnames=B12
+		--roomsdayshvprintteacherscodes=B13
+		--roomsdayshvprintstudentsnames=B14
+		--roomsdayshvprintstudentslongnames=B15
+		--roomsdayshvprintstudentscodes=B16
+		--roomsdayshvprintroomsnames=B17
+		--roomsdayshvprintroomslongnames=B18
+		--roomsdayshvprintroomscodes=B19
+		--roomsdayshvprintsubjectslegend=B20
+		--roomsdayshvprintactivitytagslegend=B21
+		--roomsdayshvprintteacherslegend=B22
+		--roomsdayshvprintstudentslegend=B23
+		--roomsdayshvprintroomslegend=B24
+		--roomsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--roomstimehvprintdaysnames=B1
+		--roomstimehvprintdayslongnames=B2
+		--roomstimehvprinthoursnames=B3
+		--roomstimehvprinthourslongnames=B4
+		--roomstimehvprintsubjectsnames=B5
+		--roomstimehvprintsubjectslongnames=B6
+		--roomstimehvprintsubjectscodes=B7
+		--roomstimehvprintactivitytagsnames=B8
+		--roomstimehvprintactivitytagslongnames=B9
+		--roomstimehvprintactivitytagscodes=B10
+		--roomstimehvprintteachersnames=B11
+		--roomstimehvprintteacherslongnames=B12
+		--roomstimehvprintteacherscodes=B13
+		--roomstimehvprintstudentsnames=B14
+		--roomstimehvprintstudentslongnames=B15
+		--roomstimehvprintstudentscodes=B16
+		--roomstimehvprintroomsnames=B17
+		--roomstimehvprintroomslongnames=B18
+		--roomstimehvprintroomscodes=B19
+		--roomstimehvprintsubjectslegend=B20
+		--roomstimehvprintactivitytagslegend=B21
+		--roomstimehvprintteacherslegend=B22
+		--roomstimehvprintstudentslegend=B23
+		--roomstimehvprintroomslegend=B24
+		--roomstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--buildingsdayshvprintdaysnames=B1
+		--buildingsdayshvprintdayslongnames=B2
+		--buildingsdayshvprinthoursnames=B3
+		--buildingsdayshvprinthourslongnames=B4
+		--buildingsdayshvprintsubjectsnames=B5
+		--buildingsdayshvprintsubjectslongnames=B6
+		--buildingsdayshvprintsubjectscodes=B7
+		--buildingsdayshvprintactivitytagsnames=B8
+		--buildingsdayshvprintactivitytagslongnames=B9
+		--buildingsdayshvprintactivitytagscodes=B10
+		--buildingsdayshvprintteachersnames=B11
+		--buildingsdayshvprintteacherslongnames=B12
+		--buildingsdayshvprintteacherscodes=B13
+		--buildingsdayshvprintstudentsnames=B14
+		--buildingsdayshvprintstudentslongnames=B15
+		--buildingsdayshvprintstudentscodes=B16
+		--buildingsdayshvprintroomsnames=B17
+		--buildingsdayshvprintroomslongnames=B18
+		--buildingsdayshvprintroomscodes=B19
+		--buildingsdayshvprintsubjectslegend=B20
+		--buildingsdayshvprintactivitytagslegend=B21
+		--buildingsdayshvprintteacherslegend=B22
+		--buildingsdayshvprintstudentslegend=B23
+		--buildingsdayshvprintroomslegend=B24
+		--buildingsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--buildingstimehvprintdaysnames=B1
+		--buildingstimehvprintdayslongnames=B2
+		--buildingstimehvprinthoursnames=B3
+		--buildingstimehvprinthourslongnames=B4
+		--buildingstimehvprintsubjectsnames=B5
+		--buildingstimehvprintsubjectslongnames=B6
+		--buildingstimehvprintsubjectscodes=B7
+		--buildingstimehvprintactivitytagsnames=B8
+		--buildingstimehvprintactivitytagslongnames=B9
+		--buildingstimehvprintactivitytagscodes=B10
+		--buildingstimehvprintteachersnames=B11
+		--buildingstimehvprintteacherslongnames=B12
+		--buildingstimehvprintteacherscodes=B13
+		--buildingstimehvprintstudentsnames=B14
+		--buildingstimehvprintstudentslongnames=B15
+		--buildingstimehvprintstudentscodes=B16
+		--buildingstimehvprintroomsnames=B17
+		--buildingstimehvprintroomslongnames=B18
+		--buildingstimehvprintroomscodes=B19
+		--buildingstimehvprintsubjectslegend=B20
+		--buildingstimehvprintactivitytagslegend=B21
+		--buildingstimehvprintteacherslegend=B22
+		--buildingstimehvprintstudentslegend=B23
+		--buildingstimehvprintroomslegend=B24
+		--buildingstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--subjectsdayshvprintdaysnames=B1
+		--subjectsdayshvprintdayslongnames=B2
+		--subjectsdayshvprinthoursnames=B3
+		--subjectsdayshvprinthourslongnames=B4
+		--subjectsdayshvprintsubjectsnames=B5
+		--subjectsdayshvprintsubjectslongnames=B6
+		--subjectsdayshvprintsubjectscodes=B7
+		--subjectsdayshvprintactivitytagsnames=B8
+		--subjectsdayshvprintactivitytagslongnames=B9
+		--subjectsdayshvprintactivitytagscodes=B10
+		--subjectsdayshvprintteachersnames=B11
+		--subjectsdayshvprintteacherslongnames=B12
+		--subjectsdayshvprintteacherscodes=B13
+		--subjectsdayshvprintstudentsnames=B14
+		--subjectsdayshvprintstudentslongnames=B15
+		--subjectsdayshvprintstudentscodes=B16
+		--subjectsdayshvprintroomsnames=B17
+		--subjectsdayshvprintroomslongnames=B18
+		--subjectsdayshvprintroomscodes=B19
+		--subjectsdayshvprintsubjectslegend=B20
+		--subjectsdayshvprintactivitytagslegend=B21
+		--subjectsdayshvprintteacherslegend=B22
+		--subjectsdayshvprintstudentslegend=B23
+		--subjectsdayshvprintroomslegend=B24
+		--subjectsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--subjectstimehvprintdaysnames=B1
+		--subjectstimehvprintdayslongnames=B2
+		--subjectstimehvprinthoursnames=B3
+		--subjectstimehvprinthourslongnames=B4
+		--subjectstimehvprintsubjectsnames=B5
+		--subjectstimehvprintsubjectslongnames=B6
+		--subjectstimehvprintsubjectscodes=B7
+		--subjectstimehvprintactivitytagsnames=B8
+		--subjectstimehvprintactivitytagslongnames=B9
+		--subjectstimehvprintactivitytagscodes=B10
+		--subjectstimehvprintteachersnames=B11
+		--subjectstimehvprintteacherslongnames=B12
+		--subjectstimehvprintteacherscodes=B13
+		--subjectstimehvprintstudentsnames=B14
+		--subjectstimehvprintstudentslongnames=B15
+		--subjectstimehvprintstudentscodes=B16
+		--subjectstimehvprintroomsnames=B17
+		--subjectstimehvprintroomslongnames=B18
+		--subjectstimehvprintroomscodes=B19
+		--subjectstimehvprintsubjectslegend=B20
+		--subjectstimehvprintactivitytagslegend=B21
+		--subjectstimehvprintteacherslegend=B22
+		--subjectstimehvprintstudentslegend=B23
+		--subjectstimehvprintroomslegend=B24
+		--subjectstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--activitytagsdayshvprintdaysnames=B1
+		--activitytagsdayshvprintdayslongnames=B2
+		--activitytagsdayshvprinthoursnames=B3
+		--activitytagsdayshvprinthourslongnames=B4
+		--activitytagsdayshvprintsubjectsnames=B5
+		--activitytagsdayshvprintsubjectslongnames=B6
+		--activitytagsdayshvprintsubjectscodes=B7
+		--activitytagsdayshvprintactivitytagsnames=B8
+		--activitytagsdayshvprintactivitytagslongnames=B9
+		--activitytagsdayshvprintactivitytagscodes=B10
+		--activitytagsdayshvprintteachersnames=B11
+		--activitytagsdayshvprintteacherslongnames=B12
+		--activitytagsdayshvprintteacherscodes=B13
+		--activitytagsdayshvprintstudentsnames=B14
+		--activitytagsdayshvprintstudentslongnames=B15
+		--activitytagsdayshvprintstudentscodes=B16
+		--activitytagsdayshvprintroomsnames=B17
+		--activitytagsdayshvprintroomslongnames=B18
+		--activitytagsdayshvprintroomscodes=B19
+		--activitytagsdayshvprintsubjectslegend=B20
+		--activitytagsdayshvprintactivitytagslegend=B21
+		--activitytagsdayshvprintteacherslegend=B22
+		--activitytagsdayshvprintstudentslegend=B23
+		--activitytagsdayshvprintroomslegend=B24
+		--activitytagsdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--activitytagstimehvprintdaysnames=B1
+		--activitytagstimehvprintdayslongnames=B2
+		--activitytagstimehvprinthoursnames=B3
+		--activitytagstimehvprinthourslongnames=B4
+		--activitytagstimehvprintsubjectsnames=B5
+		--activitytagstimehvprintsubjectslongnames=B6
+		--activitytagstimehvprintsubjectscodes=B7
+		--activitytagstimehvprintactivitytagsnames=B8
+		--activitytagstimehvprintactivitytagslongnames=B9
+		--activitytagstimehvprintactivitytagscodes=B10
+		--activitytagstimehvprintteachersnames=B11
+		--activitytagstimehvprintteacherslongnames=B12
+		--activitytagstimehvprintteacherscodes=B13
+		--activitytagstimehvprintstudentsnames=B14
+		--activitytagstimehvprintstudentslongnames=B15
+		--activitytagstimehvprintstudentscodes=B16
+		--activitytagstimehvprintroomsnames=B17
+		--activitytagstimehvprintroomslongnames=B18
+		--activitytagstimehvprintroomscodes=B19
+		--activitytagstimehvprintsubjectslegend=B20
+		--activitytagstimehvprintactivitytagslegend=B21
+		--activitytagstimehvprintteacherslegend=B22
+		--activitytagstimehvprintstudentslegend=B23
+		--activitytagstimehvprintroomslegend=B24
+		--activitytagstimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--activitiesdayshvprintdaysnames=B1
+		--activitiesdayshvprintdayslongnames=B2
+		--activitiesdayshvprinthoursnames=B3
+		--activitiesdayshvprinthourslongnames=B4
+		--activitiesdayshvprintsubjectsnames=B5
+		--activitiesdayshvprintsubjectslongnames=B6
+		--activitiesdayshvprintsubjectscodes=B7
+		--activitiesdayshvprintactivitytagsnames=B8
+		--activitiesdayshvprintactivitytagslongnames=B9
+		--activitiesdayshvprintactivitytagscodes=B10
+		--activitiesdayshvprintteachersnames=B11
+		--activitiesdayshvprintteacherslongnames=B12
+		--activitiesdayshvprintteacherscodes=B13
+		--activitiesdayshvprintstudentsnames=B14
+		--activitiesdayshvprintstudentslongnames=B15
+		--activitiesdayshvprintstudentscodes=B16
+		--activitiesdayshvprintroomsnames=B17
+		--activitiesdayshvprintroomslongnames=B18
+		--activitiesdayshvprintroomscodes=B19
+		--activitiesdayshvprintsubjectslegend=B20
+		--activitiesdayshvprintactivitytagslegend=B21
+		--activitiesdayshvprintteacherslegend=B22
+		--activitiesdayshvprintstudentslegend=B23
+		--activitiesdayshvprintroomslegend=B24
+		--activitiesdayshvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
+
+		--activitiestimehvprintdaysnames=B1
+		--activitiestimehvprintdayslongnames=B2
+		--activitiestimehvprinthoursnames=B3
+		--activitiestimehvprinthourslongnames=B4
+		--activitiestimehvprintsubjectsnames=B5
+		--activitiestimehvprintsubjectslongnames=B6
+		--activitiestimehvprintsubjectscodes=B7
+		--activitiestimehvprintactivitytagsnames=B8
+		--activitiestimehvprintactivitytagslongnames=B9
+		--activitiestimehvprintactivitytagscodes=B10
+		--activitiestimehvprintteachersnames=B11
+		--activitiestimehvprintteacherslongnames=B12
+		--activitiestimehvprintteacherscodes=B13
+		--activitiestimehvprintstudentsnames=B14
+		--activitiestimehvprintstudentslongnames=B15
+		--activitiestimehvprintstudentscodes=B16
+		--activitiestimehvprintroomsnames=B17
+		--activitiestimehvprintroomslongnames=B18
+		--activitiestimehvprintroomscodes=B19
+		--activitiestimehvprintsubjectslegend=B20
+		--activitiestimehvprintactivitytagslegend=B21
+		--activitiestimehvprintteacherslegend=B22
+		--activitiestimehvprintstudentslegend=B23
+		--activitiestimehvprintroomslegend=B24
+		--activitiestimehvprintlegendcodesfirst=B25
+			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
+			('hv' means 'horizontal and vertical'.)
 
 		--showvirtualrooms=SVR
 			SVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).

@@ -30,6 +30,13 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="applyToAll421PushButton">
+       <property name="text">
+        <string comment="Apply all chosen settings from a section from 4 to 21 -&gt; to all sections from 4 to 21.">Apply to all from 4 to 21</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="cancelPushButton">
        <property name="text">
         <string>Cancel</string>

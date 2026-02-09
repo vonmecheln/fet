@@ -30,6 +30,9 @@ public:
 public Q_SLOTS:
 	void wasAccepted();
 	void wasCanceled();
+	
+	void applyToAll421();
+	void tabIndexChanged(int index);
 };
 
 #endif

@@ -343,6 +343,543 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tFSCSV is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is "
 		"comma.\n"
 		"\n"
+
+		"\t--separatedaysnamelongnamebybreak=B1\n"
+		"\t--separatehoursnamelongnamebybreak=B2\n"
+		"\t--separatesubjectsnamelongnamecodebybreak=B3\n"
+		"\t--separateactivitytagsnamelongnamecodebybreak=B4\n"
+		"\t--separateteachersnamelongnamecodebybreak=B5\n"
+		"\t--separatestudentsnamelongnamecodebybreak=B6\n"
+		"\t--separatebuildingsnamelongnamecodebybreak=B7\n"
+		"\t--separateroomsnamelongnamecodebybreak=B8\n"
+		"\t\tB1 to B8 are either true or false (default false).\n"
+		"\n"
+		///////
+
+		"\t--printsubjectscomments=B1\n"
+		"\t--printactivitytagscomments=B2\n"
+		"\t--printteacherscomments=B3\n"
+		"\t--printsubgroupscomments=B4\n"
+		"\t--printgroupscomments=B5\n"
+		"\t--printyearscomments=B6\n"
+		"\t--printbuildingscomments=B7\n"
+		"\t--printroomscomments=B8\n"
+		"\t\tB1 to B8 are either true or false (default false).\n"
+		"\n"
+
+		"\t--subgroupsdayshvprintdaysnames=B1\n"
+		"\t--subgroupsdayshvprintdayslongnames=B2\n"
+		"\t--subgroupsdayshvprinthoursnames=B3\n"
+		"\t--subgroupsdayshvprinthourslongnames=B4\n"
+		"\t--subgroupsdayshvprintsubjectsnames=B5\n"
+		"\t--subgroupsdayshvprintsubjectslongnames=B6\n"
+		"\t--subgroupsdayshvprintsubjectscodes=B7\n"
+		"\t--subgroupsdayshvprintactivitytagsnames=B8\n"
+		"\t--subgroupsdayshvprintactivitytagslongnames=B9\n"
+		"\t--subgroupsdayshvprintactivitytagscodes=B10\n"
+		"\t--subgroupsdayshvprintteachersnames=B11\n"
+		"\t--subgroupsdayshvprintteacherslongnames=B12\n"
+		"\t--subgroupsdayshvprintteacherscodes=B13\n"
+		"\t--subgroupsdayshvprintstudentsnames=B14\n"
+		"\t--subgroupsdayshvprintstudentslongnames=B15\n"
+		"\t--subgroupsdayshvprintstudentscodes=B16\n"
+		"\t--subgroupsdayshvprintroomsnames=B17\n"
+		"\t--subgroupsdayshvprintroomslongnames=B18\n"
+		"\t--subgroupsdayshvprintroomscodes=B19\n"
+		"\t--subgroupsdayshvprintsubjectslegend=B20\n"
+		"\t--subgroupsdayshvprintactivitytagslegend=B21\n"
+		"\t--subgroupsdayshvprintteacherslegend=B22\n"
+		"\t--subgroupsdayshvprintstudentslegend=B23\n"
+		"\t--subgroupsdayshvprintroomslegend=B24\n"
+		"\t--subgroupsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--subgroupstimehvprintdaysnames=B1\n"
+		"\t--subgroupstimehvprintdayslongnames=B2\n"
+		"\t--subgroupstimehvprinthoursnames=B3\n"
+		"\t--subgroupstimehvprinthourslongnames=B4\n"
+		"\t--subgroupstimehvprintsubjectsnames=B5\n"
+		"\t--subgroupstimehvprintsubjectslongnames=B6\n"
+		"\t--subgroupstimehvprintsubjectscodes=B7\n"
+		"\t--subgroupstimehvprintactivitytagsnames=B8\n"
+		"\t--subgroupstimehvprintactivitytagslongnames=B9\n"
+		"\t--subgroupstimehvprintactivitytagscodes=B10\n"
+		"\t--subgroupstimehvprintteachersnames=B11\n"
+		"\t--subgroupstimehvprintteacherslongnames=B12\n"
+		"\t--subgroupstimehvprintteacherscodes=B13\n"
+		"\t--subgroupstimehvprintstudentsnames=B14\n"
+		"\t--subgroupstimehvprintstudentslongnames=B15\n"
+		"\t--subgroupstimehvprintstudentscodes=B16\n"
+		"\t--subgroupstimehvprintroomsnames=B17\n"
+		"\t--subgroupstimehvprintroomslongnames=B18\n"
+		"\t--subgroupstimehvprintroomscodes=B19\n"
+		"\t--subgroupstimehvprintsubjectslegend=B20\n"
+		"\t--subgroupstimehvprintactivitytagslegend=B21\n"
+		"\t--subgroupstimehvprintteacherslegend=B22\n"
+		"\t--subgroupstimehvprintstudentslegend=B23\n"
+		"\t--subgroupstimehvprintroomslegend=B24\n"
+		"\t--subgroupstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--groupsdayshvprintdaysnames=B1\n"
+		"\t--groupsdayshvprintdayslongnames=B2\n"
+		"\t--groupsdayshvprinthoursnames=B3\n"
+		"\t--groupsdayshvprinthourslongnames=B4\n"
+		"\t--groupsdayshvprintsubjectsnames=B5\n"
+		"\t--groupsdayshvprintsubjectslongnames=B6\n"
+		"\t--groupsdayshvprintsubjectscodes=B7\n"
+		"\t--groupsdayshvprintactivitytagsnames=B8\n"
+		"\t--groupsdayshvprintactivitytagslongnames=B9\n"
+		"\t--groupsdayshvprintactivitytagscodes=B10\n"
+		"\t--groupsdayshvprintteachersnames=B11\n"
+		"\t--groupsdayshvprintteacherslongnames=B12\n"
+		"\t--groupsdayshvprintteacherscodes=B13\n"
+		"\t--groupsdayshvprintstudentsnames=B14\n"
+		"\t--groupsdayshvprintstudentslongnames=B15\n"
+		"\t--groupsdayshvprintstudentscodes=B16\n"
+		"\t--groupsdayshvprintroomsnames=B17\n"
+		"\t--groupsdayshvprintroomslongnames=B18\n"
+		"\t--groupsdayshvprintroomscodes=B19\n"
+		"\t--groupsdayshvprintsubjectslegend=B20\n"
+		"\t--groupsdayshvprintactivitytagslegend=B21\n"
+		"\t--groupsdayshvprintteacherslegend=B22\n"
+		"\t--groupsdayshvprintstudentslegend=B23\n"
+		"\t--groupsdayshvprintroomslegend=B24\n"
+		"\t--groupsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--groupstimehvprintdaysnames=B1\n"
+		"\t--groupstimehvprintdayslongnames=B2\n"
+		"\t--groupstimehvprinthoursnames=B3\n"
+		"\t--groupstimehvprinthourslongnames=B4\n"
+		"\t--groupstimehvprintsubjectsnames=B5\n"
+		"\t--groupstimehvprintsubjectslongnames=B6\n"
+		"\t--groupstimehvprintsubjectscodes=B7\n"
+		"\t--groupstimehvprintactivitytagsnames=B8\n"
+		"\t--groupstimehvprintactivitytagslongnames=B9\n"
+		"\t--groupstimehvprintactivitytagscodes=B10\n"
+		"\t--groupstimehvprintteachersnames=B11\n"
+		"\t--groupstimehvprintteacherslongnames=B12\n"
+		"\t--groupstimehvprintteacherscodes=B13\n"
+		"\t--groupstimehvprintstudentsnames=B14\n"
+		"\t--groupstimehvprintstudentslongnames=B15\n"
+		"\t--groupstimehvprintstudentscodes=B16\n"
+		"\t--groupstimehvprintroomsnames=B17\n"
+		"\t--groupstimehvprintroomslongnames=B18\n"
+		"\t--groupstimehvprintroomscodes=B19\n"
+		"\t--groupstimehvprintsubjectslegend=B20\n"
+		"\t--groupstimehvprintactivitytagslegend=B21\n"
+		"\t--groupstimehvprintteacherslegend=B22\n"
+		"\t--groupstimehvprintstudentslegend=B23\n"
+		"\t--groupstimehvprintroomslegend=B24\n"
+		"\t--groupstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--yearsdayshvprintdaysnames=B1\n"
+		"\t--yearsdayshvprintdayslongnames=B2\n"
+		"\t--yearsdayshvprinthoursnames=B3\n"
+		"\t--yearsdayshvprinthourslongnames=B4\n"
+		"\t--yearsdayshvprintsubjectsnames=B5\n"
+		"\t--yearsdayshvprintsubjectslongnames=B6\n"
+		"\t--yearsdayshvprintsubjectscodes=B7\n"
+		"\t--yearsdayshvprintactivitytagsnames=B8\n"
+		"\t--yearsdayshvprintactivitytagslongnames=B9\n"
+		"\t--yearsdayshvprintactivitytagscodes=B10\n"
+		"\t--yearsdayshvprintteachersnames=B11\n"
+		"\t--yearsdayshvprintteacherslongnames=B12\n"
+		"\t--yearsdayshvprintteacherscodes=B13\n"
+		"\t--yearsdayshvprintstudentsnames=B14\n"
+		"\t--yearsdayshvprintstudentslongnames=B15\n"
+		"\t--yearsdayshvprintstudentscodes=B16\n"
+		"\t--yearsdayshvprintroomsnames=B17\n"
+		"\t--yearsdayshvprintroomslongnames=B18\n"
+		"\t--yearsdayshvprintroomscodes=B19\n"
+		"\t--yearsdayshvprintsubjectslegend=B20\n"
+		"\t--yearsdayshvprintactivitytagslegend=B21\n"
+		"\t--yearsdayshvprintteacherslegend=B22\n"
+		"\t--yearsdayshvprintstudentslegend=B23\n"
+		"\t--yearsdayshvprintroomslegend=B24\n"
+		"\t--yearsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--yearstimehvprintdaysnames=B1\n"
+		"\t--yearstimehvprintdayslongnames=B2\n"
+		"\t--yearstimehvprinthoursnames=B3\n"
+		"\t--yearstimehvprinthourslongnames=B4\n"
+		"\t--yearstimehvprintsubjectsnames=B5\n"
+		"\t--yearstimehvprintsubjectslongnames=B6\n"
+		"\t--yearstimehvprintsubjectscodes=B7\n"
+		"\t--yearstimehvprintactivitytagsnames=B8\n"
+		"\t--yearstimehvprintactivitytagslongnames=B9\n"
+		"\t--yearstimehvprintactivitytagscodes=B10\n"
+		"\t--yearstimehvprintteachersnames=B11\n"
+		"\t--yearstimehvprintteacherslongnames=B12\n"
+		"\t--yearstimehvprintteacherscodes=B13\n"
+		"\t--yearstimehvprintstudentsnames=B14\n"
+		"\t--yearstimehvprintstudentslongnames=B15\n"
+		"\t--yearstimehvprintstudentscodes=B16\n"
+		"\t--yearstimehvprintroomsnames=B17\n"
+		"\t--yearstimehvprintroomslongnames=B18\n"
+		"\t--yearstimehvprintroomscodes=B19\n"
+		"\t--yearstimehvprintsubjectslegend=B20\n"
+		"\t--yearstimehvprintactivitytagslegend=B21\n"
+		"\t--yearstimehvprintteacherslegend=B22\n"
+		"\t--yearstimehvprintstudentslegend=B23\n"
+		"\t--yearstimehvprintroomslegend=B24\n"
+		"\t--yearstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--teachersdayshvprintdaysnames=B1\n"
+		"\t--teachersdayshvprintdayslongnames=B2\n"
+		"\t--teachersdayshvprinthoursnames=B3\n"
+		"\t--teachersdayshvprinthourslongnames=B4\n"
+		"\t--teachersdayshvprintsubjectsnames=B5\n"
+		"\t--teachersdayshvprintsubjectslongnames=B6\n"
+		"\t--teachersdayshvprintsubjectscodes=B7\n"
+		"\t--teachersdayshvprintactivitytagsnames=B8\n"
+		"\t--teachersdayshvprintactivitytagslongnames=B9\n"
+		"\t--teachersdayshvprintactivitytagscodes=B10\n"
+		"\t--teachersdayshvprintteachersnames=B11\n"
+		"\t--teachersdayshvprintteacherslongnames=B12\n"
+		"\t--teachersdayshvprintteacherscodes=B13\n"
+		"\t--teachersdayshvprintstudentsnames=B14\n"
+		"\t--teachersdayshvprintstudentslongnames=B15\n"
+		"\t--teachersdayshvprintstudentscodes=B16\n"
+		"\t--teachersdayshvprintroomsnames=B17\n"
+		"\t--teachersdayshvprintroomslongnames=B18\n"
+		"\t--teachersdayshvprintroomscodes=B19\n"
+		"\t--teachersdayshvprintsubjectslegend=B20\n"
+		"\t--teachersdayshvprintactivitytagslegend=B21\n"
+		"\t--teachersdayshvprintteacherslegend=B22\n"
+		"\t--teachersdayshvprintstudentslegend=B23\n"
+		"\t--teachersdayshvprintroomslegend=B24\n"
+		"\t--teachersdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--teacherstimehvprintdaysnames=B1\n"
+		"\t--teacherstimehvprintdayslongnames=B2\n"
+		"\t--teacherstimehvprinthoursnames=B3\n"
+		"\t--teacherstimehvprinthourslongnames=B4\n"
+		"\t--teacherstimehvprintsubjectsnames=B5\n"
+		"\t--teacherstimehvprintsubjectslongnames=B6\n"
+		"\t--teacherstimehvprintsubjectscodes=B7\n"
+		"\t--teacherstimehvprintactivitytagsnames=B8\n"
+		"\t--teacherstimehvprintactivitytagslongnames=B9\n"
+		"\t--teacherstimehvprintactivitytagscodes=B10\n"
+		"\t--teacherstimehvprintteachersnames=B11\n"
+		"\t--teacherstimehvprintteacherslongnames=B12\n"
+		"\t--teacherstimehvprintteacherscodes=B13\n"
+		"\t--teacherstimehvprintstudentsnames=B14\n"
+		"\t--teacherstimehvprintstudentslongnames=B15\n"
+		"\t--teacherstimehvprintstudentscodes=B16\n"
+		"\t--teacherstimehvprintroomsnames=B17\n"
+		"\t--teacherstimehvprintroomslongnames=B18\n"
+		"\t--teacherstimehvprintroomscodes=B19\n"
+		"\t--teacherstimehvprintsubjectslegend=B20\n"
+		"\t--teacherstimehvprintactivitytagslegend=B21\n"
+		"\t--teacherstimehvprintteacherslegend=B22\n"
+		"\t--teacherstimehvprintstudentslegend=B23\n"
+		"\t--teacherstimehvprintroomslegend=B24\n"
+		"\t--teacherstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--roomsdayshvprintdaysnames=B1\n"
+		"\t--roomsdayshvprintdayslongnames=B2\n"
+		"\t--roomsdayshvprinthoursnames=B3\n"
+		"\t--roomsdayshvprinthourslongnames=B4\n"
+		"\t--roomsdayshvprintsubjectsnames=B5\n"
+		"\t--roomsdayshvprintsubjectslongnames=B6\n"
+		"\t--roomsdayshvprintsubjectscodes=B7\n"
+		"\t--roomsdayshvprintactivitytagsnames=B8\n"
+		"\t--roomsdayshvprintactivitytagslongnames=B9\n"
+		"\t--roomsdayshvprintactivitytagscodes=B10\n"
+		"\t--roomsdayshvprintteachersnames=B11\n"
+		"\t--roomsdayshvprintteacherslongnames=B12\n"
+		"\t--roomsdayshvprintteacherscodes=B13\n"
+		"\t--roomsdayshvprintstudentsnames=B14\n"
+		"\t--roomsdayshvprintstudentslongnames=B15\n"
+		"\t--roomsdayshvprintstudentscodes=B16\n"
+		"\t--roomsdayshvprintroomsnames=B17\n"
+		"\t--roomsdayshvprintroomslongnames=B18\n"
+		"\t--roomsdayshvprintroomscodes=B19\n"
+		"\t--roomsdayshvprintsubjectslegend=B20\n"
+		"\t--roomsdayshvprintactivitytagslegend=B21\n"
+		"\t--roomsdayshvprintteacherslegend=B22\n"
+		"\t--roomsdayshvprintstudentslegend=B23\n"
+		"\t--roomsdayshvprintroomslegend=B24\n"
+		"\t--roomsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--roomstimehvprintdaysnames=B1\n"
+		"\t--roomstimehvprintdayslongnames=B2\n"
+		"\t--roomstimehvprinthoursnames=B3\n"
+		"\t--roomstimehvprinthourslongnames=B4\n"
+		"\t--roomstimehvprintsubjectsnames=B5\n"
+		"\t--roomstimehvprintsubjectslongnames=B6\n"
+		"\t--roomstimehvprintsubjectscodes=B7\n"
+		"\t--roomstimehvprintactivitytagsnames=B8\n"
+		"\t--roomstimehvprintactivitytagslongnames=B9\n"
+		"\t--roomstimehvprintactivitytagscodes=B10\n"
+		"\t--roomstimehvprintteachersnames=B11\n"
+		"\t--roomstimehvprintteacherslongnames=B12\n"
+		"\t--roomstimehvprintteacherscodes=B13\n"
+		"\t--roomstimehvprintstudentsnames=B14\n"
+		"\t--roomstimehvprintstudentslongnames=B15\n"
+		"\t--roomstimehvprintstudentscodes=B16\n"
+		"\t--roomstimehvprintroomsnames=B17\n"
+		"\t--roomstimehvprintroomslongnames=B18\n"
+		"\t--roomstimehvprintroomscodes=B19\n"
+		"\t--roomstimehvprintsubjectslegend=B20\n"
+		"\t--roomstimehvprintactivitytagslegend=B21\n"
+		"\t--roomstimehvprintteacherslegend=B22\n"
+		"\t--roomstimehvprintstudentslegend=B23\n"
+		"\t--roomstimehvprintroomslegend=B24\n"
+		"\t--roomstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--buildingsdayshvprintdaysnames=B1\n"
+		"\t--buildingsdayshvprintdayslongnames=B2\n"
+		"\t--buildingsdayshvprinthoursnames=B3\n"
+		"\t--buildingsdayshvprinthourslongnames=B4\n"
+		"\t--buildingsdayshvprintsubjectsnames=B5\n"
+		"\t--buildingsdayshvprintsubjectslongnames=B6\n"
+		"\t--buildingsdayshvprintsubjectscodes=B7\n"
+		"\t--buildingsdayshvprintactivitytagsnames=B8\n"
+		"\t--buildingsdayshvprintactivitytagslongnames=B9\n"
+		"\t--buildingsdayshvprintactivitytagscodes=B10\n"
+		"\t--buildingsdayshvprintteachersnames=B11\n"
+		"\t--buildingsdayshvprintteacherslongnames=B12\n"
+		"\t--buildingsdayshvprintteacherscodes=B13\n"
+		"\t--buildingsdayshvprintstudentsnames=B14\n"
+		"\t--buildingsdayshvprintstudentslongnames=B15\n"
+		"\t--buildingsdayshvprintstudentscodes=B16\n"
+		"\t--buildingsdayshvprintroomsnames=B17\n"
+		"\t--buildingsdayshvprintroomslongnames=B18\n"
+		"\t--buildingsdayshvprintroomscodes=B19\n"
+		"\t--buildingsdayshvprintsubjectslegend=B20\n"
+		"\t--buildingsdayshvprintactivitytagslegend=B21\n"
+		"\t--buildingsdayshvprintteacherslegend=B22\n"
+		"\t--buildingsdayshvprintstudentslegend=B23\n"
+		"\t--buildingsdayshvprintroomslegend=B24\n"
+		"\t--buildingsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--buildingstimehvprintdaysnames=B1\n"
+		"\t--buildingstimehvprintdayslongnames=B2\n"
+		"\t--buildingstimehvprinthoursnames=B3\n"
+		"\t--buildingstimehvprinthourslongnames=B4\n"
+		"\t--buildingstimehvprintsubjectsnames=B5\n"
+		"\t--buildingstimehvprintsubjectslongnames=B6\n"
+		"\t--buildingstimehvprintsubjectscodes=B7\n"
+		"\t--buildingstimehvprintactivitytagsnames=B8\n"
+		"\t--buildingstimehvprintactivitytagslongnames=B9\n"
+		"\t--buildingstimehvprintactivitytagscodes=B10\n"
+		"\t--buildingstimehvprintteachersnames=B11\n"
+		"\t--buildingstimehvprintteacherslongnames=B12\n"
+		"\t--buildingstimehvprintteacherscodes=B13\n"
+		"\t--buildingstimehvprintstudentsnames=B14\n"
+		"\t--buildingstimehvprintstudentslongnames=B15\n"
+		"\t--buildingstimehvprintstudentscodes=B16\n"
+		"\t--buildingstimehvprintroomsnames=B17\n"
+		"\t--buildingstimehvprintroomslongnames=B18\n"
+		"\t--buildingstimehvprintroomscodes=B19\n"
+		"\t--buildingstimehvprintsubjectslegend=B20\n"
+		"\t--buildingstimehvprintactivitytagslegend=B21\n"
+		"\t--buildingstimehvprintteacherslegend=B22\n"
+		"\t--buildingstimehvprintstudentslegend=B23\n"
+		"\t--buildingstimehvprintroomslegend=B24\n"
+		"\t--buildingstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--subjectsdayshvprintdaysnames=B1\n"
+		"\t--subjectsdayshvprintdayslongnames=B2\n"
+		"\t--subjectsdayshvprinthoursnames=B3\n"
+		"\t--subjectsdayshvprinthourslongnames=B4\n"
+		"\t--subjectsdayshvprintsubjectsnames=B5\n"
+		"\t--subjectsdayshvprintsubjectslongnames=B6\n"
+		"\t--subjectsdayshvprintsubjectscodes=B7\n"
+		"\t--subjectsdayshvprintactivitytagsnames=B8\n"
+		"\t--subjectsdayshvprintactivitytagslongnames=B9\n"
+		"\t--subjectsdayshvprintactivitytagscodes=B10\n"
+		"\t--subjectsdayshvprintteachersnames=B11\n"
+		"\t--subjectsdayshvprintteacherslongnames=B12\n"
+		"\t--subjectsdayshvprintteacherscodes=B13\n"
+		"\t--subjectsdayshvprintstudentsnames=B14\n"
+		"\t--subjectsdayshvprintstudentslongnames=B15\n"
+		"\t--subjectsdayshvprintstudentscodes=B16\n"
+		"\t--subjectsdayshvprintroomsnames=B17\n"
+		"\t--subjectsdayshvprintroomslongnames=B18\n"
+		"\t--subjectsdayshvprintroomscodes=B19\n"
+		"\t--subjectsdayshvprintsubjectslegend=B20\n"
+		"\t--subjectsdayshvprintactivitytagslegend=B21\n"
+		"\t--subjectsdayshvprintteacherslegend=B22\n"
+		"\t--subjectsdayshvprintstudentslegend=B23\n"
+		"\t--subjectsdayshvprintroomslegend=B24\n"
+		"\t--subjectsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--subjectstimehvprintdaysnames=B1\n"
+		"\t--subjectstimehvprintdayslongnames=B2\n"
+		"\t--subjectstimehvprinthoursnames=B3\n"
+		"\t--subjectstimehvprinthourslongnames=B4\n"
+		"\t--subjectstimehvprintsubjectsnames=B5\n"
+		"\t--subjectstimehvprintsubjectslongnames=B6\n"
+		"\t--subjectstimehvprintsubjectscodes=B7\n"
+		"\t--subjectstimehvprintactivitytagsnames=B8\n"
+		"\t--subjectstimehvprintactivitytagslongnames=B9\n"
+		"\t--subjectstimehvprintactivitytagscodes=B10\n"
+		"\t--subjectstimehvprintteachersnames=B11\n"
+		"\t--subjectstimehvprintteacherslongnames=B12\n"
+		"\t--subjectstimehvprintteacherscodes=B13\n"
+		"\t--subjectstimehvprintstudentsnames=B14\n"
+		"\t--subjectstimehvprintstudentslongnames=B15\n"
+		"\t--subjectstimehvprintstudentscodes=B16\n"
+		"\t--subjectstimehvprintroomsnames=B17\n"
+		"\t--subjectstimehvprintroomslongnames=B18\n"
+		"\t--subjectstimehvprintroomscodes=B19\n"
+		"\t--subjectstimehvprintsubjectslegend=B20\n"
+		"\t--subjectstimehvprintactivitytagslegend=B21\n"
+		"\t--subjectstimehvprintteacherslegend=B22\n"
+		"\t--subjectstimehvprintstudentslegend=B23\n"
+		"\t--subjectstimehvprintroomslegend=B24\n"
+		"\t--subjectstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--activitytagsdayshvprintdaysnames=B1\n"
+		"\t--activitytagsdayshvprintdayslongnames=B2\n"
+		"\t--activitytagsdayshvprinthoursnames=B3\n"
+		"\t--activitytagsdayshvprinthourslongnames=B4\n"
+		"\t--activitytagsdayshvprintsubjectsnames=B5\n"
+		"\t--activitytagsdayshvprintsubjectslongnames=B6\n"
+		"\t--activitytagsdayshvprintsubjectscodes=B7\n"
+		"\t--activitytagsdayshvprintactivitytagsnames=B8\n"
+		"\t--activitytagsdayshvprintactivitytagslongnames=B9\n"
+		"\t--activitytagsdayshvprintactivitytagscodes=B10\n"
+		"\t--activitytagsdayshvprintteachersnames=B11\n"
+		"\t--activitytagsdayshvprintteacherslongnames=B12\n"
+		"\t--activitytagsdayshvprintteacherscodes=B13\n"
+		"\t--activitytagsdayshvprintstudentsnames=B14\n"
+		"\t--activitytagsdayshvprintstudentslongnames=B15\n"
+		"\t--activitytagsdayshvprintstudentscodes=B16\n"
+		"\t--activitytagsdayshvprintroomsnames=B17\n"
+		"\t--activitytagsdayshvprintroomslongnames=B18\n"
+		"\t--activitytagsdayshvprintroomscodes=B19\n"
+		"\t--activitytagsdayshvprintsubjectslegend=B20\n"
+		"\t--activitytagsdayshvprintactivitytagslegend=B21\n"
+		"\t--activitytagsdayshvprintteacherslegend=B22\n"
+		"\t--activitytagsdayshvprintstudentslegend=B23\n"
+		"\t--activitytagsdayshvprintroomslegend=B24\n"
+		"\t--activitytagsdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--activitytagstimehvprintdaysnames=B1\n"
+		"\t--activitytagstimehvprintdayslongnames=B2\n"
+		"\t--activitytagstimehvprinthoursnames=B3\n"
+		"\t--activitytagstimehvprinthourslongnames=B4\n"
+		"\t--activitytagstimehvprintsubjectsnames=B5\n"
+		"\t--activitytagstimehvprintsubjectslongnames=B6\n"
+		"\t--activitytagstimehvprintsubjectscodes=B7\n"
+		"\t--activitytagstimehvprintactivitytagsnames=B8\n"
+		"\t--activitytagstimehvprintactivitytagslongnames=B9\n"
+		"\t--activitytagstimehvprintactivitytagscodes=B10\n"
+		"\t--activitytagstimehvprintteachersnames=B11\n"
+		"\t--activitytagstimehvprintteacherslongnames=B12\n"
+		"\t--activitytagstimehvprintteacherscodes=B13\n"
+		"\t--activitytagstimehvprintstudentsnames=B14\n"
+		"\t--activitytagstimehvprintstudentslongnames=B15\n"
+		"\t--activitytagstimehvprintstudentscodes=B16\n"
+		"\t--activitytagstimehvprintroomsnames=B17\n"
+		"\t--activitytagstimehvprintroomslongnames=B18\n"
+		"\t--activitytagstimehvprintroomscodes=B19\n"
+		"\t--activitytagstimehvprintsubjectslegend=B20\n"
+		"\t--activitytagstimehvprintactivitytagslegend=B21\n"
+		"\t--activitytagstimehvprintteacherslegend=B22\n"
+		"\t--activitytagstimehvprintstudentslegend=B23\n"
+		"\t--activitytagstimehvprintroomslegend=B24\n"
+		"\t--activitytagstimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
+		"\t--activitiesdayshvprintdaysnames=B1\n"
+		"\t--activitiesdayshvprintdayslongnames=B2\n"
+		"\t--activitiesdayshvprinthoursnames=B3\n"
+		"\t--activitiesdayshvprinthourslongnames=B4\n"
+		"\t--activitiesdayshvprintsubjectsnames=B5\n"
+		"\t--activitiesdayshvprintsubjectslongnames=B6\n"
+		"\t--activitiesdayshvprintsubjectscodes=B7\n"
+		"\t--activitiesdayshvprintactivitytagsnames=B8\n"
+		"\t--activitiesdayshvprintactivitytagslongnames=B9\n"
+		"\t--activitiesdayshvprintactivitytagscodes=B10\n"
+		"\t--activitiesdayshvprintteachersnames=B11\n"
+		"\t--activitiesdayshvprintteacherslongnames=B12\n"
+		"\t--activitiesdayshvprintteacherscodes=B13\n"
+		"\t--activitiesdayshvprintstudentsnames=B14\n"
+		"\t--activitiesdayshvprintstudentslongnames=B15\n"
+		"\t--activitiesdayshvprintstudentscodes=B16\n"
+		"\t--activitiesdayshvprintroomsnames=B17\n"
+		"\t--activitiesdayshvprintroomslongnames=B18\n"
+		"\t--activitiesdayshvprintroomscodes=B19\n"
+		"\t--activitiesdayshvprintsubjectslegend=B20\n"
+		"\t--activitiesdayshvprintactivitytagslegend=B21\n"
+		"\t--activitiesdayshvprintteacherslegend=B22\n"
+		"\t--activitiesdayshvprintstudentslegend=B23\n"
+		"\t--activitiesdayshvprintroomslegend=B24\n"
+		"\t--activitiesdayshvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+		"\t--activitiestimehvprintdaysnames=B1\n"
+		"\t--activitiestimehvprintdayslongnames=B2\n"
+		"\t--activitiestimehvprinthoursnames=B3\n"
+		"\t--activitiestimehvprinthourslongnames=B4\n"
+		"\t--activitiestimehvprintsubjectsnames=B5\n"
+		"\t--activitiestimehvprintsubjectslongnames=B6\n"
+		"\t--activitiestimehvprintsubjectscodes=B7\n"
+		"\t--activitiestimehvprintactivitytagsnames=B8\n"
+		"\t--activitiestimehvprintactivitytagslongnames=B9\n"
+		"\t--activitiestimehvprintactivitytagscodes=B10\n"
+		"\t--activitiestimehvprintteachersnames=B11\n"
+		"\t--activitiestimehvprintteacherslongnames=B12\n"
+		"\t--activitiestimehvprintteacherscodes=B13\n"
+		"\t--activitiestimehvprintstudentsnames=B14\n"
+		"\t--activitiestimehvprintstudentslongnames=B15\n"
+		"\t--activitiestimehvprintstudentscodes=B16\n"
+		"\t--activitiestimehvprintroomsnames=B17\n"
+		"\t--activitiestimehvprintroomslongnames=B18\n"
+		"\t--activitiestimehvprintroomscodes=B19\n"
+		"\t--activitiestimehvprintsubjectslegend=B20\n"
+		"\t--activitiestimehvprintactivitytagslegend=B21\n"
+		"\t--activitiestimehvprintteacherslegend=B22\n"
+		"\t--activitiestimehvprintstudentslegend=B23\n"
+		"\t--activitiestimehvprintroomslegend=B24\n"
+		"\t--activitiestimehvprintlegendcodesfirst=B25\n"
+		"\t\tB1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).\n"
+		"\t\t('hv' means 'horizontal and vertical'.)\n"
+		"\n"
+
 		"\t--showvirtualrooms=SVR\n"
 		"\t\tSVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
 		"\n"
@@ -679,7 +1216,7 @@ int main(int argc, char **argv)
 		PRINT_BREAK_TIME_SLOTS=true;
 		
 		WRITE_TIMETABLE_CONFLICTS=true;
-	
+		
 		WRITE_TIMETABLES_STATISTICS=true;
 		WRITE_TIMETABLES_XML=true;
 		WRITE_TIMETABLES_DAYS_HORIZONTAL=true;
@@ -697,6 +1234,655 @@ int main(int argc, char **argv)
 		WRITE_TIMETABLES_SUBJECTS=true;
 		WRITE_TIMETABLES_ACTIVITY_TAGS=true;
 		WRITE_TIMETABLES_ACTIVITIES=true;
+
+		SETTINGS_TIMETABLES_SEPARATE_DAYS_NAME_LONG_NAME_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_HOURS_NAME_LONG_NAME_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_SUBJECTS_NAME_LONG_NAME_CODE_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_ACTIVITY_TAGS_NAME_LONG_NAME_CODE_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_TEACHERS_NAME_LONG_NAME_CODE_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_STUDENTS_NAME_LONG_NAME_CODE_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_BUILDINGS_NAME_LONG_NAME_CODE_BY_BREAK=false;
+		SETTINGS_TIMETABLES_SEPARATE_ROOMS_NAME_LONG_NAME_CODE_BY_BREAK=false;
+
+		//only in days horizontal and days vertical.
+		SETTINGS_TIMETABLES_PRINT_SUBJECTS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_ACTIVITY_TAGS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_TEACHERS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_SUBGROUPS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_GROUPS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_YEARS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_BUILDINGS_COMMENTS=false;
+		SETTINGS_TIMETABLES_PRINT_ROOMS_COMMENTS=false;
+
+		/////subgroups days horizontal and days vertical.
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////subgroups time horizontal and time vertical.
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////groups days horizontal and days vertical.
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////groups time horizontal and time vertical.
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////years days horizontal and days vertical.
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////years time horizontal and time vertical.
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////teachers days horizontal and days vertical.
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////teachers time horizontal and time vertical.
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////rooms days horizontal and days vertical.
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////rooms time horizontal and time vertical.
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////buildings days horizontal and days vertical.
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////buildings time horizontal and time vertical.
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////subjects days horizontal and days vertical.
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////subjects time horizontal and time vertical.
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////activity tags days horizontal and days vertical.
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////activity tags time horizontal and time vertical.
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////activities days horizontal and days vertical.
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=false;
+		/////
+
+		/////activities time horizontal and time vertical.
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_NAMES=true;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_CODES=false;
+
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=false;
+		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
+		///////
 
 		DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
 		
@@ -800,12 +1986,12 @@ int main(int argc, char **argv)
 				if(s.right(4)=="true")
 					PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=true;
 			}
-			//keep this to deny beginning the generation for FET-5.44.0 or later, because it is an obsolete option and we cannot bypass it
+			//keep this to refuse beginning the generation for FET-5.44.0 or later, because it is an obsolete option and we cannot bypass it
 			else if(s.left(14)=="--randomseedx="){
 				randomSeedXSpecified=true;
 				//randomSeedX=s.right(s.length()-14).toInt();
 			}
-			//keep this to deny beginning the generation for FET-5.44.0 or later, because it is an obsolete option and we cannot bypass it
+			//keep this to refuse beginning the generation for FET-5.44.0 or later, because it is an obsolete option and we cannot bypass it
 			else if(s.left(14)=="--randomseedy="){
 				randomSeedYSpecified=true;
 				//randomSeedY=s.right(s.length()-14).toInt();
@@ -981,7 +2167,2034 @@ int main(int argc, char **argv)
 				else if(s.right(11)=="verticalbar")
 					EXPORT_FIELD_SEPARATOR=EXPORT_VERTICALBAR;
 			}
-			///
+			///////
+
+			else if(s.startsWith("--separatedaysnamelongnamebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_DAYS_NAME_LONG_NAME_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separatehoursnamelongnamebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_HOURS_NAME_LONG_NAME_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separatesubjectsnamelongnamecodebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_SUBJECTS_NAME_LONG_NAME_CODE_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separateactivitytagsnamelongnamecodebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_ACTIVITY_TAGS_NAME_LONG_NAME_CODE_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separateteachersnamelongnamecodebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_TEACHERS_NAME_LONG_NAME_CODE_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separatestudentsnamelongnamecodebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_STUDENTS_NAME_LONG_NAME_CODE_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separatebuildingsnamelongnamecodebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_BUILDINGS_NAME_LONG_NAME_CODE_BY_BREAK=true;
+			}
+			else if(s.startsWith("--separateroomsnamelongnamecodebybreak=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SEPARATE_ROOMS_NAME_LONG_NAME_CODE_BY_BREAK=true;
+			}
+			///////
+
+			else if(s.startsWith("--printsubjectscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_SUBJECTS_COMMENTS=true;
+			}
+
+			else if(s.startsWith("--printactivitytagscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_ACTIVITY_TAGS_COMMENTS=true;
+			}
+			else if(s.startsWith("--printteacherscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_TEACHERS_COMMENTS=true;
+			}
+			else if(s.startsWith("--printsubgroupscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_SUBGROUPS_COMMENTS=true;
+			}
+			else if(s.startsWith("--printgroupscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_GROUPS_COMMENTS=true;
+			}
+			else if(s.startsWith("--printyearscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_YEARS_COMMENTS=true;
+			}
+			else if(s.startsWith("--printbuildingscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_BUILDINGS_COMMENTS=true;
+			}
+			else if(s.startsWith("--printroomscomments=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_PRINT_ROOMS_COMMENTS=true;
+			}
+			
+			///////
+
+			else if(s.startsWith("--subgroupsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subgroupsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subgroupsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--subgroupsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--subgroupsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subgroupsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subgroupsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--subgroupsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--subgroupstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subgroupstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subgroupstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--subgroupstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--subgroupstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subgroupstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subgroupstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--subgroupstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--subgroupstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--subgroupstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBGROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--groupsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--groupsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--groupsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--groupsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--groupsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--groupsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--groupsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--groupsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--groupsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--groupstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--groupstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--groupstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--groupstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--groupstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--groupstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--groupstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--groupstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--groupstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--groupstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--groupstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_GROUPS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--yearsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--yearsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--yearsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--yearsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--yearsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--yearsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--yearsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--yearsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--yearsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--yearstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--yearstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--yearstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--yearstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--yearstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--yearstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--yearstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--yearstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--yearstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--yearstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--yearstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_YEARS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--teachersdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--teachersdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--teachersdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--teachersdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--teachersdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--teachersdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--teachersdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--teachersdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--teachersdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--teacherstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--teacherstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--teacherstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--teacherstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--teacherstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--teacherstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--teacherstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--teacherstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--teacherstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--teacherstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--roomsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--roomsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--roomsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--roomsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--roomsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--roomsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--roomsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--roomsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--roomsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--roomstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--roomstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--roomstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--roomstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--roomstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--roomstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--roomstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--roomstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--roomstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--roomstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--roomstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ROOMS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--buildingsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--buildingsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--buildingsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--buildingsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--buildingsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--buildingsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--buildingsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--buildingsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--buildingstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--buildingstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--buildingstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--buildingstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--buildingstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--buildingstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--buildingstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--buildingstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--buildingstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--buildingstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_BUILDINGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+			///////
+
+			else if(s.startsWith("--subjectsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subjectsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subjectsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--subjectsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--subjectsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subjectsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subjectsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--subjectsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--subjectstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subjectstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--subjectstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--subjectstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--subjectstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subjectstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--subjectstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--subjectstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--subjectstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--subjectstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_SUBJECTS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+			///////
+
+			else if(s.startsWith("--activitytagsdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitytagsdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitytagsdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitytagsdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitytagsdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitytagsdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitytagsdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitytagsdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagsdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--activitytagstimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitytagstimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitytagstimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitytagstimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitytagstimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitytagstimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitytagstimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--activitytagstimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitytagstimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitytagstimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITY_TAGS_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+			///////
+
+			else if(s.startsWith("--activitiesdayshvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitiesdayshvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitiesdayshvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitiesdayshvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitiesdayshvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitiesdayshvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitiesdayshvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiesdayshvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitiesdayshvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiesdayshvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_DAYS_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+
+			else if(s.startsWith("--activitiestimehvprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_DAYS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitiestimehvprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_HOURS_LONG_NAMES=true;
+			}
+			
+			else if(s.startsWith("--activitiestimehvprintsubjectsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprintsubjectslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintsubjectscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitiestimehvprintactivitytagsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprintactivitytagslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintactivitytagscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitiestimehvprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitiestimehvprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_CODES=true;
+			}
+			
+			else if(s.startsWith("--activitiestimehvprintroomsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_NAMES=false;
+			}
+			else if(s.startsWith("--activitiestimehvprintroomslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintroomscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_CODES=true;
+			}
+
+			else if(s.startsWith("--activitiestimehvprintsubjectslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_SUBJECTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintactivitytagslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ACTIVITY_TAGS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintteacherslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_TEACHERS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintstudentslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintroomslegend=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=true;
+			}
+			else if(s.startsWith("--activitiestimehvprintlegendcodesfirst=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
+			}
+			///////
+
+
+
+
+
+
+
+
+
 			else
 				unrecognizedOptions.append(s);
 		}
