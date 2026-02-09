@@ -13,14 +13,23 @@
 # cp ../fet/fet/translations build/ -r
 
 
-docker build -t vonmecheln/fet .
 
+docker build --pull -t vonmecheln/fet .
+
+# Pass UTF-8 locale into container to avoid Qt warnings during build
+mkdir -p .ccache
 docker run --name fet -d -i -t \
---mount type=bind,source="$(pwd)"/fet,target=/app \
---mount type=bind,source="$(pwd)"/build,target=/build \
-vonmecheln/fet /bin/sh
+	-e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 \
+	--mount type=bind,source="$(pwd)"/fet,target=/app \
+	--mount type=bind,source="$(pwd)"/build,target=/build \
+	--mount type=bind,source="$(pwd)"/.ccache,target=/root/.ccache \
+	vonmecheln/fet /bin/sh
 
-docker exec -it fet ./fet_build.sh
+docker exec -it fet locale
+
+docker exec -it fet /fet_build.sh
+
+# docker logs -f fet
 
 docker stop fet
 docker rm fet
