@@ -1,4 +1,4 @@
-This is FET version 7.7.5
+This is FET version 7.7.6
 
 
 Program description:
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.8, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.18.9, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.12.1, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
 	Thunar Bulk Rename 4.20.4, Qt 6.10.2, QMake 3.1, CMake 4.2.3, Ninja 1.13.2, Qt Creator 18.0.2, GCC 15.2.1, Clang 21.1.8, GNU Make 4.4.1,
 	GDB 16.3, Valgrind 3.26.0, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.2,
@@ -23,7 +23,7 @@ Requirements:
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 11 operating system,
 	Command Prompt, Total Commander 11.56, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.10.2,
-	QMake 3.1, Qt Creator 18.0.2, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 25.01.
+	QMake 3.1, Qt Creator 18.0.2, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 26.00.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: GNU/Linux Mint 21.3 "Virginia" Xfce Edition
 	with the standard packages, Qt 6.10.2, and possibly linuxdeploy 1-alpha (most of these software packages are free software,
@@ -256,6 +256,9 @@ Installing FET:
 	with relative paths, but the best is to give an absolute path). Then you might need to run windeployqt (on Windows) or
 	macdeployqt (on macOS) to make a universally runnable program.
 	Note: "build" can be changed to a name of your choice; the last "build" can be changed to another name.
+
+	Note for macOS: If you would like to obtain a universally runnable package, you might need to set CMAKE_OSX_ARCHITECTURES to x86_64;arm64 and
+	set CMAKE_OSX_DEPLOYMENT_TARGET appropriately.
 
 	2. With QMake (old method):
 

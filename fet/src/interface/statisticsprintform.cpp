@@ -893,7 +893,7 @@ void StatisticsPrintForm::print(){
 	switch(CBorientationMode->currentIndex()){
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-		default: assert(0==1);
+		default: assert(0==1); break;
 	}
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
@@ -938,7 +938,7 @@ void StatisticsPrintForm::printPreviewFull(){
 	switch(CBorientationMode->currentIndex()){
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-		default: assert(0==1);
+		default: assert(0==1); break;
 	}
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
@@ -991,7 +991,7 @@ void StatisticsPrintForm::printPreviewSmall(){
 	switch(CBorientationMode->currentIndex()){
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-		default: assert(0==1);
+		default: assert(0==1); break;
 	}
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());

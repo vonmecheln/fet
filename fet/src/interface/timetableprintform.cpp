@@ -1377,7 +1377,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 				 repeatNames->isChecked()); break;
 				case 11: tmp+=TimetableExport::singleStudentsStatisticsHtml(htmlLevel, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked(), printAll); break;
 				case 12: tmp+=TimetableExport::singleTeachersStatisticsHtml(htmlLevel, saveTime, printDetailedTables->isChecked(), repeatNames->isChecked(), printAll); break;
-				default: assert(0==1);
+				default: assert(0==1); break;
 			}
 			if(iNi<includedNamesIndex.size()-1){
 				if(iNi%2==0){
@@ -1423,7 +1423,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 				case 10: tmp+=TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(htmlLevel, saveTime,
 				 printSubjects->isChecked(), printActivityTags->isChecked(), printTeachers->isChecked(), printStudents->isChecked(), printRooms->isChecked(),
 				 repeatNames->isChecked()); break;
-				default: assert(0==1);
+				default: assert(0==1); break;
 			}
 			if(iNi<includedNamesIndex.size()-1){
 				if(iNi%2==0){
@@ -1471,7 +1471,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 				 printSubjects->isChecked(), printActivityTags->isChecked(), printTeachers->isChecked(), printStudents->isChecked(), printRooms->isChecked(),
 				 repeatNames->isChecked());
 				 excludedNamesIndex<<-1; break;
-				default: assert(0==1);
+				default: assert(0==1); break;
 			}
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
@@ -1520,7 +1520,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 				 printSubjects->isChecked(), printActivityTags->isChecked(), printTeachers->isChecked(), printStudents->isChecked(), printRooms->isChecked(),
 				 repeatNames->isChecked());
 				 excludedNamesIndex<<-1; break;
-				default: assert(0==1);
+				default: assert(0==1); break;
 			}
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
@@ -1572,7 +1572,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 					 printSubjects->isChecked(), printActivityTags->isChecked(), printTeachers->isChecked(), printStudents->isChecked(), printRooms->isChecked(),
 					 repeatNames->isChecked());
 					 tmpExcludedNamesIndex<<-1; break;
-					default: assert(0==1);
+					default: assert(0==1); break;
 				}
 				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)-1)){
 					if(count%2==0){
@@ -1626,7 +1626,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 					 printSubjects->isChecked(), printActivityTags->isChecked(), printTeachers->isChecked(), printStudents->isChecked(), printRooms->isChecked(),
 					 repeatNames->isChecked());
 					 tmpExcludedNamesIndex<<-1; break;
-					default: assert(0==1);
+					default: assert(0==1); break;
 				}
 				if(!(tmpExcludedNamesIndex.size()==namesList->count() && day==(gt.rules.mode!=MORNINGS_AFTERNOONS ? gt.rules.nDaysPerWeek : gt.rules.nRealDaysPerWeek)-1)){
 					if(count%2==0){
@@ -1710,7 +1710,7 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 					 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND,
 					 SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 					break;
-			default: assert(0==1);
+			default: assert(0==1); break;
 		}
 	}
 	
@@ -1742,7 +1742,7 @@ void TimetablePrintForm::print(){
 	switch(CBorientationMode->currentIndex()){
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-		default: assert(0==1);
+		default: assert(0==1); break;
 	}
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
@@ -1787,7 +1787,7 @@ void TimetablePrintForm::printPreviewFull(){
 	switch(CBorientationMode->currentIndex()){
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-		default: assert(0==1);
+		default: assert(0==1); break;
 	}
 	QMarginsF printerMargins;
 	printerMargins.setLeft(leftPageMargin->value());
@@ -1840,7 +1840,7 @@ void TimetablePrintForm::printPreviewSmall(){
 	switch(CBorientationMode->currentIndex()){
 		case 0: printer.setPageOrientation(QPageLayout::Portrait); break;
 		case 1: printer.setPageOrientation(QPageLayout::Landscape); break;
-		default: assert(0==1);
+		default: assert(0==1); break;
 	}
 	
 	QMarginsF printerMargins;

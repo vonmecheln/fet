@@ -780,7 +780,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
+						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n"; break;
 					}
 				} else {
 					//optimized by Liviu Lalescu - 1
@@ -1089,7 +1089,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
+						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n"; break;
 					}
 				} else {
 					//optimized by Liviu Lalescu - 2
@@ -1400,7 +1400,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
+						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n"; break;
 					}
 				} else {
 					//optimized by Liviu Lalescu - 3
@@ -1710,7 +1710,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
+						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n"; break;
 					}
 				} else {
 					//optimized by Liviu Lalescu - 4
@@ -2018,7 +2018,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
+						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n"; break;
 					}
 				} else {
 					//optimized by Liviu Lalescu - 5
@@ -2329,7 +2329,7 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 						case 4 : tmp+="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
 						case 5 : [[fallthrough]];
 						case 6 : tmp+="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</span></td>\n"; break;
-						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n";
+						default: tmp+="          <td>"+protect2(STRING_EMPTY_SLOT_STATISTICS)+"</td>\n"; break;
 					}
 				} else {
 					//optimized by Liviu Lalescu - 6

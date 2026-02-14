@@ -3990,7 +3990,7 @@ void ActivityPlanningForm::updateTablesVisual(){
 				case STUDENTS_YEAR:     if(showYears->checkState()!=Qt::Checked) show=false; break;
 				case STUDENTS_GROUP:    if(showGroups->checkState()!=Qt::Checked) show=false; break;
 				case STUDENTS_SUBGROUP: if(showSubgroups->checkState()!=Qt::Checked) show=false; break;
-				default: assert(0==1);
+				default: assert(0==1); break;
 			}
 			if((studentsDuplicates.at(students)) && (showDuplicates->checkState()!=Qt::Checked)){
 				show=false;
@@ -4023,7 +4023,7 @@ void ActivityPlanningForm::updateTablesVisual(){
 				case STUDENTS_YEAR:     if(showYears->checkState()!=Qt::Checked) show=false; break;
 				case STUDENTS_GROUP:    if(showGroups->checkState()!=Qt::Checked) show=false; break;
 				case STUDENTS_SUBGROUP: if(showSubgroups->checkState()!=Qt::Checked) show=false; break;
-				default: assert(0==1);
+				default: assert(0==1); break;
 			}
 			if((studentsDuplicates.at(students)) && (showDuplicates->checkState()!=Qt::Checked)){
 				show=false;

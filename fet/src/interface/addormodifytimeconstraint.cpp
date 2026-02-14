@@ -9078,6 +9078,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				
 			default:
 				weightLabel=new QLabel(tr("Weight percentage (allowed: 0.0%-100.0%)"));
+				break;
 		}
 	}
 	else{

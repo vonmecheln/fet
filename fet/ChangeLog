@@ -1,3 +1,7 @@
+ 7.7.6
+	- Corrected a few compilation warnings when using an older C++ compiler.
+	- Updated the Italian translation, by Andrea Primiani.
+	- Minor improvements.
  7.7.5
 	- The command-line version now allows completely configuring the data to be printed in the HTML timetables, as in the GUI version
 	(suggested by hold_find).

@@ -6745,7 +6745,7 @@ QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activi
 		switch(colorBy){
 			case COLOR_BY_SUBJECT_STUDENTS: tmp+=" class=\"c_"+QString::number(activeHashActivityColorBySubject.count()+hashActivityColorBySubjectAndStudents.value(index)); break;
 			case COLOR_BY_SUBJECT: tmp+=" class=\"c_"+QString::number(hashActivityColorBySubject.value(index)); break;
-			default: assert(0==1);
+			default: assert(0==1); break;
 		}
 		
 		if(detailed)
@@ -6986,7 +6986,7 @@ QString TimetableExport::writeNotAvailableSlot(int htmlLevel, const QString& wei
 		case 5 : [[fallthrough]];
 		case 6 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\" onmouseover=\"highlight('notAvailable')\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
 		case 7 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
-		default: tmp="          <td>"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</td>\n";
+		default: tmp="          <td>"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</td>\n"; break;
 	}
 	return tmp;
 }
@@ -7001,7 +7001,7 @@ QString TimetableExport::writeBreakSlot(int htmlLevel, const QString& weight){
 		case 5 : [[fallthrough]];
 		case 6 : tmp="          <td class=\"break\"><span class=\"break\" onmouseover=\"highlight('break')\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
 		case 7 : tmp="          <td class=\"break\"><span class=\"break\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
-		default: tmp="          <td>"+protect2(STRING_BREAK_SLOT)+weight+"</td>\n";
+		default: tmp="          <td>"+protect2(STRING_BREAK_SLOT)+weight+"</td>\n"; break;
 	}
 	return tmp;
 }
@@ -7015,7 +7015,7 @@ QString TimetableExport::writeEmpty(int htmlLevel){
 		case 5 : [[fallthrough]];
 		case 6 : tmp="          <td class=\"empty\"><span class=\"empty\" onmouseover=\"highlight('empty')\">"+protect2(STRING_EMPTY_SLOT)+"</span></td>\n"; break;
 		case 7 : tmp="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT)+"</span></td>\n"; break;
-		default: tmp="          <td>"+protect2(STRING_EMPTY_SLOT)+"</td>\n";
+		default: tmp="          <td>"+protect2(STRING_EMPTY_SLOT)+"</td>\n"; break;
 	}
 	return tmp;
 }

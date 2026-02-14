@@ -1335,38 +1335,38 @@ void SettingsDataToPrintInTimetablesForm::applyToAll421()
 {
 	assert(tabWidget->currentIndex()>=3 && tabWidget->currentIndex()<=20);
 	
-	bool daysNames;
-	bool daysLongNames;
+	bool daysNames=true;
+	bool daysLongNames=false;
 
-	bool hoursNames;
-	bool hoursLongNames;
+	bool hoursNames=true;
+	bool hoursLongNames=false;
 	
-	bool subjectsNames;
-	bool subjectsLongNames;
-	bool subjectsCodes;
+	bool subjectsNames=true;
+	bool subjectsLongNames=false;
+	bool subjectsCodes=false;
 	
-	bool activityTagsNames;
-	bool activityTagsLongNames;
-	bool activityTagsCodes;
+	bool activityTagsNames=true;
+	bool activityTagsLongNames=false;
+	bool activityTagsCodes=false;
 	
-	bool teachersNames;
-	bool teachersLongNames;
-	bool teachersCodes;
+	bool teachersNames=true;
+	bool teachersLongNames=false;
+	bool teachersCodes=false;
 	
-	bool studentsNames;
-	bool studentsLongNames;
-	bool studentsCodes;
+	bool studentsNames=true;
+	bool studentsLongNames=false;
+	bool studentsCodes=false;
 
-	bool roomsNames;
-	bool roomsLongNames;
-	bool roomsCodes;
+	bool roomsNames=true;
+	bool roomsLongNames=false;
+	bool roomsCodes=false;
 	
-	bool subjectsLegend;
-	bool activityTagsLegend;
-	bool teachersLegend;
-	bool studentsLegend;
-	bool roomsLegend;
-	bool legendCodesFirst;
+	bool subjectsLegend=false;
+	bool activityTagsLegend=false;
+	bool teachersLegend=false;
+	bool studentsLegend=false;
+	bool roomsLegend=false;
+	bool legendCodesFirst=false;
 	
 	switch(tabWidget->currentIndex()){
 		case 3:
@@ -2019,6 +2019,7 @@ void SettingsDataToPrintInTimetablesForm::applyToAll421()
 			
 		default:
 			assert(0);
+			break;
 	}
 	
 	/////subgroups days horizontal and days vertical.
