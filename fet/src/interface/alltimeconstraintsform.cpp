@@ -215,6 +215,8 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	}
 	
 	filterChanged();
+
+	constraintsListWidget->setFocus();
 }
 
 AllTimeConstraintsForm::~AllTimeConstraintsForm()

@@ -608,6 +608,30 @@ extern Matrix1D<QList<StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item*>> soms
 bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
 //END   students (set) occupy max sets of time slots from selection
 
+//BEGIN room occupies max sets of time slots from selection
+extern bool haveRoomsOccupyMaxSetsOfTimeSlotsFromSelection;
+
+class RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item
+{
+public:
+	//weight is 100.0%
+	int maxOccupiedSets;
+	QList<QList<int>> listOfLists;
+	//Matrix1D<int> timeToListIndex;
+	QList<int> timeToListIndex;
+};
+
+/*extern Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+extern Matrix1D<QList<int>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
+extern Matrix1D<QList<QList<QSet<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
+extern Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;*/
+
+extern std::list<RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item> romsotsfsList;
+extern Matrix1D<QList<RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item*>> romsotsfsListForRoom;
+
+bool computeRoomsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   room occupies max sets of time slots from selection
+
 
 //BEGIN teacher(s) pair of mutually exclusive time slots
 extern bool haveTeachersPairOfMutualExclusiveTimeSlots;
@@ -632,6 +656,18 @@ extern Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour2;
 
 bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive time slots
+
+//BEGIN room pair of mutually exclusive time slots
+extern bool haveRoomsPairOfMutualExclusiveTimeSlots;
+
+extern Matrix1D<QList<double>> roomsPairOfMutuallyExclusiveTimeSlotsPercentages;
+extern Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsDay1;
+extern Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsHour1;
+extern Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsDay2;
+extern Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsHour2;
+
+bool computeRoomsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+//END   room pair of mutually exclusive time slots
 
 
 //BEGIN teacher(s) pair of mutually exclusive sets of time slots
@@ -683,6 +719,31 @@ extern Matrix1D<QList<StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> spo
 
 bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive sets of time slots
+
+//BEGIN room pair of mutually exclusive sets of time slots
+extern bool haveRoomsPairOfMutualExclusiveSetsOfTimeSlots;
+
+class RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item
+{
+public:
+	//weight percentage is 100.0%
+	QSet<int> set1;
+	QList<int> list1;
+	QSet<int> set2;
+	QList<int> list2;
+};
+
+/*extern Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+extern Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
+extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
+extern Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
+extern Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;*/
+
+extern std::list<RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item> rpomesotsList;
+extern Matrix1D<QList<RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> rpomesotsListForRoom;
+
+bool computeRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
+//END   room pair of mutually exclusive sets of time slots
 
 
 ////////BEGIN teacher(s) max hours daily

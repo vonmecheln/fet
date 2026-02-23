@@ -1960,6 +1960,14 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction = new QAction(this);
 
+	dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
+	dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction = new QAction(this);
+	dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction = new QAction(this);
+
+	dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
+	dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction = new QAction(this);
+	dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction = new QAction(this);
+
 	dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
 	dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
 	dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction = new QAction(this);
@@ -2233,6 +2241,10 @@ void FetMainForm::createActionsForConstraints()
 	dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction = new QAction(this);
 	dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction = new QAction(this);
 
+	dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction = new QAction(this);
+	dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction = new QAction(this);
+	dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction = new QAction(this);
+
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
 	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
@@ -2329,6 +2341,14 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered);
 	connect(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered);
+
+	connect(dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction_triggered);
+	connect(dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered);
+	connect(dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction_triggered);
+
+	connect(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction_triggered);
+	connect(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered);
+	connect(dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered);
 
 	connect(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction_triggered);
 	connect(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction_triggered);
@@ -2603,6 +2623,10 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered);
 	connect(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_triggered);
 
+	connect(dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction_triggered);
+	connect(dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction_triggered);
+	connect(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction_triggered);
+
 	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered);
 	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered);
 	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction_triggered);
@@ -2749,6 +2773,14 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a teacher", nullptr));
 	dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for all students", nullptr));
 	dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily in an hourly interval for a students set", nullptr));
+
+	dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A room has a pair of mutually exclusive time slots", nullptr));
+	dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A room has a pair of mutually exclusive sets of time slots", nullptr));
+	dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A room occupies max sets of time slots from selection", nullptr));
+
+	dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "All rooms have a pair of mutually exclusive time slots", nullptr));
+	dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "All rooms have a pair of mutually exclusive sets of time slots", nullptr));
+	dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "All rooms occupy max sets of time slots from selection", nullptr));
 
 	dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher has a pair of mutually exclusive time slots", nullptr));
 	dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers have a pair of mutually exclusive time slots", nullptr));
@@ -3024,6 +3056,10 @@ void FetMainForm::retranslateConstraints()
 	dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per real day for a room", nullptr));
 	dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per week for a room", nullptr));
 
+	dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per day for all rooms", nullptr));
+	dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per real day for all rooms", nullptr));
+	dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activity tags from a set per week for all rooms", nullptr));
+
 	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all teachers", nullptr));
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for a students set", nullptr));
 	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all students", nullptr));
@@ -3126,7 +3162,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 	menuActivities_others_3_time_constraints=nullptr;
 
 	menuMisc_space_constraints->clear();
-	menuRooms_space_constraints->clear();
+	menuA_room_space_constraints->clear();
+	menuAll_rooms_space_constraints->clear();
 	menuActivities_space_constraints->clear();
 	menuSubjects_space_constraints->clear();
 	menuSubjects_and_activity_tags_space_constraints->clear();
@@ -3376,13 +3413,29 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
 
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+		///////
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
 
-		menuRooms_space_constraints->addSeparator();
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+		menuA_room_space_constraints->addSeparator();
+		
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
 
+		menuA_room_space_constraints->addSeparator();
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuAll_rooms_space_constraints->addSeparator();
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
+		///////
+		
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
 		menuActivities_space_constraints->addSeparator();
@@ -3880,13 +3933,30 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
 
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+		///////
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
 
-		menuRooms_space_constraints->addSeparator();
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+		menuA_room_space_constraints->addSeparator();
+		
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuA_room_space_constraints->addSeparator();
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuAll_rooms_space_constraints->addSeparator();
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
+		///////
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -4211,12 +4281,28 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
 
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+		///////
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
 
-		menuRooms_space_constraints->addSeparator();
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+		menuA_room_space_constraints->addSeparator();
+		
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuA_room_space_constraints->addSeparator();
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuAll_rooms_space_constraints->addSeparator();
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
+		///////
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -4535,12 +4621,28 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
 
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+		///////
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
 
-		menuRooms_space_constraints->addSeparator();
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
-		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+		menuA_room_space_constraints->addSeparator();
+		
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuA_room_space_constraints->addSeparator();
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+		menuAll_rooms_space_constraints->addSeparator();
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
+		///////
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
@@ -9112,6 +9214,108 @@ void FetMainForm::dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAct
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_STUDENTS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
 }
 
+void FetMainForm::dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION);
+}
+
 void FetMainForm::dataTimeConstraintsTeacherPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -12665,6 +12869,66 @@ void FetMainForm::dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_tr
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintRoomMaxActivityTagsPerDayFromSetForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintRoomMaxActivityTagsPerRealDayFromSetForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET);
+}
+
+void FetMainForm::dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintRoomMaxActivityTagsPerWeekFromSetForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET);
 }
 
 void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered()

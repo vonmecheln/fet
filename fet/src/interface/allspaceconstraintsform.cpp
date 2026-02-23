@@ -105,6 +105,8 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	filterCheckBox->setChecked(useFilter);
 	sortedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-sorted"), "false").toBool());
 
+	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
+
 	miscellaneousCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-miscellaneous-constraints"), "true").toBool());
 	teachersCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-teachers-constraints"), "true").toBool());
 	studentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-students-constraints"), "true").toBool());
@@ -219,6 +221,8 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	}
 
 	filterChanged();
+
+	constraintsListWidget->setFocus();
 }
 
 AllSpaceConstraintsForm::~AllSpaceConstraintsForm()
@@ -230,6 +234,8 @@ AllSpaceConstraintsForm::~AllSpaceConstraintsForm()
 
 	settings.setValue(this->metaObject()->className()+QString("/list-filtered"), useFilter);
 	settings.setValue(this->metaObject()->className()+QString("/list-sorted"), sortedCheckBox->isChecked());
+
+	settings.setValue(this->metaObject()->className()+QString("/use-colors"), colorsCheckBox->isChecked());
 
 	settings.setValue(this->metaObject()->className()+QString("/list-miscellaneous-constraints"), miscellaneousCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/list-teachers-constraints"), teachersCheckBox->isChecked());

@@ -49,11 +49,13 @@ public:
 	int nPlacedActivities;
 
 	/*
-	You will need to set this to true if altering the times array values.
-	The conflicts calculating routine will reset this to false
-	at the first teachers matrix and subgroups matrix calculation.
+	You will need to set these to true if altering the times array values.
+	The conflicts calculating routine will reset these (respectively) to false
+	at the first teachers/subgroups/rooms matrices calculation.
 	*/
-	bool changedForMatrixCalculation;
+	bool changedForMatrixCalculationTeachers;
+	bool changedForMatrixCalculationStudents;
+	bool changedForMatrixCalculationRooms;
 
 	/**
 	This array represents every activity's start time

@@ -498,6 +498,20 @@ Matrix1D<QList<StudentsOccupyMaxSetsOfTimeSlotsFromSelection_item*>> somsotsfsLi
 //bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
 //END   students (set) occupy max sets of time slots from selection
 
+//BEGIN room occupies max sets of time slots from selection
+bool haveRoomsOccupyMaxSetsOfTimeSlotsFromSelection;
+
+/*Matrix1D<QList<double>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionPercentages;
+Matrix1D<QList<int>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionMaxOccupiedSets;
+Matrix1D<QList<QList<QSet<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfSets;
+Matrix1D<QList<QList<QList<int>>>> teachersOccupyMaxSetsOfTimeSlotsFromSelectionListOfLists;*/
+
+std::list<RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item> romsotsfsList;
+Matrix1D<QList<RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item*>> romsotsfsListForRoom;
+
+//bool computeTeachersOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent);
+//END   room occupies max sets of time slots from selection
+
 
 //BEGIN teacher(s) pair of mutually exclusive time slots
 bool haveTeachersPairOfMutualExclusiveTimeSlots;
@@ -522,6 +536,18 @@ Matrix1D<QList<int>> subgroupsPairOfMutuallyExclusiveTimeSlotsHour2;
 
 //bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive time slots
+
+//BEGIN room pair of mutually exclusive time slots
+bool haveRoomsPairOfMutualExclusiveTimeSlots;
+
+Matrix1D<QList<double>> roomsPairOfMutuallyExclusiveTimeSlotsPercentages;
+Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsDay1;
+Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsHour1;
+Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsDay2;
+Matrix1D<QList<int>> roomsPairOfMutuallyExclusiveTimeSlotsHour2;
+
+//bool computeTeachersPairOfMutuallyExclusiveTimeSlots(QWidget* parent);
+//END   room pair of mutually exclusive time slots
 
 
 //BEGIN teacher(s) pair of mutually exclusive sets of time slots
@@ -553,6 +579,21 @@ Matrix1D<QList<StudentsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> spomesotsL
 
 //bool computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   students(s) pair of mutually exclusive sets of time slots
+
+//BEGIN room pair of mutually exclusive sets of time slots
+bool haveRoomsPairOfMutualExclusiveSetsOfTimeSlots;
+
+/*Matrix1D<QList<double>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages;
+Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1;
+Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList1;
+Matrix1D<QList<QSet<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet2;
+Matrix1D<QList<QList<int>>> teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsList2;*/
+
+std::list<RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item> rpomesotsList;
+Matrix1D<QList<RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> rpomesotsListForRoom;
+
+//bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
+//END   room pair of mutually exclusive sets of time slots
 
 
 ////////BEGIN teacher(s) max hours daily
@@ -1668,6 +1709,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsPairOfMutuallyExclusiveTimeSlotsHour1.resize(gt.rules.nInternalSubgroups);
 	subgroupsPairOfMutuallyExclusiveTimeSlotsDay2.resize(gt.rules.nInternalSubgroups);
 	subgroupsPairOfMutuallyExclusiveTimeSlotsHour2.resize(gt.rules.nInternalSubgroups);
+
+	roomsPairOfMutuallyExclusiveTimeSlotsPercentages.resize(gt.rules.nInternalRooms);
+	roomsPairOfMutuallyExclusiveTimeSlotsDay1.resize(gt.rules.nInternalRooms);
+	roomsPairOfMutuallyExclusiveTimeSlotsHour1.resize(gt.rules.nInternalRooms);
+	roomsPairOfMutuallyExclusiveTimeSlotsDay2.resize(gt.rules.nInternalRooms);
+	roomsPairOfMutuallyExclusiveTimeSlotsHour2.resize(gt.rules.nInternalRooms);
 	//
 	/*teachersPairOfMutuallyExclusiveSetsOfTimeSlotsPercentages.resize(gt.rules.nInternalTeachers);
 	teachersPairOfMutuallyExclusiveSetsOfTimeSlotsTimeSlotsSet1.resize(gt.rules.nInternalTeachers);
@@ -1683,6 +1730,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	tpomesotsListForTeacher.resize(gt.rules.nInternalTeachers);
 	spomesotsListForSubgroup.resize(gt.rules.nInternalSubgroups);
+	rpomesotsListForRoom.resize(gt.rules.nInternalRooms);
 	//
 	teachersMaxHoursDailyPercentages1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyMaxHours1.resize(gt.rules.nInternalTeachers);
@@ -2156,6 +2204,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	somsotsfsListForSubgroup.resize(gt.rules.nInternalSubgroups);
 	tomsotsfsListForTeacher.resize(gt.rules.nInternalTeachers);
+	romsotsfsListForRoom.resize(gt.rules.nInternalRooms);
 
 	aomsotsfsListForActivity.resize(gt.rules.nInternalActivities);
 	
@@ -2591,6 +2640,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(parent);
 	if(!t)
 		return false;
+	t=computeRoomsOccupyMaxSetsOfTimeSlotsFromSelection(parent);
+	if(!t)
+		return false;
 
 	t=computeTeachersPairOfMutuallyExclusiveTimeSlots(parent);
 	if(!t)
@@ -2598,11 +2650,17 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeSubgroupsPairOfMutuallyExclusiveTimeSlots(parent);
 	if(!t)
 		return false;
+	t=computeRoomsPairOfMutuallyExclusiveTimeSlots(parent);
+	if(!t)
+		return false;
 
 	t=computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(parent);
 	if(!t)
 		return false;
 	t=computeSubgroupsPairOfMutuallyExclusiveSetsOfTimeSlots(parent);
+	if(!t)
+		return false;
+	t=computeRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(parent);
 	if(!t)
 		return false;
 
@@ -4052,6 +4110,426 @@ bool computeSubgroupsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
 				}*/
 
 				somsotsfsListForSubgroup[sbg].append(&somsotsfsList.back());
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeRoomsOccupyMaxSetsOfTimeSlotsFromSelection(QWidget* parent)
+{
+	haveRoomsOccupyMaxSetsOfTimeSlotsFromSelection=false;
+
+	romsotsfsList.clear();
+	for(int i=0; i<gt.rules.nInternalRooms; i++){
+		romsotsfsListForRoom[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveRoomsOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* sc=(ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(sc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint room occupies max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=sc->maxOccupiedSets;
+			item.listOfLists=sc->listOfLists;
+			
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+
+			romsotsfsList.push_back(item);
+			romsotsfsListForRoom[sc->room_ID].append(&romsotsfsList.back());
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION){
+			haveRoomsOccupyMaxSetsOfTimeSlotsFromSelection=true;
+			
+			ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection* sc=(ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(sc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint rooms occupy max sets of time slots from selection"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			RoomsOccupyMaxSetsOfTimeSlotsFromSelection_item item;
+
+			item.maxOccupiedSets=sc->maxOccupiedSets;
+			item.listOfLists=sc->listOfLists;
+			
+			for(int t=0; t<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; t++)
+				item.timeToListIndex.append(-1);
+			int cnt=0;
+			for(const QList<int>& lst : std::as_const(item.listOfLists)){
+				for(int t : std::as_const(lst)){
+					assert(item.timeToListIndex[t]==-1);
+					item.timeToListIndex[t]=cnt;
+				}
+				cnt++;
+			}
+
+			romsotsfsList.push_back(item);
+			for(int rm=0; rm<gt.rules.nInternalRooms; rm++)
+				romsotsfsListForRoom[rm].append(&romsotsfsList.back());
+		}
+	}
+
+	QMultiHash<int, int> unusableRealRooms;
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++)
+		if(gt.rules.internalRoomsList[rm]->isVirtual==true)
+			for(const QList<int>& tl : std::as_const(gt.rules.internalRoomsList[rm]->rrsl))
+				for(int rr : std::as_const(tl))
+					unusableRealRooms.insert(rr, rm);
+	
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+		if(romsotsfsListForRoom[rm].count()>0){
+			if(gt.rules.internalRoomsList[rm]->isVirtual==true){
+				ok=false;
+				
+				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) occupy(ies) max sets of time slots from selection."
+				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
+				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room")
+				 .arg(gt.rules.internalRoomsList[rm]->name)
+				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count());
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			else if(unusableRealRooms.contains(rm)){
+				ok=false;
+				
+				QStringList ts;
+				QList<int> tl=unusableRealRooms.values(rm);
+				std::stable_sort(tl.begin(), tl.end());
+				for(int vr : std::as_const(tl))
+					ts.append(gt.rules.internalRoomsList[vr]->name);
+				
+				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room(s) occupy(ies) max sets of time slots from selection,"
+				 " and it appears in a set of real rooms of these virtual rooms: %3."
+				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
+				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room"
+				 ", %3 is the list of virtual rooms which include the real room %1 in at least one of their sets")
+				 .arg(gt.rules.internalRoomsList[rm]->name)
+				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count())
+				 .arg(ts.join(translatedCommaSpace()));
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeRoomsPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
+{
+	haveRoomsPairOfMutualExclusiveTimeSlots=false;
+
+	for(int i=0; i<gt.rules.nInternalRooms; i++){
+		roomsPairOfMutuallyExclusiveTimeSlotsPercentages[i].clear();
+		roomsPairOfMutuallyExclusiveTimeSlotsDay1[i].clear();
+		roomsPairOfMutuallyExclusiveTimeSlotsHour1[i].clear();
+		roomsPairOfMutuallyExclusiveTimeSlotsDay2[i].clear();
+		roomsPairOfMutuallyExclusiveTimeSlotsHour2[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			haveRoomsPairOfMutualExclusiveTimeSlots=true;
+			
+			ConstraintRoomPairOfMutuallyExclusiveTimeSlots* sc=(ConstraintRoomPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(sc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint room pair of mutually exclusive time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			int rm=sc->room_ID;
+			bool found=false;
+			for(int cnt=0; cnt<roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].count(); cnt++){
+				if(roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].at(cnt)==sc->weightPercentage
+				 && roomsPairOfMutuallyExclusiveTimeSlotsDay1[rm].at(cnt)==sc->day1
+				 && roomsPairOfMutuallyExclusiveTimeSlotsHour1[rm].at(cnt)==sc->hour1
+				 && roomsPairOfMutuallyExclusiveTimeSlotsDay2[rm].at(cnt)==sc->day2
+				 && roomsPairOfMutuallyExclusiveTimeSlotsHour2[rm].at(cnt)==sc->hour2){
+					found=true;
+					break;
+				}
+			}
+			
+			if(!found){
+				roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].append(sc->weightPercentage);
+				roomsPairOfMutuallyExclusiveTimeSlotsDay1[rm].append(sc->day1);
+				roomsPairOfMutuallyExclusiveTimeSlotsHour1[rm].append(sc->hour1);
+				roomsPairOfMutuallyExclusiveTimeSlotsDay2[rm].append(sc->day2);
+				roomsPairOfMutuallyExclusiveTimeSlotsHour2[rm].append(sc->hour2);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS){
+			haveRoomsPairOfMutualExclusiveTimeSlots=true;
+			
+			ConstraintRoomsPairOfMutuallyExclusiveTimeSlots* sc=(ConstraintRoomsPairOfMutuallyExclusiveTimeSlots*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(sc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint rooms pair of mutually exclusive time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+				bool found=false;
+				for(int cnt=0; cnt<roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].count(); cnt++){
+					if(roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].at(cnt)==sc->weightPercentage
+					 && roomsPairOfMutuallyExclusiveTimeSlotsDay1[rm].at(cnt)==sc->day1
+					 && roomsPairOfMutuallyExclusiveTimeSlotsHour1[rm].at(cnt)==sc->hour1
+					 && roomsPairOfMutuallyExclusiveTimeSlotsDay2[rm].at(cnt)==sc->day2
+					 && roomsPairOfMutuallyExclusiveTimeSlotsHour2[rm].at(cnt)==sc->hour2){
+						found=true;
+						break;
+					}
+				}
+				
+				if(!found){
+					roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].append(sc->weightPercentage);
+					roomsPairOfMutuallyExclusiveTimeSlotsDay1[rm].append(sc->day1);
+					roomsPairOfMutuallyExclusiveTimeSlotsHour1[rm].append(sc->hour1);
+					roomsPairOfMutuallyExclusiveTimeSlotsDay2[rm].append(sc->day2);
+					roomsPairOfMutuallyExclusiveTimeSlotsHour2[rm].append(sc->hour2);
+				}
+			}
+		}
+	}
+
+	QMultiHash<int, int> unusableRealRooms;
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++)
+		if(gt.rules.internalRoomsList[rm]->isVirtual==true)
+			for(const QList<int>& tl : std::as_const(gt.rules.internalRoomsList[rm]->rrsl))
+				for(int rr : std::as_const(tl))
+					unusableRealRooms.insert(rr, rm);
+	
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+		if(roomsPairOfMutuallyExclusiveTimeSlotsPercentages[rm].count()>0){
+			if(gt.rules.internalRoomsList[rm]->isVirtual==true){
+				ok=false;
+				
+				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) pair of mutually exclusive time slots."
+				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
+				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room")
+				 .arg(gt.rules.internalRoomsList[rm]->name)
+				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count());
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			else if(unusableRealRooms.contains(rm)){
+				ok=false;
+				
+				QStringList ts;
+				QList<int> tl=unusableRealRooms.values(rm);
+				std::stable_sort(tl.begin(), tl.end());
+				for(int vr : std::as_const(tl))
+					ts.append(gt.rules.internalRoomsList[vr]->name);
+				
+				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room(s) pair of mutually exclusive time slots,"
+				 " and it appears in a set of real rooms of these virtual rooms: %3."
+				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
+				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room"
+				 ", %3 is the list of virtual rooms which include the real room %1 in at least one of their sets")
+				 .arg(gt.rules.internalRoomsList[rm]->name)
+				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count())
+				 .arg(ts.join(translatedCommaSpace()));
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent)
+{
+	haveRoomsPairOfMutualExclusiveSetsOfTimeSlots=false;
+
+	rpomesotsList.clear();
+	for(int i=0; i<gt.rules.nInternalRooms; i++){
+		rpomesotsListForRoom[i].clear();
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS){
+			haveRoomsPairOfMutualExclusiveSetsOfTimeSlots=true;
+			
+			ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* sc=(ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(sc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint room pair of mutually exclusive sets of time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+
+			item.set1=sc->set1;
+			item.list1=sc->list1;
+			item.set2=sc->set2;
+			item.list2=sc->list2;
+
+			rpomesotsList.push_back(item);
+
+			rpomesotsListForRoom[sc->room_ID].append(&rpomesotsList.back());
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS){
+			haveRoomsPairOfMutualExclusiveSetsOfTimeSlots=true;
+			
+			ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots* sc=(ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(sc->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint rooms pair of mutually exclusive sets of time slots"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item item;
+
+			item.set1=sc->set1;
+			item.list1=sc->list1;
+			item.set2=sc->set2;
+			item.list2=sc->list2;
+
+			rpomesotsList.push_back(item);
+
+			for(int rm=0; rm<gt.rules.nInternalRooms; rm++)
+				rpomesotsListForRoom[rm].append(&rpomesotsList.back());
+		}
+	}
+
+	QMultiHash<int, int> unusableRealRooms;
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++)
+		if(gt.rules.internalRoomsList[rm]->isVirtual==true)
+			for(const QList<int>& tl : std::as_const(gt.rules.internalRoomsList[rm]->rrsl))
+				for(int rr : std::as_const(tl))
+					unusableRealRooms.insert(rr, rm);
+	
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+		if(rpomesotsListForRoom[rm].count()>0){
+			if(gt.rules.internalRoomsList[rm]->isVirtual==true){
+				ok=false;
+				
+				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) pair of mutually exclusive sets of time slots."
+				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
+				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room")
+				 .arg(gt.rules.internalRoomsList[rm]->name)
+				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count());
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			else if(unusableRealRooms.contains(rm)){
+				ok=false;
+				
+				QStringList ts;
+				QList<int> tl=unusableRealRooms.values(rm);
+				std::stable_sort(tl.begin(), tl.end());
+				for(int vr : std::as_const(tl))
+					ts.append(gt.rules.internalRoomsList[vr]->name);
+				
+				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room(s) pair of mutually exclusive sets of time slots,"
+				 " and it appears in a set of real rooms of these virtual rooms: %3."
+				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
+				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room"
+				 ", %3 is the list of virtual rooms which include the real room %1 in at least one of their sets")
+				 .arg(gt.rules.internalRoomsList[rm]->name)
+				 .arg(roomsMaxActivityTagsPerDayFromSetPercentages[rm].count())
+				 .arg(ts.join(translatedCommaSpace()));
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
 			}
 		}
 	}
@@ -23933,6 +24411,34 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				}
 			}
 		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET){
+			haveRoomsMaxActivityTagsPerDayFromSet=true;
+
+			ConstraintRoomsMaxActivityTagsPerDayFromSet* rn=(ConstraintRoomsMaxActivityTagsPerDayFromSet*)gt.rules.internalSpaceConstraintsList[i];
+			
+			for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+				roomsMaxActivityTagsPerDayFromSetPercentages[rm].append(100.0);
+				roomsMaxActivityTagsPerDayFromSetMaxTags[rm].append(rn->maxTags);
+				roomsMaxActivityTagsPerDayFromSetTagsSet[rm].append(rn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				QSet<int> tset=rn->internalTagsSet;
+				if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+					 " of type rooms max activity tags per day from set - please correct this.")
+					 .arg(gt.rules.internalActivitiesList[ai].id);
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
+		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
 			haveRoomsMaxActivityTagsPerRealDayFromSet=true;
 
@@ -23950,6 +24456,33 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 					 " of type room %2 max activity tags per real day from set - please correct this.", "%2 is the room")
 					 .arg(gt.rules.internalActivitiesList[ai].id)
 					 .arg(rn->room);
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
+			haveRoomsMaxActivityTagsPerRealDayFromSet=true;
+
+			ConstraintRoomsMaxActivityTagsPerRealDayFromSet* rn=(ConstraintRoomsMaxActivityTagsPerRealDayFromSet*)gt.rules.internalSpaceConstraintsList[i];
+			for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+				roomsMaxActivityTagsPerRealDayFromSetPercentages[rm].append(100.0);
+				roomsMaxActivityTagsPerRealDayFromSetMaxTags[rm].append(rn->maxTags);
+				roomsMaxActivityTagsPerRealDayFromSetTagsSet[rm].append(rn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				QSet<int> tset=rn->internalTagsSet;
+				if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+					 " of type rooms max activity tags per real day from set - please correct this.")
+					 .arg(gt.rules.internalActivitiesList[ai].id);
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
@@ -23985,6 +24518,33 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				}
 			}
 		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET){
+			haveRoomsMaxActivityTagsPerWeekFromSet=true;
+
+			ConstraintRoomsMaxActivityTagsPerWeekFromSet* rn=(ConstraintRoomsMaxActivityTagsPerWeekFromSet*)gt.rules.internalSpaceConstraintsList[i];
+			for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+				roomsMaxActivityTagsPerWeekFromSetPercentages[rm].append(100.0);
+				roomsMaxActivityTagsPerWeekFromSetMaxTags[rm].append(rn->maxTags);
+				roomsMaxActivityTagsPerWeekFromSetTagsSet[rm].append(rn->internalTagsSet);
+			}
+
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				QSet<int> tset=rn->internalTagsSet;
+				if(tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count()>=2){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint"
+					 " of type rooms max activity tags per week from set - please correct this.")
+					 .arg(gt.rules.internalActivitiesList[ai].id);
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
+		}
 	}
 	
 	QMultiHash<int, int> unusableRealRooms;
@@ -23999,7 +24559,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 			if(gt.rules.internalRoomsList[rm]->isVirtual==true){
 				ok=false;
 				
-				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room max activity tags per day from set."
+				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) max activity tags per day from set."
 				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
 				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room")
 				 .arg(gt.rules.internalRoomsList[rm]->name)
@@ -24020,7 +24580,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				for(int vr : std::as_const(tl))
 					ts.append(gt.rules.internalRoomsList[vr]->name);
 				
-				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room max activity tags per day from set,"
+				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room(s) max activity tags per day from set,"
 				 " and it appears in a set of real rooms of these virtual rooms: %3."
 				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
 				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room"
@@ -24040,7 +24600,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 			if(gt.rules.internalRoomsList[rm]->isVirtual==true){
 				ok=false;
 				
-				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room max activity tags per real day from set."
+				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) max activity tags per real day from set."
 				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
 				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room")
 				 .arg(gt.rules.internalRoomsList[rm]->name)
@@ -24061,7 +24621,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				for(int vr : std::as_const(tl))
 					ts.append(gt.rules.internalRoomsList[vr]->name);
 				
-				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room max activity tags per real day from set,"
+				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room(s) max activity tags per real day from set,"
 				 " and it appears in a set of real rooms of these virtual rooms: %3."
 				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
 				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room"
@@ -24081,7 +24641,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 			if(gt.rules.internalRoomsList[rm]->isVirtual==true){
 				ok=false;
 				
-				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room max activity tags per week from set."
+				QString s=GeneratePreTranslate::tr("Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) max activity tags per week from set."
 				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
 				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room")
 				 .arg(gt.rules.internalRoomsList[rm]->name)
@@ -24102,7 +24662,7 @@ bool computeRoomsMaxActivityTagsFromSet(QWidget* parent)
 				for(int vr : std::as_const(tl))
 					ts.append(gt.rules.internalRoomsList[vr]->name);
 				
-				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room max activity tags per week from set,"
+				QString s=GeneratePreTranslate::tr("Room %1 is real, it has attached to it a number of %2 constraints of type room(s) max activity tags per week from set,"
 				 " and it appears in a set of real rooms of these virtual rooms: %3."
 				 " It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not"
 				 " appear in any set of real rooms of any virtual room. Please correct this.", "%1 is the room, %2 is the count of the attached constraints of this type for this room"

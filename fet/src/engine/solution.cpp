@@ -52,7 +52,9 @@ void Solution::copy(Rules& r, Solution& c){
 		this->realRoomsList[i]=c.realRoomsList[i];
 	}
 	
-	this->changedForMatrixCalculation=c.changedForMatrixCalculation;
+	this->changedForMatrixCalculationTeachers=c.changedForMatrixCalculationTeachers;
+	this->changedForMatrixCalculationStudents=c.changedForMatrixCalculationStudents;
+	this->changedForMatrixCalculationRooms=c.changedForMatrixCalculationRooms;
 
 	//added in version 5.2.0
 	conflictsWeightList=c.conflictsWeightList;
@@ -81,7 +83,9 @@ void Solution::copyForHighestStage(Rules& r, Solution& c){
 		this->realRoomsList[i]=c.realRoomsList[i];
 	}
 	
-	this->changedForMatrixCalculation=true;
+	this->changedForMatrixCalculationTeachers=true;
+	this->changedForMatrixCalculationStudents=true;
+	this->changedForMatrixCalculationRooms=true;
 
 	//I commented out the following lines, to avoid useless copying.
 	//added in version 5.2.0
@@ -107,7 +111,7 @@ void Solution::copyForHighestStage(Rules& r, Solution& c){
 
 	this->_fitness=-1;
 	
-	this->changedForMatrixCalculation=true;
+	this->changedForMatrix Calculation=true;
 }*/
 
 void Solution::makeUnallocated(Rules& r){
@@ -125,22 +129,29 @@ void Solution::makeUnallocated(Rules& r){
 
 	this->_fitness=-1;
 
-	this->changedForMatrixCalculation=true;
+	this->changedForMatrixCalculationTeachers=true;
+	this->changedForMatrixCalculationStudents=true;
+	this->changedForMatrixCalculationRooms=true;
 }
 
 double Solution::fitness(Rules& r, FakeString* conflictsString){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
-	if(this->_fitness>=0)
-		assert(this->changedForMatrixCalculation==false);
-		
+	if(this->_fitness>=0){
+		assert(this->changedForMatrixCalculationTeachers==false);
+		assert(this->changedForMatrixCalculationStudents==false);
+		assert(this->changedForMatrixCalculationRooms==false);
+	}
+	
 	if(this->_fitness>=0 && conflictsString==nullptr)
 	//If you want to see the log, you have to recompute the fitness, even if it is
 	//already computed
 		return this->_fitness;
 		
-	this->changedForMatrixCalculation=true;
+	this->changedForMatrixCalculationTeachers=true;
+	this->changedForMatrixCalculationStudents=true;
+	this->changedForMatrixCalculationRooms=true;
 	
 	this->_fitness=0;
 	//I AM NOT SURE IF THE COMMENT BELOW IS DEPRECATED/FALSE NOW (IT IS OLD).
@@ -182,7 +193,7 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 		//cout<<"cn=="<<cn<<endl;
 		conflictsTotal+=cn;
 	}
-		
+	
 #if 0
 	//I cannot put this test. I got situations of assert failed with 15.2 != 15.2 ??? Maybe rounding errors
 	if(this->_fitness!=conflictsTotal){
@@ -191,10 +202,10 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	}
 	assert(this->_fitness==conflictsTotal);//TODO
 #endif
-		
+	
 	//sort descending according to conflicts in O(n log n)
 	int ttt=conflictsWeightList.count();
-		
+	
 	QMultiMap<double, QString> conflictsMap;
 	assert(conflictsWeightList.count()==conflictsDescriptionList.count());
 	for(int i=0; i<conflictsWeightList.count(); i++)
@@ -218,7 +229,9 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	assert(conflictsWeightList.count()==conflictsDescriptionList.count());
 	assert(conflictsWeightList.count()==ttt);
 	
-	this->changedForMatrixCalculation=false;
+	this->changedForMatrixCalculationTeachers=false;
+	this->changedForMatrixCalculationStudents=false;
+	this->changedForMatrixCalculationRooms=false;
 
 	return this->_fitness;
 }
@@ -251,8 +264,8 @@ int Solution::getTeachersMatrix(Rules& r, Matrix3D<int>& a){
 				}
 		}
 
-	this->changedForMatrixCalculation=false;
-		
+	this->changedForMatrixCalculationTeachers=false;
+	
 	return conflicts;
 }
 
@@ -284,8 +297,8 @@ int Solution::getSubgroupsMatrix(Rules& r, Matrix3D<int>& a){
 				}
 		}
 		
-	this->changedForMatrixCalculation=false;
-		
+	this->changedForMatrixCalculationStudents=false;
+	
 	return conflicts;
 }
 
@@ -491,7 +504,7 @@ int Solution::getRoomsMatrix(
 		}
 	}
 	
-	this->changedForMatrixCalculation=false;
+	this->changedForMatrixCalculationRooms=false;
 	
 	return conflicts;
 }

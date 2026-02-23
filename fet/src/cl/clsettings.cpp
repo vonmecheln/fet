@@ -19,6 +19,24 @@
 #include "solution.h"
 #include "rules.h"
 
+bool CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=true;
+
+bool SHORTCUT_PLUS=false;
+bool SHORTCUT_M=false;
+bool SHORTCUT_DELETE=false;
+bool SHORTCUT_A=false;
+bool SHORTCUT_D=false;
+bool SHORTCUT_C=false;
+bool SHORTCUT_U=false;
+bool SHORTCUT_J=false;
+bool SHORTCUT_W=false;
+
+QString INTERFACE_STYLE=QString("");
+QString INTERFACE_COLOR_SCHEME=QString("automatic");
+
+bool SHOW_SUBGROUPS_IN_COMBO_BOXES=true;
+bool SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=true;
+
 bool generation_running; //true if the user started a generation of the timetable
 
 bool generation_running_multi;

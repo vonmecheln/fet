@@ -206,7 +206,7 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 
 	saveFETDialogGeometry(this, dialogName);
 
-	if(colorsCheckBox!=nullptr || colorsCheckBox1!=nullptr ||colorsCheckBox2!=nullptr || showRelatedCheckBox!=nullptr || firstFilter_showRelatedCheckBox!=nullptr
+	if(colorsCheckBox!=nullptr || colorsCheckBox1!=nullptr || colorsCheckBox2!=nullptr || showRelatedCheckBox!=nullptr || firstFilter_showRelatedCheckBox!=nullptr
 	 || secondFilter_showRelatedCheckBox!=nullptr || thirdFilter_showRelatedCheckBox!=nullptr){
 		QSettings settings(COMPANY, PROGRAM);
 

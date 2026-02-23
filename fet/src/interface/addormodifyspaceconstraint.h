@@ -70,20 +70,51 @@ class AddOrModifySpaceConstraintDialog: public QDialog
 	QString dialogTitle;
 	QEventLoop* eventLoop;
 
+	CornerEnabledTableWidgetOfSpinBoxes* occupyMaxTimesTable;
+	QAbstractItemDelegate* occupyMaxOldItemDelegate;
+	AddOrModifySpaceConstraintTimesTableDelegate* occupyMaxNewItemDelegate;
+
 	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate;
 
+	//For room pair of mutually exclusive sets of time slots
+	CornerEnabledTableWidget* timesTable1;
+	QAbstractItemDelegate* oldItemDelegate1;
+	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate1;
+	CornerEnabledTableWidget* timesTable2;
+	QAbstractItemDelegate* oldItemDelegate2;
+	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate2;
+
 	QCheckBox* colorsCheckBox;
+
+	//For room pair of mutually exclusive sets of time slots
+	QCheckBox* colorsCheckBox1;
+	QCheckBox* colorsCheckBox2;
 
 	QCheckBox* showRelatedCheckBox;
 
 public:
 	AddOrModifySpaceConstraintDialog(QWidget* parent, const QString& _dialogName, const QString& _dialogTitle, QEventLoop* _eventLoop,
+									 CornerEnabledTableWidgetOfSpinBoxes* _occupyMaxTimesTable,
+									 QAbstractItemDelegate* _occupyMaxOldItemDelegate,
+									 AddOrModifySpaceConstraintTimesTableDelegate* _occupyMaxNewItemDelegate,
+
 									 CornerEnabledTableWidget* _timesTable,
 									 QAbstractItemDelegate* _oldItemDelegate,
 									 AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate,
+
+									 CornerEnabledTableWidget* _timesTable1,
+									 QAbstractItemDelegate* _oldItemDelegate1,
+									 AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate1,
+									 CornerEnabledTableWidget* _timesTable2,
+									 QAbstractItemDelegate* _oldItemDelegate2,
+									 AddOrModifySpaceConstraintTimesTableDelegate* _newItemDelegate2,
+
 									 QCheckBox* _colorsCheckBox,
+
+									 QCheckBox* _colorsCheckBox1,
+									 QCheckBox* _colorsCheckBox2,
 									 QCheckBox* _showRelatedCheckBox);
 	~AddOrModifySpaceConstraintDialog();
 };
@@ -100,6 +131,19 @@ class AddOrModifySpaceConstraint: public QObject
 
 	int type;
 	SpaceConstraint* oldsc;
+
+	CornerEnabledTableWidgetOfSpinBoxes* occupyMaxSetsOfTimeSlotsFromSelectionTableWidget;
+	QAbstractItemDelegate* occupyMaxOldItemDelegate;
+	AddOrModifySpaceConstraintTimesTableDelegate* occupyMaxNewItemDelegate;
+	Matrix2D<QSpinBox*> spinBoxesTable;
+
+	//for room pair of mutually exclusive time slots
+	QGroupBox* firstTimeSlotGroupBox;
+	QGroupBox* secondTimeSlotGroupBox;
+	QComboBox* firstDayComboBox;
+	QComboBox* firstHourComboBox;
+	QComboBox* secondDayComboBox;
+	QComboBox* secondHourComboBox;
 
 	QCheckBox* showRelatedCheckBox;
 
@@ -122,9 +166,23 @@ class AddOrModifySpaceConstraint: public QObject
 	QCheckBox* colorsCheckBox;
 	QPushButton* toggleAllPushButton;
 
+	//For room pair of mutually exclusive sets of time slots
+	QCheckBox* colorsCheckBox1;
+	QPushButton* toggleAllPushButton1;
+	QCheckBox* colorsCheckBox2;
+	QPushButton* toggleAllPushButton2;
+
 	CornerEnabledTableWidget* timesTable;
 	QAbstractItemDelegate* oldItemDelegate;
 	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate;
+
+	//For room pair of mutually exclusive sets of time slots
+	CornerEnabledTableWidget* timesTable1;
+	QAbstractItemDelegate* oldItemDelegate1;
+	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate1;
+	CornerEnabledTableWidget* timesTable2;
+	QAbstractItemDelegate* oldItemDelegate2;
+	AddOrModifySpaceConstraintTimesTableDelegate* newItemDelegate2;
 
 	QGroupBox* filterGroupBox;
 
@@ -197,6 +255,9 @@ class AddOrModifySpaceConstraint: public QObject
 
 	QCheckBox* filterActivityTagsCheckBox;
 
+	//For room pair of mutually exclusive sets of time slots
+	QTabWidget* tabWidgetPairOfMutuallyExclusiveSets;
+
 	QSet<QString> showedStudents;
 
 public:
@@ -239,6 +300,22 @@ private:
 	void colorsCheckBoxToggled();
 	void toggleAllClicked();
 
+	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
+	//void colorItem1(QTableWidgetItem* item);
+	void itemClicked1(QTableWidgetItem* item);
+	void horizontalHeaderClicked1(int col);
+	void verticalHeaderClicked1(int row);
+	void cellEntered1(int row, int col);
+	void colorsCheckBoxToggled1();
+	void toggleAllClicked1();
+	//void colorItem2(QTableWidgetItem* item);
+	void itemClicked2(QTableWidgetItem* item);
+	void horizontalHeaderClicked2(int col);
+	void verticalHeaderClicked2(int row);
+	void cellEntered2(int row, int col);
+	void colorsCheckBoxToggled2();
+	void toggleAllClicked2();
+
 	void clearSelectedRealRooms();
 	void addRealRoom();
 	void removeRealRoom();
@@ -248,6 +325,14 @@ private:
 	void removeRoom();
 
 	void showRelatedCheckBoxToggled();
+
+	void initOccupyMaxTableWidget();
+	void fillSpinBoxTimesTable(const QList<QList<int>>& days, const QList<QList<int>>& hours);
+	void getSpinBoxTimesTable(QList<QList<int>>& days, QList<QList<int>>& hours);
+
+	void colorSpinBoxWithPointer(QSpinBox* sb);
+	void colorSpinBox();
+	void colorAllSpinBoxes();
 };
 
 #endif

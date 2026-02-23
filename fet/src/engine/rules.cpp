@@ -2599,7 +2599,70 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
-			
+			//69
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveTimeSlots* c=(ConstraintRoomPairOfMutuallyExclusiveTimeSlots*)ctr;
+					stream<<*c;
+					break;
+				}
+			//70
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* c=(ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots*)ctr;
+					stream<<*c;
+					break;
+				}
+			//71
+			case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* c=(ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection*)ctr;
+					stream<<*c;
+					break;
+				}
+			//72
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerDayFromSet* c=(ConstraintRoomsMaxActivityTagsPerDayFromSet*)ctr;
+					stream<<*c;
+					break;
+				}
+			//73
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerRealDayFromSet* c=(ConstraintRoomsMaxActivityTagsPerRealDayFromSet*)ctr;
+					stream<<*c;
+					break;
+				}
+			//74
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerWeekFromSet* c=(ConstraintRoomsMaxActivityTagsPerWeekFromSet*)ctr;
+					stream<<*c;
+					break;
+				}
+			//75
+			case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintRoomsPairOfMutuallyExclusiveTimeSlots* c=(ConstraintRoomsPairOfMutuallyExclusiveTimeSlots*)ctr;
+					stream<<*c;
+					break;
+				}
+			//76
+			case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots* c=(ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots*)ctr;
+					stream<<*c;
+					break;
+				}
+			//76
+			case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection* c=(ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection*)ctr;
+					stream<<*c;
+					break;
+				}
+
 			default:
 				assert(0);
 				break;
@@ -5445,7 +5508,79 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					rules.spaceConstraintsList.append(c);
 					break;
 				}
-			
+			//69
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveTimeSlots* c=new ConstraintRoomPairOfMutuallyExclusiveTimeSlots;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//70
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* c=new ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//71
+			case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* c=new ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//72
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerDayFromSet* c=new ConstraintRoomsMaxActivityTagsPerDayFromSet;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//73
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerRealDayFromSet* c=new ConstraintRoomsMaxActivityTagsPerRealDayFromSet;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//74
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerWeekFromSet* c=new ConstraintRoomsMaxActivityTagsPerWeekFromSet;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//75
+			case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintRoomsPairOfMutuallyExclusiveTimeSlots* c=new ConstraintRoomsPairOfMutuallyExclusiveTimeSlots;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//76
+			case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots* c=new ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//77
+			case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection* c=new ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+
 			default:
 				//commented, so that the program won't crash on wrong history files.
 				//assert(0);
@@ -11316,6 +11451,27 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 						crna->room=finalRoomName;
 					break;
 				}
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveTimeSlots* crna=(ConstraintRoomPairOfMutuallyExclusiveTimeSlots*)ctr;
+					if(crna->room==initialRoomName)
+						crna->room=finalRoomName;
+					break;
+				}
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* crna=(ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots*)ctr;
+					if(crna->room==initialRoomName)
+						crna->room=finalRoomName;
+					break;
+				}
+			case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* crna=(ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection*)ctr;
+					if(crna->room==initialRoomName)
+						crna->room=finalRoomName;
+					break;
+				}
 
 			default:
 				//do nothing.
@@ -14171,6 +14327,27 @@ void Rules::updateConstraintsAfterRemoval()
 			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
 				{
 					ConstraintRoomMaxActivityTagsPerWeekFromSet* c=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)sc;
+					if(!existingRoomsNames.contains(c->room))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveTimeSlots* c=(ConstraintRoomPairOfMutuallyExclusiveTimeSlots*)sc;
+					if(!existingRoomsNames.contains(c->room))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+				{
+					ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* c=(ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots*)sc;
+					if(!existingRoomsNames.contains(c->room))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				{
+					ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* c=(ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
 					break;
@@ -18933,6 +19110,36 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintRoomMaxActivityTagsPerWeekFromSet")){
 					crt_constraint=readRoomMaxActivityTagsPerWeekFromSet(xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintRoomPairOfMutuallyExclusiveTimeSlots")){
+					crt_constraint=readRoomPairOfMutuallyExclusiveTimeSlots(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots")){
+					crt_constraint=readRoomPairOfMutuallyExclusiveSetsOfTimeSlots(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection")){
+					crt_constraint=readRoomOccupiesMaxSetsOfTimeSlotsFromSelection(xmlReader, xmlReadingLog);
+				}
+				///////
+				else if(xmlReader.name()==QString("ConstraintRoomsMaxActivityTagsPerDayFromSet")){
+					crt_constraint=readRoomsMaxActivityTagsPerDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomsMaxActivityTagsPerRealDayFromSet")){
+					crt_constraint=readRoomsMaxActivityTagsPerRealDayFromSet(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomsMaxActivityTagsPerWeekFromSet")){
+					crt_constraint=readRoomsMaxActivityTagsPerWeekFromSet(xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintRoomsPairOfMutuallyExclusiveTimeSlots")){
+					crt_constraint=readRoomsPairOfMutuallyExclusiveTimeSlots(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots")){
+					crt_constraint=readRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection")){
+					crt_constraint=readRoomsOccupyMaxSetsOfTimeSlotsFromSelection(xmlReader, xmlReadingLog);
 				}
 
 				else{
@@ -48191,6 +48398,1323 @@ SpaceConstraint* Rules::readRoomMaxActivityTagsPerWeekFromSet(QXmlStreamReader& 
 		return nullptr;
 	}
 	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomPairOfMutuallyExclusiveTimeSlots"));
+	ConstraintRoomPairOfMutuallyExclusiveTimeSlots* cn=new ConstraintRoomPairOfMutuallyExclusiveTimeSlots();
+	cn->day1=-1;
+	cn->hour1=-1;
+	cn->day2=-1;
+	cn->hour2=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Room")){
+			QString text=xmlReader.readElementText();
+			cn->room=text;
+			xmlReadingLog+="    Read room name="+cn->room+"\n";
+		}
+		else if(xmlReader.name()==QString("First_Time_Slot")){
+			xmlReadingLog+="    Read: first time slot\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					for(cn->day1=0; cn->day1<this->nDaysPerWeek; cn->day1++)
+						if(this->daysOfTheWeek[cn->day1]==text)
+							break;
+
+					if(cn->day1>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->day1<this->nDaysPerWeek);
+					xmlReadingLog+="    First time slot day="+this->daysOfTheWeek[cn->day1]+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					for(cn->hour1=0; cn->hour1<this->nHoursPerDay; cn->hour1++)
+						if(this->hoursOfTheDay[cn->hour1]==text)
+							break;
+
+					if(cn->hour1>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->hour1<this->nHoursPerDay);
+					xmlReadingLog+="    First time slot hour="+this->hoursOfTheDay[cn->hour1]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+		}
+		else if(xmlReader.name()==QString("Second_Time_Slot")){
+			xmlReadingLog+="    Read: second time slot\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					for(cn->day2=0; cn->day2<this->nDaysPerWeek; cn->day2++)
+						if(this->daysOfTheWeek[cn->day2]==text)
+							break;
+
+					if(cn->day2>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->day2<this->nDaysPerWeek);
+					xmlReadingLog+="    First time slot day="+this->daysOfTheWeek[cn->day2]+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					for(cn->hour2=0; cn->hour2<this->nHoursPerDay; cn->hour2++)
+						if(this->hoursOfTheDay[cn->hour2]==text)
+							break;
+
+					if(cn->hour2>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->hour2<this->nHoursPerDay);
+					xmlReadingLog+="    First time slot hour="+this->hoursOfTheDay[cn->hour2]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->day1<0){
+		xmlReader.raiseError(tr("%1 not found").arg("First_Time_Slot / Day"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	if(cn->hour1<0){
+		xmlReader.raiseError(tr("%1 not found").arg("First_Time_Slot / Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	if(cn->day2<0){
+		xmlReader.raiseError(tr("%1 not found").arg("Second_Time_Slot / Day"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	if(cn->hour2<0){
+		xmlReader.raiseError(tr("%1 not found").arg("Second_Time_Slot / Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots"));
+	ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* cn=new ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots();
+
+	int i1=0;
+	int i2=0;
+	int tsc1=0;
+	int tsc2=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Room")){
+			QString text=xmlReader.readElementText();
+			cn->room=text;
+			xmlReadingLog+="    Read room name="+cn->room+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Time_Slots_in_First_Set")){
+			QString text=xmlReader.readElementText();
+			tsc1=text.toInt();
+			xmlReadingLog+="    Read number of selected time slots in first set="+CustomFETString::number(tsc1)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Time_Slot_in_First_Set")){
+			xmlReadingLog+="    Read: selected time slot in first set\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					cn->selectedDays1.append(0);
+					assert(cn->selectedDays1.count()-1==i1);
+					for(cn->selectedDays1[i1]=0; cn->selectedDays1[i1]<this->nDaysPerWeek; cn->selectedDays1[i1]++)
+						if(this->daysOfTheWeek[cn->selectedDays1[i1]]==text)
+							break;
+							
+					if(cn->selectedDays1[i1]>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedDays1[i1]<this->nDaysPerWeek);
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays1[i1]]+"("+CustomFETString::number(i1)+")"+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					cn->selectedHours1.append(0);
+					assert(cn->selectedHours1.count()-1==i1);
+					for(cn->selectedHours1[i1]=0; cn->selectedHours1[i1] < this->nHoursPerDay; cn->selectedHours1[i1]++)
+						if(this->hoursOfTheDay[cn->selectedHours1[i1]]==text)
+							break;
+							
+					if(cn->selectedHours1[i1]>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedHours1[i1]>=0 && cn->selectedHours1[i1] < this->nHoursPerDay);
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours1[i1]]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+
+			i1++;
+			
+			if(!(i1==cn->selectedDays1.count()) || !(i1==cn->selectedHours1.count())){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot_in_First_Set"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(i1==cn->selectedDays1.count());
+			assert(i1==cn->selectedHours1.count());
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Time_Slots_in_Second_Set")){
+			QString text=xmlReader.readElementText();
+			tsc2=text.toInt();
+			xmlReadingLog+="    Read number of selected time slots in second set="+CustomFETString::number(tsc2)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Time_Slot_in_Second_Set")){
+			xmlReadingLog+="    Read: selected time slot in second set\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					cn->selectedDays2.append(0);
+					assert(cn->selectedDays2.count()-1==i2);
+					for(cn->selectedDays2[i2]=0; cn->selectedDays2[i2]<this->nDaysPerWeek; cn->selectedDays2[i2]++)
+						if(this->daysOfTheWeek[cn->selectedDays2[i2]]==text)
+							break;
+							
+					if(cn->selectedDays2[i2]>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedDays2[i2]<this->nDaysPerWeek);
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays2[i2]]+"("+CustomFETString::number(i2)+")"+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					cn->selectedHours2.append(0);
+					assert(cn->selectedHours2.count()-1==i2);
+					for(cn->selectedHours2[i2]=0; cn->selectedHours2[i2] < this->nHoursPerDay; cn->selectedHours2[i2]++)
+						if(this->hoursOfTheDay[cn->selectedHours2[i2]]==text)
+							break;
+							
+					if(cn->selectedHours2[i2]>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedHours2[i2]>=0 && cn->selectedHours2[i2] < this->nHoursPerDay);
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours2[i2]]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+
+			i2++;
+			
+			if(!(i2==cn->selectedDays2.count()) || !(i2==cn->selectedHours2.count())){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot_in_Second_Set"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(i2==cn->selectedDays2.count());
+			assert(i2==cn->selectedHours2.count());
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(i1==tsc1)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(i1==tsc1);
+
+	if(!(i2==tsc2)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(i2==tsc2);
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection"));
+	ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* cn=new ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection();
+
+	int readSetsCount=0;
+
+	int tsc=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Room")){
+			QString text=xmlReader.readElementText();
+			cn->room=text;
+			xmlReadingLog+="    Read room name="+cn->room+"\n";
+		}
+		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
+			QString text=xmlReader.readElementText();
+			cn->maxOccupiedSets=text.toInt();
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}*/
+			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
+			QString text=xmlReader.readElementText();
+			readSetsCount=text.toInt();
+			xmlReadingLog+="    Read number of selected sets of time slots="+CustomFETString::number(readSetsCount)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Set_of_Time_Slots")){
+			QList<int> days;
+			QList<int> hours;
+			
+			xmlReadingLog+="    Read: selected set of time slots\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				
+				if(xmlReader.name()==QString("Number_of_Selected_Time_Slots")){
+					QString text=xmlReader.readElementText();
+					tsc=text.toInt();
+					xmlReadingLog+="    Read number of selected time slots="+CustomFETString::number(tsc)+"\n";
+				}
+				else if(xmlReader.name()==QString("Selected_Time_Slot")){
+					xmlReadingLog+="    Read: selected time slot\n";
+
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Day")){
+							QString text=xmlReader.readElementText();
+							int day;
+							for(day=0; day < this->nDaysPerWeek; day++)
+								if(this->daysOfTheWeek[day]==text)
+									break;
+									
+							if(day>=this->nDaysPerWeek){
+								xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+								delete cn;
+								cn=nullptr;
+								return nullptr;
+							}
+							
+							assert(day>=0 && day<this->nDaysPerWeek);
+							xmlReadingLog+="    Day="+this->daysOfTheWeek[day]+"("+CustomFETString::number(day)+")"+"\n";
+							
+							days.append(day);
+						}
+						else if(xmlReader.name()==QString("Hour")){
+							QString text=xmlReader.readElementText();
+							int hour;
+							for(hour=0; hour < this->nHoursPerDay; hour++)
+								if(this->hoursOfTheDay[hour]==text)
+									break;
+							
+							if(hour>=this->nHoursPerDay){
+								xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+								delete cn;
+								cn=nullptr;
+								return nullptr;
+							}
+							
+							assert(hour>=0 && hour < this->nHoursPerDay);
+							xmlReadingLog+="    Hour="+this->hoursOfTheDay[hour]+"("+CustomFETString::number(hour)+")"+"\n";
+							
+							hours.append(hour);
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			
+			if(days.count()!=hours.count()){
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				 .arg("Day").arg("Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			if(tsc!=days.count()){
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
+				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			
+			cn->selectedDays.append(days);
+			cn->selectedHours.append(hours);
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	assert(cn->selectedDays.count()==cn->selectedHours.count());
+	if(readSetsCount!=cn->selectedDays.count()){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
+		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsMaxActivityTagsPerDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsMaxActivityTagsPerDayFromSet"));
+
+	ConstraintRoomsMaxActivityTagsPerDayFromSet* cn=new ConstraintRoomsMaxActivityTagsPerDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			/*if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}*/
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint room max activity tags per day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint room max activity tags per day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsMaxActivityTagsPerRealDayFromSet"));
+
+	ConstraintRoomsMaxActivityTagsPerRealDayFromSet* cn=new ConstraintRoomsMaxActivityTagsPerRealDayFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			/*if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per real day from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}*/
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint room max activity tags per real day from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint room max activity tags per real day from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsMaxActivityTagsPerWeekFromSet(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsMaxActivityTagsPerWeekFromSet"));
+
+	ConstraintRoomsMaxActivityTagsPerWeekFromSet* cn=new ConstraintRoomsMaxActivityTagsPerWeekFromSet();
+	cn->tagsList.clear();
+
+	int nActivityTags=-1;
+	QSet<QString> readTags;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Allowed_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			int mat=text.toInt();
+			/*if(mat!=1 && mat!=2){
+				xmlReader.raiseError(tr("The number of maximum allowed activity tags in a constraint room max activity tags per week from set should be 1 or 2"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}*/
+			cn->maxTags=mat;
+			xmlReadingLog+="    Read maximum allowed activity tags="+CustomFETString::number(mat)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Activity_Tags")){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint room max activity tags per week from set is lower than two"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Tag")){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in the constraint room max activity tags per week from set").arg(text));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->tagsList.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->tagsList.at(cn->tagsList.count()-1)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(nActivityTags==cn->tagsList.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(nActivityTags==cn->tagsList.count());
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsPairOfMutuallyExclusiveTimeSlots"));
+	ConstraintRoomsPairOfMutuallyExclusiveTimeSlots* cn=new ConstraintRoomsPairOfMutuallyExclusiveTimeSlots();
+	cn->day1=-1;
+	cn->hour1=-1;
+	cn->day2=-1;
+	cn->hour2=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("First_Time_Slot")){
+			xmlReadingLog+="    Read: first time slot\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					for(cn->day1=0; cn->day1<this->nDaysPerWeek; cn->day1++)
+						if(this->daysOfTheWeek[cn->day1]==text)
+							break;
+
+					if(cn->day1>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->day1<this->nDaysPerWeek);
+					xmlReadingLog+="    First time slot day="+this->daysOfTheWeek[cn->day1]+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					for(cn->hour1=0; cn->hour1<this->nHoursPerDay; cn->hour1++)
+						if(this->hoursOfTheDay[cn->hour1]==text)
+							break;
+
+					if(cn->hour1>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->hour1<this->nHoursPerDay);
+					xmlReadingLog+="    First time slot hour="+this->hoursOfTheDay[cn->hour1]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+		}
+		else if(xmlReader.name()==QString("Second_Time_Slot")){
+			xmlReadingLog+="    Read: second time slot\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					for(cn->day2=0; cn->day2<this->nDaysPerWeek; cn->day2++)
+						if(this->daysOfTheWeek[cn->day2]==text)
+							break;
+
+					if(cn->day2>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->day2<this->nDaysPerWeek);
+					xmlReadingLog+="    First time slot day="+this->daysOfTheWeek[cn->day2]+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					for(cn->hour2=0; cn->hour2<this->nHoursPerDay; cn->hour2++)
+						if(this->hoursOfTheDay[cn->hour2]==text)
+							break;
+
+					if(cn->hour2>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						delete cn;
+						cn=nullptr;
+						return nullptr;
+					}
+					
+					assert(cn->hour2<this->nHoursPerDay);
+					xmlReadingLog+="    First time slot hour="+this->hoursOfTheDay[cn->hour2]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->day1<0){
+		xmlReader.raiseError(tr("%1 not found").arg("First_Time_Slot / Day"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	if(cn->hour1<0){
+		xmlReader.raiseError(tr("%1 not found").arg("First_Time_Slot / Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	if(cn->day2<0){
+		xmlReader.raiseError(tr("%1 not found").arg("Second_Time_Slot / Day"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	if(cn->hour2<0){
+		xmlReader.raiseError(tr("%1 not found").arg("Second_Time_Slot / Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots"));
+	ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots* cn=new ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots();
+
+	int i1=0;
+	int i2=0;
+	int tsc1=0;
+	int tsc2=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Time_Slots_in_First_Set")){
+			QString text=xmlReader.readElementText();
+			tsc1=text.toInt();
+			xmlReadingLog+="    Read number of selected time slots in first set="+CustomFETString::number(tsc1)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Time_Slot_in_First_Set")){
+			xmlReadingLog+="    Read: selected time slot in first set\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					cn->selectedDays1.append(0);
+					assert(cn->selectedDays1.count()-1==i1);
+					for(cn->selectedDays1[i1]=0; cn->selectedDays1[i1]<this->nDaysPerWeek; cn->selectedDays1[i1]++)
+						if(this->daysOfTheWeek[cn->selectedDays1[i1]]==text)
+							break;
+							
+					if(cn->selectedDays1[i1]>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedDays1[i1]<this->nDaysPerWeek);
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays1[i1]]+"("+CustomFETString::number(i1)+")"+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					cn->selectedHours1.append(0);
+					assert(cn->selectedHours1.count()-1==i1);
+					for(cn->selectedHours1[i1]=0; cn->selectedHours1[i1] < this->nHoursPerDay; cn->selectedHours1[i1]++)
+						if(this->hoursOfTheDay[cn->selectedHours1[i1]]==text)
+							break;
+							
+					if(cn->selectedHours1[i1]>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedHours1[i1]>=0 && cn->selectedHours1[i1] < this->nHoursPerDay);
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours1[i1]]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+
+			i1++;
+			
+			if(!(i1==cn->selectedDays1.count()) || !(i1==cn->selectedHours1.count())){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot_in_First_Set"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(i1==cn->selectedDays1.count());
+			assert(i1==cn->selectedHours1.count());
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Time_Slots_in_Second_Set")){
+			QString text=xmlReader.readElementText();
+			tsc2=text.toInt();
+			xmlReadingLog+="    Read number of selected time slots in second set="+CustomFETString::number(tsc2)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Time_Slot_in_Second_Set")){
+			xmlReadingLog+="    Read: selected time slot in second set\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Day")){
+					QString text=xmlReader.readElementText();
+					cn->selectedDays2.append(0);
+					assert(cn->selectedDays2.count()-1==i2);
+					for(cn->selectedDays2[i2]=0; cn->selectedDays2[i2]<this->nDaysPerWeek; cn->selectedDays2[i2]++)
+						if(this->daysOfTheWeek[cn->selectedDays2[i2]]==text)
+							break;
+							
+					if(cn->selectedDays2[i2]>=this->nDaysPerWeek){
+						xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedDays2[i2]<this->nDaysPerWeek);
+					xmlReadingLog+="    Day="+this->daysOfTheWeek[cn->selectedDays2[i2]]+"("+CustomFETString::number(i2)+")"+"\n";
+				}
+				else if(xmlReader.name()==QString("Hour")){
+					QString text=xmlReader.readElementText();
+					cn->selectedHours2.append(0);
+					assert(cn->selectedHours2.count()-1==i2);
+					for(cn->selectedHours2[i2]=0; cn->selectedHours2[i2] < this->nHoursPerDay; cn->selectedHours2[i2]++)
+						if(this->hoursOfTheDay[cn->selectedHours2[i2]]==text)
+							break;
+							
+					if(cn->selectedHours2[i2]>=this->nHoursPerDay){
+						xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+						/*RulesReconcilableMessage::information(parent, tr("FET information"),
+							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is nonexistent ... ignoring constraint")
+							.arg(text));*/
+						delete cn;
+						cn=nullptr;
+						//goto corruptConstraintTime;
+						return nullptr;
+					}
+					
+					assert(cn->selectedHours2[i2]>=0 && cn->selectedHours2[i2] < this->nHoursPerDay);
+					xmlReadingLog+="    Hour="+this->hoursOfTheDay[cn->selectedHours2[i2]]+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+
+			i2++;
+			
+			if(!(i2==cn->selectedDays2.count()) || !(i2==cn->selectedHours2.count())){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot_in_Second_Set"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			assert(i2==cn->selectedDays2.count());
+			assert(i2==cn->selectedHours2.count());
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	if(!(i1==tsc1)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_First_Set").arg("Selected_Time_Slot_in_First_Set"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(i1==tsc1);
+
+	if(!(i2==tsc2)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read").arg("Number_of_Selected_Time_Slots_in_Second_Set").arg("Selected_Time_Slot_in_Second_Set"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+
+	assert(i2==tsc2);
+
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection"));
+	ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection* cn=new ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection();
+
+	int readSetsCount=0;
+
+	int tsc=0;
+
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Maximum_Number_of_Occupied_Sets")){
+			QString text=xmlReader.readElementText();
+			cn->maxOccupiedSets=text.toInt();
+			/*if(cn->maxOccupiedSets<1 || cn->maxOccupiedSets>2){
+				xmlReader.raiseError(tr("%1 must be >=1 and <=2", "%1 is an XML element, like 'Maximum_Number_of_Occupied_Sets'").arg("Maximum_Number_of_Occupied_Sets"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}*/
+			xmlReadingLog+="    Read maxOccupiedSets="+CustomFETString::number(cn->maxOccupiedSets)+"\n";
+		}
+		else if(xmlReader.name()==QString("Number_of_Selected_Sets_of_Time_Slots")){
+			QString text=xmlReader.readElementText();
+			readSetsCount=text.toInt();
+			xmlReadingLog+="    Read number of selected sets of time slots="+CustomFETString::number(readSetsCount)+"\n";
+		}
+		else if(xmlReader.name()==QString("Selected_Set_of_Time_Slots")){
+			QList<int> days;
+			QList<int> hours;
+			
+			xmlReadingLog+="    Read: selected set of time slots\n";
+
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+				
+				if(xmlReader.name()==QString("Number_of_Selected_Time_Slots")){
+					QString text=xmlReader.readElementText();
+					tsc=text.toInt();
+					xmlReadingLog+="    Read number of selected time slots="+CustomFETString::number(tsc)+"\n";
+				}
+				else if(xmlReader.name()==QString("Selected_Time_Slot")){
+					xmlReadingLog+="    Read: selected time slot\n";
+
+					assert(xmlReader.isStartElement());
+					while(xmlReader.readNextStartElement()){
+						xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+						if(xmlReader.name()==QString("Day")){
+							QString text=xmlReader.readElementText();
+							int day;
+							for(day=0; day < this->nDaysPerWeek; day++)
+								if(this->daysOfTheWeek[day]==text)
+									break;
+									
+							if(day>=this->nDaysPerWeek){
+								xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+								delete cn;
+								cn=nullptr;
+								return nullptr;
+							}
+							
+							assert(day>=0 && day<this->nDaysPerWeek);
+							xmlReadingLog+="    Day="+this->daysOfTheWeek[day]+"("+CustomFETString::number(day)+")"+"\n";
+							
+							days.append(day);
+						}
+						else if(xmlReader.name()==QString("Hour")){
+							QString text=xmlReader.readElementText();
+							int hour;
+							for(hour=0; hour < this->nHoursPerDay; hour++)
+								if(this->hoursOfTheDay[hour]==text)
+									break;
+							
+							if(hour>=this->nHoursPerDay){
+								xmlReader.raiseError(tr("Hour %1 is nonexistent").arg(text));
+								delete cn;
+								cn=nullptr;
+								return nullptr;
+							}
+							
+							assert(hour>=0 && hour < this->nHoursPerDay);
+							xmlReadingLog+="    Hour="+this->hoursOfTheDay[hour]+"("+CustomFETString::number(hour)+")"+"\n";
+							
+							hours.append(hour);
+						}
+						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+							xmlReader.skipCurrentElement();
+							xmlReaderNumberOfUnrecognizedFields++;
+						}
+					}
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			
+			if(days.count()!=hours.count()){
+				xmlReader.raiseError(tr("The number of %1 which were read is not equal to the number of %2 which were read", "%1 is an XML element, like 'Day', and %2 is another XML element, like 'Hour'")
+				 .arg("Day").arg("Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			if(tsc!=days.count()){
+				xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
+				 " 'Number_of_Selected_Time_Slots' and 'Selected_Time_Slot'").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			
+			cn->selectedDays.append(days);
+			cn->selectedHours.append(hours);
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+
+	assert(cn->selectedDays.count()==cn->selectedHours.count());
+	if(readSetsCount!=cn->selectedDays.count()){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of %2 which were read", "%1 and %2 are XML elements, like"
+		 " 'Number_of_Selected_Sets_of_Time_Slots' and 'Selected_Set_of_Time_Slots'").arg("Number_of_Selected_Sets_of_Time_Slots").arg("Selected_Set_of_Time_Slots"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
 
 	return cn;
 }

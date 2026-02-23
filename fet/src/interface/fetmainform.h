@@ -106,6 +106,14 @@ private:
 	QAction* dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction;
 	QAction* dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction;
 
+	QAction* dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction;
+	QAction* dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction;
+	QAction* dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction;
+
+	QAction* dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction;
+	QAction* dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction;
+	QAction* dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction;
+
 	QAction* dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction;
 	QAction* dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction;
 	QAction* dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction;
@@ -446,6 +454,10 @@ private:
 	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction;
 	QAction* dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction;
 
+	QAction* dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction;
+	QAction* dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction;
+	QAction* dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction;
+
 	QLabel modeLabel;
 	
 //	QSpinBox communicationSpinBox;
@@ -728,6 +740,14 @@ public Q_SLOTS:
 	void dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction_triggered();
 	void dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction_triggered();
 	void dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction_triggered();
+
+	void dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction_triggered();
+	void dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered();
+	void dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction_triggered();
+
+	void dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction_triggered();
+	void dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered();
+	void dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction_triggered();
 
 	void dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction_triggered();
 	void dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction_triggered();
@@ -1032,6 +1052,10 @@ public Q_SLOTS:
 	void dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction_triggered();
 	void dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction_triggered();
 	void dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction_triggered();
+
+	void dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction_triggered();
+	void dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction_triggered();
+	void dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction_triggered();
 
 	void helpMoroccoAction_triggered();
 	void helpAlgeriaAction_triggered();

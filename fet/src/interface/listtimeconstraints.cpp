@@ -176,6 +176,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 					"Also, the activities constrained by min days between activities constraints with 'consecutive if on the same "
 					"day' = true cannot spread over a break."));
 				
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//3
@@ -186,6 +188,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				teachersComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//4
@@ -318,6 +322,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				studentsComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//18
@@ -499,6 +505,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				subjectsComboBox=new QComboBox;
 				activityTagsComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				firstInstructionsLabel=new QLabel(tr("Each hour slot of each considered activity must be allowed by this constraint (more "
 													 "restrictive than preferred starting times for activities with duration greater than 1)"));
 
@@ -510,6 +518,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints activities preferred time slots", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesPreferredTimeSlots");
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				firstInstructionsLabel=new QLabel(tr("Each hour slot of each considered activity must be allowed by this constraint (more "
 													 "restrictive than preferred starting times for activities with duration greater than 1)"));
 
@@ -526,6 +536,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				subjectsComboBox=new QComboBox;
 				activityTagsComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//34
@@ -534,6 +546,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints activities preferred starting times", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesPreferredStartingTimes");
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//35
@@ -635,6 +649,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//41
@@ -648,6 +664,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//42
@@ -919,6 +937,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//64
@@ -934,6 +954,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//65
@@ -1157,6 +1179,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//82
@@ -1172,6 +1196,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//83
@@ -2065,6 +2091,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//166
@@ -2877,6 +2905,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//231
@@ -2887,6 +2917,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//232
@@ -2899,6 +2931,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//233
@@ -2909,6 +2943,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//234
@@ -2921,6 +2957,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//235
@@ -2951,6 +2989,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//238
@@ -2961,6 +3001,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//239
@@ -2973,6 +3015,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//240
@@ -2983,6 +3027,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//241
@@ -2998,6 +3044,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//242
@@ -3025,6 +3073,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//244
@@ -3035,6 +3085,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//245
@@ -3047,6 +3099,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//246
@@ -3057,6 +3111,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//247
@@ -3087,6 +3143,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 		//249
@@ -3147,6 +3205,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				helpPushButton=new QPushButton(tr("Help"));
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
 				break;
 			}
 
@@ -3301,10 +3361,11 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	splitter=new QSplitter;
 	splitter->setSizePolicy(splitter->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
 
-	colorsCheckBox=new QCheckBox(tr("Colors"));
 	//QSettings settings(COMPANY, PROGRAM);
-	colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors"), "false").toBool());
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::colorsCheckBoxToggled);
+	if(colorsCheckBox!=nullptr){
+		colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors"), "false").toBool());
+		connect(colorsCheckBox, &QCheckBox::toggled, this, &ListTimeConstraints::colorsCheckBoxToggled);
+	}
 
 	useFilter=settings.value(dialogName+QString("/list-filtered"), "false").toBool();
 	filterCheckBox=new QCheckBox(tr("Filter"));
@@ -3405,8 +3466,9 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	QVBoxLayout* filterAndDescriptionLayout=new QVBoxLayout;
 	assert(constraintDescriptionTextEdit!=nullptr);
 	filterAndDescriptionLayout->addWidget(constraintDescriptionTextEdit);
-	assert(colorsCheckBox!=nullptr);
-	filterAndDescriptionLayout->addWidget(colorsCheckBox);
+	//assert(colorsCheckBox!=nullptr);
+	if(colorsCheckBox!=nullptr)
+		filterAndDescriptionLayout->addWidget(colorsCheckBox);
 	if(filterGroupBox!=nullptr)
 		filterAndDescriptionLayout->addWidget(filterGroupBox);
 
@@ -7866,7 +7928,7 @@ void ListTimeConstraints::removeClicked()
 	s=protect4(tr("Remove these selected time constraints?", "Following is the list of detailed descriptions of the constraints marked for removal."));
 	s+=QString("<br />\n<br />\n");
 	for(TimeConstraint* ctr : std::as_const(tl))
-		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 	int lres=LongTextMessageBox::confirmation(dialog, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
@@ -7880,7 +7942,7 @@ void ListTimeConstraints::removeClicked()
 		su=protect4(tr("Removed %1 time constraints:").arg(tl.count()));
 		su+=QString("<br />\n<br />\n");
 		for(TimeConstraint* ctr : std::as_const(tl))
-			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+"<br />\n";
+			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+"<br />\n";
 	}
 
 	//The user clicked the OK button or pressed Enter
@@ -8588,7 +8650,7 @@ void ListTimeConstraints::constraintChanged()
 	assert(index<visibleTimeConstraintsList.count());
 	TimeConstraint* ctr=visibleTimeConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false); //'true' means 'richText'
 	constraintDescriptionTextEdit->setText(s);
 }
 
@@ -8655,7 +8717,7 @@ void ListTimeConstraints::moveTimeConstraintUp()
 	visibleTimeConstraintsList[i-1]=tc1;
 	
 	gt.rules.addUndoPoint(protect4(tr("A constraint was moved up:", "This is a History item. Following is the detailed description of the constraint which was moved up."))
-	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false));
 	
 	if(tc2->active){
 		constraintsListWidget->item(i)->setBackground(QBrush());
@@ -8742,7 +8804,7 @@ void ListTimeConstraints::moveTimeConstraintDown()
 	visibleTimeConstraintsList[i+1]=tc1;
 	
 	gt.rules.addUndoPoint(protect4(tr("A constraint was moved down:", "This is a History item. Following is the detailed description of the constraint which was moved down."))
-	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	 +QString("<br />\n<br />\n")+tc1->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false));
 	
 	if(tc2->active){
 		constraintsListWidget->item(i)->setBackground(QBrush());
@@ -8797,7 +8859,7 @@ void ListTimeConstraints::activateConstraints()
 			assert(i<visibleTimeConstraintsList.count());
 			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
 			if(!ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 
 				cnt++;
 				ctr->active=true;
@@ -8865,7 +8927,7 @@ void ListTimeConstraints::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
 				continue;
 			if(ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 
 				cnt++;
 				ctr->active=false;
@@ -8959,7 +9021,7 @@ void ListTimeConstraints::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 
 	if(t==QDialog::Accepted){
-		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked());
+		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
 
 		ctr->comments=commentsPT->toPlainText();
 
@@ -9083,7 +9145,7 @@ void ListTimeConstraints::changeWeights()
 			assert(i<visibleTimeConstraintsList.count());
 			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
 			if(ctr->canHaveAnyWeight()){
-				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 
 				cnt++;
 				ctr->weightPercentage=nw;

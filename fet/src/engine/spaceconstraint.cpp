@@ -922,6 +922,123 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivityTags
 	return stream;
 }
 
+//69
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomPairOfMutuallyExclusiveTimeSlots& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.room<<sc.day1<<sc.hour1<<sc.day2<<sc.hour2;
+
+	return stream;
+}
+
+//70
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.room<<sc.selectedDays1<<sc.selectedHours1<<sc.selectedDays2<<sc.selectedHours2;
+
+	return stream;
+}
+
+//71
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.room<<sc.maxOccupiedSets<<sc.selectedDays<<sc.selectedHours;
+
+	return stream;
+}
+
+//72
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxActivityTagsPerDayFromSet& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxTags<<sc.tagsList;
+
+	return stream;
+}
+
+//73
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxActivityTagsPerRealDayFromSet& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxTags<<sc.tagsList;
+
+	return stream;
+}
+
+//74
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxActivityTagsPerWeekFromSet& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxTags<<sc.tagsList;
+
+	return stream;
+}
+
+//75
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsPairOfMutuallyExclusiveTimeSlots& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.day1<<sc.hour1<<sc.day2<<sc.hour2;
+
+	return stream;
+}
+
+//76
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.selectedDays1<<sc.selectedHours1<<sc.selectedDays2<<sc.selectedHours2;
+
+	return stream;
+}
+
+//77
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxOccupiedSets<<sc.selectedDays<<sc.selectedHours;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc)
 {
@@ -1804,6 +1921,123 @@ QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivityTagsPerWee
 	return stream;
 }
 
+//69
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomPairOfMutuallyExclusiveTimeSlots& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.room>>sc.day1>>sc.hour1>>sc.day2>>sc.hour2;
+
+	return stream;
+}
+
+//70
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.room>>sc.selectedDays1>>sc.selectedHours1>>sc.selectedDays2>>sc.selectedHours2;
+
+	return stream;
+}
+
+//71
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.room>>sc.maxOccupiedSets>>sc.selectedDays>>sc.selectedHours;
+
+	return stream;
+}
+
+//72
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxActivityTagsPerDayFromSet& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxTags>>sc.tagsList;
+
+	return stream;
+}
+
+//73
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxActivityTagsPerRealDayFromSet& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxTags>>sc.tagsList;
+
+	return stream;
+}
+
+//74
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxActivityTagsPerWeekFromSet& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxTags>>sc.tagsList;
+
+	return stream;
+}
+
+//75
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsPairOfMutuallyExclusiveTimeSlots& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.day1>>sc.hour1>>sc.day2>>sc.hour2;
+
+	return stream;
+}
+
+//76
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.selectedDays1>>sc.selectedHours1>>sc.selectedDays2>>sc.selectedHours2;
+
+	return stream;
+}
+
+//77
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxOccupiedSets>>sc.selectedDays>>sc.selectedHours;
+
+	return stream;
+}
+
 static QString trueFalse(bool x)
 {
 	if(!x)
@@ -2030,6 +2264,22 @@ bool SpaceConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			t=true;
 			break;
 		
@@ -2185,6 +2435,24 @@ bool SpaceConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			t=true;
 			break;
 		
@@ -2305,6 +2573,22 @@ bool SpaceConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			t=true;
 			break;
 		
@@ -2425,6 +2709,22 @@ bool SpaceConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			t=true;
 			break;
 		
@@ -2541,7 +2841,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = roomsConflicts = c.getRoomsMatrix(r, roomsMatrix);
 		
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 	else{
 		assert(rooms_conflicts>=0);
@@ -2965,7 +3265,7 @@ double ConstraintRoomNotAvailableTimes::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of hours when the room is supposed to be occupied,
@@ -3304,7 +3604,7 @@ double ConstraintTeacherRoomNotAvailableTimes::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of hours when the teacher+room is supposed to be occupied,
@@ -3675,7 +3975,7 @@ double ConstraintActivityPreferredRoom::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts
@@ -3966,7 +4266,7 @@ double ConstraintActivityPreferredRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts
@@ -4221,7 +4521,7 @@ double ConstraintStudentsSetHomeRoom::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -4510,7 +4810,7 @@ double ConstraintStudentsSetHomeRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -4785,7 +5085,7 @@ double ConstraintTeacherHomeRoom::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -5071,7 +5371,7 @@ double ConstraintTeacherHomeRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -5325,7 +5625,7 @@ double ConstraintSubjectPreferredRoom::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -5577,7 +5877,7 @@ double ConstraintSubjectPreferredRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -5825,7 +6125,7 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -6083,7 +6383,7 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -6327,7 +6627,7 @@ double ConstraintActivityTagPreferredRoom::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -6580,7 +6880,7 @@ double ConstraintActivityTagPreferredRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts.
@@ -6860,7 +7160,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -7105,7 +7405,7 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -7404,7 +7704,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -7649,7 +7949,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -7947,7 +8247,7 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -8204,7 +8504,7 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -8478,7 +8778,7 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -8724,7 +9024,7 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -8986,7 +9286,7 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -9232,7 +9532,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -9494,7 +9794,7 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -9752,7 +10052,7 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -10064,7 +10364,7 @@ double ConstraintStudentsSetMaxRoomChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -10309,7 +10609,7 @@ double ConstraintStudentsMaxRoomChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -10608,7 +10908,7 @@ double ConstraintStudentsSetMaxRoomChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -10853,7 +11153,7 @@ double ConstraintStudentsMaxRoomChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -11151,7 +11451,7 @@ double ConstraintStudentsSetMinGapsBetweenRoomChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -11408,7 +11708,7 @@ double ConstraintStudentsMinGapsBetweenRoomChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -11682,7 +11982,7 @@ double ConstraintTeacherMaxRoomChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -11928,7 +12228,7 @@ double ConstraintTeachersMaxRoomChangesPerDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -12190,7 +12490,7 @@ double ConstraintTeacherMaxRoomChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -12436,7 +12736,7 @@ double ConstraintTeachersMaxRoomChangesPerWeek::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -12698,7 +12998,7 @@ double ConstraintTeacherMinGapsBetweenRoomChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -12956,7 +13256,7 @@ double ConstraintTeachersMinGapsBetweenRoomChanges::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -13261,7 +13561,7 @@ double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts
@@ -13533,7 +13833,7 @@ double ConstraintActivitiesSameRoomIfConsecutive::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	//Calculates the number of conflicts
@@ -13776,7 +14076,7 @@ double ConstraintStudentsMaxRoomChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -14084,7 +14384,7 @@ double ConstraintStudentsSetMaxRoomChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -14352,7 +14652,7 @@ double ConstraintTeacherMaxRoomChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -14607,7 +14907,7 @@ double ConstraintTeachersMaxRoomChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -14863,7 +15163,7 @@ double ConstraintStudentsMaxBuildingChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -15171,7 +15471,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -15439,7 +15739,7 @@ double ConstraintTeacherMaxBuildingChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -15694,7 +15994,7 @@ double ConstraintTeachersMaxBuildingChangesPerRealDay::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -16029,7 +16329,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -16310,7 +16610,7 @@ double ConstraintStudentsMaxBuildingChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -16608,7 +16908,7 @@ double ConstraintTeacherMaxBuildingChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -16890,7 +17190,7 @@ double ConstraintTeachersMaxBuildingChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -17264,7 +17564,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -17585,7 +17885,7 @@ double ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -17923,7 +18223,7 @@ double ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -18246,7 +18546,7 @@ double ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -18582,7 +18882,7 @@ double ConstraintStudentsSetMaxRoomChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -18863,7 +19163,7 @@ double ConstraintStudentsMaxRoomChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -19161,7 +19461,7 @@ double ConstraintTeacherMaxRoomChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -19443,7 +19743,7 @@ double ConstraintTeachersMaxRoomChangesPerDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -19817,7 +20117,7 @@ double ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -20138,7 +20438,7 @@ double ConstraintStudentsMaxRoomChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -20476,7 +20776,7 @@ double ConstraintTeacherMaxRoomChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -20799,7 +21099,7 @@ double ConstraintTeachersMaxRoomChangesPerRealDayInInterval::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -21087,7 +21387,7 @@ double ConstraintRoomMaxActivityTagsPerDayFromSet::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -21345,7 +21645,7 @@ double ConstraintRoomMaxActivityTagsPerRealDayFromSet::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -21606,7 +21906,7 @@ double ConstraintRoomMaxActivityTagsPerWeekFromSet::fitness(
 		c.roomsMatrixReady=true;
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		c.changedForMatrixCalculation=false;
+		c.changedForMatrixCalculationRooms=false;
 	}
 
 	int nbroken=0;
@@ -21722,6 +22022,2843 @@ bool ConstraintRoomMaxActivityTagsPerWeekFromSet::repairWrongDayOrHour(Rules& r)
 	if(this->maxTags > r.nDaysPerWeek*r.nHoursPerDay)
 		this->maxTags = r.nDaysPerWeek*r.nHoursPerDay;
 
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomPairOfMutuallyExclusiveTimeSlots::ConstraintRoomPairOfMutuallyExclusiveTimeSlots()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS;
+}
+
+ConstraintRoomPairOfMutuallyExclusiveTimeSlots::ConstraintRoomPairOfMutuallyExclusiveTimeSlots(double wp, const QString& _room, int d1, int h1, int d2, int h2)
+ : SpaceConstraint(wp)
+ {
+	this->room=_room;
+	this->day1=d1;
+	this->hour1=h1;
+	this->day2=d2;
+	this->hour2=h2;
+
+	this->type=CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	room_ID=r.roomsHash.value(room, -1);
+	assert(this->room_ID>=0);
+
+	if(this->day1 >= r.nDaysPerWeek){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive time slots is wrong because the first time slot's day refers to a removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(this->hour1 >= r.nHoursPerDay){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive time slots is wrong because the first time slot's hour refers to a removed hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(this->day2 >= r.nDaysPerWeek){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive time slots is wrong because the second time slot's day refers to a removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(this->hour2 >= r.nHoursPerDay){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive time slots is wrong because the second time slot's hour refers to a removed hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	if(this->day1==this->day2 && this->hour1==this->hour2){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive time slots is wrong because the two time slots are the same. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomPairOfMutuallyExclusiveTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomPairOfMutuallyExclusiveTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
+
+	s+=IL3+"<First_Time_Slot>\n";
+	s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->day1])+"</Day>\n";
+	s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hour1])+"</Hour>\n";
+	s+=IL3+"</First_Time_Slot>\n";
+
+	s+=IL3+"<Second_Time_Slot>\n";
+	s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->day2])+"</Day>\n";
+	s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hour2])+"</Hour>\n";
+	s+=IL3+"</Second_Time_Slot>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomPairOfMutuallyExclusiveTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintRoomPairOfMutuallyExclusiveTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Room pair of mutually exclusive time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
+
+	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=translatedCommaSpace();
+	s+=tr("STS:%1", "Second time slot").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Space constraint");s+="\n";
+	s+=tr("A room has a pair of mutually exclusive time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Room=%1").arg(this->room);s+="\n";
+
+	s+=tr("First time slot=%1").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+="\n";
+	s+=tr("Second time slot=%1").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintRoomPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	int i=this->room_ID;
+
+	if(roomsMatrix[i][this->day1][this->hour1]>0 && roomsMatrix[i][this->day2][this->hour2]>0){
+		nbroken++;
+
+		if(conflictsString!=nullptr){
+			QString s=(tr(
+			 "Space constraint room pair of mutually exclusive time slots broken for room %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+			 .arg(r.internalRoomsList[i]->name)
+			 .arg(r.daysOfTheWeek[day1])
+			 .arg(r.hoursOfTheDay[hour1])
+			 .arg(r.daysOfTheWeek[day2])
+			 .arg(r.hoursOfTheDay[hour2])
+			 )
+			 +" "
+			 +
+			 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+			
+			dl.append(s);
+			cl.append(weightPercentage/100);
+			
+			*conflictsString+= s+"\n";
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t)
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToRoom(const QString& r)
+{
+	return this->room==r;
+}
+
+int ConstraintRoomPairOfMutuallyExclusiveTimeSlots::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	if(day1>=r.nDaysPerWeek)
+		return true;
+	if(hour1>=r.nHoursPerDay)
+		return true;
+	if(day2>=r.nDaysPerWeek)
+		return true;
+	if(hour2>=r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots(double wp, const QString& _room,
+ const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2)
+ : SpaceConstraint(wp)
+ {
+	this->room=_room;
+	this->selectedDays1=sd1;
+	this->selectedHours1=sh1;
+	this->selectedDays2=sd2;
+	this->selectedHours2=sh2;
+
+	this->type=CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	room_ID=r.roomsHash.value(room, -1);
+	assert(this->room_ID>=0);
+
+	assert(selectedDays1.count()==selectedHours1.count());
+	assert(selectedDays2.count()==selectedHours2.count());
+
+	if(selectedDays1.count()==0){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive sets of time slots is wrong because the first set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(selectedDays2.count()==0){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive sets of time slots is wrong because the second set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	set1.clear();
+	list1.clear();
+	set2.clear();
+	list2.clear();
+	for(int k=0; k<selectedDays1.count(); k++){
+		int d=selectedDays1.at(k);
+		int h=selectedHours1.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set1.insert(d+h*r.nDaysPerWeek);
+			list1.append(d+h*r.nDaysPerWeek);
+		}
+	}
+	for(int k=0; k<selectedDays2.count(); k++){
+		int d=selectedDays2.at(k);
+		int h=selectedHours2.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set2.insert(d+h*r.nDaysPerWeek);
+			list2.append(d+h*r.nDaysPerWeek);
+		}
+	}
+
+	if(set1.intersects(set2)){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room pair of mutually exclusive sets of time slots is wrong because the two sets of time slots have at least one common time slot. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_First_Set>"+QString::number(this->selectedDays1.count())+"</Number_of_Selected_Time_Slots_in_First_Set>\n";
+	for(int i=0; i<this->selectedDays1.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_First_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays1.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours1.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_First_Set>\n";
+	}
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_Second_Set>"+QString::number(this->selectedDays2.count())+"</Number_of_Selected_Time_Slots_in_Second_Set>\n";
+	for(int i=0; i<this->selectedDays2.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_Second_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays2.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours2.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_Second_Set>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Room pair of mutually exclusive sets of time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("FSoSTS:%1", "First set of selected time slots").arg(timeslots1);s+=translatedCommaSpace();
+	s+=tr("SSoSTS:%1", "Second set of selected time slots").arg(timeslots2);
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+
+	if(!richText){
+		QString s=tr("Space constraint");s+="\n";
+		s+=tr("A room has a pair of mutually exclusive sets of time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Room=%1").arg(this->room);s+="\n";
+
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
+
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
+
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+		if(!active){
+			s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString s1=tr("Space constraint");s1+="\n";
+		s1+=tr("A room has a pair of mutually exclusive sets of time slots");s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s1+="\n";
+		s1+=tr("Room=%1").arg(this->room);s1+="\n";
+
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
+
+		if(!active){
+			s5+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
+}
+
+double ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	int i=this->room_ID;
+
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(roomsMatrix[i][day1][hour1]>0){
+			for(int k2=0; k2<selectedDays2.count(); k2++){
+				int day2=selectedDays2.at(k2);
+				int hour2=selectedHours2.at(k2);
+
+				if(roomsMatrix[i][day2][hour2]>0){
+					nbroken++;
+
+					if(conflictsString!=nullptr){
+						QString s=(tr(
+						 "Space constraint room pair of mutually exclusive sets of time slots broken for room %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+						 .arg(r.internalRoomsList[i]->name)
+						 .arg(r.daysOfTheWeek[day1])
+						 .arg(r.hoursOfTheDay[hour1])
+						 .arg(r.daysOfTheWeek[day2])
+						 .arg(r.hoursOfTheDay[hour2])
+						 )
+						 +" "
+						 +
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+						
+						dl.append(s);
+						cl.append(weightPercentage/100);
+						
+						*conflictsString+= s+"\n";
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToRoom(const QString& r)
+{
+	return this->room==r;
+}
+
+int ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(day1>=r.nDaysPerWeek)
+			return true;
+		if(hour1>=r.nHoursPerDay)
+			return true;
+	}
+	
+	for(int k2=0; k2<selectedDays2.count(); k2++){
+		int day2=selectedDays2.at(k2);
+		int hour2=selectedHours2.at(k2);
+		
+		if(day2>=r.nDaysPerWeek)
+			return true;
+		if(hour2>=r.nHoursPerDay)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(selectedDays1.at(i)<r.nDaysPerWeek && selectedHours1.at(i)<r.nHoursPerDay){
+			newDays1.append(selectedDays1.at(i));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	///////
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(selectedDays2.at(i)<r.nDaysPerWeek && selectedHours2.at(i)<r.nHoursPerDay){
+			newDays2.append(selectedDays2.at(i));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION;
+}
+
+ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection(double wp, const QString& _room,
+ int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh)
+ : SpaceConstraint(wp)
+ {
+	this->room=_room;
+	this->maxOccupiedSets=mos;
+	this->selectedDays=sd;
+	this->selectedHours=sh;
+
+	this->type=CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	room_ID=r.roomsHash.value(room, -1);
+	assert(this->room_ID>=0);
+
+	assert(selectedDays.count()==selectedHours.count());
+
+	if(selectedDays.count()<2){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room occupies max sets of time slots from selection is wrong because the selection contains less than two sets of time"
+		 " slots. Please correct and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	listOfSets.clear();
+	listOfLists.clear();
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& cdays=selectedDays.at(q);
+		const QList<int>& chours=selectedHours.at(q);
+		assert(cdays.count()==chours.count());
+		QSet<int> ts;
+		QList<int> tl;
+		for(int k=0; k<cdays.count(); k++){
+			int d=cdays.at(k);
+			int h=chours.at(k);
+			if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+				ts.insert(d+h*r.nDaysPerWeek);
+				tl.append(d+h*r.nDaysPerWeek);
+			}
+		}
+		assert(ts.count()==tl.count());
+		if(tl.count()==0){
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+			 tr("Constraint room occupies max sets of time slots from selection is wrong because the set number %1 of selected time slots is empty. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%2")
+			 .arg(q+1).arg(this->getDetailedDescription(r)));
+			
+			return false;
+		}
+		listOfSets.append(ts);
+		listOfLists.append(tl);
+	}
+
+	for(int i=0; i<listOfSets.count()-1; i++){
+		const QSet<int>& set1=listOfSets.at(i);
+		for(int j=i+1; j<listOfSets.count(); j++){
+			const QSet<int>& set2=listOfSets.at(j);
+			if(set1.intersects(set2)){
+				SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+				 tr("Constraint room occupies max sets of time slots from selection is wrong because the set number %1 of selected time slots and the set number %2 of selected time slots have at least one common time slot. Please correct"
+				 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%3")
+				 .arg(i+1)
+				 .arg(j+1)
+				 .arg(this->getDetailedDescription(r)));
+				
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
+
+	s+=IL3+"<Maximum_Number_of_Occupied_Sets>"+CustomFETString::number(this->maxOccupiedSets)+"</Maximum_Number_of_Occupied_Sets>\n";
+
+	s+=IL3+"<Number_of_Selected_Sets_of_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Sets_of_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		const QList<int>& days=selectedDays.at(i);
+		const QList<int>& hours=selectedHours.at(i);
+		s+=IL3+"<Selected_Set_of_Time_Slots>\n";
+		s+=IL4+"<Number_of_Selected_Time_Slots>"+QString::number(days.count())+"</Number_of_Selected_Time_Slots>\n";
+		for(int j=0; j<days.count(); j++){
+			s+=IL4+"<Selected_Time_Slot>\n";
+			s+=IL5+"<Day>"+protect(r.daysOfTheWeek[days.at(j)])+"</Day>\n";
+			s+=IL5+"<Hour>"+protect(r.hoursOfTheDay[hours.at(j)])+"</Hour>\n";
+			s+=IL4+"</Selected_Time_Slot>\n";
+		}
+		s+=IL3+"</Selected_Set_of_Time_Slots>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection>\n";
+	return s;
+}
+
+QString ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Room occupies max sets of time slots from selection");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
+
+	s+=tr("MOS:%1", "Max occupied sets").arg(this->maxOccupiedSets);s+=translatedCommaSpace();
+
+	s+=tr("NS:%1", "Number of sets").arg(this->selectedDays.count());s+=translatedCommaSpace();
+	
+	for(int i=0; i<this->selectedDays.count(); i++){
+		const QList<int>& days=selectedDays.at(i);
+		const QList<int>& hours=selectedHours.at(i);
+
+		QString timeslots=QString("");
+		for(int j=0; j<days.count(); j++)
+			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+
+		s+=tr("SSTS %1: %2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+translatedCommaSpace();
+	}
+	s.chop(translatedCommaSpace().size());
+	
+	return begin+s+end;
+}
+
+QString ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+
+	if(!richText){
+		QString s=tr("Space constraint");s+="\n";
+		s+=tr("A room occupies a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+		s+=tr("Room=%1").arg(this->room);s+="\n";
+
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+	
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
+
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
+
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Space constraint");begin+="\n";
+		begin+=tr("A room occupies a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+		begin+=tr("Room=%1").arg(this->room);begin+="\n";
+
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
+
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count()); begin+="\n";
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
+}
+
+double ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	int i=this->room_ID;
+	
+	QSet<int> occupiedSets;
+
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		for(int j=0; j<days.count(); j++){
+			int day=days.at(j);
+			int hour=hours.at(j);
+			
+			if(roomsMatrix[i][day][hour]>0){
+				assert(!occupiedSets.contains(q));
+				occupiedSets.insert(q);
+				break;
+			}
+		}
+	}
+
+	if(occupiedSets.count()>this->maxOccupiedSets){
+		nbroken++;
+
+		if(conflictsString!=nullptr){
+			QString s=(tr(
+			 "Space constraint room occupies max sets of time slots from selection broken for room %1, the room occupies %2 sets of selected time slots,"
+			 " but the maximum allowed is %3.")
+			 .arg(r.internalRoomsList[i]->name)
+			 .arg(occupiedSets.count())
+			 .arg(this->maxOccupiedSets)
+			 )
+			 +" "
+			 +
+			 (tr("This increases the conflicts total by %1.").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+			
+			dl.append(s);
+			cl.append(weightPercentage/100);
+			
+			*conflictsString+= s+"\n";
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToRoom(const QString& r)
+{
+	return this->room==r;
+}
+
+int ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
+{
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		for(int j=0; j<days.count(); j++){
+			int day=days.at(j);
+			int hour=hours.at(j);
+			
+			if(day>=r.nDaysPerWeek)
+				return true;
+			if(hour>=r.nHoursPerDay)
+				return true;
+		}
+	}
+	
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			int day=days.at(i);
+			int hour=hours.at(i);
+			
+			if(day<r.nDaysPerWeek && hour<r.nHoursPerDay){
+				newDays.append(day);
+				newHours.append(hour);
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsMaxActivityTagsPerDayFromSet::ConstraintRoomsMaxActivityTagsPerDayFromSet()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET;
+}
+
+ConstraintRoomsMaxActivityTagsPerDayFromSet::ConstraintRoomsMaxActivityTagsPerDayFromSet(double wp, int mtg, const QList<QString>& tgl)
+	 : SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET;
+	
+	this->maxTags=mtg;
+	this->tagsList=tgl;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	internalTagsSet.clear();
+	for(const QString& at : std::as_const(tagsList)){
+		int tgi=r.activityTagsHash.value(at, -1);
+		
+		if(tgi==-1){
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+			 tr("Activity tag %1 is not existing in the following constraint. Please edit or remove the constraint. Constraint is:\n%2").arg(at).arg(this->getDetailedDescription(r)));
+			
+			return false;
+		}
+		
+		assert(tgi>=0);
+		internalTagsSet.insert(tgi);
+	}
+	
+	return true;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsMaxActivityTagsPerDayFromSet>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
+	for(const QString& atn : std::as_const(tagsList))
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsMaxActivityTagsPerDayFromSet>\n";
+	return s;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Rooms max activity tags per day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Space constraint");s+="\n";
+	s+=tr("All rooms must respect a maximum number of activity tags per day from a set");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintRoomsMaxActivityTagsPerDayFromSet::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	Matrix3D<int> crtRoomsTimetableActivityTag;
+	crtRoomsTimetableActivityTag.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
+	
+	for(int rm=0; rm<r.nInternalRooms; rm++)
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtRoomsTimetableActivityTag[rm][d2][h2]=-1;
+
+	for(int ai=0; ai<r.nInternalActivities; ai++){
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+			//if(c.rooms[ai]==this->room_ID){
+				int rm=c.rooms[ai];
+				
+				QSet<int> ts=r.internalActivitiesList[ai].iActivityTagsSet;
+				ts.intersect(this->internalTagsSet);
+				assert(ts.count()<=1);
+				int at=-1;
+				if(!ts.isEmpty())
+					at=*ts.constBegin();
+
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+				
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtRoomsTimetableActivityTag[rm][d2][h2+dur]==-1);
+					crtRoomsTimetableActivityTag[rm][d2][h2+dur]=at;
+				}
+			}
+		}
+	}
+	/////////////
+
+	for(int rm=0; rm<r.nInternalRooms; rm++){
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			QSet<int> usedTags;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(crtRoomsTimetableActivityTag[rm][d][h]>=0)
+					usedTags.insert(crtRoomsTimetableActivityTag[rm][d][h]);
+
+			if(usedTags.count() > this->maxTags)
+				nbroken++;
+		}
+	}
+
+	assert(weightPercentage==100);
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToActivityTag(const QString& s)
+{
+	return tagsList.contains(s);
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsMaxActivityTagsPerDayFromSet::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::hasWrongDayOrHour(Rules& r)
+{
+	return this->maxTags > r.nHoursPerDay;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags > r.nHoursPerDay)
+		this->maxTags=r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsMaxActivityTagsPerRealDayFromSet::ConstraintRoomsMaxActivityTagsPerRealDayFromSet()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET;
+}
+
+ConstraintRoomsMaxActivityTagsPerRealDayFromSet::ConstraintRoomsMaxActivityTagsPerRealDayFromSet(double wp, int mtg, const QList<QString>& tgl)
+	 : SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET;
+	
+	this->maxTags=mtg;
+	this->tagsList=tgl;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	internalTagsSet.clear();
+	for(const QString& at : std::as_const(tagsList)){
+		int tgi=r.activityTagsHash.value(at, -1);
+		
+		if(tgi==-1){
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+			 tr("Activity tag %1 is not existing in the following constraint. Please edit or remove the constraint. Constraint is:\n%2").arg(at).arg(this->getDetailedDescription(r)));
+			
+			return false;
+		}
+		
+		assert(tgi>=0);
+		internalTagsSet.insert(tgi);
+	}
+	
+	return true;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsMaxActivityTagsPerRealDayFromSet>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
+	for(const QString& atn : std::as_const(tagsList))
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsMaxActivityTagsPerRealDayFromSet>\n";
+	return s;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Rooms max activity tags per real day from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Space constraint");s+="\n";
+	s+=tr("All rooms must respect a maximum number of activity tags per real day from a set");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintRoomsMaxActivityTagsPerRealDayFromSet::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	Matrix3D<int> crtRoomsTimetableActivityTag;
+	crtRoomsTimetableActivityTag.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
+	
+	for(int rm=0; rm<r.nInternalRooms; rm++)
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtRoomsTimetableActivityTag[rm][d2][h2]=-1;
+
+	for(int ai=0; ai<r.nInternalActivities; ai++){
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+			//if(c.rooms[ai]==this->room_ID){
+				int rm=c.rooms[ai];
+				
+				QSet<int> ts=r.internalActivitiesList[ai].iActivityTagsSet;
+				ts.intersect(this->internalTagsSet);
+				assert(ts.count()<=1);
+				int at=-1;
+				if(!ts.isEmpty())
+					at=*ts.constBegin();
+
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+				
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtRoomsTimetableActivityTag[rm][d2][h2+dur]==-1);
+					crtRoomsTimetableActivityTag[rm][d2][h2+dur]=at;
+				}
+			}
+		}
+	}
+	/////////////
+
+	for(int rm=0; rm<r.nInternalRooms; rm++){
+		for(int d=0; d<r.nDaysPerWeek/2; d++){
+			QSet<int> usedTags;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(crtRoomsTimetableActivityTag[rm][2*d][h]>=0)
+					usedTags.insert(crtRoomsTimetableActivityTag[rm][2*d][h]);
+				if(crtRoomsTimetableActivityTag[rm][2*d+1][h]>=0)
+					usedTags.insert(crtRoomsTimetableActivityTag[rm][2*d+1][h]);
+			}
+
+			if(usedTags.count() > this->maxTags)
+				nbroken++;
+		}
+	}
+
+	assert(weightPercentage==100);
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToActivityTag(const QString& s)
+{
+	return tagsList.contains(s);
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsMaxActivityTagsPerRealDayFromSet::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::hasWrongDayOrHour(Rules& r)
+{
+	return this->maxTags > 2*r.nHoursPerDay;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags > 2*r.nHoursPerDay)
+		this->maxTags = 2*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsMaxActivityTagsPerWeekFromSet::ConstraintRoomsMaxActivityTagsPerWeekFromSet()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET;
+}
+
+ConstraintRoomsMaxActivityTagsPerWeekFromSet::ConstraintRoomsMaxActivityTagsPerWeekFromSet(double wp, int mtg, const QList<QString>& tgl)
+	 : SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET;
+	
+	this->maxTags=mtg;
+	this->tagsList=tgl;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	internalTagsSet.clear();
+	for(const QString& at : std::as_const(tagsList)){
+		int tgi=r.activityTagsHash.value(at, -1);
+		
+		if(tgi==-1){
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+			 tr("Activity tag %1 is not existing in the following constraint. Please edit or remove the constraint. Constraint is:\n%2").arg(at).arg(this->getDetailedDescription(r)));
+			
+			return false;
+		}
+		
+		assert(tgi>=0);
+		internalTagsSet.insert(tgi);
+	}
+	
+	return true;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsMaxActivityTagsPerWeekFromSet>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
+	for(const QString& atn : std::as_const(tagsList))
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsMaxActivityTagsPerWeekFromSet>\n";
+	return s;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Rooms max activity tags per week from a set");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
+	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Space constraint");s+="\n";
+	s+=tr("All rooms must respect a maximum number of activity tags per week from a set");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
+	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintRoomsMaxActivityTagsPerWeekFromSet::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	Matrix3D<int> crtRoomsTimetableActivityTag;
+	crtRoomsTimetableActivityTag.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
+	
+	for(int rm=0; rm<r.nInternalRooms; rm++)
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtRoomsTimetableActivityTag[rm][d2][h2]=-1;
+
+	for(int ai=0; ai<r.nInternalActivities; ai++){
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+			//if(c.rooms[ai]==this->room_ID){
+				int rm=c.rooms[ai];
+				
+				QSet<int> ts=r.internalActivitiesList[ai].iActivityTagsSet;
+				ts.intersect(this->internalTagsSet);
+				assert(ts.count()<=1);
+				int at=-1;
+				if(!ts.isEmpty())
+					at=*ts.constBegin();
+
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+				
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtRoomsTimetableActivityTag[rm][d2][h2+dur]==-1);
+					crtRoomsTimetableActivityTag[rm][d2][h2+dur]=at;
+				}
+			}
+		}
+	}
+	/////////////
+
+	for(int rm=0; rm<r.nInternalRooms; rm++){
+		QSet<int> usedTags;
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(crtRoomsTimetableActivityTag[rm][d][h]>=0)
+					usedTags.insert(crtRoomsTimetableActivityTag[rm][d][h]);
+
+		if(usedTags.count() > this->maxTags)
+			nbroken++;
+	}
+
+	assert(weightPercentage==100);
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToActivityTag(const QString& s)
+{
+	return tagsList.contains(s);
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsMaxActivityTagsPerWeekFromSet::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::hasWrongDayOrHour(Rules& r)
+{
+	return this->maxTags > r.nDaysPerWeek*r.nHoursPerDay;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(this->maxTags > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxTags = r.nDaysPerWeek*r.nHoursPerDay;
+
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::ConstraintRoomsPairOfMutuallyExclusiveTimeSlots()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS;
+}
+
+ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::ConstraintRoomsPairOfMutuallyExclusiveTimeSlots(double wp, int d1, int h1, int d2, int h2)
+ : SpaceConstraint(wp)
+ {
+	this->day1=d1;
+	this->hour1=h1;
+	this->day2=d2;
+	this->hour2=h2;
+
+	this->type=CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	if(this->day1 >= r.nDaysPerWeek){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive time slots is wrong because the first time slot's day refers to a removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(this->hour1 >= r.nHoursPerDay){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive time slots is wrong because the first time slot's hour refers to a removed hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(this->day2 >= r.nDaysPerWeek){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive time slots is wrong because the second time slot's day refers to a removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(this->hour2 >= r.nHoursPerDay){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive time slots is wrong because the second time slot's hour refers to a removed hour. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	if(this->day1==this->day2 && this->hour1==this->hour2){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive time slots is wrong because the two time slots are the same. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsPairOfMutuallyExclusiveTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<First_Time_Slot>\n";
+	s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->day1])+"</Day>\n";
+	s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hour1])+"</Hour>\n";
+	s+=IL3+"</First_Time_Slot>\n";
+
+	s+=IL3+"<Second_Time_Slot>\n";
+	s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->day2])+"</Day>\n";
+	s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->hour2])+"</Hour>\n";
+	s+=IL3+"</Second_Time_Slot>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsPairOfMutuallyExclusiveTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Rooms pair of mutually exclusive time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+
+	s+=tr("FTS:%1", "First time slot").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+=translatedCommaSpace();
+	s+=tr("STS:%1", "Second time slot").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Space constraint");s+="\n";
+	s+=tr("All rooms have a pair of mutually exclusive time slots");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("First time slot=%1").arg(r.daysOfTheWeek[this->day1]+" "+r.hoursOfTheDay[this->hour1]);s+="\n";
+	s+=tr("Second time slot=%1").arg(r.daysOfTheWeek[this->day2]+" "+r.hoursOfTheDay[this->hour2]);s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalRooms; i++){
+		if(roomsMatrix[i][this->day1][this->hour1]>0 && roomsMatrix[i][this->day2][this->hour2]>0){
+			nbroken++;
+
+			if(conflictsString!=nullptr){
+				QString s=(tr(
+				 "Space constraint rooms pair of mutually exclusive time slots broken for room %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+				 .arg(r.internalRoomsList[i]->name)
+				 .arg(r.daysOfTheWeek[day1])
+				 .arg(r.hoursOfTheDay[hour1])
+				 .arg(r.daysOfTheWeek[day2])
+				 .arg(r.hoursOfTheDay[hour2])
+				 )
+				 +" "
+				 +
+				 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100);
+				
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t)
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	if(day1>=r.nDaysPerWeek)
+		return true;
+	if(hour1>=r.nHoursPerDay)
+		return true;
+	if(day2>=r.nDaysPerWeek)
+		return true;
+	if(hour2>=r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(double wp,
+ const QList<int>& sd1, const QList<int>& sh1, const QList<int>& sd2, const QList<int>& sh2)
+ : SpaceConstraint(wp)
+ {
+	this->selectedDays1=sd1;
+	this->selectedHours1=sh1;
+	this->selectedDays2=sd2;
+	this->selectedHours2=sh2;
+
+	this->type=CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	assert(selectedDays2.count()==selectedHours2.count());
+
+	if(selectedDays1.count()==0){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive sets of time slots is wrong because the first set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+	if(selectedDays2.count()==0){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive sets of time slots is wrong because the second set of selected time slots is empty. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	set1.clear();
+	list1.clear();
+	set2.clear();
+	list2.clear();
+	for(int k=0; k<selectedDays1.count(); k++){
+		int d=selectedDays1.at(k);
+		int h=selectedHours1.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set1.insert(d+h*r.nDaysPerWeek);
+			list1.append(d+h*r.nDaysPerWeek);
+		}
+	}
+	for(int k=0; k<selectedDays2.count(); k++){
+		int d=selectedDays2.at(k);
+		int h=selectedHours2.at(k);
+		if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+			set2.insert(d+h*r.nDaysPerWeek);
+			list2.append(d+h*r.nDaysPerWeek);
+		}
+	}
+
+	if(set1.intersects(set2)){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms pair of mutually exclusive sets of time slots is wrong because the two sets of time slots have at least one common time slot. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_First_Set>"+QString::number(this->selectedDays1.count())+"</Number_of_Selected_Time_Slots_in_First_Set>\n";
+	for(int i=0; i<this->selectedDays1.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_First_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays1.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours1.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_First_Set>\n";
+	}
+
+	s+=IL3+"<Number_of_Selected_Time_Slots_in_Second_Set>"+QString::number(this->selectedDays2.count())+"</Number_of_Selected_Time_Slots_in_Second_Set>\n";
+	for(int i=0; i<this->selectedDays2.count(); i++){
+		s+=IL3+"<Selected_Time_Slot_in_Second_Set>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays2.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours2.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot_in_Second_Set>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Rooms pair of mutually exclusive sets of time slots");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+
+	QString timeslots1=QString("");
+	for(int i=0; i<this->selectedDays1.count(); i++)
+		timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+	timeslots1.chop(translatedCommaSpace().size());
+
+	QString timeslots2=QString("");
+	for(int i=0; i<this->selectedDays2.count(); i++)
+		timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+	timeslots2.chop(translatedCommaSpace().size());
+
+	s+=tr("FSoSTS:%1", "First set of selected time slots").arg(timeslots1);s+=translatedCommaSpace();
+	s+=tr("SSoSTS:%1", "Second set of selected time slots").arg(timeslots2);
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+
+	if(!richText){
+		QString s=tr("Space constraint");s+="\n";
+		s+=tr("All rooms have a pair of mutually exclusive sets of time slots");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		QString timeslots1=QString("");
+		for(int i=0; i<this->selectedDays1.count(); i++)
+			timeslots1+=r.daysOfTheWeek[selectedDays1.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours1.at(i)]+translatedCommaSpace();
+		timeslots1.chop(translatedCommaSpace().size());
+
+		QString timeslots2=QString("");
+		for(int i=0; i<this->selectedDays2.count(); i++)
+			timeslots2+=r.daysOfTheWeek[selectedDays2.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours2.at(i)]+translatedCommaSpace();
+		timeslots2.chop(translatedCommaSpace().size());
+
+		s+=tr("First set of selected time slots=%1").arg(timeslots1);s+="\n";
+		s+=tr("Second set of selected time slots=%1").arg(timeslots2);s+="\n";
+
+		if(!active){
+			s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString s1=tr("Space constraint");s1+="\n";
+		s1+=tr("All rooms have a pair of mutually exclusive sets of time slots");s1+="\n";
+		s1+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s1+="\n";
+
+		s1+=tr("First set of selected time slots:");
+		s1+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString s2=listsOfDaysAndHoursToTable(r, selectedDays1, selectedHours1, true, false, colors);
+		QString s3;
+		s3+="\n";
+		s3+=tr("Second set of selected time slots:");
+		s3+="\n";
+		QString s4=listsOfDaysAndHoursToTable(r, selectedDays2, selectedHours2, true, false, colors);
+		QString s5;
+		s5+="\n";
+
+		if(!active){
+			s5+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s5+="\n";
+		}
+		if(!comments.isEmpty()){
+			s5+=tr("Comments=%1").arg(comments);
+			s5+="\n";
+		}
+
+		return protect4(s1)+s2+protect4(s3)+s4+protect4(s5);
+	}
+}
+
+double ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalRooms; i++){
+		for(int k1=0; k1<selectedDays1.count(); k1++){
+			int day1=selectedDays1.at(k1);
+			int hour1=selectedHours1.at(k1);
+			
+			if(roomsMatrix[i][day1][hour1]>0){
+				for(int k2=0; k2<selectedDays2.count(); k2++){
+					int day2=selectedDays2.at(k2);
+					int hour2=selectedHours2.at(k2);
+
+					if(roomsMatrix[i][day2][hour2]>0){
+						nbroken++;
+
+						if(conflictsString!=nullptr){
+							QString s=(tr(
+							 "Space constraint rooms pair of mutually exclusive sets of time slots broken for room %1, first time slot's day %2, first time slot's hour %3, second time slot's day %4, second time slot's hour %5.")
+							 .arg(r.internalRoomsList[i]->name)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.hoursOfTheDay[hour1])
+							 .arg(r.daysOfTheWeek[day2])
+							 .arg(r.hoursOfTheDay[hour2])
+							 )
+							 +" "
+							 +
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+							
+							dl.append(s);
+							cl.append(weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	for(int k1=0; k1<selectedDays1.count(); k1++){
+		int day1=selectedDays1.at(k1);
+		int hour1=selectedHours1.at(k1);
+		
+		if(day1>=r.nDaysPerWeek)
+			return true;
+		if(hour1>=r.nHoursPerDay)
+			return true;
+	}
+	
+	for(int k2=0; k2<selectedDays2.count(); k2++){
+		int day2=selectedDays2.at(k2);
+		int hour2=selectedHours2.at(k2);
+		
+		if(day2>=r.nDaysPerWeek)
+			return true;
+		if(hour2>=r.nHoursPerDay)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(selectedDays1.at(i)<r.nDaysPerWeek && selectedHours1.at(i)<r.nHoursPerDay){
+			newDays1.append(selectedDays1.at(i));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	///////
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(selectedDays2.at(i)<r.nDaysPerWeek && selectedHours2.at(i)<r.nHoursPerDay){
+			newDays2.append(selectedDays2.at(i));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION;
+}
+
+ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection(double wp,
+ int mos, const QList<QList<int>>& sd, const QList<QList<int>>& sh)
+ : SpaceConstraint(wp)
+ {
+	this->maxOccupiedSets=mos;
+	this->selectedDays=sd;
+	this->selectedHours=sh;
+
+	this->type=CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+
+	if(selectedDays.count()<2){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint rooms occupy max sets of time slots from selection is wrong because the selection contains less than two sets of time"
+		 " slots. Please correct and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%1")
+		 .arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	listOfSets.clear();
+	listOfLists.clear();
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& cdays=selectedDays.at(q);
+		const QList<int>& chours=selectedHours.at(q);
+		assert(cdays.count()==chours.count());
+		QSet<int> ts;
+		QList<int> tl;
+		for(int k=0; k<cdays.count(); k++){
+			int d=cdays.at(k);
+			int h=chours.at(k);
+			if(d>=0 && d<r.nDaysPerWeek && h>=0 && h<r.nHoursPerDay){
+				ts.insert(d+h*r.nDaysPerWeek);
+				tl.append(d+h*r.nDaysPerWeek);
+			}
+		}
+		assert(ts.count()==tl.count());
+		if(tl.count()==0){
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+			 tr("Constraint rooms occupy max sets of time slots from selection is wrong because the set number %1 of selected time slots is empty. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information, or removing the constraint. Constraint is:\n%2")
+			 .arg(q+1).arg(this->getDetailedDescription(r)));
+			
+			return false;
+		}
+		listOfSets.append(ts);
+		listOfLists.append(tl);
+	}
+
+	for(int i=0; i<listOfSets.count()-1; i++){
+		const QSet<int>& set1=listOfSets.at(i);
+		for(int j=i+1; j<listOfSets.count(); j++){
+			const QSet<int>& set2=listOfSets.at(j);
+			if(set1.intersects(set2)){
+				SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+				 tr("Constraint rooms occupy max sets of time slots from selection is wrong because the set number %1 of selected time slots and the set number %2 of selected time slots have at least one common time slot. Please correct"
+				 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%3")
+				 .arg(i+1)
+				 .arg(j+1)
+				 .arg(this->getDetailedDescription(r)));
+				
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Maximum_Number_of_Occupied_Sets>"+CustomFETString::number(this->maxOccupiedSets)+"</Maximum_Number_of_Occupied_Sets>\n";
+
+	s+=IL3+"<Number_of_Selected_Sets_of_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Sets_of_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		const QList<int>& days=selectedDays.at(i);
+		const QList<int>& hours=selectedHours.at(i);
+		s+=IL3+"<Selected_Set_of_Time_Slots>\n";
+		s+=IL4+"<Number_of_Selected_Time_Slots>"+QString::number(days.count())+"</Number_of_Selected_Time_Slots>\n";
+		for(int j=0; j<days.count(); j++){
+			s+=IL4+"<Selected_Time_Slot>\n";
+			s+=IL5+"<Day>"+protect(r.daysOfTheWeek[days.at(j)])+"</Day>\n";
+			s+=IL5+"<Hour>"+protect(r.hoursOfTheDay[hours.at(j)])+"</Hour>\n";
+			s+=IL4+"</Selected_Time_Slot>\n";
+		}
+		s+=IL3+"</Selected_Set_of_Time_Slots>\n";
+	}
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection>\n";
+	return s;
+}
+
+QString ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Rooms occupy max sets of time slots from selection");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+
+	s+=tr("MOS:%1", "Max occupied sets").arg(this->maxOccupiedSets);s+=translatedCommaSpace();
+
+	s+=tr("NS:%1", "Number of sets").arg(this->selectedDays.count());s+=translatedCommaSpace();
+	
+	for(int i=0; i<this->selectedDays.count(); i++){
+		const QList<int>& days=selectedDays.at(i);
+		const QList<int>& hours=selectedHours.at(i);
+
+		QString timeslots=QString("");
+		for(int j=0; j<days.count(); j++)
+			timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+
+		s+=tr("SSTS %1: %2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+translatedCommaSpace();
+	}
+	s.chop(translatedCommaSpace().size());
+	
+	return begin+s+end;
+}
+
+QString ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+
+	if(!richText){
+		QString s=tr("Space constraint");s+="\n";
+		s+=tr("All rooms occupy a max number of sets of time slots from a selection");s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+		s+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);s+="\n";
+
+		s+=tr("Number of sets=%1").arg(this->selectedDays.count());s+="\n";
+	
+		for(int i=0; i<this->selectedDays.count(); i++){
+			const QList<int>& days=selectedDays.at(i);
+			const QList<int>& hours=selectedHours.at(i);
+
+			QString timeslots=QString("");
+			for(int j=0; j<days.count(); j++)
+				timeslots+=r.daysOfTheWeek[days.at(j)]+QString(" ")+r.hoursOfTheDay[hours.at(j)]+translatedCommaSpace();
+			timeslots.chop(translatedCommaSpace().size());
+
+			s+=tr("Set of selected time slots number %1=%2", "The set of selected time slots number %1 is composed of the list of selected time slots %2.").arg(i+1).arg(timeslots)+"\n";
+		}
+
+		if(!active){
+			s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+
+		return s;
+	}
+	else{
+		QString begin=tr("Space constraint");begin+="\n";
+		begin+=tr("All rooms occupy a max number of sets of time slots from a selection");begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));begin+="\n";
+
+		begin+=tr("Max number of occupied sets=%1").arg(this->maxOccupiedSets);begin+="\n";
+
+		begin+=tr("Number of sets=%1").arg(this->selectedDays.count()); begin+="\n";
+		begin+=tr("Sets:", "Sets of time slots"); begin+="\n";
+		
+		//the Boolean is 'color'.
+		QString middle=listsOfListsOfDaysAndHoursToTableOfNumbers(r, selectedDays, selectedHours, colors);
+
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+
+		return protect4(begin)+middle+protect4(end);
+	}
+}
+
+double ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalRooms; i++){
+		QSet<int> occupiedSets;
+
+		for(int q=0; q<selectedDays.count(); q++){
+			const QList<int>& days=selectedDays.at(q);
+			const QList<int>& hours=selectedHours.at(q);
+			
+			for(int j=0; j<days.count(); j++){
+				int day=days.at(j);
+				int hour=hours.at(j);
+				
+				if(roomsMatrix[i][day][hour]>0){
+					assert(!occupiedSets.contains(q));
+					occupiedSets.insert(q);
+					break;
+				}
+			}
+		}
+
+		if(occupiedSets.count()>this->maxOccupiedSets){
+			nbroken++;
+
+			if(conflictsString!=nullptr){
+				QString s=(tr(
+				 "Space constraint rooms occupy max sets of time slots from selection broken for room %1, the room occupies %2 sets of selected time slots,"
+				 " but the maximum allowed is %3.")
+				 .arg(r.internalRoomsList[i]->name)
+				 .arg(occupiedSets.count())
+				 .arg(this->maxOccupiedSets)
+				 )
+				 +" "
+				 +
+				 (tr("This increases the conflicts total by %1.").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100);
+				
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::hasWrongDayOrHour(Rules& r)
+{
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		for(int j=0; j<days.count(); j++){
+			int day=days.at(j);
+			int hour=hours.at(j);
+			
+			if(day>=r.nDaysPerWeek)
+				return true;
+			if(hour>=r.nHoursPerDay)
+				return true;
+		}
+	}
+	
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			int day=days.at(i);
+			int hour=hours.at(i);
+			
+			if(day<r.nDaysPerWeek && hour<r.nHoursPerDay){
+				newDays.append(day);
+				newHours.append(hour);
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+
+	if(this->maxOccupiedSets > r.nDaysPerWeek*r.nHoursPerDay)
+		this->maxOccupiedSets = r.nDaysPerWeek*r.nHoursPerDay;
+	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
 

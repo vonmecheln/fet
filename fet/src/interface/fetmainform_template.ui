@@ -1074,6 +1074,18 @@
       <property name="title">
        <string>Rooms</string>
       </property>
+      <widget class="QMenu" name="menuA_room_space_constraints">
+       <property name="title">
+        <string comment="The menu of a room space constraints">A room</string>
+       </property>
+      </widget>
+      <widget class="QMenu" name="menuAll_rooms_space_constraints">
+       <property name="title">
+        <string comment="The menu of all rooms space constraints">All rooms</string>
+       </property>
+      </widget>
+      <addaction name="menuA_room_space_constraints"/>
+      <addaction name="menuAll_rooms_space_constraints"/>
      </widget>
      <widget class="QMenu" name="menuActivities_space_constraints">
       <property name="title">
@@ -1096,12 +1108,12 @@
       </property>
       <widget class="QMenu" name="menuA_students_set_space_constraints">
        <property name="title">
-        <string>A students set</string>
+        <string comment="The menu of a students set space constraints">A students set</string>
        </property>
       </widget>
       <widget class="QMenu" name="menuAll_students_space_constraints">
        <property name="title">
-        <string>All students</string>
+        <string comment="The menu of all students space constraints">All students</string>
        </property>
       </widget>
       <addaction name="menuA_students_set_space_constraints"/>
@@ -1113,12 +1125,12 @@
       </property>
       <widget class="QMenu" name="menuA_teacher_space_constraints">
        <property name="title">
-        <string>A teacher</string>
+        <string comment="The menu of a teacher space constraints">A teacher</string>
        </property>
       </widget>
       <widget class="QMenu" name="menuAll_teachers_space_constraints">
        <property name="title">
-        <string>All teachers</string>
+        <string comment="The menu of all teachers space constraints">All teachers</string>
        </property>
       </widget>
       <addaction name="menuA_teacher_space_constraints"/>

@@ -79,6 +79,7 @@ extern const QString FET_VERSION;
 The version number of the data format, useful when saving/restoring the history to/from the disk.
 On any change of the data format, no matter how small or large, this number must be updated;
 older or newer data history versions are not compatible.
+This constant was introduced in FET-6.15.1, with the initial value "6.15.1".
 */
 extern const QString FET_DATA_FORMAT_VERSION;
 

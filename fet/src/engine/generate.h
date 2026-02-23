@@ -357,6 +357,10 @@ public:
 	inline bool checkBuildingChangesPerRealDay(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);
 	inline bool checkRoomChangesPerRealDay(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);
 
+	inline bool checkRoomPairOfMutuallyExclusiveTimeSlots(const QList<int>& globalConflActivities, int rm, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);
+	inline bool checkRoomPairOfMutuallyExclusiveSetsOfTimeSlots(const QList<int>& globalConflActivities, int rm, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);
+	inline bool checkRoomOccupiesMaxSetsOfTimeSlotsFromSelection(const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int d, int h, QList<int>& tmp_list);
+
 	inline bool chooseRoom(const QList<int>& listOfRooms, const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList);
 	inline bool getHomeRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList);
 	inline bool getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom, QList<int>& realRoomsList);

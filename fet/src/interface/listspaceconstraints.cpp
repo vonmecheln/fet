@@ -163,6 +163,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 				roomsComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
 				break;
 			}
 		//3
@@ -620,6 +622,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 				roomsComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
 				break;
 			}
 		//42
@@ -889,6 +893,137 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//69
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints room pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomPairOfMutuallyExclusiveTimeSlots");
+
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, the specified room must be real (not virtual), "
+													  "and should not be found in any set of real rooms of any virtual room."));
+
+				roomsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//70
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints room pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, the specified room must be real (not virtual), "
+													  "and should not be found in any set of real rooms of any virtual room."));
+
+				roomsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
+				break;
+			}
+		//71
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints room occupies max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelection");
+
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, the specified room must be real (not virtual), "
+													  "and should not be found in any set of real rooms of any virtual room."));
+
+				roomsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
+				break;
+			}
+		//72
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			{
+				dialogTitle=tr("Constraints rooms max activity tags per day from set", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsMaxActivityTagsPerDayFromSet");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the rooms do not have more than the specified number "
+													 "of activity tags from those selected, on any day."));
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, your data set should not define any virtual room."));
+
+				activityTagsComboBox=new QComboBox;
+
+				break;
+			}
+		//73
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+			{
+				dialogTitle=tr("Constraints rooms max activity tags per real day from set", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsMaxActivityTagsPerRealDayFromSet");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the rooms do not have more than the specified number of "
+													 "activity tags from those selected, on any real day."));
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, your data set should not contain any virtual room."));
+
+				activityTagsComboBox=new QComboBox;
+
+				break;
+			}
+		//74
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			{
+				dialogTitle=tr("Constraints rooms max activity tags per week from set", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsMaxActivityTagsPerWeekFromSet");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint ensures that all the rooms do not have more than the specified number of "
+													 "activity tags from those selected, throughout the week."));
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, your data set should not use any virtual room."));
+
+				activityTagsComboBox=new QComboBox;
+
+				break;
+			}
+		//75
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints rooms pair of mutually exclusive time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsPairOfMutuallyExclusiveTimeSlots");
+
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, your data set should not have any virtual room."));
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//76
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints rooms pair of mutually exclusive sets of time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlots");
+
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, your data set should not include any virtual room."));
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
+				break;
+			}
+		//77
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				dialogTitle=tr("Constraints rooms occupy max sets of time slots from selection", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelection");
+
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, your data set should not include any virtual room."));
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -1026,10 +1161,11 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	splitter=new QSplitter;
 	splitter->setSizePolicy(splitter->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
 
-	colorsCheckBox=new QCheckBox(tr("Colors"));
 	//QSettings settings(COMPANY, PROGRAM);
-	colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors"), "false").toBool());
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::colorsCheckBoxToggled);
+	if(colorsCheckBox!=nullptr){
+		colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors"), "false").toBool());
+		connect(colorsCheckBox, &QCheckBox::toggled, this, &ListSpaceConstraints::colorsCheckBoxToggled);
+	}
 
 	useFilter=settings.value(dialogName+QString("/list-filtered"), "false").toBool();
 	filterCheckBox=new QCheckBox(tr("Filter"));
@@ -1070,8 +1206,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	QVBoxLayout* filterAndDescriptionLayout=new QVBoxLayout;
 	assert(constraintDescriptionTextEdit!=nullptr);
 	filterAndDescriptionLayout->addWidget(constraintDescriptionTextEdit);
-	assert(colorsCheckBox!=nullptr);
-	filterAndDescriptionLayout->addWidget(colorsCheckBox);
+	if(colorsCheckBox!=nullptr)
+		filterAndDescriptionLayout->addWidget(colorsCheckBox);
 	if(filterGroupBox!=nullptr)
 		filterAndDescriptionLayout->addWidget(filterGroupBox);
 
@@ -2160,6 +2296,99 @@ filtered_ok:
 
 				break;
 			}
+		//69
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				assert(roomsComboBox!=nullptr);
+
+				ConstraintRoomPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintRoomPairOfMutuallyExclusiveTimeSlots*)sc;
+
+				return roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText();
+
+				break;
+			}
+		//70
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				assert(roomsComboBox!=nullptr);
+
+				ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots*)sc;
+
+				return roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText();
+
+				break;
+			}
+		//71
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				assert(roomsComboBox!=nullptr);
+
+				ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection*)sc;
+
+				return roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText();
+
+				break;
+			}
+		//72
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+			{
+				assert(activityTagsComboBox!=nullptr);
+
+				ConstraintRoomsMaxActivityTagsPerDayFromSet* ctr=(ConstraintRoomsMaxActivityTagsPerDayFromSet*)sc;
+
+				return activityTagsComboBox->currentText()=="" || ctr->tagsList.contains(activityTagsComboBox->currentText());
+
+				break;
+			}
+		//73
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+			{
+				assert(activityTagsComboBox!=nullptr);
+
+				ConstraintRoomsMaxActivityTagsPerRealDayFromSet* ctr=(ConstraintRoomsMaxActivityTagsPerRealDayFromSet*)sc;
+
+				return activityTagsComboBox->currentText()=="" || ctr->tagsList.contains(activityTagsComboBox->currentText());
+
+				break;
+			}
+		//74
+		case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+			{
+				assert(activityTagsComboBox!=nullptr);
+
+				ConstraintRoomsMaxActivityTagsPerWeekFromSet* ctr=(ConstraintRoomsMaxActivityTagsPerWeekFromSet*)sc;
+
+				return activityTagsComboBox->currentText()=="" || ctr->tagsList.contains(activityTagsComboBox->currentText());
+
+				break;
+			}
+		//75
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				//ConstraintRoomsPairOfMutuallyExclusiveTimeSlots* ctr=(ConstraintRoomsPairOfMutuallyExclusiveTimeSlots*)sc;
+
+				return true;
+
+				break;
+			}
+		//76
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				//ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots* ctr=(ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots*)sc;
+
+				return true;
+
+				break;
+			}
+		//77
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				//ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection* ctr=(ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection*)sc;
+
+				return true;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -2353,7 +2582,7 @@ void ListSpaceConstraints::removeClicked()
 	s=protect4(tr("Remove these selected space constraints?", "Following is the list of detailed descriptions of the constraints marked for removal."));
 	s+=QString("<br />\n<br />\n");
 	for(SpaceConstraint* ctr : std::as_const(tl))
-		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+		s+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 	int lres=LongTextMessageBox::confirmation(dialog, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
@@ -2367,7 +2596,7 @@ void ListSpaceConstraints::removeClicked()
 		su=protect4(tr("Removed %1 space constraints:").arg(tl.count()));
 		su+=QString("<br />\n<br />\n");
 		for(SpaceConstraint* ctr : std::as_const(tl))
-			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+"<br />\n";
+			su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+"<br />\n";
 	}
 
 	//The user clicked the OK button or pressed Enter
@@ -2421,6 +2650,96 @@ void ListSpaceConstraints::helpClicked()
 				 "activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. "
 				 "This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room "
 				 "throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.");
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//69
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Rodolfo Ribeiro Gomes");
+				s+="\n\n";
+				s+=tr("This constraint ensures that the specified room can have activities in either the first"
+				 " selected time slot or in the second one, but not in both at the same time. The unselected time"
+				 " slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//70
+		case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Rodolfo Ribeiro Gomes");
+				s+="\n\n";
+				s+=tr("This constraint ensures that the specified room can have activities in either the first"
+				 " set of selected time slots or in the second one, but not in both at the same time. The unselected time"
+				 " slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//71
+		case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Rodolfo Ribeiro Gomes");
+				s+="\n\n";
+				s+=tr("This constraint ensures that the specified room can have activities in a specified maximum"
+				 " number of sets of time slots from a selection of sets of time slots. The unselected time slots are not"
+				 " subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//75
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Rodolfo Ribeiro Gomes");
+				s+="\n\n";
+				s+=tr("This constraint ensures that all the rooms can have activities in either the first"
+				 " selected time slot or in the second one, but not in both at the same time. The unselected time"
+				 " slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//76
+		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Rodolfo Ribeiro Gomes");
+				s+="\n\n";
+				s+=tr("This constraint ensures that all the rooms can have activities in either the first"
+				 " set of selected time slots or in the second one, but not in both at the same time. The unselected time"
+				 " slots are not subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//77
+		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Rodolfo Ribeiro Gomes");
+				s+="\n\n";
+				s+=tr("This constraint ensures that all the rooms can have activities in a specified maximum"
+				 " number of sets of time slots from a selection of sets of time slots. The unselected time slots are not"
+				 " subject to constraints.");
+				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 
@@ -2498,7 +2817,7 @@ void ListSpaceConstraints::constraintChanged()
 	assert(index<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false); //'true' means 'richText'
 	constraintDescriptionTextEdit->setText(s);
 }
 
@@ -2565,7 +2884,7 @@ void ListSpaceConstraints::moveSpaceConstraintUp()
 	visibleSpaceConstraintsList[i-1]=sc1;
 	
 	gt.rules.addUndoPoint(protect4(tr("A constraint was moved up:", "This is a History item. Following is the detailed description of the constraint which was moved up."))
-	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false));
 	
 	if(sc2->active){
 		constraintsListWidget->item(i)->setBackground(QBrush());
@@ -2652,7 +2971,7 @@ void ListSpaceConstraints::moveSpaceConstraintDown()
 	visibleSpaceConstraintsList[i+1]=sc1;
 	
 	gt.rules.addUndoPoint(protect4(tr("A constraint was moved down:", "This is a History item. Following is the detailed description of the constraint which was moved down."))
-	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()));
+	 +QString("<br />\n<br />\n")+sc1->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false));
 	
 	if(sc2->active){
 		constraintsListWidget->item(i)->setBackground(QBrush());
@@ -2707,7 +3026,7 @@ void ListSpaceConstraints::activateConstraints()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(!ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 				
 				cnt++;
 				ctr->active=true;
@@ -2775,7 +3094,7 @@ void ListSpaceConstraints::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
 				continue;
 			if(ctr->active){
-				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 
 				cnt++;
 				ctr->active=false;
@@ -2869,7 +3188,7 @@ void ListSpaceConstraints::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 
 	if(t==QDialog::Accepted){
-		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked());
+		QString cb=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
 
 		ctr->comments=commentsPT->toPlainText();
 
@@ -2993,7 +3312,7 @@ void ListSpaceConstraints::changeWeights()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(ctr->canHaveAnyWeight()){
-				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked())+QString("<br />\n");
+				su+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n");
 
 				cnt++;
 				ctr->weightPercentage=nw;

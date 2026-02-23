@@ -1336,6 +1336,18 @@ private:
 	SpaceConstraint* readRoomMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomMaxActivityTagsPerWeekFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readRoomPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomOccupiesMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readRoomsMaxActivityTagsPerDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomsMaxActivityTagsPerRealDayFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomsMaxActivityTagsPerWeekFromSet(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readRoomsPairOfMutuallyExclusiveTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomsOccupyMaxSetsOfTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 };
 
 #endif

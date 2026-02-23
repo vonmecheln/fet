@@ -1,3 +1,8 @@
+ 7.7.7
+	- Added three new types of space constraints: room(s) pair of mutually exclusive time slots, room(s) pair of mutually exclusive sets of time slots,
+	and room(s) occupy(ies) max sets of time slots from selection (suggested by Rodolfo Ribeiro Gomes). On this occasion, there were added the general
+	constraints (for all rooms, not only for a single room, as in the previous versions) of type rooms max activity tags per day/real day/week.
+	- Minor bug fixes and improvements.
  7.7.6
 	- Corrected a few compilation warnings when using an older C++ compiler.
 	- Updated the Italian translation, by Andrea Primiani.
