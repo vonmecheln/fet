@@ -891,15 +891,15 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tB1 to B7 are either true or false (B1, B3, B5 are by default true, the rest are by default false).\n"
 		"\n"
 
-		"\t--teachersstatisticssprintteachersnames=B1\n"
-		"\t--teachersstatisticsprintteacherslongnames=B2\n"
-		"\t--teachersstatisticsprintteacherscodes=B3\n"
+		"\t--statisticsprintteachersnames=B1\n"
+		"\t--statisticsprintteacherslongnames=B2\n"
+		"\t--statisticsprintteacherscodes=B3\n"
 		"\t\tB1 to B3 are either true or false (B1 is by default true, the rest are by default false).\n"
 		"\n"
 
-		"\t--studentsstatisticssprintstudentsnames=B1\n"
-		"\t--studentsstatisticsprintstudentslongnames=B2\n"
-		"\t--studentsstatisticsprintstudentscodes=B3\n"
+		"\t--statisticsprintstudentsnames=B1\n"
+		"\t--statisticsprintstudentslongnames=B2\n"
+		"\t--statisticsprintstudentscodes=B3\n"
 		"\t\tB1 to B3 are either true or false (B1 is by default true, the rest are by default false).\n"
 		"\n"
 		//2026-03-11 end
@@ -1919,13 +1919,13 @@ int main(int argc, char **argv)
 		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=false;
 		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=false;
 
-		SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=true;
-		SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
-		SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=false;
+		SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES=false;
 
-		SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=true;
-		SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
-		SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=false;
+		SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES=false;
 		//2026-03-11 end
 
 		DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
@@ -4261,30 +4261,30 @@ int main(int argc, char **argv)
 					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=true;
 			}
 
-			else if(s.startsWith("--teachersstatisticsprintteachersnames=")){
+			else if(s.startsWith("--statisticsprintteachersnames=")){
 				if(s.endsWith("false"))
-					SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=false;
+					SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES=false;
 			}
-			else if(s.startsWith("--teachersstatisticsprintteacherslongnames=")){
+			else if(s.startsWith("--statisticsprintteacherslongnames=")){
 				if(s.endsWith("true"))
-					SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=true;
+					SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES=true;
 			}
-			else if(s.startsWith("--teachersstatisticsprintteacherscodes=")){
+			else if(s.startsWith("--statisticsprintteacherscodes=")){
 				if(s.endsWith("true"))
-					SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=true;
+					SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES=true;
 			}
 
-			else if(s.startsWith("--studentsstatisticsprintstudentsnames=")){
+			else if(s.startsWith("--statisticsprintstudentsnames=")){
 				if(s.endsWith("false"))
-					SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=false;
+					SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES=false;
 			}
-			else if(s.startsWith("--studentsstatisticsprintstudentslongnames=")){
+			else if(s.startsWith("--statisticsprintstudentslongnames=")){
 				if(s.endsWith("true"))
-					SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=true;
+					SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES=true;
 			}
-			else if(s.startsWith("--studentsstatisticsprintstudentscodes=")){
+			else if(s.startsWith("--statisticsprintstudentscodes=")){
 				if(s.endsWith("true"))
-					SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=true;
+					SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES=true;
 			}
 			///////2026-03-11 end
 			else

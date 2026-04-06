@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.8.1">
+<fet version="7.8.2">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>اختبارات_ف2_03-2026</Institution_Name>
   <Comments>تعليقات افتراضية</Comments>
@@ -7100,13 +7100,13 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>
-    <ConstraintRoomsMaxTeachersRepetitions>
+    <ConstraintRoomsMaxActivitiesPerTeacher>
       <Weight_Percentage>100</Weight_Percentage>
-      <Max_Teachers_Repetitions>0</Max_Teachers_Repetitions>
-      <Force_Same_Room_In_A_Building>false</Force_Same_Room_In_A_Building>
+      <Max_Activities_Per_Teacher>1</Max_Activities_Per_Teacher>
+      <Keep_Same_Room_In_A_Building>false</Keep_Same_Room_In_A_Building>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintRoomsMaxTeachersRepetitions>
+    </ConstraintRoomsMaxActivitiesPerTeacher>
   </Space_Constraints_List>
   <Timetable_Generation_Options_List>
   </Timetable_Generation_Options_List>

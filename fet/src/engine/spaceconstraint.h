@@ -159,8 +159,8 @@ const int CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION			=1077;
 const int CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT		=1078;
 const int CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT		=1079;
 
-const int CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS								=1080;
-const int CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS								=1081;
+const int CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER							=1080;
+const int CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER							=1081;
 
 ///////
 
@@ -4022,8 +4022,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintRoomMaxTeachersRepetitions: public SpaceConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomMaxTeachersRepetitions)
+class ConstraintRoomMaxActivitiesPerTeacher: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomMaxActivitiesPerTeacher)
 	
 public:
 
@@ -4032,18 +4032,18 @@ public:
 	*/
 	QString room;
 	
-	int maxTeachersRepetitions;
+	int maxActivitiesPerTeacher;
 
-	bool forceSameRoomInABuilding;
+	bool keepSameRoomInABuilding;
 
 	/**
 	The room's id, or index in the rules
 	*/
 	int room_ID;
 
-	ConstraintRoomMaxTeachersRepetitions();
+	ConstraintRoomMaxActivitiesPerTeacher();
 
-	ConstraintRoomMaxTeachersRepetitions(double wp, const QString& rn, int mtr, bool fsriab);
+	ConstraintRoomMaxActivitiesPerTeacher(double wp, const QString& rn, int mapt, bool ksriab);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4076,18 +4076,18 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintRoomsMaxTeachersRepetitions: public SpaceConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomsMaxTeachersRepetitions)
+class ConstraintRoomsMaxActivitiesPerTeacher: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomsMaxActivitiesPerTeacher)
 	
 public:
 
-	int maxTeachersRepetitions;
+	int maxActivitiesPerTeacher;
 	
-	bool forceSameRoomInABuilding;
+	bool keepSameRoomInABuilding;
 
-	ConstraintRoomsMaxTeachersRepetitions();
+	ConstraintRoomsMaxActivitiesPerTeacher();
 
-	ConstraintRoomsMaxTeachersRepetitions(double wp, int mtr, bool fsriab);
+	ConstraintRoomsMaxActivitiesPerTeacher(double wp, int mapt, bool ksriab);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4279,9 +4279,9 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActiv
 //79
 QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc);
 //80
-QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxTeachersRepetitions& sc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivitiesPerTeacher& sc);
 //81
-QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxTeachersRepetitions& sc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxActivitiesPerTeacher& sc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc);
@@ -4442,8 +4442,8 @@ QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInE
 //79
 QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc);
 //80
-QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxTeachersRepetitions& sc);
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivitiesPerTeacher& sc);
 //81
-QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxTeachersRepetitions& sc);
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxActivitiesPerTeacher& sc);
 
 #endif

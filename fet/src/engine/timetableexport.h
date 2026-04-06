@@ -427,10 +427,12 @@ private:
 	static QString writeBreakSlot(int htmlLevel, const QString& weight);
 	static QString writeEmpty(int htmlLevel);
 	
+public:
 	static QString getSubjectString(Subject* sbj, bool printSubjectsNames, bool printSubjectsLongNames, bool printSubjectsCodes);
 	static QString getActivityTagString(ActivityTag* at, bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes);
 	static QString getTeacherString(Teacher* tch, bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes);
 	static QString getStudentsSetString(StudentsSet* ss, bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes);
+private:
 	static QString getBuildingString(Building* bu, bool printBuildingsNames, bool printBuildingsLongNames, bool printBuildingsCodes);
 	static QString getRoomString(Room* rm, bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
 

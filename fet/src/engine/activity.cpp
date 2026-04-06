@@ -396,6 +396,8 @@ void Activity::computeInternalStructure(Rules& r)
 			this->iTeachersList.append(tmp);
 		}
 	}
+	
+	this->iTeachersSet=QSet<int>(this->iTeachersList.constBegin(), this->iTeachersList.constEnd());
 
 	//subjects
 	this->subjectIndex = r.subjectsHash.value(subjectName, -1); //r.searchSubject(this->subjectName);

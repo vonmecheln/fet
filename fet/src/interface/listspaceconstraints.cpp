@@ -1066,14 +1066,13 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				break;
 			}
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				dialogTitle=tr("Constraints room max teachers repetitions", "The title of the dialog to list the constraints of this type");
-				dialogName=QString("ConstraintsRoomMaxTeachersRepetitions");
+				dialogTitle=tr("Constraints room max activities per teacher", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomMaxActivitiesPerTeacher");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
-				secondInstructionsLabel=new QLabel(tr("This room will respect the maximum teachers repetitions over the whole week, for each"
-														" activity having a single teacher."));
+				secondInstructionsLabel=new QLabel(tr("This room will respect the maximum number of activities for each teacher over the whole week."));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -1082,14 +1081,13 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				break;
 			}
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				dialogTitle=tr("Constraints rooms max teachers repetitions", "The title of the dialog to list the constraints of this type");
-				dialogName=QString("ConstraintsRoomsMaxTeachersRepetitions");
+				dialogTitle=tr("Constraints rooms max activities per teacher", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsMaxActivitiesPerTeacher");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
-				secondInstructionsLabel=new QLabel(tr("All rooms will respect the maximum teachers repetitions over the whole week, for each"
-														" activity having a single teacher."));
+				secondInstructionsLabel=new QLabel(tr("All rooms will respect the maximum number of activities for each teacher over the whole week."));
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -2494,19 +2492,19 @@ filtered_ok:
 				break;
 			}
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			{
 				assert(roomsComboBox!=nullptr);
 
-				ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)sc;
+				ConstraintRoomMaxActivitiesPerTeacher* ctr=(ConstraintRoomMaxActivitiesPerTeacher*)sc;
 				return roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText();
 
 				break;
 			}
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				//ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)sc;
+				//ConstraintRoomMaxActivitiesPerTeacher* ctr=(ConstraintRoomMaxActivitiesPerTeacher*)sc;
 				return true;
 
 				break;
@@ -2896,22 +2894,20 @@ void ListSpaceConstraints::helpClicked()
 				break;
 			}
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			[[fallthrough]];
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
 				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
 				.arg("Benahmed Abdelkrim");
 				s+="\n\n";
 				s+=tr("This constraint is used for exams in some countries, such as Algeria and Morocco.");
 				s+="\n\n";
-				s+=tr("The repetitions are counted for each room and teacher, based on activities, for each activity having a single teacher."
-				 " If the room(s) must not have more than 1 activity with a certain teacher per week, the maximum number of repetitions is 0. If"
-				 " the room(s) must not have more than 2 activities with a certain teacher per week, the maximum number of repetitions is 1."
-				 " If the room(s) must not have more than 3 activities with a certain teacher per week, the maximum number of repetitions is 2, and so on.");
+				s+=tr("For the affected room(s), we count the number of activities which have exactly a teacher, and for this teacher the count of his/her activities"
+				 " in the affected room(s) must be bounded by the specified maximum limit.");
 				s+="\n\n";
-				s+=tr("If you select the option 'Force same room in a building' then, for each teacher who has activities in a certain building,"
+				s+=tr("If you select the option 'Keep same room in a building' then, for each teacher who has activities in a certain building,"
 				 " the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).");
 				s+="\n\n";
 				s+=tr("You have some examples in the %1 directory of the FET examples, and you can read more on these"

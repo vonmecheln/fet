@@ -64,10 +64,10 @@ QString initialOrderOfActivities;
 bool generatePreMessage(QWidget* parent, const QString& s);
 
 //2026-03-04 - NSRT
-Matrix1D<int> roomsMaxTeachersRepetitions; //-1 for not existing, always 100% weight percentage.
-Matrix1D<bool> forceSameRoomInABuilding;
-bool haveRoomsMaxTeachersRepetitions;
-//bool computeRoomsMaxTeachersRepetitions(QWidget* parent);
+Matrix1D<int> roomsMaxActivitiesPerTeacher; //-1 for not existing, always 100% weight percentage.
+Matrix1D<bool> keepSameRoomInABuilding;
+bool haveRoomsMaxActivitiesPerTeacher;
+//bool computeRoomsMaxActivitiesPerTeacher(QWidget* parent);
 
 //2026-03-04 - NSRT
 Matrix1D<double> buildingsMinOneActivityInEachNonBreakTimeSlotPercentages;
@@ -2337,8 +2337,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	buildingsMinOneActivityInEachNonBreakTimeSlotPercentages.resize(gt.rules.nInternalBuildings);
 
-	roomsMaxTeachersRepetitions.resize(gt.rules.nInternalRooms);
-	forceSameRoomInABuilding.resize(gt.rules.nInternalRooms);
+	roomsMaxActivitiesPerTeacher.resize(gt.rules.nInternalRooms);
+	keepSameRoomInABuilding.resize(gt.rules.nInternalRooms);
 
 	//////////////////end resizing - new feature
 	
@@ -3077,7 +3077,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//////////////////
 
 	//NSRT
-	t=computeRoomsMaxTeachersRepetitions(parent);
+	t=computeRoomsMaxActivitiesPerTeacher(parent);
 	if(!t)
 		return false;
 
@@ -24803,27 +24803,27 @@ bool computeFixedActivities(QWidget* parent)
 }
 
 //2026-03-04
-bool computeRoomsMaxTeachersRepetitions(QWidget* parent)
+bool computeRoomsMaxActivitiesPerTeacher(QWidget* parent)
 {
-	haveRoomsMaxTeachersRepetitions=false;
+	haveRoomsMaxActivitiesPerTeacher=false;
 	for(int i=0; i<gt.rules.nInternalRooms; i++){
-		roomsMaxTeachersRepetitions[i]=-1;
-		forceSameRoomInABuilding[i]=false;
+		roomsMaxActivitiesPerTeacher[i]=-1;
+		keepSameRoomInABuilding[i]=false;
 	}
 	
 	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
-		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS){
-			haveRoomsMaxTeachersRepetitions=true;
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER){
+			haveRoomsMaxActivitiesPerTeacher=true;
 
-			ConstraintRoomMaxTeachersRepetitions* sc=(ConstraintRoomMaxTeachersRepetitions*)gt.rules.internalSpaceConstraintsList[i];
+			ConstraintRoomMaxActivitiesPerTeacher* sc=(ConstraintRoomMaxActivitiesPerTeacher*)gt.rules.internalSpaceConstraintsList[i];
 			
 			if(sc->weightPercentage!=100){
 				ok=false;
 		
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint room max teachers repetitions"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint room max activities per teacher"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -24832,22 +24832,48 @@ bool computeRoomsMaxTeachersRepetitions(QWidget* parent)
 					return false;
 			}
 			
-			if(roomsMaxTeachersRepetitions[sc->room_ID]==-1 || (roomsMaxTeachersRepetitions[sc->room_ID]>=0 && roomsMaxTeachersRepetitions[sc->room_ID]>sc->maxTeachersRepetitions))
-				roomsMaxTeachersRepetitions[sc->room_ID]=sc->maxTeachersRepetitions;
-			if(!forceSameRoomInABuilding[sc->room_ID] && sc->forceSameRoomInABuilding)
-				forceSameRoomInABuilding[sc->room_ID]=true;
+			if(sc->maxActivitiesPerTeacher<=0){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint room max activities per teacher"
+				 " with max activities per teacher less than 1. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			if(roomsMaxActivitiesPerTeacher[sc->room_ID]==-1 || (roomsMaxActivitiesPerTeacher[sc->room_ID]>0 && roomsMaxActivitiesPerTeacher[sc->room_ID]>sc->maxActivitiesPerTeacher))
+				roomsMaxActivitiesPerTeacher[sc->room_ID]=sc->maxActivitiesPerTeacher;
+			if(!keepSameRoomInABuilding[sc->room_ID] && sc->keepSameRoomInABuilding)
+				keepSameRoomInABuilding[sc->room_ID]=true;
 		}
-		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS){
-			haveRoomsMaxTeachersRepetitions=true;
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER){
+			haveRoomsMaxActivitiesPerTeacher=true;
 
-			ConstraintRoomsMaxTeachersRepetitions* sc=(ConstraintRoomsMaxTeachersRepetitions*)gt.rules.internalSpaceConstraintsList[i];
+			ConstraintRoomsMaxActivitiesPerTeacher* sc=(ConstraintRoomsMaxActivitiesPerTeacher*)gt.rules.internalSpaceConstraintsList[i];
 			
 			if(sc->weightPercentage!=100){
 				ok=false;
 				
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint rooms max teachers repetitions"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint rooms max activities per teacher"
 				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			
+			if(sc->maxActivitiesPerTeacher<=0){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint rooms max activities per teacher"
+				 " with max activities per teacher less than 1. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				
@@ -24856,15 +24882,15 @@ bool computeRoomsMaxTeachersRepetitions(QWidget* parent)
 			}
 			
 			for(int i=0; i<gt.rules.nInternalRooms; i++){
-				if(roomsMaxTeachersRepetitions[i]==-1 || (roomsMaxTeachersRepetitions[i]>=0 && roomsMaxTeachersRepetitions[i]>sc->maxTeachersRepetitions))
-					roomsMaxTeachersRepetitions[i]=sc->maxTeachersRepetitions;
-				if(!forceSameRoomInABuilding[i] && sc->forceSameRoomInABuilding)
-					forceSameRoomInABuilding[i]=true;
+				if(roomsMaxActivitiesPerTeacher[i]==-1 || (roomsMaxActivitiesPerTeacher[i]>0 && roomsMaxActivitiesPerTeacher[i]>sc->maxActivitiesPerTeacher))
+					roomsMaxActivitiesPerTeacher[i]=sc->maxActivitiesPerTeacher;
+				if(!keepSameRoomInABuilding[i] && sc->keepSameRoomInABuilding)
+					keepSameRoomInABuilding[i]=true;
 			}
 		}
 	}
 	
-	if(haveRoomsMaxTeachersRepetitions){
+	if(haveRoomsMaxActivitiesPerTeacher){
 		bool allRoomsAreReal=true;
 		for(int r=0; r<gt.rules.nInternalRooms; r++){
 			if(gt.rules.internalRoomsList[r]->isVirtual){
@@ -24877,7 +24903,7 @@ bool computeRoomsMaxTeachersRepetitions(QWidget* parent)
 			ok=false;
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint room(s) max teachers repetitions"
+			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint room(s) max activities per teacher"
 			 " and you have at least a virtual room. To use these constraints all rooms must be real (not virtual). Please correct and try again"),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );

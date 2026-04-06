@@ -2677,16 +2677,16 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 			//80
-			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomMaxTeachersRepetitions* c=(ConstraintRoomMaxTeachersRepetitions*)ctr;
+					ConstraintRoomMaxActivitiesPerTeacher* c=(ConstraintRoomMaxActivitiesPerTeacher*)ctr;
 					stream<<*c;
 					break;
 				}
 			//81
-			case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomsMaxTeachersRepetitions* c=(ConstraintRoomsMaxTeachersRepetitions*)ctr;
+					ConstraintRoomsMaxActivitiesPerTeacher* c=(ConstraintRoomsMaxActivitiesPerTeacher*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -5625,17 +5625,17 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					break;
 				}
 			//80
-			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomMaxTeachersRepetitions* c=new ConstraintRoomMaxTeachersRepetitions;
+					ConstraintRoomMaxActivitiesPerTeacher* c=new ConstraintRoomMaxActivitiesPerTeacher;
 					stream>>*c;
 					rules.spaceConstraintsList.append(c);
 					break;
 				}
 			//81
-			case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomsMaxTeachersRepetitions* c=new ConstraintRoomsMaxTeachersRepetitions;
+					ConstraintRoomsMaxActivitiesPerTeacher* c=new ConstraintRoomsMaxActivitiesPerTeacher;
 					stream>>*c;
 					rules.spaceConstraintsList.append(c);
 					break;
@@ -11540,9 +11540,9 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 						crna->room=finalRoomName;
 					break;
 				}
-			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomMaxTeachersRepetitions* crna=(ConstraintRoomMaxTeachersRepetitions*)ctr;
+					ConstraintRoomMaxActivitiesPerTeacher* crna=(ConstraintRoomMaxActivitiesPerTeacher*)ctr;
 					if(crna->room==initialRoomName)
 						crna->room=finalRoomName;
 					break;
@@ -14456,9 +14456,9 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedSpace.append(sc);
 					break;
 				}
-			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomMaxTeachersRepetitions* c=(ConstraintRoomMaxTeachersRepetitions*)sc;
+					ConstraintRoomMaxActivitiesPerTeacher* c=(ConstraintRoomMaxActivitiesPerTeacher*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
 					break;
@@ -18763,6 +18763,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		else if(xmlReader.name()==QString("Space_Constraints_List")){
 			bool reportRoomNotAvailableChange=true;
 
+			bool reportRoomsMaxTeachersRepetitions=true;
+
 			bool reportUnspecifiedPermanentlyLockedSpace=true;
 			
 			bool seeNextWarnNotAddedSpaceConstraint=true;
@@ -18798,10 +18800,36 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					crt_constraint=readTeacherRoomNotAvailableTimes(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintRoomMaxTeachersRepetitions")){
+					if(reportRoomsMaxTeachersRepetitions){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("File contains constraint room max teachers repetitions, which is old (it was improved in FET 7.8.2), and will be converted"
+						 " to the similar constraint of this type, constraint room max activities per teacher (the new 'max activities' will be the old"
+						 " 'max repetitions' + 1).")+"\n\n"+tr("Note that the new constraint will consider also activities with several teachers."),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportRoomsMaxTeachersRepetitions=false;
+					}
+					
 					crt_constraint=readRoomMaxTeachersRepetitions(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintRoomsMaxTeachersRepetitions")){
+					if(reportRoomsMaxTeachersRepetitions){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("File contains constraint rooms max teachers repetitions, which is old (it was improved in FET 7.8.2), and will be converted"
+						 " to the similar constraint of this type, constraint rooms max activities per teacher (the new 'max activities' will be the old"
+						 " 'max repetitions' + 1).")+"\n\n"+tr("Note that the new constraint will consider also activities with several teachers."),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportRoomsMaxTeachersRepetitions=false;
+					}
+					
 					crt_constraint=readRoomsMaxTeachersRepetitions(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomMaxActivitiesPerTeacher")){
+					crt_constraint=readRoomMaxActivitiesPerTeacher(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomsMaxActivitiesPerTeacher")){
+					crt_constraint=readRoomsMaxActivitiesPerTeacher(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot")){
 					crt_constraint=readBuildingMinOneActivityInEachNonBreakTimeSlot(xmlReader, xmlReadingLog);
@@ -44088,8 +44116,8 @@ SpaceConstraint* Rules::readTeacherRoomNotAvailableTimes(QXmlStreamReader& xmlRe
 
 SpaceConstraint* Rules::readRoomMaxTeachersRepetitions(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomMaxTeachersRepetitions"));
-	ConstraintRoomMaxTeachersRepetitions* cn=new ConstraintRoomMaxTeachersRepetitions();
-	cn->forceSameRoomInABuilding=false;
+	ConstraintRoomMaxActivitiesPerTeacher* cn=new ConstraintRoomMaxActivitiesPerTeacher();
+	cn->keepSameRoomInABuilding=false;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -44110,14 +44138,14 @@ SpaceConstraint* Rules::readRoomMaxTeachersRepetitions(QXmlStreamReader& xmlRead
 
 		else if(xmlReader.name()==QString("Max_Teachers_Repetitions")){
 			QString text=xmlReader.readElementText();
-			cn->maxTeachersRepetitions=text.toInt();
-			xmlReadingLog+="    Read max teachers repetitions="+CustomFETString::number(cn->maxTeachersRepetitions)+"\n";
+			cn->maxActivitiesPerTeacher=text.toInt()+1;
+			xmlReadingLog+="    Read max activities per teacher="+CustomFETString::number(cn->maxActivitiesPerTeacher)+"\n";
 		}
 
 		else if(xmlReader.name()==QString("Force_Same_Room_In_A_Building")){
 			QString text=xmlReader.readElementText();
 			if(text=="true"){
-				cn->forceSameRoomInABuilding=true;
+				cn->keepSameRoomInABuilding=true;
 			}
 		}
 
@@ -44140,8 +44168,8 @@ SpaceConstraint* Rules::readRoomMaxTeachersRepetitions(QXmlStreamReader& xmlRead
 
 SpaceConstraint* Rules::readRoomsMaxTeachersRepetitions(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsMaxTeachersRepetitions"));
-	ConstraintRoomsMaxTeachersRepetitions* cn=new ConstraintRoomsMaxTeachersRepetitions();
-	cn->forceSameRoomInABuilding=false;
+	ConstraintRoomsMaxActivitiesPerTeacher* cn=new ConstraintRoomsMaxActivitiesPerTeacher();
+	cn->keepSameRoomInABuilding=false;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -44162,14 +44190,113 @@ SpaceConstraint* Rules::readRoomsMaxTeachersRepetitions(QXmlStreamReader& xmlRea
 
 		else if(xmlReader.name()==QString("Max_Teachers_Repetitions")){
 			QString text=xmlReader.readElementText();
-			cn->maxTeachersRepetitions=text.toInt();
-			xmlReadingLog+="    Read max teachers repetitions="+CustomFETString::number(cn->maxTeachersRepetitions)+"\n";
+			cn->maxActivitiesPerTeacher=text.toInt()+1;
+			xmlReadingLog+="    Read max activities per teacher="+CustomFETString::number(cn->maxActivitiesPerTeacher)+"\n";
 		}
 
 		else if(xmlReader.name()==QString("Force_Same_Room_In_A_Building")){
 			QString text=xmlReader.readElementText();
 			if(text=="true"){
-				cn->forceSameRoomInABuilding=true;
+				cn->keepSameRoomInABuilding=true;
+			}
+		}
+
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomMaxActivitiesPerTeacher(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomMaxActivitiesPerTeacher"));
+	ConstraintRoomMaxActivitiesPerTeacher* cn=new ConstraintRoomMaxActivitiesPerTeacher();
+	cn->keepSameRoomInABuilding=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else if(xmlReader.name()==QString("Max_Activities_Per_Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->maxActivitiesPerTeacher=text.toInt();
+			xmlReadingLog+="    Read max activities per teacher="+CustomFETString::number(cn->maxActivitiesPerTeacher)+"\n";
+		}
+
+		else if(xmlReader.name()==QString("Keep_Same_Room_In_A_Building")){
+			QString text=xmlReader.readElementText();
+			if(text=="true"){
+				cn->keepSameRoomInABuilding=true;
+			}
+		}
+
+		else if(xmlReader.name()==QString("Room")){
+			QString text=xmlReader.readElementText();
+			cn->room=text;
+			xmlReadingLog+="    Read room name="+cn->room+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsMaxActivitiesPerTeacher(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsMaxActivitiesPerTeacher"));
+	ConstraintRoomsMaxActivitiesPerTeacher* cn=new ConstraintRoomsMaxActivitiesPerTeacher();
+	cn->keepSameRoomInABuilding=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else if(xmlReader.name()==QString("Max_Activities_Per_Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->maxActivitiesPerTeacher=text.toInt();
+			xmlReadingLog+="    Read max activities per teacher="+CustomFETString::number(cn->maxActivitiesPerTeacher)+"\n";
+		}
+
+		else if(xmlReader.name()==QString("Keep_Same_Room_In_A_Building")){
+			QString text=xmlReader.readElementText();
+			if(text=="true"){
+				cn->keepSameRoomInABuilding=true;
 			}
 		}
 

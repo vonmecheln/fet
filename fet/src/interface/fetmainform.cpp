@@ -893,13 +893,21 @@ bool SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES=true;
 bool SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=false;
 bool SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=false;
 
-bool SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=true;
-bool SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
-bool SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=false;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES=true;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES=false;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES=false;
 
-bool SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=true;
-bool SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
-bool SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=false;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES=true;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES=false;
+
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES=true;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES=false;
+
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES=true;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
+bool SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES=false;
 //2026-03-11 end
 
 extern QApplication* pqapplication;
@@ -2024,8 +2032,8 @@ void FetMainForm::createActionsForConstraints()
 	dataSpaceConstraintsBasicCompulsorySpaceAction = new QAction(this);
 	dataSpaceConstraintsRoomNotAvailableTimesAction = new QAction(this);
 
-	dataSpaceConstraintsRoomMaxTeachersRepetitionsAction = new QAction(this);
-	dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction = new QAction(this);
+	dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction = new QAction(this);
+	dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction = new QAction(this);
 
 	dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction = new QAction(this);
 	dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction = new QAction(this);
@@ -2413,8 +2421,8 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataSpaceConstraintsBasicCompulsorySpaceAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBasicCompulsorySpaceAction_triggered);
 	connect(dataSpaceConstraintsRoomNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered);
 
-	connect(dataSpaceConstraintsRoomMaxTeachersRepetitionsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxTeachersRepetitionsAction_triggered);
-	connect(dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction_triggered);
+	connect(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction_triggered);
+	connect(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction_triggered);
 
 	connect(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction_triggered);
 	connect(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction_triggered);
@@ -2852,16 +2860,10 @@ void FetMainForm::retranslateConstraints()
 	dataSpaceConstraintsBasicCompulsorySpaceAction->setText(QCoreApplication::translate("FetMainForm_template", "Basic compulsory space constraints", nullptr));
 	dataSpaceConstraintsRoomNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A room's not available times", nullptr));
 
-	dataSpaceConstraintsRoomMaxTeachersRepetitionsAction->setText(QCoreApplication::translate("FetMainForm_template", "A room's max teachers repetitions",
-	 "It means that in this room's timetable, each teacher can appear repeated a maximum number of times. For instance, if max teacher repetitions = 0, "
-	 "a certain teacher can appear maximum once time (with one activity, no matter its duration). If max teachers repetitions = 1, a certain teacher can appear "
-	 "maximum two times (with maximum three activities, no matter their length). "
-	 "If max teachers repetitions = 2, a certain teacher can appear maximum three times (with maximum three activities, no matter their length), etc."));
-	dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction->setText(QCoreApplication::translate("FetMainForm_template", "All rooms' max teachers repetitions",
-	 "It means that in each individual room's timetable, each teacher can appear repeated a maximum number of times. For instance, if max teacher repetitions = 0, "
-	 "a certain teacher can appear maximum once time (with one activity, no matter its duration). If max teachers repetitions = 1, a certain teacher can appear "
-	 "maximum two times (with maximum three activities, no matter their length). "
-	 "If max teachers repetitions = 2, a certain teacher can appear maximum three times (with maximum three activities, no matter their length), etc."));
+	dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction->setText(QCoreApplication::translate("FetMainForm_template", "A room's max activities per teacher",
+	 "It means that this room has an upper limit on the number of activities for each individual teacher over the whole week"));
+	dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction->setText(QCoreApplication::translate("FetMainForm_template", "All rooms' max activities per teacher",
+	 "It means that all the rooms have an upper limit on the number of activities for each individual teacher over the whole week"));
 
 	dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction->setText(QCoreApplication::translate("FetMainForm_template", "A building has min one activity in each non-break time slot", nullptr));
 	dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction->setText(QCoreApplication::translate("FetMainForm_template", "All buildings have min one activity in each non-break time slot", nullptr));
@@ -3481,7 +3483,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuA_room_space_constraints->addSeparator();
-		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxTeachersRepetitionsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
 		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
@@ -3493,7 +3495,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
 
 		menuAll_rooms_space_constraints->addSeparator();
-		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
 		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
 		///////
 		
@@ -4014,7 +4016,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuA_room_space_constraints->addSeparator();
-		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxTeachersRepetitionsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
 		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
@@ -4027,7 +4029,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
 
 		menuAll_rooms_space_constraints->addSeparator();
-		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
 		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
 		///////
 
@@ -4373,7 +4375,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuA_room_space_constraints->addSeparator();
-		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxTeachersRepetitionsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
 		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
@@ -4385,7 +4387,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
 
 		menuAll_rooms_space_constraints->addSeparator();
-		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
 		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
 		///////
 
@@ -4725,7 +4727,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
 
 		menuA_room_space_constraints->addSeparator();
-		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxTeachersRepetitionsAction);
+		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
 		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
@@ -4737,7 +4739,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
 
 		menuAll_rooms_space_constraints->addSeparator();
-		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction);
+		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
 		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
 		///////
 
@@ -8126,7 +8128,7 @@ void FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
 	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES);
 }
 
-void FetMainForm::dataSpaceConstraintsRoomMaxTeachersRepetitionsAction_triggered()
+void FetMainForm::dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -8143,10 +8145,10 @@ void FetMainForm::dataSpaceConstraintsRoomMaxTeachersRepetitionsAction_triggered
 	/*ConstraintRoomNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
-	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS);
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER);
 }
 
-void FetMainForm::dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction_triggered()
+void FetMainForm::dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -8163,7 +8165,7 @@ void FetMainForm::dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction_triggere
 	/*ConstraintRoomNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
-	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS);
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER);
 }
 
 void FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction_triggered()
@@ -14071,13 +14073,13 @@ void FetMainForm::helpExamsAlgeriaMoroccoAction_triggered()
 	 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.0");
 	s+="\n\n";
 	
-	s+=tr("The problem was that each FET room can host a single activity in a certain time slot, while in the exams a room can host two teachers (or three) in a certain time slot."
-	" So, %1 had the idea to consider a FET building = a real room. There are these FET buildings, and for each real room there correspond two FET rooms (or three), with only slightly"
-	" different names, and each such two (or three) rooms with similar names are placed in a corresponding FET building.").arg("Benahmed Abdelkrim");
+	s+=tr("The problem was that each FET room could host a single activity in a certain time slot, while in the exams a room could host two teachers (or three) in a certain time slot."
+	 " So, %1 had the idea to consider a FET building = a real room. There are these FET buildings, and for each real room there correspond two FET rooms (or three), with only slightly"
+	 " different names, and each such two (or three) rooms with similar names are placed in a corresponding FET building.").arg("Benahmed Abdelkrim");
 	s+=" ";
 	s+=tr("Each real room must be occupied by at least a teacher, so you can use the constraints building(s) min one activity in each non-break slot.");
 	s+=" ";
-	s+=tr("Also, each room must not have a teacher repeated more than a certain number of times over the week (constraints room(s) max teachers repetitions).");
+	s+=tr("We can constrain the maximum number of activities for each teacher in each or in a certain room (constraints room(s) max activities per teacher).");
 	s+="\n\n";
 
 	s+=tr("In this setting, each activity has no students and has a single teacher.");
@@ -15994,13 +15996,21 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=false;
 	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=false;
 
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=true;
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=false;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES=true;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES=false;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES=false;
 
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=true;
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=false;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES=true;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES=false;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES=false;
+
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES=true;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES=false;
+
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES=true;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES=false;
 	//2026-03-11 end
 	
 	BEEP_AT_END_OF_GENERATION=true;
@@ -17674,13 +17684,21 @@ void FetMainForm::restoreSettings()
 	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-free-periods-print-teachers-long-names", "false").toBool();
 	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-free-periods-print-teachers-codes", "false").toBool();
 
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-teachers-statistics-print-teachers-names", "true").toBool();
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-statistics-print-teachers-long-names", "false").toBool();
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-statistics-print-teachers-codes", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-statistics-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-statistics-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-statistics-print-subjects-codes", "false").toBool();
 
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-students-statistics-print-students-names", "true").toBool();
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-students-statistics-print-students-long-names", "false").toBool();
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=settings.value("settings-timetables-students-statistics-print-students-codes", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-statistics-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-statistics-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-statistics-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-statistics-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-teachers-statistics-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-statistics-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-statistics-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-statistics-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES=settings.value("settings-timetables-statistics-print-students-codes", "false").toBool();
 	//2026-03-11 end
 
 	//main form

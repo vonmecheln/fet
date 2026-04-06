@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>708</width>
+    <width>711</width>
     <height>517</height>
    </rect>
   </property>
@@ -55,7 +55,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>21</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabWidgetPage1">
       <attribute name="title">
@@ -5670,32 +5670,91 @@
       <attribute name="title">
        <string>23</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_45">
+      <layout class="QGridLayout" name="gridLayout_23">
        <item row="0" column="0">
         <widget class="QLabel" name="label_23">
          <property name="text">
-          <string>Teachers statistics</string>
+          <string>Statistics</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout_112">
+        <layout class="QVBoxLayout" name="verticalLayout_56">
          <item>
-          <widget class="QCheckBox" name="teachersStatisticsTeachersNamesCheckBox">
+          <widget class="QCheckBox" name="statisticsSubjectsNamesCheckBox">
+           <property name="text">
+            <string>Subjects names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="statisticsSubjectsLongNamesCheckBox">
+           <property name="text">
+            <string>Subjects long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="statisticsSubjectsCodesCheckBox">
+           <property name="text">
+            <string>Subjects codes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_130">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>188</width>
+             <height>34</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="statisticsActivityTagsNamesCheckBox">
+           <property name="text">
+            <string>Activity tags names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="statisticsActivityTagsLongNamesCheckBox">
+           <property name="text">
+            <string>Activity tags long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="statisticsActivityTagsCodesCheckBox">
+           <property name="text">
+            <string>Activity tags codes</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_55">
+         <item>
+          <widget class="QCheckBox" name="statisticsTeachersNamesCheckBox">
            <property name="text">
             <string>Teachers names</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="teachersStatisticsTeachersLongNamesCheckBox">
+          <widget class="QCheckBox" name="statisticsTeachersLongNamesCheckBox">
            <property name="text">
             <string>Teachers long names</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="teachersStatisticsTeachersCodesCheckBox">
+          <widget class="QCheckBox" name="statisticsTeachersCodesCheckBox">
            <property name="text">
             <string>Teachers codes</string>
            </property>
@@ -5708,63 +5767,32 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>20</width>
-             <height>40</height>
+             <width>148</width>
+             <height>38</height>
             </size>
            </property>
           </spacer>
          </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab">
-      <attribute name="title">
-       <string>24</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_23">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_24">
-         <property name="text">
-          <string>Students statistics</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout_113">
          <item>
-          <widget class="QCheckBox" name="studentsStatisticsStudentsNamesCheckBox">
+          <widget class="QCheckBox" name="statisticsStudentsNamesCheckBox">
            <property name="text">
             <string>Students names</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="studentsStatisticsStudentsLongNamesCheckBox">
+          <widget class="QCheckBox" name="statisticsStudentsLongNamesCheckBox">
            <property name="text">
             <string>Students long names</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="studentsStatisticsStudentsCodesCheckBox">
+          <widget class="QCheckBox" name="statisticsStudentsCodesCheckBox">
            <property name="text">
             <string>Students codes</string>
            </property>
           </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_267">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </item>

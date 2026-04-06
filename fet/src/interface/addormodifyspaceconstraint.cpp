@@ -2377,50 +2377,50 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				break;
 			}
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			{
 				if(oldsc==nullptr){
-					dialogTitle=tr("Add room max teachers repetitions", "The title of the dialog to add a new constraint of this type");
-					dialogName=QString("AddConstraintRoomMaxTeachersRepetitions");
+					dialogTitle=tr("Add room max activities per teacher", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintRoomMaxActivitiesPerTeacher");
 				}
 				else{
-					dialogTitle=tr("Modify room max teachers repetitions", "The title of the dialog to modify a constraint of this type");
-					dialogName=QString("ModifyConstraintRoomMaxTeachersRepetitions");
+					dialogTitle=tr("Modify room max activities per teacher", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintRoomMaxActivitiesPerTeacher");
 				}
 
 				roomLabel=new QLabel(tr("Room"));
 				roomsComboBox=new QComboBox;
 
-				labelForSpinBox=new QLabel(tr("Max teachers repetitions"));
+				labelForSpinBox=new QLabel(tr("Max activities per teacher"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(0);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(MAX_ACTIVITIES);
-				spinBox->setValue(0);
+				spinBox->setValue(1);
 
-				checkBox=new QCheckBox(tr("Force same room in a building"));
+				checkBox=new QCheckBox(tr("Keep same room in a building"));
 				checkBox->setChecked(false);
 
 				break;
 			}
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
 				if(oldsc==nullptr){
-					dialogTitle=tr("Add rooms max teachers repetitions", "The title of the dialog to add a new constraint of this type");
-					dialogName=QString("AddConstraintRoomsMaxTeachersRepetitions");
+					dialogTitle=tr("Add rooms max activities per teacher", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintRoomsMaxActivitiesPerTeacher");
 				}
 				else{
-					dialogTitle=tr("Modify rooms max teachers repetitions", "The title of the dialog to modify a constraint of this type");
-					dialogName=QString("ModifyConstraintRoomsMaxTeachersRepetitions");
+					dialogTitle=tr("Modify rooms max activities per teacher", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintRoomsMaxActivitiesPerTeacher");
 				}
 
-				labelForSpinBox=new QLabel(tr("Max teachers repetitions"));
+				labelForSpinBox=new QLabel(tr("Max activities per teacher"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(0);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(MAX_ACTIVITIES);
-				spinBox->setValue(0);
+				spinBox->setValue(1);
 
-				checkBox=new QCheckBox(tr("Force same room in a building"));
+				checkBox=new QCheckBox(tr("Keep same room in a building"));
 				checkBox->setChecked(false);
 
 				break;
@@ -4378,26 +4378,26 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 					break;
 				}
 			//80
-			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)oldsc;
+					ConstraintRoomMaxActivitiesPerTeacher* ctr=(ConstraintRoomMaxActivitiesPerTeacher*)oldsc;
 
 					roomsComboBox->setCurrentIndex(roomsComboBox->findText(ctr->room));
 
-					spinBox->setValue(ctr->maxTeachersRepetitions);
+					spinBox->setValue(ctr->maxActivitiesPerTeacher);
 
-					checkBox->setChecked(ctr->forceSameRoomInABuilding);
+					checkBox->setChecked(ctr->keepSameRoomInABuilding);
 
 					break;
 				}
 			//81
-			case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 				{
-					ConstraintRoomsMaxTeachersRepetitions* ctr=(ConstraintRoomsMaxTeachersRepetitions*)oldsc;
+					ConstraintRoomsMaxActivitiesPerTeacher* ctr=(ConstraintRoomsMaxActivitiesPerTeacher*)oldsc;
 
-					spinBox->setValue(ctr->maxTeachersRepetitions);
+					spinBox->setValue(ctr->maxActivitiesPerTeacher);
 
-					checkBox->setChecked(ctr->forceSameRoomInABuilding);
+					checkBox->setChecked(ctr->keepSameRoomInABuilding);
 
 					break;
 				}
@@ -5925,16 +5925,16 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 				break;
 			}
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				sc=new ConstraintRoomMaxTeachersRepetitions(weight, roomsComboBox->currentText(), spinBox->value(), checkBox->isChecked());
+				sc=new ConstraintRoomMaxActivitiesPerTeacher(weight, roomsComboBox->currentText(), spinBox->value(), checkBox->isChecked());
 
 				break;
 			}
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				sc=new ConstraintRoomsMaxTeachersRepetitions(weight, spinBox->value(), checkBox->isChecked());
+				sc=new ConstraintRoomsMaxActivitiesPerTeacher(weight, spinBox->value(), checkBox->isChecked());
 
 				break;
 			}
@@ -8040,26 +8040,26 @@ void AddOrModifySpaceConstraint::okClicked()
 				break;
 			}
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)oldsc;
+				ConstraintRoomMaxActivitiesPerTeacher* ctr=(ConstraintRoomMaxActivitiesPerTeacher*)oldsc;
 
 				ctr->room=roomsComboBox->currentText();
 
-				ctr->maxTeachersRepetitions=spinBox->value();
+				ctr->maxActivitiesPerTeacher=spinBox->value();
 
-				ctr->forceSameRoomInABuilding=checkBox->isChecked();
+				ctr->keepSameRoomInABuilding=checkBox->isChecked();
 				
 				break;
 			}
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
-				ConstraintRoomsMaxTeachersRepetitions* ctr=(ConstraintRoomsMaxTeachersRepetitions*)oldsc;
+				ConstraintRoomsMaxActivitiesPerTeacher* ctr=(ConstraintRoomsMaxActivitiesPerTeacher*)oldsc;
 
-				ctr->maxTeachersRepetitions=spinBox->value();
+				ctr->maxActivitiesPerTeacher=spinBox->value();
 
-				ctr->forceSameRoomInABuilding=checkBox->isChecked();
+				ctr->keepSameRoomInABuilding=checkBox->isChecked();
 
 				break;
 			}
@@ -8280,10 +8280,10 @@ void AddOrModifySpaceConstraint::checkBoxToggled()
 {
 	switch(type){
 		//80
-		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			[[fallthrough]];
 		//81
-		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+		case CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER:
 			{
 				//nothing, we just avoid the assert below
 

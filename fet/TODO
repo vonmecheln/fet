@@ -13044,3 +13044,63 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=3707.msg37811#msg37811
 
 What I really missed were tags for the FET days (I'm thinking of tags named week1, week2, etc.) to create time constraints based on these tags that are simpler,
 fewer in number, and more readable than the constraints I used.
+
+839---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot, with the timetable showing Subjects legend, and each such category shows "Teacher name".
+
+He also wrote: Split the legend more columns. Subjects - Teacher - nb hours.
+
+840---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot, showing that if we print preview the groups/years timetables there appear "???" characters if we uncheck
+"Detailed tables" (which is in fact the intended behavior). Also, he suggested to add colors for these "???".
+
+841---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.msg37912#msg37912
+
+Note by Liviu Lalescu: YOUSSEF HOUIET refers to the new constraints room(s) max activities per teacher.
+
+We focused on applying this constraint only to exam-related cases.
+
+However, it could also be useful in more general scenarios. In the future, the constraint could be generalized to apply to a set of activities, defined
+through criteria such as a specific teacher, activity tag, subject, ...
+
+842---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot, showing the option to select a profile in the timetable print dialog: "Names", "Long names", or "Codes".
+
+843---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.msg37930#msg37930
+
+We should consider cases where we find 3 teachers in a building, and cases where the user no longer wants more than 2 teachers per building.
+Maybe a new building constraint could be considered, or maybe a workaround that could simplify the solution?!
+
+844---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.msg37962#msg37962
+
+I have another idea that we might need:
+Introduce a constraint for the minimum number of activities in a building from a given set of activities.
+This would help ensure placing, for example, at least one activity from a specific teacher category in a building (e.g., at least one male teacher,
+or a teacher of a certain professional grade).
+
+845---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6797.msg37993#msg37993
+
+Maybe you can make the colour be highlighting colour be visible both while you have selected the colours and when not to assist one while adding the constraint with ease.
+
+(Note by Liviu Lalescu: Cyrus Ireri refers to selecting cells in the timetable view teachers/students/rooms time horizontal, on Windows. The highlight is faint.)
+
+Is it possible still in that interface to have like a strikethrough to assist put a line in the locked activities that one want to show they have been taught?
+Or what can we do to show those activities have been taught once you regenerate the timetables.

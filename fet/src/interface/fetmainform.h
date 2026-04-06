@@ -148,8 +148,8 @@ private:
 	QAction* dataSpaceConstraintsBasicCompulsorySpaceAction;
 	QAction* dataSpaceConstraintsRoomNotAvailableTimesAction;
 
-	QAction* dataSpaceConstraintsRoomMaxTeachersRepetitionsAction;
-	QAction* dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction;
+	QAction* dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction;
+	QAction* dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction;
 
 	QAction* dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction;
 	QAction* dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction;
@@ -622,8 +622,8 @@ public Q_SLOTS:
 
 	void dataSpaceConstraintsRoomNotAvailableTimesAction_triggered();
 
-	void dataSpaceConstraintsRoomMaxTeachersRepetitionsAction_triggered();
-	void dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction_triggered();
+	void dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction_triggered();
+	void dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction_triggered();
 
 	void dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction_triggered();
 	void dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction_triggered();

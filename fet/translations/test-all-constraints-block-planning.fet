@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.8.1">
+<fet version="7.8.2">
   <Mode>Block_Planning</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -3321,21 +3321,21 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection>
-    <ConstraintRoomMaxTeachersRepetitions>
+    <ConstraintRoomMaxActivitiesPerTeacher>
       <Weight_Percentage>100</Weight_Percentage>
       <Room>r1</Room>
-      <Max_Teachers_Repetitions>1</Max_Teachers_Repetitions>
-      <Force_Same_Room_In_A_Building>false</Force_Same_Room_In_A_Building>
+      <Max_Activities_Per_Teacher>2</Max_Activities_Per_Teacher>
+      <Keep_Same_Room_In_A_Building>false</Keep_Same_Room_In_A_Building>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintRoomMaxTeachersRepetitions>
-    <ConstraintRoomsMaxTeachersRepetitions>
+    </ConstraintRoomMaxActivitiesPerTeacher>
+    <ConstraintRoomsMaxActivitiesPerTeacher>
       <Weight_Percentage>100</Weight_Percentage>
-      <Max_Teachers_Repetitions>0</Max_Teachers_Repetitions>
-      <Force_Same_Room_In_A_Building>true</Force_Same_Room_In_A_Building>
+      <Max_Activities_Per_Teacher>1</Max_Activities_Per_Teacher>
+      <Keep_Same_Room_In_A_Building>true</Keep_Same_Room_In_A_Building>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintRoomsMaxTeachersRepetitions>
+    </ConstraintRoomsMaxActivitiesPerTeacher>
     <ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot>
       <Weight_Percentage>100</Weight_Percentage>
       <Building>b1</Building>

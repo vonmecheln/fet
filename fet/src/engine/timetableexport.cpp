@@ -18072,7 +18072,7 @@ QString TimetableExport::singleTeachersStatisticsHtml(int htmlLevel, const QStri
 			if(freeDaysSingleTeacher==gt.rules.nDaysPerWeek)
 				minHoursPerDaySingleTeacher=0;
 			teachersString+="      <tr><th>"//+protect2(gt.rules.internalTeachersList[tch]->name)
-								+getTeacherString(gt.rules.internalTeachersList[tch], SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES)
+								+getTeacherString(gt.rules.internalTeachersList[tch], SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES)
 								+"</th><td>"+QString::number(hoursPerWeekSingleTeacher)
 								+"</td><td>"+QString::number(freeDaysSingleTeacher)
 								+"</td><td>"+QString::number(gapsSingleTeacher)
@@ -18084,7 +18084,7 @@ QString TimetableExport::singleTeachersStatisticsHtml(int htmlLevel, const QStri
 			
 			if(repeatNames){
 				teachersString+="<th>"//+protect2(gt.rules.internalTeachersList[tch]->name)
-				 +getTeacherString(gt.rules.internalTeachersList[tch], SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES)
+				 +getTeacherString(gt.rules.internalTeachersList[tch], SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES)
 				 +"</th>";
 			}
 			teachersString+="</tr>\n";
@@ -18282,7 +18282,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 			minHoursPerDaySingleSubgroup=0;
 		if(detailed){
 			subgroupsString+="      <tr><th>"//+protect2(gt.rules.internalSubgroupsList[subgroup]->name)
-							+getStudentsSetString(gt.rules.internalSubgroupsList[subgroup], SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES)
+							+getStudentsSetString(gt.rules.internalSubgroupsList[subgroup], SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)
 							+"</th><td>"+QString::number(hoursPerWeekSingleSubgroup)
 							+"</td><td>"+QString::number(freeDaysSingleSubgroup)
 							+"</td><td>"+QString::number(gapsSingleSubgroup)
@@ -18293,7 +18293,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 							+"</td>";
 			if(repeatNames){
 				subgroupsString+="<th>"//+protect2(gt.rules.internalSubgroupsList[subgroup]->name)
-				 +getStudentsSetString(gt.rules.internalSubgroupsList[subgroup], SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES)
+				 +getStudentsSetString(gt.rules.internalSubgroupsList[subgroup], SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)
 				 +"</th>";
 			}
 			subgroupsString+="</tr>\n";
@@ -18487,7 +18487,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 					//print groups
 					groupsString+="      <tr><th>"
 					 //+protect2(stg->name)
-					 +getStudentsSetString(stg, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES)
+					 +getStudentsSetString(stg, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)
 					 +"</th><td>"
 					 +QString::number(minNumberOfHoursGroup)+"</td><td>"+QString::number(maxNumberOfHoursGroup)+"</td><td>"
 					 +QString::number(minFreeDaysPerWeekGroup)+"</td><td>"+QString::number(maxFreeDaysPerWeekGroup)+"</td><td>"
@@ -18496,7 +18496,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 					 +QString::number(minGapsPerDayGroup)+"</td><td>"+QString::number(maxGapsPerDayGroup)+"</td>";
 					if(repeatNames){
 						groupsString+="<th>"//+protect2(stg->name)
-						 +getStudentsSetString(stg, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES)
+						 +getStudentsSetString(stg, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)
 						 +"</th>";
 					}
 					groupsString+="</tr>\n";
@@ -18529,7 +18529,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 				}
 				//print years
 					yearsString+="      <tr><th>"//+protect2(sty->name)
-					 +getStudentsSetString(sty, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES)
+					 +getStudentsSetString(sty, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)
 					 +"</th><td>"
 					 +QString::number(minNumberOfHoursYear)+"</td><td>"+QString::number(maxNumberOfHoursYear)+"</td><td>"
 					 +QString::number(minFreeDaysPerWeekYear)+"</td><td>"+QString::number(maxFreeDaysPerWeekYear)+"</td><td>"
@@ -18538,7 +18538,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 					 +QString::number(minGapsPerDayYear)+"</td><td>"+QString::number(maxGapsPerDayYear)+"</td>";
 					if(repeatNames){
 						yearsString+="<th>"//+protect2(sty->name)
-						 +getStudentsSetString(sty, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES)
+						 +getStudentsSetString(sty, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)
 						 +"</th>";
 					}
 					yearsString+="</tr>\n";

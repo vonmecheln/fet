@@ -44,10 +44,10 @@ class QWidget;
 const int MIN_HOURS_DAILY_INDEX_IN_ARRAY=1;
 
 //2026-03-04 - NSRT
-extern Matrix1D<int> roomsMaxTeachersRepetitions; //-1 for not existing, always 100% weight percentage.
-extern Matrix1D<bool> forceSameRoomInABuilding;
-extern bool haveRoomsMaxTeachersRepetitions;
-bool computeRoomsMaxTeachersRepetitions(QWidget* parent);
+extern Matrix1D<int> roomsMaxActivitiesPerTeacher; //-1 for not existing, always 100% weight percentage.
+extern Matrix1D<bool> keepSameRoomInABuilding;
+extern bool haveRoomsMaxActivitiesPerTeacher;
+bool computeRoomsMaxActivitiesPerTeacher(QWidget* parent);
 
 //2026-03-04 - NSRT
 extern Matrix1D<double> buildingsMinOneActivityInEachNonBreakTimeSlotPercentages;

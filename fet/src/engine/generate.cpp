@@ -90,6 +90,7 @@ So at least for now FET will use QList.*/
 #include <QList>
 #include <QSet>
 #include <QHash>
+#include <QMap>
 //#include <QQueue>
 
 #include <QFile>
@@ -7516,12 +7517,12 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				}
 			}
 
-			if(haveRoomsMaxTeachersRepetitions){
+			if(haveRoomsMaxActivitiesPerTeacher){
 				if(act->iTeachersList.count()==1){
 					if(dur2==act->duration){
 						assert(gt.rules.internalRoomsList[rm]->isVirtual==false);
 						//begin 3 2020-05-21 - for Benahmed Abdelkrim - not same room teachers custom version
-						if(roomsMaxTeachersRepetitions[rm]==0){
+						if(roomsMaxActivitiesPerTeacher[rm]==1){
 							QList<int> acceptableCandidatesDup;
 							
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
@@ -7529,19 +7530,18 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 									if(d2!=d || (d2==d && (h2<h || h2>=h+act->duration))){
 										int ai2=roomsTimetable(rm,d2,h2);
 										if(ai2>=0){
-											if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1){
-												assert(act->iTeachersList.count()==1);
-												if(act->iTeachersList.at(0)==gt.rules.internalActivitiesList[ai2].iTeachersList.at(0)){
-													if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
-														if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
-															//assert(0);
-															dur2=0;
-															goto impossibleNsrt;
-														}
-														else{
-															if(!acceptableCandidatesDup.contains(ai2)){
-																acceptableCandidatesDup.append(ai2);
-															}
+											assert(act->iTeachersList.count()==1);
+											if((gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1 && gt.rules.internalActivitiesList[ai2].iTeachersList.at(0)==act->iTeachersList.at(0))
+											 || (gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2 && gt.rules.internalActivitiesList[ai2].iTeachersSet.contains(act->iTeachersList.at(0)))){
+												if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+													if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+														//assert(0);
+														dur2=0;
+														goto impossibleNsrt;
+													}
+													else{
+														if(!acceptableCandidatesDup.contains(ai2)){
+															acceptableCandidatesDup.append(ai2);
 														}
 													}
 												}
@@ -7558,7 +7558,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 									assert(0);
 							}
 						}
-						else if(roomsMaxTeachersRepetitions[rm]>0){
+						else if(roomsMaxActivitiesPerTeacher[rm]>=2){
 							QSet<int> duplicateTeacherActivities; //indexes of activities in the internal activities list
 							
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
@@ -7567,12 +7567,11 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 										int ai2=roomsTimetable(rm,d2,h2);
 										
 										if(ai2>=0){
-											if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1){
-												assert(act->iTeachersList.count()==1);
-												if(gt.rules.internalActivitiesList[ai2].iTeachersList.at(0)==act->iTeachersList.at(0)){
-													if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
-														duplicateTeacherActivities.insert(ai2);
-													}
+											assert(act->iTeachersList.count()==1);
+											if((gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1 && gt.rules.internalActivitiesList[ai2].iTeachersList.at(0)==act->iTeachersList.at(0))
+											 || (gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2 && gt.rules.internalActivitiesList[ai2].iTeachersSet.contains(act->iTeachersList.at(0)))){
+												if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+													duplicateTeacherActivities.insert(ai2);
 												}
 											}
 										}
@@ -7580,8 +7579,8 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 								}
 							}
 
-							if(duplicateTeacherActivities.count()>roomsMaxTeachersRepetitions[rm]){
-								assert(duplicateTeacherActivities.count()==roomsMaxTeachersRepetitions[rm]+1);
+							if(duplicateTeacherActivities.count()>=roomsMaxActivitiesPerTeacher[rm]){
+								assert(duplicateTeacherActivities.count()==roomsMaxActivitiesPerTeacher[rm]);
 								
 								QList<int> acceptableCandidatesDup;
 								
@@ -7649,15 +7648,246 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 							for(int rm2 : std::as_const(gt.rules.roomsInBuilding[gt.rules.internalRoomsList[rm]->buildingIndex])){
 								assert(gt.rules.internalRoomsList[rm2]->buildingIndex==gt.rules.internalRoomsList[rm]->buildingIndex);
 								if(rm2!=rm){
-									if((roomsMaxTeachersRepetitions[rm2]>=0 && forceSameRoomInABuilding[rm2])
-									 || (roomsMaxTeachersRepetitions[rm]>=0 && forceSameRoomInABuilding[rm])){
+									if((roomsMaxActivitiesPerTeacher[rm2]>=1 && keepSameRoomInABuilding[rm2])
+									 || (roomsMaxActivitiesPerTeacher[rm]>=1 && keepSameRoomInABuilding[rm])){
+										for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+											for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+												int ai2=roomsTimetable(rm2,d2,h2);
+												if(ai2>=0){
+													assert(act->iTeachersList.count()==1);
+													if((gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1 && gt.rules.internalActivitiesList[ai2].iTeachersList.at(0)==act->iTeachersList.at(0))
+													 || (gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2 && gt.rules.internalActivitiesList[ai2].iTeachersSet.contains(act->iTeachersList.at(0)))){
+														if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+															if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+																//assert(0);
+																dur2=0;
+																goto impossibleNsrt;
+															}
+															else{
+																tmp_list.append(ai2);
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else if(act->iTeachersList.count()>=2){
+					if(dur2==act->duration){
+						assert(gt.rules.internalRoomsList[rm]->isVirtual==false);
+						//begin 3 2020-05-21 - for Benahmed Abdelkrim - not same room teachers custom version
+						if(roomsMaxActivitiesPerTeacher[rm]==1){
+							QList<int> acceptableCandidatesDup;
+							
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+									if(d2!=d || (d2==d && (h2<h || h2>=h+act->duration))){
+										int ai2=roomsTimetable(rm,d2,h2);
+										if(ai2>=0){
+											if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1){
+												if(act->iTeachersSet.contains(gt.rules.internalActivitiesList[ai2].iTeachersList.at(0))){
+													if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+														if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+															//assert(0);
+															dur2=0;
+															goto impossibleNsrt;
+														}
+														else{
+															if(!acceptableCandidatesDup.contains(ai2)){
+																acceptableCandidatesDup.append(ai2);
+															}
+														}
+													}
+												}
+											}
+											else if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2){
+												if(act->iTeachersSet.intersects(gt.rules.internalActivitiesList[ai2].iTeachersSet)){
+													if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+														if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+															//assert(0);
+															dur2=0;
+															goto impossibleNsrt;
+														}
+														else{
+															if(!acceptableCandidatesDup.contains(ai2)){
+																acceptableCandidatesDup.append(ai2);
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							for(int ai2 : std::as_const(acceptableCandidatesDup)){
+								if(!tmp_list.contains(ai2))
+									tmp_list.append(ai2);
+								else
+									assert(0);
+							}
+						}
+						else if(roomsMaxActivitiesPerTeacher[rm]>=2){
+							QMap<int, QSet<int>> duplicateTeacherActivities; //QMap, to keep same behavior for same random seed.
+							//key is teacher, and the QSet is indexes of activities in the internal activities list
+							
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+									if(d2!=d || (d2==d && (h2<h || h2>=h+act->duration))){
+										int ai2=roomsTimetable(rm,d2,h2);
+										
+										if(ai2>=0){
+											if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1){
+												if(act->iTeachersSet.contains(gt.rules.internalActivitiesList[ai2].iTeachersList.at(0))){
+													if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+														QSet<int> ts=duplicateTeacherActivities.value(gt.rules.internalActivitiesList[ai2].iTeachersList.at(0), QSet<int>());
+														ts.insert(ai2);
+														duplicateTeacherActivities.insert(gt.rules.internalActivitiesList[ai2].iTeachersList.at(0), ts);
+													}
+												}
+											}
+											else if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2){
+												if(act->iTeachersSet.intersects(gt.rules.internalActivitiesList[ai2].iTeachersSet)){
+													for(int tch : std::as_const(gt.rules.internalActivitiesList[ai2].iTeachersList)){
+														if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+															QSet<int> ts=duplicateTeacherActivities.value(tch, QSet<int>());
+															ts.insert(ai2);
+															duplicateTeacherActivities.insert(tch, ts);
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
+							QHash<int, int> activitiesForTeacherHash;
+							for(QMap<int, QSet<int>>::const_iterator it=duplicateTeacherActivities.constBegin(); it!=duplicateTeacherActivities.constEnd(); it++){
+								const int tch=it.key();
+								const QSet<int>& ts=it.value();
+								if(ts.count()>=roomsMaxActivitiesPerTeacher[rm]){
+									assert(ts.count()==roomsMaxActivitiesPerTeacher[rm]);
+									
+									QList<int> acceptableCandidatesDup;
+									
+									for(int ai2 : std::as_const(ts)){
+										if(!(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]))){
+											if(!acceptableCandidatesDup.contains(ai2)){
+												acceptableCandidatesDup.append(ai2);
+											}
+											else{
+												assert(0);
+											}
+										}
+									}
+
+									if(acceptableCandidatesDup.count()==0){
+										dur2=0;
+										goto impossibleNsrt;
+									}
+
+									std::stable_sort(acceptableCandidatesDup.begin(), acceptableCandidatesDup.end()); //keep the same behavior for the same random seed
+
+									assert(acceptableCandidatesDup.count()>0);
+									if(level>0){
+										int activityRemovedFromDup=acceptableCandidatesDup.at(rng.intMRG32k3a(acceptableCandidatesDup.count()));
+										assert(!activitiesForTeacherHash.contains(tch));
+										activitiesForTeacherHash.insert(tch, activityRemovedFromDup);
+									}
+									else{
+										int optMinWrong=INF;
+
+										QList<int> tl;
+
+										for(int q=0; q<acceptableCandidatesDup.count(); q++){
+											int tta=acceptableCandidatesDup.at(q);
+											if(optMinWrong>triedRemovals(tta,c.times[tta])){
+												optMinWrong=triedRemovals(tta,c.times[tta]);
+											}
+										}
+
+										for(int q=0; q<acceptableCandidatesDup.count(); q++){
+											int tta=acceptableCandidatesDup.at(q);
+											if(optMinWrong==triedRemovals(tta,c.times[tta]))
+												tl.append(q);
+										}
+
+										assert(tl.count()>=1);
+										int mpos=tl.at(rng.intMRG32k3a(tl.count()));
+
+										assert(mpos>=0 && mpos<acceptableCandidatesDup.count());
+
+										int activityRemovedFromDup=acceptableCandidatesDup.at(mpos);
+										assert(!activitiesForTeacherHash.contains(tch));
+										activitiesForTeacherHash.insert(tch, activityRemovedFromDup);
+									}
+								}
+							}
+							QList<int> activitiesList;
+							QSet<int> activitiesSet;
+							QSet<int> teachersSet;
+							for(QHash<int, int>::const_iterator it=activitiesForTeacherHash.constBegin(); it!=activitiesForTeacherHash.constEnd(); it++){
+								teachersSet.insert(it.key());
+								if(!activitiesSet.contains(it.value())){
+									activitiesSet.insert(it.value());
+									activitiesList.append(it.value());
+								}
+							}
+							std::stable_sort(activitiesList.begin(), activitiesList.end());
+							//randomize list
+							for(int i=0; i<activitiesList.count(); i++){
+								int t=activitiesList.at(i);
+								int r=rng.intMRG32k3a(activitiesList.count()-i);
+								activitiesList[i]=activitiesList[i+r];
+								activitiesList[i+r]=t;
+							}
+							for(int ai2 : std::as_const(activitiesList)){
+								assert(!tmp_list.contains(ai2));
+								tmp_list.append(ai2);
+								for(int tch : std::as_const(gt.rules.internalActivitiesList[ai2].iTeachersList)){
+									if(teachersSet.contains(tch))
+										teachersSet.remove(tch);
+									if(teachersSet.isEmpty())
+										break;
+								}
+								if(teachersSet.isEmpty())
+									break;
+							}
+							assert(teachersSet.isEmpty());
+						}
+
+						if(gt.rules.internalRoomsList[rm]->buildingIndex>=0){
+							for(int rm2 : std::as_const(gt.rules.roomsInBuilding[gt.rules.internalRoomsList[rm]->buildingIndex])){
+								assert(gt.rules.internalRoomsList[rm2]->buildingIndex==gt.rules.internalRoomsList[rm]->buildingIndex);
+								if(rm2!=rm){
+									if((roomsMaxActivitiesPerTeacher[rm2]>=1 && keepSameRoomInABuilding[rm2])
+									 || (roomsMaxActivitiesPerTeacher[rm]>=1 && keepSameRoomInABuilding[rm])){
 										for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 											for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
 												int ai2=roomsTimetable(rm2,d2,h2);
 												if(ai2>=0){
 													if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()==1){
-														assert(act->iTeachersList.count()==1);
-														if(act->iTeachersList.at(0)==gt.rules.internalActivitiesList[ai2].iTeachersList.at(0)){
+														if(act->iTeachersSet.contains(gt.rules.internalActivitiesList[ai2].iTeachersList.at(0))){
+															if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+																if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+																	//assert(0);
+																	dur2=0;
+																	goto impossibleNsrt;
+																}
+																else{
+																	tmp_list.append(ai2);
+																}
+															}
+														}
+													}
+													else if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2){
+														if(act->iTeachersSet.intersects(gt.rules.internalActivitiesList[ai2].iTeachersSet)){
 															if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
 																if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
 																	//assert(0);

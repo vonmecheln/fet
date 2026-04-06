@@ -27,6 +27,8 @@ File statisticsexport.cpp
 #include "timetable_defs.h"
 #include "statisticsexport.h"
 
+#include "timetableexport.h"
+
 #include "utilities.h"
 
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
@@ -701,6 +703,18 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 }
 
 QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
+	QHash<QString, Subject*> subjectsHash;
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsHash.insert(sbj->name, sbj);
+
+	QHash<QString, ActivityTag*> activityTagsHash;
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsHash.insert(at->name, at);
+
+	QHash<QString, Teacher*> teachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersHash.insert(tch->name, tch);
+
 	int colspan=0;
 	for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && colspan<maxNames; teacher++){
 		if(!(*excludedNames).contains(teacher)){
@@ -720,7 +734,10 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 				tmp+="          <th class=\"xAxis\">";
 			else
 				tmp+="          <th>";
-			tmp+=protect2(statisticValues.allTeachersNames.at(teacher))+"</th>\n";
+			
+			assert(teachersHash.contains(statisticValues.allTeachersNames.at(teacher)));
+			Teacher* tch=teachersHash.value(statisticValues.allTeachersNames.value(teacher));
+			tmp+=TimetableExport::getTeacherString(tch, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES)+"</th>\n";
 		}
 	}
 	if(htmlLevel>=2)
@@ -766,7 +783,11 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 			tmp+="          <th class=\"yAxis\">";
 		else
 			tmp+="          <th>";
-		tmp+=protect2(subjects)+"</th>\n";
+
+		assert(subjectsHash.contains(subjects));
+		Subject* sbj=subjectsHash.value(subjects);
+		tmp+=TimetableExport::getSubjectString(sbj, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES)+"</th>\n";
+
 		currentCount=0;
 		for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && currentCount<maxNames; teacher++){
 			if(!(*excludedNames).contains(teacher)){
@@ -843,28 +864,36 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 						QString tmpSt=QString("");
 						if(studentsNames.size()>0||activityTagsNames.size()>0){
 							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
+								assert(gt.rules.permanentStudentsHash.contains(*st));
+								StudentsSet* ss=gt.rules.permanentStudentsHash.value(*st);
+								QString protectedStudentsSetName=TimetableExport::getStudentsSetString(ss, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES);
+
 								switch(htmlLevel){
-									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
+									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protectedStudentsSetName+"</span>"; break;
 									case 5 : [[fallthrough]];
-									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
-									default: tmpSt+=protect2(*st); break;
+									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protectedStudentsSetName+"</span>"; break;
+									default: tmpSt+=protectedStudentsSetName; break;
 									}
 								if(st!=studentsNames.constEnd()-1)
 									tmpSt+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
+									assert(activityTagsHash.contains(*atn));
+									ActivityTag* at=activityTagsHash.value(*atn);
+									QString protectedActivityTagName=TimetableExport::getActivityTagString(at, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
 									assert(id<statisticValues.hashActivityTagIDsStatistics.count());
 									if(gt.rules.activityTagsList[id]->printable){
 										switch(htmlLevel){
-											case 3 : tmpSt+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-											case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+											case 3 : tmpSt+=" <span class=\"activitytag\">"+protectedActivityTagName+"</span>"; break;
+											case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protectedActivityTagName+"</span></span>"; break;
 											case 5 : [[fallthrough]];
-											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-											default: tmpSt+=" "+protect2(*atn); break;
+											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protectedActivityTagName+"</span></span>"; break;
+											default: tmpSt+=" "+protectedActivityTagName; break;
 										}
 										tmpSt+=protect2(translatedCommaSpace());
 									}
@@ -1012,6 +1041,18 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 }
 
 QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
+	QHash<QString, Subject*> subjectsHash;
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsHash.insert(sbj->name, sbj);
+
+	QHash<QString, ActivityTag*> activityTagsHash;
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsHash.insert(at->name, at);
+
+	QHash<QString, Teacher*> teachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersHash.insert(tch->name, tch);
+
 	int colspan=0;
 	for(int subject=0; subject<statisticValues.allSubjectsNames.count() && colspan<maxNames; subject++){
 		if(!(*excludedNames).contains(subject)){
@@ -1031,7 +1072,10 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 				tmp+="          <th class=\"xAxis\">";
 			else
 				tmp+="          <th>";
-			tmp+=protect2(statisticValues.allSubjectsNames.at(subject))+"</th>\n";
+
+			assert(subjectsHash.contains(statisticValues.allSubjectsNames.at(subject)));
+			Subject* sbj=subjectsHash.value(statisticValues.allSubjectsNames.at(subject));
+			tmp+=TimetableExport::getSubjectString(sbj, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES)+"</th>\n";
 		}
 	}
 	if(htmlLevel>=2)
@@ -1075,7 +1119,11 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 			tmp+="          <th class=\"yAxis\">";
 		else
 			tmp+="          <th>";
-		tmp+=protect2(teachers)+"</th>\n";
+
+		assert(teachersHash.contains(teachers));
+		Teacher* tch=teachersHash.value(teachers);
+		tmp+=TimetableExport::getTeacherString(tch, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES)+"</th>\n";
+
 		currentCount=0;
 		for(int subject=0; subject<statisticValues.allSubjectsNames.count() && currentCount<maxNames; subject++){
 			if(!(*excludedNames).contains(subject)){
@@ -1152,28 +1200,36 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 						QString tmpSt=QString("");
 						if(studentsNames.size()>0||activityTagsNames.size()>0){
 							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
+								assert(gt.rules.permanentStudentsHash.contains(*st));
+								StudentsSet* ss=gt.rules.permanentStudentsHash.value(*st);
+								QString protectedStudentsSetName=TimetableExport::getStudentsSetString(ss, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES);
+
 								switch(htmlLevel){
-									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
+									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protectedStudentsSetName+"</span>"; break;
 									case 5 : [[fallthrough]];
-									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
-									default: tmpSt+=protect2(*st); break;
+									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protectedStudentsSetName+"</span>"; break;
+									default: tmpSt+=protectedStudentsSetName; break;
 									}
 								if(st!=studentsNames.constEnd()-1)
 									tmpSt+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
+									assert(activityTagsHash.contains(*atn));
+									ActivityTag* at=activityTagsHash.value(*atn);
+									QString protectedActivityTagName=TimetableExport::getActivityTagString(at, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
 									assert(id<statisticValues.hashActivityTagIDsStatistics.count());
 									if(gt.rules.activityTagsList[id]->printable){
 										switch(htmlLevel){
-											case 3 : tmpSt+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-											case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+											case 3 : tmpSt+=" <span class=\"activitytag\">"+protectedActivityTagName+"</span>"; break;
+											case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protectedActivityTagName+"</span></span>"; break;
 											case 5 : [[fallthrough]];
-											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-											default: tmpSt+=" "+protect2(*atn); break;
+											case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protectedActivityTagName+"</span></span>"; break;
+											default: tmpSt+=" "+protectedActivityTagName; break;
 										}
 										tmpSt+=protect2(translatedCommaSpace());
 									}
@@ -1321,6 +1377,18 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 }
 
 QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
+	QHash<QString, Subject*> subjectsHash;
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsHash.insert(sbj->name, sbj);
+
+	QHash<QString, ActivityTag*> activityTagsHash;
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsHash.insert(at->name, at);
+
+	QHash<QString, Teacher*> teachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersHash.insert(tch->name, tch);
+
 	int colspan=0;
 	for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && colspan<maxNames; teacher++){
 		if(!(*excludedNames).contains(teacher)){
@@ -1340,7 +1408,10 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 				tmp+="          <th class=\"xAxis\">";
 			else
 				tmp+="          <th>";
-			tmp+=protect2(statisticValues.allTeachersNames.at(teacher))+"</th>\n";
+
+			assert(teachersHash.contains(statisticValues.allTeachersNames.at(teacher)));
+			Teacher* tch=teachersHash.value(statisticValues.allTeachersNames.value(teacher));
+			tmp+=TimetableExport::getTeacherString(tch, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES)+"</th>\n";
 		}
 	}
 	if(htmlLevel>=2)
@@ -1386,7 +1457,11 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 			tmp+="          <th class=\"yAxis\">";
 		else
 			tmp+="          <th>";
-		tmp+=protect2(students)+"</th>\n";
+
+		assert(gt.rules.permanentStudentsHash.contains(students));
+		StudentsSet* ss=gt.rules.permanentStudentsHash.value(students);
+		tmp+=TimetableExport::getStudentsSetString(ss, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)+"</th>\n";
+
 		currentCount=0;
 		for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && currentCount<maxNames; teacher++){
 			if(!(*excludedNames).contains(teacher)){
@@ -1463,27 +1538,36 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 						const QStringList& activityTagsNames=slp.list2;
 						QString tmpS=QString("");
 						if(!subjectName.isEmpty()||activityTagsNames.size()>0){
-							if(!subjectName.isEmpty())
+							if(!subjectName.isEmpty()){
+								assert(subjectsHash.contains(subjectName));
+								Subject* sbj=subjectsHash.value(subjectName);
+								QString protectedSubjectName=TimetableExport::getSubjectString(sbj, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES);
+
 								switch(htmlLevel){
-									case 3 : tmpS+="<span class=\"subject\">"+protect2(subjectName)+"</span>"; break;
-									case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\">"+protect2(subjectName)+"</span></span>"; break;
+									case 3 : tmpS+="<span class=\"subject\">"+protectedSubjectName+"</span>"; break;
+									case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\">"+protectedSubjectName+"</span></span>"; break;
 									case 5 : [[fallthrough]];
-									case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"')\">"+protect2(subjectName)+"</span></span>"; break;
-									default: tmpS+=protect2(subjectName); break;
+									case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"')\">"+protectedSubjectName+"</span></span>"; break;
+									default: tmpS+=protectedSubjectName; break;
 								}
+							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
+									assert(activityTagsHash.contains(*atn));
+									ActivityTag* at=activityTagsHash.value(*atn);
+									QString protectedActivityTagName=TimetableExport::getActivityTagString(at, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
 									assert(id<statisticValues.hashActivityTagIDsStatistics.count());
 									if(gt.rules.activityTagsList[id]->printable){
 										switch(htmlLevel){
-											case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-											case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+											case 3 : tmpS+=" <span class=\"activitytag\">"+protectedActivityTagName+"</span>"; break;
+											case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protectedActivityTagName+"</span></span>"; break;
 											case 5 : [[fallthrough]];
-											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-											default: tmpS+=" "+protect2(*atn); break;
+											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protectedActivityTagName+"</span></span>"; break;
+											default: tmpS+=" "+protectedActivityTagName; break;
 										}
 										tmpS+=protect2(translatedCommaSpace());
 									}
@@ -1631,6 +1715,18 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 }
 
 QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
+	QHash<QString, Subject*> subjectsHash;
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsHash.insert(sbj->name, sbj);
+
+	QHash<QString, ActivityTag*> activityTagsHash;
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsHash.insert(at->name, at);
+
+	QHash<QString, Teacher*> teachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersHash.insert(tch->name, tch);
+
 	int colspan=0;
 	for(int students=0; students<statisticValues.allStudentsNames.count() && colspan<maxNames; students++){
 		if(!(*excludedNames).contains(students)){
@@ -1650,7 +1746,10 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 				tmp+="          <th class=\"xAxis\">";
 			else
 				tmp+="          <th>";
-			tmp+=protect2(statisticValues.allStudentsNames.at(students))+"</th>\n";
+
+			assert(gt.rules.permanentStudentsHash.contains(statisticValues.allStudentsNames.at(students)));
+			StudentsSet* ss=gt.rules.permanentStudentsHash.value(statisticValues.allStudentsNames.at(students));
+			tmp+=TimetableExport::getStudentsSetString(ss, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)+"</th>\n";
 		}
 	}
 	if(htmlLevel>=2)
@@ -1696,7 +1795,11 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 			tmp+="          <th class=\"yAxis\">";
 		else
 			tmp+="          <th>";
-		tmp+=protect2(teachers)+"</th>\n";
+
+		assert(teachersHash.contains(teachers));
+		Teacher* tch=teachersHash.value(teachers);
+		tmp+=TimetableExport::getTeacherString(tch, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES)+"</th>\n";
+
 		currentCount=0;
 		for(int students=0; students<statisticValues.allStudentsNames.count() && currentCount<maxNames; students++){
 			if(!(*excludedNames).contains(students)){
@@ -1773,27 +1876,36 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 						const QStringList& activityTagsNames=slp.list2;
 						QString tmpS=QString("");
 						if(!subjectName.isEmpty()||activityTagsNames.size()>0){
-							if(!subjectName.isEmpty())
+							if(!subjectName.isEmpty()){
+								assert(subjectsHash.contains(subjectName));
+								Subject* sbj=subjectsHash.value(subjectName);
+								QString protectedSubjectName=TimetableExport::getSubjectString(sbj, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES);
+
 								switch(htmlLevel){
-									case 3 : tmpS+="<span class=\"subject\">"+protect2(subjectName)+"</span>"; break;
-									case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\">"+protect2(subjectName)+"</span></span>"; break;
+									case 3 : tmpS+="<span class=\"subject\">"+protectedSubjectName+"</span>"; break;
+									case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\">"+protectedSubjectName+"</span></span>"; break;
 									case 5 : [[fallthrough]];
-									case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"')\">"+protect2(subjectName)+"</span></span>"; break;
-									default: tmpS+=protect2(subjectName); break;
+									case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+statisticValues.hashSubjectIDsStatistics.value(subjectName)+"')\">"+protectedSubjectName+"</span></span>"; break;
+									default: tmpS+=protectedSubjectName; break;
 								}
+							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
+									assert(activityTagsHash.contains(*atn));
+									ActivityTag* at=activityTagsHash.value(*atn);
+									QString protectedActivityTagName=TimetableExport::getActivityTagString(at, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
 									assert(id<statisticValues.hashActivityTagIDsStatistics.count());
 									if(gt.rules.activityTagsList[id]->printable){
 										switch(htmlLevel){
-											case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-											case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+											case 3 : tmpS+=" <span class=\"activitytag\">"+protectedActivityTagName+"</span>"; break;
+											case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protectedActivityTagName+"</span></span>"; break;
 											case 5 : [[fallthrough]];
-											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-											default: tmpS+=" "+protect2(*atn); break;
+											case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protectedActivityTagName+"</span></span>"; break;
+											default: tmpS+=" "+protectedActivityTagName; break;
 										}
 										tmpS+=protect2(translatedCommaSpace());
 									}
@@ -1941,6 +2053,18 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 }
 
 QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
+	QHash<QString, Subject*> subjectsHash;
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsHash.insert(sbj->name, sbj);
+
+	QHash<QString, ActivityTag*> activityTagsHash;
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsHash.insert(at->name, at);
+
+	QHash<QString, Teacher*> teachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersHash.insert(tch->name, tch);
+
 	int colspan=0;
 	for(int subject=0; subject<statisticValues.allSubjectsNames.count() && colspan<maxNames; subject++){
 		if(!(*excludedNames).contains(subject)){
@@ -1960,7 +2084,10 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 				tmp+="          <th class=\"xAxis\">";
 			else
 				tmp+="          <th>";
-			tmp+=protect2(statisticValues.allSubjectsNames.at(subject))+"</th>\n";
+
+			assert(subjectsHash.contains(statisticValues.allSubjectsNames.at(subject)));
+			Subject* sbj=subjectsHash.value(statisticValues.allSubjectsNames.at(subject));
+			tmp+=TimetableExport::getSubjectString(sbj, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES)+"</th>\n";
 		}
 	}
 	if(htmlLevel>=2)
@@ -2004,7 +2131,11 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 			tmp+="          <th class=\"yAxis\">";
 		else
 			tmp+="          <th>";
-		tmp+=protect2(students)+"</th>\n";
+
+		assert(gt.rules.permanentStudentsHash.contains(students));
+		StudentsSet* ss=gt.rules.permanentStudentsHash.value(students);
+		tmp+=TimetableExport::getStudentsSetString(ss, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)+"</th>\n";
+
 		currentCount=0;
 		for(int subject=0; subject<statisticValues.allSubjectsNames.count() && currentCount<maxNames; subject++){
 			if(!(*excludedNames).contains(subject)){
@@ -2082,28 +2213,36 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 
 						if(teachersNames.size()>0||activityTagsNames.size()>0){
 							for(QStringList::const_iterator it=teachersNames.constBegin(); it!=teachersNames.constEnd(); it++){
+								assert(teachersHash.contains(*it));
+								Teacher* tch=teachersHash.value(*it);
+								QString protectedTeacherName=TimetableExport::getTeacherString(tch, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES);
+
 								switch(htmlLevel){
-									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
+									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protectedTeacherName+"</span>"; break;
 									case 5 : [[fallthrough]];
-									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
-									default: tmpT+=protect2(*it); break;
+									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protectedTeacherName+"</span>"; break;
+									default: tmpT+=protectedTeacherName; break;
 								}
 								if(it!=teachersNames.constEnd()-1)
 									tmpT+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
+									assert(activityTagsHash.contains(*atn));
+									ActivityTag* at=activityTagsHash.value(*atn);
+									QString protectedActivityTagName=TimetableExport::getActivityTagString(at, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
 									assert(id<statisticValues.hashActivityTagIDsStatistics.count());
 									if(gt.rules.activityTagsList[id]->printable){
 										switch(htmlLevel){
-											case 3 : tmpT+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-											case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+											case 3 : tmpT+=" <span class=\"activitytag\">"+protectedActivityTagName+"</span>"; break;
+											case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protectedActivityTagName+"</span></span>"; break;
 											case 5 : [[fallthrough]];
-											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-											default: tmpT+=" "+protect2(*atn); break;
+											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protectedActivityTagName+"</span></span>"; break;
+											default: tmpT+=" "+protectedActivityTagName; break;
 										}
 										tmpT+=protect2(translatedCommaSpace());
 									}
@@ -2250,6 +2389,18 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 }
 
 QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
+	QHash<QString, Subject*> subjectsHash;
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
+		subjectsHash.insert(sbj->name, sbj);
+
+	QHash<QString, ActivityTag*> activityTagsHash;
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+		activityTagsHash.insert(at->name, at);
+
+	QHash<QString, Teacher*> teachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
+		teachersHash.insert(tch->name, tch);
+
 	int colspan=0;
 	for(int students=0; students<statisticValues.allStudentsNames.count() && colspan<maxNames; students++){
 		if(!(*excludedNames).contains(students)){
@@ -2269,7 +2420,10 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 				tmp+="          <th class=\"xAxis\">";
 			else
 				tmp+="          <th>";
-			tmp+=protect2(statisticValues.allStudentsNames.at(students))+"</th>\n";
+
+			assert(gt.rules.permanentStudentsHash.contains(statisticValues.allStudentsNames.at(students)));
+			StudentsSet* ss=gt.rules.permanentStudentsHash.value(statisticValues.allStudentsNames.at(students));
+			tmp+=TimetableExport::getStudentsSetString(ss, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES)+"</th>\n";
 		}
 	}
 	if(htmlLevel>=2)
@@ -2315,7 +2469,11 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 			tmp+="          <th class=\"yAxis\">";
 		else
 			tmp+="          <th>";
-		tmp+=protect2(subjects)+"</th>\n";
+
+		assert(subjectsHash.contains(subjects));
+		Subject* sbj=subjectsHash.value(subjects);
+		tmp+=TimetableExport::getSubjectString(sbj, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES)+"</th>\n";
+
 		currentCount=0;
 		for(int students=0; students<statisticValues.allStudentsNames.count() && currentCount<maxNames; students++){
 			if(!(*excludedNames).contains(students)){
@@ -2393,28 +2551,36 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 
 						if(teachersNames.size()>0||activityTagsNames.size()>0){
 							for(QStringList::const_iterator it=teachersNames.constBegin(); it!=teachersNames.constEnd(); it++){
+								assert(teachersHash.contains(*it));
+								Teacher* tch=teachersHash.value(*it);
+								QString protectedTeacherName=TimetableExport::getTeacherString(tch, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES);
+
 								switch(htmlLevel){
-									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
+									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protectedTeacherName+"</span>"; break;
 									case 5 : [[fallthrough]];
-									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
-									default: tmpT+=protect2(*it); break;
+									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protectedTeacherName+"</span>"; break;
+									default: tmpT+=protectedTeacherName; break;
 								}
 								if(it!=teachersNames.constEnd()-1)
 									tmpT+=protect2(translatedCommaSpace());
 							}
 							if(printActivityTags){
 								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
+									assert(activityTagsHash.contains(*atn));
+									ActivityTag* at=activityTagsHash.value(*atn);
+									QString protectedActivityTagName=TimetableExport::getActivityTagString(at, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES, SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
 									assert(id<statisticValues.hashActivityTagIDsStatistics.count());
 									if(gt.rules.activityTagsList[id]->printable){
 										switch(htmlLevel){
-											case 3 : tmpT+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-											case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+											case 3 : tmpT+=" <span class=\"activitytag\">"+protectedActivityTagName+"</span>"; break;
+											case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\">"+protectedActivityTagName+"</span></span>"; break;
 											case 5 : [[fallthrough]];
-											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-											default: tmpT+=" "+protect2(*atn); break;
+											case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+statisticValues.hashActivityTagIDsStatistics.value(*atn)+"')\">"+protectedActivityTagName+"</span></span>"; break;
+											default: tmpT+=" "+protectedActivityTagName; break;
 										}
 										tmpT+=protect2(translatedCommaSpace());
 									}

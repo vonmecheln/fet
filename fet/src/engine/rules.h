@@ -1249,6 +1249,8 @@ private:
 
 	SpaceConstraint* readRoomMaxTeachersRepetitions(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomsMaxTeachersRepetitions(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomMaxActivitiesPerTeacher(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomsMaxActivitiesPerTeacher(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readBuildingMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readBuildingsMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 

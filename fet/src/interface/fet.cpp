@@ -1071,13 +1071,21 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-free-periods-print-teachers-long-names", "false").toBool();
 	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-free-periods-print-teachers-codes", "false").toBool();
 
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-teachers-statistics-print-teachers-names", "true").toBool();
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-statistics-print-teachers-long-names", "false").toBool();
-	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-statistics-print-teachers-codes", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES=settings.value("settings-timetables-statistics-print-subjects-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES=settings.value("settings-timetables-statistics-print-subjects-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES=settings.value("settings-timetables-statistics-print-subjects-codes", "false").toBool();
 
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-students-statistics-print-students-names", "true").toBool();
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-students-statistics-print-students-long-names", "false").toBool();
-	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=settings.value("settings-timetables-students-statistics-print-students-codes", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES=settings.value("settings-timetables-statistics-print-activity-tags-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES=settings.value("settings-timetables-statistics-print-activity-tags-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES=settings.value("settings-timetables-statistics-print-activity-tags-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-statistics-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-statistics-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-statistics-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-statistics-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-statistics-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES=settings.value("settings-timetables-statistics-print-students-codes", "false").toBool();
 	//2026-03-11 end
 
 	//main form
@@ -1884,13 +1892,21 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-teachers-free-periods-print-teachers-long-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES);
 	settings.setValue("settings-timetables-teachers-free-periods-print-teachers-codes", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES);
 
-	settings.setValue("settings-timetables-teachers-statistics-print-teachers-names", SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES);
-	settings.setValue("settings-timetables-teachers-statistics-print-teachers-long-names", SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES);
-	settings.setValue("settings-timetables-teachers-statistics-print-teachers-codes", SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES);
+	settings.setValue("settings-timetables-statistics-print-subjects-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_NAMES);
+	settings.setValue("settings-timetables-statistics-print-subjects-long-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_LONG_NAMES);
+	settings.setValue("settings-timetables-statistics-print-subjects-codes", SETTINGS_TIMETABLES_STATISTICS_PRINT_SUBJECTS_CODES);
 
-	settings.setValue("settings-timetables-students-statistics-print-students-names", SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES);
-	settings.setValue("settings-timetables-students-statistics-print-students-long-names", SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES);
-	settings.setValue("settings-timetables-students-statistics-print-students-codes", SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES);
+	settings.setValue("settings-timetables-statistics-print-activity-tags-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_NAMES);
+	settings.setValue("settings-timetables-statistics-print-activity-tags-long-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_LONG_NAMES);
+	settings.setValue("settings-timetables-statistics-print-activity-tags-codes", SETTINGS_TIMETABLES_STATISTICS_PRINT_ACTIVITY_TAGS_CODES);
+
+	settings.setValue("settings-timetables-statistics-print-teachers-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_NAMES);
+	settings.setValue("settings-timetables-statistics-print-teachers-long-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_LONG_NAMES);
+	settings.setValue("settings-timetables-statistics-print-teachers-codes", SETTINGS_TIMETABLES_STATISTICS_PRINT_TEACHERS_CODES);
+
+	settings.setValue("settings-timetables-statistics-print-students-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_NAMES);
+	settings.setValue("settings-timetables-statistics-print-students-long-names", SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_LONG_NAMES);
+	settings.setValue("settings-timetables-statistics-print-students-codes", SETTINGS_TIMETABLES_STATISTICS_PRINT_STUDENTS_CODES);
 	//2026-03-11 end
 
 	//main form

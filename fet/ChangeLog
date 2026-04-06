@@ -1,3 +1,12 @@
+ 7.8.2
+	- Updated to Qt 6.11.0.
+	- Converted the recently introduced constraints of type room(s) max teachers repetitions to the constraints of type room(s) max activities
+	per teacher (suggested by Andrea Primiani). The new constraint is clearer, and it is equivalent to the old one if we add 1 to the number
+	of max repetitions per teacher to represent the number of max activities per teacher. Also, activities with several teachers are taken into
+	consideration.
+	- The export of statistics can now be configured to use long names and/or codes for the subjects, activity tags, teachers, and students
+	(suggested by Cyrus Ireri).
+	- Updated the Italian translation, by Andrea Primiani.
  7.8.1
 	- Added two new constraint types, for exams in Algeria, Morocco, and maybe other countries: room(s) max teachers repetitions and building(s)
 	min one activity in each non-break time slot. These constraints were suggested and tested by Benahmed Abdelkrim (previously in the FET-NSRT

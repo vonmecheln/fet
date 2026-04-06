@@ -172,6 +172,8 @@ public:
 	*/
 	//int teachers[MAX_TEACHERS_PER_ACTIVITY];
 	QList<int> iTeachersList;
+	
+	QSet<int> iTeachersSet; //used in the constraints of type room(s) max activities per teacher.
 
 	/**
 	The index of the subject.
