@@ -1253,6 +1253,8 @@ private:
 	SpaceConstraint* readRoomsMaxActivitiesPerTeacher(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readBuildingMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readBuildingsMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readBuildingMinOneActivityInEachAvailableTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readBuildingsMinOneActivityInEachAvailableTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readActivityPreferredRoom(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedSpace);

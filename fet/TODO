@@ -12002,6 +12002,26 @@ I think you need a new constraint.
 
 It is a research problem, and "min" seems much more difficult than "max".
 
+---
+
+Also from Francesco Rizzo, in an email to Liviu Lalescu:
+
+I want suggest constraint to set the minimum and maximum values for
+some students set in building 2.
+My problem is the same as described in the forum:
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6697.msg37122#msg37122
+I would be very happy if you could include this type of constraint
+in fet software. I've also pointed out this need.
+
+This custom version addresses the problem:
+https://lalescu.ro/liviu/fet/download/custom/francesco-rizzo-B/
+
+and it works well. You can use this as a starting point:
+
+ConstraintStudentsSetBuilding2MaxDaysPerWeek
+
+ConstraintStudentsSetBuilding2MinDaysPerWeek
+
 789---------------------------------------------------------
 From SEMMARI MILOUD (on Facebook):
 
@@ -13104,3 +13124,11 @@ Maybe you can make the colour be highlighting colour be visible both while you h
 
 Is it possible still in that interface to have like a strikethrough to assist put a line in the locked activities that one want to show they have been taught?
 Or what can we do to show those activities have been taught once you regenerate the timetables.
+
+846---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6804.0
+
+The statistics for MA mode show only data for half-days. Is it possible to add columns that show data for full days (mornings + afternoons), such as gaps, hours?
+(min and max).

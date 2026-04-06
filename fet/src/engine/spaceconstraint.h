@@ -156,8 +156,8 @@ const int CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS				=1075;
 const int CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS		=1076;
 const int CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION			=1077;
 
-const int CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT		=1078;
-const int CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT		=1079;
+const int CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT		=1078;
+const int CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT		=1079;
 
 const int CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER							=1080;
 const int CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER							=1081;
@@ -3939,8 +3939,8 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot: public SpaceConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot)
+class ConstraintBuildingMinOneActivityInEachAvailableTimeSlot: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot)
 
 public:
 	QString building;
@@ -3948,9 +3948,9 @@ public:
 	//internal
 	int building_ID;
 
-	ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot();
+	ConstraintBuildingMinOneActivityInEachAvailableTimeSlot();
 
-	ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot(double wp, const QString& _building);
+	ConstraintBuildingMinOneActivityInEachAvailableTimeSlot(double wp, const QString& _building);
 
 	QString getXmlDescription(Rules& r);
 
@@ -3983,13 +3983,13 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-class ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot: public SpaceConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot)
+class ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot)
 
 public:
-	ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot();
+	ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot();
 
-	ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot(double wp);
+	ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot(double wp);
 
 	QString getXmlDescription(Rules& r);
 
@@ -4275,9 +4275,9 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsPairOfMutually
 //77
 QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection& sc);
 //78
-QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActivityInEachAvailableTimeSlot& sc);
 //79
-QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc);
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot& sc);
 //80
 QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxActivitiesPerTeacher& sc);
 //81
@@ -4438,9 +4438,9 @@ QDataStream& operator>>(QDataStream& stream, ConstraintRoomsPairOfMutuallyExclus
 //77
 QDataStream& operator>>(QDataStream& stream, ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection& sc);
 //78
-QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc);
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInEachAvailableTimeSlot& sc);
 //79
-QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc);
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot& sc);
 //80
 QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxActivitiesPerTeacher& sc);
 //81

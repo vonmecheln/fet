@@ -2346,15 +2346,15 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				break;
 			}
 		//78
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
 				if(oldsc==nullptr){
-					dialogTitle=tr("Add building min one activity in each non-break time slot", "The title of the dialog to add a new constraint of this type");
-					dialogName=QString("AddConstraintBuildingMinOneActivityInEachNonBreakTimeSlot");
+					dialogTitle=tr("Add building min one activity in each available time slot", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintBuildingMinOneActivityInEachAvailableTimeSlot");
 				}
 				else{
-					dialogTitle=tr("Modify building min one activity in each non-break time slot", "The title of the dialog to modify a new constraint of this type");
-					dialogName=QString("ModifyConstraintBuildingMinOneActivityInEachNonBreakTimeSlot");
+					dialogTitle=tr("Modify building min one activity in each available time slot", "The title of the dialog to modify a new constraint of this type");
+					dialogName=QString("ModifyConstraintBuildingMinOneActivityInEachAvailableTimeSlot");
 				}
 
 				buildingLabel=new QLabel(tr("Building"));
@@ -2363,15 +2363,15 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				break;
 			}
 		//79
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
 				if(oldsc==nullptr){
-					dialogTitle=tr("Add buildings min one activity in each non-break time slot", "The title of the dialog to add a new constraint of this type");
-					dialogName=QString("AddConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot");
+					dialogTitle=tr("Add buildings min one activity in each available time slot", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintBuildingsMinOneActivityInEachAvailableTimeSlot");
 				}
 				else{
-					dialogTitle=tr("Modify buildings min one activity in each non-break time slot", "The title of the dialog to modify a new constraint of this type");
-					dialogName=QString("ModifyConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot");
+					dialogTitle=tr("Modify buildings min one activity in each available time slot", "The title of the dialog to modify a new constraint of this type");
+					dialogName=QString("ModifyConstraintBuildingsMinOneActivityInEachAvailableTimeSlot");
 				}
 
 				break;
@@ -4362,18 +4362,18 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 					break;
 				}
 			//78
-			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+					ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)oldsc;
 
 					buildingsComboBox->setCurrentIndex(buildingsComboBox->findText(ctr->building));
 
 					break;
 				}
 			//79
-			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					//ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+					//ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* ctr=(ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot*)oldsc;
 
 					break;
 				}
@@ -5911,16 +5911,16 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 				break;
 			}
 		//78
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				sc=new ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot(weight, buildingsComboBox->currentText());
+				sc=new ConstraintBuildingMinOneActivityInEachAvailableTimeSlot(weight, buildingsComboBox->currentText());
 
 				break;
 			}
 		//79
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				sc=new ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot(weight);
+				sc=new ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot(weight);
 
 				break;
 			}
@@ -8024,18 +8024,18 @@ void AddOrModifySpaceConstraint::okClicked()
 				break;
 			}
 		//78
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+				ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)oldsc;
 
 				ctr->building=buildingsComboBox->currentText();
 
 				break;
 			}
 		//79
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				//ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+				//ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* ctr=(ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot*)oldsc;
 
 				break;
 			}

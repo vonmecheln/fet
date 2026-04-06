@@ -2035,8 +2035,8 @@ void FetMainForm::createActionsForConstraints()
 	dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction = new QAction(this);
 	dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction = new QAction(this);
 
-	dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction = new QAction(this);
-	dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction = new QAction(this);
+	dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction = new QAction(this);
+	dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction = new QAction(this);
 
 	dataSpaceConstraintsTeacherRoomNotAvailableTimesAction = new QAction(this);
 	dataSpaceConstraintsActivityPreferredRoomAction = new QAction(this);
@@ -2424,8 +2424,8 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction_triggered);
 	connect(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction_triggered);
 
-	connect(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction_triggered);
-	connect(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction_triggered);
+	connect(dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction_triggered);
+	connect(dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction_triggered);
 
 	connect(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered);
 	connect(dataSpaceConstraintsActivityPreferredRoomAction, &QAction::triggered, this, &FetMainForm::dataSpaceConstraintsActivityPreferredRoomAction_triggered);
@@ -2865,8 +2865,8 @@ void FetMainForm::retranslateConstraints()
 	dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction->setText(QCoreApplication::translate("FetMainForm_template", "All rooms' max activities per teacher",
 	 "It means that all the rooms have an upper limit on the number of activities for each individual teacher over the whole week"));
 
-	dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction->setText(QCoreApplication::translate("FetMainForm_template", "A building has min one activity in each non-break time slot", nullptr));
-	dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction->setText(QCoreApplication::translate("FetMainForm_template", "All buildings have min one activity in each non-break time slot", nullptr));
+	dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction->setText(QCoreApplication::translate("FetMainForm_template", "A building has min one activity in each available time slot", nullptr));
+	dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction->setText(QCoreApplication::translate("FetMainForm_template", "All buildings have min one activity in each available time slot", nullptr));
 
 	dataSpaceConstraintsTeacherRoomNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher+a room's not available times", nullptr));
 	dataSpaceConstraintsActivityPreferredRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred room", nullptr));
@@ -3484,7 +3484,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_room_space_constraints->addSeparator();
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
-		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
+		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
@@ -3496,7 +3496,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuAll_rooms_space_constraints->addSeparator();
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
-		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
+		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction);
 		///////
 		
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
@@ -4017,7 +4017,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_room_space_constraints->addSeparator();
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
-		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
+		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
@@ -4030,7 +4030,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuAll_rooms_space_constraints->addSeparator();
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
-		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
+		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction);
 		///////
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
@@ -4376,7 +4376,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_room_space_constraints->addSeparator();
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
-		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
+		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
@@ -4388,7 +4388,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuAll_rooms_space_constraints->addSeparator();
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
-		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
+		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction);
 		///////
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
@@ -4728,7 +4728,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_room_space_constraints->addSeparator();
 		menuA_room_space_constraints->addAction(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
-		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction);
+		menuA_building_space_constraints->addAction(dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction);
 
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
@@ -4740,7 +4740,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuAll_rooms_space_constraints->addSeparator();
 		menuAll_rooms_space_constraints->addAction(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
-		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction);
+		menuAll_buildings_space_constraints->addAction(dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction);
 		///////
 
 		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
@@ -8168,7 +8168,7 @@ void FetMainForm::dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction_trigger
 	ListSpaceConstraints lscdialog(this, CONSTRAINT_ROOMS_MAX_ACTIVITIES_PER_TEACHER);
 }
 
-void FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction_triggered()
+void FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -8185,10 +8185,10 @@ void FetMainForm::dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSl
 	/*ConstraintRoomNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
-	ListSpaceConstraints lscdialog(this, CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT);
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT);
 }
 
-void FetMainForm::dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction_triggered()
+void FetMainForm::dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -8205,7 +8205,7 @@ void FetMainForm::dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeS
 	/*ConstraintRoomNotAvailableTimesForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
-	ListSpaceConstraints lscdialog(this, CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT);
+	ListSpaceConstraints lscdialog(this, CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT);
 }
 
 void FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered()
@@ -14073,11 +14073,14 @@ void FetMainForm::helpExamsAlgeriaMoroccoAction_triggered()
 	 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.0");
 	s+="\n\n";
 	
-	s+=tr("The problem was that each FET room could host a single activity in a certain time slot, while in the exams a room could host two teachers (or three) in a certain time slot."
+	s+=tr("The problem was that each FET room could host a single activity in a certain time slot, while in the exams a room can host two teachers (or three) in a certain time slot."
 	 " So, %1 had the idea to consider a FET building = a real room. There are these FET buildings, and for each real room there correspond two FET rooms (or three), with only slightly"
 	 " different names, and each such two (or three) rooms with similar names are placed in a corresponding FET building.").arg("Benahmed Abdelkrim");
 	s+=" ";
-	s+=tr("Each real room must be occupied by at least a teacher, so you can use the constraints building(s) min one activity in each non-break slot.");
+	s+=tr("Each real room must be occupied by at least a teacher, so you can use the constraints building(s) min one activity in each available slot.");
+	s+=" ";
+	s+=tr("(An available time slot for a building is a time slot in which there is no break constraint and in which not all rooms of that building are not available"
+	 " with a 100% weight, meaning that at least a room is (possibly) available.)");
 	s+=" ";
 	s+=tr("We can constrain the maximum number of activities for each teacher in each or in a certain room (constraints room(s) max activities per teacher).");
 	s+="\n\n";

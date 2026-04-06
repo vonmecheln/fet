@@ -930,9 +930,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints activities occupy max time slots from selection", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesOccupyMaxTimeSlotsFromSelection");
 
-				firstInstructionsLabel=new QLabel(tr("Note: might be slow if it refers to many activities.",
-				 "The constraint might be slow if it refers to many activities"));
-
 				teachersComboBox=new QComboBox;
 				studentsComboBox=new QComboBox;
 				subjectsComboBox=new QComboBox;
@@ -949,9 +946,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			{
 				dialogTitle=tr("Constraints activities max simultaneous in selected time slots", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesMaxSimultaneousInSelectedTimeSlots");
-
-				firstInstructionsLabel=new QLabel(tr("Note: might be slow if it refers to many activities.",
-				 "The constraint might be slow if it refers to many activities"));
 
 				teachersComboBox=new QComboBox;
 				studentsComboBox=new QComboBox;
@@ -1178,9 +1172,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints activities occupy min time slots from selection", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesOccupyMinTimeSlotsFromSelection");
 
-				firstInstructionsLabel=new QLabel(tr("Note: might be slow if it refers to many activities.",
-				 "The constraint might be slow if it refers to many activities"));
-
 				teachersComboBox=new QComboBox;
 				studentsComboBox=new QComboBox;
 				subjectsComboBox=new QComboBox;
@@ -1197,9 +1188,6 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			{
 				dialogTitle=tr("Constraints activities min simultaneous in selected time slots", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesMinSimultaneousInSelectedTimeSlots");
-
-				firstInstructionsLabel=new QLabel(tr("Note: might be slow if it refers to many activities.",
-				 "The constraint might be slow if it refers to many activities"));
 
 				teachersComboBox=new QComboBox;
 				studentsComboBox=new QComboBox;

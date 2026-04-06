@@ -70,9 +70,11 @@ bool haveRoomsMaxActivitiesPerTeacher;
 //bool computeRoomsMaxActivitiesPerTeacher(QWidget* parent);
 
 //2026-03-04 - NSRT
-Matrix1D<double> buildingsMinOneActivityInEachNonBreakTimeSlotPercentages;
-bool haveBuildingsMinOneActivityInEachNonBreakTimeSlot;
-//bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent);
+Matrix1D<double> buildingsMinOneActivityInEachAvailableTimeSlotPercentages;
+bool haveBuildingsMinOneActivityInEachAvailableTimeSlot;
+//bool computeBuildingsMinOneActivityInEachAvailableTimeSlot(QWidget* parent);
+
+Matrix1D<bool> activityHasInvolvementInBuildingConstraintMinOne;
 ///////////////////
 
 Matrix1D<QSet<int>> tmpPreferredRealRooms;
@@ -216,6 +218,8 @@ Matrix2D<double> notAllowedTimesPercentages;
 //break, which is not considered gap, false means no break, true means 100% break
 //break can only be 100% or none
 Matrix2D<bool> breakDayHour;
+
+Matrix3D<bool> buildingNotAvailableDayHour;
 
 //students set not available, which is not considered gap, false means available, true means 100% not available
 //students set not available can only be 100% or none
@@ -2335,8 +2339,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	roomsMaxActivityTagsPerWeekFromSetMaxTags.resize(gt.rules.nInternalRooms);
 	roomsMaxActivityTagsPerWeekFromSetTagsSet.resize(gt.rules.nInternalRooms);
 
-	buildingsMinOneActivityInEachNonBreakTimeSlotPercentages.resize(gt.rules.nInternalBuildings);
-
+	buildingsMinOneActivityInEachAvailableTimeSlotPercentages.resize(gt.rules.nInternalBuildings);
+	activityHasInvolvementInBuildingConstraintMinOne.resize(gt.rules.nInternalActivities);
+	
 	roomsMaxActivitiesPerTeacher.resize(gt.rules.nInternalRooms);
 	keepSameRoomInABuilding.resize(gt.rules.nInternalRooms);
 
@@ -3083,7 +3088,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	//NSRT
 	//!after computeActivitiesRoomsPreferences!
-	t=computeBuildingsMinOneActivityInEachNonBreakTimeSlot(parent);
+	t=computeBuildingsMinOneActivityInEachAvailableTimeSlot(parent);
 	if(!t)
 		return false;
 	
@@ -21193,6 +21198,49 @@ bool computeNotAllowedRoomTimePercentages()
 		}
 	}
 	
+	buildingNotAvailableDayHour.resize(gt.rules.nInternalBuildings, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
+
+	QHash<int, QSet<int>> roomsInBuilding;
+	for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+		if(gt.rules.internalRoomsList[rm]->buildingIndex>=0){
+			QSet<int> rs=roomsInBuilding.value(gt.rules.internalRoomsList[rm]->buildingIndex, QSet<int>());
+			rs.insert(rm);
+			roomsInBuilding.insert(gt.rules.internalRoomsList[rm]->buildingIndex, rs);
+		}
+	}
+	for(int bu=0; bu<gt.rules.nInternalBuildings; bu++)
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				buildingNotAvailableDayHour(bu,d,h)=false;
+	for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
+		QSet<int> rs=roomsInBuilding.value(bu, QSet<int>());
+		if(rs.count()==0){
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					buildingNotAvailableDayHour(bu,d,h)=true;
+		}
+		else{
+			assert(rs.count()>=1);
+			
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				for(int h=0; h<gt.rules.nHoursPerDay; h++){
+					bool isAllowedSlot=false;
+					
+					for(int rm : std::as_const(rs)){
+						if(notAllowedRoomTimePercentages[rm][d+h*gt.rules.nDaysPerWeek]==-1
+						 || (notAllowedRoomTimePercentages[rm][d+h*gt.rules.nDaysPerWeek]!=-1 && notAllowedRoomTimePercentages[rm][d+h*gt.rules.nDaysPerWeek]<100.0)){
+							isAllowedSlot=true;
+							break;
+						}
+					}
+					
+					if(!isAllowedSlot)
+						buildingNotAvailableDayHour(bu,d,h)=true;
+				}
+			}
+		}
+	}
+	
 	return true;
 }
 
@@ -24917,26 +24965,29 @@ bool computeRoomsMaxActivitiesPerTeacher(QWidget* parent)
 }
 
 //2026-03-04
-bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
+bool computeBuildingsMinOneActivityInEachAvailableTimeSlot(QWidget* parent)
 {
-	haveBuildingsMinOneActivityInEachNonBreakTimeSlot=false;
+	haveBuildingsMinOneActivityInEachAvailableTimeSlot=false;
 	
 	for(int i=0; i<gt.rules.nInternalBuildings; i++)
-		buildingsMinOneActivityInEachNonBreakTimeSlotPercentages[i]=-1;
+		buildingsMinOneActivityInEachAvailableTimeSlotPercentages[i]=-1;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		activityHasInvolvementInBuildingConstraintMinOne[ai]=false;
 	
 	bool ok=true;
 	
 	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
-		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT){
-			haveBuildingsMinOneActivityInEachNonBreakTimeSlot=true;
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT){
+			haveBuildingsMinOneActivityInEachAvailableTimeSlot=true;
 
-			ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* sc=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)gt.rules.internalSpaceConstraintsList[i];
+			ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* sc=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)gt.rules.internalSpaceConstraintsList[i];
 			
 			if(sc->weightPercentage!=100){
 				ok=false;
 		
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint building min one activity in each non-break time slot"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint building min one activity in each available time slot"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -24945,18 +24996,18 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 					return false;
 			}
 			
-			buildingsMinOneActivityInEachNonBreakTimeSlotPercentages[sc->building_ID]=100.0;
+			buildingsMinOneActivityInEachAvailableTimeSlotPercentages[sc->building_ID]=100.0;
 		}
-		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT){
-			haveBuildingsMinOneActivityInEachNonBreakTimeSlot=true;
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT){
+			haveBuildingsMinOneActivityInEachAvailableTimeSlot=true;
 
-			ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* sc=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)gt.rules.internalSpaceConstraintsList[i];
+			ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* sc=(ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot*)gt.rules.internalSpaceConstraintsList[i];
 			
 			if(sc->weightPercentage!=100){
 				ok=false;
 		
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint buildings min one activity in each non-break time slot"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint buildings min one activity in each available time slot"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -24966,17 +25017,17 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 			}
 			
 			for(int b=0; b<gt.rules.nInternalBuildings; b++)
-				buildingsMinOneActivityInEachNonBreakTimeSlotPercentages[b]=100.0;
+				buildingsMinOneActivityInEachAvailableTimeSlotPercentages[b]=100.0;
 		}
 	}
 	
-	if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot){
-		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
-			if(buildingsMinOneActivityInEachNonBreakTimeSlotPercentages[bu]!=100.0){
+	if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
+		/*for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
+			if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]!=100.0){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each non-break time slot"
+				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
 				 " and the building %1 does not have this constraint. If you use these types of constraints, they must be used for all buildings. Please correct and try again")
 				 .arg(gt.rules.internalBuildingsList[bu]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -24985,7 +25036,7 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 				if(t==0)
 					return false;
 			}
-		}
+		}*/
 		
 		/*bool allActivitiesHaveDuration1=true;
 		for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
@@ -24998,7 +25049,7 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 			ok=false;
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each non-break time slot"
+			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
 			 " and you have at least an activity with duration different from 1. To use these constraints all activities must have duration 1. Please correct and try again"),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
@@ -25019,7 +25070,7 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 			ok=false;
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each non-break time slot"
+			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
 			 " and you have at least a virtual room. To use these constraints all rooms must be real (not virtual). Please correct and try again"),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
@@ -25033,7 +25084,7 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each non-break time slot"
+				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
 				 " and room %1 is not in a building. To use these constraints each room must be in a certain building. Please correct and try again")
 				 .arg(gt.rules.internalRoomsList[r]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -25057,7 +25108,7 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each non-break time slot"
+				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
 				 " and you have activity id %1 which has no related preferred room(s) constraint(s) with weight 100%. To use these constraints each activity must have at"
 				 " least an associated preferred room(s) constraint (not home room(s)) with weight 100%. Please correct and try again")
 				 .arg(gt.rules.internalActivitiesList[ai].id),
@@ -25068,6 +25119,177 @@ bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent)
 					return false;
 			}
 		}
+
+		Matrix1D<int> buildingActivitiesCount;
+		buildingActivitiesCount.resize(gt.rules.nInternalBuildings);
+		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++)
+			buildingActivitiesCount[bu]=0;
+		int totalInvolvedActivitiesDuration=0;
+		for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+			bool begin=true;
+			QSet<int> preferredRoomsSet;
+			for(const PreferredRoomsItem& it : std::as_const(activitiesPreferredRoomsList[ai])){
+				if(it.percentage==100.0){
+					if(begin){
+						begin=false;
+						preferredRoomsSet=it.preferredRooms;
+					}
+					else{
+						preferredRoomsSet.intersect(it.preferredRooms);
+					}
+				}
+			}
+			
+			for(int rm : std::as_const(preferredRoomsSet)){
+				int bu=gt.rules.internalRoomsList[rm]->buildingIndex;
+				if(bu>=0){
+					if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+						activityHasInvolvementInBuildingConstraintMinOne[ai]=true;
+						totalInvolvedActivitiesDuration+=gt.rules.internalActivitiesList[ai].duration;
+						break;
+					}
+				}
+			}
+
+			QSet<int> buildingsSet;
+			for(int rm : std::as_const(preferredRoomsSet)){
+				int bu=gt.rules.internalRoomsList[rm]->buildingIndex;
+				if(bu>=0)
+					if(!buildingsSet.contains(bu))
+						buildingsSet.insert(bu);
+			}
+			for(int bu : std::as_const(buildingsSet))
+				buildingActivitiesCount[bu]+=gt.rules.internalActivitiesList[ai].duration;
+		}
+		int totalNhpw=0;
+		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
+			if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+				int nhpw=0;
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(!breakDayHour[d][h] && !buildingNotAvailableDayHour[bu][d][h])
+							nhpw++;
+				totalNhpw+=nhpw;
+				if(buildingActivitiesCount[bu]<nhpw){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a space constraint building(s) min one activity in each available time slot"
+					 " affecting building %1 and it is impossible to respect this constraint for this building, because the total duration of activities possibly"
+					 " being scheduled in this building by preferred room(s) constraints is %2, which is less than the total number of available hours per week"
+					 " for this building, which is %3. Please correct and try again")
+					 .arg(gt.rules.internalBuildingsList[bu]->name)
+					 .arg(buildingActivitiesCount[bu])
+					 .arg(nhpw),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		
+		if(totalInvolvedActivitiesDuration<totalNhpw){
+			ok=false;
+
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
+			 " and it is impossible to respect this(these) constraint(s), because the total duration of activities which will possibly be scheduled in an affected"
+			 " building is %1, which is less than the total number of available hours per week for the affected buildings, which is %2. Please correct and try again")
+			 .arg(totalInvolvedActivitiesDuration)
+			 .arg(totalNhpw),
+			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+			 1, 0 );
+			
+			if(t==0)
+				return false;
+		}
+		
+		QSet<int> buildingsWithAtLeastARoom;
+		for(int rm=0; rm<gt.rules.nInternalRooms; rm++)
+			if(gt.rules.internalRoomsList[rm]->buildingIndex>=0)
+				if(!buildingsWithAtLeastARoom.contains(gt.rules.internalRoomsList[rm]->buildingIndex))
+					buildingsWithAtLeastARoom.insert(gt.rules.internalRoomsList[rm]->buildingIndex);
+
+		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
+			if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+				if(!buildingsWithAtLeastARoom.contains(bu)){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a space constraint building(s) min one activity in each available time slot"
+					 " affecting building %1 and it is impossible to respect this constraint for this building, because the building has no room(s)."
+					 " Please correct and try again").arg(gt.rules.internalBuildingsList[bu]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		
+		/*QHash<int, QSet<int>> roomsInBuilding;
+		for(int rm=0; rm<gt.rules.nInternalRooms; rm++){
+			if(gt.rules.internalRoomsList[rm]->buildingIndex>=0){
+				QSet<int> rs=roomsInBuilding.value(gt.rules.internalRoomsList[rm]->buildingIndex, QSet<int>());
+				rs.insert(rm);
+				roomsInBuilding.insert(gt.rules.internalRoomsList[rm]->buildingIndex, rs);
+			}
+		}
+		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
+			QSet<int> rs=roomsInBuilding.value(bu, QSet<int>());
+			if(rs.count()==0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
+				 " and it is impossible to respect this constraint for building %1, because the building has no rooms. Please correct and try again")
+				 .arg(gt.rules.internalBuildingsList[bu]->name),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+			else{
+				assert(rs.count()>=1);
+				
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+					for(int h=0; h<gt.rules.nHoursPerDay; h++){
+						if(!breakDayHour[d][h]){
+							bool isAllowedSlot=false;
+							
+							for(int rm : std::as_const(rs)){
+								if(notAllowedRoomTimePercentages[rm][d+h*gt.rules.nDaysPerWeek]==-1
+								 || (notAllowedRoomTimePercentages[rm][d+h*gt.rules.nDaysPerWeek]!=-1 && notAllowedRoomTimePercentages[rm][d+h*gt.rules.nDaysPerWeek]<100.0)){
+									isAllowedSlot=true;
+									break;
+								}
+							}
+							
+							if(!isAllowedSlot){
+								ok=false;
+
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								 GeneratePreTranslate::tr("Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot"
+								 " and it is impossible to respect this constraint for building %1, because all rooms in this building are not available with weight 100.0%"
+								 " in the break time slot of day %2 and hour %3. Please correct and try again")
+								 .arg(gt.rules.internalBuildingsList[bu]->name)
+								 .arg(gt.rules.daysOfTheWeek[d])
+								 .arg(gt.rules.hoursOfTheDay[h]),
+								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+								 1, 0 );
+								
+								if(t==0)
+									return false;
+							}
+						}
+					}
+				}
+			}
+		}*/
 	}
 
 	return ok;
@@ -25180,7 +25402,7 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 	}
 
 	for(int j=0; j<gt.rules.nInternalActivities; j++){
-		PreferredRoomsItem it=maxPercentagePrefRooms[j];
+		const PreferredRoomsItem& it=maxPercentagePrefRooms[j];
 		if(it.percentage>=THRESHOLD){
 			assert(!unspecifiedPreferredRoom[j]);
 			for(int rm : std::as_const(it.preferredRooms))
@@ -25320,7 +25542,7 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 
 		
 		//rooms
-		PreferredRoomsItem it=maxPercentagePrefRooms[i];
+		const PreferredRoomsItem& it=maxPercentagePrefRooms[i];
 		if(it.percentage>=THRESHOLD){
 			double cnt=0.0;
 			assert(!unspecifiedPreferredRoom[i]);

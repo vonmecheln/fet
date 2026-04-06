@@ -50,9 +50,11 @@ extern bool haveRoomsMaxActivitiesPerTeacher;
 bool computeRoomsMaxActivitiesPerTeacher(QWidget* parent);
 
 //2026-03-04 - NSRT
-extern Matrix1D<double> buildingsMinOneActivityInEachNonBreakTimeSlotPercentages;
-extern bool haveBuildingsMinOneActivityInEachNonBreakTimeSlot;
-bool computeBuildingsMinOneActivityInEachNonBreakTimeSlot(QWidget* parent);
+extern Matrix1D<double> buildingsMinOneActivityInEachAvailableTimeSlotPercentages;
+extern bool haveBuildingsMinOneActivityInEachAvailableTimeSlot;
+bool computeBuildingsMinOneActivityInEachAvailableTimeSlot(QWidget* parent);
+
+extern Matrix1D<bool> activityHasInvolvementInBuildingConstraintMinOne;
 ///////////////////
 
 extern Matrix1D<QSet<int>> tmpPreferredRealRooms;
@@ -218,6 +220,8 @@ extern Matrix2D<double> notAllowedTimesPercentages;
 //break, which is not considered gap, false means no break, true means 100% break
 //break can only be 100% or none
 extern Matrix2D<bool> breakDayHour;
+
+extern Matrix3D<bool> buildingNotAvailableDayHour;
 
 //students set not available, which is not considered gap, false means available, true means 100% not available
 //students set not available can only be 100% or none

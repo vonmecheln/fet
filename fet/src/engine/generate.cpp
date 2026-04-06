@@ -7101,43 +7101,45 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
  int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList /*if the selected room is virtual, these are the real rooms for sets 0..nsets-1*/)
 {
 	//begin NSRT buildings, 2026-03-13
-	//This is the first phase of the buildings min one activity in each non-break time slot.
+	//This is the first phase of the buildings min one activity in each available time slot.
 	QList<int> nsrtCandidates;
 	int nsrtNeeded=0;
 	//all buildings or none have this constraint, as a prerequisite
-	if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot){
+	if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
 		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
-			assert(buildingsMinOneActivityInEachNonBreakTimeSlotPercentages[bu]==100.0);
-			for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-				for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
-					if(breakDayHour(d2,h2))
-						continue;
+			if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+					for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+						if(breakDayHour(d2,h2) || buildingNotAvailableDayHour(bu,d2,h2))
+							continue;
 
-					const QList<int>& tl=buildingsTimetable(bu,d2,h2);
+						const QList<int>& tl=buildingsTimetable(bu,d2,h2);
 
-					int cnt=0;
-					for(int ai2 : std::as_const(tl)){
-						if(!globalConflActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
-							cnt++;
-						}
-					}
-
-					if(cnt==0){
-						nsrtNeeded++;
-					}
-					else if(cnt>=2){
+						int cnt=0;
 						for(int ai2 : std::as_const(tl)){
 							if(!globalConflActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
-								if(!swappedActivities[ai2] && !(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2])){
-									//assert(!nsrtCandidates.contains(ai2)); -> don't assert, because of activities with duration >= 2.
-									if(!nsrtCandidates.contains(ai2))
-										nsrtCandidates.append(ai2);
+								cnt++;
+							}
+						}
+
+						if(cnt==0){
+							nsrtNeeded++;
+						}
+						else if(cnt>=2){
+							for(int ai2 : std::as_const(tl)){
+								if(!globalConflActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
+									if(!swappedActivities[ai2] && !(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2])){
+										//assert(!nsrtCandidates.contains(ai2)); -> don't assert, because of activities with duration >= 2.
+										assert(activityHasInvolvementInBuildingConstraintMinOne[ai2]);
+										if(!nsrtCandidates.contains(ai2))
+											nsrtCandidates.append(ai2);
+									}
 								}
 							}
 						}
-					}
-					else{
-						assert(cnt==1);
+						else{
+							assert(cnt==1);
+						}
 					}
 				}
 			}
@@ -7145,7 +7147,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 
 		if(nsrtNeeded>0){
 			for(int ai2=0; ai2<gt.rules.nInternalActivities; ai2++){
-				if(ai2!=ai){
+				if(ai2!=ai && activityHasInvolvementInBuildingConstraintMinOne[ai2]){
 					//Old comment: TODO NSRT here the test is not perfect, assumes each activity has a building
 					assert(c.rooms[ai2]!=UNSPECIFIED_ROOM);
 					if(c.times[ai2]!=UNALLOCATED_TIME && c.rooms[ai2]!=UNALLOCATED_SPACE /*&& c.rooms[ai2]!=UNSPECIFIED_ROOM*/){
@@ -7159,10 +7161,9 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					else{
 						nsrtNeeded-=gt.rules.internalActivitiesList[ai2].duration;
 					}
-				}
-
-				if(nsrtNeeded<=0){
-					break;
+					
+					if(nsrtNeeded<=0)
+						break;
 				}
 			}
 			
@@ -7911,9 +7912,9 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				}
 			}
 			
-			//2026-02-28 - each building has at least one activity in each slot, if the slot is not break
+			//2026-02-28 - each building has at least one activity in each slot, if the slot is available
 			//Note that we are not using tmp_list - this is not 100% efficient, but it works in practice.
-			if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot){
+			if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
 				if(dur2==act->duration){
 					int bu=gt.rules.internalRoomsList[rm]->buildingIndex;
 					assert(bu>=0);
@@ -7922,21 +7923,24 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					if(localNsrtNeeded>0){
 						for(int dur=0; dur<act->duration; dur++){
 							bool testNeeded=true;
-							const QList<int>& tl=buildingsTimetable(bu,d,h+dur);
 							
-							if(tl.isEmpty()){
-								testNeeded=false;
-							}
-							else{
-								bool hasActivities=false;
-								for(int ai2 : std::as_const(tl)){
-									if(!globalConflActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
-										hasActivities=true;
-										break;
-									}
-								}
-								if(!hasActivities)
+							if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+								const QList<int>& tl=buildingsTimetable(bu,d,h+dur);
+								
+								if(tl.isEmpty()){
 									testNeeded=false;
+								}
+								else{
+									bool hasActivities=false;
+									for(int ai2 : std::as_const(tl)){
+										if(!globalConflActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
+											hasActivities=true;
+											break;
+										}
+									}
+									if(!hasActivities)
+										testNeeded=false;
+								}
 							}
 							
 							if(!testNeeded){
@@ -7987,6 +7991,8 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 								}
 								assert(remAct>=0);
 								
+								assert(activityHasInvolvementInBuildingConstraintMinOne[remAct]);
+								
 								//Don't assert that tmp_list does not contain remAct!
 								if(!tmp_list.contains(remAct))
 									tmp_list.append(remAct);
@@ -8016,23 +8022,30 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 										}
 									}
 									
-									if(tl2.count()==0){
-										//assert(0); //don't assert, because of activities with duration >=2
-										localNsrtNeeded++; //for activities with duration >= 2.
-									}
-									else if(tl2.count()==1){
-										if(gt.rules.internalActivitiesList[tl2.at(0)].duration==1){
-											if(!swappedActivities[tl2.at(0)] && !(fixedTimeActivity[tl2.at(0)] && fixedSpaceActivity[tl2.at(0)])){
-												int t=localCandidates.removeAll(tl2.at(0));
-												assert(t==1);
-											}
+									if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+										if(tl2.count()==0){
+											//assert(0); //don't assert, because of activities with duration >=2
+											localNsrtNeeded++; //for activities with duration >= 2.
 										}
-										
-										localNsrtNeeded--;
+										else if(tl2.count()==1){
+											if(gt.rules.internalActivitiesList[tl2.at(0)].duration==1){
+												if(!swappedActivities[tl2.at(0)] && !(fixedTimeActivity[tl2.at(0)] && fixedSpaceActivity[tl2.at(0)])){
+													assert(activityHasInvolvementInBuildingConstraintMinOne[tl2.at(0)]);
+													
+													int t=localCandidates.removeAll(tl2.at(0));
+													assert(t==1);
+												}
+											}
+											
+											localNsrtNeeded--;
+										}
+										else{
+											assert(tl2.count()>=2);
+											
+											localNsrtNeeded--;
+										}
 									}
 									else{
-										assert(tl2.count()>=2);
-										
 										localNsrtNeeded--;
 									}
 								}
@@ -8672,7 +8685,7 @@ void Generate::generate(int maxSeconds, bool& restarted, bool& impossible, bool&
 	teachersTimetable.resize(gt.rules.nInternalTeachers, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	subgroupsTimetable.resize(gt.rules.nInternalSubgroups, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	roomsTimetable.resize(gt.rules.nInternalRooms, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
-	if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot)
+	if(haveBuildingsMinOneActivityInEachAvailableTimeSlot)
 		buildingsTimetable.resize(gt.rules.nInternalBuildings, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 
 	newTeachersTimetable.resize(gt.rules.nInternalTeachers, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
@@ -8938,7 +8951,7 @@ prevvalue:
 		///////////////////////////////
 		//NSRT, Benahmed
 		///////////////buildings' timetable
-		if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot){
+		if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
 			for(int i=0; i<gt.rules.nInternalBuildings; i++)
 				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 					for(int k=0; k<gt.rules.nHoursPerDay; k++)
@@ -9555,7 +9568,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				}
 			}
 			
-			if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot){
+			if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
 				int bu=gt.rules.internalRoomsList[rm]->buildingIndex;
 				if(bu>=0){
 					for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -9776,7 +9789,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				}
 			}
 
-			if(haveBuildingsMinOneActivityInEachNonBreakTimeSlot){
+			if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
 				int bu=gt.rules.internalRoomsList[rm]->buildingIndex;
 				if(bu>=0){
 					for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.8.2">
+<fet version="7.8.3">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>اختبارات_ف2_03-2026</Institution_Name>
   <Comments>تعليقات افتراضية</Comments>
@@ -6980,11 +6980,11 @@
       <Active>false</Active>
       <Comments></Comments>
     </ConstraintActivityTagPreferredRooms>
-    <ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>
+    <ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot>
       <Weight_Percentage>100</Weight_Percentage>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>
+    </ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot>
     <ConstraintRoomsMaxActivitiesPerTeacher>
       <Weight_Percentage>100</Weight_Percentage>
       <Max_Activities_Per_Teacher>1</Max_Activities_Per_Teacher>

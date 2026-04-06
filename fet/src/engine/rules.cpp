@@ -2663,16 +2663,16 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					break;
 				}
 			//78
-			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* c=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)ctr;
+					ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* c=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)ctr;
 					stream<<*c;
 					break;
 				}
 			//79
-			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* c=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)ctr;
+					ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* c=(ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot*)ctr;
 					stream<<*c;
 					break;
 				}
@@ -5609,17 +5609,17 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					break;
 				}
 			//78
-			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* c=new ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot;
+					ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* c=new ConstraintBuildingMinOneActivityInEachAvailableTimeSlot;
 					stream>>*c;
 					rules.spaceConstraintsList.append(c);
 					break;
 				}
 			//79
-			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* c=new ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot;
+					ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* c=new ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot;
 					stream>>*c;
 					rules.spaceConstraintsList.append(c);
 					break;
@@ -11657,9 +11657,9 @@ bool Rules::modifyBuilding(const QString& initialBuildingName, const QString& fi
 
 	for(SpaceConstraint* ctr : std::as_const(spaceConstraintsList)){
 		switch(ctr->type){
-			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* cb=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)ctr;
+					ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* cb=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)ctr;
 					if(cb->building==initialBuildingName)
 						cb->building=finalBuildingName;
 					break;
@@ -14449,9 +14449,9 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedSpace.append(sc);
 					break;
 				}
-			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 				{
-					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* c=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)sc;
+					ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* c=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)sc;
 					if(!existingBuildingsNames.contains(c->building))
 						toBeRemovedSpace.append(sc);
 					break;
@@ -18764,6 +18764,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 			bool reportRoomNotAvailableChange=true;
 
 			bool reportRoomsMaxTeachersRepetitions=true;
+			
+			bool reportBuildingMinOneActivityInEachNonBreakTimeSlot=true;
 
 			bool reportUnspecifiedPermanentlyLockedSpace=true;
 			
@@ -18832,10 +18834,34 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					crt_constraint=readRoomsMaxActivitiesPerTeacher(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot")){
+					if(reportBuildingMinOneActivityInEachNonBreakTimeSlot){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("File contains constraint building min one activity in each non-break time slot, which is old (it was improved in FET 7.8.3), and will be converted"
+						 " to the similar constraint of this type, constraint building min one activity in each available slot"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportBuildingMinOneActivityInEachNonBreakTimeSlot=false;
+					}
+					
 					crt_constraint=readBuildingMinOneActivityInEachNonBreakTimeSlot(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot")){
+					if(reportBuildingMinOneActivityInEachNonBreakTimeSlot){
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+						 tr("File contains constraint buildings min one activity in each non-break time slot, which is old (it was improved in FET 7.8.3), and will be converted"
+						 " to the similar constraint of this type, constraint buildings min one activity in each available slot"),
+						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportBuildingMinOneActivityInEachNonBreakTimeSlot=false;
+					}
+					
 					crt_constraint=readBuildingsMinOneActivityInEachNonBreakTimeSlot(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachAvailableTimeSlot")){
+					crt_constraint=readBuildingMinOneActivityInEachAvailableTimeSlot(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot")){
+					crt_constraint=readBuildingsMinOneActivityInEachAvailableTimeSlot(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintRoomTypeNotAllowedSubjects") && !skipDeprecatedConstraints){
 				
@@ -44314,7 +44340,7 @@ SpaceConstraint* Rules::readRoomsMaxActivitiesPerTeacher(QXmlStreamReader& xmlRe
 
 SpaceConstraint* Rules::readBuildingMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot"));
-	ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* cn=new ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot();
+	ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* cn=new ConstraintBuildingMinOneActivityInEachAvailableTimeSlot();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -44352,7 +44378,78 @@ SpaceConstraint* Rules::readBuildingMinOneActivityInEachNonBreakTimeSlot(QXmlStr
 
 SpaceConstraint* Rules::readBuildingsMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot"));
-	ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* cn=new ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot();
+	ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* cn=new ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readBuildingMinOneActivityInEachAvailableTimeSlot(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachAvailableTimeSlot"));
+	ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* cn=new ConstraintBuildingMinOneActivityInEachAvailableTimeSlot();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else if(xmlReader.name()==QString("Building")){
+			QString text=xmlReader.readElementText();
+			cn->building=text;
+			xmlReadingLog+="    Read building name="+cn->building+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readBuildingsMinOneActivityInEachAvailableTimeSlot(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot"));
+	ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot* cn=new ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){

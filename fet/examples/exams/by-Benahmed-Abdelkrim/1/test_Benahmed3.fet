@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.8.2">
+<fet version="7.8.3">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>اختبارات_ف2_03-2026</Institution_Name>
   <Comments>تعليقات افتراضية</Comments>
@@ -6988,11 +6988,11 @@ This constraint slows down the production process. Disabling it speeds up the ti
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintRoomsMaxActivitiesPerTeacher>
-    <ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>
+    <ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot>
       <Weight_Percentage>100</Weight_Percentage>
       <Active>true</Active>
       <Comments></Comments>
-    </ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>
+    </ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot>
   </Space_Constraints_List>
   <Timetable_Generation_Options_List>
   </Timetable_Generation_Options_List>

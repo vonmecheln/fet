@@ -1026,14 +1026,14 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				break;
 			}
 		//78
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				dialogTitle=tr("Constraints building min one activity in each non-break time slot", "The title of the dialog to list the constraints of this type");
-				dialogName=QString("ConstraintsBuildingMinOneActivityInEachNonBreakTimeSlot");
+				dialogTitle=tr("Constraints building min one activity in each available time slot", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsBuildingMinOneActivityInEachAvailableTimeSlot");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
 				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
-													+tr("- each building must have this constraint")+"\n"
+													//+tr("- each building must have this constraint")+"\n"
 													//+tr("- all the activities must have duration 1")+"\n"
 													+tr("- all the rooms must be real (not virtual)")+"\n"
 													+tr("- each room must be in a certain building")+"\n"
@@ -1047,14 +1047,14 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				break;
 			}
 		//79
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				dialogTitle=tr("Constraints buildings min one activity in each non-break time slot", "The title of the dialog to list the constraints of this type");
-				dialogName=QString("ConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlot");
+				dialogTitle=tr("Constraints buildings min one activity in each available time slot", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsBuildingsMinOneActivityInEachAvailableTimeSlot");
 
 				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
 				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
-													+tr("- each building must have this constraint")+"\n"
+													//+tr("- each building must have this constraint")+"\n"
 													//+tr("- all the activities must have duration 1")+"\n"
 													+tr("- all the rooms must be real (not virtual)")+"\n"
 													+tr("- each room must be in a certain building")+"\n"
@@ -2474,19 +2474,19 @@ filtered_ok:
 				break;
 			}
 		//78
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
 				assert(buildingsComboBox!=nullptr);
 
-				ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)sc;
+				ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)sc;
 				return buildingsComboBox->currentText()=="" || ctr->building==buildingsComboBox->currentText();
 
 				break;
 			}
 		//79
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
-				//ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)sc;
+				//ConstraintBuildingMinOneActivityInEachAvailableTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachAvailableTimeSlot*)sc;
 				return true;
 
 				break;
@@ -2872,16 +2872,19 @@ void ListSpaceConstraints::helpClicked()
 				break;
 			}
 		//78
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
 		//79
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			{
 				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
 				.arg("Benahmed Abdelkrim");
 				s+="\n\n";
 				s+=tr("This constraint is used for exams in some countries, such as Algeria and Morocco.");
-				s+="\n";
+				s+="\n\n";
+				s+=tr("Note that a building is not available in a time slot if there is a constraint break in that time slot, or if all the rooms in that building"
+				 " are not available in that time slot with a weight of 100% (not lower).");
+				s+="\n\n";
 				s+=tr("You have some examples in the %1 directory of the FET examples, and you can read more on these"
 				 " two FET forum links: %2 and %3.")
 				 .arg("exams")

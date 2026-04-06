@@ -1,3 +1,11 @@
+ 7.8.3
+	- Converted the constraints of type building(s) min one activity in each non-break time slot to the similar constraints of type building(s)
+	min one activity in each available time slot (suggested by Benahmed Abdelkrim). Also, these constraints must no longer be applied to all the
+	buildings, but can be applied to any selection of buildings (again, suggested by Benahmed Abdelkrim).
+	- Added some tests before the generation, if the timetable is impossible because of the constraints of type building(s) min one activity
+	in each available time slot (suggested by Benahmed Abdelkrim).
+	- Minor code improvements.
+	- Corrected the Arabic translation, by Benahmed Abdelkrim.
  7.8.2
 	- Updated to Qt 6.11.0.
 	- Converted the recently introduced constraints of type room(s) max teachers repetitions to the constraints of type room(s) max activities

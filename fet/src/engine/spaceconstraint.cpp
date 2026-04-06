@@ -44,6 +44,8 @@ File spaceconstraint.cpp
 
 extern Matrix2D<bool> breakDayHour;
 
+extern Matrix3D<bool> buildingNotAvailableDayHour;
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc)
 {
@@ -1044,7 +1046,7 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsOccupyMaxSetsO
 }
 
 //78
-QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc)
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActivityInEachAvailableTimeSlot& sc)
 {
 	//stream<<sc.type;
 	stream<<sc.weightPercentage;
@@ -1057,7 +1059,7 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActiv
 }
 
 //79
-QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc)
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot& sc)
 {
 	//stream<<sc.type;
 	stream<<sc.weightPercentage;
@@ -2093,7 +2095,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintRoomsOccupyMaxSetsOfTimeS
 }
 
 //78
-QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc)
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInEachAvailableTimeSlot& sc)
 {
 	//stream>>sc.type;
 	stream>>sc.weightPercentage;
@@ -2106,7 +2108,7 @@ QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInE
 }
 
 //79
-QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc)
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot& sc)
 {
 	//stream>>sc.type;
 	stream>>sc.weightPercentage;
@@ -2385,9 +2387,9 @@ bool SpaceConstraint::canBeUsedInOfficialMode()
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			[[fallthrough]];
@@ -2566,9 +2568,9 @@ bool SpaceConstraint::canBeUsedInMorningsAfternoonsMode()
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			[[fallthrough]];
@@ -2710,9 +2712,9 @@ bool SpaceConstraint::canBeUsedInBlockPlanningMode()
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			[[fallthrough]];
@@ -2854,9 +2856,9 @@ bool SpaceConstraint::canBeUsedInTermsMode()
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
-		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT:
 			[[fallthrough]];
 		case CONSTRAINT_ROOM_MAX_ACTIVITIES_PER_TEACHER:
 			[[fallthrough]];
@@ -25005,21 +25007,21 @@ bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHour(
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot()
+ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::ConstraintBuildingMinOneActivityInEachAvailableTimeSlot()
 	: SpaceConstraint()
 {
-	this->type=CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+	this->type=CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT;
 }
 
-ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot(double wp, const QString& _building)
+ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::ConstraintBuildingMinOneActivityInEachAvailableTimeSlot(double wp, const QString& _building)
  : SpaceConstraint(wp)
  {
 	this->building=_building;
 
-	this->type=CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+	this->type=CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::computeInternalStructure(QWidget* parent, Rules& r)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	Q_UNUSED(parent);
 
@@ -25029,27 +25031,27 @@ bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::computeInternalStru
 	return true;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::hasInactiveActivities(Rules& r)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::hasInactiveActivities(Rules& r)
 {
 	Q_UNUSED(r);
 	return false;
 }
 
-QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getXmlDescription(Rules& r)
+QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=IL2+"<ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot>\n";
+	QString s=IL2+"<ConstraintBuildingMinOneActivityInEachAvailableTimeSlot>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Building>"+protect(this->building)+"</Building>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
-	s+=IL2+"</ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot>\n";
+	s+=IL2+"</ConstraintBuildingMinOneActivityInEachAvailableTimeSlot>\n";
 	return s;
 }
 
-QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getDescription(Rules& r)
+QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
@@ -25063,20 +25065,20 @@ QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getDescription(R
 	
 	QString s;
 	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
-	s+=tr("Building min one activity in each non break time slot");s+=translatedCommaSpace();
+	s+=tr("Building min one activity in each available time slot");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("B:%1", "Building").arg(this->building);
 
 	return begin+s+end;
 }
 
-QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
 
 	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
-	s+=tr("A building has min one activity in each non break time slot");s+="\n";
+	s+=tr("A building has min one activity in each available time slot");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Building=%1").arg(this->building);s+="\n";
 
@@ -25092,7 +25094,7 @@ QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getDetailedDescr
 	return richText?protect4(s):s;
 }
 
-double ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+double ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
 {
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
@@ -25108,7 +25110,7 @@ double ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::fitness(Solution&
 	
 	for(int d=0; d<r.nDaysPerWeek; d++){
 		for(int h=0; h<r.nHoursPerDay; h++){
-			if(!breakDayHour[d][h]){
+			if(!breakDayHour[d][h] && !buildingNotAvailableDayHour[b][d][h]){
 				int rm;
 				for(rm=0; rm<r.nInternalRooms; rm++){
 					if(r.internalRoomsList[rm]->buildingIndex==b){
@@ -25122,7 +25124,7 @@ double ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::fitness(Solution&
 
 					if(conflictsString!=nullptr){
 						QString s=(tr(
-						 "Space constraint building min one activity in each non-break time slot broken for building %1, time slot's day %2, time slot's hour %3.")
+						 "Space constraint building min one activity in each available time slot broken for building %1, time slot's day %2, time slot's hour %3.")
 						 .arg(r.internalBuildingsList[b]->name)
 						 .arg(r.daysOfTheWeek[d])
 						 .arg(r.hoursOfTheDay[h])
@@ -25147,7 +25149,7 @@ double ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::fitness(Solution&
 	return weightPercentage/100 * nbroken;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivity(Rules& r, int aid)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToActivity(Rules& r, int aid)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(aid);
@@ -25155,28 +25157,28 @@ bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivity
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToTeacher(const QString& t)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToTeacher(const QString& t)
 {
 	Q_UNUSED(t)
 
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToSubject(const QString& s)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToSubject(const QString& s)
 {
 	Q_UNUSED(s);
 
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivityTag(const QString& s)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToActivityTag(const QString& s)
 {
 	Q_UNUSED(s);
 
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToStudentsSet(Rules& r, const QString& s)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToStudentsSet(Rules& r, const QString& s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -25184,33 +25186,33 @@ bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToStudents
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToRoom(const QString& r)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToRoom(const QString& r)
 {
 	Q_UNUSED(r);
 
 	return false;
 }
 
-int ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::categoryOfSpaceConstraint()
+int ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::categoryOfSpaceConstraint()
 {
 	return IS_BUILDING_SPACE_CONSTRAINT;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::hasWrongDayOrHour(Rules& r)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::canRepairWrongDayOrHour(Rules& r)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::canRepairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
 	
 	return false;
 }
 
-bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::repairWrongDayOrHour(Rules& r)
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::repairWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	assert(0);
@@ -25221,19 +25223,19 @@ bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::repairWrongDayOrHou
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot()
+ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot()
 	: SpaceConstraint()
 {
-	this->type=CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+	this->type=CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT;
 }
 
-ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot(double wp)
+ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot(double wp)
  : SpaceConstraint(wp)
  {
-	this->type=CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+	this->type=CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_AVAILABLE_TIME_SLOT;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::computeInternalStructure(QWidget* parent, Rules& r)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	Q_UNUSED(parent);
 	Q_UNUSED(r);
@@ -25241,26 +25243,26 @@ bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::computeInternalStr
 	return true;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::hasInactiveActivities(Rules& r)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::hasInactiveActivities(Rules& r)
 {
 	Q_UNUSED(r);
 	return false;
 }
 
-QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getXmlDescription(Rules& r)
+QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=IL2+"<ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>\n";
+	QString s=IL2+"<ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
-	s+=IL2+"</ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>\n";
+	s+=IL2+"</ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot>\n";
 	return s;
 }
 
-QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getDescription(Rules& r)
+QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
@@ -25274,19 +25276,19 @@ QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getDescription(
 	
 	QString s;
 	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
-	s+=tr("Buildings min one activity in each non break time slot");s+=translatedCommaSpace();
+	s+=tr("Buildings min one activity in each available time slot");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
 
-QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
 
 	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
-	s+=tr("All buildings have min one activity in each non break time slot");s+="\n";
+	s+=tr("All buildings have min one activity in each available time slot");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
@@ -25301,7 +25303,7 @@ QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getDetailedDesc
 	return richText?protect4(s):s;
 }
 
-double ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+double ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
 {
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
@@ -25317,7 +25319,7 @@ double ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::fitness(Solution
 	for(int b=0; b<r.nInternalBuildings; b++){
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			for(int h=0; h<r.nHoursPerDay; h++){
-				if(!breakDayHour[d][h]){
+				if(!breakDayHour[d][h] && !buildingNotAvailableDayHour[b][d][h]){
 					int rm;
 					for(rm=0; rm<r.nInternalRooms; rm++){
 						if(r.internalRoomsList[rm]->buildingIndex==b){
@@ -25331,7 +25333,7 @@ double ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::fitness(Solution
 
 						if(conflictsString!=nullptr){
 							QString s=(tr(
-							 "Space constraint buildings min one activity in each non-break time slot broken for building %1, time slot's day %2, time slot's hour %3.")
+							 "Space constraint buildings min one activity in each available time slot broken for building %1, time slot's day %2, time slot's hour %3.")
 							 .arg(r.internalBuildingsList[b]->name)
 							 .arg(r.daysOfTheWeek[d])
 							 .arg(r.hoursOfTheDay[h])
@@ -25357,7 +25359,7 @@ double ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::fitness(Solution
 	return weightPercentage/100 * nbroken;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivity(Rules& r, int aid)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToActivity(Rules& r, int aid)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(aid);
@@ -25365,28 +25367,28 @@ bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivit
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToTeacher(const QString& t)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToTeacher(const QString& t)
 {
 	Q_UNUSED(t)
 
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToSubject(const QString& s)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToSubject(const QString& s)
 {
 	Q_UNUSED(s);
 
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivityTag(const QString& s)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToActivityTag(const QString& s)
 {
 	Q_UNUSED(s);
 
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToStudentsSet(Rules& r, const QString& s)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToStudentsSet(Rules& r, const QString& s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -25394,33 +25396,33 @@ bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToStudent
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToRoom(const QString& r)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToRoom(const QString& r)
 {
 	Q_UNUSED(r);
 
 	return false;
 }
 
-int ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::categoryOfSpaceConstraint()
+int ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::categoryOfSpaceConstraint()
 {
 	return IS_BUILDING_SPACE_CONSTRAINT;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::hasWrongDayOrHour(Rules& r)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::hasWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::canRepairWrongDayOrHour(Rules& r)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::canRepairWrongDayOrHour(Rules& r)
 {
 	assert(hasWrongDayOrHour(r));
 	
 	return false;
 }
 
-bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::repairWrongDayOrHour(Rules& r)
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::repairWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	assert(0);
