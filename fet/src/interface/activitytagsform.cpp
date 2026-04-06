@@ -525,12 +525,12 @@ void ActivityTagsForm::longName()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QLineEdit* longNameLE=new QLineEdit();
-	longNameLE->setText(at->longName);
-	longNameLE->selectAll();
-	longNameLE->setFocus();
+	QTextEdit* longNameTE=new QTextEdit();
+	longNameTE->setPlainText(at->longName);
+	longNameTE->selectAll();
+	longNameTE->setFocus();
 	
-	vl->addWidget(longNameLE);
+	vl->addWidget(longNameTE);
 	vl->addLayout(hl);
 	
 	getLongNameDialog.setLayout(vl);
@@ -547,7 +547,7 @@ void ActivityTagsForm::longName()
 	if(t==QDialog::Accepted){
 		QString oln=at->longName;
 	
-		at->longName=longNameLE->text();
+		at->longName=longNameTE->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the long name for the activity tag %1 from\n%2\nto\n%3.").arg(at->name).arg(oln).arg(at->longName));
 	

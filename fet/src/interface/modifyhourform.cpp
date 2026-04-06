@@ -26,7 +26,7 @@ ModifyHourForm::ModifyHourForm(QWidget* parent, const QString& name, const QStri
 	restoreFETDialogGeometry(this);
 	
 	nameLineEdit->setText(name);
-	longNameLineEdit->setText(longName);
+	longNameTextEdit->setPlainText(longName);
 	
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
@@ -45,7 +45,7 @@ ModifyHourForm::~ModifyHourForm()
 void ModifyHourForm::ok()
 {
 	name=nameLineEdit->text();
-	longName=longNameLineEdit->text();
+	longName=longNameTextEdit->toPlainText();
 	
 	this->accept();
 }

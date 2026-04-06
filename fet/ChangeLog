@@ -1,9 +1,24 @@
+ 7.8.1
+	- Added two new constraint types, for exams in Algeria, Morocco, and maybe other countries: room(s) max teachers repetitions and building(s)
+	min one activity in each non-break time slot. These constraints were suggested and tested by Benahmed Abdelkrim (previously in the FET-NSRT
+	custom version) and have some preconditions (listed in their dialogs) to be used successfully.
+	- Added the options to select whether to print the names and/or long names of the days/hours and names and/or long names and/or codes of
+	the teachers in the teachers' free periods timetables and names and/or long names and/or codes of the teachers/students in the
+	teachers'/students' statistics timetables (suggested by Cyrus Ireri).
+	- Added the option to have long names on multiple lines for the days, real days, hours, real hours, subjects, activity tags, teachers,
+	students sets, buildings, and rooms (suggested by Cyrus Ireri). In this way, you can split the long names on multiple lines in the
+	resulted timetables.
+	- It is now possible to have the institution name on multiple lines.
+	- The option to print detailed teachers' free periods timetables was changed: if selected, the behavior is the same as in the older versions,
+	but, if not selected, the program will print all the free teachers in each corresponding time slot, but without printing any additional
+	information, and in the global order of the teachers (suggested by Cyrus Ireri, and maybe other users in the past).
+	- Minor interface bug fixes and improvements (an aesthetic improvement was suggested by Rodica Lalescu, in the 'Space' shortcuts tab).
  7.8.0
 	- Critical crash bugs fixed in the students groups/subgroups dialogs (following the report by miky).
  7.7.8
 	- Critical crash bugs fixed in the students groups/subgroups dialogs, if the "Colors" check boxes were selected (reported by miky).
 	- Removed the warnings that the constraints of type "activities max total number of students in selected time slots" can be very slow;
-	hopefully the constraints of this type work correctly.
+	hopefully, the constraints of this type work correctly.
 	- Minor corrections and improvements.
  7.7.7
 	- Added three new types of space constraints: room(s) pair of mutually exclusive time slots, room(s) pair of mutually exclusive sets of time slots,

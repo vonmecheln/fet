@@ -41,9 +41,9 @@ InstitutionNameForm::InstitutionNameForm(QWidget* parent): QDialog(parent)
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	institutionNameLineEdit->setText(gt.rules.institutionName);
-	institutionNameLineEdit->selectAll();
-	institutionNameLineEdit->setFocus();
+	institutionNameTextEdit->setPlainText(gt.rules.institutionName);
+	institutionNameTextEdit->selectAll();
+	institutionNameTextEdit->setFocus();
 }
 
 InstitutionNameForm::~InstitutionNameForm()
@@ -56,7 +56,7 @@ void InstitutionNameForm::ok()
 	if(!generation_running && !generation_running_multi){
 		QString oin=gt.rules.institutionName;
 	
-		gt.rules.setInstitutionName(institutionNameLineEdit->text());
+		gt.rules.setInstitutionName(institutionNameTextEdit->toPlainText());
 		
 		gt.rules.addUndoPoint(tr("Changed the institution name from %1 to %2.").arg(oin).arg(gt.rules.institutionName));
 	}

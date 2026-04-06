@@ -1059,7 +1059,27 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 	/////
 	//
 	//2024-06-12 end
-	
+
+	//2026-03-11 begin
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_NAMES=settings.value("settings-timetables-teachers-free-periods-print-days-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_LONG_NAMES=settings.value("settings-timetables-teachers-free-periods-print-days-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_NAMES=settings.value("settings-timetables-teachers-free-periods-print-hours-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_LONG_NAMES=settings.value("settings-timetables-teachers-free-periods-print-hours-long-names", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-teachers-free-periods-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-free-periods-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-free-periods-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=settings.value("settings-timetables-teachers-statistics-print-teachers-names", "true").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=settings.value("settings-timetables-teachers-statistics-print-teachers-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=settings.value("settings-timetables-teachers-statistics-print-teachers-codes", "false").toBool();
+
+	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=settings.value("settings-timetables-students-statistics-print-students-names", "true").toBool();
+	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=settings.value("settings-timetables-students-statistics-print-students-long-names", "false").toBool();
+	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=settings.value("settings-timetables-students-statistics-print-students-codes", "false").toBool();
+	//2026-03-11 end
+
 	//main form
 	QRect rect=settings.value("FetMainForm/geometry", QRect(0,0,0,0)).toRect();
 	mainFormSettingsRect=rect;
@@ -1852,6 +1872,26 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("settings-timetables-activities-time-hv-print-legend-codes-first", SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST);
 	/////
 	//2024-06-12 end
+
+	//2026-03-11 begin
+	settings.setValue("settings-timetables-teachers-free-periods-print-days-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_NAMES);
+	settings.setValue("settings-timetables-teachers-free-periods-print-days-long-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_LONG_NAMES);
+
+	settings.setValue("settings-timetables-teachers-free-periods-print-hours-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_NAMES);
+	settings.setValue("settings-timetables-teachers-free-periods-print-hours-long-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_LONG_NAMES);
+
+	settings.setValue("settings-timetables-teachers-free-periods-print-teachers-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES);
+	settings.setValue("settings-timetables-teachers-free-periods-print-teachers-long-names", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES);
+	settings.setValue("settings-timetables-teachers-free-periods-print-teachers-codes", SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES);
+
+	settings.setValue("settings-timetables-teachers-statistics-print-teachers-names", SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES);
+	settings.setValue("settings-timetables-teachers-statistics-print-teachers-long-names", SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES);
+	settings.setValue("settings-timetables-teachers-statistics-print-teachers-codes", SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES);
+
+	settings.setValue("settings-timetables-students-statistics-print-students-names", SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES);
+	settings.setValue("settings-timetables-students-statistics-print-students-long-names", SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES);
+	settings.setValue("settings-timetables-students-statistics-print-students-codes", SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES);
+	//2026-03-11 end
 
 	//main form
 	settings.setValue("FetMainForm/geometry", mainFormSettingsRect);

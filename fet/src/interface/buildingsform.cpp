@@ -430,12 +430,12 @@ void BuildingsForm::longName()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QLineEdit* longNameLE=new QLineEdit();
-	longNameLE->setText(bu->longName);
-	longNameLE->selectAll();
-	longNameLE->setFocus();
+	QTextEdit* longNameTE=new QTextEdit();
+	longNameTE->setPlainText(bu->longName);
+	longNameTE->selectAll();
+	longNameTE->setFocus();
 	
-	vl->addWidget(longNameLE);
+	vl->addWidget(longNameTE);
 	vl->addLayout(hl);
 	
 	getLongNameDialog.setLayout(vl);
@@ -452,7 +452,7 @@ void BuildingsForm::longName()
 	if(t==QDialog::Accepted){
 		QString oln=bu->longName;
 	
-		bu->longName=longNameLE->text();
+		bu->longName=longNameTE->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the long name for the building %1 from\n%2\nto\n%3.").arg(bu->name).arg(oln).arg(bu->longName));
 	

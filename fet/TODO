@@ -12941,3 +12941,106 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.msg37534#msg37534
 Allow the viewing of buildings timetables in different formats via the FET interface: horizontal days, vertical days and horizontal times.
 
 (Note by Liviu Lalescu: Benahmed Abdelkrim refers to the FET-NSRT custom version.)
+
+835---------------------------------------------------------
+From sasbland (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6775.0
+
+Let say a subject has 2 sessions per week. If one session is the last lesson on one day, I want to avoid the other session being the first lesson
+the next day. There should be one or more of other lessons in between. Similar idea to min resting hrs. Is this possible?
+
+Liviu Lalescu:
+
+Maybe n_days_per_week-1 constraints activities pair of mutually exclusive time slots for each pair of activities. So math cannot be the last hour
+on Monday and the first hour on Tuesday.
+
+sasbland:
+
+It looks like I have to add each activity one by one and select each pair of day (Mon-Tue, Tue-Wed etc.) Is that correct? That is a lot of constraints
+as I actually want all activities to avoid slots like this.
+
+Liviu Lalescu:
+
+Yes, unfortunately a lot of data inputting work...
+
+Maybe a suitable name and behavior for a possible new constraint could be devised.
+
+836---------------------------------------------------------
+From ptrdtznr (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6782.0
+
+I am trying to achieve a deterministic generation process. My goal is to be able to recreate the exact same timetable after making very minor adjustments
+(or even with no changes at all) to see how the algorithm reacts to small data variations.
+
+However, even though I have set a fixed random seed in the settings, every time I hit "Generate", I get a slightly different result (different number of
+iterations or different placement of activities).
+
+My setup:
+FET Version: 7.8.0
+Random Seed: Set to "Fixed" (e.g., 12345).
+Data: I am testing this without changing any data between runs.
+
+Am I missing something? I suspect it might be related to the number of threads used for generation. Does the multi-threading affect the determinism of the
+algorithm even if the seed is fixed?
+
+Should I set the "Number of threads" to 1 to get 100% reproducible results? And are there any other "hidden" factors (like the order of activities or
+constraints) that could break the deterministic chain?
+
+Liviu Lalescu:
+
+Fixed means s10, s11, s12, s20, s21, and s22 have respectively the same values as s'10, ..., s'22.
+
+To replicate a timetable, the seed must be fixed, the FET algorithm must be the same (so, the same FET version, or a FET version with an identical algorithm),
+and the data file must be identical. Even a slight variation can lead to totally different results.
+
+The single generation starts with the inputted seed in the settings; the multiple uses the inputted seed from the settings to initialize each thread
+differently - the seeds for each thread are written in the fet-results. You need to either have a single thread to have the same seed as single generation,
+or generate multiple on the same number of threads respectively, and the seeds will be the same.
+
+No other hidden things to change behavior, but only the above.
+
+ptrdtznr:
+
+Thanks for the detailed answer. Any chance to set the seeds s10, s11, s12, s20, s21, s22 for all time to the same value? I don't want to change it after
+every run, to re-create the same results (in case I haven't made a single change in the planing).
+
+Liviu Lalescu:
+
+It would be possible to make an official FET setting for this, but I really don't want, because it is very bad for the casual users, who might misunderstand its use.
+
+In FET-CL, you can input the seed s10, ..., s22 as a command-line parameter. But not in FET.
+
+ptrdtznr:
+
+I mean, if you have this options disabled and only allow it, once the user has read carefully the implications, I think this is a reasonable solution...
+
+Liviu Lalescu:
+
+I will add your suggestion in the TODO. But I strongly resist/object it...
+
+Volker Dirr:
+
+I also think this is a bad option for most users.
+
+Also: Even if you need it now, as soon as you do the new timetable 6 or 12 month later, you probably forgot that you set that fixed feed.
+
+So if you ever add the feature, then in my opinion it must be also added:
+
+a) A warning if you try to generate multiple timetables at once. It should disallow it and warn that it is only useful if you disable the settings again.
+
+b) A warning with EACH single generation. Because users will forget after some time that they fixed the seed.
+
+837---------------------------------------------------------
+From GUEFFAZ REDA (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot, with a suggested new type of constraint: a building's not available times.
+
+838---------------------------------------------------------
+From Anthony Siaudeau (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=3707.msg37811#msg37811
+
+What I really missed were tags for the FET days (I'm thinking of tags named week1, week2, etc.) to create time constraints based on these tags that are simpler,
+fewer in number, and more readable than the constraints I used.

@@ -141,6 +141,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 	subjectsComboBox=nullptr;
 	activityTagsComboBox=nullptr;
 	roomsComboBox=nullptr;
+	buildingsComboBox=nullptr;
 
 	helpPushButton=nullptr;
 
@@ -1024,6 +1025,76 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//78
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				dialogTitle=tr("Constraints building min one activity in each non-break time slot", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsBuildingMinOneActivityInEachNonBreakTimeSlot");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
+													+tr("- each building must have this constraint")+"\n"
+													//+tr("- all the activities must have duration 1")+"\n"
+													+tr("- all the rooms must be real (not virtual)")+"\n"
+													+tr("- each room must be in a certain building")+"\n"
+													+tr("- each activity must have at least one preferred room(s) constraint with weight 100%")
+												  );
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				buildingsComboBox=new QComboBox;
+
+				break;
+			}
+		//79
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				dialogTitle=tr("Constraints buildings min one activity in each non-break time slot", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlot");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
+													+tr("- each building must have this constraint")+"\n"
+													//+tr("- all the activities must have duration 1")+"\n"
+													+tr("- all the rooms must be real (not virtual)")+"\n"
+													+tr("- each room must be in a certain building")+"\n"
+													+tr("- each activity must have at least one preferred room(s) constraint with weight 100%")
+												  );
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			{
+				dialogTitle=tr("Constraints room max teachers repetitions", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomMaxTeachersRepetitions");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				secondInstructionsLabel=new QLabel(tr("This room will respect the maximum teachers repetitions over the whole week, for each"
+														" activity having a single teacher."));
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				roomsComboBox=new QComboBox;
+
+				break;
+			}
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			{
+				dialogTitle=tr("Constraints rooms max teachers repetitions", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsRoomsMaxTeachersRepetitions");
+
+				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				secondInstructionsLabel=new QLabel(tr("All rooms will respect the maximum teachers repetitions over the whole week, for each"
+														" activity having a single teacher."));
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -1120,11 +1191,24 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 		connect(roomsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListSpaceConstraints::filter);
 	}
 
+	if(buildingsComboBox!=nullptr){
+		QSize tmp=buildingsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+
+		buildingsComboBox->addItem("");
+		for(Building* bu : std::as_const(gt.rules.buildingsList))
+			buildingsComboBox->addItem(bu->name);
+		buildingsComboBox->setCurrentIndex(0);
+
+		connect(buildingsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListSpaceConstraints::filter);
+	}
+
 	if(teachersComboBox!=nullptr
 			|| studentsComboBox!=nullptr
 			|| subjectsComboBox!=nullptr
 			|| activityTagsComboBox!=nullptr
-			|| roomsComboBox!=nullptr){
+			|| roomsComboBox!=nullptr
+			|| buildingsComboBox!=nullptr){
 		filterGroupBox=new QGroupBox(tr("Filter"));
 
 		QVBoxLayout* layout=new QVBoxLayout;
@@ -1152,6 +1236,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 			layout->addWidget(activityTagsComboBox);
 		if(roomsComboBox!=nullptr)
 			layout->addWidget(roomsComboBox);
+		if(buildingsComboBox!=nullptr)
+			layout->addWidget(buildingsComboBox);
 
 		filterGroupBox->setLayout(layout);
 	}
@@ -2389,6 +2475,42 @@ filtered_ok:
 
 				break;
 			}
+		//78
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				assert(buildingsComboBox!=nullptr);
+
+				ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)sc;
+				return buildingsComboBox->currentText()=="" || ctr->building==buildingsComboBox->currentText();
+
+				break;
+			}
+		//79
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				//ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)sc;
+				return true;
+
+				break;
+			}
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			{
+				assert(roomsComboBox!=nullptr);
+
+				ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)sc;
+				return roomsComboBox->currentText()=="" || ctr->room==roomsComboBox->currentText();
+
+				break;
+			}
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			{
+				//ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)sc;
+				return true;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -2448,6 +2570,7 @@ void ListSpaceConstraints::addClicked()
 	QString preselectedSubjectName;
 	QString preselectedActivityTagName;
 	QString preselectedRoomName;
+	QString preselectedBuildingName;
 
 	if(teachersComboBox!=nullptr)
 		preselectedTeacherName=teachersComboBox->currentText();
@@ -2474,9 +2597,14 @@ void ListSpaceConstraints::addClicked()
 	else
 		preselectedRoomName=QString();
 
+	if(buildingsComboBox!=nullptr)
+		preselectedBuildingName=buildingsComboBox->currentText();
+	else
+		preselectedBuildingName=QString();
+
 	AddOrModifySpaceConstraint aomsc(dialog, type, nullptr,
 	 preselectedTeacherName, preselectedStudentsSetName, preselectedSubjectName, preselectedActivityTagName,
-	 preselectedRoomName);
+	 preselectedRoomName, preselectedBuildingName);
 
 	int finalNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
 
@@ -2739,6 +2867,58 @@ void ListSpaceConstraints::helpClicked()
 				s+=tr("This constraint ensures that all the rooms can have activities in a specified maximum"
 				 " number of sets of time slots from a selection of sets of time slots. The unselected time slots are not"
 				 " subject to constraints.");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//78
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		//79
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Benahmed Abdelkrim");
+				s+="\n\n";
+				s+=tr("This constraint is used for exams in some countries, such as Algeria and Morocco.");
+				s+="\n";
+				s+=tr("You have some examples in the %1 directory of the FET examples, and you can read more on these"
+				 " two FET forum links: %2 and %3.")
+				 .arg("exams")
+				 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4448.0")
+				 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.0");
+				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			[[fallthrough]];
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				.arg("Benahmed Abdelkrim");
+				s+="\n\n";
+				s+=tr("This constraint is used for exams in some countries, such as Algeria and Morocco.");
+				s+="\n\n";
+				s+=tr("The repetitions are counted for each room and teacher, based on activities, for each activity having a single teacher."
+				 " If the room(s) must not have more than 1 activity with a certain teacher per week, the maximum number of repetitions is 0. If"
+				 " the room(s) must not have more than 2 activities with a certain teacher per week, the maximum number of repetitions is 1."
+				 " If the room(s) must not have more than 3 activities with a certain teacher per week, the maximum number of repetitions is 2, and so on.");
+				s+="\n\n";
+				s+=tr("If you select the option 'Force same room in a building' then, for each teacher who has activities in a certain building,"
+				 " the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).");
+				s+="\n\n";
+				s+=tr("You have some examples in the %1 directory of the FET examples, and you can read more on these"
+				 " two FET forum links: %2 and %3.")
+				 .arg("exams")
+				 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4448.0")
+				 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.0");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);

@@ -687,12 +687,12 @@ void GroupsForm::longName()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QLineEdit* longNameLE=new QLineEdit();
-	longNameLE->setText(studentsSet->longName);
-	longNameLE->selectAll();
-	longNameLE->setFocus();
+	QTextEdit* longNameTE=new QTextEdit();
+	longNameTE->setPlainText(studentsSet->longName);
+	longNameTE->selectAll();
+	longNameTE->setFocus();
 	
-	vl->addWidget(longNameLE);
+	vl->addWidget(longNameTE);
 	vl->addLayout(hl);
 	
 	getLongNameDialog.setLayout(vl);
@@ -709,7 +709,7 @@ void GroupsForm::longName()
 	if(t==QDialog::Accepted){
 		QString oln=studentsSet->longName;
 	
-		studentsSet->longName=longNameLE->text();
+		studentsSet->longName=longNameTE->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the long name for the group %1 from\n%2\nto\n%3.").arg(groupName).arg(oln).arg(studentsSet->longName));
 	

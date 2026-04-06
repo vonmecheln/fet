@@ -630,27 +630,6 @@ void TimetableGenerateMultipleForm::start(){
 	timeLimit=60*minutesSpinBox->value(); //seconds
 	assert(timeLimit>0);
 
-	//2024-10-07
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
-
-	if(s2.right(4)==".fet")
-		s2=s2.left(s2.length()-4);
-	
-	MULTIPLE_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multiple";
-
-	if(QFileInfo::exists(MULTIPLE_OUTPUT_DIRECTORY)){
-		int i=2;
-		for(;;){
-			QString CODN=MULTIPLE_OUTPUT_DIRECTORY+"-"+QString::number(i);
-			if(!QFileInfo::exists(CODN)){
-				MULTIPLE_OUTPUT_DIRECTORY=CODN;
-				break;
-			}
-			i++;
-		}
-	}
-	////////////
-
 	if(!gt.rules.internalStructureComputed){
 		if(!gt.rules.computeInternalStructure(this)){
 			QMessageBox::warning(this, TimetableGenerateMultipleForm::tr("FET warning"), TimetableGenerateMultipleForm::tr("Data is wrong. Please correct and try again"));
@@ -678,6 +657,27 @@ void TimetableGenerateMultipleForm::start(){
 
 		return;
 	}
+
+	//2024-10-07
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	
+	MULTIPLE_OUTPUT_DIRECTORY=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multiple";
+
+	if(QFileInfo::exists(MULTIPLE_OUTPUT_DIRECTORY)){
+		int i=2;
+		for(;;){
+			QString CODN=MULTIPLE_OUTPUT_DIRECTORY+"-"+QString::number(i);
+			if(!QFileInfo::exists(CODN)){
+				MULTIPLE_OUTPUT_DIRECTORY=CODN;
+				break;
+			}
+			i++;
+		}
+	}
+	////////////
 
 	//assert(controllersList.count()==0);
 	for(int t=0; t<nThreads; t++){

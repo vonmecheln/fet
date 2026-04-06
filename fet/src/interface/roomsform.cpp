@@ -622,12 +622,12 @@ void RoomsForm::longName()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QLineEdit* longNameLE=new QLineEdit();
-	longNameLE->setText(rm->longName);
-	longNameLE->selectAll();
-	longNameLE->setFocus();
+	QTextEdit* longNameTE=new QTextEdit();
+	longNameTE->setPlainText(rm->longName);
+	longNameTE->selectAll();
+	longNameTE->setFocus();
 	
-	vl->addWidget(longNameLE);
+	vl->addWidget(longNameTE);
 	vl->addLayout(hl);
 	
 	getLongNameDialog.setLayout(vl);
@@ -644,7 +644,7 @@ void RoomsForm::longName()
 	if(t==QDialog::Accepted){
 		QString oln=rm->longName;
 	
-		rm->longName=longNameLE->text();
+		rm->longName=longNameTE->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the long name for the room %1 from\n%2\nto\n%3.").arg(rm->name).arg(oln).arg(rm->longName));
 	

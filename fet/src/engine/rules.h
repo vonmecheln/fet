@@ -286,6 +286,8 @@ public:
 	int nInternalBuildings;
 	Matrix1D<Building*> internalBuildingsList;
 
+	Matrix1D<QList<int>> roomsInBuilding;
+
 	int nInternalTimeConstraints;
 	Matrix1D<TimeConstraint*> internalTimeConstraintsList;
 
@@ -1244,6 +1246,11 @@ private:
 	SpaceConstraint* readRoomNotAvailableTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readTeacherRoomNotAvailableTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readRoomMaxTeachersRepetitions(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomsMaxTeachersRepetitions(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readBuildingMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readBuildingsMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readActivityPreferredRoom(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedSpace);

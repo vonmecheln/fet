@@ -552,6 +552,34 @@
            </property>
            <item row="0" column="0">
             <layout class="QGridLayout" name="gridLayout_2">
+             <item row="3" column="1">
+              <widget class="QPushButton" name="shortcutStudentsSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="3">
+              <widget class="Line" name="line_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" colspan="3">
+              <widget class="Line" name="line_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QPushButton" name="shortcutTeachersSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
+               </property>
+              </widget>
+             </item>
              <item row="0" column="0">
               <widget class="QPushButton" name="shortcutAllSpaceConstraintsPushButton">
                <property name="text">
@@ -559,66 +587,31 @@
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
-              <widget class="QPushButton" name="shortcutActivitiesSpaceConstraintsPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Activities</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="2">
+             <item row="3" column="2">
               <widget class="QPushButton" name="shortcutRoomsSpaceConstraintsPushButton">
                <property name="text">
                 <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QPushButton" name="shortcutTeachersSpaceConstraintsPushButton">
+             <item row="6" column="2">
+              <widget class="QPushButton" name="shortcutBuildingsSpaceConstraintsPushButton">
                <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
+                <string>Buildings</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="1">
-              <widget class="QPushButton" name="shortcutStudentsSpaceConstraintsPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="shortcutSubjectsSpaceConstraintsPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Subjects</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QPushButton" name="shortcutActivityTagsSpaceConstraintsPushButton">
-               <property name="text">
-                <string comment="It means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short">Tags</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1" colspan="2">
+             <item row="0" column="1" colspan="2">
               <widget class="QPushButton" name="shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton">
                <property name="text">
                 <string comment="Tags means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short">Subjects and tags</string>
                </property>
               </widget>
              </item>
-             <item row="3" column="0" colspan="3">
-              <widget class="Line" name="line_4">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0" colspan="3">
-              <widget class="Line" name="line_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+             <item row="6" column="0" colspan="2">
+              <widget class="QPushButton" name="shortcutActivitiesSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Activities</string>
                </property>
               </widget>
              </item>
@@ -880,6 +873,7 @@
     <addaction name="separator"/>
     <addaction name="helpMoroccoAction"/>
     <addaction name="helpAlgeriaAction"/>
+    <addaction name="helpExamsAlgeriaMoroccoAction"/>
     <addaction name="separator"/>
     <addaction name="helpBlockPlanningAction"/>
     <addaction name="separator"/>
@@ -1092,11 +1086,6 @@
        <string>Activities</string>
       </property>
      </widget>
-     <widget class="QMenu" name="menuSubjects_space_constraints">
-      <property name="title">
-       <string>Subjects</string>
-      </property>
-     </widget>
      <widget class="QMenu" name="menuSubjects_and_activity_tags_space_constraints">
       <property name="title">
        <string>Subjects and activity tags</string>
@@ -1136,17 +1125,28 @@
       <addaction name="menuA_teacher_space_constraints"/>
       <addaction name="menuAll_teachers_space_constraints"/>
      </widget>
-     <widget class="QMenu" name="menuActivity_tags_space_constraints">
+     <widget class="QMenu" name="menuBuildings_space_constraints">
       <property name="title">
-       <string>Activity tags</string>
+       <string>Buildings</string>
       </property>
+      <widget class="QMenu" name="menuA_building_space_constraints">
+       <property name="title">
+        <string>A building</string>
+       </property>
+      </widget>
+      <widget class="QMenu" name="menuAll_buildings_space_constraints">
+       <property name="title">
+        <string>All buildings</string>
+       </property>
+      </widget>
+      <addaction name="menuA_building_space_constraints"/>
+      <addaction name="menuAll_buildings_space_constraints"/>
      </widget>
      <addaction name="menuMisc_space_constraints"/>
+     <addaction name="menuBuildings_space_constraints"/>
      <addaction name="menuRooms_space_constraints"/>
      <addaction name="menuTeachers_space_constraints"/>
      <addaction name="menuStudents_space_constraints"/>
-     <addaction name="menuSubjects_space_constraints"/>
-     <addaction name="menuActivity_tags_space_constraints"/>
      <addaction name="menuSubjects_and_activity_tags_space_constraints"/>
      <addaction name="menuActivities_space_constraints"/>
     </widget>
@@ -2221,6 +2221,11 @@
   <action name="backupSettingsToFileAction">
    <property name="text">
     <string comment="Save the FET settings to a file.">Backup settings to file</string>
+   </property>
+  </action>
+  <action name="helpExamsAlgeriaMoroccoAction">
+   <property name="text">
+    <string>Exams in Algeria and Morocco</string>
    </property>
   </action>
  </widget>

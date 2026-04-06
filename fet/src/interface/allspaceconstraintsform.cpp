@@ -112,6 +112,7 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	studentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-students-constraints"), "true").toBool());
 	activitiesCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-activities-constraints"), "true").toBool());
 	roomsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-rooms-constraints"), "true").toBool());
+	buildingsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-buildings-constraints"), "true").toBool());
 	subjectsAndTagsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-subjects-and-tags-constraints"), "true").toBool());
 
 	QString settingsName="AllSpaceConstraintsAdvancedFilterForm";
@@ -152,6 +153,7 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	connect(studentsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
 	connect(activitiesCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
 	connect(roomsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
+	connect(buildingsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
 	connect(subjectsAndTagsCheckBox, &QCheckBox::toggled, this, &AllSpaceConstraintsForm::filterChanged);
 
 	connect(moveSpaceConstraintUpPushButton, &QPushButton::clicked, this, &AllSpaceConstraintsForm::moveSpaceConstraintUp);
@@ -242,6 +244,7 @@ AllSpaceConstraintsForm::~AllSpaceConstraintsForm()
 	settings.setValue(this->metaObject()->className()+QString("/list-students-constraints"), studentsCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/list-activities-constraints"), activitiesCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/list-rooms-constraints"), roomsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/list-buildings-constraints"), buildingsCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/list-subjects-and-tags-constraints"), subjectsAndTagsCheckBox->isChecked());
 
 	QString settingsName="AllSpaceConstraintsAdvancedFilterForm";
@@ -291,6 +294,11 @@ bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 
 		case IS_ROOM_SPACE_CONSTRAINT:
 			if(!roomsCheckBox->isChecked())
+				return false;
+			break;
+
+		case IS_BUILDING_SPACE_CONSTRAINT:
+			if(!buildingsCheckBox->isChecked())
 				return false;
 			break;
 

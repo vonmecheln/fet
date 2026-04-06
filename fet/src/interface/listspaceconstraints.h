@@ -113,6 +113,7 @@ class ListSpaceConstraints: public QObject
 	QComboBox* subjectsComboBox;
 	QComboBox* activityTagsComboBox;
 	QComboBox* roomsComboBox;
+	QComboBox* buildingsComboBox;
 
 	QPushButton* addRemoveMultipleConstraintsPushButton;
 

@@ -220,7 +220,7 @@ AddOrModifySpaceConstraintDialog::~AddOrModifySpaceConstraintDialog()
 
 AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _type, SpaceConstraint* _oldsc,
  const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedSubjectName, const QString& _preselectedActivityTagName,
- const QString& _preselectedRoomName, const QList<int>& _filteredActivitiesIdsList)
+ const QString& _preselectedRoomName, const QString& _preselectedBuildingName, const QList<int>& _filteredActivitiesIdsList)
 {
 	type=_type;
 	oldsc=_oldsc;
@@ -308,6 +308,9 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 	roomLabel=nullptr;
 	roomsComboBox=nullptr;
+
+	buildingLabel=nullptr;
+	buildingsComboBox=nullptr;
 
 	tabWidgetPairOfMutuallyExclusiveSets=nullptr;
 
@@ -2342,6 +2345,86 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 				break;
 			}
+		//78
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				if(oldsc==nullptr){
+					dialogTitle=tr("Add building min one activity in each non-break time slot", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintBuildingMinOneActivityInEachNonBreakTimeSlot");
+				}
+				else{
+					dialogTitle=tr("Modify building min one activity in each non-break time slot", "The title of the dialog to modify a new constraint of this type");
+					dialogName=QString("ModifyConstraintBuildingMinOneActivityInEachNonBreakTimeSlot");
+				}
+
+				buildingLabel=new QLabel(tr("Building"));
+				buildingsComboBox=new QComboBox;
+
+				break;
+			}
+		//79
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				if(oldsc==nullptr){
+					dialogTitle=tr("Add buildings min one activity in each non-break time slot", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot");
+				}
+				else{
+					dialogTitle=tr("Modify buildings min one activity in each non-break time slot", "The title of the dialog to modify a new constraint of this type");
+					dialogName=QString("ModifyConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot");
+				}
+
+				break;
+			}
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			{
+				if(oldsc==nullptr){
+					dialogTitle=tr("Add room max teachers repetitions", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintRoomMaxTeachersRepetitions");
+				}
+				else{
+					dialogTitle=tr("Modify room max teachers repetitions", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintRoomMaxTeachersRepetitions");
+				}
+
+				roomLabel=new QLabel(tr("Room"));
+				roomsComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max teachers repetitions"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(MAX_ACTIVITIES);
+				spinBox->setValue(0);
+
+				checkBox=new QCheckBox(tr("Force same room in a building"));
+				checkBox->setChecked(false);
+
+				break;
+			}
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			{
+				if(oldsc==nullptr){
+					dialogTitle=tr("Add rooms max teachers repetitions", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintRoomsMaxTeachersRepetitions");
+				}
+				else{
+					dialogTitle=tr("Modify rooms max teachers repetitions", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintRoomsMaxTeachersRepetitions");
+				}
+
+				labelForSpinBox=new QLabel(tr("Max teachers repetitions"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(MAX_ACTIVITIES);
+				spinBox->setValue(0);
+
+				checkBox=new QCheckBox(tr("Force same room in a building"));
+				checkBox->setChecked(false);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -2495,6 +2578,21 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 		roomsComboBox->setCurrentIndex(0);
 	}
 
+	QVBoxLayout* buildingLayout=nullptr;
+	if(buildingsComboBox!=nullptr){
+		buildingLayout=new QVBoxLayout;
+		if(buildingLabel!=nullptr)
+			buildingLayout->addWidget(buildingLabel);
+		buildingLayout->addWidget(buildingsComboBox);
+
+		/*if(addEmpty)
+			buildingsComboBox->addItem(QString(""));*/
+		for(Building* bu : std::as_const(gt.rules.buildingsList))
+			buildingsComboBox->addItem(bu->name);
+
+		buildingsComboBox->setCurrentIndex(0);
+	}
+
 	if(oldsc==nullptr && !addEmpty){
 		if(teachersComboBox!=nullptr){
 			if(!_preselectedTeacherName.isEmpty()){
@@ -2540,6 +2638,15 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 				int q=roomsComboBox->findText(_preselectedRoomName);
 				if(q>=0){
 					roomsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+
+		if(buildingsComboBox!=nullptr){
+			if(!_preselectedBuildingName.isEmpty()){
+				int q=buildingsComboBox->findText(_preselectedBuildingName);
+				if(q>=0){
+					buildingsComboBox->setCurrentIndex(q);
 				}
 			}
 		}
@@ -2786,6 +2893,10 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 		QSize tmp=roomsComboBox->minimumSizeHint();
 		Q_UNUSED(tmp);
 	}
+	if(buildingsComboBox!=nullptr){
+		QSize tmp=buildingsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+	}
 	if(activitiesComboBox!=nullptr){
 		QSize tmp=activitiesComboBox->minimumSizeHint();
 		Q_UNUSED(tmp);
@@ -3005,6 +3116,8 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 			wholeDialog->addLayout(activityTagLayout);
 		if(roomLayout!=nullptr)
 			wholeDialog->addLayout(roomLayout);
+		if(buildingLayout!=nullptr)
+			wholeDialog->addLayout(buildingLayout);
 
 		if(firstTimeSlotGroupBox!=nullptr)
 			wholeDialog->addWidget(firstTimeSlotGroupBox);
@@ -4248,6 +4361,46 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 					break;
 				}
+			//78
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+
+					buildingsComboBox->setCurrentIndex(buildingsComboBox->findText(ctr->building));
+
+					break;
+				}
+			//79
+			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					//ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+
+					break;
+				}
+			//80
+			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)oldsc;
+
+					roomsComboBox->setCurrentIndex(roomsComboBox->findText(ctr->room));
+
+					spinBox->setValue(ctr->maxTeachersRepetitions);
+
+					checkBox->setChecked(ctr->forceSameRoomInABuilding);
+
+					break;
+				}
+			//81
+			case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomsMaxTeachersRepetitions* ctr=(ConstraintRoomsMaxTeachersRepetitions*)oldsc;
+
+					spinBox->setValue(ctr->maxTeachersRepetitions);
+
+					checkBox->setChecked(ctr->forceSameRoomInABuilding);
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -4396,6 +4549,16 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 		int room_ID=gt.rules.searchRoom(room_name);
 		if(room_ID<0){
 			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid room"));
+			return;
+		}
+	}
+
+	if(/*!addEmpty &&*/ buildingsComboBox!=nullptr){
+		//assert(filterGroupBox==nullptr);
+		QString building_name=buildingsComboBox->currentText();
+		int building_ID=gt.rules.searchBuilding(building_name);
+		if(building_ID<0){
+			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid building"));
 			return;
 		}
 	}
@@ -5747,6 +5910,34 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 
 				break;
 			}
+		//78
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				sc=new ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot(weight, buildingsComboBox->currentText());
+
+				break;
+			}
+		//79
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				sc=new ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot(weight);
+
+				break;
+			}
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			{
+				sc=new ConstraintRoomMaxTeachersRepetitions(weight, roomsComboBox->currentText(), spinBox->value(), checkBox->isChecked());
+
+				break;
+			}
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			{
+				sc=new ConstraintRoomsMaxTeachersRepetitions(weight, spinBox->value(), checkBox->isChecked());
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -6173,6 +6364,16 @@ void AddOrModifySpaceConstraint::okClicked()
 		int room_ID=gt.rules.searchRoom(room_name);
 		if(room_ID<0){
 			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid room"));
+			return;
+		}
+	}
+
+	if(/*!addEmpty &&*/ buildingsComboBox!=nullptr){
+		//assert(filterGroupBox==nullptr);
+		QString building_name=buildingsComboBox->currentText();
+		int building_ID=gt.rules.searchBuilding(building_name);
+		if(building_ID<0){
+			QMessageBox::warning(dialog, tr("FET information"), tr("Invalid building"));
 			return;
 		}
 	}
@@ -7822,6 +8023,46 @@ void AddOrModifySpaceConstraint::okClicked()
 
 				break;
 			}
+		//78
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+
+				ctr->building=buildingsComboBox->currentText();
+
+				break;
+			}
+		//79
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			{
+				//ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* ctr=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)oldsc;
+
+				break;
+			}
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			{
+				ConstraintRoomMaxTeachersRepetitions* ctr=(ConstraintRoomMaxTeachersRepetitions*)oldsc;
+
+				ctr->room=roomsComboBox->currentText();
+
+				ctr->maxTeachersRepetitions=spinBox->value();
+
+				ctr->forceSameRoomInABuilding=checkBox->isChecked();
+				
+				break;
+			}
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+			{
+				ConstraintRoomsMaxTeachersRepetitions* ctr=(ConstraintRoomsMaxTeachersRepetitions*)oldsc;
+
+				ctr->maxTeachersRepetitions=spinBox->value();
+
+				ctr->forceSameRoomInABuilding=checkBox->isChecked();
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -8038,8 +8279,11 @@ void AddOrModifySpaceConstraint::helpClicked()
 void AddOrModifySpaceConstraint::checkBoxToggled()
 {
 	switch(type){
-		//3
-		case CONSTRAINT_ACTIVITY_PREFERRED_ROOM:
+		//80
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			[[fallthrough]];
+		//81
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
 			{
 				//nothing, we just avoid the assert below
 

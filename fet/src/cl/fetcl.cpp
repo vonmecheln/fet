@@ -880,6 +880,30 @@ void usage(QTextStream* out, const QString& error)
 		"\t\t('hv' means 'horizontal and vertical'.)\n"
 		"\n"
 
+		//2026-03-11 begin
+		"\t--teachersfreeperiodsprintdaysnames=B1\n"
+		"\t--teachersfreeperiodsprintdayslongnames=B2\n"
+		"\t--teachersfreeperiodsprinthoursnames=B3\n"
+		"\t--teachersfreeperiodsprinthourslongnames=B4\n"
+		"\t--teachersfreeperiodsprintteachersnames=B5\n"
+		"\t--teachersfreeperiodsprintteacherslongnames=B6\n"
+		"\t--teachersfreeperiodsprintteacherscodes=B7\n"
+		"\t\tB1 to B7 are either true or false (B1, B3, B5 are by default true, the rest are by default false).\n"
+		"\n"
+
+		"\t--teachersstatisticssprintteachersnames=B1\n"
+		"\t--teachersstatisticsprintteacherslongnames=B2\n"
+		"\t--teachersstatisticsprintteacherscodes=B3\n"
+		"\t\tB1 to B3 are either true or false (B1 is by default true, the rest are by default false).\n"
+		"\n"
+
+		"\t--studentsstatisticssprintstudentsnames=B1\n"
+		"\t--studentsstatisticsprintstudentslongnames=B2\n"
+		"\t--studentsstatisticsprintstudentscodes=B3\n"
+		"\t\tB1 to B3 are either true or false (B1 is by default true, the rest are by default false).\n"
+		"\n"
+		//2026-03-11 end
+
 		"\t--showvirtualrooms=SVR\n"
 		"\t\tSVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
 		"\n"
@@ -1883,6 +1907,26 @@ int main(int argc, char **argv)
 		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=false;
 		SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=false;
 		///////
+
+		//2026-03-11 begin
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_LONG_NAMES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=true;
+		SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=false;
+
+		SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=true;
+		SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=false;
+		SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=false;
+		//2026-03-11 end
 
 		DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
 		
@@ -4185,16 +4229,64 @@ int main(int argc, char **argv)
 				if(s.endsWith("true"))
 					SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=true;
 			}
-			///////
+			///////2026-03-11 begin
+			else if(s.startsWith("--teachersfreeperiodsprintdaysnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersfreeperiodsprintdayslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_LONG_NAMES=true;
+			}
 
+			else if(s.startsWith("--teachersfreeperiodsprinthoursnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersfreeperiodsprinthourslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_LONG_NAMES=true;
+			}
 
+			else if(s.startsWith("--teachersfreeperiodsprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersfreeperiodsprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersfreeperiodsprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=true;
+			}
 
+			else if(s.startsWith("--teachersstatisticsprintteachersnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=false;
+			}
+			else if(s.startsWith("--teachersstatisticsprintteacherslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--teachersstatisticsprintteacherscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=true;
+			}
 
-
-
-
-
-
+			else if(s.startsWith("--studentsstatisticsprintstudentsnames=")){
+				if(s.endsWith("false"))
+					SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=false;
+			}
+			else if(s.startsWith("--studentsstatisticsprintstudentslongnames=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=true;
+			}
+			else if(s.startsWith("--studentsstatisticsprintstudentscodes=")){
+				if(s.endsWith("true"))
+					SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=true;
+			}
+			///////2026-03-11 end
 			else
 				unrecognizedOptions.append(s);
 		}

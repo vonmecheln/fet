@@ -20,6 +20,8 @@
 
 #include "utilities.h"
 
+#include <QMessageBox>
+
 SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -676,6 +678,26 @@ SettingsDataToPrintInTimetablesForm::SettingsDataToPrintInTimetablesForm(QWidget
 	activitiesTimeHVStudentsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND);
 	activitiesTimeHVRoomsLegendCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND);
 	activitiesTimeHVLegendCodesFirstCheckBox->setChecked(SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST);
+
+	//2026-03-11 begin
+	teachersFreePeriodsDaysNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_NAMES);
+	teachersFreePeriodsDaysLongNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_LONG_NAMES);
+
+	teachersFreePeriodsHoursNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_NAMES);
+	teachersFreePeriodsHoursLongNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_LONG_NAMES);
+	
+	teachersFreePeriodsTeachersNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES);
+	teachersFreePeriodsTeachersLongNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES);
+	teachersFreePeriodsTeachersCodesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES);
+
+	teachersStatisticsTeachersNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES);
+	teachersStatisticsTeachersLongNamesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES);
+	teachersStatisticsTeachersCodesCheckBox->setChecked(SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES);
+
+	studentsStatisticsStudentsNamesCheckBox->setChecked(SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES);
+	studentsStatisticsStudentsLongNamesCheckBox->setChecked(SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES);
+	studentsStatisticsStudentsCodesCheckBox->setChecked(SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES);
+	//2026-03-11 end
 }
 
 SettingsDataToPrintInTimetablesForm::~SettingsDataToPrintInTimetablesForm()
@@ -1322,6 +1344,26 @@ void SettingsDataToPrintInTimetablesForm::wasAccepted()
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_STUDENTS_LEGEND=activitiesTimeHVStudentsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_ROOMS_LEGEND=activitiesTimeHVRoomsLegendCheckBox->isChecked();
 	SETTINGS_TIMETABLES_ACTIVITIES_TIME_HV_PRINT_LEGEND_CODES_FIRST=activitiesTimeHVLegendCodesFirstCheckBox->isChecked();
+
+	//2026-03-11 begin
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_NAMES=teachersFreePeriodsDaysNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_DAYS_LONG_NAMES=teachersFreePeriodsDaysLongNamesCheckBox->isChecked();
+
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_NAMES=teachersFreePeriodsHoursNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_HOURS_LONG_NAMES=teachersFreePeriodsHoursLongNamesCheckBox->isChecked();
+	
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_NAMES=teachersFreePeriodsTeachersNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_LONG_NAMES=teachersFreePeriodsTeachersLongNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_FREE_PERIODS_PRINT_TEACHERS_CODES=teachersFreePeriodsTeachersCodesCheckBox->isChecked();
+
+	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_NAMES=teachersStatisticsTeachersNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_LONG_NAMES=teachersStatisticsTeachersLongNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_TEACHERS_STATISTICS_PRINT_TEACHERS_CODES=teachersStatisticsTeachersCodesCheckBox->isChecked();
+
+	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_NAMES=studentsStatisticsStudentsNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_LONG_NAMES=studentsStatisticsStudentsLongNamesCheckBox->isChecked();
+	SETTINGS_TIMETABLES_STUDENTS_STATISTICS_PRINT_STUDENTS_CODES=studentsStatisticsStudentsCodesCheckBox->isChecked();
+	//2026-03-11 end
 
 	this->accept();
 }
@@ -2633,6 +2675,8 @@ void SettingsDataToPrintInTimetablesForm::applyToAll421()
 	activitiesTimeHVStudentsLegendCheckBox->setChecked(studentsLegend);
 	activitiesTimeHVRoomsLegendCheckBox->setChecked(roomsLegend);
 	activitiesTimeHVLegendCodesFirstCheckBox->setChecked(legendCodesFirst);
+	
+	QMessageBox::information(this, tr("FET information"), tr("Applied the settings from tab %1 to all tabs from 4 to 21.").arg(tabWidget->currentIndex()+1));
 }
 
 void SettingsDataToPrintInTimetablesForm::tabIndexChanged(int index)

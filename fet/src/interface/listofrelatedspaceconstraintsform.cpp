@@ -583,7 +583,7 @@ void ListOfRelatedSpaceConstraintsForm::addConstraint()
 	int initialNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
 
 	AddOrModifySpaceConstraint aomtc(this, CONSTRAINT_ACTIVITY_PREFERRED_ROOMS, nullptr,
-									 QString(), QString(), QString(), QString(), QString(), filterId);
+									 QString(), QString(), QString(), QString(), QString(), QString(), filterId);
 
 	int finalNumberOfSpaceConstraints=gt.rules.spaceConstraintsList.count();
 

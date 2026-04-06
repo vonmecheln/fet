@@ -1,4 +1,4 @@
-This is FET version 7.8.0
+This is FET version 7.8.1
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.19.5, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.19.8, Xfce 4.20,
 	Xfce Terminal Emulator 1.1.5, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 25.12.2, KDiff3 0.9.99-beta, grep 3.12, sed 4.9,
-	Thunar Bulk Rename 4.20.7, Qt 6.10.2, QMake 3.1, CMake 4.2.3, Ninja 1.13.2, Qt Creator 18.0.2, GCC 15.2.1, Clang 21.1.8, GNU Make 4.4.1,
+	Thunar Bulk Rename 4.20.7, Qt 6.10.2, QMake 3.1, CMake 4.2.3, Ninja 1.13.2, Qt Creator 19.0.0, GCC 15.2.1, Clang 21.1.8, GNU Make 4.4.1,
 	GDB 16.3, Valgrind 3.26.0, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.3,
-	GIMP 3.0.8, ImageMagick 7.1.2-13, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.2,
+	GIMP 3.2.0, ImageMagick 7.1.2-17, International Ispell 3.1.20 / Aspell 0.60.8.1, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.2,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 11 operating system,
 	Command Prompt, Total Commander 11.56, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.10.2,
-	QMake 3.1, Qt Creator 18.0.2, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 26.00.
+	QMake 3.1, Qt Creator 19.0.0, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 26.00.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: GNU/Linux Mint 21.3 "Virginia" Xfce Edition
 	with the standard packages, Qt 6.10.2, and possibly linuxdeploy 1-alpha (most of these software packages are free software,
@@ -989,6 +989,25 @@ Running FET:
 		--activitiestimehvprintlegendcodesfirst=B25
 			B1 to B25 are either true or false (B1, B3, B5, B8, B11, B14, B17 are by default true, the rest are by default false).
 			('hv' means 'horizontal and vertical'.)
+
+		--teachersfreeperiodsprintdaysnames=B1
+		--teachersfreeperiodsprintdayslongnames=B2
+		--teachersfreeperiodsprinthoursnames=B3
+		--teachersfreeperiodsprinthourslongnames=B4
+		--teachersfreeperiodsprintteachersnames=B5
+		--teachersfreeperiodsprintteacherslongnames=B6
+		--teachersfreeperiodsprintteacherscodes=B7
+			B1 to B7 are either true or false (B1, B3, B5 are by default true, the rest are by default false).
+
+		--teachersstatisticssprintteachersnames=B1
+		--teachersstatisticsprintteacherslongnames=B2
+		--teachersstatisticsprintteacherscodes=B3
+			B1 to B3 are either true or false (B1 is by default true, the rest are by default false).
+
+		--studentsstatisticssprintstudentsnames=B1
+		--studentsstatisticsprintstudentslongnames=B2
+		--studentsstatisticsprintstudentscodes=B3
+			B1 to B3 are either true or false (B1 is by default true, the rest are by default false).
 
 		--showvirtualrooms=SVR
 			SVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).

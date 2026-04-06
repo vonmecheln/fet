@@ -154,6 +154,8 @@ private:
 	Matrix3D<int> teachersTimetable;
 	Matrix3D<int> subgroupsTimetable;
 	Matrix3D<int> roomsTimetable;
+	//2026-03-13, for NSRT
+	Matrix3D<QList<int>> buildingsTimetable;
 	//
 	Matrix3D<int> newTeachersTimetable;
 	Matrix3D<int> newSubgroupsTimetable;

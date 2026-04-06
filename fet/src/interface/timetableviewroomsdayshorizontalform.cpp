@@ -893,6 +893,9 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 	int j=item->row();
 	int k=item->column();
 	s = "";
+
+	QString s2="";
+
 	if(j>=0 && k>=0){
 		int jj;
 		if(normalView)
@@ -910,6 +913,7 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 		
 		int ai=rooms_timetable_weekly[roomIndex][kk][jj]; //activity index
 		//Activity* act=gt.rules.activitiesList.at(ai);
+		
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			assert(act!=nullptr);
@@ -918,22 +922,22 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 
 			int r=best_solution.rooms[ai];
 			if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-				s+="\n";
-				s+=tr("Room: %1").arg(gt.rules.internalRoomsList[r]->name);
+				s2+="\n";
+				s2+=tr("Room: %1").arg(gt.rules.internalRoomsList[r]->name);
 				
 				if(gt.rules.internalRoomsList[r]->isVirtual==true){
 					QStringList tsl;
 					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
-					s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
+					s2+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 				}
 				
 				if(gt.rules.internalRoomsList[r]->building!=""){
-					s+="\n";
-					s+=tr("Building=%1").arg(gt.rules.internalRoomsList[r]->building);
+					s2+="\n";
+					s2+=tr("Building=%1").arg(gt.rules.internalRoomsList[r]->building);
 				}
-				s+="\n";
-				s+=tr("Capacity=%1").arg(gt.rules.internalRoomsList[r]->capacity);
+				s2+="\n";
+				s2+=tr("Capacity=%1").arg(gt.rules.internalRoomsList[r]->capacity);
 			}
 
 			//added by Volker Dirr (start)
@@ -962,21 +966,21 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 				descr.prepend("\n(");
 				descr.append(")");
 			}
-			s+=descr;
+			s2+=descr;
 			//added by Volker Dirr (end)
 		}
 		else{
 			if(notAllowedRoomTimePercentages[roomIndex][kk+jj*gt.rules.nDaysPerWeek]>=0){
-				s+=tr("Room is not available with weight %1%").arg(CustomFETString::number(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]));
-				s+="\n";
+				s2+=tr("Room is not available with weight %1%").arg(CustomFETString::number(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]));
+				s2+="\n";
 			}
 			if(breakDayHour[kk][jj]){
-				s+=tr("Break with weight 100% in this slot");
-				s+="\n";
+				s2+=tr("Break with weight 100% in this slot");
+				s2+="\n";
 			}
 		}
 	}
-	detailsTextEdit->setText(s);
+	detailsTextEdit->setText(s+protect4(s2));
 }
 
 void TimetableViewRoomsDaysHorizontalForm::lockTimeSpace()

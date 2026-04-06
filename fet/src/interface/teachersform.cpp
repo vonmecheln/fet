@@ -639,12 +639,12 @@ void TeachersForm::longName()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QLineEdit* longNameLE=new QLineEdit();
-	longNameLE->setText(tch->longName);
-	longNameLE->selectAll();
-	longNameLE->setFocus();
+	QTextEdit* longNameTE=new QTextEdit();
+	longNameTE->setPlainText(tch->longName);
+	longNameTE->selectAll();
+	longNameTE->setFocus();
 	
-	vl->addWidget(longNameLE);
+	vl->addWidget(longNameTE);
 	vl->addLayout(hl);
 	
 	getLongNameDialog.setLayout(vl);
@@ -661,7 +661,7 @@ void TeachersForm::longName()
 	if(t==QDialog::Accepted){
 		QString oln=tch->longName;
 	
-		tch->longName=longNameLE->text();
+		tch->longName=longNameTE->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the long name for the teacher %1 from\n%2\nto\n%3.").arg(tch->name).arg(oln).arg(tch->longName));
 	

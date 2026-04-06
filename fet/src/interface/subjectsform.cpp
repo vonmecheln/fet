@@ -481,12 +481,12 @@ void SubjectsForm::longName()
 	
 	QVBoxLayout* vl=new QVBoxLayout();
 	
-	QLineEdit* longNameLE=new QLineEdit();
-	longNameLE->setText(sbj->longName);
-	longNameLE->selectAll();
-	longNameLE->setFocus();
+	QTextEdit* longNameTE=new QTextEdit();
+	longNameTE->setPlainText(sbj->longName);
+	longNameTE->selectAll();
+	longNameTE->setFocus();
 	
-	vl->addWidget(longNameLE);
+	vl->addWidget(longNameTE);
 	vl->addLayout(hl);
 	
 	getLongNameDialog.setLayout(vl);
@@ -503,7 +503,7 @@ void SubjectsForm::longName()
 	if(t==QDialog::Accepted){
 		QString oln=sbj->longName;
 	
-		sbj->longName=longNameLE->text();
+		sbj->longName=longNameTE->toPlainText();
 	
 		gt.rules.addUndoPoint(tr("Changed the long name for the subject %1 from\n%2\nto\n%3.").arg(sbj->name).arg(oln).arg(sbj->longName));
 	

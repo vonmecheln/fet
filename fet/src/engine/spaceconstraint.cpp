@@ -35,10 +35,14 @@ File spaceconstraint.cpp
 
 #include <QString>
 #include <QSet>
+#include <QHash>
+#include <QPair>
 
 #include <QDataStream>
 
 #include "messageboxes.h"
+
+extern Matrix2D<bool> breakDayHour;
 
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc)
@@ -1035,6 +1039,56 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsOccupyMaxSetsO
 	stream<<sc.comments;
 
 	stream<<sc.maxOccupiedSets<<sc.selectedDays<<sc.selectedHours;
+
+	return stream;
+}
+
+//78
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.building;
+
+	return stream;
+}
+
+//79
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	return stream;
+}
+
+//80
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxTeachersRepetitions& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxTeachersRepetitions<<sc.forceSameRoomInABuilding<<sc.room;
+
+	return stream;
+}
+
+//81
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxTeachersRepetitions& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxTeachersRepetitions<<sc.forceSameRoomInABuilding;
 
 	return stream;
 }
@@ -2038,6 +2092,56 @@ QDataStream& operator>>(QDataStream& stream, ConstraintRoomsOccupyMaxSetsOfTimeS
 	return stream;
 }
 
+//78
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.building;
+
+	return stream;
+}
+
+//79
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	return stream;
+}
+
+//80
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxTeachersRepetitions& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxTeachersRepetitions>>sc.forceSameRoomInABuilding>>sc.room;
+
+	return stream;
+}
+
+//81
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxTeachersRepetitions& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxTeachersRepetitions>>sc.forceSameRoomInABuilding;
+
+	return stream;
+}
+
 static QString trueFalse(bool x)
 {
 	if(!x)
@@ -2280,6 +2384,14 @@ bool SpaceConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
 			t=true;
 			break;
 		
@@ -2453,6 +2565,14 @@ bool SpaceConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
 			t=true;
 			break;
 		
@@ -2589,6 +2709,14 @@ bool SpaceConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
 			t=true;
 			break;
 		
@@ -2725,6 +2853,14 @@ bool SpaceConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+			[[fallthrough]];
+		case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+			[[fallthrough]];
+		case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
 			t=true;
 			break;
 		
@@ -13036,7 +13172,7 @@ double ConstraintTeacherMinGapsBetweenRoomChanges::fitness(
 			if(crtRoomsTimetable[d2][h2]!=-1)
 				break;
 
-		int crt_room=-1;					
+		int crt_room=-1;
 		if(h2<r.nHoursPerDay)
 			crt_room=crtRoomsTimetable[d2][h2];
 		
@@ -24862,5 +24998,944 @@ bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHour(
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
 
+	return true;
+}
+
+//2026-03-04
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+}
+
+ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot(double wp, const QString& _building)
+ : SpaceConstraint(wp)
+ {
+	this->building=_building;
+
+	this->type=CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	building_ID=r.buildingsHash.value(building, -1);
+	assert(this->building_ID>=0);
+
+	return true;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Building>"+protect(this->building)+"</Building>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot>\n";
+	return s;
+}
+
+QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	s+=tr("Building min one activity in each non break time slot");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("B:%1", "Building").arg(this->building);
+
+	return begin+s+end;
+}
+
+QString ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	s+=tr("A building has min one activity in each non break time slot");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Building=%1").arg(this->building);s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	int b=this->building_ID;
+	
+	for(int d=0; d<r.nDaysPerWeek; d++){
+		for(int h=0; h<r.nHoursPerDay; h++){
+			if(!breakDayHour[d][h]){
+				int rm;
+				for(rm=0; rm<r.nInternalRooms; rm++){
+					if(r.internalRoomsList[rm]->buildingIndex==b){
+						if(roomsMatrix[rm][d][h]>0){
+							break;
+						}
+					}
+				}
+				if(rm==r.nInternalRooms){
+					nbroken++;
+
+					if(conflictsString!=nullptr){
+						QString s=(tr(
+						 "Space constraint building min one activity in each non-break time slot broken for building %1, time slot's day %2, time slot's hour %3.")
+						 .arg(r.internalBuildingsList[b]->name)
+						 .arg(r.daysOfTheWeek[d])
+						 .arg(r.hoursOfTheDay[h])
+						 )
+						 +" "
+						 +
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+						
+						dl.append(s);
+						cl.append(weightPercentage/100);
+						
+						*conflictsString+= s+"\n";
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		if(c.nPlacedActivities==r.nInternalActivities)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t)
+
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+int ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::categoryOfSpaceConstraint()
+{
+	return IS_BUILDING_SPACE_CONSTRAINT;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return false;
+}
+
+bool ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+}
+
+ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot(double wp)
+ : SpaceConstraint(wp)
+ {
+	this->type=CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot>\n";
+	return s;
+}
+
+QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString s;
+	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	s+=tr("Buildings min one activity in each non break time slot");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	s+=tr("All buildings have min one activity in each non break time slot");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	//int b=this->building_ID;
+	for(int b=0; b<r.nInternalBuildings; b++){
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(!breakDayHour[d][h]){
+					int rm;
+					for(rm=0; rm<r.nInternalRooms; rm++){
+						if(r.internalRoomsList[rm]->buildingIndex==b){
+							if(roomsMatrix[rm][d][h]>0){
+								break;
+							}
+						}
+					}
+					if(rm==r.nInternalRooms){
+						nbroken++;
+
+						if(conflictsString!=nullptr){
+							QString s=(tr(
+							 "Space constraint buildings min one activity in each non-break time slot broken for building %1, time slot's day %2, time slot's hour %3.")
+							 .arg(r.internalBuildingsList[b]->name)
+							 .arg(r.daysOfTheWeek[d])
+							 .arg(r.hoursOfTheDay[h])
+							 )
+							 +" "
+							 +
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+							
+							dl.append(s);
+							cl.append(weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		if(c.nPlacedActivities==r.nInternalActivities)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t)
+
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+int ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::categoryOfSpaceConstraint()
+{
+	return IS_BUILDING_SPACE_CONSTRAINT;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return false;
+}
+
+bool ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomMaxTeachersRepetitions::ConstraintRoomMaxTeachersRepetitions()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS;
+}
+
+ConstraintRoomMaxTeachersRepetitions::ConstraintRoomMaxTeachersRepetitions(double wp, const QString& rn, int mtr, bool fsriab)
+	: SpaceConstraint(wp)
+{
+	this->room=rn;
+	this->maxTeachersRepetitions=mtr;
+	this->forceSameRoomInABuilding=fsriab;
+	this->type=CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+QString ConstraintRoomMaxTeachersRepetitions::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomMaxTeachersRepetitions>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
+
+	s+=IL3+"<Max_Teachers_Repetitions>"+QString::number(this->maxTeachersRepetitions)+"</Max_Teachers_Repetitions>\n";
+
+	s+=IL3+"<Force_Same_Room_In_A_Building>"+trueFalse(this->forceSameRoomInABuilding)+"</Force_Same_Room_In_A_Building>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomMaxTeachersRepetitions>\n";
+	return s;
+}
+
+QString ConstraintRoomMaxTeachersRepetitions::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+
+	QString s=QString("");
+	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	s+=tr("Room max teachers repetitions");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
+
+	s+=tr("MTR:%1", "Max teachers repetitions").arg(this->maxTeachersRepetitions);s+=translatedCommaSpace();
+	s+=tr("FSRIAB:%1", "Force same room in a building").arg(yesNoTranslated(this->forceSameRoomInABuilding));
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomMaxTeachersRepetitions::getDetailedDescription(Rules&r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	s+=tr("Room max teachers repetitions");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Room=%1").arg(this->room);s+="\n";
+
+	s+=tr("Max teachers repetitions=%1").arg(this->maxTeachersRepetitions);
+	s+="\n";
+
+	s+=tr("Force same room in a building=%1").arg(yesNoTranslated(this->forceSameRoomInABuilding));
+	s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::computeInternalStructure(QWidget* parent, Rules& r){
+	//this->room_ID=r.searchRoom(this->room);
+	room_ID=r.roomsHash.value(room, -1);
+	
+	if(this->room_ID<0){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint room max teachers repetitions is wrong because it refers to nonexistent room."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	assert(this->room_ID>=0);
+	
+	return true;
+}
+
+double ConstraintRoomMaxTeachersRepetitions::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	QHash<int, int> teacherBuildingHash;
+	QSet<int> teachersWithThisRoom;
+
+	for(int i=0; i<r.nInternalActivities; i++){
+		if(c.rooms[i]!=UNALLOCATED_SPACE && c.rooms[i]!=UNSPECIFIED_ROOM){
+			if(c.rooms[i]==this->room_ID){
+				if(r.internalActivitiesList[i].iTeachersList.count()==1){
+					int tch=r.internalActivitiesList[i].iTeachersList.at(0);
+					teachersWithThisRoom.insert(tch);
+				}
+			}
+		}
+	}
+	
+	QHash<int, int> teachersAppearances;
+
+	for(int i=0; i<r.nInternalActivities; i++){
+		if(c.rooms[i]!=UNALLOCATED_SPACE && c.rooms[i]!=UNSPECIFIED_ROOM){
+			if(r.internalActivitiesList[i].iTeachersList.count()==1){
+				int tch=r.internalActivitiesList[i].iTeachersList.at(0);
+
+				if(c.rooms[i]==this->room_ID){
+					int n=teachersAppearances.value(tch, 0);
+					n++;
+					teachersAppearances.insert(tch, n);
+				}
+
+				if(this->forceSameRoomInABuilding
+				 && r.internalRoomsList[this->room_ID]->buildingIndex>=0
+				 && r.internalRoomsList[c.rooms[i]]->buildingIndex>=0
+				 && r.internalRoomsList[this->room_ID]->buildingIndex==r.internalRoomsList[c.rooms[i]]->buildingIndex
+				 && teachersWithThisRoom.contains(tch)){
+					int teacherBuilding=r.internalRoomsList[c.rooms[i]]->buildingIndex;
+					int oldBuilding=teacherBuildingHash.value(tch, -1);
+					if(oldBuilding==-1)
+						teacherBuildingHash.insert(tch, teacherBuilding);
+					else if(oldBuilding!=teacherBuilding)
+						nbroken++;
+				}
+			}
+		}
+	}
+	for(QHash<int, int>::const_iterator it=teachersAppearances.constBegin(); it!=teachersAppearances.constEnd(); it++)
+		if(it.value() > this->maxTeachersRepetitions+1)
+			nbroken++;
+
+	if(nbroken>0){
+		if(conflictsString!=nullptr){
+			QString s=tr("Space constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+			
+			dl.append(s);
+			cl.append(nbroken*weightPercentage/100.0);
+			
+			*conflictsString+= s+"\n";
+		}
+	}
+
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::isRelatedToRoom(const QString& r)
+{
+	return this->room==r;
+}
+
+int ConstraintRoomMaxTeachersRepetitions::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintRoomMaxTeachersRepetitions::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintRoomsMaxTeachersRepetitions::ConstraintRoomsMaxTeachersRepetitions()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS;
+}
+
+ConstraintRoomsMaxTeachersRepetitions::ConstraintRoomsMaxTeachersRepetitions(double wp, int mtr, bool fsriab)
+	: SpaceConstraint(wp)
+{
+	this->maxTeachersRepetitions=mtr;
+	this->forceSameRoomInABuilding=fsriab;
+	this->type=CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+QString ConstraintRoomsMaxTeachersRepetitions::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintRoomsMaxTeachersRepetitions>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+
+	s+=IL3+"<Max_Teachers_Repetitions>"+QString::number(this->maxTeachersRepetitions)+"</Max_Teachers_Repetitions>\n";
+
+	s+=IL3+"<Force_Same_Room_In_A_Building>"+trueFalse(this->forceSameRoomInABuilding)+"</Force_Same_Room_In_A_Building>\n";
+
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintRoomsMaxTeachersRepetitions>\n";
+	return s;
+}
+
+QString ConstraintRoomsMaxTeachersRepetitions::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+
+	QString s=QString("");
+	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	s+=tr("Rooms max teachers repetitions");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+
+	s+=tr("MTR:%1", "Max teachers repetitions").arg(this->maxTeachersRepetitions);s+=translatedCommaSpace();
+	s+=tr("FSRIAB:%1", "Force same room in a building").arg(yesNoTranslated(this->forceSameRoomInABuilding));
+
+	return begin+s+end;
+}
+
+QString ConstraintRoomsMaxTeachersRepetitions::getDetailedDescription(Rules&r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	s+=tr("Rooms max teachers repetitions");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Max teachers repetitions=%1").arg(this->maxTeachersRepetitions);
+	s+="\n";
+
+	s+=tr("Force same room in a building=%1").arg(yesNoTranslated(this->forceSameRoomInABuilding));
+	s+="\n";
+
+	if(!active){
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::computeInternalStructure(QWidget* parent, Rules& r){
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+	
+	return true;
+}
+
+double ConstraintRoomsMaxTeachersRepetitions::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(cl);
+	Q_UNUSED(dl);
+	Q_UNUSED(conflictsString);
+
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculationRooms=false;
+	}
+
+	int nbroken=0;
+
+	QHash<int, QSet<int>> activitiesForRoom;
+	for(int i=0; i<r.nInternalActivities; i++){
+		if(c.rooms[i]!=UNALLOCATED_SPACE && c.rooms[i]!=UNSPECIFIED_ROOM){
+			int rm=c.rooms[i];
+			QSet<int> ts=activitiesForRoom.value(rm, QSet<int>());
+			ts.insert(i);
+			activitiesForRoom.insert(rm, ts);
+		}
+	}
+	
+	QHash<QPair<int, int>, int> teacherBuildingRoomHash;
+	
+	for(int rm=0; rm<r.nInternalRooms; rm++){
+		QHash<int, int> teachersAppearances;
+		const QSet<int>& ts=activitiesForRoom.value(rm, QSet<int>());
+		for(int i : std::as_const(ts)){
+			assert(c.rooms[i]==rm);
+			if(r.internalActivitiesList[i].iTeachersList.count()==1){
+				int tch=r.internalActivitiesList[i].iTeachersList.at(0);
+				int n=teachersAppearances.value(tch, 0);
+				n++;
+				teachersAppearances.insert(tch, n);
+
+				if(this->forceSameRoomInABuilding && r.internalRoomsList[rm]->buildingIndex>=0){
+					int teacherBuilding=r.internalRoomsList[rm]->buildingIndex;
+					int oldRoom=teacherBuildingRoomHash.value(QPair<int, int>(tch, teacherBuilding), -1);
+					if(oldRoom==-1)
+						teacherBuildingRoomHash.value(QPair<int, int>(tch, teacherBuilding), rm);
+					else if(oldRoom!=rm)
+						nbroken++;
+				}
+			}
+		}
+		for(QHash<int, int>::const_iterator it=teachersAppearances.constBegin(); it!=teachersAppearances.constEnd(); it++)
+			if(it.value() > this->maxTeachersRepetitions+1)
+				nbroken++;
+	}
+	
+	if(nbroken>0){
+		if(conflictsString!=nullptr){
+			QString s=tr("Space constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+			
+			dl.append(s);
+			cl.append(nbroken*weightPercentage/100.0);
+			
+			*conflictsString+= s+"\n";
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::isRelatedToRoom(const QString& r)
+{
+	Q_UNUSED(r);
+
+	return true;
+}
+
+int ConstraintRoomsMaxTeachersRepetitions::categoryOfSpaceConstraint()
+{
+	return IS_ROOM_SPACE_CONSTRAINT;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintRoomsMaxTeachersRepetitions::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
 	return true;
 }

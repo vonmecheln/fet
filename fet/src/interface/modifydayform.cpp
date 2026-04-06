@@ -26,7 +26,7 @@ ModifyDayForm::ModifyDayForm(QWidget* parent, const QString& name, const QString
 	restoreFETDialogGeometry(this);
 	
 	nameLineEdit->setText(name);
-	longNameLineEdit->setText(longName);
+	longNameTextEdit->setPlainText(longName);
 	
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
@@ -45,7 +45,7 @@ ModifyDayForm::~ModifyDayForm()
 void ModifyDayForm::ok()
 {
 	name=nameLineEdit->text();
-	longName=longNameLineEdit->text();
+	longName=longNameTextEdit->toPlainText();
 	
 	this->accept();
 }

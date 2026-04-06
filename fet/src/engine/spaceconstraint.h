@@ -156,6 +156,12 @@ const int CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS				=1075;
 const int CONSTRAINT_ROOMS_PAIR_OF_MUTUALLY_EXCLUSIVE_SETS_OF_TIME_SLOTS		=1076;
 const int CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION			=1077;
 
+const int CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT		=1078;
+const int CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT		=1079;
+
+const int CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS								=1080;
+const int CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS								=1081;
+
 ///////
 
 const int IS_BASIC_SPACE_CONSTRAINT				=1000;
@@ -164,6 +170,7 @@ const int IS_TEACHER_SPACE_CONSTRAINT			=1002;
 const int IS_STUDENTS_SPACE_CONSTRAINT			=1003;
 const int IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT	=1004;
 const int IS_ROOM_SPACE_CONSTRAINT				=1005;
+const int IS_BUILDING_SPACE_CONSTRAINT			=1006;
 
 ///////
 
@@ -3932,6 +3939,187 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot)
+
+public:
+	QString building;
+	
+	//internal
+	int building_ID;
+
+	ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot();
+
+	ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot(double wp, const QString& _building);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, int aid);
+	
+	bool isRelatedToTeacher(const QString& t);
+
+	bool isRelatedToSubject(const QString& s);
+
+	bool isRelatedToActivityTag(const QString& s);
+	
+	bool isRelatedToStudentsSet(Rules& r, const QString& s);
+
+	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot)
+
+public:
+	ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot();
+
+	ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot(double wp);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, int aid);
+	
+	bool isRelatedToTeacher(const QString& t);
+
+	bool isRelatedToSubject(const QString& s);
+
+	bool isRelatedToActivityTag(const QString& s);
+	
+	bool isRelatedToStudentsSet(Rules& r, const QString& s);
+
+	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintRoomMaxTeachersRepetitions: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomMaxTeachersRepetitions)
+	
+public:
+
+	/**
+	The room's name
+	*/
+	QString room;
+	
+	int maxTeachersRepetitions;
+
+	bool forceSameRoomInABuilding;
+
+	/**
+	The room's id, or index in the rules
+	*/
+	int room_ID;
+
+	ConstraintRoomMaxTeachersRepetitions();
+
+	ConstraintRoomMaxTeachersRepetitions(double wp, const QString& rn, int mtr, bool fsriab);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+	
+	bool isRelatedToActivity(Rules& r, int aid);
+	
+	bool isRelatedToTeacher(const QString& t);
+
+	bool isRelatedToSubject(const QString& s);
+
+	bool isRelatedToActivityTag(const QString& s);
+	
+	bool isRelatedToStudentsSet(Rules& r, const QString& s);
+
+	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintRoomsMaxTeachersRepetitions: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomsMaxTeachersRepetitions)
+	
+public:
+
+	int maxTeachersRepetitions;
+	
+	bool forceSameRoomInABuilding;
+
+	ConstraintRoomsMaxTeachersRepetitions();
+
+	ConstraintRoomsMaxTeachersRepetitions(double wp, int mtr, bool fsriab);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+	
+	bool isRelatedToActivity(Rules& r, int aid);
+	
+	bool isRelatedToTeacher(const QString& t);
+
+	bool isRelatedToSubject(const QString& s);
+
+	bool isRelatedToActivityTag(const QString& s);
+	
+	bool isRelatedToStudentsSet(Rules& r, const QString& s);
+
+	bool isRelatedToRoom(const QString& r);
+
+	int categoryOfSpaceConstraint();
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc);
 //2
@@ -4086,6 +4274,14 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsPairOfMutually
 QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots& sc);
 //77
 QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection& sc);
+//78
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc);
+//79
+QDataStream& operator<<(QDataStream& stream, const ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc);
+//80
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomMaxTeachersRepetitions& sc);
+//81
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomsMaxTeachersRepetitions& sc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc);
@@ -4241,5 +4437,13 @@ QDataStream& operator>>(QDataStream& stream, ConstraintRoomsPairOfMutuallyExclus
 QDataStream& operator>>(QDataStream& stream, ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots& sc);
 //77
 QDataStream& operator>>(QDataStream& stream, ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection& sc);
+//78
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot& sc);
+//79
+QDataStream& operator>>(QDataStream& stream, ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot& sc);
+//80
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomMaxTeachersRepetitions& sc);
+//81
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomsMaxTeachersRepetitions& sc);
 
 #endif

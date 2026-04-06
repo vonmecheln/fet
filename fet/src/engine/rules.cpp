@@ -2662,6 +2662,34 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
+			//78
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* c=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)ctr;
+					stream<<*c;
+					break;
+				}
+			//79
+			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* c=(ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot*)ctr;
+					stream<<*c;
+					break;
+				}
+			//80
+			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomMaxTeachersRepetitions* c=(ConstraintRoomMaxTeachersRepetitions*)ctr;
+					stream<<*c;
+					break;
+				}
+			//81
+			case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomsMaxTeachersRepetitions* c=(ConstraintRoomsMaxTeachersRepetitions*)ctr;
+					stream<<*c;
+					break;
+				}
 
 			default:
 				assert(0);
@@ -5580,6 +5608,38 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 					rules.spaceConstraintsList.append(c);
 					break;
 				}
+			//78
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* c=new ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//79
+			case CONSTRAINT_BUILDINGS_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* c=new ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//80
+			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomMaxTeachersRepetitions* c=new ConstraintRoomMaxTeachersRepetitions;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
+			//81
+			case CONSTRAINT_ROOMS_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomsMaxTeachersRepetitions* c=new ConstraintRoomsMaxTeachersRepetitions;
+					stream>>*c;
+					rules.spaceConstraintsList.append(c);
+					break;
+				}
 
 			default:
 				//commented, so that the program won't crash on wrong history files.
@@ -6382,7 +6442,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	roomsHash.clear();
 	for(int i=0; i<nInternalRooms; i++)
 		roomsHash.insert(internalRoomsList[i]->name, i);
-		
+	
 	for(int i=0; i<nInternalRooms; i++){
 		Room* rm=internalRoomsList[i];
 		
@@ -6443,6 +6503,14 @@ bool Rules::computeInternalStructure(QWidget* parent)
 
 		rm->computeInternalStructureRealRoomsSetsList(*this);
 	}
+	
+	//NSRT
+	roomsInBuilding.resize(nInternalBuildings);
+	for(int bu=0; bu<nInternalBuildings; bu++)
+		roomsInBuilding[bu].clear();
+	for(int rm=0; rm<nInternalRooms; rm++)
+		if(internalRoomsList[rm]->buildingIndex>=0)
+			roomsInBuilding[internalRoomsList[rm]->buildingIndex].append(rm);
 
 	//activities
 	int range=0;
@@ -11472,6 +11540,13 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 						crna->room=finalRoomName;
 					break;
 				}
+			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomMaxTeachersRepetitions* crna=(ConstraintRoomMaxTeachersRepetitions*)ctr;
+					if(crna->room==initialRoomName)
+						crna->room=finalRoomName;
+					break;
+				}
 
 			default:
 				//do nothing.
@@ -11558,6 +11633,8 @@ bool Rules::removeBuilding(const QString& buildingName)
 	delete this->buildingsList[i];
 	this->buildingsList.removeAt(i);
 	
+	updateConstraintsAfterRemoval();
+	
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
 
@@ -11577,6 +11654,22 @@ bool Rules::modifyBuilding(const QString& initialBuildingName, const QString& fi
 	int i=this->searchBuilding(initialBuildingName);
 	if(i<0)
 		return false;
+
+	for(SpaceConstraint* ctr : std::as_const(spaceConstraintsList)){
+		switch(ctr->type){
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* cb=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)ctr;
+					if(cb->building==initialBuildingName)
+						cb->building=finalBuildingName;
+					break;
+				}
+
+			default:
+				//do nothing.
+				break;
+		}
+	}
 
 	Building* searchedBuilding=this->buildingsList[i];
 	assert(searchedBuilding->name==initialBuildingName);
@@ -12555,7 +12648,8 @@ void Rules::updateConstraintsAfterRemoval()
 	QSet<QString> existingSubjectsNames;
 	QSet<QString> existingActivityTagsNames;
 	QSet<QString> existingRoomsNames;
-	
+	QSet<QString> existingBuildingsNames;
+
 	QList<TimeConstraint*> toBeRemovedTime;
 	QList<SpaceConstraint*> toBeRemovedSpace;
 	
@@ -12573,6 +12667,9 @@ void Rules::updateConstraintsAfterRemoval()
 		
 	for(Room* rm : std::as_const(roomsList))
 		existingRoomsNames.insert(rm->name);
+
+	for(Building* bu : std::as_const(buildingsList))
+		existingBuildingsNames.insert(bu->name);
 		
 	for(TimeConstraint* tc : std::as_const(timeConstraintsList)){
 		switch(tc->type){
@@ -14348,6 +14445,20 @@ void Rules::updateConstraintsAfterRemoval()
 			case CONSTRAINT_ROOM_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				{
 					ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection* c=(ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection*)sc;
+					if(!existingRoomsNames.contains(c->room))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_BUILDING_MIN_ONE_ACTIVITY_IN_EACH_NON_BREAK_TIME_SLOT:
+				{
+					ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* c=(ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot*)sc;
+					if(!existingBuildingsNames.contains(c->building))
+						toBeRemovedSpace.append(sc);
+					break;
+				}
+			case CONSTRAINT_ROOM_MAX_TEACHERS_REPETITIONS:
+				{
+					ConstraintRoomMaxTeachersRepetitions* c=(ConstraintRoomMaxTeachersRepetitions*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
 					break;
@@ -18685,6 +18796,18 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintTeacherRoomNotAvailableTimes")){
 					crt_constraint=readTeacherRoomNotAvailableTimes(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomMaxTeachersRepetitions")){
+					crt_constraint=readRoomMaxTeachersRepetitions(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintRoomsMaxTeachersRepetitions")){
+					crt_constraint=readRoomsMaxTeachersRepetitions(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot")){
+					crt_constraint=readBuildingMinOneActivityInEachNonBreakTimeSlot(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot")){
+					crt_constraint=readBuildingsMinOneActivityInEachNonBreakTimeSlot(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintRoomTypeNotAllowedSubjects") && !skipDeprecatedConstraints){
 				
@@ -43960,6 +44083,176 @@ SpaceConstraint* Rules::readTeacherRoomNotAvailableTimes(QXmlStreamReader& xmlRe
 		return nullptr;
 	}
 	assert(i==nNotAvailableSlots);
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomMaxTeachersRepetitions(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomMaxTeachersRepetitions"));
+	ConstraintRoomMaxTeachersRepetitions* cn=new ConstraintRoomMaxTeachersRepetitions();
+	cn->forceSameRoomInABuilding=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else if(xmlReader.name()==QString("Max_Teachers_Repetitions")){
+			QString text=xmlReader.readElementText();
+			cn->maxTeachersRepetitions=text.toInt();
+			xmlReadingLog+="    Read max teachers repetitions="+CustomFETString::number(cn->maxTeachersRepetitions)+"\n";
+		}
+
+		else if(xmlReader.name()==QString("Force_Same_Room_In_A_Building")){
+			QString text=xmlReader.readElementText();
+			if(text=="true"){
+				cn->forceSameRoomInABuilding=true;
+			}
+		}
+
+		else if(xmlReader.name()==QString("Room")){
+			QString text=xmlReader.readElementText();
+			cn->room=text;
+			xmlReadingLog+="    Read room name="+cn->room+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readRoomsMaxTeachersRepetitions(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintRoomsMaxTeachersRepetitions"));
+	ConstraintRoomsMaxTeachersRepetitions* cn=new ConstraintRoomsMaxTeachersRepetitions();
+	cn->forceSameRoomInABuilding=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else if(xmlReader.name()==QString("Max_Teachers_Repetitions")){
+			QString text=xmlReader.readElementText();
+			cn->maxTeachersRepetitions=text.toInt();
+			xmlReadingLog+="    Read max teachers repetitions="+CustomFETString::number(cn->maxTeachersRepetitions)+"\n";
+		}
+
+		else if(xmlReader.name()==QString("Force_Same_Room_In_A_Building")){
+			QString text=xmlReader.readElementText();
+			if(text=="true"){
+				cn->forceSameRoomInABuilding=true;
+			}
+		}
+
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readBuildingMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot"));
+	ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot* cn=new ConstraintBuildingMinOneActivityInEachNonBreakTimeSlot();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else if(xmlReader.name()==QString("Building")){
+			QString text=xmlReader.readElementText();
+			cn->building=text;
+			xmlReadingLog+="    Read building name="+cn->building+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+SpaceConstraint* Rules::readBuildingsMinOneActivityInEachNonBreakTimeSlot(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot"));
+	ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot* cn=new ConstraintBuildingsMinOneActivityInEachNonBreakTimeSlot();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
 	return cn;
 }
 

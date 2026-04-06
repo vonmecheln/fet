@@ -147,6 +147,13 @@ private:
 	QAction* dataTimeConstraintsMinHalfDaysBetweenActivitiesAction;
 	QAction* dataSpaceConstraintsBasicCompulsorySpaceAction;
 	QAction* dataSpaceConstraintsRoomNotAvailableTimesAction;
+
+	QAction* dataSpaceConstraintsRoomMaxTeachersRepetitionsAction;
+	QAction* dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction;
+
+	QAction* dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction;
+	QAction* dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction;
+
 	QAction* dataSpaceConstraintsTeacherRoomNotAvailableTimesAction;
 	QAction* dataSpaceConstraintsActivityPreferredRoomAction;
 	QAction* dataTimeConstraintsActivitiesSameStartingHourAction;
@@ -614,6 +621,13 @@ public Q_SLOTS:
 	void dataAllSpaceConstraintsAction_triggered();
 
 	void dataSpaceConstraintsRoomNotAvailableTimesAction_triggered();
+
+	void dataSpaceConstraintsRoomMaxTeachersRepetitionsAction_triggered();
+	void dataSpaceConstraintsRoomsMaxTeachersRepetitionsAction_triggered();
+
+	void dataSpaceConstraintsBuildingMinOneActivityInEachNonBreakTimeSlotAction_triggered();
+	void dataSpaceConstraintsBuildingsMinOneActivityInEachNonBreakTimeSlotAction_triggered();
+
 	void dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered();
 
 	void dataSpaceConstraintsBasicCompulsorySpaceAction_triggered();
@@ -1059,6 +1073,7 @@ public Q_SLOTS:
 
 	void helpMoroccoAction_triggered();
 	void helpAlgeriaAction_triggered();
+	void helpExamsAlgeriaMoroccoAction_triggered();
 	void helpBlockPlanningAction_triggered();
 	void helpTermsAction_triggered();
 
@@ -1143,10 +1158,11 @@ public Q_SLOTS:
 	
 	void shortcutAllSpaceConstraintsPushButton_clicked();
 	void shortcutRoomsSpaceConstraintsPushButton_clicked();
+	void shortcutBuildingsSpaceConstraintsPushButton_clicked();
 	void shortcutTeachersSpaceConstraintsPushButton_clicked();
 	void shortcutStudentsSpaceConstraintsPushButton_clicked();
-	void shortcutSubjectsSpaceConstraintsPushButton_clicked();
-	void shortcutActivityTagsSpaceConstraintsPushButton_clicked();
+	//void shortcutSubjectsSpaceConstraintsPushButton_clicked();
+	//void shortcutActivityTagsSpaceConstraintsPushButton_clicked();
 	void shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked();
 	void shortcutActivitiesSpaceConstraintsPushButton_clicked();
 	

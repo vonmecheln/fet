@@ -55,7 +55,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>21</number>
      </property>
      <widget class="QWidget" name="tabWidgetPage1">
       <attribute name="title">
@@ -126,7 +126,7 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_1">
          <property name="text">
           <string>Main categories</string>
          </property>
@@ -5541,6 +5541,220 @@
          </item>
          <item>
           <spacer name="verticalSpacer_111">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage22">
+      <attribute name="title">
+       <string>22</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_44">
+       <item row="1" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_111">
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsTeachersNamesCheckBox">
+           <property name="text">
+            <string>Teachers names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsTeachersLongNamesCheckBox">
+           <property name="text">
+            <string>Teachers long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsTeachersCodesCheckBox">
+           <property name="text">
+            <string>Teachers codes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_264">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_110">
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsDaysNamesCheckBox">
+           <property name="text">
+            <string>Days names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsDaysLongNamesCheckBox">
+           <property name="text">
+            <string>Days long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_262">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsHoursNamesCheckBox">
+           <property name="text">
+            <string>Hours names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersFreePeriodsHoursLongNamesCheckBox">
+           <property name="text">
+            <string>Hours long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_263">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Teachers free periods</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage23">
+      <attribute name="title">
+       <string>23</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_45">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>Teachers statistics</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_112">
+         <item>
+          <widget class="QCheckBox" name="teachersStatisticsTeachersNamesCheckBox">
+           <property name="text">
+            <string>Teachers names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersStatisticsTeachersLongNamesCheckBox">
+           <property name="text">
+            <string>Teachers long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="teachersStatisticsTeachersCodesCheckBox">
+           <property name="text">
+            <string>Teachers codes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_266">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>24</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_23">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>Students statistics</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_113">
+         <item>
+          <widget class="QCheckBox" name="studentsStatisticsStudentsNamesCheckBox">
+           <property name="text">
+            <string>Students names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="studentsStatisticsStudentsLongNamesCheckBox">
+           <property name="text">
+            <string>Students long names</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="studentsStatisticsStudentsCodesCheckBox">
+           <property name="text">
+            <string>Students codes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_267">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>

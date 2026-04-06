@@ -1124,7 +1124,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 						s+="-X-";
 				}
 				if(ok){
-					QString s2;
+					QString s2="";
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					if(teachersCheckBox->isChecked() && !act->teachersNames.isEmpty()){
 						s2+=act->teachersNames.join(translatedCommaSpace());
@@ -1270,6 +1270,9 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 		return;
 	}*/
 	QString s = "";
+
+	QString s2="";
+
 	if(d>=0 && d<gt.rules.nDaysPerWeek && h>=0 && h<gt.rules.nHoursPerDay){
 		int ai=students_timetable_weekly[sbg][d][h]; //activity index
 
@@ -1284,6 +1287,7 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 		}
 		
 		//Activity* act=gt.rules.activitiesList.at(ai);
+		
 		if(ok){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			assert(act!=nullptr);
@@ -1292,22 +1296,22 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 
 			int r=best_solution.rooms[ai];
 			if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-				s+="\n";
-				s+=tr("Room: %1").arg(gt.rules.internalRoomsList[r]->name);
+				s2+="\n";
+				s2+=tr("Room: %1").arg(gt.rules.internalRoomsList[r]->name);
 
 				if(gt.rules.internalRoomsList[r]->isVirtual==true){
 					QStringList tsl;
 					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
-					s+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
+					s2+=QString(" (")+tsl.join(translatedCommaSpace())+QString(")");
 				}
 
 				if(gt.rules.internalRoomsList[r]->building!=""){
-					s+="\n";
-					s+=tr("Building=%1").arg(gt.rules.internalRoomsList[r]->building);
+					s2+="\n";
+					s2+=tr("Building=%1").arg(gt.rules.internalRoomsList[r]->building);
 				}
-				s+="\n";
-				s+=tr("Capacity=%1").arg(gt.rules.internalRoomsList[r]->capacity);
+				s2+="\n";
+				s2+=tr("Capacity=%1").arg(gt.rules.internalRoomsList[r]->capacity);
 			}
 			//added by Volker Dirr (start)
 			QString descr="";
@@ -1335,22 +1339,22 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 				descr.prepend("\n(");
 				descr.append(")");
 			}
-			s+=descr;
+			s2+=descr;
 			//added by Volker Dirr (end)
 		}
 		else{
 			//if(subgroupNotAvailableDayHour[sbg][d][h]){
 			if(notAvailableDayHour.contains(QPair<int,int>(d,h))){
-				s+=tr("Students set is not available 100% in this slot");
-				s+="\n";
+				s2+=tr("Students set is not available 100% in this slot");
+				s2+="\n";
 			}
 			if(breakDayHour[d][h]){
-				s+=tr("Break with weight 100% in this slot");
-				s+="\n";
+				s2+=tr("Break with weight 100% in this slot");
+				s2+="\n";
 			}
 		}
 	}
-	detailsTextEdit->setText(s);
+	detailsTextEdit->setText(s+protect4(s2));
 }
 
 void TimetableViewStudentsTimeHorizontalForm::lockTime()

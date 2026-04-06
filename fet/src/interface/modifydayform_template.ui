@@ -33,7 +33,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <widget class="QLineEdit" name="longNameLineEdit"/>
+       <widget class="QTextEdit" name="longNameTextEdit"/>
       </item>
      </layout>
     </widget>
@@ -85,4 +85,5 @@
   </layout>
  </widget>
  <resources/>
+ <connections/>
 </ui>
