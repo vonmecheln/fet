@@ -3903,10 +3903,10 @@ Number of subactivities in each larger split activity=%6</source>
         <translation>Μέγιστες ετικέτες δραστηριοτήτων ανά εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2321"/>
-        <source>Modify rooms occupy max sets of time slots from selection</source>
-        <comment>The title of the dialog to add a new constraint of this type</comment>
-        <translation>Τροποποίηση: «Αίθουσες - καταλαμβάνουν μέγιστα σύνολα περιόδων από επιλογή»</translation>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2127"/>
+        <source>Modify room occupies max sets of time slots from selection</source>
+        <comment>The title of the dialog to modify a new constraint of this type</comment>
+        <translation>Τροποποίηση: «Αίθουσα - καταλαμβάνει μέγιστα σύνολα περιόδων από επιλογή»</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="1981"/>
@@ -3998,12 +3998,6 @@ Number of subactivities in each larger split activity=%6</source>
         <translation>Ο αριθμός που έχει επιλεγεί σε ένα κελί του widget (γραφικού στοιχείου) του πίνακα αντιπροσωπεύει τον αριθμό του επιλεγμένου συνόλου περιόδων στο οποίο ανήκει αυτή η περίοδος (η τιμή 0, που εμφανίζεται εδώ ως κενό, αντιπροσωπεύει μία μη επιλεγμένη περίοδο).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2127"/>
-        <source>Modify room occupies max sets of time slots from selection</source>
-        <comment>The title of the dialog to add a new constraint of this type</comment>
-        <translation>Τροποποίηση: «Αίθουσα - καταλαμβάνει μέγιστα σύνολα περιόδων από επιλογή»</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2139"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2330"/>
         <source>Max occupied sets of time slots</source>
@@ -4074,6 +4068,12 @@ Number of subactivities in each larger split activity=%6</source>
         <source>Add rooms occupy max sets of time slots from selection</source>
         <comment>The title of the dialog to add a new constraint of this type</comment>
         <translation>Προσθήκη: «Αίθουσες - καταλαμβάνουν μέγιστα σύνολα περιόδων από επιλογή»</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2321"/>
+        <source>Modify rooms occupy max sets of time slots from selection</source>
+        <comment>The title of the dialog to modify a new constraint of this type</comment>
+        <translation>Τροποποίηση: «Αίθουσες - καταλαμβάνουν μέγιστα σύνολα περιόδων από επιλογή»</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2430"/>
@@ -14816,12 +14816,6 @@ to
         <source>Activities max total number of students in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MTNS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MTNS means max total number of students</comment>
         <translation>Δραστηριότητες - μέγιστος συνολικός αριθμός μαθητών σε επιλεγμένες περιόδους, ΠΒ:%1%, ΑΔ:%2, Δ: %3, ΕΠ: %4, ΜΣΑΜ:%5</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="79648"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="79675"/>
-        <source>Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!</source>
-        <translation>Προειδοποίηση: αυτός ο περιορισμός μπορεί να επιβραδύνει πάρα πολύ την δημιουργία (επίλυση) του ωρολογίου προγράμματος! Χρησιμοποιήστε τον μόνο εάν είναι απολύτως απαραίτητο, και με προσοχή!</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="79649"/>
@@ -57120,106 +57114,106 @@ now has the comments:
 <context>
     <name>GroupsForm</name>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="170"/>
-        <location filename="../src/interface/groupsform.cpp" line="191"/>
-        <location filename="../src/interface/groupsform.cpp" line="225"/>
-        <location filename="../src/interface/groupsform.cpp" line="232"/>
-        <location filename="../src/interface/groupsform.cpp" line="299"/>
-        <location filename="../src/interface/groupsform.cpp" line="306"/>
-        <location filename="../src/interface/groupsform.cpp" line="484"/>
-        <location filename="../src/interface/groupsform.cpp" line="500"/>
-        <location filename="../src/interface/groupsform.cpp" line="514"/>
-        <location filename="../src/interface/groupsform.cpp" line="546"/>
-        <location filename="../src/interface/groupsform.cpp" line="553"/>
-        <location filename="../src/interface/groupsform.cpp" line="559"/>
-        <location filename="../src/interface/groupsform.cpp" line="568"/>
-        <location filename="../src/interface/groupsform.cpp" line="575"/>
-        <location filename="../src/interface/groupsform.cpp" line="581"/>
-        <location filename="../src/interface/groupsform.cpp" line="591"/>
-        <location filename="../src/interface/groupsform.cpp" line="655"/>
-        <location filename="../src/interface/groupsform.cpp" line="719"/>
+        <location filename="../src/interface/groupsform.cpp" line="178"/>
+        <location filename="../src/interface/groupsform.cpp" line="199"/>
+        <location filename="../src/interface/groupsform.cpp" line="233"/>
+        <location filename="../src/interface/groupsform.cpp" line="240"/>
+        <location filename="../src/interface/groupsform.cpp" line="307"/>
+        <location filename="../src/interface/groupsform.cpp" line="314"/>
+        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="508"/>
+        <location filename="../src/interface/groupsform.cpp" line="522"/>
+        <location filename="../src/interface/groupsform.cpp" line="554"/>
+        <location filename="../src/interface/groupsform.cpp" line="561"/>
+        <location filename="../src/interface/groupsform.cpp" line="567"/>
+        <location filename="../src/interface/groupsform.cpp" line="576"/>
+        <location filename="../src/interface/groupsform.cpp" line="583"/>
+        <location filename="../src/interface/groupsform.cpp" line="589"/>
+        <location filename="../src/interface/groupsform.cpp" line="599"/>
+        <location filename="../src/interface/groupsform.cpp" line="663"/>
+        <location filename="../src/interface/groupsform.cpp" line="727"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="170"/>
-        <location filename="../src/interface/groupsform.cpp" line="191"/>
-        <location filename="../src/interface/groupsform.cpp" line="225"/>
-        <location filename="../src/interface/groupsform.cpp" line="299"/>
-        <location filename="../src/interface/groupsform.cpp" line="484"/>
-        <location filename="../src/interface/groupsform.cpp" line="500"/>
-        <location filename="../src/interface/groupsform.cpp" line="546"/>
-        <location filename="../src/interface/groupsform.cpp" line="568"/>
+        <location filename="../src/interface/groupsform.cpp" line="178"/>
+        <location filename="../src/interface/groupsform.cpp" line="199"/>
+        <location filename="../src/interface/groupsform.cpp" line="233"/>
+        <location filename="../src/interface/groupsform.cpp" line="307"/>
+        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="508"/>
+        <location filename="../src/interface/groupsform.cpp" line="554"/>
+        <location filename="../src/interface/groupsform.cpp" line="576"/>
         <source>Invalid selected year</source>
         <translation>Μη αποδεκτή επιλογή έτους</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="232"/>
-        <location filename="../src/interface/groupsform.cpp" line="306"/>
-        <location filename="../src/interface/groupsform.cpp" line="514"/>
-        <location filename="../src/interface/groupsform.cpp" line="553"/>
-        <location filename="../src/interface/groupsform.cpp" line="575"/>
-        <location filename="../src/interface/groupsform.cpp" line="591"/>
-        <location filename="../src/interface/groupsform.cpp" line="655"/>
-        <location filename="../src/interface/groupsform.cpp" line="719"/>
+        <location filename="../src/interface/groupsform.cpp" line="240"/>
+        <location filename="../src/interface/groupsform.cpp" line="314"/>
+        <location filename="../src/interface/groupsform.cpp" line="522"/>
+        <location filename="../src/interface/groupsform.cpp" line="561"/>
+        <location filename="../src/interface/groupsform.cpp" line="583"/>
+        <location filename="../src/interface/groupsform.cpp" line="599"/>
+        <location filename="../src/interface/groupsform.cpp" line="663"/>
+        <location filename="../src/interface/groupsform.cpp" line="727"/>
         <source>Invalid selected group</source>
         <translation>Μη αποδεκτή επιλογή τμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="250"/>
+        <location filename="../src/interface/groupsform.cpp" line="258"/>
         <source>This group exists only in year %1. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Το τμήμα αυτό υπάρχει μόνον στο έτος %1. Αυτό σημαίνει ότι όλες οι σχετικές (με το τμήμα αυτό) δραστηριότητες καθώς και όλοι οι σχετικοί περιορισμοί θα διαγραφούν. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="254"/>
+        <location filename="../src/interface/groupsform.cpp" line="262"/>
         <source>This group exists in more places, listed below. It will only be removed from the current year, and the related activities and constraints will not be removed. Do you want to continue?</source>
         <translation>Το τμήμα αυτό υπάρχει σε περισσότερα «μέρη», τα οποία παρατίθενται παρακάτω. Θα διαγραφεί μόνον από το τρέχον έτος, ενώ δεν πρόκειται να διαγραφούν οι σχετικές (με το τμήμα αυτό) δραστηριότητες, ούτε και οι σχετικοί περιορισμοί. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="261"/>
-        <location filename="../src/interface/groupsform.cpp" line="334"/>
+        <location filename="../src/interface/groupsform.cpp" line="269"/>
+        <location filename="../src/interface/groupsform.cpp" line="342"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="274"/>
+        <location filename="../src/interface/groupsform.cpp" line="282"/>
         <source>Removed the group %1 from the year %2.</source>
         <translation>Αφαιρέθηκε το τμήμα %1 από το έτος %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="347"/>
+        <location filename="../src/interface/groupsform.cpp" line="355"/>
         <source>Removed the group %1 from everywhere.</source>
         <translation>Αφαιρέθηκε το τμήμα %1 από παντού.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="436"/>
+        <location filename="../src/interface/groupsform.cpp" line="444"/>
         <source>Moved the group %1 up in the year %2.</source>
         <translation>Το τμήμα %1 μετακινήθηκε προς τα επάνω στο έτος %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="475"/>
+        <location filename="../src/interface/groupsform.cpp" line="483"/>
         <source>Moved the group %1 down in the year %2.</source>
         <translation>Το τμήμα %1 μετακινήθηκε προς τα κάτω στο έτος %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="500"/>
         <source>Sorted the groups in the year %1.</source>
         <translation>Ταξινομήθηκαν τα τμήματα στο έτος %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="562"/>
+        <location filename="../src/interface/groupsform.cpp" line="570"/>
         <source>Activated the group %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation>Ενεργοποιήθηκε το τμήμα %1 (%2 δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="584"/>
+        <location filename="../src/interface/groupsform.cpp" line="592"/>
         <source>Deactivated group %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation>Απενεργοποιήθηκε το τμήμα %1 (%2 δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="642"/>
+        <location filename="../src/interface/groupsform.cpp" line="650"/>
         <source>Changed the comments for the group %1 from
 %2
 to
@@ -57230,12 +57224,12 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="666"/>
+        <location filename="../src/interface/groupsform.cpp" line="674"/>
         <source>Group long name</source>
         <translation>Πλήρες όνομα τμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="706"/>
+        <location filename="../src/interface/groupsform.cpp" line="714"/>
         <source>Changed the long name for the group %1 from
 %2
 to
@@ -57246,12 +57240,12 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="730"/>
+        <location filename="../src/interface/groupsform.cpp" line="738"/>
         <source>Group code</source>
         <translation>Κωδικός τμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="770"/>
+        <location filename="../src/interface/groupsform.cpp" line="778"/>
         <source>Changed the code for the group %1 from
 %2
 to
@@ -57262,53 +57256,53 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="324"/>
+        <location filename="../src/interface/groupsform.cpp" line="332"/>
         <source>This group exists only in year %1. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Το τμήμα αυτό υπάρχει μόνον στο έτος %1. Όλες οι σχετικές δραστηριότητες και όλοι οι σχετικοί περιορισμοί (με το τμήμα αυτό) θα διαγραφούν. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="327"/>
+        <location filename="../src/interface/groupsform.cpp" line="335"/>
         <source>This group exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Το τμήμα αυτό υπάρχει σε περισσότερα μέρη, τα οποία παρατίθεται παρακάτω. Θα διαγραφεί από όλα αυτά τα μέρη. Θα διαγραφούν όλες οι δραστηριότητες και όλοι οι περιορισμοί που σχετίζονται με το αυτό τμήμα. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="581"/>
+        <location filename="../src/interface/groupsform.cpp" line="589"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Απενεργοποιήθηκαν %1 δραστηριότητες σε αριθμό</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="602"/>
+        <location filename="../src/interface/groupsform.cpp" line="610"/>
         <source>Students group comments</source>
         <translation>Τμήμα μαθητών - σχόλια</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="604"/>
-        <location filename="../src/interface/groupsform.cpp" line="668"/>
-        <location filename="../src/interface/groupsform.cpp" line="732"/>
+        <location filename="../src/interface/groupsform.cpp" line="612"/>
+        <location filename="../src/interface/groupsform.cpp" line="676"/>
+        <location filename="../src/interface/groupsform.cpp" line="740"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="606"/>
-        <location filename="../src/interface/groupsform.cpp" line="670"/>
-        <location filename="../src/interface/groupsform.cpp" line="734"/>
+        <location filename="../src/interface/groupsform.cpp" line="614"/>
+        <location filename="../src/interface/groupsform.cpp" line="678"/>
+        <location filename="../src/interface/groupsform.cpp" line="742"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="262"/>
-        <location filename="../src/interface/groupsform.cpp" line="335"/>
+        <location filename="../src/interface/groupsform.cpp" line="270"/>
+        <location filename="../src/interface/groupsform.cpp" line="343"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="262"/>
-        <location filename="../src/interface/groupsform.cpp" line="335"/>
+        <location filename="../src/interface/groupsform.cpp" line="270"/>
+        <location filename="../src/interface/groupsform.cpp" line="343"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="559"/>
+        <location filename="../src/interface/groupsform.cpp" line="567"/>
         <source>Activated a number of %1 activities</source>
         <translation>Ενεργοποιήθηκαν %1 δραστηριότητες σε αριθμό</translation>
     </message>
@@ -58744,16 +58738,21 @@ Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then s
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="629"/>
+        <source>Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), your operating system name and version, and your processor architecture type.</source>
+        <translation>Επίσης, θα είναι ορατά στον εξυπηρετητή (σέρβερ) η έκδοση του FET που χρησιμοποιείτε στην παρούσα φάση, η έκδοση του Qt (η εργαλειοθήκη της C++ που χρησιμοποιείται από το FET) που χρησιμοποιείτε στην παρούσα φάση, η ονομασία και έκδοση του λειτουργικού σας συστήματος καθώς και o τύπος της αρχιτεκτονικής του επεξεργαστή σας.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="632"/>
         <source>Thus, it could be deduced if and when you use FET.</source>
         <translation>Έτσι, θα μπορεί να συναχθεί το εάν και πότε χρησιμοποιείτε το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="642"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="645"/>
         <source>Alternative solutions: either you can split that activity into two subactivities with duration 1 (without a min days constraint between them), and add a two activities consecutive constraint, or you can choose to not add the break constraint in your file.</source>
         <translation>Εναλλακτικές λύσεις: μπορείτε είτε να επιμερίσετε την δραστηριότητα σε δύο υποδραστηριότητες με διάρκεια 1 ώρα (χωρίς περιορισμό «ελάχιστες ημέρες ανάμεσα σε δραστηριότητες») και να προσθέσετε περιορισμό «δύο δραστηριότητες - διαδοχικές», είτε επιλέξετε να μην προσθέσετε τον περιορισμό διαλείμματος στα δεδομένα σας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="676"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="679"/>
         <source>Q: (by %1) I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
 
 The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are nonconsecutive).
@@ -58775,7 +58774,7 @@ Or add a dummy activity for this teacher, split into 2 per week, min days = 2, w
 Ή διαφορετικά προσθέστε μία ψευδο-δραστηριότητα για τον εκπαιδευτικό αυτό, επιμερισμένη σε 2 υποδραστηριότητες την εβδομάδα, «ελάχιστες ημέρες» = 2, με ποσοστό βαρύτητας 100%. Το μόνο που χρειάζεται να κάνετε είναι να εξασφαλίσετε ότι ο εκπαιδευτικός αυτός έχει «χώρο» για αυτές τις ψευδο-δραστηριότητες (αρκετές περιόδους μέσα στην ημέρα) και να θεωρήστε τις ψευδο-δραστηριότητες αυτές σαν εν δυνάμει κενά. Οπότε, αν ο εκπαιδευτικός έχει «μέγιστα κενά» 2 (χωρίς τις ψευδο-δραστηριότητες), δώστε την τιμή «μέγιστα κενά» 0 (μετά την προσθήκη των ψευδο-δραστηριοτήτων).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="708"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="711"/>
         <source>Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be on the same day by constraints min days between activities?
 
 If A1 and A2 are constrained not to be on the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be on the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
@@ -58788,22 +58787,22 @@ The correct way would probably be to consider A1 and A2 = a single activity A12&
 Ο σωστός τρόπος ενδεχομένως να είναι να θεωρήσετε τις δραστηριότητες Δ1 και Δ2 σαν μία μόνον δραστηριότητα Δ12&apos;, ή να τροποποιήσετε τον σχετικό περιορισμό «ελάχιστες ημέρες ανάμεσα σε δραστηριότητες». Ή πιθανώς να μπορείτε να βρείτε και άλλους τρόπους.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="726"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="729"/>
         <source>The second hint is not to change too many constraints in one generation. If it is impossible to generate a timetable with those added constraints, it is difficult to say which particular constraint was responsible.</source>
         <translation>Η δεύτερη υπόδειξη είναι να μην αλλάζουν υπερβολικά πολλούς περιορισμούς στην ίδια δημιουργία (προσπάθεια επίλυσης). Εάν είναι αδύνατο να δημιουργηθεί (επιλυθεί) ένα ωρολόγιο πρόγραμμα με αυτούς τους πρόσθετους περιορισμούς, είναι δύσκολο να πούμε (να εντοπίσουμε) ποιος συγκεκριμένος περιορισμός είναι υπεύθυνος.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="729"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="732"/>
         <source>It may happen, for example, that even when two consecutive activities are placed on the same day (with the same group and the same teacher) sometimes they are placed in different rooms, which would force them to needlessly change rooms. I guess that FET is focused on fulfilling constraints but not on optimizing timetables. Sometimes simply changing the two activities is better both for the students and the teachers. I think that manually improving a generated timetable is faster than creating many more constraints and repeating the generation. And this is the third hint.</source>
         <translation>Μπορεί να συμβεί, για παράδειγμα, ακόμη και όταν δύο διαδοχικές δραστηριότητες τοποθετούνται την ίδια ημέρα (με το ίδιο τμήμα και τον ίδιο εκπαιδευτικό) μερικές φορές να τοποθετούνται σε διαφορετικές αίθουσες, κάτι που θα τους ανάγκαζε να αλλάξουν άσκοπα αίθουσες. Υποθέτω ότι το FET επικεντρώνεται στην εκπλήρωση περιορισμών, και όχι στην βελτιστοποίηση των ωρολογίων προγραμμάτων. Μερικές φορές η απλή αλλαγή των δύο δραστηριοτήτων είναι καλύτερη τόσο για τους μαθητές, όσο και για τους εκπαιδευτικούς. Νομίζω ότι η χειροκίνητη βελτίωση ενός ωρολογίου προγράμματος το οποίο έχει δημιουργηθεί (με το FET), είναι πιο γρήγορη από τη προσθήκη πολλών περισσότερων περιορισμών και την επανάληψη την δημιουργίας (κατάρτισης) του ωρολογίου προγράμματος. Και αυτή είναι η τρίτη υπόδειξη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="775"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="778"/>
         <source>Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.</source>
         <translation>Ε: Δοκίμασα να δουλέψω σε ένα ωρολόγιο πρόγραμμα που επέλυσε (κατήρτισε) το FET και συγκεκριμένα να μετακινήσω κάποια δραστηριότητα σε άλλη περίοδο. Τώρα «κόλλησα» - το FET λέει ότι η δημιουργία (κατάρτιση) του ωρολογίου προγράμματος είναι αδύνατη.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="777"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="780"/>
         <source>A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more than 4 hours, it does not matter for our discussion). Now, if you have a day with 4 hours and try to move another activity to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why? Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity. (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.
 
  A solution: lower the weight of this constraint from 99% to 90% or less.</source>
@@ -58812,250 +58811,250 @@ The correct way would probably be to consider A1 and A2 = a single activity A12&
  Μία λύση: μειώστε το ποσοστό βαρύτητας για αυτόν τον περιορισμό από το 99% στο 90% ή και λιγότερο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="791"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="794"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
         <translation>Ε: Τέχνασμα για να διαχειριστείτε τις δραστηριότητες 14ημέρου (το εκπαιδευτικό ίδρυμα έχει πολλές δραστηριότητες 14ημέρου):</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="793"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="796"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
         <translation>Α: Χώρισα τις ώρες στα δύο. Το πρώτο μισό της κάθε ώρας (8:00 έως 8.30, 9.00 έως 9.30, ...) αντιπροσωπεύει την εβδομάδα Α, το δεύτερο μισό (8.30 έως 9.00, 9.30 έως 10.00, ...) αντιπροσωπεύει την εβδομάδα Β. Οι δραστηριότητες 14ημέρου (διπλής εβδομάδας) έχουν διάρκεια 1, ενώ οι εβδομαδιαίες δραστηριότητες 1 έχουν διάρκεια 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="797"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="800"/>
         <source>I created an activity tag &apos;Start hour&apos;. It should be added to each weekly activity to make sure they start at the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A, and on the same day but at the next hour on week B.</source>
         <translation>Δημιούργησα την ετικέτα δραστηριότητας «Ώρα έναρξης». Η ετικέτα αυτή πρέπει να προστεθεί σε κάθε εβδομαδιαία δραστηριότητα, ώστε να διασφαλιστεί ότι όλες οι εβδομαδιαίες δραστηριότητες ξεκινούν στον ίδιο χρόνο (ίδια ημέρα + ίδια ώρα) κάθε εβδομάδα. Σε διαφορετική περίπτωση, μία δραστηριότητα με διάρκεια 2 (ώρες) μπορεί να ξεκινά το δεύτερο μισό κάποιας ώρας στο ωρολόγιο πρόγραμμα, κι έτσι η δραστηριότητα αυτή να τοποθετείται σε συγκεκριμένη ημέρα και σε συγκεκριμένη ώρα μέσα στην εβδομάδα Α, και την ίδια ημέρα αλλά την επόμενη ώρα στην εβδομάδα Β.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="819"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="822"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
         <translation>Σημείωση: Συνιστάται να προσθέσετε τις 3 δραστηριότητες ως μόνες/ανεξάρτητες (δηλαδή όχι ως μία επιμερισμένη δραστηριότητα με 3 στοιχεία (υποδραστηριότητες)). Ο λόγος είναι ότι αν θέλετε να εφαρμόσετε την ομοιόμορφη κατανομή (ομοιόμορφο «άπλωμα») των δραστηριοτήτων μέσα στην εβδομάδα, η λειτουργία αυτή δεν θα προσθέσει/διαγράψει περιορισμούς του τύπου «ελάχιστες ημέρες ανάμεσα σε δραστηριότητες» για αυτές τις 3 δραστηριότητες. Επίσης, αν προσθέσετε μία επιμερισμένη δραστηριότητα, θα πρέπει να προσέξετε να μην προσθέσετε τον προκαθορισμένο περιορισμό «ελάχιστες ημέρες» ανάμεσα στα 3 στοιχεία (υποδραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="829"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="832"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
         <translation>Ε: Θέλω να καθορίσω ότι κάποιος εκπαιδευτικός θα πρέπει να έχει δραστηριότητες σε συγκεκριμένες περιόδους, ανεξάρτητα με το ποιες θα είναι οι δραστηριότητες αυτές.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="831"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
         <source>A: You can use a constraint of type activities occupy min time slots from selection or use in an inverted way a constraint of type activities occupy max time slots from selection (the exact menu entries are &apos;A set of activities occupies min/max time slots from selection&apos;).</source>
         <translation>Α: Μπορείτε να χρησιμοποιήσετε τον περιορισμό του τύπου «δραστηριότητες - καταλαμβάνουν ελάχιστες περιόδους από επιλογή» ή να χρησιμοποιήσετε με αντίστροφο τρόπο τον περιορισμό του τύπου «δραστηριότητες - καταλαμβάνουν μέγιστες περιόδους από επιλογή» (οι ακριβείς καταχωρήσεις στο μενού είναι «Σύνολο δραστηριοτήτων καταλαμβάνει ελάχιστες/μέγιστες περιόδους από επιλογή»).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="838"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="841"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
         <translation>Ε: Πώς μπορώ να βρω εύκολα τις δραστηριότητες με μη καθορισμένη αίθουσα στο ωρολόγιο πρόγραμμα (μετά την κατάρτιση του ωρολογίου προγράμματος);</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="840"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="843"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
         <translation>Α: Ένα τέχνασμα (τρικ) είναι το εξής: ανοίξτε με κάποια εφαρμογή κειμενογράφου το αρχείο (σε φορμά XML) το οποίο αντιπροσωπεύει το ωρολόγιο πρόγραμμα των δραστηριοτήτων (το αρχείο αυτό βρίσκεται στον κατάλογο αποτελεσμάτων, με όνομα της μορφής: file_activities.xml), και αναζητήστε για το κείμενο &lt;Room&gt;&lt;/Room&gt;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="847"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="850"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
         <translation>Ε: Οι μαθητές ή/και οι εκπαιδευτικοί θα πρέπει να έχουν κάθε ημέρα κάποιες δραστηριότητες χωρίς διακοπή, μετά μερικά συνεχόμενα κενά, μετά ξανά κάποιες δραστηριότητες χωρίς διακοπή. Η περίπτωση αυτή μπορεί να εμφανιστεί στις παρακάτω περιπτώσεις: σχολεία στο Μαρόκο και την Αλγερία, τα οποία έχουν πρωινές και απογευματινές βάρδιες, καθώς επίσης και σε μερικά πανεπιστήμια στα οποία οι μαθητές (φοιτητές) προτιμούν να έχουν κατά μέγιστο έναν μόνον «σχηματισμό» (συνεχόμενων) κενών, χωρίς να έχει σημασία πόσο μεγάλος θα είναι (πόσα θα είναι τα συνεχόμενα κενά), κάθε ημέρα. Πώς μπορούμε να χειριστούμε τέτοιες περιπτώσεις στο FET;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="853"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="856"/>
         <source>A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours daily with allow empty days true. You may need to devise some other tricks, in addition.</source>
         <translation>Α: Ένας καλός τρόπος αντιμετώπισης τέτοιων καταστάσεων θα ήταν να θεωρήσετε τον αριθμό των ημερών στο FET = 2 * (τον αριθμό των πραγματικών ημερών). Έτσι, κάθε πραγματική ημέρα θα αντιστοιχεί σε δύο ημέρες στο FET, μία για το πρωί και μία για το απόγευμα. Μετά, προσθέστε περιορισμούς «μέγιστα κενά» = 0, και πιθανώς «ελάχιστες ώρες ημερησίως» = 2 με «κενές ημέρες - επιτρεπτές» = «αληθής». Μπορεί επιπρόσθετα να χρειαστεί να επινοήσετε και κάποια άλλα τεχνάσματα (τρικ).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="864"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
         <translation>Ε: Πώς μπορώ να προσθέσω ένα σχόλιο σε μία (υπο)δραστηριότητα ή σε έναν περιορισμό;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="866"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
         <translation>Α: Μπορείτε να προσθέσετε σχόλιο σε κάποια (υπο)δραστηριότητα κάνοντας κλικ στο κουμπί «Σχόλια» στον διάλογο (υπο)δραστηριοτήτων. Μπορείτε να προσθέσετε σχόλιο σε κάποιον περιορισμό κάνοντας κλικ στο κουμπί «Σχόλια» που υπάρχει σε όλους τους διαλόγους χρονικών/χωρικών περιορισμών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="873"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
         <translation>Ε: Πώς μπορώ να ενεργοποιήσω/απενεργοποιήσω έναν περιορισμό;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="872"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="875"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
         <translation>Α: Μπορείτε να ενεργοποιήσετε/απενεργοποιήσετε κάποιον περιορισμό κάνοντας κλικ στα κουμπιά «Ενεργοποίηση/Απενεργοποίηση» που υπάρχουν σε όλους τους διαλόγους χρονικών/χωρικών περιορισμών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="889"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="892"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
         <translation>Ε: Πώς μπορώ να καθορίσω ότι κάποιες δραστηριότητες πρέπει να πραγματοποιούνται στην ίδια αίθουσα (σε διαφορετικές περιόδους φυσικά, καθότι μία αίθουσα μπορεί να χωρέσει («φιλοξενήσει») μία δραστηριότητα σε συγκεκριμένη περίοδο); Αυτό χρειάζεται -για παράδειγμα- για να περιοριστούν οι δραστηριότητες Φυσικής συγκεκριμένης ομάδας μαθητών, έτσι ώστε να πραγματοποιούνται στην ίδια αίθουσα, η οποία μπορεί να είναι το Εργαστήριο1 ή το Εργαστήριο2</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="896"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
         <translation>Α: Μπορείτε να χρησιμοποιήσετε τον περιορισμό «δραστηριότητες - καταλαμβάνουν μέγιστες διαφορετικές αίθουσες», με «μέγιστες διαφορετικές αίθουσες» = 1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="899"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
         <source>Q: How can I backup/restore the FET settings on a computer, or share them between different computers?</source>
         <translation>Ε: Πώς μπορώ να κρατήσω αντίγραφο ασφαλείας ή/και να ανακτήσω τις ρυθμίσεις του FET σε κάποιον υπολογιστή, ή να χρησιμοποιήσω (να μοιραστώ) αυτές τις ρυθμίσεις σε διαφορετικούς υπολογιστές;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="901"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
         <source>A: GNU/Linux: Usually, in your %1 directory you will find a directory &quot;%2&quot; containing the file &quot;%3&quot;. If you copy this file to another computer, the FET settings will be copied. You can also make a backup of this file and copy it on the same computer, later, to restore the previous settings. If you remove this file, all FET settings on this computer will be reset to defaults.</source>
         <translation>Α: GNU/Linux: Συνήθως, στον κατάλογο «%1» θα βρείτε τον κατάλογο «%2» στον οποίο περιέχεται το αρχείο «%3». Αν αντιγράφετε το αρχείο αυτό σε έναν άλλο υπολογιστή, θα αντιγραφούν οι ρυθμίσεις του FET. Μπορείτε επίσης να κρατήσετε ένα αντίγραφο ασφαλείας του αρχείου αυτού και να το αντιγράψετε στον ίδιο υπολογιστή, αργότερα, προκειμένου να επαναφέρετε τις προηγούμενες ρυθμίσεις. Αν διαγράψετε το αρχείο αυτό, όλες οι ρυθμίσεις του FET σε αυτόν τον υπολογιστή θα επανέλθουν στις προκαθορισμένες (αρχικές).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="907"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="910"/>
         <source>macOS: It seems that the configuration file might be %1</source>
         <translation>macOS: Φαίνεται ότι το αρχείο ρύθμισης παραμέτρων πιθανώς να είναι το %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="909"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="912"/>
         <source>Windows: Run regedit.exe (Registry Editor) and search for the key &quot;%1&quot;. You will find a section with this name, with the subsection &quot;%2&quot;. You can export this section to a file, and import it from this file on the same or another computer. If you remove this section, all FET settings will be reset to defaults.</source>
         <translation>Windows: «Τρέξτε» το regedit.exe (Registry Editor) και αναζητήστε το κλειδί μητρώου «%1». Θα βρείτε ένα τμήμα μητρώου με το όνομα αυτό, με το υποτμήμα μητρώου «%2». Μπορείτε να εξαγάγετε αυτό το τμήμα μητρώου σε αρχείο, και να το εισαγάγετε από το αρχείο αυτό στον ίδιο ή κάποιον άλλον υπολογιστή. Αν διαγράψετε αυτόν το τμήμα μητρώου, όλες οι ρυθμίσεις του FET θα επανέλθουν στις προκαθορισμένες (αρχικές).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="917"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="920"/>
         <source>Q: I have many subgroups and I don&apos;t explicitly use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation>Ε: Έχω πολλά υποτμήματα τα οποία δεν χρησιμοποιώ ρητώς. Μπορώ να τα αποκρύψω στα σύνθετα πλαίσια, ώστε να προσθέτω ευκολότερα τους περιορισμούς; Επίσης, μπορώ να κάνω την διεπαφή του FET να δουλεύει γρηγορότερα;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="920"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="947"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="971"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="982"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="996"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="1017"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="1030"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="923"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="950"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="974"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="985"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="999"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1020"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1033"/>
         <source>A:</source>
         <comment>Answer</comment>
         <translation>Α:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="922"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Αν έχετε πολλά υποτμήματα και δεν τα χρησιμοποιείτε ρητά, προτείνεται να χρησιμοποιήσετε τις τρεις καθολικές ρυθμίσεις: απόκρυψη υποτμημάτων στα σύνθετα πλαίσια, απόκρυψη υποτμημάτων στον προγραμματισμό δραστηριοτήτων και μη εγγραφή ωρολογίων προγραμμάτων των υποτμημάτων στον σκληρό δίσκο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation>Προσέξτε ότι η χρήση της καθολικής ρύθμισης στο μενού για απόκρυψη των υποτμημάτων στον προγραμματισμό δραστηριοτήτων είναι κάτι διαφορετικό από το πλαίσιο ελέγχου στον διάλογο προγραμματισμού δραστηριοτήτων. Η καθολική ρύθμιση δουλεύει καλύτερα και γρηγορότερα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="931"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation>Αν αποκρύψετε τα υποτμήματα στα σύνθετα πλαίσια, οι διάλογοι που επηρεάζονται (όπως ο διάλογος δραστηριοτήτων ή ο διάλογος «ομάδα μαθητών - μη διαθέσιμοι χρόνοι») θα φορτώνονται σαφώς πιο γρήγορα στην περίπτωση που έχετε πολλά υποτμήματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="933"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="936"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the generation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation>Εάν απλά δουλεύετε ένα ωρολόγιο πρόγραμμα, και δεν χρειάζεται να το δημοσιοποιήσετε, πιθανώς να θέλετε να απενεργοποιήσετε την εγγραφή κάποιων κατηγοριών ωρολογίων προγραμμάτων στον σκληρό δίσκο, για λόγους αποδοτικότητας (η ταχύτητα επίλυσης δεν επηρεάζεται, μόνον υπάρχει μία επιβάρυνση για την εγγραφή των μερικώς/πλήρως επιλυμένων ωρολογίων προγραμμάτων όταν διακόπτεται/τερματίζεται η δημιουργία/επίλυση). Τα ωρολόγια προγράμματα που απαιτούν τον περισσότερο χρόνο είναι αυτά των υποτμημάτων, τμημάτων ΚΑΙ ετών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="937"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="940"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation>(Επίσης, ο πίνακας των συγκρούσεων μπορεί να χρειαστεί αρκετή ώρα για να γραφτεί, αν το αρχείο είναι μεγάλο.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="939"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="942"/>
         <source>After that, you can enable the writing of the timetables and regenerate.</source>
         <translation>Μετά από αυτό, μπορείτε να ενεργοποιήσετε την εγγραφή των ωρολογίων προγραμμάτων και να δημιουργήσετε νέα ωρολόγια προγράμματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="945"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="948"/>
         <source>Q: How about dividing a students year automatically into many subgroups?</source>
         <translation>Ε: Τι ισχύει αναφορικά με την αυτόματη κατάτμηση ενός έτους (μαθητών) σε πολλά υποτμήματα;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="949"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="952"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation>Σχετικά με την χρήση μεγάλου αριθμού κατηγοριών, κατατμήσεων ανά κατηγορία και υποτμημάτων: συνιστάται να διατηρήσετε τα ανωτέρω στις ελάχιστες δυνατές τιμές, ιδιαίτερα τον αριθμό των κατηγοριών, χρησιμοποιώντας οποιουδήποτε είδους τεχνάσματα. Σε διαφορετική περίπτωση η κατάρτιση του ωρολογίου προγράμματος μπορεί να καταστεί αδύνατη (ή να απαιτήσει πολύ χρόνο).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="953"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation>Πιθανώς, ένας εύλογος αριθμός κατηγοριών να είναι 2, 4 ή κατά μέγιστο 4. Ο διάλογος κατάτμησης έτους επιτρέπει σαφώς μεγαλύτερες τιμές, οι οποίες όμως δεν συνιστώνται.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="959"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
         <translation>Πιθανώς ένας εναλλακτικός τρόπος για την κατάτμηση ενός έτους σε πολλές κατηγορίες/υποτμήματα θα ήταν να εισαγάγετε τους μεμονωμένους μαθητές ως υποτμήματα του FET και να προσθέσετε στο κάθε τμήμα τα αντίστοιχα υποτμήματα. Αλλά αυτό είναι δύσκολο να πραγματοποιηθεί από την διεπαφή του FET - πιθανώς μία λύση να είναι η χρήση ενός αυτοματοποιημένου «εργαλείου» έτσι ώστε να μετατρέψετε τα δεδομένα του εκπαιδευτικού σας ιδρύματος σε αρχείο σε φορμά.fet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="963"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
         <translation>Ή θα μπορούσατε να χρησιμοποιήσετε την δυνατότητα του FET και να εισαγάγετε τις ομάδες μαθητών από αρχεία CSV (τιμών διαχωρισμένων με κόμμα).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="962"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="965"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
         <translation>Σε τέτοιες περιπτώσεις (με τους μεμονωμένους μαθητές να είναι υποτμήματα του FET), να θυμάστε ότι μικρός συνολικός αριθμός υποτμημάτων σημαίνει συντομότερο χρόνο επίλυσης (κατάρτισης ωρολογίου προγράμματος). Οπότε, πιθανώς να θελήσετε να θεωρήσετε ότι δύο ή και περισσότεροι μαθητές -οι οποίοι έχουν ακριβώς τις ίδιες δραστηριότητες και ακριβώς τους ίδιους περιορισμούς- αποτελούν ένα μόνον υποτμήμα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="969"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="972"/>
         <source>Q: Does the order of constraints have influence on their importance while generating the timetable?</source>
         <translation>Ε: Η σειρά των περιορισμών έχει κάποια επίδραση στην σπουδαιότητά τους κατά την δημιουργία (κατάρτιση) του ωρολογίου προγράμματος;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="973"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>The order of the constraints is only important to the interaction with the user. It is only the weight percentage which counts while generating the timetable. Note however that you may get different timetables for different constraints order.</source>
         <translation>Η σειρά των περιορισμών είναι σημαντική μόνον για την αλληλεπίδραση με τον χρήστη. Αυτό που μετρά κατά την κατάρτιση (επίλυση) του ωρολογίου προγράμματος είναι μόνον το ποσοστό βαρύτητας. Σημειώστε όμως ότι μπορεί να λάβετε διαφορετικά ωρολόγια προγράμματα για διαφορετική σειρά περιορισμών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="980"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="983"/>
         <source>Q: How does one use the constraints of type students (set) / teacher(s) min gaps between ordered pair of activity tags?</source>
         <translation>Ε: Πώς μπορώ να χρησιμοποιήσω τους περιορισμούς του τύπου «ομάδα μαθητών (μαθητές) / εκπαιδευτικός (εκπαιδευτικοί) - ελάχιστα κενά ανάμεσα σε διατεταγμένο ζεύγος ετικετών δραστηριοτήτων»;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="984"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="987"/>
         <source>These constraints ensure that for the affected students (set) / teacher(s), if on the same day an activity with the second activity tag comes after an activity with the first activity tag, between them there must be at least min gaps (hours). As a trick, if you want min gaps from the first activity tag to the second activity tag and from the second activity tag to the first activity tag (so, between these two activity tags, in any order they can be, to be at least min gaps), you can add two constraints, the second constraint switching the first activity tag with the second activity tag.</source>
         <translation>Οι περιορισμοί αυτοί εξασφαλίζουν ότι για τις ομάδες μαθητών, τους μαθητές, τον εκπαιδευτικό ή/και τους εκπαιδευτικούς που επηρεάζονται, εάν την ίδια ημέρα μία δραστηριότητα με την δεύτερη ετικέτα δραστηριότητας πραγματοποιείται μετά από μία δραστηριότητα με την πρώτη ετικέτα δραστηριότητας, τότε μεταξύ τους θα πρέπει να υπάρχει ένας ελάχιστος αριθμός κενών (ωρών). Τέχνασμα (τρικ): αν θέλετε να έχετε έναν ελάχιστο αριθμό κενών από την πρώτη ετικέτα δραστηριότητας μέχρι την δεύτερη ετικέτα δραστηριότητας και από την δεύτερη ετικέτα δραστηριότητας μέχρι την πρώτη ετικέτα δραστηριότητας (οπότε, ανάμεσα στις δύο ετικέτες δραστηριοτήτων, με όποια σειρά και αν προκύψουν, θα υπάρχει ο ελάχιστος αριθμός κενών που έχετε καθορίσει), μπορείτε να προσθέσετε δύο περιορισμούς, και στον δεύτερο περιορισμό να κάνετε αμοιβαία αλλαγή μεταξύ της πρώτης ετικέτας δραστηριότητας και της δεύτερης ετικέτας δραστηριότητας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="994"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="997"/>
         <source>Q: How does one use the constraint of type activity tags not overlapping?</source>
         <translation>Ε: Πώς μπορώ να χρησιμοποιήσω τον περιορισμό του τύπου «ετικέτες δραστηριοτήτων - δεν αλληλεπικαλύπτονται»;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="998"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1001"/>
         <source>This constraint was suggested by %1, who gave the following example: You can use this constraint for instance if you have young and old students with Sport activities, and you don&apos;t want young students having the Sport activities at the same time with the old students. You then need to add an activity tag, say SY, to all the young students&apos; Sport activities, and another activity tag, say SO, to all the old students&apos; Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO. You can even create more categories of students&apos; age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.</source>
         <comment>%1 is a person</comment>
         <translation>Ο περιορισμός αυτός προτάθηκε από τον %1, ο οποίος έδωσε το παρακάτω παράδειγμα: Για παράδειγμα, μπορείτε να χρησιμοποιήσετε τον περιορισμό αυτό εάν έχετε νεώτερους και μεγαλύτερους (ηλικιακά) μαθητές στην Φυσική Αγωγή, και δεν θέλετε οι νεώτεροι μαθητές να έχουν το μάθημα της Φυσικής Αγωγής ταυτόχρονα με τους μεγαλύτερους (ηλικιακά) μαθητές. Τότε, χρειάζεται να προσθέσετε μία ετικέτα δραστηριότητας, π.χ. ΦΑΝ, σε όλες τις δραστηριότητες της Φυσικής Αγωγής των νεώτερων μαθητών, και μία άλλη ετικέτα δραστηριότητας, π.χ. ΦΑΜ, σε όλες τις δραστηριότητες της Φυσικής Αγωγής των μεγαλύτερων μαθητών, και να προσθέσετε έναν περιορισμό «ετικέτες δραστηριοτήτων - δεν αλληλεπικαλύπτονται» για τις ετικέτες δραστηριοτήτων ΦΑΝ και ΦΑΜ. Μπορείτε ακόμη να δημιουργήσετε περισσότερες κατηγορίες για τις διάφορες ηλικίες των μαθητών, όπως ΦΑΜ1, ΦΑΜ2, ΦΑΜ3 και ΦΑΜ4, και να προσθέσετε έναν περιορισμό «ετικέτες δραστηριοτήτων - δεν αλληλεπικαλύπτονται», έτσι ώστε σε μία περίοδο του ωρολογίου προγράμματος, να μπορεί να υπάρχει μόνον μία ετικέτα δραστηριότητας από αυτές τις τέσσερις.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1006"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1009"/>
         <source>This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above, because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.</source>
         <translation>Ο περιορισμός αυτός σχετίζεται (είναι παρόμοιος) με τον περιορισμό του τύπου «δραστηριότητες - δεν αλληλεπικαλύπτονται», αλλά είναι πιο εύκολος στην χρήση του, όπως περιγράφεται στο ανωτέρω παράδειγμα, επειδή χρειάζεται να προσθέσετε έναν μόνον περιορισμό, αντί πιθανώς πάρα πολλών περιορισμών του τύπου «δραστηριότητες - δεν αλληλεπικαλύπτονται».</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1009"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1012"/>
         <source>The uses of this constraint might be wider.</source>
         <translation>Οι χρήσεις του περιορισμού αυτού ενδεχομένως να είναι ευρύτερες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1015"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1018"/>
         <source>Q: How can I say that an activity should take place in more rooms?</source>
         <translation>Ε: Πώς μπορώ να καθορίσω ότι μία δραστηριότητα πρέπει να πραγματοποιείται σε περισσότερες αίθουσες;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1019"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1022"/>
         <source>You could use virtual rooms for this. Read the Help on those dialogs (the Rooms dialog and the Make/edit virtual room dialog). In short, you need to add a virtual room with n sets of real rooms, where n is the number of rooms you want the activity to occupy.</source>
         <translation>Μπορείτε να χρησιμοποιήσετε εικονικές αίθουσες για τον σκοπό αυτό. Διαβάστε την «Βοήθεια» σε αυτούς τους διαλόγους (τον διάλογο «Αίθουσες» και τον διάλογο «Προσδιορισμός/επεξεργασία εικονικής αίθουσας»). Εν συντομία, πρέπει να προσθέσετε μία εικονική αίθουσα με ν ομάδες πραγματικών αιθουσών, όπου ν είναι ο αριθμός των αιθουσών που θέλετε να καταλαμβάνει η συγκεκριμένη δραστηριότητα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1022"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1025"/>
         <source>There is also another possible solution, to add dummy activities and constrain them to start at the same time as the real activity.</source>
         <translation>Υπάρχει επίσης μία ακόμη εν δυνάμει λύση, να προσθέσετε ψευδο-δραστηριότητες και να τις περιορίσετε ώστε να ξεκινούν την ίδια ώρα με την πραγματική δραστηριότητα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1028"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1031"/>
         <source>Q: What is the use of virtual rooms?</source>
         <translation>Ε: Ποια είναι η χρήση (χρησιμότητα) των εικονικών αιθουσών;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1032"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1035"/>
         <source>Virtual rooms were suggested by the user %1 on the FET forum (%2). They can be used to make an activity occupy more rooms, or even to let FET choose between a large room for this activity or more smaller rooms (if you set the preferred rooms for this activity the real large room or a virtual room representing the more smaller rooms). Please read the Help on the virtual rooms dialogs (the Rooms dialog and the Make/edit virtual room dialog).</source>
         <translation>Οι εικονικές αίθουσες προτάθηκαν από τον χρήστη %1 στο φόρουμ του FET (%2). Οι εικονικές αίθουσες μπορούν να χρησιμοποιηθούν για να κάνετε μία δραστηριότητα να καταλαμβάνει περισσότερες αίθουσες, ή ακόμη για να επιτρέψετε στο FET να διαλέξει ανάμεσα σε μία μεγάλη αίθουσα για την συγκεκριμένη δραστηριότητα ή περισσότερες μικρότερες αίθουσες (αν θέσετε ως προτιμητέες αίθουσες για αυτήν την δραστηριότητα την μεγάλη πραγματική αίθουσα ή μία εικονική αίθουσα, η οποία αντιπροσωπεύει τις περισσότερες μικρότερες αίθουσες). Παρακαλώ διαβάστε την «Βοήθεια» στους διαλόγους των εικονικών αιθουσών (στον διάλογο «Αίθουσες» και στον διάλογο «Προσδιορισμός/επεξεργασία εικονικής αίθουσας»).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="802"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="805"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
         <translation>Προσθέστε τον χρονικό περιορισμό: δραστηριότητες με όλους τους εκπαιδευτικούς, όλους τους μαθητές, όλα τα αντικείμενα, ετικέτα δραστηριότητας = «Ώρα έναρξης» έχουν σύνολο προτιμητέων χρόνων έναρξης: Δευτέρα 8:00, Δευτέρα 9:00, ...</translation>
     </message>
@@ -59266,7 +59265,7 @@ Currently, the interface for students is difficult to use. I am thinking of that
 Επί του παρόντος, η διεπαφή του FET σε ό,τι αφορά την (δενδρική) δομή των μαθητών είναι δύσχρηστη. Για το θέμα αυτό σκέφτομαι για κάποιες δυνατότητες βελτίωσης. Ενδεχομένως, να είναι απλούστερο και πιο ευέλικτο να δουλέψετε απευθείας (με κειμενογράφο) τροποποιώντας χειροκίνητα το αρχείο .fet (xml).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="635"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="638"/>
         <source>Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
 
 Activity math, duration 2, id say 100
@@ -59287,7 +59286,7 @@ A: No, the activity must respect the break, so it is before or after the break w
 Α: Όχι, η δραστηριότητα θα τοποθετηθεί οπωσδήποτε ολόκληρη είτε πριν, είτε μετά το διάλειμμα, με όλες τις ώρες της συνεχόμενες, χωρίς να διακόπτεται από το διάλειμμα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="749"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="752"/>
         <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
 
 A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
@@ -59322,23 +59321,23 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
 Πρακτική λύση για την περίπτωση 2); Μειώστε το ποσοστό βαρύτητας των περιορισμών οι οποίοι έχουν ποσοστό βαρύτητας μικρότερο του 100% ή κλειδώσετε (σε μία αντίστοιχη περίοδο) την δραστηριότητα που αντιστοιχεί στην Δ1 στο αρχείο των δεδομένων σας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="789"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="792"/>
         <source>-- This entry by %1 --</source>
         <comment>%1 is a person</comment>
         <translation>-- Καταχώρηση από τον %1 --</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="805"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="808"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
         <translation>Δουλεύει άψογα και έλαβα καλά ωρολόγια προγράμματα και μάλιστα με ισχυρούς περιορισμούς εκπαιδευτικών.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="811"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours on a day and two hours on another day, or two hours on a day, one hour on another day and one hour on another day).</source>
         <translation>Ε: Πρέπει να προσθέσω μια επιμερισμένη δραστηριότητα με συνολική διάρκεια 4, η οποία μπορεί να είναι είτε 2+2 είτε 2+1+1 (δύο ώρες την μία ημέρα και δύο ώρες την άλλη, ή δύο ώρες την μία ημέρα, μία ώρα την άλλη, και μια ώρα μια άλλη ημέρα).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="817"/>
         <source>A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as 3 single/independent activities (see note below).
 
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
@@ -59351,7 +59350,7 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
 Προσθέστε ακόμη έναν περιορισμό «ελάχιστες ημέρες ανάμεσα σε δραστηριότητες»=1, για τις δραστηριότητες με ατ 2 και 3, επιλέξτε «αν την ίδια ημέρα - διαδοχικές»=«ναι» και δώστε την τιμή 0% στο ποσοστό βαρύτητας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="823"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="826"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
         <translation>Ενδεχομένως να υπάρχουν και άλλες λύσεις, αλλά η συγκεκριμένη φαίνεται τέλεια όσον αφορά την αποτελεσματικότητα.</translation>
     </message>
@@ -59606,7 +59605,7 @@ This trick just passed through my mind as I was trying to write you that you hav
         <translation>Παρακαλώ σημειώστε ότι με την ενεργοποίηση της επιλογής αυτής, σε κάθε εκκίνησή του το FET θα λαμβάνει το αρχείο %1 από την ιστοσελίδα του FET. Οπότε, το αίτημα για το εν λόγω αρχείο θα είναι ορατό (φανερό) στον σέρβερ, όπως και η διεύθυνσή σας (IP) καθώς και η χρόνος προσπέλασης.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="649"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="652"/>
         <source>Q and A From %1: A very difficult to diagnose unresolved case
 
 Since I started working on our school&apos;s timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn&apos;t reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). It was too much (other teachers have 5 teaching hours max) but he didn&apos;t mind so we kept FET solution.Just a month ago this teacher had some major operation and couldn&apos;t teach so much hours in one day anymore. So I started again to experiment with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to cover first and last hour! I had 16 teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!
@@ -59620,7 +59619,7 @@ Since I started working on our school&apos;s timetable I had a problem with a sp
 ...Δεν νομίζω πως θα υποπέσω ξανά στο ίδιο «σφάλμα», αλλά δεδομένου ότι δυσκολεύτηκα να εντοπίσω το πρόβλημα, θεωρώ ότι η αναφορά (ανάλυση) αυτή ενδεχομένως να βοηθήσει κάποιους άλλους χρήστες στην περίπτωση που συναντήσουν ένα παρόμοιο πρόβλημα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="668"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="671"/>
         <source>Q: I want to define hard subjects (math, physics and chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH activities. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double activities.</source>
@@ -59629,7 +59628,7 @@ A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH act
 Α: Ορίστε μία ετικέτα δραστηριότητας «Δύσκολη» και προσθέστε την σε όλες αυτές τις δραστηριότητες (Μαθηματικά, Φυσική και Χημεία). Μετά προσθέστε τον περιορισμό «μαθητές + ετικέτα δραστηριότητας - μέγιστες ώρες συνεχόμενα» = 1 ώρα (ή 2 ώρες) για όλους τους μαθητές και για ετικέτα δραστηριότητας «Δύσκολη». Παρακαλώ προσέξτε εάν έχετε διπλές δραστηριότητες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="692"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="695"/>
         <source>Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
 
 A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between activities 1, weight 0%, select consecutive if on the same day. FET will never put more than 2 of these dummy activities on a day. Add max gaps for students = 0 per week.</source>
@@ -59639,7 +59638,7 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 Α: Προσθέστε για κάθε υποτμήμα μια ψευδο-δραστηριότητα (δηλαδή δραστηριότητα χωρίς εκπαιδευτικούς) επιμερισμένη σε 4 (υποδραστηριότητες) ανά εβδομάδα, διάρκεια = 1, «ελάχιστες ημέρες ανάμεσα σε δραστηριότητες» = 1, ποσοστό βαρύτητας 0%, επιλέξτε «εάν την ίδια ημέρα - διαδοχικές». Το FET δεν θα βάλει ποτέ περισσότερες από 2 από αυτές τις ψευδο-δραστηριότητες στην ίδια ημέρα. Προσθέστε «μαθητές - μέγιστα κενά ανά εβδομάδα» = 0.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="747"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
         <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
         <translation>Αυτή είναι μία προηγμένη (εξειδικευμένη) ερώτηση και η περίπτωση αυτή πιθανώς να μην εμφανιστεί ποτέ στην πράξη. Μπορείτε λοιπόν, στην αρχική ανάγνωση να την παραβλέψετε.</translation>
     </message>
@@ -59674,27 +59673,27 @@ A: You have to use some tricks. It would be difficult to consider fortnightly ac
         <translation>Ε-1 6 Ιουνίου 2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="701"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="704"/>
         <source>Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
         <translation>Συμβουλή: για να διαχειριστείτε τα κενά για τους μαθητές ή τους εκπαιδευτικούς, αν οι περιορισμοί του FET δεν είναι αρκετοί, μπορείτε να χρησιμοποιήσετε ψευδο-δραστηριότητες. Για παράδειγμα, αν κάποια ομάδα μαθητών έχει μέγιστο αριθμό κενών 3, προσθέστε μία δραστηριότητα χωρίς εκπαιδευτικούς (δηλαδή ψευδο-δραστηριότητα) επιμερισμένη σε 3 υποδραστηριότητες ανά εβδομάδα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="721"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="724"/>
         <source>Three hints from an anonymous Polish user, who uses FET for very large data sets:</source>
         <translation>Τρεις υποδείξεις από ανώνυμο Πολωνό χρήστη, ο οποίος χρησιμοποιεί το FET για πολύ μεγάλα σύνολα δεδομένων:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="723"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="726"/>
         <source>The first hint for other users is to start with a minimum number of constraints and see if FET can generate a timetable with those constraints before thinking about adding the next ones.</source>
         <translation>Η πρώτη υπόδειξη για τους άλλους χρήστες είναι να ξεκινήσουν με έναν ελάχιστο αριθμό περιορισμών, και να δουν εάν το FET μπορεί να δημιουργήσει (καταρτίσει) ωρολόγιο πρόγραμμα με αυτούς τους περιορισμούς, πριν σκεφτούν να προσθέσουν τους επόμενους.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="740"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="743"/>
         <source>A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option from the Settings-&gt;Interface menu (shortcuts are shown, by default).</source>
         <translation>Α: Πολλοί χρήστες ζήτησαν την υλοποίηση κουμπιών συντόμευσης για τις πιο συχνά χρησιμοποιούμενες λειτουργίες. Είναι δυνατή η προβολή αυτών των κουμπιών, αν τσεκάρετε την αντίστοιχη επιλογή από το μενού «Ρυθμίσεις-&gt;Διεπαφή» (προκαθορισμένη ρύθμιση: προβολή κουμπιών συντόμευσης).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="738"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="741"/>
         <source>Q: Help on shortcut buttons in the main form.</source>
         <translation>Ε: Βοήθεια για τα κουμπιά συντόμευσης του κεντρικού παραθύρου.</translation>
     </message>
@@ -64817,12 +64816,12 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7746"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7757"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7823"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8664"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8751"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8895"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8962"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8976"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9102"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
@@ -65289,16 +65288,6 @@ Please enter the new weight percentage:</source>
         <translation>Περιορισμοί: «Δραστηριότητες - μέγιστος συνολικός αριθμός μαθητών σε επιλεγμένες περιόδους»</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3198"/>
-        <source>WARNING: potentially very SLOW constraint! Use ONLY if strictly necessary! Read the Help!</source>
-        <translation>ΠΡΟΕΙΔΟΠΟΙΗΣΗ: ενδεχομένως πολύ ΑΡΓΟΣ περιορισμός! Χρησιμοποιήστε τον ΜΟΝΟ εάν είναι απολύτως απαραίτητο! Διαβάστε την Βοήθεια!</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3199"/>
-        <source>Note: it is recommended to use this constraint only if strictly necessary and not redundantly, because it might be very slow.</source>
-        <translation>Σημείωση: συνιστάται να χρησιμοποιείτε αυτόν τον περιορισμό μόνο όταν είναι απολύτως απαραίτητο και να αποφεύγετε την περιττή/άσκοπη χρήση του, καθώς ενδέχεται να επιβραδύνει σημαντικά την διαδικασία.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="3326"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="3371"/>
         <source>Filter</source>
@@ -65412,7 +65401,7 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7414"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8976"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
         <source>Invalid selected constraint</source>
         <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
@@ -65447,27 +65436,27 @@ Please enter the new weight percentage:</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9028"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Τα σχόλια περιορισμού άλλαξαν.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9030"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Περιορισμός πριν:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9033"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9034"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Σχόλια μετά:</translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7932"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8911"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8846"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8912"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
@@ -65524,22 +65513,17 @@ Please enter the new weight percentage:</source>
         <translation>Αυτός ο περιορισμός προτάθηκε από τον %1, και ενδεχομένως και από άλλους χρήστες στο παρελθόν.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8564"/>
-        <source>Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!</source>
-        <translation>Προειδοποίηση: αυτός ο περιορισμός μπορεί να επιβραδύνει πάρα πολύ την δημιουργία (επίλυση) του ωρολογίου προγράμματος! Χρησιμοποιήστε τον μόνο εάν είναι απολύτως απαραίτητο, και με προσοχή!</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8566"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8567"/>
         <source>This constraint was suggested by %1.</source>
         <translation>Αυτός ο περιορισμός προτάθηκε από τον (χρήστη) %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8568"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
         <source>18 October 2025</source>
         <translation>18 Οκτωβρίου 2025</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8570"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8571"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of students which can be present, considering the number of students of these activities, in these time slots.</source>
         <translation>Για να χρησιμοποιήσετε αυτόν τον περιορισμό, πρέπει να καθορίσετε ένα σύνολο δραστηριοτήτων, ένα σύνολο περιόδων και έναν μέγιστο αριθμό μαθητών που μπορούν να είναι παρόντες, λαμβάνοντας υπόψη τον αριθμό των μαθητών αυτών των δραστηριοτήτων, σε αυτές τις περιόδους.</translation>
     </message>
@@ -65669,7 +65653,7 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8527"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8542"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8557"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8573"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8574"/>
         <source>FET help</source>
         <translation>FET - Βοήθεια</translation>
     </message>
@@ -65980,7 +65964,7 @@ Example 2:
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι οι επιλεγμένες δραστηριότητες μπορούν να πραγματοποιηθούν σε έναν καθορισμένο μέγιστο αριθμό συνόλων περιόδων από επιλογή συνόλων περιόδων. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8568"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
         <source>This constraint type was added on %1.</source>
         <comment>%1 is the date at which this constraint type was implemented in FET</comment>
         <translation>Αυτός ο τύπος περιορισμού προστέθηκε στις %1.</translation>
@@ -66114,106 +66098,106 @@ Example 2:
         <translation>Νέες «ελάχιστες μισές ημέρες»=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8634"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8635"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>Αρ: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8664"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Για να μετακινήσετε χρονικό περιορισμό προς τα επάνω, το πλαίσιο ελέγχου «Ταξινομημένοι» δεν πρέπει να είναι τσεκαρισμένο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8719"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8720"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Περιορισμός μετακινήθηκε προς τα επάνω:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Για να μετακινήσετε χρονικό περιορισμό προς τα κάτω, το πλαίσιο ελέγχου «Ταξινομημένοι» δεν πρέπει να είναι τσεκαρισμένο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8806"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8807"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Περιορισμός μετακινήθηκε προς τα κάτω:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8844"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
         <source>Activate the selected time constraints?</source>
         <translation>Να ενεργοποιηθούν οι επιλεγμένοι χρονικοί περιορισμοί;</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8872"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8873"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation>Ενεργοποιήθηκαν %1 χρονικοί περιορισμοί:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8895"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
         <source>Activated %1 time constraints</source>
         <translation>Ενεργοποιήθηκαν %1 χρονικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8909"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8910"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation>Να απενεργοποιηθούν οι επιλεγμένοι χρονικοί περιορισμοί; (Σημειώστε ότι οι βασικοί υποχρεωτικοί χρονικοί περιορισμοί δεν θα απενεργοποιηθούν, ακόμη και εάν έχουν επιλεγεί.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8939"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8940"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation>Απενεργοποιήθηκαν %1 χρονικοί περιορισμοί:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8962"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
         <source>Deactivated %1 time constraints</source>
         <translation>Απενεργοποιήθηκαν %1 χρονικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8988"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8989"/>
         <source>Constraint comments</source>
         <translation>Σχόλια περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8990"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8991"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8992"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8993"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9059"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9060"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 χρονικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9083"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9084"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>Επιλογή πολλαπλών: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9102"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Κανένας περιορισμός από την επιλογή σας δεν μπορεί να αλλάξει την βαρύτητά του (να θυμάστε ότι ορισμένοι τύποι περιορισμών επιτρέπεται να έχουν βαρύτητα μόνον 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9112"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9121"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9113"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9122"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Τροποποίηση της βαρύτητας των επιλεγμένων χρονικών περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9114"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9115"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -66223,7 +66207,7 @@ Please enter the new weight percentage:</source>
 το νέο ποσοστό βαρύτητας:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9124"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -66238,7 +66222,7 @@ Please enter the new weight percentage:</source>
 εισαγάγετε το νέο ποσοστό βαρύτητας:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9161"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9162"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Άλλαξε η βαρύτητα των παρακάτω %1 επιλεγμένων χρονικών περιορισμών σε %2%:</translation>
@@ -68216,12 +68200,12 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>February</source>
         <translation>Φεβρουάριος</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>March</source>
         <translation>Μάρτιος</translation>
     </message>
@@ -69220,94 +69204,94 @@ was made virtual into:
 <context>
     <name>RoomsForm</name>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="164"/>
+        <location filename="../src/interface/roomsform.cpp" line="170"/>
         <source>V: %1</source>
         <comment>V means virtual room, %1 is the name of the room</comment>
         <translation>Εικ: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="190"/>
-        <location filename="../src/interface/roomsform.cpp" line="366"/>
-        <location filename="../src/interface/roomsform.cpp" line="391"/>
-        <location filename="../src/interface/roomsform.cpp" line="473"/>
-        <location filename="../src/interface/roomsform.cpp" line="480"/>
-        <location filename="../src/interface/roomsform.cpp" line="489"/>
-        <location filename="../src/interface/roomsform.cpp" line="538"/>
-        <location filename="../src/interface/roomsform.cpp" line="556"/>
-        <location filename="../src/interface/roomsform.cpp" line="567"/>
-        <location filename="../src/interface/roomsform.cpp" line="594"/>
-        <location filename="../src/interface/roomsform.cpp" line="656"/>
+        <location filename="../src/interface/roomsform.cpp" line="196"/>
+        <location filename="../src/interface/roomsform.cpp" line="372"/>
+        <location filename="../src/interface/roomsform.cpp" line="397"/>
+        <location filename="../src/interface/roomsform.cpp" line="479"/>
+        <location filename="../src/interface/roomsform.cpp" line="486"/>
+        <location filename="../src/interface/roomsform.cpp" line="495"/>
+        <location filename="../src/interface/roomsform.cpp" line="544"/>
+        <location filename="../src/interface/roomsform.cpp" line="562"/>
+        <location filename="../src/interface/roomsform.cpp" line="573"/>
+        <location filename="../src/interface/roomsform.cpp" line="600"/>
+        <location filename="../src/interface/roomsform.cpp" line="662"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="190"/>
-        <location filename="../src/interface/roomsform.cpp" line="366"/>
-        <location filename="../src/interface/roomsform.cpp" line="391"/>
-        <location filename="../src/interface/roomsform.cpp" line="473"/>
-        <location filename="../src/interface/roomsform.cpp" line="538"/>
-        <location filename="../src/interface/roomsform.cpp" line="594"/>
-        <location filename="../src/interface/roomsform.cpp" line="656"/>
+        <location filename="../src/interface/roomsform.cpp" line="196"/>
+        <location filename="../src/interface/roomsform.cpp" line="372"/>
+        <location filename="../src/interface/roomsform.cpp" line="397"/>
+        <location filename="../src/interface/roomsform.cpp" line="479"/>
+        <location filename="../src/interface/roomsform.cpp" line="544"/>
+        <location filename="../src/interface/roomsform.cpp" line="600"/>
+        <location filename="../src/interface/roomsform.cpp" line="662"/>
         <source>Invalid selected room</source>
         <translation>Μη αποδεκτή επιλογή αίθουσας</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="197"/>
-        <location filename="../src/interface/roomsform.cpp" line="223"/>
+        <location filename="../src/interface/roomsform.cpp" line="203"/>
+        <location filename="../src/interface/roomsform.cpp" line="229"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="198"/>
+        <location filename="../src/interface/roomsform.cpp" line="204"/>
         <source>Are you sure you want to delete this room and all related constraints?</source>
         <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε την αίθουσα αυτή καθώς και όλους τους περιορισμούς που σχετίζονται με την αίθουσα αυτή;</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="224"/>
+        <location filename="../src/interface/roomsform.cpp" line="230"/>
         <source>This is a real room. If you remove it, it will affect %1 virtual rooms. The real room is met %2 times overall in the lists of sets of the virtual rooms. Do you really want to remove it?</source>
         <translation>Αυτή είναι μία πραγματική αίθουσα. Αν την διαγράψετε, αυτό θα επηρεάσει %1 εικονικές αίθουσες. Η πραγματική αίθουσα απαντάται %2 φορές συνολικά στις λίστες των ομάδων των εικονικών αιθουσών. Είστε σίγουροι πως θέλετε να την διαγράψετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="354"/>
+        <location filename="../src/interface/roomsform.cpp" line="360"/>
         <source>Sorted the rooms.</source>
         <translation>Οι αίθουσες ταξινομήθηκαν.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="400"/>
+        <location filename="../src/interface/roomsform.cpp" line="406"/>
         <source>Room comments</source>
         <translation>Αίθουσα - σχόλια</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="402"/>
-        <location filename="../src/interface/roomsform.cpp" line="605"/>
-        <location filename="../src/interface/roomsform.cpp" line="667"/>
+        <location filename="../src/interface/roomsform.cpp" line="408"/>
+        <location filename="../src/interface/roomsform.cpp" line="611"/>
+        <location filename="../src/interface/roomsform.cpp" line="673"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="404"/>
-        <location filename="../src/interface/roomsform.cpp" line="607"/>
-        <location filename="../src/interface/roomsform.cpp" line="669"/>
+        <location filename="../src/interface/roomsform.cpp" line="410"/>
+        <location filename="../src/interface/roomsform.cpp" line="613"/>
+        <location filename="../src/interface/roomsform.cpp" line="675"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="236"/>
+        <location filename="../src/interface/roomsform.cpp" line="242"/>
         <source>Removed the room %1.</source>
         <translation>Διεγράφη η αίθουσα %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="295"/>
+        <location filename="../src/interface/roomsform.cpp" line="301"/>
         <source>Moved the room %1 up.</source>
         <translation>Η αίθουσα %1 μετακινήθηκε προς τα επάνω.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="337"/>
+        <location filename="../src/interface/roomsform.cpp" line="343"/>
         <source>Moved the room %1 down.</source>
         <translation>Η αίθουσα %1 μετακινήθηκε προς τα κάτω.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="440"/>
+        <location filename="../src/interface/roomsform.cpp" line="446"/>
         <source>Modified the comments of the room
 
 %1
@@ -69322,52 +69306,52 @@ into
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="453"/>
+        <location filename="../src/interface/roomsform.cpp" line="459"/>
         <source>Virtual rooms were suggested by the user %1 on the FET forum (you can follow the discussion on the internet page %2). They can be useful in two situations (but you might think of more uses):</source>
         <translation>Οι εικονικές αίθουσες προτάθηκαν από τον χρήστη %1 στο φόρουμ του FET (μπορείτε να δείτε την συζήτηση στην ιντερνετική σελίδα %2). Οι εικονικές αίθουσες είναι χρήσιμες σε δύο περιπτώσεις (όμως ενδεχομένως να βρείτε και επιπλέον χρήσεις):</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="457"/>
+        <location filename="../src/interface/roomsform.cpp" line="463"/>
         <source>1) If you want an activity to take place in more real rooms.</source>
         <translation>1) Εάν θέλετε κάποια δραστηριότητα να πραγματοποιείται σε περισσότερες (από μία) πραγματικές αίθουσες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="459"/>
+        <location filename="../src/interface/roomsform.cpp" line="465"/>
         <source>2) If you want an activity to take place, say, either in a large real room or in three smaller real rooms.</source>
         <translation>2) Εάν θέλετε μία δραστηριότητα να πραγματοποιείται, ας πούμε, είτε σε μία μεγάλη πραγματική αίθουσα, είτε σε τρεις μικρότερες πραγματικές αίθουσες.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="461"/>
+        <location filename="../src/interface/roomsform.cpp" line="467"/>
         <source>More details about defining and using virtual rooms are shown in the dialog of making/editing virtual rooms, if you click the Help button there.</source>
         <translation>Περισσότερες λεπτομέρειες για το πώς ορίζονται και χρησιμοποιούνται οι εικονικές αίθουσες μπορείτε να βρείτε στον διάλογο «Δημιουργία/επεξεργασία εικονικών αιθουσών», αν πατήσετε το κουμπί «Βοήθεια» που βρίσκεται εκεί.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="463"/>
+        <location filename="../src/interface/roomsform.cpp" line="469"/>
         <source>FET Help</source>
         <translation>FET - Βοήθεια</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="480"/>
+        <location filename="../src/interface/roomsform.cpp" line="486"/>
         <source>The selected room is already real.</source>
         <translation>Η επιλεγμένη αίθουσα είναι ήδη πραγματική.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="489"/>
+        <location filename="../src/interface/roomsform.cpp" line="495"/>
         <source>This virtual room is used in at least a constraint of type activity preferred room, having specified a nonempty list of preferred real rooms. It cannot thus be made real directly. Firstly you need to edit/remove that/those constraints (converting this virtual room to a real one will be possible if you clear the preferred real rooms list for each such constraint).</source>
         <translation>Η συγκεκριμένη εικονική αίθουσα χρησιμοποιείται σε τουλάχιστον έναν περιορισμό του τύπου «δραστηριότητα - προτιμητέα αίθουσα», κι έτσι έχει προσδιορίσει μία μη κενή λίστα προτιμητέων πραγματικών αιθουσών. Ως εκ τούτου, δεν μπορεί να προσδιοριστεί απευθείας ως πραγματική (αίθουσα). Πρώτα πρέπει να επεξεργαστείτε/διαγράψετε αυτόν/αυτούς τους περιορισμούς (η μετατροπή της συγκεκριμένης εικονικής αίθουσας σε πραγματική θα είναι εφικτή, εφόσον πρώτα «καθαρίσετε» την λίστα προτιμητέων πραγματικών αιθουσών για τον καθέναν από τους περιορισμούς αυτούς).</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="497"/>
+        <location filename="../src/interface/roomsform.cpp" line="503"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="498"/>
+        <location filename="../src/interface/roomsform.cpp" line="504"/>
         <source>Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room.</source>
         <translation>Είστε σίγουροι ότι θέλετε να προσδιορίσετε αυτήν την αίθουσα ως πραγματική; Αυτό θα διαγράψει την λίστα των ομάδων των πραγματικών αιθουσών για αυτήν την εικονική αίθουσα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="507"/>
+        <location filename="../src/interface/roomsform.cpp" line="513"/>
         <source>Made the virtual room
 
 %1
@@ -69383,22 +69367,22 @@ real, into
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="556"/>
+        <location filename="../src/interface/roomsform.cpp" line="562"/>
         <source>This real room is contained in %1 other virtual rooms, so it cannot be made virtual (because a virtual room can only contain real rooms).</source>
         <translation>Η συγκεκριμένη πραγματική αίθουσα περιλαμβάνεται σε %1 άλλες εικονικές αίθουσες, οπότε δεν μπορεί να προσδιοριστεί ως εικονική (διότι η εικονική αίθουσα μπορεί να περιλαμβάνει μόνον πραγματικές αίθουσες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="567"/>
+        <location filename="../src/interface/roomsform.cpp" line="573"/>
         <source>This real room is used in at least a constraint of type activity preferred room, in the list of preferred real rooms. It cannot thus be made virtual directly. Firstly you need to edit/remove that/those constraints.</source>
         <translation>Η συγκεκριμένη πραγματική αίθουσα χρησιμοποιείται σε τουλάχιστον έναν περιορισμό του τύπου «δραστηριότητα - προτιμητέα αίθουσα», στην λίστα των προτιμητέων πραγματικών αιθουσών. Οπότε, δεν μπορεί να προσδιοριστεί απευθείας ως εικονική. Πρώτα θα πρέπει να επεξεργαστείτε/διαγράψετε τον συγκεκριμένο περιορισμό (ή τους συγκεκριμένους περιορισμούς).</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="603"/>
+        <location filename="../src/interface/roomsform.cpp" line="609"/>
         <source>Room long name</source>
         <translation>Πλήρες όνομα αίθουσας</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="643"/>
+        <location filename="../src/interface/roomsform.cpp" line="649"/>
         <source>Changed the long name for the room %1 from
 %2
 to
@@ -69409,12 +69393,12 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="665"/>
+        <location filename="../src/interface/roomsform.cpp" line="671"/>
         <source>Room code</source>
         <translation>Κωδικός αίθουσας</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="705"/>
+        <location filename="../src/interface/roomsform.cpp" line="711"/>
         <source>Changed the code for the room %1 from
 %2
 to
@@ -76039,128 +76023,128 @@ Comments after:
 <context>
     <name>SubgroupsForm</name>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="177"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="185"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="206"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="222"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="256"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="264"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="272"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="339"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="347"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="355"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="573"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="581"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="598"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="606"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="189"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="197"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="218"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="234"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="268"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="276"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="284"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="351"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="359"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="367"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="585"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="593"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="610"/>
         <location filename="../src/interface/subgroupsform.cpp" line="618"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="649"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="657"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="665"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="671"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="680"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="688"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="696"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="702"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="712"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="776"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="840"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="630"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="661"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="669"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="677"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="683"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="692"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="700"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="708"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="714"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="724"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="788"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="852"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="177"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="206"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="256"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="339"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="573"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="598"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="649"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="680"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="189"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="218"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="268"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="351"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="585"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="610"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="661"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="692"/>
         <source>Invalid selected year</source>
         <translation>Μη αποδεκτή επιλογή έτους</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="185"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="222"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="264"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="347"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="581"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="606"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="657"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="688"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="197"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="234"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="276"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="359"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="593"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="618"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="669"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="700"/>
         <source>Invalid selected group</source>
         <translation>Μη αποδεκτή επιλογή τμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="272"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="355"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="618"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="665"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="696"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="712"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="776"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="840"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="284"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="367"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="630"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="677"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="708"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="724"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="788"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="852"/>
         <source>Invalid selected subgroup</source>
         <translation>Μη αποδεκτή επιλογή υποτμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="291"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="303"/>
         <source>This subgroup exists only in year %1, group %2. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Το υποτμήμα αυτό υπάρχει μόνον στο έτος %1, τμήμα %2. Αυτό σημαίνει ότι θα διαγραφούν όλες οι δραστηριότητες και όλοι οι περιορισμοί που σχετίζονται με αυτό το υποτμήμα. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="294"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="306"/>
         <source>This subgroup exists in more places, listed below. It will only be removed from the current year/group, and the related activities and constraints will not be removed. Do you want to continue?</source>
         <translation>Το υποτμήμα αυτό υπάρχει σε περισσότερα «μέρη», τα οποία παρατίθεται παρακάτω. Θα διαγραφεί μόνον από το τρέχον τμήμα/έτος, ενώ οι δραστηριότητες και οι περιορισμοί που σχετίζονται με το αυτό υποτμήμα δεν θα διαγραφούν. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="301"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="384"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="313"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="396"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="374"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="386"/>
         <source>This subgroup exists only in year %1, group %2. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Το υποτμήμα αυτό υπάρχει μόνον στο έτος %1, τμήμα %2. Θα διαγραφούν όλες οι δραστηριότητες και όλοι οι περιορισμοί που σχετίζονται με αυτό το υποτμήμα. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="377"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="389"/>
         <source>This subgroup exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Το υποτμήμα αυτό υπάρχει σε περισσότερα μέρη, τα οποία παρατίθεται παρακάτω. Θα διαγραφεί από όλα αυτά τα μέρη. Θα διαγραφούν όλες οι δραστηριότητες και όλοι οι περιορισμοί που σχετίζονται με το αυτό υποτμήμα. Θέλετε να συνεχίσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="702"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="714"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Απενεργοποιήθηκαν %1 δραστηριότητες σε αριθμό</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="723"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="735"/>
         <source>Students subgroup comments</source>
         <translation>Υποτμήμα μαθητών - σχόλια</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="725"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="789"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="853"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="737"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="801"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="865"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="727"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="791"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="855"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="739"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="803"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="867"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="787"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="799"/>
         <source>Subgroup long name</source>
         <translation>Πλήρες όνομα υποτμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="827"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="839"/>
         <source>Changed the long name for the subgroup %1 from
 %2
 to
@@ -76171,12 +76155,12 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="851"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="863"/>
         <source>Subgroup code</source>
         <translation>Κωδικός υποτμήματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="891"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="903"/>
         <source>Changed the code for the subgroup %1 from
 %2
 to
@@ -76187,61 +76171,61 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="302"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="385"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="302"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="385"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="326"/>
         <source>Removed the subgroup %1 from the group %2, the year %3.</source>
         <translation>Αφαιρέθηκε το υποτμήμα %1 από το τμήμα %2, από το έτος %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="409"/>
         <source>Removed the subgroup %1 from everywhere.</source>
         <translation>Αφαιρέθηκε το υποτμήμα %1 από παντού.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="521"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="533"/>
         <source>Moved the subgroup %1 up in the group %2, the year %3.</source>
         <translation>Το υποτμήμα %1 μετακινήθηκε προς τα επάνω στο τμήμα %2, στο έτος %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="564"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="576"/>
         <source>Moved the subgroup %1 down in the group %2, the year %3.</source>
         <translation>Το υποτμήμα %1 μετακινήθηκε προς τα κάτω στο τμήμα %2, στο έτος %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="590"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="602"/>
         <source>Sorted the subgroups in the group %1, the year %2.</source>
         <translation>Ταξινομήθηκαν τα υποτμήματα στο τμήμα %1, στο έτος %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="671"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="683"/>
         <source>Activated a number of %1 activities</source>
         <translation>Ενεργοποιήθηκαν %1 δραστηριότητες σε αριθμό</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="674"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="686"/>
         <source>Activated the subgroup %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation>Ενεργοποιήθηκε το υποτμήμα %1 (%2 δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="705"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="717"/>
         <source>Deactivated the subgroup %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation>Απενεργοποιήθηκε το υποτμήμα %1 (%2 δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="763"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="775"/>
         <source>Changed the comments for the subgroup %1 from
 %2
 to
@@ -84529,75 +84513,75 @@ Bottom: %4</source>
 <context>
     <name>YearsForm</name>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="181"/>
-        <location filename="../src/interface/yearsform.cpp" line="321"/>
-        <location filename="../src/interface/yearsform.cpp" line="354"/>
-        <location filename="../src/interface/yearsform.cpp" line="360"/>
-        <location filename="../src/interface/yearsform.cpp" line="369"/>
-        <location filename="../src/interface/yearsform.cpp" line="375"/>
-        <location filename="../src/interface/yearsform.cpp" line="384"/>
-        <location filename="../src/interface/yearsform.cpp" line="399"/>
-        <location filename="../src/interface/yearsform.cpp" line="463"/>
-        <location filename="../src/interface/yearsform.cpp" line="527"/>
+        <location filename="../src/interface/yearsform.cpp" line="184"/>
+        <location filename="../src/interface/yearsform.cpp" line="324"/>
+        <location filename="../src/interface/yearsform.cpp" line="357"/>
+        <location filename="../src/interface/yearsform.cpp" line="363"/>
+        <location filename="../src/interface/yearsform.cpp" line="372"/>
+        <location filename="../src/interface/yearsform.cpp" line="378"/>
+        <location filename="../src/interface/yearsform.cpp" line="387"/>
+        <location filename="../src/interface/yearsform.cpp" line="402"/>
+        <location filename="../src/interface/yearsform.cpp" line="466"/>
+        <location filename="../src/interface/yearsform.cpp" line="530"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="181"/>
-        <location filename="../src/interface/yearsform.cpp" line="321"/>
-        <location filename="../src/interface/yearsform.cpp" line="354"/>
-        <location filename="../src/interface/yearsform.cpp" line="369"/>
-        <location filename="../src/interface/yearsform.cpp" line="384"/>
-        <location filename="../src/interface/yearsform.cpp" line="399"/>
-        <location filename="../src/interface/yearsform.cpp" line="463"/>
-        <location filename="../src/interface/yearsform.cpp" line="527"/>
+        <location filename="../src/interface/yearsform.cpp" line="184"/>
+        <location filename="../src/interface/yearsform.cpp" line="324"/>
+        <location filename="../src/interface/yearsform.cpp" line="357"/>
+        <location filename="../src/interface/yearsform.cpp" line="372"/>
+        <location filename="../src/interface/yearsform.cpp" line="387"/>
+        <location filename="../src/interface/yearsform.cpp" line="402"/>
+        <location filename="../src/interface/yearsform.cpp" line="466"/>
+        <location filename="../src/interface/yearsform.cpp" line="530"/>
         <source>Invalid selected year</source>
         <translation>Μη αποδεκτή επιλογή έτους</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="192"/>
+        <location filename="../src/interface/yearsform.cpp" line="195"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="193"/>
+        <location filename="../src/interface/yearsform.cpp" line="196"/>
         <source>Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?</source>
         <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε το έτος %1 καθώς και όλα τα τμήματα και υποτμήματα, όλες τις δραστηριότητες και όλους τους περιορισμούς που σχετίζονται με το έτος αυτό;</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="200"/>
+        <location filename="../src/interface/yearsform.cpp" line="203"/>
         <source>Removed the year %1.</source>
         <translation>Διεγράφη το έτος %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="257"/>
+        <location filename="../src/interface/yearsform.cpp" line="260"/>
         <source>Moved the year %1 up.</source>
         <translation>Το έτος %1 μετακινήθηκε προς τα επάνω.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="292"/>
+        <location filename="../src/interface/yearsform.cpp" line="295"/>
         <source>Moved the year %1 down.</source>
         <translation>Το έτος %1 μετακινήθηκε προς τα κάτω.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="302"/>
+        <location filename="../src/interface/yearsform.cpp" line="305"/>
         <source>Sorted the years.</source>
         <translation>Τα έτη ταξινομήθηκαν.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="363"/>
+        <location filename="../src/interface/yearsform.cpp" line="366"/>
         <source>Activated the year %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation>Ενεργοποιήθηκε το έτος %1 (%2 δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="378"/>
+        <location filename="../src/interface/yearsform.cpp" line="381"/>
         <source>Deactivated year %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation>Απενεργοποιήθηκε το έτος %1 (%2 δραστηριότητες).</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="450"/>
+        <location filename="../src/interface/yearsform.cpp" line="453"/>
         <source>Changed the comments for the year %1 from
 %2
 to
@@ -84608,12 +84592,12 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="474"/>
+        <location filename="../src/interface/yearsform.cpp" line="477"/>
         <source>Year long name</source>
         <translation>Πλήρες όνομα έτους</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="514"/>
+        <location filename="../src/interface/yearsform.cpp" line="517"/>
         <source>Changed the long name for the year %1 from
 %2
 to
@@ -84624,12 +84608,12 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="538"/>
+        <location filename="../src/interface/yearsform.cpp" line="541"/>
         <source>Year code</source>
         <translation>Κωδικός έτους</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="578"/>
+        <location filename="../src/interface/yearsform.cpp" line="581"/>
         <source>Changed the code for the year %1 from
 %2
 to
@@ -84640,31 +84624,31 @@ to
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="360"/>
+        <location filename="../src/interface/yearsform.cpp" line="363"/>
         <source>Activated a number of %1 activities</source>
         <translation>Ενεργοποιήθηκαν %1 δραστηριότητες σε αριθμό</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="375"/>
+        <location filename="../src/interface/yearsform.cpp" line="378"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Απενεργοποιήθηκαν %1 δραστηριότητες σε αριθμό</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="410"/>
+        <location filename="../src/interface/yearsform.cpp" line="413"/>
         <source>Students year comments</source>
         <translation>Σχόλια: «Μαθητές - έτη»</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="412"/>
-        <location filename="../src/interface/yearsform.cpp" line="476"/>
-        <location filename="../src/interface/yearsform.cpp" line="540"/>
+        <location filename="../src/interface/yearsform.cpp" line="415"/>
+        <location filename="../src/interface/yearsform.cpp" line="479"/>
+        <location filename="../src/interface/yearsform.cpp" line="543"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="414"/>
-        <location filename="../src/interface/yearsform.cpp" line="478"/>
-        <location filename="../src/interface/yearsform.cpp" line="542"/>
+        <location filename="../src/interface/yearsform.cpp" line="417"/>
+        <location filename="../src/interface/yearsform.cpp" line="481"/>
+        <location filename="../src/interface/yearsform.cpp" line="545"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>

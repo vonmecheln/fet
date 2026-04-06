@@ -3195,8 +3195,8 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints activities max total number of students in selected time slots", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots");
 
-				firstInstructionsLabel=new QLabel(tr("WARNING: potentially very SLOW constraint! Use ONLY if strictly necessary! Read the Help!"));
-				secondInstructionsLabel=new QLabel(tr("Note: it is recommended to use this constraint only if strictly necessary and not redundantly, because it might be very slow."));
+				//firstInstructionsLabel=new QLabel(tr("WARNING: potentially very SLOW constraint! Use ONLY if strictly necessary! Read the Help!"));
+				//secondInstructionsLabel=new QLabel(tr("Note: it is recommended to use this constraint only if strictly necessary and not redundantly, because it might be very slow."));
 
 				teachersComboBox=new QComboBox;
 				studentsComboBox=new QComboBox;
@@ -8561,8 +8561,9 @@ void ListTimeConstraints::helpClicked()
 		//253
 		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
 			{
-				QString s=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!");
-				s+="\n\n";
+				QString s;
+				//s+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!");
+				//s+="\n\n";
 				s+=tr("This constraint was suggested by %1.").arg("Furkan Kızılaslan");
 				s+="\n\n";
 				s+=tr("This constraint type was added on %1.", "%1 is the date at which this constraint type was implemented in FET").arg(tr("18 October 2025"));

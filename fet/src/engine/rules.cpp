@@ -2655,7 +2655,7 @@ QDataStream& operator<<(QDataStream& stream, const Rules& rules)
 					stream<<*c;
 					break;
 				}
-			//76
+			//77
 			case CONSTRAINT_ROOMS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				{
 					ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection* c=(ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection*)ctr;

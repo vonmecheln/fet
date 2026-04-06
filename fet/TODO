@@ -4116,7 +4116,7 @@ From Volker Dirr:
 Generating a difficult timetable shows 28 h... . Should it show 1 d 4 h... ?
 
 267---------------------------------------------------------
-From daltinkurt (on forum):
+From Devrim Altınkurt (on forum):
 
 A constraint min days between activities, with force consecutive if same day = true. Can (should) two activities if on the same day span over a break?
 
@@ -11888,6 +11888,10 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6685.0
 
 I wonder if it is possible to provide the ability to customize the colours in FET by subjects and teacher to let us control the results effectively.
 
+---
+
+I think it can be added in dialogue box of subjects, groups and rooms.
+
 783---------------------------------------------------------
 From Michael Chourdakis (on Facebook):
 
@@ -12837,3 +12841,103 @@ From Vangelis Karafillidis (on Facebook):
 
 Is it possible to implement something like "max total span per week" for teachers?
 (the sum of each day's span for all the days of the week.)
+
+830---------------------------------------------------------
+From uni_instructor:
+
+Note by Liviu Lalescu: uni_instructor sent some attached screenshots, which are showing the not available times of a teacher;
+the idea of the reported problem can be understood from uni_instructor's words.
+
+Recently, while working on my timetable planning, I noticed something in FET that I would like to point out.
+I came across it rather by chance, because I wanted to implement some ideas for my timetable after the planning had already started.
+
+I enter the time slots for my lecturers in which they are available or unavailable.
+The arbitrary pattern of the lecturers’ time slot assignments is intended merely as an example here.
+
+The following graphics show this. So far, this is fine.
+
+Example pattern 1
+
+Example pattern 2
+
+If I subsequently add an additional time slot in the basic settings of the timetable (see the graphic below), I would expect the table
+with the time constraints of my lecturers to be expanded by an additional row, which indeed happens.
+
+However, adding an additional time slot then results in the lecturers’ time slots not being shifted or adjusted relatively.
+The pattern of the old grid remains the same, but the times for the lecturers are inevitably no longer correct.
+
+Expected behavior:
+
+Observed behavior:
+
+It is similar if I add an additional day.
+In this case as well, the old grid is retained and not shifted.
+
+Expected behavior:
+
+Observed behavior:
+
+It is not urgent, and I also do not know how often other users make changes to the basic timetable settings in the middle of their planning.
+
+However, it could become important if you need to expand the basic settings afterwards without having to repeat all the entries you have already made.
+
+831---------------------------------------------------------
+From Devrim Altınkurt (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=2603.msg37490#msg37490
+
+I have a suggestion for an easy solution to this issue:
+I created a solution with the existing rules without making any new developments.
+
+Let's think of the day as 5h + break + 5h.
+Let's also have a 6h activity.
+
+If you add a checkbox [ X ] "span over break is allowed" when adding/modifying an activity;
+
+in the background,
+you can convert this activity into 6 separate activity (a1, a2, a3, a4, a5, a6) and add the "ConstraintTwoActivitiesGrouped" rule to each of these 6 activities separately.
+ConstraintTwoActivitiesGrouped1 -> a1 and a2
+ConstraintTwoActivitiesGrouped2 -> a2 and a3
+ConstraintTwoActivitiesGrouped3 -> a3 and a4
+ConstraintTwoActivitiesGrouped4 -> a4 and a5
+ConstraintTwoActivitiesGrouped5 -> a5 and a6
+
+The "activityGroupId" in activity.cpp might be useful.
+
+Sample file added.
+
+832---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6773.0
+
+I have a scenario where a teacher is teaching 3 subject in the same class. What can i do to ensure she doesn't get consecutive lesson in the same class?
+Have quite a number of teachers with similar problem. The only way i can use seems long since it will involve use of special tags in all single subjects
+in every class then i have a teacher to have max 1 hour continuosly with that activity tags. I wish to have an alternative.
+
+Liviu Lalescu:
+
+Please investigate teacher(s) min gaps between activity tag / ordered pair of activity tags.
+
+Cyrus Ireri:
+
+Aware of that. Just that i thought there is a less demanding constraint. Under min gaps, i will have to move from one teacher to another identifying
+the subjects they teach in the same class so that i can consider in the gaps. All in all, i'm glad there is a way of going about it even though long in a way.
+
+833---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6773.msg37514#msg37514
+
+A request on the highlighting colouring the activity planning. If it can be faint, it would be of great essence. As it is now, there is a way you may
+not see the content highlighted until you have the screen tilted in a certain angle. In line with highlighting, under adding/modification of activity,
+if the highlighting colour can be visible, it would be amazing and easy to trace which class or teacher one is dealing with.
+
+834---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.msg37534#msg37534
+
+Allow the viewing of buildings timetables in different formats via the FET interface: horizontal days, vertical days and horizontal times.
+
+(Note by Liviu Lalescu: Benahmed Abdelkrim refers to the FET-NSRT custom version.)

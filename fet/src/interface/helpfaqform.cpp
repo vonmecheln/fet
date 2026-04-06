@@ -622,9 +622,12 @@ void HelpFaqForm::setText()
 		"release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable "
 		"searching for updates at startup.");
 	s+="\n\n";
-	s+=tr("Please note that, by enabling this option, each time you start FET it will get the file %1 from the FET homepage, so the request for "
-		"this file will be visible on the server, along with your IP address and access time.")
-		.arg(QString("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
+	s+=tr("Please note that, by enabling this option, each time you start FET it will get the file %1 from the FET homepage, so the "
+		"request for this file will be visible on the server, along with your IP address and access time.")
+		.arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
+	s+=" ";
+	s+=tr("Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), "
+		"your operating system name and version, and your processor architecture type.");
 	s+=" ";
 	s+=tr("Thus, it could be deduced if and when you use FET.");
 

@@ -64,15 +64,12 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	subgroupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::yearChanged);
-	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::groupChanged);
 	connect(addSubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::addSubgroup);
 	connect(addExistingSubgroupsPushButton, &QPushButton::clicked, this, &SubgroupsForm::addExistingSubgroups);
 	connect(removeSubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::removeSubgroup);
 
 	connect(purgeSubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::purgeSubgroup);
 	connect(closePushButton, &QPushButton::clicked, this, &SubgroupsForm::close);
-	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::subgroupChanged);
 	connect(modifySubgroupPushButton, &QPushButton::clicked, this, &SubgroupsForm::modifySubgroup);
 
 	connect(moveSubgroupUpPushButton, &QPushButton::clicked, this, &SubgroupsForm::moveSubgroupUp);
@@ -86,8 +83,6 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &SubgroupsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &SubgroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &SubgroupsForm::comments);
-
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &SubgroupsForm::colorsCheckBoxToggled);
 
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
@@ -147,6 +142,8 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &SubgroupsForm::colorsCheckBoxToggled);
+
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
@@ -159,6 +156,21 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 		groupsListWidget->clear();
 		subgroupsListWidget->clear();
 	}
+
+	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::yearChanged);
+	if(yearsListWidget->count()>0)
+		if(yearsListWidget->currentRow()>=0 && yearsListWidget->currentRow()<yearsListWidget->count())
+			yearChanged(yearsListWidget->currentItem()->text());
+	
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::groupChanged);
+	if(groupsListWidget->count()>0)
+		if(groupsListWidget->currentRow()>=0 && groupsListWidget->currentRow()<groupsListWidget->count())
+			groupChanged(groupsListWidget->currentItem()->text());
+	
+	connect(subgroupsListWidget, &QListWidget::currentTextChanged, this, &SubgroupsForm::subgroupChanged);
+	if(subgroupsListWidget->count()>0)
+		if(subgroupsListWidget->currentRow()>=0 && subgroupsListWidget->currentRow()<subgroupsListWidget->count())
+			subgroupChanged(subgroupsListWidget->currentItem()->text());
 }
 
 SubgroupsForm::~SubgroupsForm()
@@ -478,7 +490,7 @@ void SubgroupsForm::subgroupChanged(const QString& subgroupName)
 		return;
 	}
 	StudentsSubgroup* s=(StudentsSubgroup*)ss;
-	subgroupTextEdit->setPlainText(s->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked()));
+	subgroupTextEdit->setText(s->getDetailedDescriptionWithConstraints(gt.rules, true, colorsCheckBox->isChecked()));
 }
 
 void SubgroupsForm::moveSubgroupUp()

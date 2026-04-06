@@ -2124,7 +2124,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
 				}
 				else{
-					dialogTitle=tr("Modify room occupies max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogTitle=tr("Modify room occupies max sets of time slots from selection", "The title of the dialog to modify a new constraint of this type");
 					dialogName=QString("ModifyConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection");
 
 					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"
@@ -2318,7 +2318,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 					 " time slots to which this slot belongs to (the value 0, shown here as a space, represents an unselected slot)."));
 				}
 				else{
-					dialogTitle=tr("Modify rooms occupy max sets of time slots from selection", "The title of the dialog to add a new constraint of this type");
+					dialogTitle=tr("Modify rooms occupy max sets of time slots from selection", "The title of the dialog to modify a new constraint of this type");
 					dialogName=QString("ModifyConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection");
 
 					firstModifyInstructionsLabel=new QLabel(tr("The number chosen in a cell of the table widget represents the number of the selected set of"

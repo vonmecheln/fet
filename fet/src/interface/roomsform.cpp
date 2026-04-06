@@ -61,7 +61,6 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	connect(addRoomPushButton, &QPushButton::clicked, this, &RoomsForm::addRoom);
 	connect(removeRoomPushButton, &QPushButton::clicked, this, &RoomsForm::removeRoom);
 
-	connect(roomsListWidget, &QListWidget::currentRowChanged, this, &RoomsForm::roomChanged);
 	connect(closePushButton, &QPushButton::clicked, this, &RoomsForm::close);
 	connect(modifyRoomPushButton, &QPushButton::clicked, this, &RoomsForm::modifyRoom);
 
@@ -78,8 +77,6 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	connect(makeRealPushButton, &QPushButton::clicked, this, &RoomsForm::makeReal);
 	connect(makeEditVirtualPushButton, &QPushButton::clicked, this, &RoomsForm::makeEditVirtual);
 	connect(helpPushButton, &QPushButton::clicked, this, &RoomsForm::help);
-
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &RoomsForm::colorsCheckBoxToggled);
 
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
@@ -127,7 +124,16 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &RoomsForm::colorsCheckBoxToggled);
+
 	this->filterChanged();
+
+	connect(roomsListWidget, &QListWidget::currentRowChanged, this, &RoomsForm::roomChanged);
+
+	if(roomsListWidget->count()>0)
+		roomChanged(0);
+	//else
+	//	roomChanged(-1);
 }
 
 RoomsForm::~RoomsForm()

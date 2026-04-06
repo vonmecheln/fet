@@ -3861,9 +3861,9 @@ Number of subactivities in each larger split activity=%6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2321"/>
-        <source>Modify rooms occupy max sets of time slots from selection</source>
-        <comment>The title of the dialog to add a new constraint of this type</comment>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2127"/>
+        <source>Modify room occupies max sets of time slots from selection</source>
+        <comment>The title of the dialog to modify a new constraint of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3956,12 +3956,6 @@ Number of subactivities in each larger split activity=%6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2127"/>
-        <source>Modify room occupies max sets of time slots from selection</source>
-        <comment>The title of the dialog to add a new constraint of this type</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2139"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2330"/>
         <source>Max occupied sets of time slots</source>
@@ -4031,6 +4025,12 @@ Number of subactivities in each larger split activity=%6</source>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2314"/>
         <source>Add rooms occupy max sets of time slots from selection</source>
         <comment>The title of the dialog to add a new constraint of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2321"/>
+        <source>Modify rooms occupy max sets of time slots from selection</source>
+        <comment>The title of the dialog to modify a new constraint of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14692,12 +14692,6 @@ to
         <location filename="../src/engine/timeconstraint.cpp" line="79621"/>
         <source>Activities max total number of students in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MTNS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MTNS means max total number of students</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="79648"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="79675"/>
-        <source>Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -56580,118 +56574,118 @@ now has the comments:
 <context>
     <name>GroupsForm</name>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="170"/>
-        <location filename="../src/interface/groupsform.cpp" line="191"/>
-        <location filename="../src/interface/groupsform.cpp" line="225"/>
-        <location filename="../src/interface/groupsform.cpp" line="232"/>
-        <location filename="../src/interface/groupsform.cpp" line="299"/>
-        <location filename="../src/interface/groupsform.cpp" line="306"/>
-        <location filename="../src/interface/groupsform.cpp" line="484"/>
-        <location filename="../src/interface/groupsform.cpp" line="500"/>
-        <location filename="../src/interface/groupsform.cpp" line="514"/>
-        <location filename="../src/interface/groupsform.cpp" line="546"/>
-        <location filename="../src/interface/groupsform.cpp" line="553"/>
-        <location filename="../src/interface/groupsform.cpp" line="559"/>
-        <location filename="../src/interface/groupsform.cpp" line="568"/>
-        <location filename="../src/interface/groupsform.cpp" line="575"/>
-        <location filename="../src/interface/groupsform.cpp" line="581"/>
-        <location filename="../src/interface/groupsform.cpp" line="591"/>
-        <location filename="../src/interface/groupsform.cpp" line="655"/>
-        <location filename="../src/interface/groupsform.cpp" line="719"/>
+        <location filename="../src/interface/groupsform.cpp" line="178"/>
+        <location filename="../src/interface/groupsform.cpp" line="199"/>
+        <location filename="../src/interface/groupsform.cpp" line="233"/>
+        <location filename="../src/interface/groupsform.cpp" line="240"/>
+        <location filename="../src/interface/groupsform.cpp" line="307"/>
+        <location filename="../src/interface/groupsform.cpp" line="314"/>
+        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="508"/>
+        <location filename="../src/interface/groupsform.cpp" line="522"/>
+        <location filename="../src/interface/groupsform.cpp" line="554"/>
+        <location filename="../src/interface/groupsform.cpp" line="561"/>
+        <location filename="../src/interface/groupsform.cpp" line="567"/>
+        <location filename="../src/interface/groupsform.cpp" line="576"/>
+        <location filename="../src/interface/groupsform.cpp" line="583"/>
+        <location filename="../src/interface/groupsform.cpp" line="589"/>
+        <location filename="../src/interface/groupsform.cpp" line="599"/>
+        <location filename="../src/interface/groupsform.cpp" line="663"/>
+        <location filename="../src/interface/groupsform.cpp" line="727"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="170"/>
-        <location filename="../src/interface/groupsform.cpp" line="191"/>
-        <location filename="../src/interface/groupsform.cpp" line="225"/>
-        <location filename="../src/interface/groupsform.cpp" line="299"/>
-        <location filename="../src/interface/groupsform.cpp" line="484"/>
-        <location filename="../src/interface/groupsform.cpp" line="500"/>
-        <location filename="../src/interface/groupsform.cpp" line="546"/>
-        <location filename="../src/interface/groupsform.cpp" line="568"/>
+        <location filename="../src/interface/groupsform.cpp" line="178"/>
+        <location filename="../src/interface/groupsform.cpp" line="199"/>
+        <location filename="../src/interface/groupsform.cpp" line="233"/>
+        <location filename="../src/interface/groupsform.cpp" line="307"/>
+        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="508"/>
+        <location filename="../src/interface/groupsform.cpp" line="554"/>
+        <location filename="../src/interface/groupsform.cpp" line="576"/>
         <source>Invalid selected year</source>
         <translation>Ungültiger Jahrgang</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="232"/>
-        <location filename="../src/interface/groupsform.cpp" line="306"/>
-        <location filename="../src/interface/groupsform.cpp" line="514"/>
-        <location filename="../src/interface/groupsform.cpp" line="553"/>
-        <location filename="../src/interface/groupsform.cpp" line="575"/>
-        <location filename="../src/interface/groupsform.cpp" line="591"/>
-        <location filename="../src/interface/groupsform.cpp" line="655"/>
-        <location filename="../src/interface/groupsform.cpp" line="719"/>
+        <location filename="../src/interface/groupsform.cpp" line="240"/>
+        <location filename="../src/interface/groupsform.cpp" line="314"/>
+        <location filename="../src/interface/groupsform.cpp" line="522"/>
+        <location filename="../src/interface/groupsform.cpp" line="561"/>
+        <location filename="../src/interface/groupsform.cpp" line="583"/>
+        <location filename="../src/interface/groupsform.cpp" line="599"/>
+        <location filename="../src/interface/groupsform.cpp" line="663"/>
+        <location filename="../src/interface/groupsform.cpp" line="727"/>
         <source>Invalid selected group</source>
         <translation>Ungültige Gruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="250"/>
+        <location filename="../src/interface/groupsform.cpp" line="258"/>
         <source>This group exists only in year %1. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Diese Gruppe existiert nur im Jahrgang %1. Das bedeutet, dass alle darauf verweisende Aktivitäten und Einschränkungen gelöscht werden. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="254"/>
+        <location filename="../src/interface/groupsform.cpp" line="262"/>
         <source>This group exists in more places, listed below. It will only be removed from the current year, and the related activities and constraints will not be removed. Do you want to continue?</source>
         <translation>Diese Gruppe existiert in mehreren Jahrgängen, die unten aufgelistet sind. Sie wird nur aus dem aktuellen Jahrgang entfernt. Die Einschränkungen und Aktivitäten mit einem Verweis auf diese Gruppe werden nicht entfernt. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="261"/>
-        <location filename="../src/interface/groupsform.cpp" line="334"/>
+        <location filename="../src/interface/groupsform.cpp" line="269"/>
+        <location filename="../src/interface/groupsform.cpp" line="342"/>
         <source>FET confirmation</source>
         <translation>FET Bestätigung</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="262"/>
-        <location filename="../src/interface/groupsform.cpp" line="335"/>
+        <location filename="../src/interface/groupsform.cpp" line="270"/>
+        <location filename="../src/interface/groupsform.cpp" line="343"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="262"/>
-        <location filename="../src/interface/groupsform.cpp" line="335"/>
+        <location filename="../src/interface/groupsform.cpp" line="270"/>
+        <location filename="../src/interface/groupsform.cpp" line="343"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="274"/>
+        <location filename="../src/interface/groupsform.cpp" line="282"/>
         <source>Removed the group %1 from the year %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="347"/>
+        <location filename="../src/interface/groupsform.cpp" line="355"/>
         <source>Removed the group %1 from everywhere.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="436"/>
+        <location filename="../src/interface/groupsform.cpp" line="444"/>
         <source>Moved the group %1 up in the year %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="475"/>
+        <location filename="../src/interface/groupsform.cpp" line="483"/>
         <source>Moved the group %1 down in the year %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="500"/>
         <source>Sorted the groups in the year %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="562"/>
+        <location filename="../src/interface/groupsform.cpp" line="570"/>
         <source>Activated the group %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="584"/>
+        <location filename="../src/interface/groupsform.cpp" line="592"/>
         <source>Deactivated group %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="642"/>
+        <location filename="../src/interface/groupsform.cpp" line="650"/>
         <source>Changed the comments for the group %1 from
 %2
 to
@@ -56699,12 +56693,12 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="666"/>
+        <location filename="../src/interface/groupsform.cpp" line="674"/>
         <source>Group long name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="706"/>
+        <location filename="../src/interface/groupsform.cpp" line="714"/>
         <source>Changed the long name for the group %1 from
 %2
 to
@@ -56712,12 +56706,12 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="730"/>
+        <location filename="../src/interface/groupsform.cpp" line="738"/>
         <source>Group code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="770"/>
+        <location filename="../src/interface/groupsform.cpp" line="778"/>
         <source>Changed the code for the group %1 from
 %2
 to
@@ -56725,41 +56719,41 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="324"/>
+        <location filename="../src/interface/groupsform.cpp" line="332"/>
         <source>This group exists only in year %1. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Diese Gruppe existiert nur bei Jahrgang %1. Das bedeutet, dass alle darauf verweisende Aktivitäten und Einschränkungen gelöscht werden. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="327"/>
+        <location filename="../src/interface/groupsform.cpp" line="335"/>
         <source>This group exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Diese Gruppe existiert in mehreren Jahrgängen, die unten aufgelistet sind. Sie wird aus allen Jahrgängen entfernt. Alle Einschränkungen und Aktivitäten mit einem Verweis auf diese Gruppe werden ebenfalls entfernt. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="559"/>
+        <location filename="../src/interface/groupsform.cpp" line="567"/>
         <source>Activated a number of %1 activities</source>
         <translation>Es wurden %1 Aktivitäten aktiviert</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="581"/>
+        <location filename="../src/interface/groupsform.cpp" line="589"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Es wurden %1 Aktivitäten deaktiviert</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="602"/>
+        <location filename="../src/interface/groupsform.cpp" line="610"/>
         <source>Students group comments</source>
         <translation>Kommentare für die Schülergruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="604"/>
-        <location filename="../src/interface/groupsform.cpp" line="668"/>
-        <location filename="../src/interface/groupsform.cpp" line="732"/>
+        <location filename="../src/interface/groupsform.cpp" line="612"/>
+        <location filename="../src/interface/groupsform.cpp" line="676"/>
+        <location filename="../src/interface/groupsform.cpp" line="740"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="606"/>
-        <location filename="../src/interface/groupsform.cpp" line="670"/>
-        <location filename="../src/interface/groupsform.cpp" line="734"/>
+        <location filename="../src/interface/groupsform.cpp" line="614"/>
+        <location filename="../src/interface/groupsform.cpp" line="678"/>
+        <location filename="../src/interface/groupsform.cpp" line="742"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -58174,16 +58168,21 @@ Falls z.B. eine Aktivität mit Dauer=2 am Montag in den Zeitfeldern 8.00, 9.00 u
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="629"/>
+        <source>Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), your operating system name and version, and your processor architecture type.</source>
+        <translation type="unfinished">Dabei erfährt der Server ihre FET-Version,die aktuelle Qt Version (eine von FET benutzte c++ Bibliothek), ihr Betriebssystem (Name und Version) und ihre Prozessorarchitektur.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="632"/>
         <source>Thus, it could be deduced if and when you use FET.</source>
         <translation>Damit könnte nachvollzogen werden wann Sie FET benutzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="642"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="645"/>
         <source>Alternative solutions: either you can split that activity into two subactivities with duration 1 (without a min days constraint between them), and add a two activities consecutive constraint, or you can choose to not add the break constraint in your file.</source>
         <translation>Alternativlösungen: Man könnte jene Aktivität in zwei Teilaktivitäten aufteilen, je mit Dauer=1 und ohne die Einschränkung „min. Tage“ dazwischen, dafür eine Einschränkung „2 Aktivitäten direkt hintereinander“ hinzufügen. Oder man könnte auch auf die Pausen-Einschränkung einfach verzichten.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="676"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="679"/>
         <source>Q: (by %1) I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
 
 The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are nonconsecutive).
@@ -58205,7 +58204,7 @@ A: Noch eine Idee wäre, 2 Aktivitäten des Lehrers zu wählen, die nicht am gle
 Oder man füge eine Pseudoaktivität für diesen Lehrer hinzu; diese teilt man in 2 Teilaktivitäten pro Woche mit „min. Tage“ = 2 und Gewichtung=100% auf. Dabei muss man aufpassen, dass es auch genug Platz für diese Pseudoaktivitäten im Stundenplan gibt (d.h. genug Zeitfelder am Tag) und diese als mögliche Freistunden betrachten. Falls für diesen Lehrer die Einschränkung „max. Freistunden“ = 2 gilt, dann bitte auf 0 setzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="708"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="711"/>
         <source>Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be on the same day by constraints min days between activities?
 
 If A1 and A2 are constrained not to be on the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be on the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
@@ -58218,22 +58217,22 @@ A: Falls A1 und A2 mit einer Gewichtung von 95% (oder jeder anderen Gewichtung) 
 Wahrscheinlich am besten wäre es, eine einzige Aktivität A12&apos; anstatt A1 und A2 einzusetzen, oder die Einschränkung „Min. n Tage zwischen einem Satz an Aktivitäten“ entsprechend abzuändern. Evtl. können Sie aber eine weitere Möglichkeit finden?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="726"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="729"/>
         <source>The second hint is not to change too many constraints in one generation. If it is impossible to generate a timetable with those added constraints, it is difficult to say which particular constraint was responsible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="729"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="732"/>
         <source>It may happen, for example, that even when two consecutive activities are placed on the same day (with the same group and the same teacher) sometimes they are placed in different rooms, which would force them to needlessly change rooms. I guess that FET is focused on fulfilling constraints but not on optimizing timetables. Sometimes simply changing the two activities is better both for the students and the teachers. I think that manually improving a generated timetable is faster than creating many more constraints and repeating the generation. And this is the third hint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="775"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="778"/>
         <source>Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.</source>
         <translation>Q: Nachdem ich einen fixen Stundenplan generiert habe, habe ich versucht, eine Aktivität von einer Stunde zu einer anderen Stunde zu verschieben. Nun meldet FET, dass es unmöglich sei, einen Stundenplan zu generieren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="777"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="780"/>
         <source>A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more than 4 hours, it does not matter for our discussion). Now, if you have a day with 4 hours and try to move another activity to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why? Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity. (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.
 
  A solution: lower the weight of this constraint from 99% to 90% or less.</source>
@@ -58242,250 +58241,250 @@ Wahrscheinlich am besten wäre es, eine einzige Aktivität A12&apos; anstatt A1 
 Die Lösung: die Gewichtung dieser Einschränkung von 99% auf 90% oder weniger herabzusetzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="791"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="794"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
         <translation>Q: Hier ein Kniff, um Aktivitäten zu verplanen, die alle zwei Wochen stattfinden (meine Bildungsstätte hat viele zweiwöchentliche Aktivitäten):</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="793"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="796"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
         <translation>A: Die Stunden werden in Halbstunden aufgeteilt: (8.00-8.30 Uhr, 9.00-9.30 Uhr, usw.) entspricht Woche A, die 2. Hälfte (8.30-9.00, 9.30-10.00, ...) entspricht Woche B. Wöchentliche Aktivitäten haben Dauer=2, zweiwöchentlich haben Dauer=1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="797"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="800"/>
         <source>I created an activity tag &apos;Start hour&apos;. It should be added to each weekly activity to make sure they start at the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A, and on the same day but at the next hour on week B.</source>
         <translation>Dann habe ich eine Aktivitätskennzeichnung „Anfangsstunde“ für jede wöchentliche Aktivität erstellt, damit sie immer zur gleichen Stunde beginnen (gleicher Tag + gleiche Stunde). Sonst kann eine Aktivität mit Dauer=2 zur 2. halben Stunde im Stundenplan beginnen; diese wird an einem bestimmten Tag und zu einer bestimmten Zeit in Woche A und am gleichen Tag, aber zur nächsten Stunde, in Woche B stattfinden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="819"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="822"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
         <translation>Bemerkung: Es ist besser, die 3 Aktivitäten als einzelne, voneinander unabhängige Aktivitäten und nicht als 3 Teilaktivitäten einer größeren Mutteraktivität einzusetzen. Der Grund: Falls man die Aktivitäten über die Woche gleichmäßig verteilen möchte, wird dieser Vorgang keine Einschränkungen vom Typ „Min. n Tage zwischen einem Satz an Aktivitäten“ für diese Aktivitäten hinzufügen oder entfernen. Außerdem, wenn eine Teilaktivität hinzugefügt wird, muss man aufpassen, dass keine Vorgabeeinschränkung vom Typ „min. Tage“ zwischen den 3 Komponenten hinzugefügt wird.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="829"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="832"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
         <translation>Q: Ich möchte angeben, dass ein Lehrer nur in bestimmten Zeitfeldern unterrichtet, egal bei welchen Aktivitäten.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="831"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
         <source>A: You can use a constraint of type activities occupy min time slots from selection or use in an inverted way a constraint of type activities occupy max time slots from selection (the exact menu entries are &apos;A set of activities occupies min/max time slots from selection&apos;).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="838"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="841"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
         <translation>Q: Wie kann man Aktivitäten ohne bestimmte Räume einfach auffinden, nachdem der Stundenplan erstellt wurde?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="840"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="843"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
         <translation>A: Eine Möglichkeit wäre, die XML-Datei mit dem Stundenplan der Aktivitäten (im Unterverzeichnis „results“ mit einem Dateinamen ähnlich wie diesem: „file_activities.xml“) in einem Textbearbeitungsprogramm zu öffnen und nach dem Vorkommen des Texts „&lt;Room&gt;&lt;/Room&gt;“ zu suchen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="847"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="850"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
         <translation>Q: Schüler und/oder Lehrer sollen jeden Tag einige Aktivitäten ohne Freistunden, dann einen Block von zusammenhängenden Freistunden, und nachher wieder aufeinanderfolgende Aktivitäten ohne Freistunden haben. Einige Schulen in Morocco und Algerien haben Morgen- und Nachmittagsschichten, ebenso an einigen Universitäten, wo die Studenten lieber einen Block von zusammenhängenden Freistunden - egal, wie lang - an einem Tag haben. Wie kann man diese Situationen in FET behandeln?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="853"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="856"/>
         <source>A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours daily with allow empty days true. You may need to devise some other tricks, in addition.</source>
         <translation>A: Man könnte die Anzahl Tage in FET = zweimal der Anzahl an realen Tagen einrichten. Jeder reale Tag entspricht also 2 FET-Tagen, einer für den Vormittag und einer für den Nachmittag. Dann könnte man „Max. Freistunden“ = 0 und evtl. noch „Min. 2 Stunden pro Tag“ mit „leere Tage zulassen“ = ja. Vielleicht muss man auch weitere solche Tricks erfinden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="864"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
         <translation>Q: Kann man ein Kommentar zu einer (Teil-)Aktivität oder einer Einschränkung hinzufügen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="866"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
         <translation>A: Kommentare für Aktivitäten und Teilaktivitäten können nach Klicken auf die Schaltfläche „Kommentare“ im Dialog der entsprechenden Aktivität eingeben. Ein Kommentar kann einer Einschränkung auf ähnliche Weise in den Dialogen „Alle Zeiteinschränkungen“ oder „Alle Raumeinschränkungen“ hinzugefügt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="873"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
         <translation>Q: Wie kann ich eine Einschränkung aktivieren oder deaktivieren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="872"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="875"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
         <translation>A: Eine Einschränkung kann man aktivieren oder deaktivieren, indem man sich der entsprechenden Schaltflächen im Dialog „Alle Zeiteinschränkungen“ oder „Alle Raumeinschränkungen“ bedient.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="889"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="892"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
         <translation>Q: Wie kann man bestimmte Aktivitäten einschränken, dass sie im gleichen Raum (natürlich zu verschiedenen Zeiten) stattfinden? Zum Beispiel müssen wir Aktivitäten mit Physik für gewisse Schülergruppen immer entweder in Labor-1 oder Labor-2 einteilen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="896"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
         <translation>A: Man kann die Einschränkung „Ein Satz an Aktivitäten belegt eine begrenzte Anzahl an verschiedenen Räumen“ dazu nehmen und die maximale Anzahl an Räumen = 1 setzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="899"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
         <source>Q: How can I backup/restore the FET settings on a computer, or share them between different computers?</source>
         <translation>Q: Wie kann ich die Einstellungen von FET auf dem Computer sichern und wiederherstellen, oder diese auf einen anderen PC übertragen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="901"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
         <source>A: GNU/Linux: Usually, in your %1 directory you will find a directory &quot;%2&quot; containing the file &quot;%3&quot;. If you copy this file to another computer, the FET settings will be copied. You can also make a backup of this file and copy it on the same computer, later, to restore the previous settings. If you remove this file, all FET settings on this computer will be reset to defaults.</source>
         <translation>A: Auf GNU/Linux-Systemen gibt es meistens im Verzeichnis „%1“ ein Unterverzeichnis „%2“ mit der Datei „%3“. Diese Datei kann man kopieren und auf einem anderen Computer speichern, um die Einstellungen auf dem anderen Gerät zu übernehmen. Auch eine Sicherheitskopie dieser Datei kann man verwenden, um die früheren Einstellungen auf dem gleichen Computer wieder herzustellen. Wenn die Datei gelöscht wird, werden alle Einstellungen auf die Vorgabewerte zurückgestellt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="907"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="910"/>
         <source>macOS: It seems that the configuration file might be %1</source>
         <translation>Auf macOS lautet die Konfigurationsdatei wahrscheinlich „%1“.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="909"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="912"/>
         <source>Windows: Run regedit.exe (Registry Editor) and search for the key &quot;%1&quot;. You will find a section with this name, with the subsection &quot;%2&quot;. You can export this section to a file, and import it from this file on the same or another computer. If you remove this section, all FET settings will be reset to defaults.</source>
         <translation>Auf Windows-Systemen führt man den Registry-Editor „regedit.exe“ aus und sucht nach dem Schlüssel „%1“. Dort findet man einen Abschnitt des gleichen Namens mit einem Unterabschnitt „%2“. Diesen Unterabschnitt kann man in eine Datei exportieren und auf einem anderen (oder auf dem gleichen) Computer wieder importieren. Das Entfernen des Unterabschnitts stellt alle FET-Einstellungen wieder auf die Vorgabewerte zurück.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="917"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="920"/>
         <source>Q: I have many subgroups and I don&apos;t explicitly use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation>Q: Bei mir gibt es viele Teilgruppen, die ich aber nicht explizit einsetze. Kann ich diese in den Auswahlfeldern ausblenden, um die Einschränkungen leichter erstellen zu können? Und kann ich die FET-Benutzerschnittstelle irgendwie beschleunigen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="920"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="947"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="971"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="982"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="996"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="1017"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="1030"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="923"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="950"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="974"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="985"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="999"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1020"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1033"/>
         <source>A:</source>
         <comment>Answer</comment>
         <translation>A:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="922"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Falls viele Teilgruppen definiert wurden, die nicht ausdrücklich verwendet werden, gibt es drei empfehlenswerte Einstellungen: Teilgruppen in Auswahlfeldern und bei der Aktivitätenplanung verstecken, und Teilgruppen nicht auf Festplatte speichern.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation>Die globale Option „Teilgruppen bei der Aktivitätenplanung verstecken“ ist nicht das gleiche, wie das Häkchen im Aktivitätendialog zu setzen. Die globale Einstellung ist viel effizienter.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="931"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation>Wenn Teilgruppen in Auswahlfeldern versteckt werden, können die betroffenen Dialoge (Aktivitätendialog, Dialog „nicht verfügbare Zeiten für Schülergruppe“) viel schneller öffnen, falls es viele Teilgruppen gibt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="933"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="936"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the generation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="937"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="940"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation>(Der Stundenplan der Konfliktfälle, je nach Dateigröße, könnte auch etwas länger dauern).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="939"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="942"/>
         <source>After that, you can enable the writing of the timetables and regenerate.</source>
         <translation>Nachher kann man das Speichern der Stundenpläne wieder aktivieren und sie neu generieren.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="945"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="948"/>
         <source>Q: How about dividing a students year automatically into many subgroups?</source>
         <translation>Q: Wie teilt man einen Jahrgang automatisch in viele Teilgruppen auf?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="949"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="952"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation>Über den Einsatz einer großen Anzahl an Kategorien, Teilkategorien und Teilgruppen: Allgemein ist es sehr empfehlenswert, diese auf ein Minimum zu reduzieren - insbesondere die Anzahl an Kategorien - egal, welche Mittel dazu notwendig sind. Sonst kann die Stundenplangenerierung zuviel Zeit in Anspruch nehmen und somit fehlschlagen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="953"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation>Evtl. wäre eine vernünftige Anzahl an Kategorien 2, 3 oder maximal 4. Der Dialog „Jahrgänge aufteilen“ erlaubt zwar höhere Werte; das ist allerdings nicht empfehlenswert.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="959"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
         <translation>Als Alternative zum Aufteilen eines Jahrgangs in viele Kategorien/Teilgruppen könnte man die einzelnen Schülerinnen und Schüler als Teilgruppen in FET eingeben und nachher diese zu entsprechenden Schülergruppen zusammenfügen. In der FET-Benutzerumgebung ist das allerdings schwierig zu machen; besser wäre es, ein automatisches Programm einzusetzen, das die Daten Ihrer Bildungsinstitution in das .fet-Format konvertiert.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="963"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
         <translation>Oder man importiert die Schülergruppen aus Textdateien im CSV-Format (d.h. in kommagetrennten Textfeldern) mit der entsprechenden Importfunktion in FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="962"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="965"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
         <translation>In solchen Fällen (einzelne Schülerinnen und Schüler als FET-Teilgruppen) sollte man bedenken, dass eine kleinere Gesamtanzahl an Teilgruppen eine schnellere Laufzeit der Stundenplangenerierung bedeutet. Also wäre es gut, eine einzelne Teilgruppe für mehrere Schüler einsetzen, die alle exakt die gleichen Aktivitäten und Einschränkungen aufweisen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="969"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="972"/>
         <source>Q: Does the order of constraints have influence on their importance while generating the timetable?</source>
         <translation>Q: Hat die Reihenfolge der Einschränkungen einen Einfluss auf deren Wichtigkeit während der Generierung des Stundenplans?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="973"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>The order of the constraints is only important to the interaction with the user. It is only the weight percentage which counts while generating the timetable. Note however that you may get different timetables for different constraints order.</source>
         <translation>Die Reihenfolge der Einschränkung ist nur für die Interaktion mit dem Benutzer von Bedeutung; bei der Generierung eines Stundenplans spielt nur die Gewichtungsprozentzahl eine Rolle. Es ist jedoch möglich, dass unterschiedliche Einschränkungsreihenfolgen zu unterschiedlichen Stundenplänen führen können.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="980"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="983"/>
         <source>Q: How does one use the constraints of type students (set) / teacher(s) min gaps between ordered pair of activity tags?</source>
         <translation>F: Wie wird die Einschränkung vom Typ Minimale Anzahl an Stunden für Schüler-(Gruppe) / Lehrer zwischen einem geordneten Paar von Aktivitätskennzeichnungen benutzt?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="984"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="987"/>
         <source>These constraints ensure that for the affected students (set) / teacher(s), if on the same day an activity with the second activity tag comes after an activity with the first activity tag, between them there must be at least min gaps (hours). As a trick, if you want min gaps from the first activity tag to the second activity tag and from the second activity tag to the first activity tag (so, between these two activity tags, in any order they can be, to be at least min gaps), you can add two constraints, the second constraint switching the first activity tag with the second activity tag.</source>
         <translation>Diese Einschränkung stellt sicher, dass die betroffenen Schüler-(Gruppen) bzw. Lehrer, falls die zweiten Aktivitätskennzeichnung am selben Tag nach der ersten Aktivitätskennzeichnung kommt, ein Minimum an Stunden zwischen sich hat. Wenn das Minimum an Stunden auch bei umgekehrter Ordnung an dem Tag gelten soll, dass muss eine zweite Einschränkung mit vertauschen Aktivitätskennzeichnungen hinzugefügt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="994"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="997"/>
         <source>Q: How does one use the constraint of type activity tags not overlapping?</source>
         <translation>F: Wie kann die Einschränkung &quot;Nicht überlappende Aktivitätskennzeichnungen&quot; benutzt werden?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="998"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1001"/>
         <source>This constraint was suggested by %1, who gave the following example: You can use this constraint for instance if you have young and old students with Sport activities, and you don&apos;t want young students having the Sport activities at the same time with the old students. You then need to add an activity tag, say SY, to all the young students&apos; Sport activities, and another activity tag, say SO, to all the old students&apos; Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO. You can even create more categories of students&apos; age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.</source>
         <comment>%1 is a person</comment>
         <translation>Diese Einschränkung wurde von %1 vorgeschlagen , der folgendes Beispiel gab: Sie können dies z.B. benutzen, wenn die jüngeren Schüler nicht gleichzeitig mit den älteren Schülern Sport haben sollen. Man kann dann der Sportaktivitäten der jüngeren Schüler z.B. die Kennzeichnung &quot;SJ&quot; geben und den Aktivitäten der älteren Schülern &quot;SÄ&quot;. Dann fügt man für diese beiden Aktivitätenkennzeichnung die Zeiteinschränkung &quot;Nicht überlappende Aktivitätskennzeichnung&quot; für diese beiden Kennzeichen hinzu. Man könnte auch mehr Kategorien erstellen, wie z.B. S5-6, S7-8 und S9-10 und entsprechende Aktivitätskennzeichnung hinzufügen. Auch dann wäre nur eine dieser Kennzeichnen gleichzeitig im Plan.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1006"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1009"/>
         <source>This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above, because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.</source>
         <translation>Diese Einschränkung basiert auf der &quot;Nicht überlappende Aktivitäten&quot; Einschränkung, aber sie ist ggf. einfacher zu benutzen, da bei obrigen Beispiel nur eine einzige Einschränkung einzugeben ist.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1009"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1012"/>
         <source>The uses of this constraint might be wider.</source>
         <translation>Der Anwendungsbereich dieser Einschränkung ist wahrscheinlich noch größer.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1015"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1018"/>
         <source>Q: How can I say that an activity should take place in more rooms?</source>
         <translation>F: Wie kann eine Aktivität mehrere Räume bekommen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1019"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1022"/>
         <source>You could use virtual rooms for this. Read the Help on those dialogs (the Rooms dialog and the Make/edit virtual room dialog). In short, you need to add a virtual room with n sets of real rooms, where n is the number of rooms you want the activity to occupy.</source>
         <translation>Sie können dafür virtuelle Räume nutzen. Mehr dazu in dem entsprechendem Dialog. Kurz: Füge einen virtuellen Raum mit n Sätzen von realen Räumen hinzu, wobei n die Anzahl an Räumen ist, die belegt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1022"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1025"/>
         <source>There is also another possible solution, to add dummy activities and constrain them to start at the same time as the real activity.</source>
         <translation>Eine andere Möglichkeit ist es, Pseudoaktivitäten mit der Einschränkung &quot;gleiche Startzeit&quot; hinzuzufügen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1028"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1031"/>
         <source>Q: What is the use of virtual rooms?</source>
         <translation>F: Wie werden virtuelle Räume benutzt?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1032"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1035"/>
         <source>Virtual rooms were suggested by the user %1 on the FET forum (%2). They can be used to make an activity occupy more rooms, or even to let FET choose between a large room for this activity or more smaller rooms (if you set the preferred rooms for this activity the real large room or a virtual room representing the more smaller rooms). Please read the Help on the virtual rooms dialogs (the Rooms dialog and the Make/edit virtual room dialog).</source>
         <translation>Virtuelle Räume wurden von %1 im FET Forum vorgeschlagen (%2). Sie können benutzt werden um einer Aktivität mehrere Räume zuzuweisen bzw. FET zwischen einem großen oder mehreren kleinen Räumen wählen zu lassen (indem der bevorzugten Räume ein realer großer Raum oder ein virtueller Raum, der mehrere kleine Räume repräsentiert, benutzt wird). Bitte lesen die Hilfe im Dialog für virtuelle Räume. (Bei den &quot;Räumen&quot; in &quot;Erstelle/Editiere virtuelle Räume&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="802"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="805"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
         <translation>Eine Zeiteinschränkung erstellen: Aktivitäten mit allen Lehrern, allen Schülern, allen Fächern, Aktivitätskennzeichnung = „Anfangsstunde“ haben bevorzugte Startzeiten: Montag 8.00 Uhr, Montag 9.00 Uhr, ...</translation>
     </message>
@@ -58505,7 +58504,7 @@ Die Lösung: die Gewichtung dieser Einschränkung von 99% auf 90% oder weniger h
         <translation>A: Es gibt genau genommen ein maximales Limit für den Algorithmus, aber so hohe Werte wird wohl nie jemand nutzen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="749"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="752"/>
         <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
 
 A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
@@ -58525,23 +58524,23 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="789"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="792"/>
         <source>-- This entry by %1 --</source>
         <comment>%1 is a person</comment>
         <translation>-- Dieser Beitrag ist von %1 --</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="805"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="808"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
         <translation>Es funktioniert einwandfrei und liefert gute Stundenpläne mit wirkungsvollen Zeiteinschränkungen für Lehrer.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="811"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours on a day and two hours on another day, or two hours on a day, one hour on another day and one hour on another day).</source>
         <translation>Q: ich soll eine Aktivität mit Gesamtdauer 4 in Teilaktivitäten aufteilen. Diese sollten entweder 2+2 oder 2+1+1 ergeben (d.h. je 2 Stunden an zwei Tagen, oder 2 Stunden an einem Tag und je 1 Stunde an zwei anderen Tagen).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="817"/>
         <source>A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as 3 single/independent activities (see note below).
 
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
@@ -58554,7 +58553,7 @@ Zwei Einschränkungen „Min. Anzahl an Tagen zwischen einem Satz an Aktivitäte
 Dazu noch eine weitere Einschränkung hinzufügen: „Min. Anzahl an Tagen zwischen einem Satz an Aktivitäten“=1 zwischen IDs 2 + 3, „aufeinanderfolgend am gleichen Tag“ = ja, Gewichtung = 0%.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="823"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="826"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
         <translation>Vielleicht gibt es andere mögliche Lösungen, aber diese scheint perfekt in Hinsicht auf die Effizienz.</translation>
     </message>
@@ -58793,7 +58792,7 @@ A: Es gibt einen guten Trick: Man kann eine Pseudoaktivität mit Dauer=1 nur fü
         <translation>Wenn Sie diese Option einschalten, dann wird mit jedem Start von FET die Datei %1 von der FET Homepage geladen. Daher wird der Zugriff, zusammen mit IP und Zeitstempel, auf dem Server sichtbar sein.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="635"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="638"/>
         <source>Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
 
 Activity math, duration 2, id say 100
@@ -58814,7 +58813,7 @@ Stunde 12.00 Uhr - Mathe (2. Zeitfeld für ID=100)?
 A: Nein, die Pause muss von der Aktivität beachtet werden. Die Aktivität muss entweder vor oder nach der Pause als Ganzes erfolgen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="649"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="652"/>
         <source>Q and A From %1: A very difficult to diagnose unresolved case
 
 Since I started working on our school&apos;s timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn&apos;t reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). It was too much (other teachers have 5 teaching hours max) but he didn&apos;t mind so we kept FET solution.Just a month ago this teacher had some major operation and couldn&apos;t teach so much hours in one day anymore. So I started again to experiment with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to cover first and last hour! I had 16 teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!
@@ -58828,7 +58827,7 @@ Seitdem ich begonnen habe, unseren Schulstundenplan zu bearbeiten, hatte ich ein
 Nicht, dass ich darüber nochmals stolpern würde, aber wegen meiner eigenen Schwierigkeiten mit diesem Problem könnte es evtl. auch anderen so ergehen - also hoffe ich, jenen mit diesen Schilderungen helfen zu können.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="668"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="671"/>
         <source>Q: I want to define hard subjects (math, physics and chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH activities. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double activities.</source>
@@ -58837,7 +58836,7 @@ A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH act
 A: Erstellen Sie eine Aktivitätskennzeichnung „schwierig“ und fügen Sie sie allen Stunden bzw. Aktivitäten mit MA, PH und CH hinzu. Dann können Sie eine Einschränkung vom Typ „Maximal aufeinanderfolgende Stunden einer Aktivitätskennzeichnung für alle Schüler“ mit der Aktivitätskennzeichnung (Aktivitätskennzeichnung) = „schwierig“. Achten Sie bitte darauf, dass keine Doppelstunden darunter fallen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="692"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="695"/>
         <source>Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
 
 A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between activities 1, weight 0%, select consecutive if on the same day. FET will never put more than 2 of these dummy activities on a day. Add max gaps for students = 0 per week.</source>
@@ -58847,7 +58846,7 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 A: Fügen Sie für jede Teilgruppe eine Pseudoaktivität hinzu (ohne Lehrer), die in 4 Teilaktivitäten pro Woche aufgeteilt wird: Dauer=1, min. Tage zwischen einem Satz an Aktivitäten = 1, Gewichtung = 0% und „aufeinanderfolgend falls am gleichen Tag“ aktivieren. FET wird nie mehr als 2 dieser Pseudoaktivitäten an einem Tag verplanen. Fügen Sie eine Einschränkung „max. Freistunden pro Woche für Schüler“ = 0 hinzu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="747"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
         <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
         <translation>Diese Frage ist für Fortgeschrittene; die beschriebene Situation würde in der Praxis wahrscheinlich nie eintreten. Deshalb kann die Frage beim ersten Lesen zunächst einmal übersprungen werden.</translation>
     </message>
@@ -59085,27 +59084,27 @@ Zur Zeit ist die Benutzerschnittstelle für Schüler etwas schwierig zu benutzen
         <translation>Q-1-6-Juni-2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="701"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="704"/>
         <source>Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
         <translation>Hinweis: Falls die Einschränkungen in FET nicht ausreichen, um die Freistunden in den Griff zu bekommen, können Pseudoaktivitäten eingesetzt werden. Sollte z.B. eine Schülergruppe maximal 3 Zwischenstunden haben, fügen Sie eine Pseudoaktivität ohne Lehrer hinzu, die in 3 Teilaktivitäten pro Woche aufgeteilt wird.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="721"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="724"/>
         <source>Three hints from an anonymous Polish user, who uses FET for very large data sets:</source>
         <translation>Hier drei Tipps eines anonymen Anwenders aus Polen, der FET bei sehr großen Datenmengen einsetzt:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="723"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="726"/>
         <source>The first hint for other users is to start with a minimum number of constraints and see if FET can generate a timetable with those constraints before thinking about adding the next ones.</source>
         <translation>Ein erster Hinweis für andere Anwender wäre, dass man mit einer Mindestanzahl an Einschränkungen beginnt und erst nach erfolgter Stundenplanberechnung durch FET die weiteren Einschränkungen hinzufügt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="740"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="743"/>
         <source>A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option from the Settings-&gt;Interface menu (shortcuts are shown, by default).</source>
         <translation>A: Mehrere Benutzer haben den Wunsch nach Schnellzugriffstasten für die am häufigsten benutzten Funktionen geäußert. Diese werden im Hauptmenü angezeigt, nachdem die entsprechende Option im Menü „Einstellungen-&gt;Benutzeroberfläche“ aktiviert wurde (die Voreinstellung ist „aktiviert“).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="738"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="741"/>
         <source>Q: Help on shortcut buttons in the main form.</source>
         <translation>Q: Hilfe über Schnellzugriffstasten im Hauptformular.</translation>
     </message>
@@ -64177,12 +64176,12 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7746"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7757"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7823"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8664"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8751"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8895"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8962"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8976"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9102"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
         <source>FET information</source>
         <translation type="unfinished">FET-Information</translation>
     </message>
@@ -64649,16 +64648,6 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3198"/>
-        <source>WARNING: potentially very SLOW constraint! Use ONLY if strictly necessary! Read the Help!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3199"/>
-        <source>Note: it is recommended to use this constraint only if strictly necessary and not redundantly, because it might be very slow.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="3326"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="3371"/>
         <source>Filter</source>
@@ -64772,7 +64761,7 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7414"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8976"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Ungültige Einschränkung</translation>
     </message>
@@ -64807,27 +64796,27 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished">FET-Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9028"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9030"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9033"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9034"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7932"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8911"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8846"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8912"/>
         <source>FET confirmation</source>
         <translation type="unfinished">FET Bestätigung</translation>
     </message>
@@ -64884,22 +64873,17 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8564"/>
-        <source>Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8566"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8567"/>
         <source>This constraint was suggested by %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8568"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
         <source>18 October 2025</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8570"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8571"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of students which can be present, considering the number of students of these activities, in these time slots.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -65029,7 +65013,7 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8527"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8542"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8557"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8573"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8574"/>
         <source>FET help</source>
         <translation type="unfinished">FET-Hilfe</translation>
     </message>
@@ -65320,7 +65304,7 @@ Example 2:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8568"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
         <source>This constraint type was added on %1.</source>
         <comment>%1 is the date at which this constraint type was implemented in FET</comment>
         <translation type="unfinished"></translation>
@@ -65454,113 +65438,113 @@ Example 2:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8634"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8635"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished">Nr. %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8664"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8719"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8720"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8806"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8807"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8844"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
         <source>Activate the selected time constraints?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8872"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8873"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8895"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
         <source>Activated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8909"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8910"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8939"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8940"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8962"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
         <source>Deactivated %1 time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8988"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8989"/>
         <source>Constraint comments</source>
         <translation type="unfinished">Kommentar der Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8990"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8991"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8992"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8993"/>
         <source>Cancel</source>
         <translation type="unfinished">Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9059"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9060"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished">%1 / %2 Zeiteinschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9083"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9084"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9102"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9112"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9121"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9113"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9122"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9114"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9115"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9124"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -65570,7 +65554,7 @@ Please enter the new weight percentage:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9161"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9162"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation type="unfinished"></translation>
@@ -67479,12 +67463,12 @@ möglich: 0,0%-100,0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>February</source>
         <translation>Februar</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>March</source>
         <translation>März</translation>
     </message>
@@ -68470,94 +68454,94 @@ changed its real rooms sets, becoming:
 <context>
     <name>RoomsForm</name>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="164"/>
+        <location filename="../src/interface/roomsform.cpp" line="170"/>
         <source>V: %1</source>
         <comment>V means virtual room, %1 is the name of the room</comment>
         <translation>V: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="190"/>
-        <location filename="../src/interface/roomsform.cpp" line="366"/>
-        <location filename="../src/interface/roomsform.cpp" line="391"/>
-        <location filename="../src/interface/roomsform.cpp" line="473"/>
-        <location filename="../src/interface/roomsform.cpp" line="480"/>
-        <location filename="../src/interface/roomsform.cpp" line="489"/>
-        <location filename="../src/interface/roomsform.cpp" line="538"/>
-        <location filename="../src/interface/roomsform.cpp" line="556"/>
-        <location filename="../src/interface/roomsform.cpp" line="567"/>
-        <location filename="../src/interface/roomsform.cpp" line="594"/>
-        <location filename="../src/interface/roomsform.cpp" line="656"/>
+        <location filename="../src/interface/roomsform.cpp" line="196"/>
+        <location filename="../src/interface/roomsform.cpp" line="372"/>
+        <location filename="../src/interface/roomsform.cpp" line="397"/>
+        <location filename="../src/interface/roomsform.cpp" line="479"/>
+        <location filename="../src/interface/roomsform.cpp" line="486"/>
+        <location filename="../src/interface/roomsform.cpp" line="495"/>
+        <location filename="../src/interface/roomsform.cpp" line="544"/>
+        <location filename="../src/interface/roomsform.cpp" line="562"/>
+        <location filename="../src/interface/roomsform.cpp" line="573"/>
+        <location filename="../src/interface/roomsform.cpp" line="600"/>
+        <location filename="../src/interface/roomsform.cpp" line="662"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="190"/>
-        <location filename="../src/interface/roomsform.cpp" line="366"/>
-        <location filename="../src/interface/roomsform.cpp" line="391"/>
-        <location filename="../src/interface/roomsform.cpp" line="473"/>
-        <location filename="../src/interface/roomsform.cpp" line="538"/>
-        <location filename="../src/interface/roomsform.cpp" line="594"/>
-        <location filename="../src/interface/roomsform.cpp" line="656"/>
+        <location filename="../src/interface/roomsform.cpp" line="196"/>
+        <location filename="../src/interface/roomsform.cpp" line="372"/>
+        <location filename="../src/interface/roomsform.cpp" line="397"/>
+        <location filename="../src/interface/roomsform.cpp" line="479"/>
+        <location filename="../src/interface/roomsform.cpp" line="544"/>
+        <location filename="../src/interface/roomsform.cpp" line="600"/>
+        <location filename="../src/interface/roomsform.cpp" line="662"/>
         <source>Invalid selected room</source>
         <translation>Ungültiger Raum</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="197"/>
-        <location filename="../src/interface/roomsform.cpp" line="223"/>
+        <location filename="../src/interface/roomsform.cpp" line="203"/>
+        <location filename="../src/interface/roomsform.cpp" line="229"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="198"/>
+        <location filename="../src/interface/roomsform.cpp" line="204"/>
         <source>Are you sure you want to delete this room and all related constraints?</source>
         <translation>Sind sie sicher das dieser Raum und all seine zugehörigen Einschränkungen gelöscht werden sollen?</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="224"/>
+        <location filename="../src/interface/roomsform.cpp" line="230"/>
         <source>This is a real room. If you remove it, it will affect %1 virtual rooms. The real room is met %2 times overall in the lists of sets of the virtual rooms. Do you really want to remove it?</source>
         <translation>Dies ist ein realer Raum. Wenn Sie ihn entfernen, dann wird dadruch der virtuelle Raum %1 beeinträchtigt. Der reale Raum ist %2 mal in virtuellen Räumen. Soll er wirklich entfernt werden?</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="236"/>
+        <location filename="../src/interface/roomsform.cpp" line="242"/>
         <source>Removed the room %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="295"/>
+        <location filename="../src/interface/roomsform.cpp" line="301"/>
         <source>Moved the room %1 up.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="337"/>
+        <location filename="../src/interface/roomsform.cpp" line="343"/>
         <source>Moved the room %1 down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="354"/>
+        <location filename="../src/interface/roomsform.cpp" line="360"/>
         <source>Sorted the rooms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="400"/>
+        <location filename="../src/interface/roomsform.cpp" line="406"/>
         <source>Room comments</source>
         <translation>Kommentare für den Raum</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="402"/>
-        <location filename="../src/interface/roomsform.cpp" line="605"/>
-        <location filename="../src/interface/roomsform.cpp" line="667"/>
+        <location filename="../src/interface/roomsform.cpp" line="408"/>
+        <location filename="../src/interface/roomsform.cpp" line="611"/>
+        <location filename="../src/interface/roomsform.cpp" line="673"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="404"/>
-        <location filename="../src/interface/roomsform.cpp" line="607"/>
-        <location filename="../src/interface/roomsform.cpp" line="669"/>
+        <location filename="../src/interface/roomsform.cpp" line="410"/>
+        <location filename="../src/interface/roomsform.cpp" line="613"/>
+        <location filename="../src/interface/roomsform.cpp" line="675"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="440"/>
+        <location filename="../src/interface/roomsform.cpp" line="446"/>
         <source>Modified the comments of the room
 
 %1
@@ -68567,22 +68551,22 @@ into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="453"/>
+        <location filename="../src/interface/roomsform.cpp" line="459"/>
         <source>Virtual rooms were suggested by the user %1 on the FET forum (you can follow the discussion on the internet page %2). They can be useful in two situations (but you might think of more uses):</source>
         <translation>Virtuelle Räume werden von %1 im FET Forum vorgeschlagen (siehe %2). Sie können in mindestens zwei Situationen sinnvoll sein:</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="457"/>
+        <location filename="../src/interface/roomsform.cpp" line="463"/>
         <source>1) If you want an activity to take place in more real rooms.</source>
         <translation>1) Wenn eine Aktivität mehrere reale Räume benötigt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="489"/>
+        <location filename="../src/interface/roomsform.cpp" line="495"/>
         <source>This virtual room is used in at least a constraint of type activity preferred room, having specified a nonempty list of preferred real rooms. It cannot thus be made real directly. Firstly you need to edit/remove that/those constraints (converting this virtual room to a real one will be possible if you clear the preferred real rooms list for each such constraint).</source>
         <translation>Dieser virtuelle Raum (mit realen Räume) wird bei mindestens einer Aktivität benutzt. Er kann nicht direkt real gemacht werden. Dies ist erst möglich, wenn alle realen Räume aus seiner Liste entfernt werden.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="507"/>
+        <location filename="../src/interface/roomsform.cpp" line="513"/>
         <source>Made the virtual room
 
 %1
@@ -68593,17 +68577,17 @@ real, into
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="567"/>
+        <location filename="../src/interface/roomsform.cpp" line="573"/>
         <source>This real room is used in at least a constraint of type activity preferred room, in the list of preferred real rooms. It cannot thus be made virtual directly. Firstly you need to edit/remove that/those constraints.</source>
         <translation>Dieser reale Raum wird in mindestens einer virtuellen Raumeinschänkung benutzt. Er kann daher nicht direkt virtuell gemacht werden. Editieren oder löschen Sie erst die Einschränkungen mit dem Raum.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="603"/>
+        <location filename="../src/interface/roomsform.cpp" line="609"/>
         <source>Room long name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="643"/>
+        <location filename="../src/interface/roomsform.cpp" line="649"/>
         <source>Changed the long name for the room %1 from
 %2
 to
@@ -68611,12 +68595,12 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="665"/>
+        <location filename="../src/interface/roomsform.cpp" line="671"/>
         <source>Room code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="705"/>
+        <location filename="../src/interface/roomsform.cpp" line="711"/>
         <source>Changed the code for the room %1 from
 %2
 to
@@ -68624,37 +68608,37 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="461"/>
+        <location filename="../src/interface/roomsform.cpp" line="467"/>
         <source>More details about defining and using virtual rooms are shown in the dialog of making/editing virtual rooms, if you click the Help button there.</source>
         <translation>Es gibt mehr Hinweise zu virtuellen Räumen in dem &quot;Erstelle/Editiere virtuellen Raum&quot;-Dialog unter dem &quot;Hilfe&quot;-Schalter.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="459"/>
+        <location filename="../src/interface/roomsform.cpp" line="465"/>
         <source>2) If you want an activity to take place, say, either in a large real room or in three smaller real rooms.</source>
         <translation>2) Wenn eine Aktivität entweder in einem (realen) großen Raum oder in drei (realen) kleineren Räumen stattfinden soll.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="463"/>
+        <location filename="../src/interface/roomsform.cpp" line="469"/>
         <source>FET Help</source>
         <translation>FET-Hilfe</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="480"/>
+        <location filename="../src/interface/roomsform.cpp" line="486"/>
         <source>The selected room is already real.</source>
         <translation>Der ausgewählte Raum ist schon real.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="497"/>
+        <location filename="../src/interface/roomsform.cpp" line="503"/>
         <source>FET confirmation</source>
         <translation>FET Bestätigung</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="498"/>
+        <location filename="../src/interface/roomsform.cpp" line="504"/>
         <source>Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room.</source>
         <translation>Soll dieser Raum wirklich real gemacht werden? Dies wird alle hinzugefügten Sätze an realen Räumen löschen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="556"/>
+        <location filename="../src/interface/roomsform.cpp" line="562"/>
         <source>This real room is contained in %1 other virtual rooms, so it cannot be made virtual (because a virtual room can only contain real rooms).</source>
         <translation>Dieser reale Raum ist in %1 virtuellen Räumen enthalten und kann daher nicht virtuell gemacht werden(, weil virtuelle Räume keine anderen virtuellen Räume enthalten können).</translation>
     </message>
@@ -75246,128 +75230,128 @@ Comments after:
 <context>
     <name>SubgroupsForm</name>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="177"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="185"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="206"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="222"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="256"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="264"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="272"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="339"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="347"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="355"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="573"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="581"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="598"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="606"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="189"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="197"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="218"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="234"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="268"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="276"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="284"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="351"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="359"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="367"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="585"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="593"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="610"/>
         <location filename="../src/interface/subgroupsform.cpp" line="618"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="649"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="657"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="665"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="671"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="680"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="688"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="696"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="702"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="712"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="776"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="840"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="630"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="661"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="669"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="677"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="683"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="692"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="700"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="708"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="714"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="724"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="788"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="852"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="177"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="206"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="256"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="339"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="573"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="598"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="649"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="680"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="189"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="218"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="268"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="351"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="585"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="610"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="661"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="692"/>
         <source>Invalid selected year</source>
         <translation>Ungültiger Jahrgang</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="185"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="222"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="264"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="347"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="581"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="606"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="657"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="688"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="197"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="234"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="276"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="359"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="593"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="618"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="669"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="700"/>
         <source>Invalid selected group</source>
         <translation>Ungültige Gruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="272"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="355"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="618"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="665"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="696"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="712"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="776"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="840"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="284"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="367"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="630"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="677"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="708"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="724"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="788"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="852"/>
         <source>Invalid selected subgroup</source>
         <translation>Ungültige Teilgruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="291"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="303"/>
         <source>This subgroup exists only in year %1, group %2. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Diese Teilgruppe existiert nur im Jahrgang %1, Gruppe %2. Das bedeutet, dass alle darauf verweisende Aktivitäten und Einschränkungen gelöscht werden. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="294"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="306"/>
         <source>This subgroup exists in more places, listed below. It will only be removed from the current year/group, and the related activities and constraints will not be removed. Do you want to continue?</source>
         <translation>Diese Teilgruppe existiert in mehreren Stellen, die unten aufgelistet sind. Sie wird nur aus dem aktuellen Jahrgang oder der aktuellen Gruppe entfernt. Die anderen Einschränkungen und Aktivitäten mit einem Verweis auf diese Teilgruppe werden nicht entfernt. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="301"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="384"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="313"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="396"/>
         <source>FET confirmation</source>
         <translation>FET Bestätigung</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="374"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="386"/>
         <source>This subgroup exists only in year %1, group %2. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Diese Teilgruppe existiert nur im Jahrgang %1 in der Gruppe %2. Das bedeutet, dass alle darauf verweisende Aktivitäten und Einschränkungen gelöscht werden. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="377"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="389"/>
         <source>This subgroup exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Diese Teilgruppe existiert an mehreren Stellen, die unten aufgelistet sind. Sie wird aus allen Jahrgängen und Gruppen entfernt. Alle Einschränkungen und Aktivitäten mit einem Verweis auf diese Gruppe werden ebenfalls entfernt. Möchten Sie fortfahren?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="702"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="714"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Es wurden %1 Aktivitäten deaktiviert</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="723"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="735"/>
         <source>Students subgroup comments</source>
         <translation>Kommentare für die Teilgruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="725"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="789"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="853"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="737"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="801"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="865"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="727"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="791"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="855"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="739"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="803"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="867"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="787"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="799"/>
         <source>Subgroup long name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="827"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="839"/>
         <source>Changed the long name for the subgroup %1 from
 %2
 to
@@ -75375,12 +75359,12 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="851"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="863"/>
         <source>Subgroup code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="891"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="903"/>
         <source>Changed the code for the subgroup %1 from
 %2
 to
@@ -75388,61 +75372,61 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="302"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="385"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="302"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="385"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="326"/>
         <source>Removed the subgroup %1 from the group %2, the year %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="409"/>
         <source>Removed the subgroup %1 from everywhere.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="521"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="533"/>
         <source>Moved the subgroup %1 up in the group %2, the year %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="564"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="576"/>
         <source>Moved the subgroup %1 down in the group %2, the year %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="590"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="602"/>
         <source>Sorted the subgroups in the group %1, the year %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="671"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="683"/>
         <source>Activated a number of %1 activities</source>
         <translation>Es wurden %1 Aktivitäten aktiviert</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="674"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="686"/>
         <source>Activated the subgroup %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="705"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="717"/>
         <source>Deactivated the subgroup %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="763"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="775"/>
         <source>Changed the comments for the subgroup %1 from
 %2
 to
@@ -83683,75 +83667,75 @@ Unten: %4</translation>
 <context>
     <name>YearsForm</name>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="181"/>
-        <location filename="../src/interface/yearsform.cpp" line="321"/>
-        <location filename="../src/interface/yearsform.cpp" line="354"/>
-        <location filename="../src/interface/yearsform.cpp" line="360"/>
-        <location filename="../src/interface/yearsform.cpp" line="369"/>
-        <location filename="../src/interface/yearsform.cpp" line="375"/>
-        <location filename="../src/interface/yearsform.cpp" line="384"/>
-        <location filename="../src/interface/yearsform.cpp" line="399"/>
-        <location filename="../src/interface/yearsform.cpp" line="463"/>
-        <location filename="../src/interface/yearsform.cpp" line="527"/>
+        <location filename="../src/interface/yearsform.cpp" line="184"/>
+        <location filename="../src/interface/yearsform.cpp" line="324"/>
+        <location filename="../src/interface/yearsform.cpp" line="357"/>
+        <location filename="../src/interface/yearsform.cpp" line="363"/>
+        <location filename="../src/interface/yearsform.cpp" line="372"/>
+        <location filename="../src/interface/yearsform.cpp" line="378"/>
+        <location filename="../src/interface/yearsform.cpp" line="387"/>
+        <location filename="../src/interface/yearsform.cpp" line="402"/>
+        <location filename="../src/interface/yearsform.cpp" line="466"/>
+        <location filename="../src/interface/yearsform.cpp" line="530"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="181"/>
-        <location filename="../src/interface/yearsform.cpp" line="321"/>
-        <location filename="../src/interface/yearsform.cpp" line="354"/>
-        <location filename="../src/interface/yearsform.cpp" line="369"/>
-        <location filename="../src/interface/yearsform.cpp" line="384"/>
-        <location filename="../src/interface/yearsform.cpp" line="399"/>
-        <location filename="../src/interface/yearsform.cpp" line="463"/>
-        <location filename="../src/interface/yearsform.cpp" line="527"/>
+        <location filename="../src/interface/yearsform.cpp" line="184"/>
+        <location filename="../src/interface/yearsform.cpp" line="324"/>
+        <location filename="../src/interface/yearsform.cpp" line="357"/>
+        <location filename="../src/interface/yearsform.cpp" line="372"/>
+        <location filename="../src/interface/yearsform.cpp" line="387"/>
+        <location filename="../src/interface/yearsform.cpp" line="402"/>
+        <location filename="../src/interface/yearsform.cpp" line="466"/>
+        <location filename="../src/interface/yearsform.cpp" line="530"/>
         <source>Invalid selected year</source>
         <translation>Ungültiger Jahrgang</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="192"/>
+        <location filename="../src/interface/yearsform.cpp" line="195"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="193"/>
+        <location filename="../src/interface/yearsform.cpp" line="196"/>
         <source>Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?</source>
         <translation>Soll der Jahrgang %1 mit allen zugehörigen Aktivitäten und Einschränkungen wirklich gelöscht werden?</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="200"/>
+        <location filename="../src/interface/yearsform.cpp" line="203"/>
         <source>Removed the year %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="257"/>
+        <location filename="../src/interface/yearsform.cpp" line="260"/>
         <source>Moved the year %1 up.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="292"/>
+        <location filename="../src/interface/yearsform.cpp" line="295"/>
         <source>Moved the year %1 down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="302"/>
+        <location filename="../src/interface/yearsform.cpp" line="305"/>
         <source>Sorted the years.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="363"/>
+        <location filename="../src/interface/yearsform.cpp" line="366"/>
         <source>Activated the year %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="378"/>
+        <location filename="../src/interface/yearsform.cpp" line="381"/>
         <source>Deactivated year %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="450"/>
+        <location filename="../src/interface/yearsform.cpp" line="453"/>
         <source>Changed the comments for the year %1 from
 %2
 to
@@ -83759,12 +83743,12 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="474"/>
+        <location filename="../src/interface/yearsform.cpp" line="477"/>
         <source>Year long name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="514"/>
+        <location filename="../src/interface/yearsform.cpp" line="517"/>
         <source>Changed the long name for the year %1 from
 %2
 to
@@ -83772,12 +83756,12 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="538"/>
+        <location filename="../src/interface/yearsform.cpp" line="541"/>
         <source>Year code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="578"/>
+        <location filename="../src/interface/yearsform.cpp" line="581"/>
         <source>Changed the code for the year %1 from
 %2
 to
@@ -83785,31 +83769,31 @@ to
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="360"/>
+        <location filename="../src/interface/yearsform.cpp" line="363"/>
         <source>Activated a number of %1 activities</source>
         <translation>Es wurden %1 Aktivitäten aktiviert</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="375"/>
+        <location filename="../src/interface/yearsform.cpp" line="378"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Es wurden %1 Aktivitäten deaktiviert</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="410"/>
+        <location filename="../src/interface/yearsform.cpp" line="413"/>
         <source>Students year comments</source>
         <translation>Kommentare für den Jahrgang</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="412"/>
-        <location filename="../src/interface/yearsform.cpp" line="476"/>
-        <location filename="../src/interface/yearsform.cpp" line="540"/>
+        <location filename="../src/interface/yearsform.cpp" line="415"/>
+        <location filename="../src/interface/yearsform.cpp" line="479"/>
+        <location filename="../src/interface/yearsform.cpp" line="543"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="414"/>
-        <location filename="../src/interface/yearsform.cpp" line="478"/>
-        <location filename="../src/interface/yearsform.cpp" line="542"/>
+        <location filename="../src/interface/yearsform.cpp" line="417"/>
+        <location filename="../src/interface/yearsform.cpp" line="481"/>
+        <location filename="../src/interface/yearsform.cpp" line="545"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>

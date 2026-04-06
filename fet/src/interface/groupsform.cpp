@@ -60,14 +60,12 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	yearsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::yearChanged);
 	connect(addGroupPushButton, &QPushButton::clicked, this, &GroupsForm::addGroup);
 	connect(addExistingGroupsPushButton, &QPushButton::clicked, this, &GroupsForm::addExistingGroups);
 	connect(removeGroupPushButton, &QPushButton::clicked, this, &GroupsForm::removeGroup);
 	connect(purgeGroupPushButton, &QPushButton::clicked, this, &GroupsForm::purgeGroup);
 	
 	connect(closePushButton, &QPushButton::clicked, this, &GroupsForm::close);
-	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::groupChanged);
 	connect(modifyGroupPushButton, &QPushButton::clicked, this, &GroupsForm::modifyGroup);
 
 	connect(moveGroupUpPushButton, &QPushButton::clicked, this, &GroupsForm::moveGroupUp);
@@ -81,8 +79,6 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &GroupsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &GroupsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &GroupsForm::comments);
-
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &GroupsForm::colorsCheckBoxToggled);
 
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
@@ -142,6 +138,8 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &GroupsForm::colorsCheckBoxToggled);
+
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
@@ -152,6 +150,16 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 		yearsListWidget->setCurrentRow(0);
 	else
 		groupsListWidget->clear();
+
+	connect(yearsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::yearChanged);
+	if(yearsListWidget->count()>0)
+		if(yearsListWidget->currentRow()>=0 && yearsListWidget->currentRow()<yearsListWidget->count())
+			yearChanged(yearsListWidget->currentItem()->text());
+
+	connect(groupsListWidget, &QListWidget::currentTextChanged, this, &GroupsForm::groupChanged);
+	if(groupsListWidget->count()>0)
+		if(groupsListWidget->currentRow()>=0 && groupsListWidget->currentRow()<groupsListWidget->count())
+			groupChanged(groupsListWidget->currentItem()->text());
 }
 
 GroupsForm::~GroupsForm()

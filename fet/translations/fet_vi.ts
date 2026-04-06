@@ -3899,9 +3899,9 @@ Số lượng hoạt động phụ trong mỗi hoạt động chia nhỏ lớn h
         <translation>Số Thẻ tiết giảng tối đa mỗi tuần</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2321"/>
-        <source>Modify rooms occupy max sets of time slots from selection</source>
-        <comment>The title of the dialog to add a new constraint of this type</comment>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2127"/>
+        <source>Modify room occupies max sets of time slots from selection</source>
+        <comment>The title of the dialog to modify a new constraint of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3994,12 +3994,6 @@ Số lượng hoạt động phụ trong mỗi hoạt động chia nhỏ lớn h
         <translation type="unfinished">Số được chọn trong ô của tiện ích bảng biểu thị số của tập hợp các khung thời gian đã chọn mà khung thời gian này thuộc về (giá trị 0, hiển thị ở đây dưới dạng khoảng trắng, biểu thị một khung thời gian chưa được chọn).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2127"/>
-        <source>Modify room occupies max sets of time slots from selection</source>
-        <comment>The title of the dialog to add a new constraint of this type</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2139"/>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2330"/>
         <source>Max occupied sets of time slots</source>
@@ -4069,6 +4063,12 @@ Số lượng hoạt động phụ trong mỗi hoạt động chia nhỏ lớn h
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2314"/>
         <source>Add rooms occupy max sets of time slots from selection</source>
         <comment>The title of the dialog to add a new constraint of this type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2321"/>
+        <source>Modify rooms occupy max sets of time slots from selection</source>
+        <comment>The title of the dialog to modify a new constraint of this type</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14797,12 +14797,6 @@ thành
         <source>Activities max total number of students in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MTNS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MTNS means max total number of students</comment>
         <translation>Ràng buộc “Giới hạn tổng số học sinh trong các khung thời gian đã chọn”, ĐT:%1%, SLHD:%2, HĐ:%3, KTG:%4, GHTN:%5</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="79648"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="79675"/>
-        <source>Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!</source>
-        <translation>Cảnh báo: ràng buộc này có thể làm quá trình tạo lịch chậm đi rất nhiều! Vui lòng chỉ sử dụng nếu thực sự cần thiết và thận trọng!</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="79649"/>
@@ -56885,106 +56879,106 @@ bây giờ có bình luận:
 <context>
     <name>GroupsForm</name>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="170"/>
-        <location filename="../src/interface/groupsform.cpp" line="191"/>
-        <location filename="../src/interface/groupsform.cpp" line="225"/>
-        <location filename="../src/interface/groupsform.cpp" line="232"/>
-        <location filename="../src/interface/groupsform.cpp" line="299"/>
-        <location filename="../src/interface/groupsform.cpp" line="306"/>
-        <location filename="../src/interface/groupsform.cpp" line="484"/>
-        <location filename="../src/interface/groupsform.cpp" line="500"/>
-        <location filename="../src/interface/groupsform.cpp" line="514"/>
-        <location filename="../src/interface/groupsform.cpp" line="546"/>
-        <location filename="../src/interface/groupsform.cpp" line="553"/>
-        <location filename="../src/interface/groupsform.cpp" line="559"/>
-        <location filename="../src/interface/groupsform.cpp" line="568"/>
-        <location filename="../src/interface/groupsform.cpp" line="575"/>
-        <location filename="../src/interface/groupsform.cpp" line="581"/>
-        <location filename="../src/interface/groupsform.cpp" line="591"/>
-        <location filename="../src/interface/groupsform.cpp" line="655"/>
-        <location filename="../src/interface/groupsform.cpp" line="719"/>
+        <location filename="../src/interface/groupsform.cpp" line="178"/>
+        <location filename="../src/interface/groupsform.cpp" line="199"/>
+        <location filename="../src/interface/groupsform.cpp" line="233"/>
+        <location filename="../src/interface/groupsform.cpp" line="240"/>
+        <location filename="../src/interface/groupsform.cpp" line="307"/>
+        <location filename="../src/interface/groupsform.cpp" line="314"/>
+        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="508"/>
+        <location filename="../src/interface/groupsform.cpp" line="522"/>
+        <location filename="../src/interface/groupsform.cpp" line="554"/>
+        <location filename="../src/interface/groupsform.cpp" line="561"/>
+        <location filename="../src/interface/groupsform.cpp" line="567"/>
+        <location filename="../src/interface/groupsform.cpp" line="576"/>
+        <location filename="../src/interface/groupsform.cpp" line="583"/>
+        <location filename="../src/interface/groupsform.cpp" line="589"/>
+        <location filename="../src/interface/groupsform.cpp" line="599"/>
+        <location filename="../src/interface/groupsform.cpp" line="663"/>
+        <location filename="../src/interface/groupsform.cpp" line="727"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="170"/>
-        <location filename="../src/interface/groupsform.cpp" line="191"/>
-        <location filename="../src/interface/groupsform.cpp" line="225"/>
-        <location filename="../src/interface/groupsform.cpp" line="299"/>
-        <location filename="../src/interface/groupsform.cpp" line="484"/>
-        <location filename="../src/interface/groupsform.cpp" line="500"/>
-        <location filename="../src/interface/groupsform.cpp" line="546"/>
-        <location filename="../src/interface/groupsform.cpp" line="568"/>
+        <location filename="../src/interface/groupsform.cpp" line="178"/>
+        <location filename="../src/interface/groupsform.cpp" line="199"/>
+        <location filename="../src/interface/groupsform.cpp" line="233"/>
+        <location filename="../src/interface/groupsform.cpp" line="307"/>
+        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="508"/>
+        <location filename="../src/interface/groupsform.cpp" line="554"/>
+        <location filename="../src/interface/groupsform.cpp" line="576"/>
         <source>Invalid selected year</source>
         <translation>Khối không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="232"/>
-        <location filename="../src/interface/groupsform.cpp" line="306"/>
-        <location filename="../src/interface/groupsform.cpp" line="514"/>
-        <location filename="../src/interface/groupsform.cpp" line="553"/>
-        <location filename="../src/interface/groupsform.cpp" line="575"/>
-        <location filename="../src/interface/groupsform.cpp" line="591"/>
-        <location filename="../src/interface/groupsform.cpp" line="655"/>
-        <location filename="../src/interface/groupsform.cpp" line="719"/>
+        <location filename="../src/interface/groupsform.cpp" line="240"/>
+        <location filename="../src/interface/groupsform.cpp" line="314"/>
+        <location filename="../src/interface/groupsform.cpp" line="522"/>
+        <location filename="../src/interface/groupsform.cpp" line="561"/>
+        <location filename="../src/interface/groupsform.cpp" line="583"/>
+        <location filename="../src/interface/groupsform.cpp" line="599"/>
+        <location filename="../src/interface/groupsform.cpp" line="663"/>
+        <location filename="../src/interface/groupsform.cpp" line="727"/>
         <source>Invalid selected group</source>
         <translation>Nhóm lớp không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="250"/>
+        <location filename="../src/interface/groupsform.cpp" line="258"/>
         <source>This group exists only in year %1. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Nhóm này chỉ tồn tại trong năm %1. Điều này có nghĩa là tất cả các hoạt động và ràng buộc liên quan sẽ bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="254"/>
+        <location filename="../src/interface/groupsform.cpp" line="262"/>
         <source>This group exists in more places, listed below. It will only be removed from the current year, and the related activities and constraints will not be removed. Do you want to continue?</source>
         <translation>Nhóm này tồn tại ở nhiều nơi khác, được liệt kê bên dưới. Nhóm này sẽ chỉ bị xóa khỏi năm hiện tại, và các hoạt động và ràng buộc liên quan sẽ không bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="261"/>
-        <location filename="../src/interface/groupsform.cpp" line="334"/>
+        <location filename="../src/interface/groupsform.cpp" line="269"/>
+        <location filename="../src/interface/groupsform.cpp" line="342"/>
         <source>FET confirmation</source>
         <translation>Xác nhận</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="274"/>
+        <location filename="../src/interface/groupsform.cpp" line="282"/>
         <source>Removed the group %1 from the year %2.</source>
         <translation>Đã xóa nhóm %1 khỏi năm %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="347"/>
+        <location filename="../src/interface/groupsform.cpp" line="355"/>
         <source>Removed the group %1 from everywhere.</source>
         <translation>Đã xóa nhóm %1 khỏi mọi nơi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="436"/>
+        <location filename="../src/interface/groupsform.cpp" line="444"/>
         <source>Moved the group %1 up in the year %2.</source>
         <translation>Đã chuyển nhóm %1 lên năm %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="475"/>
+        <location filename="../src/interface/groupsform.cpp" line="483"/>
         <source>Moved the group %1 down in the year %2.</source>
         <translation>Đã chuyển nhóm %1 xuống năm %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="492"/>
+        <location filename="../src/interface/groupsform.cpp" line="500"/>
         <source>Sorted the groups in the year %1.</source>
         <translation>Sắp xếp các nhóm theo năm %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="562"/>
+        <location filename="../src/interface/groupsform.cpp" line="570"/>
         <source>Activated the group %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation>Đã kích hoạt nhóm %1 (%2 hoạt động).</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="584"/>
+        <location filename="../src/interface/groupsform.cpp" line="592"/>
         <source>Deactivated group %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation>Nhóm %1 (%2 hoạt động) đã bị vô hiệu hóa.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="642"/>
+        <location filename="../src/interface/groupsform.cpp" line="650"/>
         <source>Changed the comments for the group %1 from
 %2
 to
@@ -56995,12 +56989,12 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="666"/>
+        <location filename="../src/interface/groupsform.cpp" line="674"/>
         <source>Group long name</source>
         <translation>Tên nhóm dài</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="706"/>
+        <location filename="../src/interface/groupsform.cpp" line="714"/>
         <source>Changed the long name for the group %1 from
 %2
 to
@@ -57011,12 +57005,12 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="730"/>
+        <location filename="../src/interface/groupsform.cpp" line="738"/>
         <source>Group code</source>
         <translation>Mã nhóm</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="770"/>
+        <location filename="../src/interface/groupsform.cpp" line="778"/>
         <source>Changed the code for the group %1 from
 %2
 to
@@ -57027,53 +57021,53 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="324"/>
+        <location filename="../src/interface/groupsform.cpp" line="332"/>
         <source>This group exists only in year %1. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Nhóm này chỉ tồn tại trong năm %1. Tất cả các hoạt động và ràng buộc liên quan sẽ bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="327"/>
+        <location filename="../src/interface/groupsform.cpp" line="335"/>
         <source>This group exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Nhóm này tồn tại ở nhiều nơi khác, được liệt kê bên dưới. Nhóm sẽ bị xóa khỏi tất cả những nơi này. Tất cả các hoạt động và ràng buộc liên quan sẽ bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="581"/>
+        <location filename="../src/interface/groupsform.cpp" line="589"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Đã hủy kích hoạt một số tiết giảng %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="602"/>
+        <location filename="../src/interface/groupsform.cpp" line="610"/>
         <source>Students group comments</source>
         <translation>Nhận xét của nhóm lớp học</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="604"/>
-        <location filename="../src/interface/groupsform.cpp" line="668"/>
-        <location filename="../src/interface/groupsform.cpp" line="732"/>
+        <location filename="../src/interface/groupsform.cpp" line="612"/>
+        <location filename="../src/interface/groupsform.cpp" line="676"/>
+        <location filename="../src/interface/groupsform.cpp" line="740"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="606"/>
-        <location filename="../src/interface/groupsform.cpp" line="670"/>
-        <location filename="../src/interface/groupsform.cpp" line="734"/>
+        <location filename="../src/interface/groupsform.cpp" line="614"/>
+        <location filename="../src/interface/groupsform.cpp" line="678"/>
+        <location filename="../src/interface/groupsform.cpp" line="742"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="262"/>
-        <location filename="../src/interface/groupsform.cpp" line="335"/>
+        <location filename="../src/interface/groupsform.cpp" line="270"/>
+        <location filename="../src/interface/groupsform.cpp" line="343"/>
         <source>Yes</source>
         <translation>Đồng ý</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="262"/>
-        <location filename="../src/interface/groupsform.cpp" line="335"/>
+        <location filename="../src/interface/groupsform.cpp" line="270"/>
+        <location filename="../src/interface/groupsform.cpp" line="343"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupsform.cpp" line="559"/>
+        <location filename="../src/interface/groupsform.cpp" line="567"/>
         <source>Activated a number of %1 activities</source>
         <translation>Đã kích hoạt %1 tiết giảng</translation>
     </message>
@@ -58625,16 +58619,21 @@ Another thing: if you have 1 or 2 activities per week for a subject, say biology
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="629"/>
+        <source>Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), your operating system name and version, and your processor architecture type.</source>
+        <translation type="unfinished">Ngoài ra, phiên bản FET hiện tại, phiên bản Qt hiện tại (bộ công cụ C++ được FET sử dụng), tên và phiên bản hệ điều hành, cũng như loại kiến ​​trúc bộ xử lý của bạn sẽ hiển thị trên máy chủ.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="632"/>
         <source>Thus, it could be deduced if and when you use FET.</source>
         <translation>Vì vậy, điều này có thể được suy ra nếu và khi bạn sử dụng FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="642"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="645"/>
         <source>Alternative solutions: either you can split that activity into two subactivities with duration 1 (without a min days constraint between them), and add a two activities consecutive constraint, or you can choose to not add the break constraint in your file.</source>
         <translation>Các giải pháp thay thế: bạn có thể chia hoạt động đó thành hai hoạt động phụ có thời lượng là 1 (không có ràng buộc số ngày tối thiểu giữa chúng) và thêm ràng buộc hai hoạt động liên tiếp hoặc bạn có thể chọn không thêm ràng buộc ngắt vào tệp của mình.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="676"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="679"/>
         <source>Q: (by %1) I met a situation: a teacher asks for maximum 2 working days, but these days should not be consecutive. Is there a way to implement it in .fet?
 
 The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus leaving him available on Monday, Wednesday and Friday (any two of these are nonconsecutive).
@@ -58656,7 +58655,7 @@ Có ý tưởng nào khác không...?
 Hoặc thêm một hoạt động giả định cho giáo viên này, chia thành 2 hoạt động mỗi tuần, số ngày tối thiểu = 2, với 100%. Bạn chỉ cần đảm bảo giáo viên này có đủ chỗ cho các hoạt động giả định này (đủ thời gian trong ngày) và coi các hoạt động giả định này là những khoảng trống có thể có, vì vậy nếu giáo viên có khoảng trống tối đa là 2 thì hãy đặt khoảng trống tối đa cho giáo viên đó là 0.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="692"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="695"/>
         <source>Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?
 
 A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between activities 1, weight 0%, select consecutive if on the same day. FET will never put more than 2 of these dummy activities on a day. Add max gaps for students = 0 per week.</source>
@@ -58666,17 +58665,17 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 Đáp: Thêm cho mỗi nhóm nhỏ một hoạt động giả định (không có giáo viên) được chia thành 4 hoạt động mỗi tuần, thời lượng 1, số ngày tối thiểu giữa các hoạt động là 1, trọng số 0%, chọn liên tiếp nếu cùng ngày. FET sẽ không bao giờ đặt quá 2 hoạt động giả định này vào một ngày. Thêm khoảng nghỉ tối đa cho lớp học = 0 mỗi tuần.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="726"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="729"/>
         <source>The second hint is not to change too many constraints in one generation. If it is impossible to generate a timetable with those added constraints, it is difficult to say which particular constraint was responsible.</source>
         <translation>Gợi ý thứ hai là không nên thay đổi quá nhiều ràng buộc trong một thế hệ. Nếu không thể tạo ra một thời khóa biểu với những ràng buộc bổ sung đó, sẽ khó có thể nói ràng buộc cụ thể nào là nguyên nhân.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="729"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="732"/>
         <source>It may happen, for example, that even when two consecutive activities are placed on the same day (with the same group and the same teacher) sometimes they are placed in different rooms, which would force them to needlessly change rooms. I guess that FET is focused on fulfilling constraints but not on optimizing timetables. Sometimes simply changing the two activities is better both for the students and the teachers. I think that manually improving a generated timetable is faster than creating many more constraints and repeating the generation. And this is the third hint.</source>
         <translation>Ví dụ, có thể xảy ra trường hợp ngay cả khi hai hoạt động liên tiếp được tổ chức cùng một ngày (với cùng một nhóm và cùng một giáo viên), đôi khi chúng được tổ chức ở các phòng khác nhau, buộc họ phải đổi phòng một cách không cần thiết. Tôi đoán FET tập trung vào việc đáp ứng các ràng buộc chứ không phải tối ưu hóa thời gian biểu. Đôi khi, việc chỉ cần thay đổi hai hoạt động lại tốt hơn cho cả lớp học và giáo viên. Tôi nghĩ rằng việc cải thiện thời gian biểu đã tạo thủ công sẽ nhanh hơn là tạo thêm nhiều ràng buộc và lặp lại việc tạo. Và đây là gợi ý thứ ba.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="749"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="752"/>
         <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
 
 A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
@@ -58712,43 +58711,43 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
 Giải pháp thực tế cho trường hợp 2)? Giảm trọng số của các ràng buộc có trọng số dưới 100% hoặc khóa (vào một vị trí tương ứng) hoạt động tương ứng với A1 trong tệp dữ liệu của bạn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="789"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="792"/>
         <source>-- This entry by %1 --</source>
         <comment>%1 is a person</comment>
         <translation>-- Mục nhập này của %1 --</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="791"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="794"/>
         <source>Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):</source>
         <translation>H: Một mẹo để giải quyết các hoạt động diễn ra hai tuần một lần (trường tôi có rất nhiều hoạt động diễn ra hai tuần một lần):</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="793"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="796"/>
         <source>A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly activities have duration 2.</source>
         <translation>A: Tôi chia giờ làm hai, nửa đầu (8:00 đến 8:30, 9:00 đến 9:30, ...) đại diện cho tuần A, nửa sau (8:30 đến 9:00, 9:30 đến 10:00, ...) đại diện cho tuần B, các hoạt động hai tuần một lần có thời lượng là 1, các hoạt động hàng tuần có thời lượng là 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="797"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="800"/>
         <source>I created an activity tag &apos;Start hour&apos;. It should be added to each weekly activity to make sure they start at the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A, and on the same day but at the next hour on week B.</source>
         <translation>Tôi đã tạo Thẻ tiết giảng &quot;Giờ bắt đầu&quot;. Thẻ này nên được thêm vào mỗi hoạt động hàng tuần để đảm bảo chúng bắt đầu cùng một thời điểm (cùng ngày + cùng giờ) trong mỗi tuần. Nếu không, một hoạt động có thời lượng 2 có thể bắt đầu vào nửa giờ thứ hai trong thời khóa biểu, do đó hoạt động này được đặt vào một ngày và giờ nhất định trong tuần A, và vào cùng ngày nhưng giờ tiếp theo trong tuần B.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="802"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="805"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
         <translation>Thêm ràng buộc thời gian: các hoạt động với tất cả giáo viên, tất cả lớp học, tất cả môn học, Thẻ tiết giảng = &apos;Giờ bắt đầu&apos; có một bộ thời gian bắt đầu ưu tiên: Thứ Hai 8:00, Thứ Hai 9:00, ...</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="805"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="808"/>
         <source>It works fine and I got good timetables with strong teachers time constraints.</source>
         <translation>Nó hoạt động tốt và tôi có được thời gian biểu tốt với sự ràng buộc chặt chẽ về thời gian của giáo viên.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="811"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
         <source>Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours on a day and two hours on another day, or two hours on a day, one hour on another day and one hour on another day).</source>
         <translation>H: Tôi cần thêm một hoạt động chia nhỏ có tổng thời lượng là 4, có thể là 2+2 hoặc 2+1+1 (hai giờ vào một ngày và hai giờ vào một ngày khác, hoặc hai giờ vào một ngày, một giờ vào một ngày khác và một giờ vào một ngày khác nữa).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="814"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="817"/>
         <source>A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as 3 single/independent activities (see note below).
 
 Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.
@@ -58761,235 +58760,235 @@ Thêm hai ràng buộc: tối thiểu 1 ngày giữa các hoạt động có ID 
 Thêm một ràng buộc khác: tối thiểu 1 ngày giữa các hoạt động có ID 2 và 3, liên tiếp nếu cùng ngày = có, tỷ lệ phần trăm trọng số 0%.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="819"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="822"/>
         <source>Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want to apply spreading of activities over the week, this operation won&apos;t add/remove constraints of type min days between activities for these 3 activities. Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.</source>
         <translation>Lưu ý: Nên thêm 3 hoạt động dưới dạng hoạt động đơn lẻ/độc lập (không phải hoạt động chia tách lớn hơn với 3 thành phần). Lý do là nếu bạn muốn áp dụng phân bổ hoạt động trong tuần, thao tác này sẽ không thêm/bỏ ràng buộc kiểu số ngày tối thiểu giữa các hoạt động cho 3 hoạt động này. Ngoài ra, nếu bạn thêm hoạt động chia tách, bạn cần lưu ý không thêm ràng buộc mặc định số ngày tối thiểu giữa 3 thành phần.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="823"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="826"/>
         <source>There may be other solutions possible, but this one seems perfect with respect to efficiency.</source>
         <translation>Có thể có những giải pháp khác, nhưng giải pháp này có vẻ hoàn hảo nhất về mặt hiệu quả.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="829"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="832"/>
         <source>Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.</source>
         <translation>H: Tôi muốn nêu rõ rằng giáo viên phải có các hoạt động trong những khoảng thời gian nhất định, bất kể đó là hoạt động gì.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="831"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="834"/>
         <source>A: You can use a constraint of type activities occupy min time slots from selection or use in an inverted way a constraint of type activities occupy max time slots from selection (the exact menu entries are &apos;A set of activities occupies min/max time slots from selection&apos;).</source>
         <translation>A: Bạn có thể sử dụng ràng buộc loại hoạt động chiếm khoảng thời gian tối thiểu từ lựa chọn hoặc sử dụng theo cách đảo ngược ràng buộc loại hoạt động chiếm khoảng thời gian tối đa từ lựa chọn (mục menu chính xác là &apos;Một tập hợp các hoạt động chiếm khoảng thời gian tối thiểu/tối đa từ lựa chọn&apos;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="838"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="841"/>
         <source>Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?</source>
         <translation>H: Làm thế nào để dễ dàng tìm thấy các hoạt động có thời gian trống chưa xác định trong thời khóa biểu (sau khi thời khóa biểu đã được tạo)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="840"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="843"/>
         <source>A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in the results directory, with a name like: file_activities.xml) with a text editor, and search for the text &lt;Room&gt;&lt;/Room&gt;</source>
         <translation>A: Một mẹo nhỏ là: mở tệp biểu diễn thời gian biểu hoạt động ở dạng XML (tệp này có thể được tìm thấy trong thư mục kết quả, với tên như: file_activities.xml) bằng trình soạn thảo văn bản và tìm kiếm văn bản &lt;Phòng&gt;&lt;/Phòng&gt;</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="847"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="850"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
         <translation>H: lớp học và/hoặc giáo viên nên có một số hoạt động liên tục mỗi ngày, sau đó là một số khoảng nghỉ liên tục, rồi lại một số hoạt động liên tục. Tình huống này có thể xảy ra trong các trường hợp sau: các trường học ở Maroc và Algeria có ca học sáng và chiều, và cũng có thể xảy ra ở một số trường đại học mà lớp học chỉ muốn có tối đa một nhóm khoảng nghỉ, bất kể thời gian bao lâu, mỗi ngày. Làm thế nào để xử lý những tình huống như vậy trong FET?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="853"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="856"/>
         <source>A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours daily with allow empty days true. You may need to devise some other tricks, in addition.</source>
         <translation>A: Một cách hay để xử lý những tình huống như vậy là xem xét số ngày FET = 2 * số ngày thực tế. Mỗi ngày thực tế tương ứng với hai ngày FET, một cho buổi sáng và một cho buổi chiều. Sau đó, thêm các ràng buộc max zero gap, và có thể là min hai giờ mỗi ngày với allow empty days true. Ngoài ra, bạn có thể cần nghĩ ra một số thủ thuật khác.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="861"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="864"/>
         <source>Q: How can I add a comment to a (sub)activity or to a constraint?</source>
         <translation>H: Làm thế nào tôi có thể thêm bình luận vào một hoạt động (phụ) hoặc một ràng buộc?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="863"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="866"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
         <translation>A: Bạn có thể thêm bình luận vào một hoạt động (phụ) bằng cách nhấp vào nút &quot;Bình luận&quot; trong hộp thoại hoạt động (phụ). Bạn có thể thêm bình luận vào một ràng buộc bằng cách nhấp vào nút &quot;Bình luận&quot; trong hộp thoại ràng buộc toàn bộ thời gian/không gian.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="870"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="873"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
         <translation>H: Làm thế nào tôi có thể kích hoạt/hủy kích hoạt ràng buộc?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="872"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="875"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
         <translation>A: Bạn có thể kích hoạt/hủy kích hoạt ràng buộc bằng cách nhấp vào nút &apos;Kích hoạt&apos;/&apos;Hủy kích hoạt&apos; trong hộp thoại ràng buộc mọi thời gian/không gian.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="889"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="892"/>
         <source>Q: How can I specify that some activities must be in the same room (at different time slots, of course, because a single room can hold a single activity in a certain time slot)? This is needed for instance to constrain the Physics activities of a certain students set to take place in the same room, be it Lab-1 or Lab-2</source>
         <translation>H: Làm thế nào tôi có thể chỉ định một số hoạt động phải diễn ra trong cùng một phòng (tất nhiên là vào các khung giờ khác nhau, vì mỗi phòng chỉ có thể tổ chức một hoạt động trong một khung giờ nhất định)? Ví dụ, điều này cần thiết để giới hạn các hoạt động Vật lý của một số lớp học nhất định được tổ chức trong cùng một phòng, dù là Phòng thí nghiệm 1 hay Phòng thí nghiệm 2</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="893"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="896"/>
         <source>A: You can use the constraint activities occupy max different rooms, with max different rooms = 1.</source>
         <translation>A: Bạn có thể sử dụng các hoạt động ràng buộc chiếm tối đa các phòng khác nhau, với tối đa các phòng khác nhau = 1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="899"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="902"/>
         <source>Q: How can I backup/restore the FET settings on a computer, or share them between different computers?</source>
         <translation>H: Làm thế nào tôi có thể sao lưu/khôi phục cài đặt FET trên máy tính hoặc chia sẻ chúng giữa các máy tính khác nhau?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="901"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="904"/>
         <source>A: GNU/Linux: Usually, in your %1 directory you will find a directory &quot;%2&quot; containing the file &quot;%3&quot;. If you copy this file to another computer, the FET settings will be copied. You can also make a backup of this file and copy it on the same computer, later, to restore the previous settings. If you remove this file, all FET settings on this computer will be reset to defaults.</source>
         <translation>A: GNU/Linux: Thông thường, trong thư mục %1 của bạn, bạn sẽ tìm thấy thư mục &quot;%2&quot; chứa tệp &quot;%3&quot;. Nếu bạn sao chép tệp này sang máy tính khác, các thiết lập FET sẽ được sao chép. Bạn cũng có thể sao lưu tệp này và sao chép nó sang cùng máy tính đó sau để khôi phục các thiết lập trước đó. Nếu bạn xóa tệp này, tất cả các thiết lập FET trên máy tính này sẽ được đặt lại về mặc định.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="907"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="910"/>
         <source>macOS: It seems that the configuration file might be %1</source>
         <translation>macOS: Có vẻ như tệp cấu hình có thể là %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="909"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="912"/>
         <source>Windows: Run regedit.exe (Registry Editor) and search for the key &quot;%1&quot;. You will find a section with this name, with the subsection &quot;%2&quot;. You can export this section to a file, and import it from this file on the same or another computer. If you remove this section, all FET settings will be reset to defaults.</source>
         <translation>Windows: Chạy regedit.exe (Registry Editor) và tìm kiếm khóa &quot;%1&quot;. Bạn sẽ tìm thấy một phần có tên này, với tiểu phần &quot;%2&quot;. Bạn có thể xuất phần này ra một tệp và nhập từ tệp này trên cùng một máy tính hoặc một máy tính khác. Nếu bạn xóa phần này, tất cả cài đặt FET sẽ được đặt lại về mặc định.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="917"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="920"/>
         <source>Q: I have many subgroups and I don&apos;t explicitly use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation>H: Tôi có nhiều nhóm con và không sử dụng chúng một cách rõ ràng. Tôi có thể ẩn chúng trong các hộp kết hợp để thêm các ràng buộc dễ dàng hơn không? Ngoài ra, tôi có thể làm cho giao diện FET hoạt động nhanh hơn không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="920"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="947"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="971"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="982"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="996"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="1017"/>
-        <location filename="../src/interface/helpfaqform.cpp" line="1030"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="923"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="950"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="974"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="985"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="999"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1020"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1033"/>
         <source>A:</source>
         <comment>Answer</comment>
         <translation>MỘT:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="922"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Nếu bạn có nhiều nhóm con và không sử dụng chúng một cách rõ ràng, bạn nên sử dụng ba thiết lập chung: ẩn nhóm con trong hộp kết hợp, ẩn nhóm con trong kế hoạch hoạt động và không ghi thời gian biểu của nhóm con vào ổ cứng.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="925"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation>Lưu ý rằng việc sử dụng cài đặt menu chung để ẩn các nhóm con trong quá trình lập kế hoạch hoạt động là một việc khác so với sử dụng hộp kiểm trong hộp thoại lập kế hoạch hoạt động và cài đặt chung hoạt động tốt hơn và nhanh hơn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="928"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="931"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation>Nếu bạn ẩn các nhóm con trong hộp kết hợp, các hộp thoại bị ảnh hưởng (như hộp thoại hoạt động hoặc hộp thoại thêm ràng buộc lớp học đặt thời gian không khả dụng) sẽ tải nhanh hơn nhiều nếu bạn có nhiều nhóm con.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="933"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="936"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the generation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation>Nếu bạn chỉ làm việc trên một thời khóa biểu và không cần xuất bản nó, bạn có thể muốn tắt tính năng ghi một số loại thời khóa biểu trên ổ cứng để tăng hiệu quả (tốc độ tạo thời khóa biểu không bị ảnh hưởng, chỉ có chi phí ghi thời khóa biểu một phần/toàn bộ khi dừng/kết thúc quá trình tạo thời khóa biểu). Các thời khóa biểu mất nhiều thời gian nhất là các nhóm con, nhóm VÀ năm.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="937"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="940"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation>(Ngoài ra, thời gian ghi lịch xung đột cũng có thể mất nhiều thời gian nếu tệp lớn.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="939"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="942"/>
         <source>After that, you can enable the writing of the timetables and regenerate.</source>
         <translation>Sau đó, bạn có thể bật tính năng viết thời gian biểu và tạo lại.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="945"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="948"/>
         <source>Q: How about dividing a students year automatically into many subgroups?</source>
         <translation>H: Làm thế nào để tự động chia một năm học của lớp học thành nhiều nhóm nhỏ?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="949"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="952"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation>Về việc sử dụng nhiều danh mục, phân chia theo danh mục và nhóm nhỏ: chúng tôi khuyến nghị nên hạn chế tối đa, đặc biệt là số lượng danh mục, bằng cách sử dụng bất kỳ thủ thuật nào. Nếu không, thời gian biểu có thể trở nên bất khả thi (mất quá nhiều thời gian để tạo).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="953"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation>Có lẽ số lượng danh mục hợp lý có thể là 2, 3 hoặc tối đa là 4. Hộp thoại chia năm cho phép các giá trị cao hơn nhiều, nhưng điều này không được khuyến khích.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="956"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="959"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
         <translation>Có lẽ một giải pháp thay thế cho việc chia một năm thành nhiều nhóm/phân nhóm nhỏ là nhập từng lớp học vào các nhóm nhỏ FET và thêm các nhóm nhỏ tương ứng vào mỗi nhóm. Tuy nhiên, việc này khó thực hiện từ giao diện FET - có lẽ một giải pháp là sử dụng một công cụ tự động để chuyển đổi dữ liệu trường học của bạn thành tệp định dạng .fet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="960"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="963"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
         <translation>Hoặc bạn có thể sử dụng tính năng FET để nhập các tập hợp lớp học từ các tệp giá trị phân tách bằng dấu phẩy (CSV).</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="962"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="965"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
         <translation>Trong những trường hợp như vậy (lớp học cá nhân là nhóm con FET), hãy nhớ rằng số lượng nhóm con ít hơn có nghĩa là thời gian tạo nhanh hơn, do đó bạn có thể muốn cân nhắc một nhóm con duy nhất cho hai hoặc nhiều lớp học có cùng hoạt động và ràng buộc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="969"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="972"/>
         <source>Q: Does the order of constraints have influence on their importance while generating the timetable?</source>
         <translation>H: Thứ tự các ràng buộc có ảnh hưởng đến tầm quan trọng của chúng khi lập thời gian biểu không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="973"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>The order of the constraints is only important to the interaction with the user. It is only the weight percentage which counts while generating the timetable. Note however that you may get different timetables for different constraints order.</source>
         <translation>Thứ tự của các ràng buộc chỉ quan trọng đối với tương tác với người dùng. Chỉ có tỷ lệ phần trăm trọng số mới được tính khi tạo thời khóa biểu. Tuy nhiên, lưu ý rằng bạn có thể nhận được các thời khóa biểu khác nhau cho các thứ tự ràng buộc khác nhau.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="980"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="983"/>
         <source>Q: How does one use the constraints of type students (set) / teacher(s) min gaps between ordered pair of activity tags?</source>
         <translation>H: Người ta sử dụng các ràng buộc của loại lớp học (bộ) / giáo viên (khoảng cách tối thiểu giữa các cặp Thẻ tiết giảng đã sắp xếp như thế nào?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="984"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="987"/>
         <source>These constraints ensure that for the affected students (set) / teacher(s), if on the same day an activity with the second activity tag comes after an activity with the first activity tag, between them there must be at least min gaps (hours). As a trick, if you want min gaps from the first activity tag to the second activity tag and from the second activity tag to the first activity tag (so, between these two activity tags, in any order they can be, to be at least min gaps), you can add two constraints, the second constraint switching the first activity tag with the second activity tag.</source>
         <translation>Những ràng buộc này đảm bảo rằng đối với lớp học (nhóm)/giáo viên bị ảnh hưởng, nếu trong cùng một ngày, một hoạt động với Thẻ tiết giảng thứ hai diễn ra sau một hoạt động với Thẻ tiết giảng thứ nhất, thì giữa chúng phải có ít nhất một khoảng trống tối thiểu (giờ). Một mẹo nhỏ là, nếu bạn muốn khoảng trống tối thiểu từ Thẻ tiết giảng thứ nhất đến Thẻ tiết giảng thứ hai và từ Thẻ tiết giảng thứ hai đến Thẻ tiết giảng thứ nhất (tức là giữa hai Thẻ tiết giảng này, theo bất kỳ thứ tự nào, phải có ít nhất một khoảng trống tối thiểu), bạn có thể thêm hai ràng buộc, ràng buộc thứ hai sẽ hoán đổi Thẻ tiết giảng thứ nhất với Thẻ tiết giảng thứ hai.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="994"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="997"/>
         <source>Q: How does one use the constraint of type activity tags not overlapping?</source>
         <translation>H: Làm thế nào để sử dụng ràng buộc về loại Thẻ tiết giảng không chồng chéo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="998"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1001"/>
         <source>This constraint was suggested by %1, who gave the following example: You can use this constraint for instance if you have young and old students with Sport activities, and you don&apos;t want young students having the Sport activities at the same time with the old students. You then need to add an activity tag, say SY, to all the young students&apos; Sport activities, and another activity tag, say SO, to all the old students&apos; Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO. You can even create more categories of students&apos; age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.</source>
         <comment>%1 is a person</comment>
         <translation>Ràng buộc này được đề xuất bởi %1, người đã đưa ra ví dụ sau: Ví dụ, bạn có thể sử dụng ràng buộc này nếu bạn có lớp học trẻ và già tham gia các hoạt động Thể thao và bạn không muốn lớp học trẻ tham gia các hoạt động Thể thao cùng lúc với lớp học lớn tuổi. Sau đó, bạn cần thêm một Thẻ tiết giảng, chẳng hạn như SY, vào tất cả các hoạt động Thể thao của lớp học trẻ và một Thẻ tiết giảng khác, chẳng hạn như SO, vào tất cả các hoạt động Thể thao của lớp học lớn tuổi và thêm một ràng buộc các Thẻ tiết giảng không chồng chéo cho các Thẻ tiết giảng SY và SO. Bạn thậm chí có thể tạo thêm các danh mục theo độ tuổi của lớp học, chẳng hạn như SO1, SO2, SO3 và SO4, và thêm một ràng buộc duy nhất các Thẻ tiết giảng không chồng chéo, để tại một khung thời gian duy nhất, chỉ có một trong bốn Thẻ tiết giảng này sẽ xuất hiện trong thời khóa biểu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1006"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1009"/>
         <source>This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above, because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.</source>
         <translation>Ràng buộc này liên quan đến ràng buộc về loại hoạt động không chồng chéo, nhưng dễ sử dụng hơn nhiều trong ví dụ được mô tả ở trên, vì bạn chỉ cần thêm một ràng buộc duy nhất thay vì có thể có rất nhiều ràng buộc hoạt động không chồng chéo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1009"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1012"/>
         <source>The uses of this constraint might be wider.</source>
         <translation>Việc sử dụng ràng buộc này có thể rộng hơn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1015"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1018"/>
         <source>Q: How can I say that an activity should take place in more rooms?</source>
         <translation>H: Làm sao tôi có thể nói rằng một hoạt động nên diễn ra ở nhiều phòng hơn?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1019"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1022"/>
         <source>You could use virtual rooms for this. Read the Help on those dialogs (the Rooms dialog and the Make/edit virtual room dialog). In short, you need to add a virtual room with n sets of real rooms, where n is the number of rooms you want the activity to occupy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1022"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1025"/>
         <source>There is also another possible solution, to add dummy activities and constrain them to start at the same time as the real activity.</source>
         <translation>Ngoài ra còn có một giải pháp khả thi khác là thêm các hoạt động giả định và ràng buộc chúng bắt đầu cùng lúc với hoạt động thực tế.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1028"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1031"/>
         <source>Q: What is the use of virtual rooms?</source>
         <translation>H: Phòng ảo có tác dụng gì?</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="1032"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1035"/>
         <source>Virtual rooms were suggested by the user %1 on the FET forum (%2). They can be used to make an activity occupy more rooms, or even to let FET choose between a large room for this activity or more smaller rooms (if you set the preferred rooms for this activity the real large room or a virtual room representing the more smaller rooms). Please read the Help on the virtual rooms dialogs (the Rooms dialog and the Make/edit virtual room dialog).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -59272,7 +59271,7 @@ Mẹo này chợt nảy ra trong đầu tôi khi tôi đang cố gắng viết t
         <translation>Xin lưu ý rằng, bằng cách bật tùy chọn này, mỗi khi bạn khởi động FET, nó sẽ nhận được tệp %1 từ trang chủ của FET, vì vậy yêu cầu cho tệp này sẽ hiển thị trên máy chủ, cùng với địa chỉ IP và thời gian truy cập của bạn. &quot;https://lalescu.ro/liviu/fet/crtversion/crtversion.txt&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="635"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="638"/>
         <source>Q: I have a double duration activity. Is it possible that it is spread over the break period, like:
 
 Activity math, duration 2, id say 100
@@ -59293,7 +59292,7 @@ Giờ toán 12:00 (giờ thứ hai của tiết học: 100)?
 Đáp: Không, hoạt động phải tuân thủ thời gian nghỉ giải lao, tức là trước hoặc sau thời gian nghỉ giải lao với tất cả các giờ của hoạt động.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="649"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="652"/>
         <source>Q and A From %1: A very difficult to diagnose unresolved case
 
 Since I started working on our school&apos;s timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn&apos;t reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). It was too much (other teachers have 5 teaching hours max) but he didn&apos;t mind so we kept FET solution.Just a month ago this teacher had some major operation and couldn&apos;t teach so much hours in one day anymore. So I started again to experiment with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to cover first and last hour! I had 16 teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!
@@ -59307,7 +59306,7 @@ Kể từ khi tôi bắt đầu làm việc với thời khóa biểu của trư
 ...Không phải là tôi sẽ lại mắc bẫy này, nhưng dựa trên khó khăn trong việc chẩn đoán của tôi, điều này sẽ giúp những người khác có thể gặp phải vấn đề tương tự.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="708"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="711"/>
         <source>Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be on the same day by constraints min days between activities?
 
 If A1 and A2 are constrained not to be on the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be on the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
@@ -59320,12 +59319,12 @@ Nếu A1 và A2 bị ràng buộc không được diễn ra cùng ngày với tr
 Cách đúng có lẽ là coi A1 và A2 = một hoạt động duy nhất A12&apos;, hoặc sửa đổi ràng buộc số ngày tối thiểu liên quan giữa các hoạt động. Hoặc có thể bạn có thể tìm các cách khác.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="775"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="778"/>
         <source>Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.</source>
         <translation>H: Tôi đã thử làm việc theo một thời gian biểu cố định để chuyển một hoạt động sang một khung giờ khác. Giờ tôi bị kẹt - FET báo: không thể tạo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="777"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="780"/>
         <source>A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more than 4 hours, it does not matter for our discussion). Now, if you have a day with 4 hours and try to move another activity to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why? Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity. (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.
 
  A solution: lower the weight of this constraint from 99% to 90% or less.</source>
@@ -59375,7 +59374,7 @@ A: If you have activities which you want to put in the last slots of a day (like
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="747"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="750"/>
         <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
         <translation>Đây là một câu hỏi nâng cao mà có lẽ sẽ không bao giờ xuất hiện trong thực tế, bạn có thể bỏ qua khi đọc lần đầu.</translation>
     </message>
@@ -59399,7 +59398,7 @@ A: It is recommended to enable automatic search for updates. I didn&apos;t set i
         <translation>A: Thực sự có giới hạn tối đa cho thuật toán tạo ra, nhưng có lẽ sẽ không ai cần những giá trị lớn hơn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="668"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="671"/>
         <source>Q: I want to define hard subjects (math, physics and chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH activities. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double activities.</source>
@@ -59408,27 +59407,27 @@ A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH act
 Đáp: Xác định Thẻ tiết giảng &apos;Khó&apos; và thêm nó vào tất cả các hoạt động MA, PH và CH. Sau đó, thêm ràng buộc tối đa 1 (hoặc 2) giờ liên tục cho tất cả lớp học và một Thẻ tiết giảng &apos;Khó&apos;. Vui lòng lưu ý nếu bạn có thể có nhiều hoạt động trùng lặp.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="701"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="704"/>
         <source>Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
         <translation>Lời khuyên: Để xử lý các khoảng trống cho lớp học hoặc giáo viên, nếu các ràng buộc FET không đủ, bạn có thể sử dụng các hoạt động giả định. Ví dụ: nếu một nhóm lớp học có tối đa 3 khoảng trống, hãy thêm một hoạt động chia thành 3 hoạt động mỗi tuần, không có giáo viên.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="721"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="724"/>
         <source>Three hints from an anonymous Polish user, who uses FET for very large data sets:</source>
         <translation>Ba gợi ý từ một người dùng Ba Lan ẩn danh, người sử dụng FET cho các tập dữ liệu rất lớn:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="723"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="726"/>
         <source>The first hint for other users is to start with a minimum number of constraints and see if FET can generate a timetable with those constraints before thinking about adding the next ones.</source>
         <translation>Gợi ý đầu tiên cho những người dùng khác là hãy bắt đầu với số lượng ràng buộc tối thiểu và xem liệu FET có thể tạo ra một thời gian biểu với những ràng buộc đó hay không trước khi nghĩ đến việc thêm các ràng buộc tiếp theo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="740"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="743"/>
         <source>A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option from the Settings-&gt;Interface menu (shortcuts are shown, by default).</source>
         <translation>A: Nút tắt cho các chức năng có thể hiển thị được thông qua menu Cấu hình -&gt; Giao diện.</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="738"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="741"/>
         <source>Q: Help on shortcut buttons in the main form.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -64536,12 +64535,12 @@ Vui lòng nhập phần trăm trọng số mới:</translation>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7746"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7757"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7823"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8664"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8751"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8895"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8962"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8976"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9102"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
@@ -65008,16 +65007,6 @@ Vui lòng nhập phần trăm trọng số mới:</translation>
         <translation>Ràng buộc: tổng số học sinh tối đa của các hoạt động trong các khung giờ đã chọn</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3198"/>
-        <source>WARNING: potentially very SLOW constraint! Use ONLY if strictly necessary! Read the Help!</source>
-        <translation>CẢNH BÁO: ràng buộc này có thể rất chậm! Chỉ sử dụng nếu thực sự cần thiết! Hãy đọc Hướng dẫn!</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="3199"/>
-        <source>Note: it is recommended to use this constraint only if strictly necessary and not redundantly, because it might be very slow.</source>
-        <translation>Lưu ý: khuyến nghị chỉ sử dụng ràng buộc này nếu thực sự cần thiết và không lặp lại, vì nó có thể rất chậm.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="3326"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="3371"/>
         <source>Filter</source>
@@ -65131,7 +65120,7 @@ Vui lòng nhập phần trăm trọng số mới:</translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7414"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8976"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
         <source>Invalid selected constraint</source>
         <translation>RB được chọn không đúng</translation>
     </message>
@@ -65166,27 +65155,27 @@ Vui lòng nhập phần trăm trọng số mới:</translation>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9028"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9030"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9033"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9034"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7932"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8911"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8846"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8912"/>
         <source>FET confirmation</source>
         <translation>Xác nhận</translation>
     </message>
@@ -65243,22 +65232,17 @@ Vui lòng nhập phần trăm trọng số mới:</translation>
         <translation>Ràng buộc này được đề xuất bởi %1 và có thể là bởi những người dùng khác trong quá khứ.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8564"/>
-        <source>Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!</source>
-        <translation>Cảnh báo: ràng buộc này có thể làm quá trình tạo lịch chậm đi rất nhiều! Vui lòng chỉ sử dụng nếu thực sự cần thiết và thận trọng!</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8566"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8567"/>
         <source>This constraint was suggested by %1.</source>
         <translation>Ràng buộc này được đề xuất bởi %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8568"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
         <source>18 October 2025</source>
         <translation>Ngày 18 tháng 10 năm 2025</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8570"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8571"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of students which can be present, considering the number of students of these activities, in these time slots.</source>
         <translation>Để sử dụng ràng buộc này, bạn cần chỉ định một tập hợp các hoạt động, một tập hợp các khung giờ, và số lượng học sinh tối đa có thể có mặt, dựa trên số học sinh của các hoạt động này trong các khung giờ đã chọn.</translation>
     </message>
@@ -65388,7 +65372,7 @@ Vui lòng nhập phần trăm trọng số mới:</translation>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8527"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8542"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8557"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8573"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8574"/>
         <source>FET help</source>
         <translation type="unfinished">Trợ giúp</translation>
     </message>
@@ -65697,7 +65681,7 @@ Ví dụ 2:
         <translation>Ràng buộc này đảm bảo rằng các hoạt động được chọn có thể diễn ra trong một số lượng khung thời gian tối đa được chỉ định từ một số khung thời gian được chọn. Các khung thời gian không được chọn sẽ không bị ràng buộc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8568"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
         <source>This constraint type was added on %1.</source>
         <comment>%1 is the date at which this constraint type was implemented in FET</comment>
         <translation>Loại ràng buộc này đã được thêm vào ngày %1.</translation>
@@ -65831,106 +65815,106 @@ Ví dụ 2:
         <translation>Nửa ngày tối thiểu mới=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8634"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8635"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>Số lượng: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8664"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation type="unfinished">Để di chuyển ràng buộc thời gian lên trên, không được chọn hộp kiểm &apos;Đã sắp xếp&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8719"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8720"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8751"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation type="unfinished">Để di chuyển ràng buộc thời gian xuống, không được chọn hộp kiểm &apos;Đã sắp xếp&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8806"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8807"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8844"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
         <source>Activate the selected time constraints?</source>
         <translation>Kích hoạt các ràng buộc thời gian đã chọn?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8872"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8873"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation>Đã kích hoạt %1 ràng buộc thời gian:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8895"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
         <source>Activated %1 time constraints</source>
         <translation>Đã kích hoạt %1 ràng buộc thời gian</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8909"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8910"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation>Hủy kích hoạt các ràng buộc thời gian đã chọn? (Lưu ý rằng các ràng buộc thời gian bắt buộc cơ bản sẽ không bị hủy kích hoạt, ngay cả khi chúng được chọn.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8939"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8940"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation>Hạn chế thời gian %1 đã bị vô hiệu hóa:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8962"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
         <source>Deactivated %1 time constraints</source>
         <translation>Đã hủy kích hoạt %1 hạn chế thời gian</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8988"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8989"/>
         <source>Constraint comments</source>
         <translation>Ghi chú của RB</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8990"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8991"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8992"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8993"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9059"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9060"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 RB thời gian</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9083"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9084"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>Lựa chọn nhiều: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9102"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Không có ràng buộc nào từ lựa chọn của bạn có thể thay đổi trọng số của chúng (hãy nhớ rằng một số loại ràng buộc chỉ được phép có trọng số 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9112"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9121"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9113"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9122"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Sửa đổi trọng số của các ràng buộc thời gian đã chọn</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9114"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9115"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -65938,7 +65922,7 @@ Please enter the new weight percentage:</source>
 Vui lòng nhập phần trăm trọng số mới:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9123"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9124"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -65952,7 +65936,7 @@ ràng buộc trong số %3 đã chọn sẽ không thay đổi).
 Vui lòng nhập phần trăm trọng số mới:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9161"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9162"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Đã thay đổi trọng số của các ràng buộc thời gian được chọn %1 sau thành %2%:</translation>
@@ -67930,12 +67914,12 @@ cho phép: 0,0% -100,0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>February</source>
         <translation>Tháng hai</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>March</source>
         <translation>Bước đều</translation>
     </message>
@@ -68930,94 +68914,94 @@ was made virtual into:
 <context>
     <name>RoomsForm</name>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="164"/>
+        <location filename="../src/interface/roomsform.cpp" line="170"/>
         <source>V: %1</source>
         <comment>V means virtual room, %1 is the name of the room</comment>
         <translation>V: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="190"/>
-        <location filename="../src/interface/roomsform.cpp" line="366"/>
-        <location filename="../src/interface/roomsform.cpp" line="391"/>
-        <location filename="../src/interface/roomsform.cpp" line="473"/>
-        <location filename="../src/interface/roomsform.cpp" line="480"/>
-        <location filename="../src/interface/roomsform.cpp" line="489"/>
-        <location filename="../src/interface/roomsform.cpp" line="538"/>
-        <location filename="../src/interface/roomsform.cpp" line="556"/>
-        <location filename="../src/interface/roomsform.cpp" line="567"/>
-        <location filename="../src/interface/roomsform.cpp" line="594"/>
-        <location filename="../src/interface/roomsform.cpp" line="656"/>
+        <location filename="../src/interface/roomsform.cpp" line="196"/>
+        <location filename="../src/interface/roomsform.cpp" line="372"/>
+        <location filename="../src/interface/roomsform.cpp" line="397"/>
+        <location filename="../src/interface/roomsform.cpp" line="479"/>
+        <location filename="../src/interface/roomsform.cpp" line="486"/>
+        <location filename="../src/interface/roomsform.cpp" line="495"/>
+        <location filename="../src/interface/roomsform.cpp" line="544"/>
+        <location filename="../src/interface/roomsform.cpp" line="562"/>
+        <location filename="../src/interface/roomsform.cpp" line="573"/>
+        <location filename="../src/interface/roomsform.cpp" line="600"/>
+        <location filename="../src/interface/roomsform.cpp" line="662"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="190"/>
-        <location filename="../src/interface/roomsform.cpp" line="366"/>
-        <location filename="../src/interface/roomsform.cpp" line="391"/>
-        <location filename="../src/interface/roomsform.cpp" line="473"/>
-        <location filename="../src/interface/roomsform.cpp" line="538"/>
-        <location filename="../src/interface/roomsform.cpp" line="594"/>
-        <location filename="../src/interface/roomsform.cpp" line="656"/>
+        <location filename="../src/interface/roomsform.cpp" line="196"/>
+        <location filename="../src/interface/roomsform.cpp" line="372"/>
+        <location filename="../src/interface/roomsform.cpp" line="397"/>
+        <location filename="../src/interface/roomsform.cpp" line="479"/>
+        <location filename="../src/interface/roomsform.cpp" line="544"/>
+        <location filename="../src/interface/roomsform.cpp" line="600"/>
+        <location filename="../src/interface/roomsform.cpp" line="662"/>
         <source>Invalid selected room</source>
         <translation>Tiết giảng không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="197"/>
-        <location filename="../src/interface/roomsform.cpp" line="223"/>
+        <location filename="../src/interface/roomsform.cpp" line="203"/>
+        <location filename="../src/interface/roomsform.cpp" line="229"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="198"/>
+        <location filename="../src/interface/roomsform.cpp" line="204"/>
         <source>Are you sure you want to delete this room and all related constraints?</source>
         <translation>Bạn có chắc chắn xóa phòng học này và những RB liên quan?</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="224"/>
+        <location filename="../src/interface/roomsform.cpp" line="230"/>
         <source>This is a real room. If you remove it, it will affect %1 virtual rooms. The real room is met %2 times overall in the lists of sets of the virtual rooms. Do you really want to remove it?</source>
         <translation>Đây là một phòng thật. Nếu bạn xóa nó, nó sẽ ảnh hưởng đến %1 phòng ảo. Phòng thật được tìm thấy tổng cộng %2 lần trong danh sách các tập hợp phòng ảo. Bạn có thực sự muốn xóa nó không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="354"/>
+        <location filename="../src/interface/roomsform.cpp" line="360"/>
         <source>Sorted the rooms.</source>
         <translation>Sắp xếp các phòng.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="400"/>
+        <location filename="../src/interface/roomsform.cpp" line="406"/>
         <source>Room comments</source>
         <translation>Bình luận phòng</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="402"/>
-        <location filename="../src/interface/roomsform.cpp" line="605"/>
-        <location filename="../src/interface/roomsform.cpp" line="667"/>
+        <location filename="../src/interface/roomsform.cpp" line="408"/>
+        <location filename="../src/interface/roomsform.cpp" line="611"/>
+        <location filename="../src/interface/roomsform.cpp" line="673"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="404"/>
-        <location filename="../src/interface/roomsform.cpp" line="607"/>
-        <location filename="../src/interface/roomsform.cpp" line="669"/>
+        <location filename="../src/interface/roomsform.cpp" line="410"/>
+        <location filename="../src/interface/roomsform.cpp" line="613"/>
+        <location filename="../src/interface/roomsform.cpp" line="675"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="236"/>
+        <location filename="../src/interface/roomsform.cpp" line="242"/>
         <source>Removed the room %1.</source>
         <translation>Đã xóa phòng %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="295"/>
+        <location filename="../src/interface/roomsform.cpp" line="301"/>
         <source>Moved the room %1 up.</source>
         <translation>Đã di chuyển phòng lên %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="337"/>
+        <location filename="../src/interface/roomsform.cpp" line="343"/>
         <source>Moved the room %1 down.</source>
         <translation>Đã di chuyển phòng xuống %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="440"/>
+        <location filename="../src/interface/roomsform.cpp" line="446"/>
         <source>Modified the comments of the room
 
 %1
@@ -69032,52 +69016,52 @@ thành
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="453"/>
+        <location filename="../src/interface/roomsform.cpp" line="459"/>
         <source>Virtual rooms were suggested by the user %1 on the FET forum (you can follow the discussion on the internet page %2). They can be useful in two situations (but you might think of more uses):</source>
         <translation>Phòng ảo được người dùng %1 đề xuất trên diễn đàn FET (bạn có thể theo dõi thảo luận trên trang internet %2). Chúng có thể hữu ích trong hai trường hợp (nhưng bạn có thể nghĩ ra nhiều cách sử dụng hơn):</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="457"/>
+        <location filename="../src/interface/roomsform.cpp" line="463"/>
         <source>1) If you want an activity to take place in more real rooms.</source>
         <translation>1) Nếu bạn muốn hoạt động diễn ra trong nhiều căn phòng thực tế hơn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="459"/>
+        <location filename="../src/interface/roomsform.cpp" line="465"/>
         <source>2) If you want an activity to take place, say, either in a large real room or in three smaller real rooms.</source>
         <translation>2) Nếu bạn muốn một hoạt động diễn ra, chẳng hạn như trong một căn phòng thực lớn hoặc trong ba căn phòng thực nhỏ hơn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="461"/>
+        <location filename="../src/interface/roomsform.cpp" line="467"/>
         <source>More details about defining and using virtual rooms are shown in the dialog of making/editing virtual rooms, if you click the Help button there.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="463"/>
+        <location filename="../src/interface/roomsform.cpp" line="469"/>
         <source>FET Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="480"/>
+        <location filename="../src/interface/roomsform.cpp" line="486"/>
         <source>The selected room is already real.</source>
         <translation>Phòng được chọn là phòng có thật.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="489"/>
+        <location filename="../src/interface/roomsform.cpp" line="495"/>
         <source>This virtual room is used in at least a constraint of type activity preferred room, having specified a nonempty list of preferred real rooms. It cannot thus be made real directly. Firstly you need to edit/remove that/those constraints (converting this virtual room to a real one will be possible if you clear the preferred real rooms list for each such constraint).</source>
         <translation>Phòng ảo này được sử dụng trong ít nhất một ràng buộc loại &quot;phòng ưa thích&quot; (activity preferred room), sau khi đã chỉ định một danh sách không rỗng các phòng thực ưa thích. Do đó, nó không thể được hiện thực hóa trực tiếp. Trước tiên, bạn cần chỉnh sửa/xóa các ràng buộc đó (việc chuyển đổi phòng ảo này thành phòng thực sẽ khả thi nếu bạn xóa danh sách phòng thực ưa thích cho mỗi ràng buộc như vậy).</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="497"/>
+        <location filename="../src/interface/roomsform.cpp" line="503"/>
         <source>FET confirmation</source>
         <translation>Xác nhận</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="498"/>
+        <location filename="../src/interface/roomsform.cpp" line="504"/>
         <source>Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room.</source>
         <translation>Bạn có chắc chắn muốn biến căn phòng này thành phòng thật không? Thao tác này sẽ xóa danh sách các phòng thật của phòng ảo này.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="507"/>
+        <location filename="../src/interface/roomsform.cpp" line="513"/>
         <source>Made the virtual room
 
 %1
@@ -69093,22 +69077,22 @@ thành thật, thành
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="556"/>
+        <location filename="../src/interface/roomsform.cpp" line="562"/>
         <source>This real room is contained in %1 other virtual rooms, so it cannot be made virtual (because a virtual room can only contain real rooms).</source>
         <translation>Phòng thực này nằm trong %1 phòng ảo khác, do đó không thể biến nó thành phòng ảo (vì phòng ảo chỉ có thể chứa phòng thực).</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="567"/>
+        <location filename="../src/interface/roomsform.cpp" line="573"/>
         <source>This real room is used in at least a constraint of type activity preferred room, in the list of preferred real rooms. It cannot thus be made virtual directly. Firstly you need to edit/remove that/those constraints.</source>
         <translation>Phòng thực này được sử dụng trong ít nhất một ràng buộc loại hoạt động là phòng ưu tiên, trong danh sách các phòng thực ưu tiên. Do đó, không thể biến nó thành phòng ảo trực tiếp. Trước tiên, bạn cần chỉnh sửa/xóa các ràng buộc đó.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="603"/>
+        <location filename="../src/interface/roomsform.cpp" line="609"/>
         <source>Room long name</source>
         <translation>Tên phòng dài</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="643"/>
+        <location filename="../src/interface/roomsform.cpp" line="649"/>
         <source>Changed the long name for the room %1 from
 %2
 to
@@ -69119,12 +69103,12 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="665"/>
+        <location filename="../src/interface/roomsform.cpp" line="671"/>
         <source>Room code</source>
         <translation>Mã phòng</translation>
     </message>
     <message>
-        <location filename="../src/interface/roomsform.cpp" line="705"/>
+        <location filename="../src/interface/roomsform.cpp" line="711"/>
         <source>Changed the code for the room %1 from
 %2
 to
@@ -75732,128 +75716,128 @@ Bình luận sau:
 <context>
     <name>SubgroupsForm</name>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="177"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="185"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="206"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="222"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="256"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="264"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="272"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="339"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="347"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="355"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="573"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="581"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="598"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="606"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="189"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="197"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="218"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="234"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="268"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="276"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="284"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="351"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="359"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="367"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="585"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="593"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="610"/>
         <location filename="../src/interface/subgroupsform.cpp" line="618"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="649"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="657"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="665"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="671"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="680"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="688"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="696"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="702"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="712"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="776"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="840"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="630"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="661"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="669"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="677"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="683"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="692"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="700"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="708"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="714"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="724"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="788"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="852"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="177"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="206"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="256"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="339"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="573"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="598"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="649"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="680"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="189"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="218"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="268"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="351"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="585"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="610"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="661"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="692"/>
         <source>Invalid selected year</source>
         <translation>Khối không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="185"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="222"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="264"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="347"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="581"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="606"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="657"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="688"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="197"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="234"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="276"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="359"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="593"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="618"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="669"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="700"/>
         <source>Invalid selected group</source>
         <translation>Nhóm lớp không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="272"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="355"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="618"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="665"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="696"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="712"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="776"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="840"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="284"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="367"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="630"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="677"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="708"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="724"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="788"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="852"/>
         <source>Invalid selected subgroup</source>
         <translation>Nhóm con không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="291"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="303"/>
         <source>This subgroup exists only in year %1, group %2. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Nhóm con này chỉ tồn tại trong năm %1, nhóm %2. Điều này có nghĩa là tất cả các hoạt động và ràng buộc liên quan sẽ bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="294"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="306"/>
         <source>This subgroup exists in more places, listed below. It will only be removed from the current year/group, and the related activities and constraints will not be removed. Do you want to continue?</source>
         <translation>Nhóm này tồn tại ở nhiều nơi khác, được liệt kê bên dưới. Nhóm này sẽ chỉ bị xóa khỏi năm/nhóm hiện tại, còn các hoạt động và ràng buộc liên quan sẽ không bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="301"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="384"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="313"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="396"/>
         <source>FET confirmation</source>
         <translation>Xác nhận</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="374"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="386"/>
         <source>This subgroup exists only in year %1, group %2. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Nhóm con này chỉ tồn tại trong năm %1, nhóm %2. Tất cả các hoạt động và ràng buộc liên quan sẽ bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="377"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="389"/>
         <source>This subgroup exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
         <translation>Nhóm phụ này tồn tại ở nhiều nơi khác, được liệt kê bên dưới. Nhóm phụ này sẽ bị xóa khỏi tất cả những nơi này. Tất cả các hoạt động và ràng buộc liên quan sẽ bị xóa. Bạn có muốn tiếp tục không?</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="702"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="714"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Đã hủy kích hoạt một số tiết giảng %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="723"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="735"/>
         <source>Students subgroup comments</source>
         <translation>Nhận xét của nhóm lớp học</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="725"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="789"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="853"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="737"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="801"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="865"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="727"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="791"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="855"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="739"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="803"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="867"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="787"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="799"/>
         <source>Subgroup long name</source>
         <translation>Tên dài của nhóm con</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="827"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="839"/>
         <source>Changed the long name for the subgroup %1 from
 %2
 to
@@ -75864,12 +75848,12 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="851"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="863"/>
         <source>Subgroup code</source>
         <translation>Mã nhóm con</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="891"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="903"/>
         <source>Changed the code for the subgroup %1 from
 %2
 to
@@ -75880,61 +75864,61 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="302"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="385"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
         <source>Yes</source>
         <translation>Đồng ý</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="302"/>
-        <location filename="../src/interface/subgroupsform.cpp" line="385"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="314"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="326"/>
         <source>Removed the subgroup %1 from the group %2, the year %3.</source>
         <translation>Đã xóa nhóm con %1 khỏi nhóm %2, năm %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="397"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="409"/>
         <source>Removed the subgroup %1 from everywhere.</source>
         <translation>Đã xóa nhóm con %1 khỏi mọi nơi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="521"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="533"/>
         <source>Moved the subgroup %1 up in the group %2, the year %3.</source>
         <translation>Đã di chuyển nhóm con %1 lên nhóm %2, năm %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="564"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="576"/>
         <source>Moved the subgroup %1 down in the group %2, the year %3.</source>
         <translation>Đã di chuyển nhóm con %1 xuống nhóm %2, năm %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="590"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="602"/>
         <source>Sorted the subgroups in the group %1, the year %2.</source>
         <translation>Sắp xếp các nhóm con trong nhóm %1, năm %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="671"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="683"/>
         <source>Activated a number of %1 activities</source>
         <translation>Đã kích hoạt %1 tiết giảng</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="674"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="686"/>
         <source>Activated the subgroup %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation>Đã kích hoạt nhóm con %1 (%2 hoạt động).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="705"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="717"/>
         <source>Deactivated the subgroup %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation>Đã hủy kích hoạt nhóm con %1 (%2 hoạt động).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="763"/>
+        <location filename="../src/interface/subgroupsform.cpp" line="775"/>
         <source>Changed the comments for the subgroup %1 from
 %2
 to
@@ -84223,75 +84207,75 @@ Dưới: %4</translation>
 <context>
     <name>YearsForm</name>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="181"/>
-        <location filename="../src/interface/yearsform.cpp" line="321"/>
-        <location filename="../src/interface/yearsform.cpp" line="354"/>
-        <location filename="../src/interface/yearsform.cpp" line="360"/>
-        <location filename="../src/interface/yearsform.cpp" line="369"/>
-        <location filename="../src/interface/yearsform.cpp" line="375"/>
-        <location filename="../src/interface/yearsform.cpp" line="384"/>
-        <location filename="../src/interface/yearsform.cpp" line="399"/>
-        <location filename="../src/interface/yearsform.cpp" line="463"/>
-        <location filename="../src/interface/yearsform.cpp" line="527"/>
+        <location filename="../src/interface/yearsform.cpp" line="184"/>
+        <location filename="../src/interface/yearsform.cpp" line="324"/>
+        <location filename="../src/interface/yearsform.cpp" line="357"/>
+        <location filename="../src/interface/yearsform.cpp" line="363"/>
+        <location filename="../src/interface/yearsform.cpp" line="372"/>
+        <location filename="../src/interface/yearsform.cpp" line="378"/>
+        <location filename="../src/interface/yearsform.cpp" line="387"/>
+        <location filename="../src/interface/yearsform.cpp" line="402"/>
+        <location filename="../src/interface/yearsform.cpp" line="466"/>
+        <location filename="../src/interface/yearsform.cpp" line="530"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="181"/>
-        <location filename="../src/interface/yearsform.cpp" line="321"/>
-        <location filename="../src/interface/yearsform.cpp" line="354"/>
-        <location filename="../src/interface/yearsform.cpp" line="369"/>
-        <location filename="../src/interface/yearsform.cpp" line="384"/>
-        <location filename="../src/interface/yearsform.cpp" line="399"/>
-        <location filename="../src/interface/yearsform.cpp" line="463"/>
-        <location filename="../src/interface/yearsform.cpp" line="527"/>
+        <location filename="../src/interface/yearsform.cpp" line="184"/>
+        <location filename="../src/interface/yearsform.cpp" line="324"/>
+        <location filename="../src/interface/yearsform.cpp" line="357"/>
+        <location filename="../src/interface/yearsform.cpp" line="372"/>
+        <location filename="../src/interface/yearsform.cpp" line="387"/>
+        <location filename="../src/interface/yearsform.cpp" line="402"/>
+        <location filename="../src/interface/yearsform.cpp" line="466"/>
+        <location filename="../src/interface/yearsform.cpp" line="530"/>
         <source>Invalid selected year</source>
         <translation>Khối không phù hợp</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="192"/>
+        <location filename="../src/interface/yearsform.cpp" line="195"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="193"/>
+        <location filename="../src/interface/yearsform.cpp" line="196"/>
         <source>Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?</source>
         <translation>Bạn thực sự muốn xóa khối %1 cũng như tất cả các nhóm lớp, nhóm con, tiết giảng và RB liên quan?</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="200"/>
+        <location filename="../src/interface/yearsform.cpp" line="203"/>
         <source>Removed the year %1.</source>
         <translation>Đã xóa năm %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="257"/>
+        <location filename="../src/interface/yearsform.cpp" line="260"/>
         <source>Moved the year %1 up.</source>
         <translation>Đã chuyển năm lên %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="292"/>
+        <location filename="../src/interface/yearsform.cpp" line="295"/>
         <source>Moved the year %1 down.</source>
         <translation>Đã chuyển năm xuống %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="302"/>
+        <location filename="../src/interface/yearsform.cpp" line="305"/>
         <source>Sorted the years.</source>
         <translation>Đã sắp xếp theo năm.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="363"/>
+        <location filename="../src/interface/yearsform.cpp" line="366"/>
         <source>Activated the year %1 (%2 activities).</source>
         <comment>%2 is the number of activated activities</comment>
         <translation>Đã kích hoạt năm %1 (%2 hoạt động).</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="378"/>
+        <location filename="../src/interface/yearsform.cpp" line="381"/>
         <source>Deactivated year %1 (%2 activities).</source>
         <comment>%2 is the number of deactivated activities</comment>
         <translation>Năm %1 đã ngừng hoạt động (%2 hoạt động).</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="450"/>
+        <location filename="../src/interface/yearsform.cpp" line="453"/>
         <source>Changed the comments for the year %1 from
 %2
 to
@@ -84302,12 +84286,12 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="474"/>
+        <location filename="../src/interface/yearsform.cpp" line="477"/>
         <source>Year long name</source>
         <translation>Tên dài một năm</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="514"/>
+        <location filename="../src/interface/yearsform.cpp" line="517"/>
         <source>Changed the long name for the year %1 from
 %2
 to
@@ -84318,12 +84302,12 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="538"/>
+        <location filename="../src/interface/yearsform.cpp" line="541"/>
         <source>Year code</source>
         <translation>Mã năm</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="578"/>
+        <location filename="../src/interface/yearsform.cpp" line="581"/>
         <source>Changed the code for the year %1 from
 %2
 to
@@ -84334,31 +84318,31 @@ thành
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="360"/>
+        <location filename="../src/interface/yearsform.cpp" line="363"/>
         <source>Activated a number of %1 activities</source>
         <translation>Đã kích hoạt %1 tiết giảng</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="375"/>
+        <location filename="../src/interface/yearsform.cpp" line="378"/>
         <source>Deactivated a number of %1 activities</source>
         <translation>Đã hủy kích hoạt một số tiết giảng %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="410"/>
+        <location filename="../src/interface/yearsform.cpp" line="413"/>
         <source>Students year comments</source>
         <translation>Nhận xét năm học của lớp học</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="412"/>
-        <location filename="../src/interface/yearsform.cpp" line="476"/>
-        <location filename="../src/interface/yearsform.cpp" line="540"/>
+        <location filename="../src/interface/yearsform.cpp" line="415"/>
+        <location filename="../src/interface/yearsform.cpp" line="479"/>
+        <location filename="../src/interface/yearsform.cpp" line="543"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="414"/>
-        <location filename="../src/interface/yearsform.cpp" line="478"/>
-        <location filename="../src/interface/yearsform.cpp" line="542"/>
+        <location filename="../src/interface/yearsform.cpp" line="417"/>
+        <location filename="../src/interface/yearsform.cpp" line="481"/>
+        <location filename="../src/interface/yearsform.cpp" line="545"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>

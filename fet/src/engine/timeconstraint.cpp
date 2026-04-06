@@ -79600,7 +79600,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDesc
 	if(!active)
 		begin="X - ";
 		
-	begin+="! ";
+	//begin+="! ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -79645,7 +79645,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDeta
 		timeslots.chop(translatedCommaSpace().size());
 		
 		QString s;
-		s+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); s+="\n";
+		//s+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); s+="\n";
 		s+=tr("Time constraint"); s+="\n";
 		s+=tr("Activities max total number of students in selected time slots"); s+="\n";
 		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
@@ -79672,7 +79672,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDeta
 	}
 	else{
 		QString begin;
-		begin+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); begin+="\n";
+		//begin+=tr("Warning: this constraint might slow down very much the generation! Please use only if strictly necessary, and with care!"); begin+="\n";
 		begin+=tr("Time constraint"); begin+="\n";
 		begin+=tr("Activities max total number of students in selected time slots"); begin+="\n";
 		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";

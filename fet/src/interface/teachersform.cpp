@@ -83,8 +83,6 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	connect(codePushButton, &QPushButton::clicked, this, &TeachersForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &TeachersForm::comments);
 
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &TeachersForm::colorsCheckBoxToggled);
-
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
 		connect(addShortcut, &QShortcut::activated, [=]{addTeacherPushButton->animateClick();});
@@ -143,6 +141,8 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &TeachersForm::colorsCheckBoxToggled);
+
 	teachersListWidget->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];

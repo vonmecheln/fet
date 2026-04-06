@@ -1,3 +1,6 @@
+ 7.7.8
+	- Critical crash bugs fixed in the students groups/subgroups dialogs, if the "Colors" check boxes were selected (reported by miky).
+	- Minor corrections and improvements.
  7.7.7
 	- Added three new types of space constraints: room(s) pair of mutually exclusive time slots, room(s) pair of mutually exclusive sets of time slots,
 	and room(s) occupy(ies) max sets of time slots from selection (suggested by Rodolfo Ribeiro Gomes). On this occasion, there were added the general

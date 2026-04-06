@@ -62,7 +62,6 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	connect(closePushButton, &QPushButton::clicked, this, &YearsForm::close);
 	connect(removeYearPushButton, &QPushButton::clicked, this, &YearsForm::removeYear);
 	
-	connect(yearsListWidget, &QListWidget::currentRowChanged, this, &YearsForm::yearChanged);
 	connect(modifyYearPushButton, &QPushButton::clicked, this, &YearsForm::modifyYear);
 
 	connect(moveYearUpPushButton, &QPushButton::clicked, this, &YearsForm::moveYearUp);
@@ -77,8 +76,6 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	connect(longNamePushButton, &QPushButton::clicked, this, &YearsForm::longName);
 	connect(codePushButton, &QPushButton::clicked, this, &YearsForm::code);
 	connect(commentsPushButton, &QPushButton::clicked, this, &YearsForm::comments);
-
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &YearsForm::colorsCheckBoxToggled);
 
 	if(SHORTCUT_PLUS){
 		QShortcut* addShortcut=new QShortcut(QKeySequence(Qt::Key_Plus), this);
@@ -138,6 +135,8 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
 	
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &YearsForm::colorsCheckBoxToggled);
+
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
@@ -146,6 +145,10 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 	
 	if(yearsListWidget->count()>0)
 		yearsListWidget->setCurrentRow(0);
+
+	connect(yearsListWidget, &QListWidget::currentRowChanged, this, &YearsForm::yearChanged);
+	
+	yearChanged();
 }
 
 YearsForm::~YearsForm()
