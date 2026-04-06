@@ -18642,12 +18642,6 @@ to
         <translation>Σ: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25067"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>Εξετάσεις</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25068"/>
         <source>Building min one activity in each available time slot</source>
         <translation>Κτίριο - ελάχιστη μία δραστηριότητα σε κάθε διαθέσιμη περίοδο</translation>
@@ -18665,44 +18659,43 @@ to
         <translation>Κ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25080"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>Χωρικός περιορισμός εξετάσεων</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25081"/>
+        <source>Space constraint</source>
+        <translation>Χωρικός περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25081"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25082"/>
         <source>A building has min one activity in each available time slot</source>
         <translation>Κτίριο έχει ελάχιστη μία δραστηριότητα σε κάθε διαθέσιμη περίοδο</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25082"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25083"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Ποσοστό βαρύτητας=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25083"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25084"/>
         <source>Building=%1</source>
         <translation>Κτίριο=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25086"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25087"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>Ενεργός χωρικός περιορισμός=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25090"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25091"/>
         <source>Comments=%1</source>
         <translation>Σχόλια=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25126"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25127"/>
         <source>Space constraint building min one activity in each available time slot broken for building %1, time slot&apos;s day %2, time slot&apos;s hour %3.</source>
         <translation>Δεν έχει τηρηθεί χωρικός περιορισμός «κτίριο - ελάχιστη μία δραστηριότητα σε κάθε διαθέσιμη περίοδο» για το κτίριο %1, ημέρα περιόδου %2, ώρα περιόδου=%3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25134"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25135"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Αυτό αυξάνει το σύνολο των συγκρούσεων κατά %1</translation>
     </message>
@@ -18710,62 +18703,55 @@ to
 <context>
     <name>ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25275"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25276"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>Σ: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25278"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>Εξετάσεις</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25279"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25280"/>
         <source>Buildings min one activity in each available time slot</source>
         <translation>Κτίρια - ελάχιστη μία δραστηριότητα σε κάθε διαθέσιμη περίοδο</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25280"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25281"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ΠΒ:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25290"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>Χωρικός περιορισμός εξετάσεων</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25292"/>
+        <source>Space constraint</source>
+        <translation>Χωρικός περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25291"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25293"/>
         <source>All buildings have min one activity in each available time slot</source>
         <translation>Όλα τα κτίρια έχουν ελάχιστη μία δραστηριότητα σε κάθε διαθέσιμη περίοδο</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25292"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25294"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Ποσοστό βαρύτητας=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25295"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25297"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>Ενεργός χωρικός περιορισμός=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25299"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25301"/>
         <source>Comments=%1</source>
         <translation>Σχόλια=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25335"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25337"/>
         <source>Space constraint buildings min one activity in each available time slot broken for building %1, time slot&apos;s day %2, time slot&apos;s hour %3.</source>
         <translation>Δεν έχει τηρηθεί χωρικός περιορισμός «κτίρια - ελάχιστη μία δραστηριότητα σε κάθε διαθέσιμη περίοδο» για το κτίριο %1, ημέρα περιόδου %2, ώρα περιόδου=%3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25343"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25345"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Αυτό αυξάνει το σύνολο των συγκρούσεων κατά %1</translation>
     </message>
@@ -19654,99 +19640,92 @@ to
 <context>
     <name>ConstraintRoomMaxActivitiesPerTeacher</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25486"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25488"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>Σ: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25489"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>Εξετάσεις</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25490"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25506"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25492"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25509"/>
         <source>Room max activities per teacher</source>
         <comment>A room respects a maximum number of activities per teacher.</comment>
         <translation>Αίθουσα - μέγιστες δραστηριότητες ανά εκπαιδευτικό</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25491"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25493"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ΠΒ:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25492"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25494"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>Αίθ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25494"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25496"/>
         <source>MAPT:%1</source>
         <comment>Max activities per teacher</comment>
         <translation>ΜΔΑΕ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25495"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25497"/>
         <source>KSRIAB:%1</source>
         <comment>Keep same room in a building</comment>
         <translation>ΔΙΑΣΚ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25505"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>Χωρικός περιορισμός εξετάσεων</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25508"/>
+        <source>Space constraint</source>
+        <translation>Χωρικός περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25507"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25510"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Ποσοστό βαρύτητας=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25508"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25511"/>
         <source>Room=%1</source>
         <translation>Αίθουσα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25510"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25513"/>
         <source>Max activities per teacher=%1</source>
         <translation>Μέγιστες δραστηριότητες ανά εκπαιδευτικό=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25513"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25516"/>
         <source>Keep same room in a building=%1</source>
         <translation>Διατήρηση ίδιας αίθουσας σε κτίριο=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25517"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25520"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>Ενεργός χωρικός περιορισμός=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25521"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25524"/>
         <source>Comments=%1</source>
         <translation>Σχόλια=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25533"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25536"/>
         <source>FET warning</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25534"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25537"/>
         <source>Constraint room max activities per teacher is wrong because it refers to nonexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Περιορισμός «αίθουσα - μέγιστες δραστηριότητες ανά εκπαιδευτικό» παρουσιάζει σφάλμα, διότι σχετίζεται με ανύπαρκτη αίθουσα. Παρακαλώ διορθώστε τον (η διαγραφή του περιορισμού ενδεχομένως να επιλύσει το πρόβλημα). Παρακαλώ ενημερώστε για το πιθανό σφάλμα λογισμικού (bug). Ο περιορισμός είναι:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25612"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25615"/>
         <source>Space constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation>Δεν έχει τηρηθεί χωρικός περιορισμός %1 - αυτό δεν έπρεπε να συμβεί, καθότι αυτός ο τύπος περιορισμού δεν μπορεί να έχει παρά μόνον 100.0% βαρύτητα. Παρακαλώ να αναφέρετε το σφάλμα!</translation>
     </message>
@@ -20574,76 +20553,69 @@ to
 <context>
     <name>ConstraintRoomsMaxActivitiesPerTeacher</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25747"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25750"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>Σ: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25750"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>Εξετάσεις</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25751"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25766"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25754"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25770"/>
         <source>Rooms max activities per teacher</source>
         <comment>All rooms respect a maximum number of activities per teacher.</comment>
         <translation>Αίθουσες - μέγιστες δραστηριότητες ανά εκπαιδευτικό</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25752"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25755"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ΠΒ:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25754"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25757"/>
         <source>MAPT:%1</source>
         <comment>Max activities per teacher</comment>
         <translation>ΜΔΑΕ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25755"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25758"/>
         <source>KSRIAB:%1</source>
         <comment>Keep same room in a building</comment>
         <translation>ΔΙΑΣΚ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25765"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>Χωρικός περιορισμός εξετάσεων</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25769"/>
+        <source>Space constraint</source>
+        <translation>Χωρικός περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25767"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25771"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Ποσοστό βαρύτητας=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25769"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25773"/>
         <source>Max activities per teacher=%1</source>
         <translation>Μέγιστες δραστηριότητες ανά εκπαιδευτικό=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25772"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25776"/>
         <source>Keep same room in a building=%1</source>
         <translation>Διατήρηση ίδιας αίθουσας σε κτίριο=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25776"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25780"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>Ενεργός χωρικός περιορισμός=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25780"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25784"/>
         <source>Comments=%1</source>
         <translation>Σχόλια=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25855"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25859"/>
         <source>Space constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation>Δεν έχει τηρηθεί χωρικός περιορισμός %1 - αυτό δεν έπρεπε να συμβεί, καθότι αυτός ο τύπος περιορισμού δεν μπορεί να έχει παρά μόνον 100.0% βαρύτητα. Παρακαλώ να αναφέρετε το σφάλμα!</translation>
     </message>
@@ -63188,8 +63160,8 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1022"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1043"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1064"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1077"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1092"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1081"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1100"/>
         <source>Help</source>
         <translation>Βοήθεια</translation>
     </message>
@@ -63551,22 +63523,6 @@ Please enter the new weight percentage:</source>
         <translation>Περιορισμοί: «Αίθουσες - καταλαμβάνουν μέγιστα σύνολα περιόδων από επιλογή»</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1055"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1074"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1089"/>
-        <source>This constraint is for exam timetables in certain countries.</source>
-        <translation>Ο περιορισμός αυτός είναι για ωρολόγια προγράμματα εξετάσεων σε ορισμένες χώρες.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1055"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1074"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1089"/>
-        <source>Please click the Help button for details!</source>
-        <translation>Παρακαλώ πατήστε το κουμπί «Βοήθεια» για λεπτομέρειες!</translation>
-    </message>
-    <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1035"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1056"/>
         <source>Note: For FET to be able to start the generation, you need to respect these conditions:</source>
@@ -63575,6 +63531,8 @@ Please enter the new weight percentage:</source>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1038"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1059"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1078"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1097"/>
         <source>- all the rooms must be real (not virtual)</source>
         <translation>- όλες οι αίθουσες πρέπει να είναι πραγματικές (όχι εικονικές)</translation>
     </message>
@@ -63584,95 +63542,106 @@ Please enter the new weight percentage:</source>
         <translation>Για αυτήν την αίθουσα θα τηρείται ο μέγιστος αριθμός δραστηριοτήτων για κάθε εκπαιδευτικό καθ&apos; όλη την διάρκεια της εβδομάδας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1090"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1077"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1096"/>
+        <source>Note: For FET to be able to start the generation, you need to respect this condition:</source>
+        <translation>Σημείωση: Για να μπορέσει το FET να ξεκινήσει την δημιουργία, πρέπει να τηρήσετε την εξής προϋπόθεση:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1094"/>
         <source>All rooms will respect the maximum number of activities for each teacher over the whole week.</source>
         <translation>Για όλες τις αίθουσες θα τηρείται ο μέγιστος αριθμός δραστηριοτήτων για κάθε εκπαιδευτικό καθ&apos; όλη την διάρκεια της εβδομάδας.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2910"/>
-        <source>For the affected room(s), we count the number of activities which have exactly a teacher, and for this teacher the count of his/her activities in the affected room(s) must be bounded by the specified maximum limit.</source>
-        <translation>Για την αίθουσα που επηρεάζεται (για τις αίθουσες που επηρεάζονται), μετράμε τον αριθμό των δραστηριοτήτων που έχουν ακριβώς έναν (μία) εκπαιδευτικό, και για αυτόν τον (αυτήν την) εκπαιδευτικό ο αριθμός των δραστηριοτήτων του (της) στην αίθουσα που επηρεάζεται (στις αίθουσες που επηρεάζονται) πρέπει να οριοθετείται από το καθορισμένο μέγιστο όριο.</translation>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2918"/>
+        <source>For each affected room we count the number of activities with each possible teacher, separately, and for this teacher the count of his/her activities in the affected room must be bounded by the specified maximum limit.</source>
+        <translation>Για κάθε αίθουσα που επηρεάζεται μετράμε τον αριθμό των δραστηριοτήτων με κάθε πιθανό(ή) εκπαιδευτικό, ξεχωριστά, και για αυτόν(ήν) τον/την εκπαιδευτικό ο αριθμός των δραστηριοτήτων του/της στην αίθουσα που επηρεάζεται πρέπει να περιορίζεται από το καθορισμένο μέγιστο όριο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <source>If an activity has two or more teachers, the constraint will be considered for each teacher, separately.</source>
+        <translation>Εάν μία δραστηριότητα έχει δύο ή περισσότερους εκπαιδευτικούς, ο περιορισμός θα ληφθεί υπόψη για κάθε εκπαιδευτικό, ξεχωριστά.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
         <source>If you select the option &apos;Keep same room in a building&apos; then, for each teacher who has activities in a certain building, the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).</source>
         <translation>Εάν επιλέξετε «Διατήρηση ίδιας αίθουσας σε κτίριο», τότε για κάθε εκπαιδευτικό ο οποίος έχει δραστηριότητες σε συγκεκριμένο κτίριο, η αίθουσα που επηρεάζεται (οι αίθουσες που επηρεάζονται) πρέπει να διατηρείται η ίδια (να διατηρούνται οι ίδιες) καθ&apos; όλη την διάρκεια της εβδομάδας (η αίθουσα είναι σταθερή για τον εκπαιδευτικό και το κτίριο).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2708"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2716"/>
         <source>Remove these selected space constraints?</source>
         <comment>Following is the list of detailed descriptions of the constraints marked for removal.</comment>
         <translation>Να διαγραφούν αυτοί οι επιλεγμένοι χωρικοί περιορισμοί;</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2787"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2802"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2817"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2832"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2847"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2862"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2880"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2905"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation>Αυτός ο περιορισμός προτάθηκε από τον (χρήστη) %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2790"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2798"/>
         <source>This constraint ensures that the specified room can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι η συγκεκριμένη αίθουσα μπορεί να έχει δραστηριότητες είτε στην πρώτη επιλεγμένη περίοδο είτε στην δεύτερη, αλλά όχι και στις δύο ταυτόχρονα. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2805"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2813"/>
         <source>This constraint ensures that the specified room can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι η συγκεκριμένη αίθουσα μπορεί να έχει δραστηριότητες είτε στο πρώτο σύνολο επιλεγμένων περιόδων είτε στο δεύτερο, αλλά όχι και στα δύο ταυτόχρονα. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2820"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2828"/>
         <source>This constraint ensures that the specified room can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι η συγκεκριμένη αίθουσα μπορεί να έχει δραστηριότητες σε έναν καθορισμένο μέγιστο αριθμό συνόλων περιόδων από επιλογή συνόλων περιόδων. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2835"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2843"/>
         <source>This constraint ensures that all the rooms can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι όλες οι αίθουσες μπορούν να έχουν δραστηριότητες είτε στην πρώτη επιλεγμένη περίοδο είτε στην δεύτερη, αλλά όχι και στις δύο ταυτόχρονα. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2850"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2858"/>
         <source>This constraint ensures that all the rooms can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι όλες οι αίθουσες μπορούν να έχουν δραστηριότητες είτε στο πρώτο σύνολο επιλεγμένων περιόδων είτε στο δεύτερο, αλλά όχι και στα δύο ταυτόχρονα. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2865"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2873"/>
         <source>This constraint ensures that all the rooms can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>Αυτός ο περιορισμός εξασφαλίζει ότι όλες οι αίθουσες μπορούν να έχουν δραστηριότητες σε έναν καθορισμένο μέγιστο αριθμό συνόλων περιόδων από επιλογή συνόλων περιόδων. Οι μη επιλεγμένες περίοδοι δεν υπόκεινται σε περιορισμούς.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2883"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2908"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2891"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
         <source>This constraint is used for exams in some countries, such as Algeria and Morocco.</source>
         <translation>Αυτός ο περιορισμός χρησιμοποιείται για εξετάσεις σε ορισμένες χώρες, όπως η Αλγερία και το Μαρόκο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2896"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2926"/>
         <source>You have some examples in the %1 directory of the FET examples, and you can read more on these two FET forum links: %2 and %3.</source>
         <translation>Έχετε μερικά παραδείγματα στον κατάλογο %1 των παραδειγμάτων του FET, και μπορείτε να διαβάσετε περισσότερα σε αυτούς τους δύο συνδέσμους του φόρουμ (forum) του FET: %2 και %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3374"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3384"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Τα σχόλια περιορισμού άλλαξαν.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3375"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3385"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Περιορισμός πριν:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3379"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3389"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Σχόλια μετά:</translation>
@@ -63700,13 +63669,13 @@ Please enter the new weight percentage:</source>
         <translation>Περιορισμοί: «Αίθουσα - μέγιστες ετικέτες δραστηριοτήτων ανά εβδομάδα από σύνολο»</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1210"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1255"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1218"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1263"/>
         <source>Filter</source>
         <translation>Φίλτρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1217"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1225"/>
         <source>Show related</source>
         <translation>Εμφάνιση σχετικών</translation>
     </message>
@@ -63751,250 +63720,250 @@ Please enter the new weight percentage:</source>
         <translation>Περιορισμοί: «Αίθουσα - μέγιστες δραστηριότητες ανά εκπαιδευτικό»</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1086"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1090"/>
         <source>Constraints rooms max activities per teacher</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation>Περιορισμοί: «Αίθουσες - μέγιστες δραστηριότητες ανά εκπαιδευτικό»</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1265"/>
         <source>Sorted</source>
         <comment>It refers to space constraints</comment>
         <translation>Ταξινομημένοι</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1275"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1283"/>
         <source>Activate</source>
         <translation>Ενεργοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1276"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1284"/>
         <source>Deactivate</source>
         <translation>Απενεργοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1277"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1285"/>
         <source>Weights</source>
         <translation>Βαρύτητα</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1278"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1286"/>
         <source>Comments</source>
         <translation>Σχόλια</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1280"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1288"/>
         <source>Add</source>
         <translation>Προσθήκη</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1281"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1289"/>
         <source>Modify</source>
         <translation>Τροποποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1283"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1291"/>
         <source>Remove</source>
         <translation>Διαγραφή</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1285"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1293"/>
         <source>Up</source>
         <translation>Πάνω</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1286"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1294"/>
         <source>Down</source>
         <translation>Κάτω</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1288"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1296"/>
         <source>Close</source>
         <translation>Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1503"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1511"/>
         <source>Advanced filter for space constraints</source>
         <translation>Προηγμένο φίλτρο για χωρικούς περιορισμούς</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2638"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3010"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3097"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3241"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3308"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3322"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
         <source>FET information</source>
         <translation>FET - Πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2638"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3322"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
         <source>Invalid selected constraint</source>
         <translation>Μη αποδεκτή επιλογή περιορισμού</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2688"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2696"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation>Η επιλογή σας περιλαμβάνει τον βασικό υποχρεωτικό χωρικό περιορισμό (τους βασικούς υποχρεωτικούς χωρικούς περιορισμούς). Θέλετε πραγματικά να διαγράψετε όλους τους επιλεγμένους περιορισμούς, συμπεριλαμβανομένου και αυτού του περιορισμού (συμπεριλαμβανομένων και αυτών των περιορισμών); Δεν μπορείτε να δημιουργήσετε ωρολόγιο πρόγραμμα χωρίς αυτόν τον περιορισμό (χωρίς αυτούς τους περιορισμούς).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2691"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2699"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Σημείωση: μπορείτε να προσθέσετε ξανά περιορισμό αυτού του τύπου από το μενού Δεδομένα -&gt; Χωρικοί περιορισμοί -&gt; Διάφοροι - &gt; Βασικοί υποχρεωτικοί χωρικοί περιορισμοί.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2694"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2702"/>
         <source>FET warning</source>
         <translation>FET - Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2712"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3191"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2720"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3201"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3267"/>
         <source>FET confirmation</source>
         <translation>FET - Επιβεβαίωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2721"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2721"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2722"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2730"/>
         <source>Removed %1 space constraints:</source>
         <translation>Διαγράφηκαν %1 χωρικοί περιορισμοί:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2775"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2783"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
         <translation>Για να χρησιμοποιήσετε αυτόν τον περιορισμό, θα πρέπει να καθορίσετε (επιλέξετε) ένα σύνολο δραστηριοτήτων και τον μέγιστο αριθμό των αιθουσών που καταλαμβάνουν οι δραστηριότητες αυτές. Σημειώστε ότι η κάθε δραστηριότητα μπορεί να πραγματοποιείται σε μία και μόνον αίθουσα, και αντίστροφα μία αίθουσα μπορεί να «φιλοξενήσει» μία και μόνον δραστηριότητα σε συγκεκριμένη χρονική στιγμή. Αυτός ο περιορισμός μπορεί να χρησιμοποιηθεί για παράδειγμα για να περιοριστούν οι δραστηριότητες του τύπου «Φυσική» μίας συγκεκριμένης ομάδας μαθητών, έτσι ώστε να πραγματοποιούνται όλες στην ίδια αίθουσα. Αυτό επιτυγχάνεται με την προσθήκη όλων των δραστηριοτήτων Φυσικής μίας συγκεκριμένης ομάδας μαθητών και καθορίζοντας τον μέγιστο αριθμό διαφορετικών αιθουσών = 1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2780"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2895"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2788"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2803"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2818"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2833"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2848"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2863"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2878"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2903"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2933"/>
         <source>FET help</source>
         <translation>FET - Βοήθεια</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2885"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2893"/>
         <source>Note that a building is not available in a time slot if there is a constraint break in that time slot, or if all the rooms in that building are not available in that time slot with a weight of 100% (not lower).</source>
         <translation>Σημειώστε ότι ένα κτίριο δεν είναι διαθέσιμο σε μία περίοδο, εάν υπάρχει περιορισμός διαλείμματος στην συγκεκριμένη περίοδο, ή εάν όλες οι αίθουσες σε αυτό το κτίριο δεν είναι διαθέσιμες σε αυτήν την περίοδο με ποσοστό βαρύτητας 100% (όχι χαμηλότερο).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2980"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2990"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>Αρ: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3010"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Για να μετακινήσετε χωρικό περιορισμό προς τα επάνω, το πλαίσιο ελέγχου «Ταξινομημένοι» δεν πρέπει να είναι τσεκαρισμένο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3065"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3075"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Περιορισμός μετακινήθηκε προς τα επάνω:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3097"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Για να μετακινήσετε χωρικό περιορισμό προς τα κάτω, το πλαίσιο ελέγχου «Ταξινομημένοι» δεν πρέπει να είναι τσεκαρισμένο.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3152"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3162"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Περιορισμός μετακινήθηκε προς τα κάτω:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3190"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3200"/>
         <source>Activate the selected space constraints?</source>
         <translation>Να ενεργοποιηθούν οι επιλεγμένοι χωρικοί περιορισμοί;</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3218"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3228"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation>Ενεργοποιήθηκαν %1 χωρικοί περιορισμοί:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3241"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
         <source>Activated %1 space constraints</source>
         <translation>Ενεργοποιήθηκαν %1 χωρικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3255"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3265"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation>Να απενεργοποιηθούν οι επιλεγμένοι χωρικοί περιορισμοί; (Σημειώστε ότι οι βασικοί υποχρεωτικοί χωρικοί περιορισμοί δεν θα απενεργοποιηθούν, ακόμη και εάν έχουν επιλεγεί.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3285"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3295"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation>Απενεργοποιήθηκαν %1 χωρικοί περιορισμοί:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3308"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
         <source>Deactivated %1 space constraints</source>
         <translation>Απενεργοποιήθηκαν %1 χωρικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3334"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3344"/>
         <source>Constraint comments</source>
         <translation>Σχόλια περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3336"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3346"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3338"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3348"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3405"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3415"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 χωρικοί περιορισμοί</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3429"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3439"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>Επιλογή πολλαπλών: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Κανένας περιορισμός από την επιλογή σας δεν μπορεί να αλλάξει την βαρύτητά του (να θυμάστε ότι ορισμένοι τύποι περιορισμών επιτρέπεται να έχουν βαρύτητα μόνον 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3467"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3468"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3477"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Τροποποίηση της βαρύτητας των επιλεγμένων χωρικών περιορισμών</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3460"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3470"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -64004,7 +63973,7 @@ Please enter the new weight percentage:</source>
 το νέο ποσοστό βαρύτητας:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3469"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3479"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -64019,7 +63988,7 @@ Please enter the new weight percentage:</source>
 εισαγάγετε το νέο ποσοστό βαρύτητας:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3507"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3517"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Άλλαξε η βαρύτητα των παρακάτω %1 επιλεγμένων χωρικών περιορισμών σε %2%:</translation>
@@ -68929,12 +68898,12 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>March</source>
         <translation>Μάρτιος</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>April</source>
         <translation>Απρίλιος</translation>
     </message>

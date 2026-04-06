@@ -15348,7 +15348,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="13721"/>
         <source>Space constraint activities occupy max different rooms broken</source>
-        <translation>قيد مكاني أنشطة تختل أقصى قاغات مختلفة تم كسره</translation>
+        <translation>قيد مكاني أنشطة تحتل أقصى قاغات مختلفة تم كسره</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="13723"/>
@@ -18650,12 +18650,6 @@ to
         <translation>تع: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25067"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>امتحان</translation>
-    </message>
-    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25068"/>
         <source>Building min one activity in each available time slot</source>
         <translation>بناية لها نشاط واحد على الأقل في كل فترة زمنية متاحة</translation>
@@ -18673,44 +18667,43 @@ to
         <translation>ب:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25080"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>قيد مكان الامتحان</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25081"/>
+        <source>Space constraint</source>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25081"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25082"/>
         <source>A building has min one activity in each available time slot</source>
         <translation>بناية لها نشاط واحد على الأقل في كل فترة زمنية متاحة</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25082"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25083"/>
         <source>Weight (percentage)=%1%</source>
         <translation>الوزن (النسبي)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25083"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25084"/>
         <source>Building=%1</source>
         <translation>البناية=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25086"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25087"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>قيد المكان مفعل=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25090"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25091"/>
         <source>Comments=%1</source>
         <translation>تعليقات=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25126"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25127"/>
         <source>Space constraint building min one activity in each available time slot broken for building %1, time slot&apos;s day %2, time slot&apos;s hour %3.</source>
         <translation>القيد المكاني بناية لها نشاط واحد على الأقل في كل فترة زمنية متاحة تم كسره للبناية %1، يوم الفترة الزمنية %2، ساعة الفترة الزمنية %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25134"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25135"/>
         <source>This increases the conflicts total by %1</source>
         <translation>هذا يزيد من مجموع التعارضات بِ %1</translation>
     </message>
@@ -18718,62 +18711,55 @@ to
 <context>
     <name>ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25275"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25276"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>تع: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25278"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>امتحان</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25279"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25280"/>
         <source>Buildings min one activity in each available time slot</source>
         <translation>بنايات لها نشاط واحد على الأقل في كل فترة زمنية متاحة</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25280"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25281"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>وزن:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25290"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>قيد مكان الامتحان</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25292"/>
+        <source>Space constraint</source>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25291"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25293"/>
         <source>All buildings have min one activity in each available time slot</source>
         <translation>كل البنايات لها نشاط واحد على الأقل في كل فترة زمنية متاحة</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25292"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25294"/>
         <source>Weight (percentage)=%1%</source>
         <translation>الوزن (النسبي)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25295"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25297"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>قيد المكان مفعل=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25299"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25301"/>
         <source>Comments=%1</source>
         <translation>تعليقات=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25335"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25337"/>
         <source>Space constraint buildings min one activity in each available time slot broken for building %1, time slot&apos;s day %2, time slot&apos;s hour %3.</source>
         <translation>القيد الزمني بنايات لها نشاط واحد على الأقل في كل فترة زمنية متاحة تم كسره للبناية %1، يوم الفترة الزمنية %2، ساعة الفترة الزمنية %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25343"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25345"/>
         <source>This increases the conflicts total by %1</source>
         <translation>هذا يزيد من مجموع التعارضات بِ %1</translation>
     </message>
@@ -19669,99 +19655,92 @@ to
 <context>
     <name>ConstraintRoomMaxActivitiesPerTeacher</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25486"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25488"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>تع: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25489"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>امتحان</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25490"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25506"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25492"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25509"/>
         <source>Room max activities per teacher</source>
         <comment>A room respects a maximum number of activities per teacher.</comment>
         <translation>أقصى أنشطة في القاعة لكل مدرس</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25491"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25493"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>وزن:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25492"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25494"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>ق:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25494"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25496"/>
         <source>MAPT:%1</source>
         <comment>Max activities per teacher</comment>
         <translation>أألم:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25495"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25497"/>
         <source>KSRIAB:%1</source>
         <comment>Keep same room in a building</comment>
         <translation>ابنقفب:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25505"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>قيد مكان الامتحان</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25508"/>
+        <source>Space constraint</source>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25507"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25510"/>
         <source>Weight (percentage)=%1%</source>
         <translation>الوزن (النسبي)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25508"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25511"/>
         <source>Room=%1</source>
         <translation>القاعة=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25510"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25513"/>
         <source>Max activities per teacher=%1</source>
         <translation>أقصى أنشطة لكل مدرس=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25513"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25516"/>
         <source>Keep same room in a building=%1</source>
         <translation>احتفظ بنفس القاعة في البناية=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25517"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25520"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>قيد المكان مفعل=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25521"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25524"/>
         <source>Comments=%1</source>
         <translation>تعليقات=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25533"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25536"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25534"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25537"/>
         <source>Constraint room max activities per teacher is wrong because it refers to nonexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>قيد أقصى أنشطة في القاعة لكل مدرس هو خاطئ لأنه يشير لقاعة غير موجودة. فضلا صححه (الحذف قد يكون هو الحل). فضلا ارفع تقريرا عن خطأ محتمل. القيد هو:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25612"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25615"/>
         <source>Space constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation>قيد المكان %1 تم كسره - هذا لا ينبغي أن يحدث، كما أن هذا النوع من القيود ينبغي أن يكون له 100.0% كوزن فقط. فضلا ارفع تقريرا عن الخطأ!</translation>
     </message>
@@ -20588,77 +20567,70 @@ to
 <context>
     <name>ConstraintRoomsMaxActivitiesPerTeacher</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25747"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25750"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>تع: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25750"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>امتحان</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25751"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25766"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25754"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25770"/>
         <source>Rooms max activities per teacher</source>
         <comment>All rooms respect a maximum number of activities per teacher.</comment>
         <translation>أقصى أنشطة في القاعات لكل مدرس</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25752"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25755"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>وزن:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25754"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25757"/>
         <source>MAPT:%1</source>
         <comment>Max activities per teacher</comment>
         <translation>أألم:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25755"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25758"/>
         <source>KSRIAB:%1</source>
         <comment>Keep same room in a building</comment>
         <translatorcomment>احتفظ بنفس القاعة في البناية</translatorcomment>
         <translation>ابنقفب:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25765"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>قيد مكان الامتحان</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25769"/>
+        <source>Space constraint</source>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25767"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25771"/>
         <source>Weight (percentage)=%1%</source>
         <translation>الوزن (النسبي)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25769"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25773"/>
         <source>Max activities per teacher=%1</source>
         <translation>أقصى أنشطة لكل مدرس=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25772"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25776"/>
         <source>Keep same room in a building=%1</source>
         <translation>احتفظ بنفس القاعة في البناية=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25776"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25780"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>قيد المكان مفعل=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25780"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25784"/>
         <source>Comments=%1</source>
         <translation>تعليقات=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25855"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25859"/>
         <source>Space constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation>قيد المكان %1 تم كسره - هذا لا ينبغي أن يحدث، كما أن هذا النوع من القيود ينبغي أن يكون له 100.0% كوزن فقط. فضلا ارفع تقريرا عن الخطأ!</translation>
     </message>
@@ -22345,7 +22317,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="15272"/>
         <source>Space constraint</source>
-        <translation>قيد مكاني</translation>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="15274"/>
@@ -28935,7 +28907,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="14491"/>
         <source>Space constraint</source>
-        <translation>قيد مكاني</translation>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="14493"/>
@@ -29212,7 +29184,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="11098"/>
         <source>Space constraint students set max room changes per week broken for students=%1</source>
-        <translation>قيد المكان أقصى تغييرات القاعة في اليوم في الأسبوع لمجموعة طلاب تم كسره للطلاب=%1</translation>
+        <translation>قيد المكان أقصى تغييرات القاعة في الأسبوع لمجموعة طلاب تم كسره للطلاب=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="11101"/>
@@ -35682,7 +35654,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="14759"/>
         <source>Space constraint</source>
-        <translation>قيد مكاني</translation>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="14761"/>
@@ -35899,7 +35871,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12581"/>
         <source>Teacher max room changes per week</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع للمدرس</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12583"/>
@@ -35927,7 +35899,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12599"/>
         <source>Teacher maximum room changes per week</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع للمدرس</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12601"/>
@@ -35942,7 +35914,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12605"/>
         <source>Maximum room changes per week=%1</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع=%1</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12608"/>
@@ -35958,7 +35930,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12682"/>
         <source>Space constraint teacher max room changes per week broken for teacher=%1</source>
-        <translation>قيد المكان أقصى تغييرات القاعة في اليوم في الأسبوع للمدرس تم كسره للمدرس=%1</translation>
+        <translation>قيد المكان أقصى تغييرات القاعة في الأسبوع للمدرس تم كسره للمدرس=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12685"/>
@@ -41551,7 +41523,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="15016"/>
         <source>Space constraint</source>
-        <translation>قيد مكاني</translation>
+        <translation>القيد المكاني</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="15018"/>
@@ -41751,7 +41723,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12847"/>
         <source>Teachers maximum room changes per week</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع للمدرسين</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12849"/>
@@ -41761,7 +41733,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12851"/>
         <source>Maximum room changes per week=%1</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع=%1</translation>
+        <translation>أقصى تغييرات القاعةفي الأسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12854"/>
@@ -41777,7 +41749,7 @@ to
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12927"/>
         <source>Space constraint teachers max room changes per week broken for teacher=%1</source>
-        <translation>قيد المكان أقصى تغييرات القاعة في اليوم في الأسبوع للمدرسين تم كسره للمدرس=%1</translation>
+        <translation>قيد المكان أقصى تغييرات القاعة في الأسبوع للمدرسين تم كسره للمدرس=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="12930"/>
@@ -51197,7 +51169,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2963"/>
         <source>Max room changes per week for all students</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع لكل الطلاب</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2964"/>
@@ -51222,12 +51194,12 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2968"/>
         <source>Max room changes per week for a teacher</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع للمدرس</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2969"/>
         <source>Max room changes per week for all teachers</source>
-        <translation>أقصى تغييرات القاعة في اليوم في الأسبوع لكل المدرسين</translation>
+        <translation>أقصى تغييرات القاعة في الأسبوع لكل المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2970"/>
@@ -56510,7 +56482,7 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="23333"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per week with weight under 100%. Please correct and try again</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد قيد مكاني &quot;أقصى تغييرات القاعة في اليوم في الأسبوع للطلاب&quot; مع وزن أقل من 100%. يرجى تصحيح ذلك و المحاولة من جديد</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد قيد مكاني &quot;أقصى تغييرات القاعة في الأسبوع للطلاب&quot; مع وزن أقل من 100%. يرجى تصحيح ذلك و المحاولة من جديد</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="23372"/>
@@ -56535,12 +56507,12 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="23496"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per week with weight under 100%. Please correct and try again</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد قيد مكاني &quot;أقصى تغييرات القاعة في اليوم في الأسبوع للمدرس&quot; مع وزن أقل من 100%. يرجى تصحيح ذلك و المحاولة من جديد</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد قيد مكاني &quot;أقصى تغييرات القاعة في الأسبوع للمدرس&quot; مع وزن أقل من 100%. يرجى تصحيح ذلك و المحاولة من جديد</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="23518"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per week with weight under 100%. Please correct and try again</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد قيد مكاني &quot;أقصى تغييرات القاعة في اليوم في الأسبوع للمدرسين مع وزن أقل من 100%. يرجى تصحيح ذلك و المحاولة من جديد</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد قيد مكاني &quot;أقصى تغييرات القاعة في الأسبوع للمدرسين مع وزن أقل من 100%. يرجى تصحيح ذلك و المحاولة من جديد</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="23557"/>
@@ -63039,8 +63011,8 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1022"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1043"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1064"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1077"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1092"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1081"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1100"/>
         <source>Help</source>
         <translation>مساعدة</translation>
     </message>
@@ -63402,35 +63374,38 @@ Please enter the new weight percentage:</source>
         <translation>قيود قاعات تحتل أقصى حد من مجموعات محددة من الفترات الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1055"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1074"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1089"/>
-        <source>Please click the Help button for details!</source>
-        <translation>فضلا اضغط زر المساعدة لتفاصيل أكثر!</translation>
-    </message>
-    <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1075"/>
         <source>This room will respect the maximum number of activities for each teacher over the whole week.</source>
         <translation>هذه القاعة ستحترم أقصى عدد من الأنشطة لكل مدرس على مدار الأسبوع بأكمله.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1090"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1077"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1096"/>
+        <source>Note: For FET to be able to start the generation, you need to respect this condition:</source>
+        <translation>ملاحظة: لكي يتمكن  FET من البدء في عملية الإنتاج، يجب مراعاة هذا الشرط:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1094"/>
         <source>All rooms will respect the maximum number of activities for each teacher over the whole week.</source>
         <translation>كل القاعات ستحترم أقصى عدد من الأنشطة لكل مدرس على مدار الأسبوع بأكمله.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2910"/>
-        <source>For the affected room(s), we count the number of activities which have exactly a teacher, and for this teacher the count of his/her activities in the affected room(s) must be bounded by the specified maximum limit.</source>
-        <translation>بالنسبة للقاعة (القاعات) المعنية، نقوم بحساب عدد الأنشطة التي يوجد بها مدرس واحد بالضبط، وبالنسبة لهذا المدرس، يجب أن يكون عدد أنشطته في القاعة (القاعات) المعنية محدودا بالحد الأقصى المحدد.</translation>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2918"/>
+        <source>For each affected room we count the number of activities with each possible teacher, separately, and for this teacher the count of his/her activities in the affected room must be bounded by the specified maximum limit.</source>
+        <translation>بالنسبة لكل قاعة معينة، نقوم بحساب عدد الأنشطة مع كل مدرس محتمل، بشكل منفصل، وبالنسبة لهذا المدرس، يجب أن يكون عدد أنشطته في القاعة المعينة محدودًا بالحد الأقصى المحدد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <source>If an activity has two or more teachers, the constraint will be considered for each teacher, separately.</source>
+        <translation>إذا كان لنشاط ما مدرسان أو أكثر، القيد سيأخذ في الاعتبار كل مدرس، على حدة.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
         <source>If you select the option &apos;Keep same room in a building&apos; then, for each teacher who has activities in a certain building, the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).</source>
         <translation>إذا قمت بتحديد خيار &apos;احتفظ بنفس القاعة في البناية&apos;، فعندئذ يجب أن تظل القاعة (القاعات) المعنية هي نفسها طوال الأسبوع لكل مدرس لديه أنشطة في بناية معينة (القاعة هي ثابتة بالنسبة للمدرس وللبناية).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2708"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2716"/>
         <source>Remove these selected space constraints?</source>
         <comment>Following is the list of detailed descriptions of the constraints marked for removal.</comment>
         <translation>حذف هذه القيود المكانية المحددة؟</translation>
@@ -63442,62 +63417,62 @@ Please enter the new weight percentage:</source>
         <translation>قيود بناية لها نشاط واحد على الأقل في كل فترة زمنية متاحة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2787"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2802"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2817"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2832"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2847"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2862"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2880"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2905"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation>هذا القيد تم اقتراحه من طرف: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2790"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2798"/>
         <source>This constraint ensures that the specified room can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن للقاعة المحددة امكانية أن يكون لها أنشطة إما في الفترة الزمنية الأولى المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2805"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2813"/>
         <source>This constraint ensures that the specified room can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن للقاعة المحددة امكانية أن يكون لها أنشطة إما في الفترة الزمنية الأولى المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2820"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2828"/>
         <source>This constraint ensures that the specified room can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن للقاعة المحددة إمكانية أن يكون لها أنشطة ضمن أقصى عدد معين من مجموعات الفترات الزمنية المحددة. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2835"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2843"/>
         <source>This constraint ensures that all the rooms can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن لكل القاعات امكانية أن يكون لها أنشطة إما في الفترة الزمنية الأولى المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2850"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2858"/>
         <source>This constraint ensures that all the rooms can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن لكل القاعات امكانية أن يكون لها أنشطة إما في الفترة الزمنية الأولى المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2865"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2873"/>
         <source>This constraint ensures that all the rooms can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن لكل القاعات إمكانية أن يكون لها أنشطة ضمن أقصى عدد معين من مجموعات الفترات الزمنية المحددة. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3374"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3384"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>تم تغيير تعليقات أحد القيود.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3375"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3385"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>القيد قبل:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3379"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3389"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>القيد بعد:</translation>
@@ -63543,19 +63518,19 @@ Please enter the new weight percentage:</source>
         <translation>قيود أقصى أنشطة في القاعة لكل مدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1086"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1090"/>
         <source>Constraints rooms max activities per teacher</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation>قيود أقصى أنشطة في القاعات لكل مدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1210"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1255"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1218"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1263"/>
         <source>Filter</source>
         <translation>فرز</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1217"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1225"/>
         <source>Show related</source>
         <translation>عرض الارتباطات</translation>
     </message>
@@ -63570,14 +63545,6 @@ Please enter the new weight percentage:</source>
         <translation>الألوان</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1055"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1074"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1089"/>
-        <source>This constraint is for exam timetables in certain countries.</source>
-        <translation>هذا القيد مصمم لجداول زمن الامتحانات في بعض البلدان.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1035"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1056"/>
         <source>Note: For FET to be able to start the generation, you need to respect these conditions:</source>
@@ -63586,6 +63553,8 @@ Please enter the new weight percentage:</source>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1038"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1059"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1078"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1097"/>
         <source>- all the rooms must be real (not virtual)</source>
         <translation>- كل القاعات يجب أن تكون حقيقية (لا افتراضية)</translation>
     </message>
@@ -63596,256 +63565,256 @@ Please enter the new weight percentage:</source>
         <translation>قيود بنايات لها نشاط واحد على الأقل في كل فترة زمنية متاحة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1265"/>
         <source>Sorted</source>
         <comment>It refers to space constraints</comment>
         <translation>ترتيب</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1275"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1283"/>
         <source>Activate</source>
         <translation>تفعيل</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1276"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1284"/>
         <source>Deactivate</source>
         <translation>تعطيل</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1277"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1285"/>
         <source>Weights</source>
         <translation>الأوزان</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1278"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1286"/>
         <source>Comments</source>
         <translation>تعليقات</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1280"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1288"/>
         <source>Add</source>
         <translation>اضافة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1281"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1289"/>
         <source>Modify</source>
         <translation>تعديل</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1283"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1291"/>
         <source>Remove</source>
         <translation>حذف</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1285"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1293"/>
         <source>Up</source>
         <translation>أعلى</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1286"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1294"/>
         <source>Down</source>
         <translation>أسفل</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1288"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1296"/>
         <source>Close</source>
         <translation>غلق</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1503"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1511"/>
         <source>Advanced filter for space constraints</source>
         <translation>فرز متقدم للقيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2638"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3010"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3097"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3241"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3308"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3322"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2638"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3322"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
         <source>Invalid selected constraint</source>
         <translation>اختيار خاطئ للقيد</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2688"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2696"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation>يحتوي اختيارك على قيود المكان الإجبارية الأساسية. هل تريد حقًا إزالة جميع القيود المحددة، بما في ذلك هذا القيد (القيود)؟ لا يمكنك إنشاء جدول زمني بدون هذا(هذه) القيد (القيود).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2691"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2699"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>ملاحظة: يمكن أن تضيف مجددا هذا النوع من القيد من القائمة بيانات -&gt; قيود مكانية -&gt; متنوع -&gt; قيود مكانية اجبارية أساسية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2694"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2702"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2712"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3191"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2720"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3201"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3267"/>
         <source>FET confirmation</source>
         <translation>FET تأكيد</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2721"/>
         <source>Yes</source>
         <translation>نعم</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2721"/>
         <source>No</source>
         <translation>لا</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2722"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2730"/>
         <source>Removed %1 space constraints:</source>
         <translation>تم حذف %1 من قيود المكان:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2775"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2783"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
         <translation>لاستخدام هذا القيد، تحتاج لتحديد مجموعة من الأنشطة و أقصى عدد لقاعات مختلفة يمكن ان تحتلها هذه الأنشطة. لاحظ أن كل نشاط يمكنها أن تأخذ مكانا في قاعة واحدة، و أن قاعة واحدة يمكنها أن تحتجز نشاطا واحدا خلال فترة زمنية ما.هذا القيد يمكن استخدامه على سبيل المثال لاجبار كل أنشطة من نوع فيزياء لمجموعة معينة من الطلاب أن تكون في نفس القاعة على مدار الأسبوع، و ذلك باضافة كل أنشطة الفيزياء لمجموعة الطلاب هذه و جعل أقصى قاعات مختلفة = 1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2780"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2895"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2788"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2803"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2818"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2833"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2848"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2863"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2878"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2903"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2933"/>
         <source>FET help</source>
         <translation>FET مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2883"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2908"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2891"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
         <source>This constraint is used for exams in some countries, such as Algeria and Morocco.</source>
         <translation>هذا القيد يستخدم من أجل بناء جداول الامتحانات في بعض البلدان، على غرار الجزائر والمغرب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2885"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2893"/>
         <source>Note that a building is not available in a time slot if there is a constraint break in that time slot, or if all the rooms in that building are not available in that time slot with a weight of 100% (not lower).</source>
         <translation>لاحظ أن البناية غير متاحة في فترة زمنية معينة إذا كان هناك قيد أوقات غير متاحة في تلك الفترة الزمنية، أو إذا لم تكن جميع القاعات في تلك البناية متاحة في تلك الفترة الزمنية بوزن 100% (ليس أقل).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2896"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2926"/>
         <source>You have some examples in the %1 directory of the FET examples, and you can read more on these two FET forum links: %2 and %3.</source>
         <translation>لديك بعض الأمثلة في المجلد %1 الخاص بأمثلة FET، وبإمكانك قراءة المزيد في هذين الرابطين من المنتدى: %2 و %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2980"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2990"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>عدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3010"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3065"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3075"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>تم نقل القيد للأعلى:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3097"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3152"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3162"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>تم نقل القيد للأسفل:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3190"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3200"/>
         <source>Activate the selected space constraints?</source>
         <translation>تفعيل هذه القيود المكانية المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3218"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3228"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation>تم تفعيل %1 من القيود المكانية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3241"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
         <source>Activated %1 space constraints</source>
         <translation>تم تفعيل %1 من القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3255"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3265"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation>تعطيل القيود المكانية المحددة؟ (لاحظ أن القيود المكانية الاجبارية الأساسية لن يتم تعطيلها، حتى وإن تم تحديدها.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3285"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3295"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation>تم تعطيل %1 من القيود المكانية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3308"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
         <source>Deactivated %1 space constraints</source>
         <translation>تم تعطيل %1 من القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3334"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3344"/>
         <source>Constraint comments</source>
         <translation>تعليقات القيود</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3336"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3346"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3338"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3348"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3405"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3415"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 قيود مكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3429"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3439"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها أن يكون لها الوزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3467"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3468"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3477"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود المكانية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3460"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3470"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -63853,7 +63822,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3469"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3479"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -63867,7 +63836,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3507"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3517"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود المكانية التالية المحددة إلى %2%:</translation>
@@ -68751,12 +68720,12 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>March</source>
         <translation>مارس</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>April</source>
         <translation>أفريل</translation>
     </message>

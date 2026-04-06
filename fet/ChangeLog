@@ -1,3 +1,9 @@
+ 7.8.4
+	- Corrected and improved the instructions for the new constraints of type room(s) max activities per teacher and building(s) min one
+	activity in each available slot.
+	- Corrected the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+	- Updated the Italian translation, by Andrea Primiani.
  7.8.3
 	- Converted the constraints of type building(s) min one activity in each non-break time slot to the similar constraints of type building(s)
 	min one activity in each available time slot (suggested by Benahmed Abdelkrim). Also, these constraints must no longer be applied to all the

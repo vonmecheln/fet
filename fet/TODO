@@ -13052,6 +13052,19 @@ a) A warning if you try to generate multiple timetables at once. It should disal
 
 b) A warning with EACH single generation. Because users will forget after some time that they fixed the seed.
 
+---
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6782.msg38081#msg38081
+
+On 2026-03-29 ptrdtznr provided the code changes for this option, with the following text:
+
+I've added a new GroupBox within the Settings menu to house these options. Here is a quick breakdown of how it's currently functioning:
+
+- Scope: This is strictly for the "Generate" (single generation) function. It will not apply to "Multiple" generations to avoid any conflicts with batch processing.
+- Persistent Warnings: I've added a warning that triggers with every single generation. Since it's easy to forget that a seed has been fixed, I wanted to ensure
+users don't accidentally get stuck with identical results without realizing why.
+- Auto-Reset Logic: For safety and to keep the default behavior clean, the feature is automatically disabled every time you restart FET.
+
 837---------------------------------------------------------
 From GUEFFAZ REDA (on Facebook):
 
@@ -13132,3 +13145,66 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6804.0
 
 The statistics for MA mode show only data for half-days. Is it possible to add columns that show data for full days (mornings + afternoons), such as gaps, hours?
 (min and max).
+
+847---------------------------------------------------------
+From Anthony Siaudeau (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=3707.msg38079#msg38079
+
+I'm encountering a problem in the same context that I don't know how to handle. I've attached a minimal file that illustrates my issue.
+Let's say that teacher1 wants to have the same time slot every real week (except in exceptional cases) with the students1 group, and that Thursday in week2 is
+a holiday. Given that teacher2 teaches chemistry to the same group, students1, in two 3-hour blocks—either on Monday, Tuesday, or Thursday in week2.
+
+My constraints are as follows:
+teacher1's activities start at the same time (90% of the time)
+minimum days between teacher1's activities is 5 (95% of the time)
+maximum days between teacher1's activities is 25 (100% of the time)
+
+The proposed percentages are to prevent FET from searching for a solution for too long.
+
+The problem is that sometimes FET will propose a solution where Teacher1 has classes in the same time slot every actual week except week2 which is the expected
+behavior—but sometimes it may also propose a solution with classes on Tuesday in week1 and on Mondays in weeks 3 through 6.
+To avoid this, I haven't found any other solution than to remove teacher1's activity in week 2 from the constraint "minimum days between teacher1 activities
+is 5 to 95%" and to add a constraint of the type "minimum days between teacher1's activities in week1 and week3 is 10."
+However, I don't know in advance whether Teacher1 will have a problem with the holiday in week2; this is due to the scheduling of teacher2's class, which is
+constrained by the holiday.
+
+In other words, I feel like I have to, by default, perform this adjustment for all activities in a given week whenever there's a specific issue like unavailable
+students or a holiday (which happens, in my case, every other week).
+
+How can I use Terms mode to simulate a constraint like this: teacher1's activities are on the same real day (95% of time)?
+
+Liviu Lalescu:
+
+I think new development would be needed for this, in maybe a new constraint to do this: specify in the constraint a set of n activities, and say that at least n-1
+of them must be on the same real day and at the same hour, in the Terms mode.
+
+848---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4448.msg38096#msg38096
+
+Sometimes during exams, some teachers have to be assigned to certain rooms so that they stay for a full day (or 1/2 day and maybe for all days/week).
+To do this, I think we need to add a space constraint, for example: max room changes in a given day for a teacher.
+
+However, using this constraint will make it impossible to use the recently added constraint: a(all) room's max activities per teacher, unless if we make
+max activities > 1 ...
+
+---
+
+I achieved this by adding the following constraints:
+2 time constraints: activity has a preferred starting time, activities are regrouped
+and
+1 space constraint: activities occupies max different rooms (max different =1)
+
+I attach 2 files showing the method mentioned above.
+
+849---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6772.msg38133#msg38133
+
+Room(s) max activities for a teacher?
+
+Is it possible to add the constraint "room(s) max activities for a teacher" which would apply individually to each teacher, in case some teachers need
+more than one activity in a room, while other teachers have max activities=1?

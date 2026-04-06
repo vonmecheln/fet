@@ -4001,25 +4001,25 @@ Numero sub-attività in ogni attività suddivisa=%6</translation>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2352"/>
         <source>Add building min one activity in each available time slot</source>
         <comment>The title of the dialog to add a new constraint of this type</comment>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi edificio min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2356"/>
         <source>Modify building min one activity in each available time slot</source>
         <comment>The title of the dialog to modify a new constraint of this type</comment>
-        <translation type="unfinished"></translation>
+        <translation>Modifica edificio min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2369"/>
         <source>Add buildings min one activity in each available time slot</source>
         <comment>The title of the dialog to add a new constraint of this type</comment>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi edifici min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2373"/>
         <source>Modify buildings min one activity in each available time slot</source>
         <comment>The title of the dialog to modify a new constraint of this type</comment>
-        <translation type="unfinished"></translation>
+        <translation>Modifica edifici min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifyspaceconstraint.cpp" line="2383"/>
@@ -18935,135 +18935,121 @@ a
         <location filename="../src/engine/spaceconstraint.cpp" line="25064"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">C: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25067"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation type="unfinished"></translation>
+        <translation>C: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25068"/>
         <source>Building min one activity in each available time slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Edificio min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25069"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">PP:%1%</translation>
+        <translation>PP:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25070"/>
         <source>B:%1</source>
         <comment>Building</comment>
-        <translation type="unfinished">E:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25080"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation type="unfinished">Vincolo spazio esame</translation>
+        <translation>E:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25081"/>
-        <source>A building has min one activity in each available time slot</source>
-        <translation type="unfinished"></translation>
+        <source>Space constraint</source>
+        <translation>Vincolo di spazio</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25082"/>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Peso (percentuale)=%1%</translation>
+        <source>A building has min one activity in each available time slot</source>
+        <translation>Un edificio ha min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25083"/>
-        <source>Building=%1</source>
-        <translation type="unfinished">Edificio=%1</translation>
+        <source>Weight (percentage)=%1%</source>
+        <translation>Peso (percentuale)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25086"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25084"/>
+        <source>Building=%1</source>
+        <translation>Edificio=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25087"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
-        <translation type="unfinished">Vincolo di spazio abilitato=%1</translation>
+        <translation>Vincolo di spazio abilitato=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25090"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25091"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Commenti=%1</translation>
+        <translation>Commenti=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25126"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25127"/>
         <source>Space constraint building min one activity in each available time slot broken for building %1, time slot&apos;s day %2, time slot&apos;s hour %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vincolo di spazio edificio min 1 attività in ogni ora disponibile è infranto per l&apos;edificio %1, giorno %2, ora %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25134"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25135"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Aumenta i conflitti di %1</translation>
+        <translation>Aumenta i conflitti di %1</translation>
     </message>
 </context>
 <context>
     <name>ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25275"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25276"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">C: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25278"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25279"/>
-        <source>Buildings min one activity in each available time slot</source>
-        <translation type="unfinished"></translation>
+        <translation>C: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25280"/>
+        <source>Buildings min one activity in each available time slot</source>
+        <translation>Edifici min 1 attività in ogni ora disponibile</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25281"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">PP:%1%</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25290"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation type="unfinished">Vincolo spazio esame</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25291"/>
-        <source>All buildings have min one activity in each available time slot</source>
-        <translation type="unfinished"></translation>
+        <translation>PP:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="25292"/>
-        <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Peso (percentuale)=%1%</translation>
+        <source>Space constraint</source>
+        <translation>Vincolo di spazio</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25295"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25293"/>
+        <source>All buildings have min one activity in each available time slot</source>
+        <translation>Tutti gli edifici hanno min 1 attività in ogni ora disponibile</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25294"/>
+        <source>Weight (percentage)=%1%</source>
+        <translation>Peso (percentuale)=%1%</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25297"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
-        <translation type="unfinished">Vincolo di spazio abilitato=%1</translation>
+        <translation>Vincolo di spazio abilitato=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25299"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25301"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Commenti=%1</translation>
+        <translation>Commenti=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25335"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25337"/>
         <source>Space constraint buildings min one activity in each available time slot broken for building %1, time slot&apos;s day %2, time slot&apos;s hour %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vincolo di spazio tutti gli edifici min 1 attività in ogni ora disponibile è infranto per l&apos;edificio %1, giorno %2, ora %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25343"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25345"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Aumenta i conflitti di %1</translation>
+        <translation>Aumenta i conflitti di %1</translation>
     </message>
 </context>
 <context>
@@ -20010,99 +19996,92 @@ a
 <context>
     <name>ConstraintRoomMaxActivitiesPerTeacher</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25486"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25488"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>C: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25489"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>Esami</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25490"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25506"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25492"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25509"/>
         <source>Room max activities per teacher</source>
         <comment>A room respects a maximum number of activities per teacher.</comment>
         <translation>Aula max attività per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25491"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25493"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25492"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25494"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>A:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25494"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25496"/>
         <source>MAPT:%1</source>
         <comment>Max activities per teacher</comment>
         <translation>MAPI:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25495"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25497"/>
         <source>KSRIAB:%1</source>
         <comment>Keep same room in a building</comment>
         <translation>MSAIE:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25505"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>Vincolo spazio esame</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25508"/>
+        <source>Space constraint</source>
+        <translation>Vincolo di spazio</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25507"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25510"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Peso (percentuale)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25508"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25511"/>
         <source>Room=%1</source>
         <translation>Aula=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25510"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25513"/>
         <source>Max activities per teacher=%1</source>
         <translation>Max attività per insegnante=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25513"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25516"/>
         <source>Keep same room in a building=%1</source>
         <translation>Mantieni stessa aula in un edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25517"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25520"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>Vincolo di spazio abilitato=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25521"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25524"/>
         <source>Comments=%1</source>
         <translation>Commenti=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25533"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25536"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25534"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25537"/>
         <source>Constraint room max activities per teacher is wrong because it refers to nonexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo aula max attività per insegnante è errato perché si riferisce ad un&apos;aula inesistente. Correggere (eliminare il vincolo potrebbe essere una soluzione). Segnalare il possibile bug. Il vincolo è
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25612"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25615"/>
         <source>Space constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation>Vincolo di spazio %1 infranto - non dovrebbe accadere, questo vincolo può avere solo peso 100%. Segnalare l&apos;errore!</translation>
     </message>
@@ -20936,76 +20915,69 @@ a
 <context>
     <name>ConstraintRoomsMaxActivitiesPerTeacher</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25747"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25750"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>C: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25750"/>
-        <source>Exam</source>
-        <comment>Exam space constraint, meaning a space constraint designed for exams timetables</comment>
-        <translation>Esame</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25751"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25766"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25754"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25770"/>
         <source>Rooms max activities per teacher</source>
         <comment>All rooms respect a maximum number of activities per teacher.</comment>
         <translation>Aule max attività per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25752"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25755"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25754"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25757"/>
         <source>MAPT:%1</source>
         <comment>Max activities per teacher</comment>
         <translation>MAPI:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25755"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25758"/>
         <source>KSRIAB:%1</source>
         <comment>Keep same room in a building</comment>
         <translation>MSAIE:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25765"/>
-        <source>Exam space constraint</source>
-        <comment>A space constraint designed for exams timetables</comment>
-        <translation>Vincolo spazio esame</translation>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25769"/>
+        <source>Space constraint</source>
+        <translation>Vincolo di spazio</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25767"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25771"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Peso (percentuale)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25769"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25773"/>
         <source>Max activities per teacher=%1</source>
         <translation>Max attività per insegnante=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25772"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25776"/>
         <source>Keep same room in a building=%1</source>
         <translation>Mantieni stessa aula in un edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25776"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25780"/>
         <source>Active space constraint=%1</source>
         <comment>Represents a yes/no value, if a space constraint is active or not, %1 is yes or no</comment>
         <translation>Vincolo di spazio abilitato=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25780"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25784"/>
         <source>Comments=%1</source>
         <translation>Commenti=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="25855"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="25859"/>
         <source>Space constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation>Vincolo di spazio %1 infranto - non dovrebbe accadere, questo vincolo può avere solo peso 100%. Segnalare l&apos;errore!</translation>
     </message>
@@ -48381,12 +48353,12 @@ Se si ha un sottogruppo con poche ore di lavoro alla settimana significa che si 
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="14080"/>
         <source>Each real room must be occupied by at least a teacher, so you can use the constraints building(s) min one activity in each available slot.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogni aula reale deve essere occupata almeno da un insegnante, per poter usare i vincoli edificio/i min 1 attività in ogni ora disponibile.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="14082"/>
         <source>(An available time slot for a building is a time slot in which there is no break constraint and in which not all rooms of that building are not available with a 100% weight, meaning that at least a room is (possibly) available.)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Un&apos;ora disponibile per un edificio è un&apos;ora in cui non c&apos;è un vincolo di intervallo e in cui non tutte le aule di quell&apos;edificio risultano non disponibili con un peso del 100%, e quindi almeno un&apos;aula è possibilmente disponibile).</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="14085"/>
@@ -48578,7 +48550,7 @@ Se si ha un sottogruppo con poche ore di lavoro alla settimana significa che si 
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="14076"/>
         <source>The problem was that each FET room could host a single activity in a certain time slot, while in the exams a room can host two teachers (or three) in a certain time slot. So, %1 had the idea to consider a FET building = a real room. There are these FET buildings, and for each real room there correspond two FET rooms (or three), with only slightly different names, and each such two (or three) rooms with similar names are placed in a corresponding FET building.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il problema era che ogni aula FET può ospitare una singola attività in una certa ora, mentre durante gli esami un&apos;aula può ospitare due insegnanti (o tre) in ogni ora. Quindi %1 ha avuto l&apos;idea di considerare un edificio FET = un&apos;aula reale. Ci sono quindi degli edifici FET, e per ogni aula reale ci sono due (o tre) aule FET con nomi leggermente diversi; tutte queste aule con nomi simili vengono poste in un edificio FET corrispondente.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="14088"/>
@@ -53406,12 +53378,12 @@ Se si ha un sottogruppo con poche ore di lavoro alla settimana significa che si 
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2868"/>
         <source>A building has min one activity in each available time slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Un edificio ha min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2869"/>
         <source>All buildings have min one activity in each available time slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutti gli edifici hanno min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2934"/>
@@ -57888,42 +57860,42 @@ Si prega di modificare i dati di conseguenza e riprovare</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="24990"/>
         <source>Cannot optimize, because there is a space constraint building min one activity in each available time slot with weight under 100%. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste un vincolo di spazio Edificio min 1 attività in ogni ora con peso minore di 100%. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25010"/>
         <source>Cannot optimize, because there is a space constraint buildings min one activity in each available time slot with weight under 100%. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste un vincolo di spazio Edifici min 1 attività in ogni ora con peso minore di 100%. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25073"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and you have at least a virtual room. To use these constraints all rooms must be real (not virtual). Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste almeno un vincolo di spazio Aula/e min 1 attività per ogni ora ed esiste almeno un&apos;aula virtuale. Per usare questo vincolo tutte le aule devono essere reali (non virtuali). Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25087"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and room %1 is not in a building. To use these constraints each room must be in a certain building. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste almeno un vincolo di spazio Aula/e min 1 attività per ogni ora e l&apos;aula %1 non è in un edificio. Per usare questo vincolo tutte le aule devono essere in un edificio. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25111"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and you have activity id %1 which has no related preferred room(s) constraint(s) with weight 100%. To use these constraints each activity must have at least an associated preferred room(s) constraint (not home room(s)) with weight 100%. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste almeno un vincolo di spazio Aula/e min 1 attività per ogni ora e l&apos;attività con ID %1 non ha vincoli collegati di aula/e preferita/e con peso 100%. Per usare questo vincolo tutte le aule devono avere almeno un vincolo collegato di aula/e preferita/e con peso 100%. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25177"/>
         <source>Cannot optimize, because you have a space constraint building(s) min one activity in each available time slot affecting building %1 and it is impossible to respect this constraint for this building, because the total duration of activities possibly being scheduled in this building by preferred room(s) constraints is %2, which is less than the total number of available hours per week for this building, which is %3. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste un vincolo di spazio Aula/e min 1 attività per ogni ora che riguarda l&apos;edificio %1 ma è impossibile rispettare questo vincolo, perché la durata totale delle attività programmabili in questo edificio ricavata dai vincoli di aula/e preferenziale/i è %2, che è minore del totale delle ore settimanali disponibili per questo edificio che è %3. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25197"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and it is impossible to respect this(these) constraint(s), because the total duration of activities which will possibly be scheduled in an affected building is %1, which is less than the total number of available hours per week for the affected buildings, which is %2. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste almeno un vincolo di spazio Aula/e min 1 attività per ogni ora ma è impossibile rispettare questo vincolo, perché la durata totale delle attività programmabili in un edificio è %1, che è minore del totale delle ore settimanali disponibili per l&apos;edificio che è %2. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="25221"/>
         <source>Cannot optimize, because you have a space constraint building(s) min one activity in each available time slot affecting building %1 and it is impossible to respect this constraint for this building, because the building has no room(s). Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile ottimizzare, perché esiste un vincolo di spazio Aula/e min 1 attività per ogni ora che riguarda l&apos;edificio %1 ma è impossibile rispettare questo vincolo, perché l&apos;edificio non ha aule. Correggere e riprovare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6682"/>
@@ -64517,8 +64489,8 @@ Inserire il nuovo peso percentuale:</translation>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1022"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1043"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1064"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1077"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1092"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1081"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1100"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
@@ -64880,22 +64852,6 @@ Inserire il nuovo peso percentuale:</translation>
         <translation>Vincoli aule occupano max insiemi di ore da una selezione</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1055"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1074"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1089"/>
-        <source>This constraint is for exam timetables in certain countries.</source>
-        <translation>Questo vincolo serve per gli orari degli esami in alcuni paesi.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1034"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1055"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1074"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1089"/>
-        <source>Please click the Help button for details!</source>
-        <translation>Clic su Aiuto per i dettagli!</translation>
-    </message>
-    <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1035"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1056"/>
         <source>Note: For FET to be able to start the generation, you need to respect these conditions:</source>
@@ -64904,6 +64860,8 @@ Inserire il nuovo peso percentuale:</translation>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1038"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1059"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1078"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1097"/>
         <source>- all the rooms must be real (not virtual)</source>
         <translation>- tutte le aule devono essere reali (nessuna virtuale)</translation>
     </message>
@@ -64913,95 +64871,90 @@ Inserire il nuovo peso percentuale:</translation>
         <translation>Questa aula avrà un numero max di attività per ogni insegnante durante l&apos;intera settimana.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1090"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1094"/>
         <source>All rooms will respect the maximum number of activities for each teacher over the whole week.</source>
         <translation>Tutte le aule avranno un numero max di attività per ogni insegnante durate l&apos;intera settimana.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2910"/>
-        <source>For the affected room(s), we count the number of activities which have exactly a teacher, and for this teacher the count of his/her activities in the affected room(s) must be bounded by the specified maximum limit.</source>
-        <translation>Per l(e)aula/e coinvolta/e, si conta il numero di attività con esattamente un insegnante e per questo insegnante il numero delle attività in quell&apos;aula/e sarà vincolato al limite max impostato.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
         <source>If you select the option &apos;Keep same room in a building&apos; then, for each teacher who has activities in a certain building, the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).</source>
         <translation>Se si seleziona l&apos;opzione &apos;Mantieni stessa aula in un edificio&apos;, per ogni insegnante che ha attività in un certo edificio l&apos;aula/le aule occupata/e dovrà rimanere la stessa in tutta la settimana (stessa aula per insegnante ed edificio).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2708"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2716"/>
         <source>Remove these selected space constraints?</source>
         <comment>Following is the list of detailed descriptions of the constraints marked for removal.</comment>
         <translation>Eliminare questi vincoli di spazio selezionati?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2787"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2802"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2817"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2832"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2847"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2862"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2880"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2905"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation>Questo vincolo è stato suggerito da %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2790"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2798"/>
         <source>This constraint ensures that the specified room can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Questo vincolo assicura che l&apos;aula indicata abbia attività o nella prima ora selezionata o nella seconda, ma non in entrambe contemporaneamente. Le ore non selezionate non sono soggette al vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2805"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2813"/>
         <source>This constraint ensures that the specified room can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Questo vincolo assicura che l&apos;aula indicata abbia attività nel primo insieme di ore selezionate o nel secondo, ma non in entrambi contemporaneamente. Le ore non selezionate non sono soggette al vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2820"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2828"/>
         <source>This constraint ensures that the specified room can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>Questo vincolo assicura che l&apos;aula selezionata abbia attività in un max numero indicato di insiemi di ore da una selezione di insiemi di ore. Le ore non selezionate non sono soggette al vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2835"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2843"/>
         <source>This constraint ensures that all the rooms can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Questo vincolo assicura che tutte le aule abbiano attività o nella prima ora selezionata o nella seconda, ma non in entrambe contemporaneamente. Le ore non selezionate non sono soggette al vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2850"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2858"/>
         <source>This constraint ensures that all the rooms can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Questo vincolo assicura che tutte le aule abbiano attività o nella primo insieme di ora selezionato o nel secondo, ma non in entrambi contemporaneamente. Le ore non selezionate non sono soggette al vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2865"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2873"/>
         <source>This constraint ensures that all the rooms can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>Questo vincolo assicura che tutte le aule abbiano attività in un max numero indicato di insiemi di ore da una selezione di insiemi di ore. Le ore non selezionate non sono soggette al vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2883"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2908"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2891"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
         <source>This constraint is used for exams in some countries, such as Algeria and Morocco.</source>
         <translation>Questo vincolo è usato per gli esami in alcuni paesi tra cui Algeria e Marocco.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2896"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2926"/>
         <source>You have some examples in the %1 directory of the FET examples, and you can read more on these two FET forum links: %2 and %3.</source>
         <translation>Si possono trovare alcuni esempi nella cartella %1 degli esempi FET; si può trovare altro a questo proposito nel forum FET ai link %2 e %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3374"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3384"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Cambiati i commenti di un vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3375"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3385"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Vincolo prima:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3379"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3389"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Commenti dopo:</translation>
@@ -65029,13 +64982,13 @@ Inserire il nuovo peso percentuale:</translation>
         <translation>Vincoli aula max chiavi attività la settimana da una selezione</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1210"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1255"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1218"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1263"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1217"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1225"/>
         <source>Show related</source>
         <translation>Mostra collegati</translation>
     </message>
@@ -65053,7 +65006,7 @@ Inserire il nuovo peso percentuale:</translation>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1031"/>
         <source>Constraints building min one activity in each available time slot</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vincoli edificio min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1039"/>
@@ -65071,7 +65024,7 @@ Inserire il nuovo peso percentuale:</translation>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1052"/>
         <source>Constraints buildings min one activity in each available time slot</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vincoli edifici min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="1071"/>
@@ -65080,250 +65033,266 @@ Inserire il nuovo peso percentuale:</translation>
         <translation>Vincoli aula max attività per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1086"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1077"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1096"/>
+        <source>Note: For FET to be able to start the generation, you need to respect this condition:</source>
+        <translation>Nota: per poter avviare il calcolo dell&apos;orario, deve essere rispettata questa condizione:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1090"/>
         <source>Constraints rooms max activities per teacher</source>
         <comment>The title of the dialog to list the constraints of this type</comment>
         <translation>Vincoli aule max attività per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1265"/>
         <source>Sorted</source>
         <comment>It refers to space constraints</comment>
         <translation>Ordinati</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1275"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1283"/>
         <source>Activate</source>
         <translation>Abilita</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1276"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1284"/>
         <source>Deactivate</source>
         <translation>Disabilita</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1277"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1285"/>
         <source>Weights</source>
         <translation>Pesi</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1278"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1286"/>
         <source>Comments</source>
         <translation>Commenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1280"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1288"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1281"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1289"/>
         <source>Modify</source>
         <translation>Modifica</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1283"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1291"/>
         <source>Remove</source>
         <translation>Rimuovi</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1285"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1293"/>
         <source>Up</source>
         <translation>Su</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1286"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1294"/>
         <source>Down</source>
         <translation>Giù</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1288"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1296"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="1503"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="1511"/>
         <source>Advanced filter for space constraints</source>
         <translation>Filtro avanzato per vincoli di spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2638"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3010"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3097"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3241"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3308"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3322"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2638"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3322"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
         <source>Invalid selected constraint</source>
         <translation>Vincolo selezionato non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2688"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2696"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation>La selezione contiene anche i vincoli di spazio minimi obbligatori. Rimuovere tutti i vincoli selezionati, inclusi questi? Non si può calcolare un orario senza questo/i vincolo/i.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2691"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2699"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Nota: si può aggiungere nuovamente un vincolo di questo tipo dal menu Dati / Vincoli di spazio / Vari / Vincoli di spazio obbligatori.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2694"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2702"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2712"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3191"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3257"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2720"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3201"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3267"/>
         <source>FET confirmation</source>
         <translation>FET - Conferma</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2721"/>
         <source>Yes</source>
         <translation>Sì</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2713"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2721"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2722"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2730"/>
         <source>Removed %1 space constraints:</source>
         <translation>Rimossi %1 vincoli di spazio:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2775"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2783"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
         <translation>Per utilizzare questo vincolo si dovrà specificare un insieme di attività ed il massimo numero di aule diverse che potranno essere occupate da queste attività. Notare che ogni attività può occupare una sola aula e un&apos;aula singola può ospitare una sola attività per volta. Questo vincolo può essere utile ad esempio ad allocare tutte le attività di Fisica di determinate classi in una stessa aula nel corso della settimana, aggiungendo tutte le attività di Fisica di queste classi e indicando il numero massimo di aule diverse = 1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2780"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2895"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2788"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2803"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2818"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2833"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2848"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2863"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2878"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2903"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2933"/>
         <source>FET help</source>
         <translation>FET - Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2885"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2893"/>
         <source>Note that a building is not available in a time slot if there is a constraint break in that time slot, or if all the rooms in that building are not available in that time slot with a weight of 100% (not lower).</source>
-        <translation type="unfinished"></translation>
+        <translation>Notare che un edificio non è disponibile in un&apos;ora se esiste un vincolo di pausa in quell&apos;ora, o se tutte le aule di quell&apos;edificio non sono disponibili in quell&apos;ora con un peso del 100% (non meno).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2980"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2918"/>
+        <source>For each affected room we count the number of activities with each possible teacher, separately, and for this teacher the count of his/her activities in the affected room must be bounded by the specified maximum limit.</source>
+        <translation>Per ogni aula coinvolta si conta il numero di attività con ogni possibile insegnante separatamente; e per questo insegnante il totale delle sue attività nell&apos;aula specificata deve essere vincolato dal limite massimo indicato.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <source>If an activity has two or more teachers, the constraint will be considered for each teacher, separately.</source>
+        <translation>Se un&apos;attività ha due o più insegnanti, il vincolo verrà considerato per ogni insegnante separatamente.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2990"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>N: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3010"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Per spostare in su un vincolo di spazio, la casella &apos;Ordina&apos; non deve essere selezionata.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3065"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3075"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Un vincolo è stato spostato in su:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3097"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Per spostare in giù un vincolo di spazio, la casella &apos;Ordina&apos; non deve essere selezionata.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3152"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3162"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Un vincolo è stato spostato in giù:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3190"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3200"/>
         <source>Activate the selected space constraints?</source>
         <translation>Attivare i vincoli di spazio selezionati?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3218"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3228"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation>Attivati %1 vincoli di spazio:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3241"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
         <source>Activated %1 space constraints</source>
         <translation>Abilitati %1 vincoli di spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3255"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3265"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation>Disattivare i vincoli di spazio selezionati? (notare che i vincoli di base obbligatori non verranno disattivati anche se selezionati)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3285"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3295"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation>Disattivati %1 vincoli di spazio:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3308"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
         <source>Deactivated %1 space constraints</source>
         <translation>Disabilitati %1 vincoli di spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3334"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3344"/>
         <source>Constraint comments</source>
         <translation>Commenti sul vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3336"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3346"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3338"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3348"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3405"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3415"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 vincoli di spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3429"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3439"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>Selezione multipla: %1/%2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Nessun vincolo tra quelli selezionati può essere modificato nel peso (ricordare che alcuni tipi di vincoli possono avere solo peso 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3467"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3468"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3477"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Modifica il peso dei vincoli di spazio selezionati</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3460"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3470"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -65331,7 +65300,7 @@ Please enter the new weight percentage:</source>
 Inserire il nuovo peso percentuale:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3469"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3479"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -65345,7 +65314,7 @@ possono avere solo peso 100%, quindi
 Inserire il nuovo peso percentuale:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3507"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3517"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Modificato a %2% il peso dei seguenti %1 vincoli di spazio selezionati:</translation>
@@ -70281,12 +70250,12 @@ consentito: 0,0%-100,0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>March</source>
         <translation>Marzo</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>April</source>
         <translation>aprile</translation>
     </message>
@@ -72986,12 +72955,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="18839"/>
         <source>File contains constraint building min one activity in each non-break time slot, which is old (it was improved in FET 7.8.3), and will be converted to the similar constraint of this type, constraint building min one activity in each available slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Il file contiene vincoli Edificio min 1 attività in ogni ora non di pausa, che è stato eliminato (in FET 7.8.3). Verrà convertito nell&apos;equivalente vincolo Edificio min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="18851"/>
         <source>File contains constraint buildings min one activity in each non-break time slot, which is old (it was improved in FET 7.8.3), and will be converted to the similar constraint of this type, constraint buildings min one activity in each available slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Il file contiene vincoli Edifici min 1 attività in ogni ora non di pausa, che è stato eliminato (in FET 7.8.3). Verrà convertito nell&apos;equivalente vincolo Edifici min 1 attività in ogni ora disponibile</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="18869"/>

@@ -25064,7 +25064,7 @@ QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDescription(
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	//s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
 	s+=tr("Building min one activity in each available time slot");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("B:%1", "Building").arg(this->building);
@@ -25077,7 +25077,8 @@ QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDetailedDesc
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
 
-	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A building has min one activity in each available time slot");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Building=%1").arg(this->building);s+="\n";
@@ -25275,7 +25276,7 @@ QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDescription
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 	
 	QString s;
-	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	//s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
 	s+=tr("Buildings min one activity in each available time slot");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
@@ -25287,7 +25288,8 @@ QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDetailedDes
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
 
-	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	QString s=tr("Space constraint");s+="\n";
 	s+=tr("All buildings have min one activity in each available time slot");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
@@ -25486,7 +25488,7 @@ QString ConstraintRoomMaxActivitiesPerTeacher::getDescription(Rules& r)
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s=QString("");
-	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	//s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
 	s+=tr("Room max activities per teacher", "A room respects a maximum number of activities per teacher.");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
@@ -25502,7 +25504,8 @@ QString ConstraintRoomMaxActivitiesPerTeacher::getDetailedDescription(Rules&r, b
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
 
-	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	QString s=tr("Space constraint");s+="\n";
 	s+=tr("Room max activities per teacher", "A room respects a maximum number of activities per teacher.");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Room=%1").arg(this->room);s+="\n";
@@ -25747,7 +25750,7 @@ QString ConstraintRoomsMaxActivitiesPerTeacher::getDescription(Rules& r)
 		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
 
 	QString s=QString("");
-	s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
+	//s+=tr("Exam", "Exam space constraint, meaning a space constraint designed for exams timetables");s+=QString(": ");
 	s+=tr("Rooms max activities per teacher", "All rooms respect a maximum number of activities per teacher.");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 
@@ -25762,7 +25765,8 @@ QString ConstraintRoomsMaxActivitiesPerTeacher::getDetailedDescription(Rules&r, 
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
 
-	QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
+	QString s=tr("Space constraint");s+="\n";
 	s+=tr("Rooms max activities per teacher", "All rooms respect a maximum number of activities per teacher.");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 

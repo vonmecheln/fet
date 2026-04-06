@@ -1031,8 +1031,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints building min one activity in each available time slot", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsBuildingMinOneActivityInEachAvailableTimeSlot");
 
-				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
-				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
+				//firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
 													//+tr("- each building must have this constraint")+"\n"
 													//+tr("- all the activities must have duration 1")+"\n"
 													+tr("- all the rooms must be real (not virtual)")+"\n"
@@ -1052,8 +1052,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints buildings min one activity in each available time slot", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsBuildingsMinOneActivityInEachAvailableTimeSlot");
 
-				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
-				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
+				//firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				firstInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect these conditions:")+"\n"
 													//+tr("- each building must have this constraint")+"\n"
 													//+tr("- all the activities must have duration 1")+"\n"
 													+tr("- all the rooms must be real (not virtual)")+"\n"
@@ -1071,8 +1071,12 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints room max activities per teacher", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsRoomMaxActivitiesPerTeacher");
 
-				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
-				secondInstructionsLabel=new QLabel(tr("This room will respect the maximum number of activities for each teacher over the whole week."));
+				//firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				firstInstructionsLabel=new QLabel(tr("This room will respect the maximum number of activities for each teacher over the whole week."));
+
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect this condition:")+"\n"
+													+tr("- all the rooms must be real (not virtual)")
+												  );
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -1086,8 +1090,12 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				dialogTitle=tr("Constraints rooms max activities per teacher", "The title of the dialog to list the constraints of this type");
 				dialogName=QString("ConstraintsRoomsMaxActivitiesPerTeacher");
 
-				firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
-				secondInstructionsLabel=new QLabel(tr("All rooms will respect the maximum number of activities for each teacher over the whole week."));
+				//firstInstructionsLabel=new QLabel(tr("This constraint is for exam timetables in certain countries.")+QString(" ")+tr("Please click the Help button for details!"));
+				firstInstructionsLabel=new QLabel(tr("All rooms will respect the maximum number of activities for each teacher over the whole week."));
+
+				secondInstructionsLabel=new QLabel(tr("Note: For FET to be able to start the generation, you need to respect this condition:")+"\n"
+													+tr("- all the rooms must be real (not virtual)")
+												  );
 
 				helpPushButton=new QPushButton(tr("Help"));
 
@@ -2907,8 +2915,10 @@ void ListSpaceConstraints::helpClicked()
 				s+="\n\n";
 				s+=tr("This constraint is used for exams in some countries, such as Algeria and Morocco.");
 				s+="\n\n";
-				s+=tr("For the affected room(s), we count the number of activities which have exactly a teacher, and for this teacher the count of his/her activities"
-				 " in the affected room(s) must be bounded by the specified maximum limit.");
+				s+=tr("For each affected room we count the number of activities with each possible teacher, separately, and for this teacher the"
+				 " count of his/her activities in the affected room must be bounded by the specified maximum limit.");
+				s+=" ";
+				s+=tr("If an activity has two or more teachers, the constraint will be considered for each teacher, separately.");
 				s+="\n\n";
 				s+=tr("If you select the option 'Keep same room in a building' then, for each teacher who has activities in a certain building,"
 				 " the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).");
