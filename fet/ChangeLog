@@ -1,5 +1,9 @@
+ 7.8.0
+	- Critical crash bugs fixed in the students groups/subgroups dialogs (following the report by miky).
  7.7.8
 	- Critical crash bugs fixed in the students groups/subgroups dialogs, if the "Colors" check boxes were selected (reported by miky).
+	- Removed the warnings that the constraints of type "activities max total number of students in selected time slots" can be very slow;
+	hopefully the constraints of this type work correctly.
 	- Minor corrections and improvements.
  7.7.7
 	- Added three new types of space constraints: room(s) pair of mutually exclusive time slots, room(s) pair of mutually exclusive sets of time slots,

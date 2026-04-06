@@ -786,5 +786,7 @@ void GroupsForm::code()
 
 void GroupsForm::colorsCheckBoxToggled()
 {
-	groupChanged(groupsListWidget->currentItem()->text());
+	if(groupsListWidget->count()>0)
+		if(groupsListWidget->currentRow()>=0 && groupsListWidget->currentRow()<groupsListWidget->count())
+			groupChanged(groupsListWidget->currentItem()->text());
 }

@@ -589,5 +589,7 @@ void YearsForm::code()
 
 void YearsForm::colorsCheckBoxToggled()
 {
-	yearChanged();
+	if(yearsListWidget->count()>0)
+		if(yearsListWidget->currentRow()>=0 && yearsListWidget->currentRow()<yearsListWidget->count())
+			yearChanged();
 }

@@ -736,5 +736,7 @@ void TeachersForm::code()
 
 void TeachersForm::colorsCheckBoxToggled()
 {
-	teacherChanged(teachersListWidget->currentRow());
+	if(teachersListWidget->count()>0)
+		if(teachersListWidget->currentRow()>=0 && teachersListWidget->currentRow()<teachersListWidget->count())
+			teacherChanged(teachersListWidget->currentRow());
 }

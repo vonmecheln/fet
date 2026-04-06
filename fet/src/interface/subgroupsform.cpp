@@ -911,5 +911,7 @@ void SubgroupsForm::code()
 
 void SubgroupsForm::colorsCheckBoxToggled()
 {
-	subgroupChanged(subgroupsListWidget->currentItem()->text());
+	if(subgroupsListWidget->count()>0)
+		if(subgroupsListWidget->currentRow()>=0 && subgroupsListWidget->currentRow()<subgroupsListWidget->count())
+			subgroupChanged(subgroupsListWidget->currentItem()->text());
 }

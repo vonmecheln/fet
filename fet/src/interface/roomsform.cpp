@@ -719,5 +719,7 @@ void RoomsForm::code()
 
 void RoomsForm::colorsCheckBoxToggled()
 {
-	roomChanged(roomsListWidget->currentRow());
+	if(roomsListWidget->count()>0)
+		if(roomsListWidget->currentRow()>=0 && roomsListWidget->currentRow()<roomsListWidget->count())
+			roomChanged(roomsListWidget->currentRow());
 }
