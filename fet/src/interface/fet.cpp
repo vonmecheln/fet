@@ -329,6 +329,7 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 		TIMETABLE_HTML_LEVEL=2;
 	}
 	TIMETABLES_SUBGROUPS_SORTED=settings.value("timetables-subgroups-sorted", "false").toBool();
+	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=settings.value("timetables-activities-sorted-by-tags", "false").toBool();
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=settings.value("print-activity-tags", "true").toBool();
 	
 	TIMETABLE_HTML_PRINT_SUBJECTS=settings.value("print-subjects", "true").toBool();
@@ -1166,6 +1167,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("print-rooms", TIMETABLE_HTML_PRINT_ROOMS);
 	
 	settings.setValue("timetables-subgroups-sorted", TIMETABLES_SUBGROUPS_SORTED);
+	settings.setValue("timetables-activities-sorted-by-tags", TIMETABLES_ACTIVITIES_SORTED_BY_TAGS);
 	settings.setValue("print-detailed-timetables", PRINT_DETAILED_HTML_TIMETABLES);
 	settings.setValue("print-detailed-teachers-free-periods-timetables", PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS);
 	settings.setValue("print-activities-with-same-starting-time", PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME);

@@ -1249,6 +1249,8 @@
      <addaction name="separator"/>
      <addaction name="settingsOrderSubgroupsInTimetablesAction"/>
      <addaction name="separator"/>
+     <addaction name="settingsActivitiesOrderedByTagsInTimetablesAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsDivideTimetablesByDaysAction"/>
      <addaction name="settingsDuplicateVerticalNamesAction"/>
      <addaction name="separator"/>
@@ -2138,7 +2140,7 @@
   </action>
   <action name="settingsDataToPrintInTimetablesAction">
    <property name="text">
-    <string comment="It is a menu item, means that the user selects the data to print in the timetables (he can turn on/off printing of subjects, activity tags, teachers, students, and rooms)">Data to print in timetables</string>
+    <string comment="It is a menu item, means that the user selects the data to print in the timetables (he/she can turn on/off printing of subjects, activity tags, teachers, students, and rooms)">Data to print in timetables</string>
    </property>
   </action>
   <action name="restoreDataStateAction">
@@ -2226,6 +2228,17 @@
   <action name="helpExamsAlgeriaMoroccoAction">
    <property name="text">
     <string>Exams in Algeria and Morocco</string>
+   </property>
+  </action>
+  <action name="settingsActivitiesOrderedByTagsInTimetablesAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Order activities by tags in timetables</string>
    </property>
   </action>
  </widget>

@@ -660,13 +660,14 @@ void SubactivitiesForm::help()
 
 	s+="\n\n";
 	s+=tr("Explanation of the short description of a (sub)activity: first comes the id."
-		" If the (sub)activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration."
-		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).");
+		" If the (sub)activity is inactive, a %1 symbol follows. Then the duration. Then, if the activity is split, a slash and the total duration."
+		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).",
+		"%1 is a single letter symbol, such as X or ✗.");
 	s+="\n\n";
 	s+=tr("The (sub)activities which are inactive:");
 	s+="\n";
 	s+=" -";
-	s+=tr("have an X mark after the id.");
+	s+=tr("have a %1 mark after the id.", "It refers to inactive (sub)activities, which have this mark after the id. %1 is a single letter symbol, such as X or ✗.");
 	s+="\n";
 	s+=" -";
 	s+=tr("will appear with different background color.");

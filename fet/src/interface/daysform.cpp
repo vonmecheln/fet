@@ -26,6 +26,8 @@
 
 #include "utilities.h"
 
+#include "longtextmessagebox.h"
+
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
@@ -59,6 +61,7 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 	daysListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	connect(nDaysSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &DaysForm::numberOfDaysChanged);
+	connect(helpPushButton, &QPushButton::clicked, this, &DaysForm::help);
 	connect(cancelPushButton, &QPushButton::clicked, this, &DaysForm::cancel);
 	connect(okPushButton, &QPushButton::clicked, this, &DaysForm::ok);
 	connect(insertDayPushButton, &QPushButton::clicked, this, &DaysForm::insertDay);
@@ -548,4 +551,37 @@ void DaysForm::ok()
 void DaysForm::cancel()
 {
 	this->close();
+}
+
+void DaysForm::help()
+{
+	QString s="";
+	if(gt.rules.mode==OFFICIAL){
+		s+=tr("You are in the Official mode. You need to enter the days of the week.");
+	}
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		s+=tr("You are in the Mornings-Afternoons mode. In this mode, you need to enter a number of days which is double the number of"
+		 " real days. For example, if the real week is composed of 5 real days: Monday, Tuesday, Wednesday, Thursday, Friday, you"
+		 " need to input 10 days (Monday morning, Monday afternoon, Tuesday morning, ..., Friday afternoon) and 5 real days (Monday, ...,"
+		 " Friday). You need to choose the number of days, and FET will automatically compute the number of real days = the number of days / 2.");
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		s+=tr("You are in the Block planning mode. Each day represents a real teacher.");
+	}
+	else if(gt.rules.mode==TERMS){
+		s+=tr("You are in the Terms mode. The days are considered in order, from the first term to the last.");
+	}
+	else{
+		assert(0);
+	}
+	
+	s+="\n\n";
+	s+=tr("The names should be nonempty, unique, and on a single line; on the contrary, the long names can be empty, non-unique, and expand on multiple lines.");
+	
+	s+="\n\n";
+	s+=tr("The maximum allowed number of days per week is %1.").arg(MAX_DAYS_PER_WEEK);
+	s+=" ";
+	s+=tr("This is a very large value and probably more than enough for any scenario.");
+
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

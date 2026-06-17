@@ -295,6 +295,61 @@ bool writeAtLeastATimetable()
 	 return t;
 }
 
+bool listOfStringsAscending(const QStringList& atl1, const QStringList& atl2)
+{
+	int i=0;
+	int j=0;
+	while(true){
+		ActivityTag* ati=nullptr;
+		ActivityTag* atj=nullptr;
+		
+		while(i<atl1.count()){
+			const QString& atis=atl1.at(i);
+			int indexti=gt.rules.activityTagsHash.value(atis, -1);
+			assert(indexti>=0);
+			ati=gt.rules.internalActivityTagsList[indexti];
+			assert(ati!=nullptr);
+			if(ati->printable)
+				break;
+			i++;
+		}
+
+		while(j<atl2.count()){
+			const QString& atjs=atl2.at(j);
+			int indextj=gt.rules.activityTagsHash.value(atjs, -1);
+			assert(indextj>=0);
+			atj=gt.rules.internalActivityTagsList[indextj];
+			assert(atj!=nullptr);
+			if(atj->printable)
+				break;
+			j++;
+		}
+		
+		if(i>=atl1.count())
+			break;
+		if(j>=atl2.count())
+			break;
+		
+		assert(ati!=nullptr);
+		assert(atj!=nullptr);
+		int t=ati->name.localeAwareCompare(atj->name); //using Rodolfo Ribeiro Gomes' method
+		if(t!=0)
+			return t<0;
+		
+		i++;
+		j++;
+	}
+	
+	if(i>=atl1.count() && j>=atl2.count())
+		return false;
+	else if(i>=atl1.count() && j<atl2.count())
+		return true;
+	else if(i<atl1.count() && j>=atl2.count())
+		return false;
+	else
+		assert(0);
+}
+
 TimetableExport::TimetableExport()
 {
 }
@@ -7133,6 +7188,13 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
  bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
  bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes){
 	QList<int> allActivities=allActivitiesOriginal;
+	
+	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
+				return a1<a2;
+			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
+	
 	if(PRINT_RTL)
 		std::reverse(allActivities.begin(), allActivities.end());
 
@@ -7350,6 +7412,13 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
  bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
  bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes){
 	QList<int> allActivities=allActivitiesOriginal;
+
+	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
+				return a1<a2;
+			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
+
 	if(PRINT_RTL)
 		std::reverse(allActivities.begin(), allActivities.end());
 
@@ -7559,6 +7628,13 @@ QString TimetableExport::writeActivitiesBuildings(int htmlLevel, const QList<int
  bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
  bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes){
 	QList<int> allActivities=allActivitiesOriginal;
+
+	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
+				return a1<a2;
+			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
+
 	if(PRINT_RTL)
 		std::reverse(allActivities.begin(), allActivities.end());
 
@@ -7771,6 +7847,13 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
  bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
  bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes){
 	QList<int> allActivities=allActivitiesOriginal;
+
+	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
+				return a1<a2;
+			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
+
 	if(PRINT_RTL)
 		std::reverse(allActivities.begin(), allActivities.end());
 
@@ -7931,6 +8014,13 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
  bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
  bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes){
 	QList<int> allActivities=allActivitiesOriginal;
+
+	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
+				return a1<a2;
+			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
+
 	if(PRINT_RTL)
 		std::reverse(allActivities.begin(), allActivities.end());
 
@@ -8132,6 +8222,13 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
  bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes,
  bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes){
 	QList<int> allActivities=allActivitiesOriginal;
+
+	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
+				return a1<a2;
+			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
+
 	if(PRINT_RTL)
 		std::reverse(allActivities.begin(), allActivities.end());
 

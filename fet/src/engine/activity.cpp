@@ -142,7 +142,7 @@ QString GroupActivitiesInInitialOrderItem::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString s=tr("Group activities in the initial order item");
 	s+=translatedCommaSpace();
@@ -608,7 +608,7 @@ QString Activity::getDescription(Rules& r)
 	if(this->active==true)
 		_active="";
 	else
-		_active="X";
+		_active="✗";
 
 	QString _nstudents="";
 	if(this->computeNTotalStudents==false)

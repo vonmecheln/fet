@@ -26,6 +26,8 @@
 
 #include "utilities.h"
 
+#include "longtextmessagebox.h"
+
 #include <Qt>
 #include <QShortcut>
 #include <QKeySequence>
@@ -59,6 +61,7 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 	hoursListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	connect(nHoursSpinBox, qOverload<int>(&QSpinBox::valueChanged), this, &HoursForm::numberOfHoursChanged);
+	connect(helpPushButton, &QPushButton::clicked, this, &HoursForm::help);
 	connect(cancelPushButton, &QPushButton::clicked, this, &HoursForm::cancel);
 	connect(okPushButton, &QPushButton::clicked, this, &HoursForm::ok);
 	connect(insertHourPushButton, &QPushButton::clicked, this, &HoursForm::insertHour);
@@ -530,4 +533,37 @@ void HoursForm::ok()
 void HoursForm::cancel()
 {
 	this->close();
+}
+
+void HoursForm::help()
+{
+	QString s="";
+	if(gt.rules.mode==OFFICIAL){
+		s+=tr("You are in the Official mode. You need to enter the hours of the day.");
+	}
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		s+=tr("You are in the Mornings-Afternoons mode. In this mode, you need to enter a number of hours which is half the number of real"
+		 " hours. For example, if the number of real hours is 8 (4 in the morning and 4 in the afternoon), you need to enter"
+		 " 4 hours. FET will automatically compute the number of real hours = the number of hours x 2.");
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		s+=tr("You are in the Block planning mode. Each hour represents a real life time slot. So, if you have 5 real days and 8 real hours,"
+		 " you need to input 5 x 8 = 40 hours.");
+	}
+	else if(gt.rules.mode==TERMS){
+		s+=tr("You are in the Terms mode. You need to enter the hours of the day.");
+	}
+	else{
+		assert(0);
+	}
+	
+	s+="\n\n";
+	s+=tr("The names should be nonempty, unique, and on a single line; on the contrary, the long names can be empty, non-unique, and expand on multiple lines.");
+	
+	s+="\n\n";
+	s+=tr("The maximum allowed number of hours per day is %1.").arg(MAX_HOURS_PER_DAY);
+	s+=" ";
+	s+=tr("This is a very large value and probably more than enough for any scenario.");
+
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

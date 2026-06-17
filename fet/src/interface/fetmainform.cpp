@@ -207,6 +207,8 @@ QString conflictsStringTitle;
 
 bool TIMETABLES_SUBGROUPS_SORTED=false;
 
+bool TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=false;
+
 bool WRITE_TIMETABLE_CONFLICTS=true;
 
 bool WRITE_TIMETABLES_STATISTICS=true;
@@ -1210,7 +1212,7 @@ bool FetMainForm::saveHistory()
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
-
+	
 	//As seen on https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style
 	ORIGINAL_STYLE=QApplication::style()->objectName();
 	
@@ -1518,6 +1520,9 @@ FetMainForm::FetMainForm()
 	settingsOrderSubgroupsInTimetablesAction->setCheckable(true);
 	settingsOrderSubgroupsInTimetablesAction->setChecked(TIMETABLES_SUBGROUPS_SORTED);
 
+	settingsActivitiesOrderedByTagsInTimetablesAction->setCheckable(true);
+	settingsActivitiesOrderedByTagsInTimetablesAction->setChecked(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS);
+
 	settingsPrintDetailedTimetablesAction->setCheckable(true);
 	settingsPrintDetailedTimetablesAction->setChecked(PRINT_DETAILED_HTML_TIMETABLES);
 	settingsPrintDetailedTeachersFreePeriodsTimetablesAction->setCheckable(true);
@@ -1751,6 +1756,9 @@ FetMainForm::FetMainForm()
 	connect(settingsDuplicateVerticalNamesAction, &QAction::toggled, this, &FetMainForm::settingsDuplicateVerticalNamesAction_toggled);
 	
 	connect(settingsOrderSubgroupsInTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsOrderSubgroupsInTimetablesAction_toggled);
+
+	connect(settingsActivitiesOrderedByTagsInTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsActivitiesOrderedByTagsInTimetablesAction_toggled);
+
 	connect(settingsPrintDetailedTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsPrintDetailedTimetablesAction_toggled);
 	connect(settingsPrintDetailedTeachersFreePeriodsTimetablesAction, &QAction::toggled, this, &FetMainForm::settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled);
 	connect(settingsPrintNotAvailableSlotsAction, &QAction::toggled, this, &FetMainForm::settingsPrintNotAvailableSlotsAction_toggled);
@@ -7185,6 +7193,14 @@ void FetMainForm::helpSettingsAction_triggered()
 	s+="\n\n";
 	s+=tr("Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the 'not available times' ones,"
 		" each table cell will have a tool tip to show the current day/hour (column/row name).");
+	
+	s+="\n\n";
+	s+=tr("Order activities by tags in timetables: in each cell of a table, there can be one or more activities. If you enable this option,"
+		" FET will order the activities in each cell ascending by their printable activity tags.");
+	s+=" ";
+	s+="(";
+	s+=tr("This feature was suggested by %1.", "%1 is the name of a person").arg("Benahmed Abdelkrim");
+	s+=")";
 	
 	LongTextMessageBox::largeInformation(this, tr("FET information"), s);
 }
@@ -15122,57 +15138,60 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	
 	s+=tr("56")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	
-	s+=tr("57")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
 
-	s+=tr("58")+QString(". ")+tr("The font will be reset to default");
+	s+=tr("57")+QString(". ")+tr("Order activities by tags in timetables will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 	
-	s+=tr("59")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("58")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("60")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
+	s+=tr("59")+QString(". ")+tr("The font will be reset to default");
+	s+="\n";
+	
+	s+=tr("60")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+
+	s+=tr("61")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
 	s+="\n";
 
 	s+="(";
 	s+=tr("If the history settings will change, the history will be cleared.");
 	s+=")\n";
 
-	s+=tr("61")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("62")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("62")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("63")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
-	s+=tr("63")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
+	s+=tr("64")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
 	s+="\n";
-	s+=tr("64")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
+	s+=tr("65")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
 	s+="\n";
-	s+=tr("65")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
+	s+=tr("66")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
 	s+="\n";
-	s+=tr("66")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
-	s+="\n";
-
-	s+=tr("67")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
-	s+="\n";
-	s+=tr("68")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
-	s+="\n";
-	s+=tr("69")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
+	s+=tr("67")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
 	s+="\n";
 
-	s+=tr("70")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
+	s+=tr("68")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=tr("69")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
+	s+="\n";
+	s+=tr("70")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
 	s+="\n";
 
-	s+=tr("71")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
+	s+=tr("71")+QString(". ")+tr("The timetable options about which information to be printed in which table will be reset to defaults.");
+	s+="\n";
+
+	s+=tr("72")+QString(". ")+tr("The interface style and color scheme will be reset to defaults (useful only if the used Qt version is at least %1).").arg("6.8.0");
 	s+="\n";
 
 	//s+=tr("72")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
 	//s+="\n";
 
-	s+=tr("72")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("73")+QString(". ")+tr("Overwrite single generation files will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("73")+QString(". ")+tr("All the optional keyboard shortcuts will be disabled.");
+	s+=tr("74")+QString(". ")+tr("All the optional keyboard shortcuts will be disabled.");
 	s+="\n";
 
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
@@ -15233,6 +15252,8 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 
 	///
 	TIMETABLES_SUBGROUPS_SORTED=false;
+	
+	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=false;
 	
 	WRITE_TIMETABLE_CONFLICTS=true;
 
@@ -15334,6 +15355,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	
 	settingsOrderSubgroupsInTimetablesAction->setChecked(false);
 	TIMETABLES_SUBGROUPS_SORTED=false;
+
+	settingsActivitiesOrderedByTagsInTimetablesAction->setChecked(false);
+	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=false;
 
 	//2024-06-12 begin
 	//
@@ -16157,6 +16181,11 @@ void FetMainForm::settingsOrderSubgroupsInTimetablesAction_toggled()
 	TIMETABLES_SUBGROUPS_SORTED=settingsOrderSubgroupsInTimetablesAction->isChecked();
 }
 
+void FetMainForm::settingsActivitiesOrderedByTagsInTimetablesAction_toggled()
+{
+	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=settingsActivitiesOrderedByTagsInTimetablesAction->isChecked();
+}
+
 void FetMainForm::settingsPrintDetailedTimetablesAction_toggled()
 {
 	PRINT_DETAILED_HTML_TIMETABLES=settingsPrintDetailedTimetablesAction->isChecked();
@@ -16945,6 +16974,9 @@ void FetMainForm::restoreSettings()
 		TIMETABLE_HTML_LEVEL=2;
 	}
 	TIMETABLES_SUBGROUPS_SORTED=settings.value("timetables-subgroups-sorted", "false").toBool();
+
+	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=settings.value("timetables-activities-sorted-by-tags", "false").toBool();
+
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=settings.value("print-activity-tags", "true").toBool();
 	
 	TIMETABLE_HTML_PRINT_SUBJECTS=settings.value("print-subjects", "true").toBool();
@@ -17902,6 +17934,9 @@ void FetMainForm::restoreSettings()
 
 	//settingsOrderSubgroupsInTimetablesAction->setCheckable(true);
 	settingsOrderSubgroupsInTimetablesAction->setChecked(TIMETABLES_SUBGROUPS_SORTED);
+
+	//settingsOrderActivitiesByTagsInTimetablesAction->setCheckable(true);
+	settingsActivitiesOrderedByTagsInTimetablesAction->setChecked(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS);
 
 	//settingsPrintDetailedTimetablesAction->setCheckable(true);
 	settingsPrintDetailedTimetablesAction->setChecked(PRINT_DETAILED_HTML_TIMETABLES);

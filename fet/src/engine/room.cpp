@@ -277,7 +277,7 @@ QString Room::getDetailedDescriptionWithConstraints(Rules& r, bool richText, boo
 	}
 }
 
-int roomsAscending(const Room* r1, const Room* r2)
+bool roomsAscending(const Room* r1, const Room* r2)
 {
 	//return r1->name < r2->name;
 	
@@ -285,7 +285,7 @@ int roomsAscending(const Room* r1, const Room* r2)
 	return r1->name.localeAwareCompare(r2->name)<0;
 }
 
-int roomsCodesAscending(const Room* r1, const Room* r2)
+bool roomsCodesAscending(const Room* r1, const Room* r2)
 {
 	//return r1->name < r2->name;
 	

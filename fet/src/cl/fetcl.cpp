@@ -295,6 +295,10 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tSS is either true or false and represents if you want the timetables of the subgroups to be sorted alphabetically by subgroup name "
 		"(default false).\n"
 		"\n"
+		"\t--sortactivitiesbytags=SAT\n"
+		"\t\tSAT is either true or false and represents if you want the timetable cells containing several activities to display them sorted by tags "
+		"(default false).\n"
+		"\n"
 		"\t--dividetimeaxisbydays=DTAD\n"
 		"\t\tDTAD is either true or false, represents if you want the HTML timetables with time axis divided by days (default false).\n"
 		"\n"
@@ -1234,6 +1238,8 @@ int main(int argc, char **argv)
 		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
 		
 		TIMETABLES_SUBGROUPS_SORTED=false;
+
+		TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=false;
 		
 		PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
 		
@@ -2014,6 +2020,10 @@ int main(int argc, char **argv)
 			else if(s.left(16)=="--sortsubgroups="){
 				if(s.right(4)=="true")
 					TIMETABLES_SUBGROUPS_SORTED=true;
+			}
+			else if(s.left(23)=="--sortactivitiesbytags="){
+				if(s.right(4)=="true")
+					TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=true;
 			}
 			else if(s.left(23)=="--dividetimeaxisbydays="){
 				if(s.right(4)=="true")

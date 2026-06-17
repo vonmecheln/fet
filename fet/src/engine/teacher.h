@@ -84,8 +84,8 @@ public:
 	void recomputeQualifiedSubjectsHash();
 };
 
-int teachersAscending(const Teacher* t1, const Teacher* t2);
+bool teachersAscending(const Teacher* t1, const Teacher* t2);
 
-int teachersCodesAscending(const Teacher* t1, const Teacher* t2);
+bool teachersCodesAscending(const Teacher* t1, const Teacher* t2);
 
 #endif

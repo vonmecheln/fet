@@ -1,3 +1,17 @@
+ 7.8.7
+	- Critical interface bug fixes: When removing an activity tag in the constraints of type teachers/students max activity tags per day/real day
+	from set or modifying/removing an activity tag in the constraints of type room(s) max activity tags per day/real day/week from set, the
+	constraints were not correctly updated (reported by Yush Yuen).
+	- Improved the English text - instead of 'he', 'his', and 'him' pronouns when referring to a teacher, we use 'he/she', 'his/her', and 'him/her'
+	(suggested by Alexandre R. Soares and Andrea Primiani).
+	- Improved the symbol for the 'not available' cells in the constraints of type 'not available' or 'preferred times' - it is now '✗' instead of 'X'.
+	Also, the description of the deactivated activities and constraints now begins with '✗' instead of 'X'.
+	- Added a Help button in the days and hours dialogs, for guidance; this is useful in modes other than the Official one (suggested by LEOBASSARTS).
+	- Added the option to order the activities in the timetables by the tags, if a table cell contains more than one activity (suggested by
+	Benahmed Abdelkrim; Volker Dirr suggested to consider only the printable tags).
+	- Minor fixes.
+	- Updated the Spanish translation, by Li Chong, who is the newly assigned translator. The Spanish translation is now nearly complete.
+	- Added a new example file, by Benahmed Abdelkrim.
  7.8.6
 	- Updated to Qt 6.11.1.
 	- Rare crash bug fixes and other bug fixes (the program crashed in the constraints' dialogs if the filter was enabled and the user changed

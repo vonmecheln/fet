@@ -172,12 +172,6 @@ void HelpFaqForm::setText()
 		"activities. All the subgroups are independent. If you have a subgroup with only 2 hours per week and constraint early, "
 		"then these 2 activities must be placed in the first hours of the day, which is probably much too hard (wrong).");
 	s+="\n\n";
-	/*s+=tr("Important note: please do the correct division of a year from the beginning. Each time you divide a year, the "
-		"corresponding activities and constraints referring to year's groups and subgroups will be removed, along with groups "
-		"and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted "
-		"a lot of constraints and activities referring to a year's groups/subgroups, you might want to manually change the division of "
-		"a year by the groups/subgroups menus.");
-	s+="\n\n";*/
 	s+=tr("Another possibility: you can see that each activity has allowed more teachers/students sets. If you need to split year Y "
 		"according to Language1 (with teachers T1 and T2), you might not split Y and add an activity with Y and teachers T1 and "
 		"T2 and subject 'Language1'. This is a small trick, which might be easier to use than to divide a year.");
@@ -374,20 +368,6 @@ void HelpFaqForm::setText()
 		"without a conflict after average 10000 times it keeps the conflict and "
 		"tries to place the next activity.\n\n"
 		"Also, activities might get unallocated, and the cycle would be opened.", "%1 is a person").arg("Volker Dirr");
-
-	/*s+=tr("Q: How does FET care about weights. What do they mean?\n\n"
-		"A: The weights under 100% are subjective, because FET can skip them if necessary.\n\n"
-		"Volker Dirr tried to express how FET considers under 100% weights, but his words are not completely reflecting the fact:\n\n"
-		"Here is a comment from Volker Dirr:\n\n"
-		"weight = 50% means: In average FET retries two times to place an activity without a conflict. If it isn't able to place the "
-		"activity without a conflict after average 2 times it keeps the conflict and tries to place the next activity.\n"
-		"weight = 75% means: In average FET retries four times to place an activity without a conflict. If it isn't "
-		"able to place the activity without a conflict after average 4 times it keeps the conflict and tries to place the next activity.\n"
-		"weight = 99% means: In average FET retries 100 times to place an activity without a conflict. "
-		"If it isn't able to place the activity without a conflict after average 100 times it keeps the conflict and tries to place the next activity.\n"
-		"weight = 99.99% means: In average FET retries 10000 times to place an activity without a conflict."
-		" If it isn't able to place the activity without a conflict after average 10000 times it keeps the conflict and tries to place the next activity.\n\n"
-		"This is not 100% correct. Activities might get unallocated, and cycle reopened.");*/
 
 	s+="\n\n";
 	s+="--------------------";
@@ -676,22 +656,6 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: (by %1) I met a situation: a teacher asks for maximum 2 working days, but these days "
-		"should not be consecutive. Is there a way to implement it in .fet?\n\n"
-		"The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus "
-		"leaving him available on Monday, Wednesday and Friday (any two of these are nonconsecutive).\n\n"
-		"Any other ideas...?\n\n"
-		"A: I have another idea: choose 2 activities of this teacher which clearly cannot be on the same day, "
-		"and add constraint min days between activities, 2 days, 100%.\n\n"
-		"Or add a dummy activity for this teacher, split into 2 per week, min days = 2, with 100%. You just need to "
-		"take care that this teacher has place for these dummy activities (enough slots in the day) and to consider "
-		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.",
-		"%1 is a person").arg(QString("Horațiu Hălmăjan"));
-
-	s+="\n\n";
-	s+="--------------------";
-	s+="\n\n";
-
 	s+=tr("Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
 		"A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between "
 		"activities 1, weight 0%, select consecutive if on the same day. FET will never put more than 2 of these dummy activities "
@@ -874,16 +838,6 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 	s+=tr("A: You can activate/deactivate a constraint by clicking the 'Activate'/'Deactivate' buttons in the all time/space"
 	 " constraints dialogs.");
-
-	/*s+="\n\n";
-	s+="--------------------";
-	s+="\n\n";
-
-	s+=tr("Q: How can I sort the constraints?");
-	s+="\n\n";
-	s+=tr("A: You can sort the constraints in the all time/space constraints dialogs. Sorting is done ascending, according to each"
-	 " constraints' comments. You can add suitable comments to obtain a desired order, like: 'rank #1 ... other comments' and"
-	 " 'rank #2 ... other different comments'.");*/
 
 	s+="\n\n";
 	s+="--------------------";

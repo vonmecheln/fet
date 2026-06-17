@@ -33,6 +33,8 @@ class QWidget;
 
 bool writeAtLeastATimetable();
 
+bool listOfStringsAscending(const QStringList& atl1, const QStringList& atl2);
+
 extern QHash<int, int> hashActivityColorBySubject;
 extern QList<int> activeHashActivityColorBySubjectAndStudents;
 extern QHash<int, int> hashActivityColorBySubject;

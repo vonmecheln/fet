@@ -160,18 +160,18 @@ QString ActivityTag::getDetailedDescriptionWithConstraints(Rules& r)
 	return s;
 }
 
-int activityTagsAscending(const ActivityTag* st1, const ActivityTag* st2)
+bool activityTagsAscending(const ActivityTag* at1, const ActivityTag* at2)
 {
-	//return st1->name < st2->name;
+	//return at1->name < at2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return st1->name.localeAwareCompare(st2->name)<0;
+	return at1->name.localeAwareCompare(at2->name)<0;
 }
 
-int activityTagsCodesAscending(const ActivityTag* st1, const ActivityTag* st2)
+bool activityTagsCodesAscending(const ActivityTag* at1, const ActivityTag* at2)
 {
-	//return st1->name < st2->name;
+	//return at1->name < at2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return st1->code.localeAwareCompare(st2->code)<0;
+	return at1->code.localeAwareCompare(at2->code)<0;
 }

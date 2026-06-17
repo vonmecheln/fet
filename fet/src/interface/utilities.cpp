@@ -80,7 +80,7 @@ File utilities.cpp
 
 #include <QBrush>
 
-#define YES		(QString("X"))
+#define YES		(QString("✗"))
 #define YESV	(QString("✓"))
 #define NO		(QString(" "))
 
@@ -946,9 +946,9 @@ void initTimesTable(CornerEnabledTableWidget* timesTable)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
 				QTableWidgetItem* item=new QTableWidgetItem(NO);
 
-				QFont font=item->font();
+				/*QFont font=item->font();
 				font.setBold(!timesTable->V);
-				item->setFont(font);
+				item->setFont(font);*/
 
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
@@ -975,9 +975,9 @@ void initTimesTable(CornerEnabledTableWidget* timesTable)
 			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
 				QTableWidgetItem* item=new QTableWidgetItem(NO);
 
-				QFont font=item->font();
+				/*QFont font=item->font();
 				font.setBold(!timesTable->V);
-				item->setFont(font);
+				item->setFont(font);*/
 
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
@@ -1012,9 +1012,9 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
 				QTableWidgetItem* item=new QTableWidgetItem;
 
-				QFont font=item->font();
+				/*QFont font=item->font();
 				font.setBold(!timesTable->V);
-				item->setFont(font);
+				item->setFont(font);*/
 
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
@@ -1043,9 +1043,9 @@ void fillTimesTable(CornerEnabledTableWidget* timesTable, const QList<int>& days
 			for(int j=0; j<gt.rules.nDaysPerWeek/2; j++){
 				QTableWidgetItem* item=new QTableWidgetItem;
 
-				QFont font=item->font();
+				/*QFont font=item->font();
 				font.setBold(!timesTable->V);
-				item->setFont(font);
+				item->setFont(font);*/
 
 				item->setTextAlignment(Qt::AlignCenter);
 				item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);

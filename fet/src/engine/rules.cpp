@@ -8786,6 +8786,86 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 						c->activityTagName=finalActivityTagName;
 					break;
 				}
+			//2026-06-10 - code added to fix the bugs reported by Yush Yuen (if we modify/remove an activity tag involved in these types of constraints).
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintRoomMaxActivityTagsPerDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerDayFromSet* crt_constraint=(ConstraintRoomsMaxActivityTagsPerDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintRoomMaxActivityTagsPerRealDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerRealDayFromSet* crt_constraint=(ConstraintRoomsMaxActivityTagsPerRealDayFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomMaxActivityTagsPerWeekFromSet* crt_constraint=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerWeekFromSet* crt_constraint=(ConstraintRoomsMaxActivityTagsPerWeekFromSet*)ctr;
+					int cnt=0;
+					for(int i=0; i<crt_constraint->tagsList.count(); i++){
+						if(crt_constraint->tagsList.at(i)==initialActivityTagName){
+							crt_constraint->tagsList[i]=finalActivityTagName;
+							cnt++;
+						}
+					}
+					assert(cnt<=1);
+					break;
+				}
+
 			default:
 				//do nothing.
 				break;
@@ -13459,6 +13539,68 @@ void Rules::updateConstraintsAfterRemoval()
 					
 					break;
 				}
+			//2026-06-10 - code added to fix the bugs reported by Yush Yuen (if we modify/remove an activity tag involved in these types of constraints).
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintStudentsMaxActivityTagsPerDayFromSet* c=(ConstraintStudentsMaxActivityTagsPerDayFromSet*)tc;
+
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedTime.append(tc);
+					
+					break;
+				}
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintStudentsMaxActivityTagsPerRealDayFromSet* c=(ConstraintStudentsMaxActivityTagsPerRealDayFromSet*)tc;
+
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedTime.append(tc);
+					
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintTeachersMaxActivityTagsPerDayFromSet* c=(ConstraintTeachersMaxActivityTagsPerDayFromSet*)tc;
+
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedTime.append(tc);
+					
+					break;
+				}
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintTeachersMaxActivityTagsPerRealDayFromSet* c=(ConstraintTeachersMaxActivityTagsPerRealDayFromSet*)tc;
+
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedTime.append(tc);
+					
+					break;
+				}
+			///////
 			case CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION:
 				{
 					ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*)tc;
@@ -14407,11 +14549,23 @@ void Rules::updateConstraintsAfterRemoval()
 						toBeRemovedSpace.append(sc);
 					break;
 				}
+			//2026-06-10 - code added to fix the bugs reported by Yush Yuen (if we modify/remove an activity tag involved in these types of constraints).
 			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
 				{
 					ConstraintRoomMaxActivityTagsPerDayFromSet* c=(ConstraintRoomMaxActivityTagsPerDayFromSet*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedSpace.append(sc);
+					}
+					
 					break;
 				}
 			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
@@ -14419,6 +14573,17 @@ void Rules::updateConstraintsAfterRemoval()
 					ConstraintRoomMaxActivityTagsPerRealDayFromSet* c=(ConstraintRoomMaxActivityTagsPerRealDayFromSet*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedSpace.append(sc);
+					}
+					
 					break;
 				}
 			case CONSTRAINT_ROOM_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
@@ -14426,8 +14591,62 @@ void Rules::updateConstraintsAfterRemoval()
 					ConstraintRoomMaxActivityTagsPerWeekFromSet* c=(ConstraintRoomMaxActivityTagsPerWeekFromSet*)sc;
 					if(!existingRoomsNames.contains(c->room))
 						toBeRemovedSpace.append(sc);
+					else{
+						QStringList atl;
+						for(const QString& at : std::as_const(c->tagsList))
+							if(existingActivityTagsNames.contains(at))
+								atl.append(at);
+						c->tagsList=atl;
+
+						if(c->tagsList.count()<2)
+							toBeRemovedSpace.append(sc);
+					}
+					
 					break;
 				}
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerDayFromSet* c=(ConstraintRoomsMaxActivityTagsPerDayFromSet*)sc;
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedSpace.append(sc);
+					
+					break;
+				}
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerRealDayFromSet* c=(ConstraintRoomsMaxActivityTagsPerRealDayFromSet*)sc;
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedSpace.append(sc);
+					
+					break;
+				}
+			case CONSTRAINT_ROOMS_MAX_ACTIVITY_TAGS_PER_WEEK_FROM_SET:
+				{
+					ConstraintRoomsMaxActivityTagsPerWeekFromSet* c=(ConstraintRoomsMaxActivityTagsPerWeekFromSet*)sc;
+					QStringList atl;
+					for(const QString& at : std::as_const(c->tagsList))
+						if(existingActivityTagsNames.contains(at))
+							atl.append(at);
+					c->tagsList=atl;
+
+					if(c->tagsList.count()<2)
+						toBeRemovedSpace.append(sc);
+					
+					break;
+				}
+			///////
 			case CONSTRAINT_ROOM_PAIR_OF_MUTUALLY_EXCLUSIVE_TIME_SLOTS:
 				{
 					ConstraintRoomPairOfMutuallyExclusiveTimeSlots* c=(ConstraintRoomPairOfMutuallyExclusiveTimeSlots*)sc;

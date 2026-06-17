@@ -136,14 +136,14 @@ public:
 	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 };
 
-int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2);
+bool studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2);
 
-int studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2);
+bool studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2);
 
-int yearsAscending(const StudentsYear* y1, const StudentsYear* y2);
+bool yearsAscending(const StudentsYear* y1, const StudentsYear* y2);
 
-int groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2);
+bool groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2);
 
-int subgroupsAscending(const StudentsSubgroup* s1, const StudentsSubgroup* s2);
+bool subgroupsAscending(const StudentsSubgroup* s1, const StudentsSubgroup* s2);
 
 #endif

@@ -8106,8 +8106,8 @@ void ListTimeConstraints::helpClicked()
 				 " Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday)."
 				 " Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.");
 				s+="\n\n";
-				s+=tr("Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from"
-				 " Tuesday to Friday). Then, add all his activities and max days between them = 3.");
+				s+=tr("Another example: teacher T wants to ensure that his/her activities take place in at most 4 consecutive days (so, from Monday to Thursday or from"
+				 " Tuesday to Friday). Then, add all his/her activities and max days between them = 3.");
 
 				s+="\n\n";
 				s+=tr("IMPORTANT: after adding constraints of this type with max days between the activities = 0, it is necessary (otherwise the generation might be impossible) to "

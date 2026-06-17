@@ -61,8 +61,8 @@ public:
 	QString getDetailedDescriptionWithConstraints(Rules& r);
 };
 
-int activityTagsAscending(const ActivityTag* st1, const ActivityTag* st2);
+bool activityTagsAscending(const ActivityTag* at1, const ActivityTag* at2);
 
-int activityTagsCodesAscending(const ActivityTag* st1, const ActivityTag* st2);
+bool activityTagsCodesAscending(const ActivityTag* at1, const ActivityTag* at2);
 
 #endif

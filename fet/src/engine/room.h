@@ -79,8 +79,8 @@ public:
 	QString getDetailedDescriptionWithConstraints(Rules& r, bool richText=false, bool colors=false);
 };
 
-int roomsAscending(const Room* r1, const Room* r2);
+bool roomsAscending(const Room* r1, const Room* r2);
 
-int roomsCodesAscending(const Room* r1, const Room* r2);
+bool roomsCodesAscending(const Room* r1, const Room* r2);
 
 #endif

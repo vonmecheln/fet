@@ -462,18 +462,20 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("AddConstraintBreakTimes");
 
 					firstAddInstructionsLabel=new QLabel(tr("The important thing is that a break does not induce gaps for teachers or students"));
-					secondAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					secondAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify break times", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintBreakTimes");
 
 					firstModifyInstructionsLabel=new QLabel(tr("The important thing is that a break does not induce gaps for teachers or students"));
-					secondModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					secondModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -497,18 +499,20 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("AddConstraintTeacherNotAvailableTimes");
 
 					firstAddInstructionsLabel=new QLabel(tr("Note: this constraint does not induce gaps for teachers. If a teacher has activities before and after a not available period, there will be no gaps counted"));
-					secondAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					secondAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify teacher not available times", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTeacherNotAvailableTimes");
 
 					firstModifyInstructionsLabel=new QLabel(tr("Note: this constraint does not induce gaps for teachers. If a teacher has activities before and after a not available period, there will be no gaps counted"));
-					secondModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					secondModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -913,18 +917,20 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogName=QString("AddConstraintStudentsSetNotAvailableTimes");
 
 					firstAddInstructionsLabel=new QLabel(tr("Note: this constraint does not induce gaps (or early not respected) for students. If a students set has activities before and after a not available period, there will be no gaps counted"));
-					secondAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					secondAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify students set not available times", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsSetNotAvailableTimes");
 
 					firstModifyInstructionsLabel=new QLabel(tr("This constraint does not induce gaps (or early not respected) for students. If a students set has activities before and after this not available period, there will be no gaps counted"));
-					secondModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					secondModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 
 				colorsCheckBox=new QCheckBox(tr("Colors"));
@@ -1375,17 +1381,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activity preferred time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivityPreferredTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify activity preferred time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivityPreferredTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 
 				addEmpty=true;
@@ -1426,17 +1434,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities preferred time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesPreferredTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities preferred time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesPreferredTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 
 				addEmpty=true;
@@ -1481,17 +1491,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activity preferred starting times", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivityPreferredStartingTimes");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify activity preferred starting times", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivityPreferredStartingTimes");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 
 				addEmpty=true;
@@ -1532,17 +1544,19 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities preferred starting times", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesPreferredStartingTimes");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities preferred starting times", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesPreferredStartingTimes");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 				}
 
 				addEmpty=true;
@@ -1805,18 +1819,20 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add subactivities preferred time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintSubactivitiesPreferredTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 					secondAddInstructionsLabel=new QLabel(tr("Choose the component number of the subactivities to be constrained."));
 				}
 				else{
 					dialogTitle=tr("Modify subactivities preferred time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintSubactivitiesPreferredTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 					secondModifyInstructionsLabel=new QLabel(tr("Choose the component number of the subactivities to be constrained."));
 				}
 
@@ -1865,18 +1881,20 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add subactivities preferred starting times", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintSubactivitiesPreferredStartingTimes");
 
-					firstAddInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 					secondAddInstructionsLabel=new QLabel(tr("Choose the component number of the subactivities to be constrained."));
 				}
 				else{
 					dialogTitle=tr("Modify subactivities preferred starting times", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintSubactivitiesPreferredStartingTimes");
 
-					firstModifyInstructionsLabel=new QLabel(tr("X (red)=not allowed, empty (green)=allowed",
-					 "This is an explanation in a dialog for a constraint. It says that symbol X (or red) means that this slot is not allowed, "
-					 "and an empty cell (or green) means that the slot is allowed"));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=not allowed, empty (%3)=allowed",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is not allowed, "
+					 "and an empty cell (or color %3) means that the slot is allowed. Typically the %1 symbol is X or ✗, color %2 is red, and color %3 is green")
+					 .arg("✗").arg(tr("red", "The name of a color.")).arg(tr("green", "The name of a color.")));
 					secondModifyInstructionsLabel=new QLabel(tr("Choose the component number of the subactivities to be constrained."));
 				}
 
@@ -2535,19 +2553,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities occupy max time slots from selection", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesOccupyMaxTimeSlotsFromSelection");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities occupy max time slots from selection", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelection");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;
@@ -2600,19 +2624,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities max simultaneous in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities max simultaneous in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;
@@ -3089,19 +3119,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities occupy min time slots from selection", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesOccupyMinTimeSlotsFromSelection");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities occupy min time slots from selection", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelection");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;
@@ -3154,19 +3190,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities min simultaneous in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesMinSimultaneousInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities min simultaneous in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;
@@ -5194,19 +5236,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add max total activities from set in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify max total activities from set in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;
@@ -7043,19 +7091,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add two sets of activities have the same sections", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTwoSetsOfActivitiesSameSections");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=exception, empty (darkgoldenrod)=not exception",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected as an exception, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected as an exception. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify two sets of activities have the same sections", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTwoSetsOfActivitiesSameSections");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=exception, empty (darkgoldenrod)=not exception",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected as an exception, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected as an exception. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;
@@ -7114,19 +7168,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify students max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				labelForSpinBox=new QLabel(tr("Max single gaps"));
@@ -7155,19 +7215,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students set max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify students set max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				studentsLabel=new QLabel(tr("Students set"));
@@ -7199,19 +7265,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teachers max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeachersMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify teachers max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintTeachersMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				labelForSpinBox=new QLabel(tr("Max single gaps"));
@@ -7240,19 +7312,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teacher max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeacherMaxSingleGapsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify teacher max single gaps in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("ModifyConstraintTeacherMaxSingleGapsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				teacherLabel=new QLabel(tr("Teacher"));
@@ -7327,19 +7405,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teacher pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify teacher pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				teacherLabel=new QLabel(tr("Teacher"));
@@ -7378,19 +7462,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add teachers pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify teachers pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				colorsCheckBox1=new QCheckBox(tr("Colors"));
@@ -7426,19 +7516,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students set pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify students set pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				studentsLabel=new QLabel(tr("Students set"));
@@ -7477,19 +7573,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add students pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify students pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				colorsCheckBox1=new QCheckBox(tr("Colors"));
@@ -7525,29 +7627,41 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities pair of mutually exclusive sets of time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 					//trick to use each label on its tab
-					secondAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					secondAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities pair of mutually exclusive sets of time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 					//trick to use each label on its tab
-					secondModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					secondModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				colorsCheckBox1=new QCheckBox(tr("Colors"));
@@ -8036,19 +8150,25 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 					dialogTitle=tr("Add activities max total number of students in selected time slots", "The title of the dialog to add a new constraint of this type");
 					dialogName=QString("AddConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots");
 
-					firstAddInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 				else{
 					dialogTitle=tr("Modify activities max total number of students in selected time slots", "The title of the dialog to modify a constraint of this type");
 					dialogName=QString("ModifyConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots");
 
-					firstModifyInstructionsLabel=new QLabel(tr("✓ (darkcyan)=selected, empty (darkgoldenrod)=not selected",
-					 "This is an explanation in a dialog for a constraint. It says that symbol ✓ (or darkcyan) means that this slot is selected, "
-					 "and an empty cell (or darkgoldenrod) means that the slot is not selected. darkcyan and darkgoldenrod are two colors, "
-					 "and they can be translated; you can see them here: https://doc.qt.io/qt-6/qcolorconstants.html."));
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
 				}
 
 				addEmpty=true;

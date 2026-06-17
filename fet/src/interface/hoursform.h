@@ -43,6 +43,8 @@ public Q_SLOTS:
 	void numberOfRealHoursChanged();
 	void modifyRealHour();
 	
+	void help();
+	
 	void ok();
 	void cancel();
 };

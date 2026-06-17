@@ -44,6 +44,8 @@ public Q_SLOTS:
 
 	void numberOfRealDaysChanged();
 	void modifyRealDay();
+	
+	void help();
 
 	void ok();
 	void cancel();

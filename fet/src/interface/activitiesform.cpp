@@ -895,13 +895,16 @@ void ActivitiesForm::help()
 	
 	s+="\n\n";
 	s+=tr("Explanation of the short description of an activity: first comes the id."
-		" If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration."
-		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).");
+		" If the activity is inactive, a %1 symbol follows. Then the duration. Then, if the activity is split, a slash and the total duration."
+		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).",
+		"This symbol is a single character, such as X or ✗.")
+		.arg("✗");
 	s+="\n\n";
 	s+=tr("The activities which are inactive:", "This is the help for activities which are inactive, after this field there come explanations for how inactive activities are displayed.");
 	s+="\n";
 	s+=" -";
-	s+=tr("have an X mark after the id.", "It refers to inactive activities, which have this mark after the id.");
+	s+=tr("have a %1 mark after the id.", "It refers to inactive activities, which have this mark after the id. This mark is a single character symbol"
+		", such as X or ✗.").arg("✗");
 	s+="\n";
 	s+=" -";
 	s+=tr("will appear with different background color.", "It refers to inactive activities");

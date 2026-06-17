@@ -13417,25 +13417,7 @@ Liviu Lalescu:
 
 I will think of this.
 
-856---------------------------------------------------------
-From Benahmed Abdelkrim (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6831.0
-
-In the HTML timetables, activities are ordered according to their "IDs". Can they be ordered according to their activity tags?
-
-(Benahmed Abdelkrim provided a screenshot of the timetables, with more activities in a single cell; each cell should have
-the activities ordered by the activity tags.)
-
-...
-
-more details on the forum...
-
-...
-
-Volker Dirr:
-
-Also what about "hidden" tags. Must be removed first.
+856------------DONE on 12 June 2026, in FET-7.8.7-----------
 
 857---------------------------------------------------------
 From ygoldblatt:
@@ -13523,6 +13505,11 @@ From mrtvillaret:
  I am attaching the two patch files directly, along with a FET file with
 samples of the features.
 
+---
+
+On 2026-06-11, mrtvillaret sent Liviu Lalescu and Volker Dirr another email,
+with a slightly changed mode of operation of the parallel subjects.
+
 863---------------------------------------------------------
 From Cyrus Ireri (on forum):
 
@@ -13537,3 +13524,106 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6838.0
 
 Thinking of Benahmed's suggestion: https://lalescu.ro/liviu/fet/forum/index.php?topic=6831.0 , I thought of a possible improvement, allowing to change the order
 of activities in the activities list; also, we could just remove or add one or more subactivities from a group of activities.
+
+(Note by Liviu Lalescu: Benahmed Abdelkrim's suggestion was done on 12 June 2026, in FET-7.8.7 - the old TODO item #856.)
+
+865---------------------------------------------------------
+From Cyrus Ireri (on forum) and Volker Dirr:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6843.0
+
+I wish to have my timetables visible with ease for all the subjects once i wish to print without graphics?
+
+---
+
+That happens when i want the html file be printed but without graphics.
+
+---
+
+Volker Dirr:
+
+hmm... maybe we should move the calculation from the black or white text
+color into the css file?
+
+I didn't try, but Gemini told me 2 solutions for this,
+Instead of:
+
+we can do:
+
+Solution 1: (Exactly like we calculate the contrast right now:
+
+tos << "td.c_"<<QString::number(cnt+1)<<" { /* Activity id:
+"<<QString::number(act->id)<<" (subject+students) */\n";
+tos << "  --bg: rgb("<<QString::number(r)<<", "<<QString::number(g)<<",
+"<<QString::number(b)<<");\n";
+tos << "  background-color: var(--bg);\n";
+tos << "  color: rgb(from var(--bg) "
+        "clamp(0, ((r * 0.299 + g * 0.587 + b * 0.114) - 127.5) * -1000,
+255) "
+        "clamp(0, ((r * 0.299 + g * 0.587 + b * 0.114) - 127.5) * -1000,
+255) "
+        "clamp(0, ((r * 0.299 + g * 0.587 + b * 0.114) - 127.5) * -1000,
+255));\n";
+tos << "}\n\n";
+
+Solution 2: Use the official contrast calculation:
+
+tos << "td.c_"<<QString::number(cnt+1)<<" { /* Activity id:
+"<<QString::number(act->id)<<" (subject+students) */\n";
+tos << "  background-color: rgb("<<QString::number(r)<<",
+"<<QString::number(g)<<", "<<QString::number(b)<<");\n";
+tos << "  color: contrast-color(rgb("<<QString::number(r)<<",
+"<<QString::number(g)<<", "<<QString::number(b)<<"));\n";
+tos << "}\n\n";
+
+---
+
+Liviu Lalescu:
+
+Hmm... and do you think this would solve Cyrus' problem?
+
+I like more solution (2.), but we are not guaranteed to have the same
+behavior as FET interface.
+
+I do not like solution (1.), seems too complicated and much CSS code.
+
+---
+
+Volker Dirr:
+
+I didn't try it yet, but i guess it will help if guys manually change
+the background. Yes solution 2 is smarter. Gemini explained me that we
+currently use the old school way to calculate the contrast. The new one
+is better in a few cases.
+
+But I sadly saw an other problem with solution 2. This "contrast-color"
+is a very new feature in web browsers. the official release date was
+April 2026. Probably as a beta in some browsers a bit earlier. So the
+biggest problem will be, that at least the Qt 5 preview will not work
+(and maybe even the Qt 6 preview will not work.)
+
+So I think maybe add the second solutions as a TODO with the comment
+"Try this as soon we skip the Qt 5 support. Check if the Qt 6 print
+preview can handle it fine."
+
+866---------------------------------------------------------
+From mrtvillaret:
+
+In the Constraints subactivities preferred starting times constraint: when you specify which component should go in a
+particular time slot, the generated timetable might not place subactivity (1) where it was supposed to go, but instead
+place subactivity (2) there. When the two subactivities are interchangeable, this falsely inflates the conflict count.
+
+Liviu Lalescu:
+
+It is a bug, not a feature. The program cannot know exactly that two (sub)activities are interchangeable, because they
+might have different constraints. I am sure (I hope it is not another FET bug) that you are talking about weights strictly less than 100%.
+
+mrtvillaret:
+
+Yes, that's right — I've only tested it with weight strictly less than 100%. But it would be great if it didn't produce
+these false positives, especially when comparing timetables to pick the one with the fewest conflicts.
+
+867---------------------------------------------------------
+From ygoldblatt:
+
+Is there any way to hold a "fet" file on the cloud (eg on a google drive) so that more than one person can have access?

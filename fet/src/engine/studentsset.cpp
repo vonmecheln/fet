@@ -564,7 +564,7 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r, bool r
 	}
 }
 
-int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2)
+bool studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2)
 {
 	//return y1->name < y2->name;
 	
@@ -572,7 +572,7 @@ int studentsSetsAscending(const StudentsSet* st1, const StudentsSet* st2)
 	return st1->name.localeAwareCompare(st2->name)<0;
 }
 
-int studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2)
+bool studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2)
 {
 	//return y1->name < y2->name;
 	
@@ -580,7 +580,7 @@ int studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2)
 	return st1->code.localeAwareCompare(st2->code)<0;
 }
 
-int yearsAscending(const StudentsYear* y1, const StudentsYear* y2)
+bool yearsAscending(const StudentsYear* y1, const StudentsYear* y2)
 {
 	//return y1->name < y2->name;
 	
@@ -588,7 +588,7 @@ int yearsAscending(const StudentsYear* y1, const StudentsYear* y2)
 	return y1->name.localeAwareCompare(y2->name)<0;
 }
 
-int groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2)
+bool groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2)
 {
 	//return g1->name < g2->name;
 	
@@ -596,7 +596,7 @@ int groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2)
 	return g1->name.localeAwareCompare(g2->name)<0;
 }
 
-int subgroupsAscending(const StudentsSubgroup* s1, const StudentsSubgroup* s2)
+bool subgroupsAscending(const StudentsSubgroup* s1, const StudentsSubgroup* s2)
 {
 	//return s1->name < s2->name;
 	

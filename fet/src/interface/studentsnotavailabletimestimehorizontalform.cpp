@@ -40,7 +40,7 @@
 
 #include "utilities.h"
 
-#define YES		(QString("X"))
+#define YES		(QString("✗"))
 #define NO		(QString(" "))
 
 extern const QString COMPANY;

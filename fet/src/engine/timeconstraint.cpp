@@ -6654,7 +6654,7 @@ QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList
 					}
 				}
 				s+=">";
-				s+=notAvailable?"X":"✓";
+				s+=notAvailable?"✗":"✓";
 				s+="</td>\n";
 			}
 			else{
@@ -6861,7 +6861,7 @@ QString getActivityDescription(Rules& r, int id)
 	}
 	else{
 		if(!act->active)
-			s+="X-";
+			s+="✗-";
 		s+=QString::number(id);
 	}
 	
@@ -6935,7 +6935,7 @@ QString getActivityDetailedDescription(Rules& r, int id)
 	if(act->active==true)
 		_active="";
 	else
-		_active="X";
+		_active="✗";
 
 	QString _nstudents="";
 	if(act->computeNTotalStudents==false)
@@ -8647,7 +8647,7 @@ QString ConstraintBasicCompulsoryTime::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -8749,7 +8749,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 		//Below, for teachers and students, please remember that 2 means a weekly activity
 		//and 1 fortnightly one. So, if the matrix teachersMatrix[teacher][day][hour]==2, it is ok.
 
-		//Calculates the number of teachers exhaustion (when he has to teach more than
+		//Calculates the number of teachers exhaustion (when he/she has to teach more than
 		//one activity at the same time)
 		/*nte=0;
 		for(i=0; i<r.nInternalTeachers; i++)
@@ -8894,7 +8894,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 		//and 1 fortnightly one. So, if the matrix teachersMatrix[teacher][day][hour]==2,
 		//that is ok.
 
-		//Calculates the number of teachers exhaustion (when he has to teach more than
+		//Calculates the number of teachers exhaustion (when he/she has to teach more than
 		//one activity at the same time)
 		nte=0;
 		for(i=0; i<r.nInternalTeachers; i++)
@@ -9144,7 +9144,7 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -9287,7 +9287,7 @@ double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<
 		c.changedForMatrixCalculationStudents=false;
 	}
 
-	//Calculates the number of hours when the teacher is supposed to be teaching, but he is not available
+	//Calculates the number of hours when the teacher is supposed to be teaching, but he/she is not available
 	//This function consideres all the hours, I mean if there are for example 5 weekly courses
 	//scheduled on that hour (which is already a broken compulsory restriction - we only
 	//are allowed 1 weekly course for a certain teacher at a certain hour) we calculate
@@ -9543,7 +9543,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -9898,7 +9898,7 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -10220,7 +10220,7 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -10518,7 +10518,7 @@ QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -10849,7 +10849,7 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -11273,7 +11273,7 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -11636,7 +11636,7 @@ QString ConstraintActivitiesMaxHourlySpan::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -12003,7 +12003,7 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -12319,7 +12319,7 @@ QString ConstraintMaxGapsBetweenActivities::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -12560,7 +12560,7 @@ QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -12789,7 +12789,7 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -13014,7 +13014,7 @@ QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -13252,7 +13252,7 @@ QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -13508,7 +13508,7 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -13791,7 +13791,7 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& 
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -14052,7 +14052,7 @@ QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -14297,7 +14297,7 @@ QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -14551,7 +14551,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -14769,7 +14769,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -14984,7 +14984,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -15201,7 +15201,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -15417,7 +15417,7 @@ QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDescription(Rules& r
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -15651,7 +15651,7 @@ QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -15884,7 +15884,7 @@ QString ConstraintBreakTimes::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -16193,7 +16193,7 @@ QString ConstraintStudentsMaxGapsPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -16463,7 +16463,7 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -16682,7 +16682,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& 
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -16989,7 +16989,7 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDescription(Rule
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -17247,7 +17247,7 @@ QString ConstraintStudentsMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -17449,7 +17449,7 @@ QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -17718,7 +17718,7 @@ QString ConstraintStudentsMaxHoursContinuously::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -17945,7 +17945,7 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -18261,7 +18261,7 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -18515,7 +18515,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDescription(Rul
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -18861,7 +18861,7 @@ QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -19165,7 +19165,7 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -19586,7 +19586,7 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -19866,7 +19866,7 @@ QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -20320,7 +20320,7 @@ QString ConstraintActivitiesPreferredTimeSlots::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -20890,7 +20890,7 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -21366,7 +21366,7 @@ QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -21806,7 +21806,7 @@ QString ConstraintActivitiesPreferredStartingTimes::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -22368,7 +22368,7 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -22857,7 +22857,7 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -23179,7 +23179,7 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -23472,7 +23472,7 @@ QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -23754,7 +23754,7 @@ QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -24071,7 +24071,7 @@ QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -24425,7 +24425,7 @@ QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -24713,7 +24713,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -25052,7 +25052,7 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -25287,7 +25287,7 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -25514,7 +25514,7 @@ QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -25765,7 +25765,7 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -26000,7 +26000,7 @@ QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -26210,7 +26210,7 @@ QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -26455,7 +26455,7 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -26718,7 +26718,7 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -27035,7 +27035,7 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -27296,7 +27296,7 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -27579,7 +27579,7 @@ QString ConstraintActivitiesEndStudentsDay::getDescription(Rules& r)
 	
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -27877,7 +27877,7 @@ QString ConstraintActivityEndsTeachersDay::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -28138,7 +28138,7 @@ QString ConstraintActivitiesEndTeachersDay::getDescription(Rules& r)
 	
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -28445,7 +28445,7 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -28695,7 +28695,7 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -28945,7 +28945,7 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -29166,7 +29166,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -29492,7 +29492,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -29758,7 +29758,7 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -30026,7 +30026,7 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -30263,7 +30263,7 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -30579,7 +30579,7 @@ QString ConstraintStudentsMaxGapsPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -30851,7 +30851,7 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -31153,7 +31153,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -31564,7 +31564,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -31984,7 +31984,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -32393,7 +32393,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -32815,7 +32815,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDescription(R
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -33172,7 +33172,7 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -33447,7 +33447,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -33741,7 +33741,7 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -33948,7 +33948,7 @@ QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -34165,7 +34165,7 @@ QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -34384,7 +34384,7 @@ QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -34591,7 +34591,7 @@ QString ConstraintStudentsSetMaxSpanPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -34841,7 +34841,7 @@ QString ConstraintStudentsMaxSpanPerDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -35059,7 +35059,7 @@ QString ConstraintTeacherMinRestingHours::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -35265,7 +35265,7 @@ QString ConstraintTeachersMinRestingHours::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -35463,7 +35463,7 @@ QString ConstraintStudentsSetMinRestingHours::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -35716,7 +35716,7 @@ QString ConstraintStudentsMinRestingHours::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -35928,7 +35928,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDescrip
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -36262,7 +36262,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDescriptio
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -36547,7 +36547,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -36841,7 +36841,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDescriptio
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -37125,7 +37125,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -37452,7 +37452,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTag::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -37729,7 +37729,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTag::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -38015,7 +38015,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTag::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -38298,7 +38298,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -38632,7 +38632,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -38917,7 +38917,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::getD
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -39211,7 +39211,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::get
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -39495,7 +39495,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -39822,7 +39822,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::getDescription(Ru
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -40099,7 +40099,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::getDescription(Rul
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -40385,7 +40385,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::getDescription(Ru
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -40668,7 +40668,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorni
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -41004,7 +41004,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -41291,7 +41291,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAn
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -41587,7 +41587,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -41873,7 +41873,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -42194,7 +42194,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -42465,7 +42465,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::ge
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -42745,7 +42745,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::g
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -43022,7 +43022,7 @@ QString ConstraintTeachersMaxHoursDailyRealDays::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -43254,7 +43254,7 @@ QString ConstraintTeacherMaxHoursDailyRealDays::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -43485,7 +43485,7 @@ QString ConstraintTeacherMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -43737,7 +43737,7 @@ QString ConstraintTeachersMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -44000,7 +44000,7 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -44263,7 +44263,7 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -44525,7 +44525,7 @@ QString ConstraintStudentsMaxHoursDailyRealDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -44728,7 +44728,7 @@ QString ConstraintStudentsSetMaxHoursDailyRealDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -45012,7 +45012,7 @@ QString ConstraintTeachersMinHoursPerMorning::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -45264,7 +45264,7 @@ QString ConstraintTeacherMinHoursPerMorning::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -45513,7 +45513,7 @@ QString ConstraintTeachersMinHoursDailyRealDays::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -45767,7 +45767,7 @@ QString ConstraintTeacherMinHoursDailyRealDays::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -46005,7 +46005,7 @@ QString ConstraintTeacherMinRealDaysPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -46212,7 +46212,7 @@ QString ConstraintTeachersMinRealDaysPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -46457,7 +46457,7 @@ QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -46719,7 +46719,7 @@ QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDescription(Rules& r
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -46984,7 +46984,7 @@ QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDescription(Rules& 
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -47246,7 +47246,7 @@ QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -47496,7 +47496,7 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -47747,7 +47747,7 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -48000,7 +48000,7 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -48225,7 +48225,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDescription(Ru
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -48531,7 +48531,7 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -48818,7 +48818,7 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -49106,7 +49106,7 @@ QString ConstraintStudentsSetMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -49319,7 +49319,7 @@ QString ConstraintStudentsMaxRealDaysPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -49541,7 +49541,7 @@ QString ConstraintTeacherMaxSpanPerRealDay::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -49763,7 +49763,7 @@ QString ConstraintTeachersMaxSpanPerRealDay::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -49975,7 +49975,7 @@ QString ConstraintStudentsSetMaxSpanPerRealDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -50231,7 +50231,7 @@ QString ConstraintStudentsMaxSpanPerRealDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -50448,7 +50448,7 @@ QString ConstraintTeacherMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -50698,7 +50698,7 @@ QString ConstraintTeachersMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -50960,7 +50960,7 @@ QString ConstraintTeacherMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -51210,7 +51210,7 @@ QString ConstraintTeachersMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -51495,7 +51495,7 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -51732,7 +51732,7 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -51948,7 +51948,7 @@ QString ConstraintTeacherMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -52155,7 +52155,7 @@ QString ConstraintTeachersMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -52368,7 +52368,7 @@ QString ConstraintTeacherMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -52575,7 +52575,7 @@ QString ConstraintTeachersMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -52785,7 +52785,7 @@ QString ConstraintTeacherMaxTwoConsecutiveMornings::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -53055,7 +53055,7 @@ QString ConstraintTeachersMaxTwoConsecutiveMornings::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -53326,7 +53326,7 @@ QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -53596,7 +53596,7 @@ QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -53867,7 +53867,7 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -54130,7 +54130,7 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDescriptio
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -54153,7 +54153,7 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDe
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A teacher must begin his afternoons early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
+	s+=tr("A teacher must begin his/her afternoons early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
@@ -54403,7 +54403,7 @@ QString ConstraintStudentsMinHoursPerMorning::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -54656,7 +54656,7 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -54965,7 +54965,7 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -55172,7 +55172,7 @@ QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -55433,7 +55433,7 @@ QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -55646,7 +55646,7 @@ QString ConstraintStudentsMaxAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -55912,7 +55912,7 @@ QString ConstraintStudentsSetMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -56125,7 +56125,7 @@ QString ConstraintStudentsMaxMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -56392,7 +56392,7 @@ QString ConstraintStudentsSetMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -56605,7 +56605,7 @@ QString ConstraintStudentsMinAfternoonsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -56871,7 +56871,7 @@ QString ConstraintStudentsSetMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -57084,7 +57084,7 @@ QString ConstraintStudentsMinMorningsPerWeek::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -57386,7 +57386,7 @@ QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -57645,7 +57645,7 @@ QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDescription(Rules& r
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -57961,7 +57961,7 @@ QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDescription(Rul
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -58220,7 +58220,7 @@ QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -58456,7 +58456,7 @@ QString ConstraintTeacherMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -58645,7 +58645,7 @@ QString ConstraintTeachersMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -58886,7 +58886,7 @@ QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -59073,7 +59073,7 @@ QString ConstraintStudentsMaxHoursPerAllAfternoons::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -59266,7 +59266,7 @@ QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDescripti
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -59464,7 +59464,7 @@ QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDescript
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -59656,7 +59656,7 @@ QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDescr
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -59904,7 +59904,7 @@ QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDescript
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -60110,7 +60110,7 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDescripti
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -60420,7 +60420,7 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDescri
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -60677,7 +60677,7 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -60909,7 +60909,7 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -61138,7 +61138,7 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -61423,7 +61423,7 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -61659,7 +61659,7 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -61922,7 +61922,7 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDescription(
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -61945,7 +61945,7 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDesc
 
 	QString s=tr("Time constraint");s+="\n";
 
-	s+=tr("A teacher must begin his mornings early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
+	s+=tr("A teacher must begin his/her mornings early, respecting a maximum number of later beginnings, at second hour"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
@@ -62182,7 +62182,7 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -62492,7 +62492,7 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDescript
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -62754,7 +62754,7 @@ QString ConstraintTeacherMaxThreeConsecutiveDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -62961,7 +62961,7 @@ QString ConstraintTeachersMaxThreeConsecutiveDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -63223,7 +63223,7 @@ QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -63433,7 +63433,7 @@ QString ConstraintStudentsMaxThreeConsecutiveDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -63740,7 +63740,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -64084,7 +64084,7 @@ QString ConstraintActivityPreferredDay::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -64346,7 +64346,7 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -64676,7 +64676,7 @@ QString ConstraintMaxTermsBetweenActivities::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -64966,7 +64966,7 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -65199,7 +65199,7 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -65437,7 +65437,7 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -65677,7 +65677,7 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -65926,7 +65926,7 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDescription(Ru
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -66162,7 +66162,7 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -66456,7 +66456,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -66741,7 +66741,7 @@ QString ConstraintActivityBeginsStudentsDay::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -67002,7 +67002,7 @@ QString ConstraintActivitiesBeginStudentsDay::getDescription(Rules& r)
 	
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -67300,7 +67300,7 @@ QString ConstraintActivityBeginsTeachersDay::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -67561,7 +67561,7 @@ QString ConstraintActivitiesBeginTeachersDay::getDescription(Rules& r)
 	
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -67863,7 +67863,7 @@ QString ConstraintTeachersMinHoursPerAfternoon::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -68115,7 +68115,7 @@ QString ConstraintTeacherMinHoursPerAfternoon::getDescription(Rules& r){
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -68359,7 +68359,7 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -68612,7 +68612,7 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -68939,7 +68939,7 @@ QString ConstraintTeacherMaxHoursDailyInInterval::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -69201,7 +69201,7 @@ QString ConstraintTeachersMaxHoursDailyInInterval::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -69458,7 +69458,7 @@ QString ConstraintStudentsSetMaxHoursDailyInInterval::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -69754,7 +69754,7 @@ QString ConstraintStudentsMaxHoursDailyInInterval::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -69996,7 +69996,7 @@ QString ConstraintTeacherNoTwoConsecutiveDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -70194,7 +70194,7 @@ QString ConstraintTeachersNoTwoConsecutiveDays::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -70450,7 +70450,7 @@ QString ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -70705,7 +70705,7 @@ QString ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -70974,7 +70974,7 @@ QString ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::getDescription(Ru
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -71228,7 +71228,7 @@ QString ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -71542,7 +71542,7 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -72003,7 +72003,7 @@ QString ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::getDescription(Ru
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -72331,7 +72331,7 @@ QString ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -72659,7 +72659,7 @@ QString ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::getDescription(Rules
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -73003,7 +73003,7 @@ QString ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::getDescription(Rules&
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -73289,7 +73289,7 @@ QString ConstraintTeacherMaxHoursPerTerm::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -73479,7 +73479,7 @@ QString ConstraintTeachersMaxHoursPerTerm::getDescription(Rules& r)
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -73739,7 +73739,7 @@ QString ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -74116,7 +74116,7 @@ QString ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -74507,7 +74507,7 @@ QString ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::getDescript
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -74883,7 +74883,7 @@ QString ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -75280,7 +75280,7 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::getDescripti
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -75722,7 +75722,7 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::getDescription(Rul
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -76062,7 +76062,7 @@ QString ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::getDescription
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -76460,7 +76460,7 @@ QString ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::getDescription(
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -76873,7 +76873,7 @@ QString ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::getDescrip
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -77269,7 +77269,7 @@ QString ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::getDescription(
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -77631,7 +77631,7 @@ QString ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::getDescription(Rule
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -77972,7 +77972,7 @@ QString ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::getDescriptio
 
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -78371,7 +78371,7 @@ QString ConstraintActivityBeginsOrEndsStudentsDay::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -78641,7 +78641,7 @@ QString ConstraintActivitiesBeginOrEndStudentsDay::getDescription(Rules& r)
 	
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -78950,7 +78950,7 @@ QString ConstraintActivityBeginsOrEndsTeachersDay::getDescription(Rules& r)
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -79222,7 +79222,7 @@ QString ConstraintActivitiesBeginOrEndTeachersDay::getDescription(Rules& r)
 	
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -79598,7 +79598,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDesc
 {
 	QString begin=QString("");
 	if(!active)
-		begin="X - ";
+		begin="✗ - ";
 		
 	//begin+="! ";
 	

@@ -1137,6 +1137,9 @@ public Q_SLOTS:
 	void settingsDataToPrintInTimetablesAction_triggered();
 	
 	void settingsOrderSubgroupsInTimetablesAction_toggled();
+
+	void settingsActivitiesOrderedByTagsInTimetablesAction_toggled();
+
 	void settingsPrintDetailedTimetablesAction_toggled();
 	void settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled();
 	void settingsPrintNotAvailableSlotsAction_toggled();

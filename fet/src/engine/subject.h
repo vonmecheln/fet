@@ -58,8 +58,8 @@ public:
 	QString getDetailedDescriptionWithConstraints(Rules& r);
 };
 
-int subjectsAscending(const Subject* s1, const Subject* s2);
+bool subjectsAscending(const Subject* s1, const Subject* s2);
 
-int subjectsCodesAscending(const Subject* s1, const Subject* s2);
+bool subjectsCodesAscending(const Subject* s1, const Subject* s2);
 
 #endif
