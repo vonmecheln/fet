@@ -308,7 +308,7 @@ void TimetableGenerateForm::stop()
 	conflictsString+=" ";
 	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in descending order):");
 	conflictsString+="\n";
 
 	for(const QString& t : std::as_const(c.conflictsDescriptionList))
@@ -508,7 +508,7 @@ void TimetableGenerateForm::stopHighest()
 	conflictsString+=" ";
 	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in descending order):");
 	conflictsString+="\n";
 
 	for(const QString& t : std::as_const(c.conflictsDescriptionList))
@@ -685,7 +685,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	conflictsString+=" ";
 	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in descending order):");
 	conflictsString+="\n";
 
 	for(const QString& t : std::as_const(c.conflictsDescriptionList))
@@ -887,7 +887,7 @@ void TimetableGenerateForm::generationFinished()
 	conflictsString+=" ";
 	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString+=TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):");
+	conflictsString+=TimetableGenerateForm::tr("Soft conflicts listing (in descending order):");
 	conflictsString+="\n";
 
 	for(const QString& t : std::as_const(c.conflictsDescriptionList))
@@ -1119,7 +1119,7 @@ void TimetableGenerateForm::write(){
 	conflictsString+=" ";
 	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in descending order):");
 	conflictsString+="\n";
 
 	for(const QString& t : std::as_const(c.conflictsDescriptionList))
@@ -1199,7 +1199,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	conflictsString+=" ";
 	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in descending order):");
 	conflictsString+="\n";
 
 	for(const QString& t : std::as_const(c.conflictsDescriptionList))

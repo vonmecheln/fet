@@ -4,191 +4,193 @@
 <context>
     <name>ActivitiesForm</name>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="666"/>
-        <location filename="../src/interface/activitiesform.cpp" line="717"/>
-        <location filename="../src/interface/activitiesform.cpp" line="927"/>
-        <location filename="../src/interface/activitiesform.cpp" line="1115"/>
-        <location filename="../src/interface/activitiesform.cpp" line="1178"/>
+        <location filename="../src/interface/activitiesform.cpp" line="671"/>
+        <location filename="../src/interface/activitiesform.cpp" line="722"/>
+        <location filename="../src/interface/activitiesform.cpp" line="932"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1159"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1222"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="666"/>
-        <location filename="../src/interface/activitiesform.cpp" line="927"/>
+        <location filename="../src/interface/activitiesform.cpp" line="671"/>
+        <location filename="../src/interface/activitiesform.cpp" line="932"/>
         <source>Invalid selected activity</source>
         <translation>اختيار خاطئ للنشاط</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="718"/>
+        <location filename="../src/interface/activitiesform.cpp" line="723"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities.</source>
         <translation>لم يتم تعديل هذا النشاط الكبير، لاحتوائه على أكثر من %1 نشاط.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="735"/>
+        <location filename="../src/interface/activitiesform.cpp" line="740"/>
         <source>different Boolean variable &apos;must compute n total students&apos;</source>
         <translation>متغير منطقي مختلف &quot;يجب أن يحسب عدد الطلاب الإجمالي&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="810"/>
-        <location filename="../src/interface/activitiesform.cpp" line="1063"/>
-        <location filename="../src/interface/activitiesform.cpp" line="1126"/>
+        <location filename="../src/interface/activitiesform.cpp" line="815"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1107"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1170"/>
         <source>FET confirmation</source>
         <translation>FET تأكيد</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="811"/>
+        <location filename="../src/interface/activitiesform.cpp" line="816"/>
         <source>Yes</source>
         <translation>نعم</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="811"/>
+        <location filename="../src/interface/activitiesform.cpp" line="816"/>
         <source>No</source>
         <translation>لا</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="621"/>
+        <location filename="../src/interface/activitiesform.cpp" line="626"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1024"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the total number of activities. Please leave spaces between fields, so that they are better visible</comment>
         <translation>عدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="623"/>
+        <location filename="../src/interface/activitiesform.cpp" line="628"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1026"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities. Please leave spaces between fields, so that they are better visible</comment>
         <translation>المدة: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="727"/>
+        <location filename="../src/interface/activitiesform.cpp" line="732"/>
         <source>different teachers</source>
         <translation>مختلف المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="729"/>
+        <location filename="../src/interface/activitiesform.cpp" line="734"/>
         <source>different subject</source>
         <translation>مختلف المواد</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="731"/>
+        <location filename="../src/interface/activitiesform.cpp" line="736"/>
         <source>different activity tags</source>
         <translation>مختلف وسوم النشاط</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="733"/>
+        <location filename="../src/interface/activitiesform.cpp" line="738"/>
         <source>different students</source>
         <translation>مختلف الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="737"/>
+        <location filename="../src/interface/activitiesform.cpp" line="742"/>
         <source>different number of students</source>
         <translation>عدد مختلف للطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="740"/>
+        <location filename="../src/interface/activitiesform.cpp" line="745"/>
         <source>The current split activity has subactivities which were individually modified. It is recommended to abort now and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities from this larger split activity.</source>
         <translation>النشاط الحالي المقسم له أنشطة فرعية و التي تم تغييرها كل واحدة على حدة. ينصح بتركها الآن و تغيير الأنشطة الفرعية كل واحدة على حدة من القائمة المناسبة. و إلا ستغير الحقول لجميع الأنشطة الفرعية من هذا النشاط الكبير المقسم.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="744"/>
+        <location filename="../src/interface/activitiesform.cpp" line="749"/>
         <source>The fields which are different are: %1</source>
         <translation>الحقول المختلفة هي %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="576"/>
-        <location filename="../src/interface/activitiesform.cpp" line="750"/>
-        <location filename="../src/interface/activitiesform.cpp" line="1211"/>
+        <location filename="../src/interface/activitiesform.cpp" line="581"/>
+        <location filename="../src/interface/activitiesform.cpp" line="755"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1255"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="567"/>
+        <location filename="../src/interface/activitiesform.cpp" line="572"/>
         <source>Filtering the activities</source>
         <comment>Title of a progress dialog</comment>
         <translation>فرز الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="568"/>
+        <location filename="../src/interface/activitiesform.cpp" line="573"/>
         <source>Filtering the activities ... please wait</source>
         <translation>فرز الأنشطة ... فضلا انتظر</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="576"/>
+        <location filename="../src/interface/activitiesform.cpp" line="581"/>
         <source>You canceled the filtering of the activities - the list of activities will be incomplete.</source>
         <translation>لقد ألغيت فرز الأنشطة - ستكون قائمة الأنشطة غير مكتملة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="577"/>
+        <location filename="../src/interface/activitiesform.cpp" line="582"/>
         <source>Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities, which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much. Please consider filtering on the description or detailed description of the activities, instead.</source>
         <translation>ملاحظة: إذا كانت عملية فرز الأنشطة تتطلب الكثير من الوقت، فقد يكون ذلك بسبب اختيارك الفرز بوصف تفصيلي مع قيود الأنشطة ، والتي تتحقق من كل نشاط مقابل كل قيد زمني ، وكل قيد مكاني ، وأنشطة كل مجموعة في فقرة الترتيب الأولي ، والذي قد يكون أكثر من اللازم. يرجى النظر في فرز الوصف أو الوصف التفصيلي للأنشطة ، بدلاً من ذلك.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="579"/>
+        <location filename="../src/interface/activitiesform.cpp" line="584"/>
         <source>Note: if you are using more filters, like &apos;the activity should have a certain teacher&apos;, you might obtain much faster results if you filter on the description/detailed description of the activity for the teacher and on the detailed description with constraints for other filters (meaning that you should prefer using the description/detailed description instead of the detailed description with constraints, whenever it is possible).</source>
         <translation>ملاحظة: إذا كنت تستخدم المزيد من عوامل الفرز ، مثل &quot;يجب أن يكون للنشاط مدرس معين&quot; ، فقد تحصل على نتائج أسرع بكثير إذا قمت بالفرز على الوصف / الوصف التفصيلي للنشاط الخاص بالمدرس وعلى الوصف التفصيلي مع قيود  لعوامل أخرى من الفرز (بمعنى أنه يجب أن تفضل استخدام الوصف / الوصف التفصيلي بدلاً من الوصف التفصيلي مع القيود ، كلما كان ذلك ممكنًا).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="582"/>
+        <location filename="../src/interface/activitiesform.cpp" line="587"/>
         <source>Also, the order of the detailed description with constraints filters is important: you should put firstly the ones which filter out more activities (if you selected the &apos;All&apos; radio button) or put firstly the ones which accept immediately more activities (if you selected the &apos;Any&apos; radio button).</source>
         <translation>أيضًا ، يعد ترتيب الوصف التفصيلي مع عوامل فرز القيود أمرًا مهمًا: يجب أولاً وضع هذه الأوصاف التي تقوم بفرز المزيد من الأنشطة (إذا حددت زر الاختيار &quot;الكل&quot;) أو وضع أولاً الأوصاف التي تقبل المزيد من الأنشطة على الفور (إذا حددت زر الاختيار &quot;أي&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="784"/>
+        <location filename="../src/interface/activitiesform.cpp" line="789"/>
         <source>Remove these selected activities?</source>
         <translation>حذف هذه الأنشطة المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="786"/>
+        <location filename="../src/interface/activitiesform.cpp" line="791"/>
         <source>(If you select subactivities from a larger split activity, all the subactivities with the same group id will be automatically removed, even if they are not selected.)</source>
         <translation>(إذا قمت باختيار أنشطة فرعية من نشاط واسع التقسيم، كل الأنشطة الفرعية من نفس مجموعة التعريف id سيتم حذفها آليا، ختى وإن لم يتم اختيارها)</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="877"/>
+        <location filename="../src/interface/activitiesform.cpp" line="882"/>
         <source>Useful instructions/tips:</source>
         <translation>تعليمات/نصائح مفيدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="880"/>
+        <location filename="../src/interface/activitiesform.cpp" line="885"/>
         <source>Above the activities list we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active activities (we number each individual subactivity as 1), while the second number b is the number of total activities. The second label contains text: Dur: c / d. The third number c is the duration of active activities, in periods (or FET hours), while the fourth number d is the duration of total activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
         <translation>فوق قائمة الأنشطة، لدينا علامتان. العلامة الأولى تحتوي النص: &quot; رقم: a/ b &quot; أول عدد a هو عدد الأنشطة المفعلة (نحسب على انفراد كل نشاط فرعي 1)، بينما ثاني عدد b هو العدد الاجمالي للأنشطة. العلامة الثانية تحتوي النص: المدة الزمنية &quot; فترة: c / d &quot; العدد الثالث c هو مدة الأنشطة المفعلة، في الفترات الزمنية (أو ساعات FET)، بينما العدد الرابع d هو المدة الاجمالية للأنشطة في الفترات الزمنية (أو ساعات FET). إذن، رقم تعني عدد أو رقم و فترة تعني مدة زمنية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="892"/>
+        <location filename="../src/interface/activitiesform.cpp" line="897"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
         <translation>شرح لوصف مختصر لنشاط: يأتي أولا رقم التعريف id. إذا كان النشاط غير مفعل يتبع  بحرف X . ثم المدة الزمنية. ثم، إذا كان النشاط مقسما، خط مائل(/) و المدة الاجمالية. ثم المدرسون، المادة، وسم النشاط(في حالة ما استعمل) و الطلاب ثم عدد الطلاب(إذا تم تحديده).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="896"/>
+        <location filename="../src/interface/activitiesform.cpp" line="901"/>
         <source>The activities which are inactive:</source>
         <comment>This is the help for activities which are inactive, after this field there come explanations for how inactive activities are displayed.</comment>
         <translation>الأنشطة التي هي غير مفعّلة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="899"/>
+        <location filename="../src/interface/activitiesform.cpp" line="904"/>
         <source>have an X mark after the id.</source>
         <comment>It refers to inactive activities, which have this mark after the id.</comment>
         <translation>يوضع امام معرفها حرف X.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="904"/>
+        <location filename="../src/interface/activitiesform.cpp" line="909"/>
         <source>To modify an activity, you can also double click it.</source>
         <translation>لتعديل أي نشاط يمكنك النقر عليه نقرتين.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="906"/>
+        <location filename="../src/interface/activitiesform.cpp" line="911"/>
         <source>Show related: if you select this, there will be listed activities for groups and subgroups contained also in the current set (if the current set is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).</source>
         <translation>عرض الارتباط : عند اختيارك سيتم عرض الأنشطة للمجموعات و المجموعات الفرعية المرتبطة بأعلى مستوى أو مجموعة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="914"/>
+        <location filename="../src/interface/activitiesform.cpp" line="919"/>
         <source>Inverted: this will show all the activities which _don&apos;t_ respect the selected filter for the teacher, students, subject, or activity tag.</source>
         <translation>معكوس: سيعرض هذا جميع الأنشطة التي لا تحترم الفرز المحدد للمدرس ، الطلاب ، المادة أو وسم النشاط.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="917"/>
+        <location filename="../src/interface/activitiesform.cpp" line="922"/>
         <source>Note that it is possible to activate/deactivate an activity in two different ways: by modifying an activity and selecting/deselecting the &apos;Active&apos; check box, or directly, by clicking the corresponding buttons in this dialog.</source>
         <translation>لاحظ أنه من الممكن تفعيل / تعطيل نشاط ما بطريقتين مختلفتين: عن طريق تعديل نشاط وتحديد / إلغاء تحديد خانة الاختيار &quot;مفعل&quot; ، أو مباشرة بالنقر فوق الأزرار المقابلة في مربع الحوار هذا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="978"/>
+        <location filename="../src/interface/activitiesform.cpp" line="983"/>
         <source>Changed an activity&apos;s comments. Activity before:
 
 %1
@@ -203,98 +205,98 @@ Comments after:
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1009"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1053"/>
         <source>Advanced filter for activities</source>
         <translation>فرز متقدم للأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1062"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1106"/>
         <source>Activate the selected activities?</source>
         <translation>تفعيل الأنشطة المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1088"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1132"/>
         <source>Activated %1 activities:</source>
         <comment>%1 is the number of activated activities</comment>
         <translation>تم تفعيل %1 من الأنشطة الفرعية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1115"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1159"/>
         <source>Activated %1 activities</source>
         <comment>%1 is the number of activated activities</comment>
         <translation>تم تفعيل %1 من الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1151"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1195"/>
         <source>Deactivated %1 activities:</source>
         <comment>%1 is the number of deactivated activities</comment>
         <translation>تم تعطيل %1 من الأنشطة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1178"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1222"/>
         <source>Deactivated %1 activities</source>
         <comment>%1 is the number of deactivated activities</comment>
         <translation>تم تعطيل %1 من الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1195"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1239"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected activities, %1 is the number of active selected activities, %2 is the total number of selected activities</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1211"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1255"/>
         <source>No activities selected.</source>
         <translation>لا أنشطة تم تحديدها.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="1125"/>
+        <location filename="../src/interface/activitiesform.cpp" line="1169"/>
         <source>Deactivate the selected activities?</source>
         <translation>تعطيل الأنشطة المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="920"/>
+        <location filename="../src/interface/activitiesform.cpp" line="925"/>
         <source>FET Help</source>
         <translation>FET مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="886"/>
+        <location filename="../src/interface/activitiesform.cpp" line="891"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active activities, then 102 - the number of total activities, 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.</source>
         <translation>مثال: رقم: 100/102، فترة: 114/117. تمثل: 100 - عدد الأنشطة المفعلة، و 102 - العدد الاجمالي للأنشطة، 114 - مدة الأنشطة (في الفترات الزمنية أو ساعات FET) و 117 - مدة الأنشطة الاجمالية (في الفترات الزمنية أو ساعات FET). في هذا المثال لدينا نشاطين غير مفعلين مع كون مدتهما معا 3 فترات زمنية(أو 3 ساعات FET).</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="821"/>
+        <location filename="../src/interface/activitiesform.cpp" line="826"/>
         <source>Removed %1 activities (plus all the subactivities from the same larger split activity, even if they were not selected):</source>
         <translation>تم حذف %1 من الأنشطة (اضافة لكل الأنشطة الفرعية من نفس النشاط واسع التقسيم، حتى وإن كانت غير محددة):</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="902"/>
+        <location filename="../src/interface/activitiesform.cpp" line="907"/>
         <source>will appear with different background color.</source>
         <comment>It refers to inactive activities</comment>
         <translation>سوف تظهر مع لون خلفية مختلفة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="909"/>
+        <location filename="../src/interface/activitiesform.cpp" line="914"/>
         <source>There are two available filters: one is simple, based on the teacher, students, subject, or activity tag, the other one is more advanced (select the &apos;Filter&apos; check box). The resulted overall filter is the combined AND of these two filters, if both filters are active, or the active one, if only one is active. If no filters are active, all the activities will be shown.</source>
         <translation>هناك نوعان متاحان من الفرز: أحدهما بسيط ، بناءً على المدرس ، الطلاب ، المادة أو وسم النشاط ، والآخر أكثر تقدمًا (حدد خانة الاختيار &quot;فرز&quot;). الفرز الإجمالي الناتج هو الفرز المدمج لهذين الفرزين ، إذا كان كلا الفرزين نشطين ، أو الفرز النشط ، إذا كان أحدهما فقط نشطًا. إذا لم تكن هناك أي فرز نشط ، فسيتم عرض جميع الأنشطة الفرعية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="938"/>
+        <location filename="../src/interface/activitiesform.cpp" line="943"/>
         <source>Activity comments</source>
         <translation>تعليقات النشاط</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="940"/>
+        <location filename="../src/interface/activitiesform.cpp" line="945"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="942"/>
+        <location filename="../src/interface/activitiesform.cpp" line="947"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="861"/>
+        <location filename="../src/interface/activitiesform.cpp" line="866"/>
         <source>Invalid activity</source>
         <translation>نشاط غير صالح</translation>
     </message>
@@ -12438,7 +12440,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="882"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="949"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="963"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1089"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1091"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
@@ -12476,7 +12478,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>القيد بعد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1043"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1045"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 قيود مكانية</translation>
@@ -12490,7 +12492,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="401"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="456"/>
@@ -12501,7 +12503,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="488"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="543"/>
@@ -12574,25 +12576,25 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1065"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1067"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1089"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1091"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها بأن يكون لها وزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1097"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1106"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1099"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1108"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود المكانية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1099"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1101"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -12600,7 +12602,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1108"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1110"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -12614,7 +12616,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1146"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="1148"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود المكانية التالية المحددة إلى %2%:</translation>
@@ -12766,7 +12768,7 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="868"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="935"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="949"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1075"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1077"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
@@ -12787,7 +12789,7 @@ Please enter the new weight percentage:</source>
         <translation>تعطيل القيود الزمنية المحددة؟ (لاحظ أن القيود الزمنية الاجبارية الأساسية لن يتم تعطيلها، حتى وإن تم تحديدها.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1029"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1031"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 قيود زمنية</translation>
@@ -12818,7 +12820,7 @@ Please enter the new weight percentage:</source>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="380"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد الزمن للأعلى، مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="435"/>
@@ -12829,7 +12831,7 @@ Please enter the new weight percentage:</source>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="467"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد الزمن للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد الزمن للأسفل مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="522"/>
@@ -12897,25 +12899,25 @@ Please enter the new weight percentage:</source>
         <translation>القيد بعد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1051"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1053"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1075"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1077"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها بأن يكون لها وزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1083"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1092"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1085"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1094"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود الزمنية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1085"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1087"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -12923,7 +12925,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1094"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1096"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -12937,7 +12939,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1131"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1133"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود الزمنية التالية المحددة إلى %2%:</translation>
@@ -57242,89 +57244,90 @@ Please correct and try again.</source>
 <context>
     <name>GroupActivitiesInInitialOrderItemsForm</name>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="402"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="462"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="641"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="668"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="735"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="774"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="839"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="989"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1024"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="405"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="465"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="647"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="674"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="741"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="780"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="845"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1028"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1063"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="605"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="764"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="803"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="611"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="770"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="809"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="928"/>
         <source>%1 / %2 items</source>
         <comment>%1 represents the number of visible active &apos;group activities in the initial order&apos; items, %2 represents the total number of visible items</comment>
         <translation>فقرات %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="641"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="668"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="735"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="774"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="839"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="647"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="674"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="741"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="780"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="845"/>
         <source>Invalid selected item</source>
         <translation>فقرة مختارة خاطئة</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="673"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="679"/>
         <source>Remove item?</source>
         <translation>حذف فقرة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="677"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="683"/>
         <source>FET confirmation</source>
         <translation>FET تأكيد</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="678"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="684"/>
         <source>Yes</source>
         <translation>نعم</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="678"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="684"/>
         <source>No</source>
         <translation>لا</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="714"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="720"/>
         <source>This option is an advanced one. It is intended for experienced users. It is useful in cases of peculiar uses of constraints. In most cases, FET will care automatically about a good initial order of the activities before the generation will begin, but in some very rare cases you can help FET. An example is: if you use constraints activities occupy max time slots from selection in such a way that some activities are clearly meant to be near each other when the generation starts, but FET is not clever enough to deduce that. Other usage might be that you want to leave some activities at the end and, in case the timetable cannot be found, you can use a partial one. In this case, you need to begin to generate once (you can interrupt generation after only a few activities were placed), see the initial order of the activities, and use the option to group the first activities with the ones you wish to bring forward. The group of activities will be put near the earliest one in the group.</source>
         <translation>هذا الخيار متقدم. هو موجه للمستخدمين ذوي الخبرة. إنه مفيد في حالات الاستخدامات الخاصة للقيود. في معظم الحالات، FET سوف يقوم بالرعاية تلقائيا لترتيب أولي جيد من أجل وضع الأنشطة، قبل أن يبدأ في محاكاة جدول جديد، ولكن في بعض الحالات النادرة جدا يمكنك مساعدة FET. ومن الأمثلة على ذلك: إذا كنت تستخدم  قيود &quot;أنشطة تحتل أقصى فترات زمنية محدّدة&quot; على نحو يجعل من الواضح أن بعض الأنشطة تكون قريبة من بعضها البعض عندما يبدأ الانتاج، ولكن FET ليس ذكيا بما فيه الكفاية لاستنتاج ذلك. قد يكون الاستخدام الآخر هو أنك تريد ترك بعض الأنشطة في النهاية، وفي حالة ما إذا تعذّر العثور على جدول زمني، يمكنك أن تستخدم جزءا منها. في هذه الحالة، تحتاج إلى البدء في الانتاج مرة واحدة (يمكنك أن تقطع الانتاج بعد وضع عدد قليل من الأنشطة فقط)، انظر الترتيب الأولي للأنشطة واستخدم الخيار لتجميع الأنشطة الأولى مع تلك التي ترغب في إحراز تقدم . مجموعة الأنشطة سيتم وضعها بالقرب من الأنشطة التي ظهرت مبكرا في الترتيب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="726"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="732"/>
         <source>Note: Each activity id must appear at most once in all the active &apos;group activities in the initial order&apos; items.</source>
         <translation>لاحظ: كل نشاط بمعرفه.id يجب أن يظهر مرة واحدة على الأكثر في كل الفقرات المفعلة &apos;تجميع الأنشطة في الترتيب الأولي للانتاج&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="848"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="854"/>
         <source>Group activities in the initial order item comments</source>
         <translation>تعليقات فقرة تجميع الأنشطة في الترتيب الأولي</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="913"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="952"/>
         <source>Advanced filter for group activities in the initial order items</source>
         <translation>فرز متقدم لفقرات تجميع الأنشطة في الترتيب الأولي</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="963"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1002"/>
         <source>Are you sure you want to activate all the listed items?</source>
         <translation>هل أنت متأكد أنك تريد تفعيل كل الفقرات المدرجة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="964"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="999"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1003"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1038"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="974"/>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1009"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1013"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1048"/>
         <source>Item:
 
 %1</source>
@@ -57333,17 +57336,17 @@ Please correct and try again.</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="989"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1028"/>
         <source>Activated %1 group activities in the initial order items</source>
         <translation>تم تفعيل %1 من فقرات تجميع الأنشطة في الترتيب الأولي</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="998"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1037"/>
         <source>Are you sure you want to deactivate all the listed items?</source>
         <translation>هل أنت متأكد أنك تريد تعطيل كل الفقرات المدرجة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1016"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1055"/>
         <source>Deactivated all the filtered &apos;group activities in the initial order&apos; items:
 
 %1</source>
@@ -57351,22 +57354,22 @@ Please correct and try again.</source>
         <translation>تم تعطيل كل فقرات &apos;تجميع الأنشطة في الترتيب الأولي&apos; والتي تم فرزها: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1024"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1063"/>
         <source>Deactivated %1 group activities in the initial order items</source>
         <translation>تم تعطيل %1 من فقرات تجميع الأنشطة في الترتيب الأولي</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="728"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="734"/>
         <source>FET help</source>
         <translation>FET مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="402"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="405"/>
         <source>To move a &apos;group activities in the initial order&apos; item up, the &apos;Filter&apos; check box must not be checked.</source>
         <translation>لنقل فقرة &apos;تجميع الأنشطة في الترتيب الأولي&apos;للأعلى، مربع الاختيار يجب أن يكون غير محدد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="435"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="438"/>
         <source>Moved a &apos;group activities in the initial order&apos; item up:
 
 %1</source>
@@ -57376,12 +57379,12 @@ Please correct and try again.</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="462"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="465"/>
         <source>To move a &apos;group activities in the initial order&apos; item down, the &apos;Filter&apos; check box must not be checked.</source>
         <translation>لنقل فقر، &apos;تجميع الأنشطة في الترتيب الأولي&apos;للأسفل مربع الاختيار يجب أن يكون غير محدد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="495"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="498"/>
         <source>Moved a &apos;group activities in the initial order&apos; item down:
 
 %1</source>
@@ -57391,7 +57394,7 @@ Please correct and try again.</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="686"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="692"/>
         <source>Removed a &apos;group activities in the initial order&apos; item:
 
 %1</source>
@@ -57401,7 +57404,7 @@ Please correct and try again.</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="747"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="753"/>
         <source>Activated a &apos;group activities in the initial order&apos; item:
 
 %1</source>
@@ -57409,7 +57412,7 @@ Please correct and try again.</source>
         <translation>تم تفعيل فقرة &apos;تجميع الأنشطة في الترتيب الأولي&apos;: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="786"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="792"/>
         <source>Deactivated a &apos;group activities in the initial order&apos; item:
 
 %1</source>
@@ -57417,17 +57420,17 @@ Please correct and try again.</source>
         <translation>تم تعطيل فقرة &apos;تجميع الأنشطة في الترتيب الأولي&apos;: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="850"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="856"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="852"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="858"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="888"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="894"/>
         <source>Changed a &apos;group activities in the initial order&apos; item&apos;s comments:
 
 %1
@@ -57443,7 +57446,7 @@ now has the comments:
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="981"/>
+        <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="1020"/>
         <source>Activated all the filtered &apos;group activities in the initial order&apos; items:
 
 %1</source>
@@ -62220,14 +62223,14 @@ is:</source>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="873"/>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="940"/>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="954"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1080"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1082"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="345"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="400"/>
@@ -62238,7 +62241,7 @@ is:</source>
     <message>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="432"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="487"/>
@@ -62366,31 +62369,31 @@ is:</source>
         <translation>القيد بعد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1034"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1036"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 قيود مكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1056"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1058"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1080"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1082"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها بأن يكون لها وزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1088"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1097"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1090"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1099"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود المكانية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1090"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1092"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -62398,7 +62401,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1099"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1101"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -62412,7 +62415,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1137"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1139"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود المكانية التالية المحددة إلى %2%:</translation>
@@ -62519,14 +62522,14 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="886"/>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="953"/>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="967"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1093"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1095"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="351"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد الزمن للأعلى، مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="406"/>
@@ -62537,7 +62540,7 @@ Please enter the new weight percentage:</source>
     <message>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="438"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد الزمن للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد الزمن للأسفل مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
         <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="493"/>
@@ -62671,31 +62674,31 @@ Please enter the new weight percentage:</source>
         <translation>القيد بعد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1047"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1049"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 قيود زمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1069"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1071"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1093"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1095"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها بأن يكون لها وزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1101"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1110"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1103"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1112"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود الزمنية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1103"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1105"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -62703,7 +62706,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1112"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1114"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -62717,7 +62720,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1150"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1152"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود الزمنية التالية المحددة إلى %2%:</translation>
@@ -63390,17 +63393,12 @@ Please enter the new weight percentage:</source>
         <translation>كل القاعات ستحترم أقصى عدد من الأنشطة لكل مدرس على مدار الأسبوع بأكمله.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2918"/>
-        <source>For each affected room we count the number of activities with each possible teacher, separately, and for this teacher the count of his/her activities in the affected room must be bounded by the specified maximum limit.</source>
-        <translation>بالنسبة لكل قاعة معينة، نقوم بحساب عدد الأنشطة مع كل مدرس محتمل، بشكل منفصل، وبالنسبة لهذا المدرس، يجب أن يكون عدد أنشطته في القاعة المعينة محدودًا بالحد الأقصى المحدد.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2924"/>
         <source>If an activity has two or more teachers, the constraint will be considered for each teacher, separately.</source>
         <translation>إذا كان لنشاط ما مدرسان أو أكثر، القيد سيأخذ في الاعتبار كل مدرس، على حدة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2923"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2926"/>
         <source>If you select the option &apos;Keep same room in a building&apos; then, for each teacher who has activities in a certain building, the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).</source>
         <translation>إذا قمت بتحديد خيار &apos;احتفظ بنفس القاعة في البناية&apos;، فعندئذ يجب أن تظل القاعة (القاعات) المعنية هي نفسها طوال الأسبوع لكل مدرس لديه أنشطة في بناية معينة (القاعة هي ثابتة بالنسبة للمدرس وللبناية).</translation>
     </message>
@@ -63460,19 +63458,19 @@ Please enter the new weight percentage:</source>
         <translation>هذا القيد يضمن لكل القاعات إمكانية أن يكون لها أنشطة ضمن أقصى عدد معين من مجموعات الفترات الزمنية المحددة. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3384"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3387"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>تم تغيير تعليقات أحد القيود.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3385"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3388"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>القيد قبل:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3389"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3392"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>القيد بعد:</translation>
@@ -63627,18 +63625,18 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3023"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3110"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3254"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3321"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3335"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3463"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3332"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3335"/>
         <source>Invalid selected constraint</source>
         <translation>اختيار خاطئ للقيد</translation>
     </message>
@@ -63659,8 +63657,8 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2720"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3201"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3267"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3204"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3270"/>
         <source>FET confirmation</source>
         <translation>FET تأكيد</translation>
     </message>
@@ -63693,7 +63691,7 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2863"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2878"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2903"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2933"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2936"/>
         <source>FET help</source>
         <translation>FET مساعدة</translation>
     </message>
@@ -63710,111 +63708,126 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2896"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2926"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2929"/>
         <source>You have some examples in the %1 directory of the FET examples, and you can read more on these two FET forum links: %2 and %3.</source>
         <translation>لديك بعض الأمثلة في المجلد %1 الخاص بأمثلة FET، وبإمكانك قراءة المزيد في هذين الرابطين من المنتدى: %2 و %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2990"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2918"/>
+        <source>For each affected room we count the number of activities with each possible teacher, separately, and for each teacher the total count of his/her activities in the affected room must not exceed the specified maximum limit.</source>
+        <translation>بالنسبة لكل قاعة معينة، نقوم بحساب عدد الأنشطة مع كل مدرس محتمل، بشكل منفصل، وبالنسبة لكل مدرس، يجب أن يكون العدد الإجمالي المحسوب لأنشطته في القاعة المعينة محدودا بالحد الأقصى المحدد.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <source>An alternative explanation could be: %1</source>
+        <translation>قد يكون التفسير البديل هو: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <source>For each specified room, the total number of activities in that room for any teacher must not exceed the specified maximum limit.</source>
+        <translation>بالنسبة لكل قاعة محددة، يجب ألا يتجاوز العدد الإجمالي للأنشطة في تلك القاعة لأي مدرس الحد الأقصى المحدد.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2993"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>عدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3020"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3023"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3075"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3078"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>تم نقل القيد للأعلى:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3107"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3110"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد المكان للأسفل مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3162"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3165"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>تم نقل القيد للأسفل:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3200"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3203"/>
         <source>Activate the selected space constraints?</source>
         <translation>تفعيل هذه القيود المكانية المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3228"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3231"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation>تم تفعيل %1 من القيود المكانية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3251"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3254"/>
         <source>Activated %1 space constraints</source>
         <translation>تم تفعيل %1 من القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3265"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3268"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation>تعطيل القيود المكانية المحددة؟ (لاحظ أن القيود المكانية الاجبارية الأساسية لن يتم تعطيلها، حتى وإن تم تحديدها.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3295"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3298"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation>تم تعطيل %1 من القيود المكانية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3318"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3321"/>
         <source>Deactivated %1 space constraints</source>
         <translation>تم تعطيل %1 من القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3344"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3347"/>
         <source>Constraint comments</source>
         <translation>تعليقات القيود</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3346"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3349"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3348"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3351"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3415"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3420"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 قيود مكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3439"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3444"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3458"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3463"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها أن يكون لها الوزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3468"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3477"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3473"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3482"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود المكانية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3470"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3475"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -63822,7 +63835,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3479"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3484"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -63836,7 +63849,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3517"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3522"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود المكانية التالية المحددة إلى %2%:</translation>
@@ -65357,12 +65370,12 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7746"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7757"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7823"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8677"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8764"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8908"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8975"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8989"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9117"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
@@ -65942,7 +65955,7 @@ Please enter the new weight percentage:</source>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7414"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8977"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8989"/>
         <source>Invalid selected constraint</source>
         <translation>اختيار خاطئ للقيد</translation>
     </message>
@@ -65977,27 +65990,27 @@ Please enter the new weight percentage:</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9029"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9041"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>تم تغيير تعليقات أحد القيود.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9030"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9042"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>القيد قبل:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9034"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9046"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>القيد بعد:</translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7932"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8846"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8912"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8858"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8924"/>
         <source>FET confirmation</source>
         <translation>FET تأكيد</translation>
     </message>
@@ -66023,48 +66036,48 @@ Please enter the new weight percentage:</source>
         <translation>ملاحظة: بعد اضافة هذه القيود، من الضروري (خلاف ذلك الانتاج قد يكون مستحيلا) ازالة القيود &apos;السيئة&apos; (الزائدة و مع الوزن&lt; 100%) القيود أدنى أيام بين الأنشطة.. إذا كنت متأكدا أنه ليس لك قيود &apos;سيئة&apos;، يمكنك تجاوز هذه الخطوة، لكن لا حرج إذا قمت بذلك على سبيل الاحتياط. أيضا ليس عليك القيام بهذا بعد كل قيد يضاف، ولكن مرة واحدة فقط بعد إضافة المزيد من القيود من هذا النوع. فضلا اقرأ مساعدة/نصائح هامة - نصيحة رقم 2  لمزيد من التفاصيل.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8438"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8450"/>
         <source>This constraint ensures that the teachers (or the specified teacher), or the students (or the specified students set) can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن  للمدرسين (أو مدرس معين)، أو الطلاب (أو مجموعة معينة من الطلاب) إمكانية أن تكون لديه(م) أنشطة إما في الفترة الزمنية الأولى المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8465"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8477"/>
         <source>This constraint ensures that the teachers (or the specified teacher), or the students (or the specified students set) can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن  للمدرسين (أو مدرس معين)، أو الطلاب (أو مجموعة معينة من الطلاب) إمكانية أن تكون لديه(م) أنشطة إما في المجموعة الأولى من الفترات الزمنية المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8483"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8495"/>
         <source>This constraint ensures that the selected activities will be placed in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن لمجموعة الأنشطة المحددة أنها سوف توضع إما في المجموعة الأولى من الفترات الزمنية المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8498"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8510"/>
         <source>This constraint ensures that the selected activities will be placed in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن لمجموعة الأنشطة المحددة أنها سوف توضع إما في الفترة الزمنية الأولى المحددة أو في الثانية، ولكن ليس في كليهما معا في نفس الوقت. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8537"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8549"/>
         <source>This constraint has specified a set of activities, which must all have the same duration, greater than 1, and ensures that each pair of activities from this set are either overlapping completely (they have the same starting day and hour), or are not overlapping at all (have no common time slot(s)).</source>
         <translation>يحدد هذا القيد مجموعة من الأنشطة، والتي يجب أن يكون لها جميعها نفس المدة، أكبر من 1، ويضمن أن كل زوج من الأنشطة من هذه المجموعة إما متداخلة بشكل كامل (تنطلق في نفس اليوم والساعة)، أو غير متداخلة على الإطلاق (ليس لها فترات زمنية مشتركة).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8549"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8561"/>
         <source>This constraint was suggested by %1, and maybe by other users in the past.</source>
         <comment>%1 is a person who suggested this constraint.</comment>
         <translation>هذا القيد تم اقتراحه من طرف %1، و ربما مستخدمون آخرون في الماضي.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8567"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8579"/>
         <source>This constraint was suggested by %1.</source>
         <translation>هذا القيد تم اقتراحه من طرف: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8581"/>
         <source>18 October 2025</source>
         <translation>18 أكتوبر 2025</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8571"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8583"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of students which can be present, considering the number of students of these activities, in these time slots.</source>
         <translation>لإستعمال هذا القيد، تحتاج إلى تحديد مجموعة من الأنشطة، مجموعة من الفترات الزمنية، و أقصى عدد من الطلاب بامكانهم الحضور، بالنظر إلى عدد الطلاب المشاركين في هذه الأنشطة، خلال هذه الفترات الزمنية.</translation>
     </message>
@@ -66182,19 +66195,19 @@ Please enter the new weight percentage:</source>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8223"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8237"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8251"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8266"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8299"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8334"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8390"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8419"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8443"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8470"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8488"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8503"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8527"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8542"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8557"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8574"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8278"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8311"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8346"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8402"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8431"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8455"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8482"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8500"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8515"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8539"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8554"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8586"/>
         <source>FET help</source>
         <translation>FET مساعدة</translation>
     </message>
@@ -66346,92 +66359,92 @@ Please enter the new weight percentage:</source>
         <translation>تم اقتراح هذا القيد للحالة التالية: يحتاج المستخدم إلى أن تكون مجموعة الأنشطة في ثلاث فصول متتالية. في هذه الحالة ، أضف قيدًا من نوع أقصى فصول بين الأنشطة لهذه الأنشطة بحد أقصى من الفصول بين الأنشطة = 2 (من المفترض أن هناك أيضًا قيودًا أخرى تضمن أن هذه الأنشطة تشغل ثلاثة فصول على الأقل).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8275"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8287"/>
         <source>Help about the constraint max half days between activities:</source>
         <translation>مساعدة حول القيد أقصى أنصاف أيام بين الأنشطة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8277"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8289"/>
         <source>This constraint was suggested by two users, for two different situations in the Mornings-Afternoons mode:</source>
         <translation>تم اقتراح هذا القيد من قبل مستخدمين اثنين وذلك لحالتين مختلفتين في نمط: صباح - مساء:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8279"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8291"/>
         <source>1)</source>
         <translation>1)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8280"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8292"/>
         <source>This constraint was suggested by %1, so that a teacher does not work both on the afternoon of the last day of the week and the morning of the first day of the week. The user needs to add all the activities of the teacher, max half days between them = n_half_days_per_week-2. See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation>تم اقتراح هذا القيد من قبل%1 ، بحيث لا يعمل المدرس معًا مساء اليوم الأخير من الأسبوع وفي صباح اليوم الأول من الأسبوع. يحتاج المستخدم إلى إضافة جميع أنشطة المدرس ، أقصى أنصاف أيام بينهما = عدد أنصاف الأيام في الأسبوع-2. راجع موضوع المنتدى %2 لمزيد من التفاصيل.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8284"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8296"/>
         <source>2)</source>
         <translation>2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8285"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8297"/>
         <source>Also, this constraint was suggested by %1, to do the timetable for two weeks using tricks. Here are this user&apos;s words: &apos;For the Tunisian high schools I opted for the morning evening mode with two weeks A and B for the weekly activities with the constraints min days between activities 6, max days between activities 6 and the same starting hour with max different rooms 1. I added a trick so that the two activities are in the same half of the day: for each real room I created two rooms, one valid in the morning and the other valid in the evening; to avoid this bypass, is it possible to add a max half days between activities constraint?&apos; (Note: The constraint type min half days between activities was existing at the time of this post.) See the forum topic %2 for more details.</source>
         <comment>%1 is a person</comment>
         <translation>أيضا، تم اقتراح هذا القيد من قبل %1، لإنجاز جدول زمني لأسبوعين باستخدام حيل. ها هي ذي كلمات هذذا المستخدم: &quot;بالنسبة للمدارس الثانوية التونسية ، اخترت النمط صباح - مساء بأسبوعين A و B للأنشطة الأسبوعية مع القيود أدنى أيام بين الأنشطة = 6 ، وأقصى أيام بين الأنشطة = 6 ونفس ساعة البدء مع أقصى قاعات مختلفة = 1. لقد أضفت حيلة بحيث يكون النشاطان في نفس نصف اليوم: لكل قاعة حقيقية  قمت بإنشاء قاعتين ، واحدة متاحة في الصباح والأخرى متاحة في المساء ؛لاجتناب هذه الحيلة ، هل من الممكن إضافة قيد أقصى أنصاف أيام بين الأنشطة؟&quot; (ملاحظة: القيد أدنى أنصاف أيام بين الأنشطة موجود في وقت هذه المشاركة.)  راجع موضوع المنتدى %2 لمزيد من التفاصيل.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8294"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8306"/>
         <source>IMPORTANT: after adding constraints of this type with max half days between the activities = 0, it is necessary (otherwise the generation might be impossible) to remove &apos;bad&apos; (redundant and with weight &lt; 100%) constraints min (half) days between activities. If you are sure that you don&apos;t have &apos;bad&apos; constraints, you can skip this step, but it doesn&apos;t hurt to do it, as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details.</source>
         <translation>ملاحظة: بعد اضافة القيود من هذا النوع مع أقصى أنصاف أيام بين الأنشطة = 0، من الضروري (خلاف ذلك الانتاج قد يكون مستحيلا) ازالة القيود &apos;السيئة&apos; (الزائدة و مع الوزن&lt; 100%) القيود أدنى (أنصاف)  أيام بين الأنشطة.. إذا كنت متأكدا أنه ليس لك قيود &apos;سيئة&apos;، يمكنك تجاوز هذه الخطوة، لكن لا حرج إذا قمت بذلك على سبيل الاحتياط. أيضا ليس عليك القيام بهذا بعد كل قيد يضاف، ولكن مرة واحدة فقط بعد إضافة المزيد من القيود من هذا النوع. فضلا اقرأ مساعدة/نصائح هامة - نصيحة رقم 2  لمزيد من التفاصيل.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8322"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8334"/>
         <source>Help about the constraint activities max hourly span:</source>
         <translation>مساعدة حول القيد أقصى امتداد بالساعات للأنشطة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8324"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8336"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is a user</comment>
         <translation>هذا القيد تم اقتراحه من طرف: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8326"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8338"/>
         <source>The activities can be on any days, but their hourly span must be limited by the specified maximum value.</source>
         <translation>يمكن أن تكون الأنشطة في أي يوم، ولكن يجب أن يكون امتدادها بالساعات محدودا بالقيمة القصوى المحددة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8328"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8340"/>
         <source>More details and an example: the hourly span of the a set of activities is the number of hours between the start of the earliest activity and the end of the latest activity, neglecting their days. So, if for instance the constraint addresses A1, A2, A3, and A4, each of them having duration 1, and say: A1 is on day 1 hour 2, A2 is on day 1 hour 3, A3 is on day 3 hour 5, and A4 is on day 5 hour 2, then the earliest activities (neglecting their days) are A1 and A4 (starting at hour 2), and the latest activity (neglecting its day) is A3 (ending after hour 5). The hourly span of A1, A2, A3, and A4 is thus (5 + 1) - 2 = 4.</source>
         <translation>مزيد من التفاصيل ومثال: الامتداد بالساعات لمجموعة من الأنشطة هو عدد الساعات بين بداية النشاط المبكر ونهاية النشاط الأخير، مع إهمال أيامها. لذا، إذا كان القيد على سبيل المثال يتناول الأنشطة A1 وA2 وA3 وA4، ولكل منها مدة 1، ولنقل: النشاط A1 في اليوم الأول الساعة 2، والنشاط A2 في اليوم الأول الساعة 3، و النشاط A3 في اليوم الثالث الساعة 5، والنشاط A4 في اليوم الخامس الساعة 2، فإن الأنشطة المبكرة (مع إهمال أيامها) هي A1 وA4 (تبدأ في الساعة 2)، والنشاط الأخير (مع إهمال يومه) هو A3 (ينتهي بعد الساعة 5). وبالتالي فإن الأمتداد بالساعات للأنشطة A1 وA2 وA3 وA4 هي (5 + 1) - 2 = 4.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8341"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8353"/>
         <source>This constraint was suggested by %1 and %2.</source>
         <comment>%1 and %2 are the two persons who suggested this constraint.</comment>
         <translation>هذا القيد تم اقتراحه من طرف %1 و %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8344"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8356"/>
         <source>The two sets must have the same number of activities, and the activities should have the same students sets, respectively.</source>
         <translation>المجموعتان يجب أن تحتويان على نفس عدد الأنشطة، ويجب أن تحتوي الأنشطة على نفس مجموعات الطلاب، على التوالي.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8346"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8358"/>
         <source>Also, all the activities in such a constraint must have equal durations.</source>
         <translation>بالإضافة إلى ذلك، يجب أن يكون لكل الأنشطة في مثل هذا القيد مدد متساوية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8348"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8360"/>
         <source>You can add exceptions for the time slots. If an activity is placed, even partially, in these exception time slots, it is not forced to respect this constraint.</source>
         <translation>يمكنك إضافة استثناءات للفترات الزمنية. إذا تم وضع نشاط، ولو بشكل جزئي، خلال هذه الفترات الزمنية المستثناة، فلن يكون ملزما على احترام هذا القيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8352"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8364"/>
         <source>More details, written by %1 and %2:</source>
         <comment>%1 and %2 are two persons.</comment>
         <translation>مزيد من التفاصيل كتبها %1 و%2:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8354"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8366"/>
         <source>*Two sets of activities have the same sections*
 This constraint can be used to create *identical groupings* of students for classes that meet multiple times with multiple sections. Note: both sets of activities MUST have the same number of activities and be all of the same duration.
 
@@ -66479,38 +66492,38 @@ Example 2:
 - جميع أنشطة الرياضيات في المجموعة الأولى، متبوعةً بجميع أنشطة الكيمياء في المجموعة الثانية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8385"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8397"/>
         <source>Note (by %1): if you use overflow slots for the activities which cannot be placed in the real time slots, these overflow slots should be added as exception slots, in which an activity is not forced to respect this &apos;same sections&apos; constraint.</source>
         <comment>%1 is the person who wrote this note.</comment>
         <translation>ملاحظة (بواسطة %1): إذا كنت تستخدم فائض الفترات الزمنية للأنشطة التي لا يمكن وضعها في فترات الزمن الحقيقية، فيجب إضافة فائض الفترات الزمنية هذه كفترات زمنية مستثناة، حيث لا يتم إجبار النشاط على احترام قيد &quot;نفس الأقسام&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8406"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8459"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8477"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8519"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8534"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8418"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8471"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8489"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8531"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8546"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation>هذا القيد تم اقتراحه من طرف: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8409"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8421"/>
         <source>This constraint is useful if you want to avoid small chunks of free time between classes. A gap is defined as a single FET hour between two activities. Select the students/teachers for whom you want this constraint applied to, then select the time slots where you DO NOT want gaps to appear. The maximum allowed number of single gaps is defaulted to zero. Increasing this number will result in more gaps appearing within the select time slots. This might be helpful in troubleshooting an impossible timetable. Note that two consecutive single gaps are not considered a &apos;gap&apos;.</source>
         <translation>هذا القيد مفيد لتجنب فترات قصيرة من وقت الفراغ بين الحصص الدراسية. تُعرّف الفجوة بأنها ساعة فردية بين نشاطين. حدد الطلاب/المدرسين الذين تريد تطبيق هذا القيد عليهم، ثم حدد الفترات الزمنية التي لا تريد ظهور فجوات فيها. الحد الأقصى المسموح به لعدد الفجوات الفردية هو صفر افتراضيًا. زيادة هذا العدد ستؤدي إلى ظهور المزيد من الفجوات ضمن الفترات الزمنية المحددة. قد يكون هذا مفيدًا في حل مشاكل الجدول الزمني غير الملائم. يُرجى ملاحظة أن وجود فجوتين فرديتين متتاليتين لا يُعتبر &quot;فجوة&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8522"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8534"/>
         <source>This constraint ensures that the teachers (or the specified teacher), or the students (or the specified students set) can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن  للمدرسين (أو مدرس معين)، أو الطلاب (أو مجموعة معينة من الطلاب) إمكانية أن تكون لديه(م) أنشطة في أقصى عدد معين من مجموعات الفترات الزمنية المحددة. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8552"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8564"/>
         <source>This constraint ensures that the selected activities can take place in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>هذا القيد يضمن لمجموعة الأنشطة المحددة إمكانية أن توضع ضمن أقصى عدد معين من مجموعات الفترات الزمنية المحددة. الفترات الزمنية غير المحددة ليست خاضعة للقيد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8569"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8581"/>
         <source>This constraint type was added on %1.</source>
         <comment>%1 is the date at which this constraint type was implemented in FET</comment>
         <translation>تم إضافة هذا القيد في %1.</translation>
@@ -66644,106 +66657,118 @@ Example 2:
         <translation>أدنى أنصاف أيام الجديد=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8635"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8266"/>
+        <source>The exact behavior of this constraint is this: for each pair of activities (A1, A2) of this constraint, we compute the term distance between them (by subtracting the term number of activity A1 from the term number of activity A2, assuming that A1 is scheduled earlier in the week compared to A2), and this distance must be less than or equal to the specified value of max terms between activities of this constraint.</source>
+        <comment>&apos;Term&apos; here refers to the same notion as in the Terms mode.</comment>
+        <translation>السلوك الدقيق لهذا القيد هو كالتالي: لكل زوج من الأنشطة (A1، A2) لهذا القيد، نقوم بحساب المسافة الفصلية بينهما (عن طريق طرح رقم الفصل للنشاط A1 من رقم الفصل للنشاط A2، بافتراض أن A1 مجدول في وقت أبكر من الأسبوع مقارنة بـ A2)، ويجب أن تكون هذه المسافة أقل من أو تساوي القيمة المحددة للحد الأقصى للفصول بين أنشطة هذا القيد.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8271"/>
+        <source>For instance, if we have 5 terms per week, and activities A1, A2, and A3 scheduled respectively in the terms number 1, 2, and 4, the term distance between A1 and A2 is 1, the term distance between A2 and A3 is 2, and the term distance between A1 and A3 is 3. If we specified max terms between activities for a constraint of this type = 2, this constraint is not respected, and FET will reallocate the activities. If we specified max terms between activities for a constraint of this type = 3, the constraint is respected and FET will allow the current schedule.</source>
+        <comment>&apos;Term&apos; here refers to the same notion as in the Terms mode.</comment>
+        <translation>على سبيل المثال، إذا كان لدينا 5 فصول دراسية أسبوعيا، وتم جدولة الأنشطة A1 وA2 وA3 على التوالي في الفصول الدراسية رقم 1 و2 و4، فإن المسافة الفصلية بين النشاطين A1 وA2 هي 1، والمسافة الفصلية بين النشاطين A2 وA3 هي 2، والمسافة الفصلية بين النشاطين A1 وA3 هي 3. إذا حددنا الحد الأقصى للفصول الدراسية بين الأنشطة لقيد من هذا النوع = 2، فلن يتم الالتزام بهذا القيد، وسيعيد FET توزيع الأنشطة. أما إذا حددنا الحد الأقصى للفصول الدراسية بين الأنشطة لقيد من هذا النوع = 3، فسيتم الالتزام بالقيد، وسيسمح FET بالجدول الحالي.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8647"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>عدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8665"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8677"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد المكان للأعلى، مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد الزمن للأعلى، مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8720"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8732"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>تم نقل القيد للأعلى:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8752"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8764"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation>لنقل قيد الزمن للأسفل مربع الاختيار &apos;الذي تم فرزه&apos; يجب أن لا يكون محددا.</translation>
+        <translation>لنقل قيد الزمن للأسفل مربع الاختيار &apos;ترتيب&apos; يجب أن لا يكون محددا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8807"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8819"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>تم نقل القيد للأسفل:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8845"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8857"/>
         <source>Activate the selected time constraints?</source>
         <translation>تفعيل هذه القيود الزمنية المحددة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8873"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8885"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation>تم تفعيل %1 من القيود الزمنية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8896"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8908"/>
         <source>Activated %1 time constraints</source>
         <translation>تم تفعيل %1 من القيود الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8910"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8922"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation>تعطيل القيود الزمنية المحددة؟ (لاحظ أن القيود الزمنية الاجبارية الأساسية لن يتم تعطيلها، حتى وإن تم تحديدها.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8940"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8952"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation>تم تعطيل %1 من القيود الزمنية:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8963"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8975"/>
         <source>Deactivated %1 time constraints</source>
         <translation>تم تعطيل %1 من القيود الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8989"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9001"/>
         <source>Constraint comments</source>
         <translation>تعليقات القيود</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8991"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9003"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8993"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9005"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9060"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9074"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 قيود زمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9084"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9098"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>اختيار متعدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9103"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9117"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>لا قيد من القيود المحددة يمكن تغيير وزنها (تذكر أن بعض أنواع القيود يسمح لها بأن يكون لها وزن 100% فقط).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9113"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9122"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9127"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9136"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>تعديل أوزان القيود الزمنية المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9115"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9129"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -66751,7 +66776,7 @@ Please enter the new weight percentage:</source>
 فضلا قم بإدخال نسبة الوزن الجديدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9124"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9138"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -66765,7 +66790,7 @@ Please enter the new weight percentage:</source>
 فضلا أدخل نسبة الوزن الجديد:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9162"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9176"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>تم تعديل أوزان %1 من القيود الزمنية التالية المحددة إلى %2%:</translation>
@@ -68725,7 +68750,6 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>April</source>
         <translation>أفريل</translation>
     </message>
@@ -68736,6 +68760,7 @@ allowed: 0.0%-100.0%)</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="61"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="86"/>
         <source>June</source>
         <translation>جوان</translation>
     </message>
@@ -76280,169 +76305,171 @@ N1 ( C1(G1،G2)، C2(G1، G3) )
 <context>
     <name>SubactivitiesForm</name>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="582"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="692"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="821"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="883"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="977"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="1017"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="587"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="697"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="866"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="928"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1022"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1062"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="582"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="692"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="821"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="883"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="587"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="697"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="866"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="928"/>
         <source>Invalid selected subactivity</source>
         <translation>اختيار خاطئ لنشاط فرعي</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="642"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="647"/>
         <source>Useful instructions/tips:</source>
         <translation>تعليمات/نصائح مفيدة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="664"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="669"/>
         <source>have an X mark after the id.</source>
         <translation>يوضع حرف X بعد معرفها .</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="667"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="672"/>
         <source>will appear with different background color.</source>
         <translation>سوف تظهر مع لون خلفية مختلفة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="679"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="684"/>
         <source>Inverted: this will show all the subactivities which _don&apos;t_ respect the selected filter for the teacher, students, subject, or activity tag.</source>
         <translation>معكوس: سيعرض هذا جميع الأنشطة الفرعية التي لا تحترم الفرز المحدد للمدرس ، الطلاب ، المادة أو وسم النشاط.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="703"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="708"/>
         <source>Subactivity comments</source>
         <translation>تعليقات النشاط الفرعي</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="705"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="710"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="707"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="712"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="513"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="518"/>
         <source>Filtering the subactivities</source>
         <comment>Title of a progress dialog</comment>
         <translation>فرز الأنشطة الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="514"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="519"/>
         <source>Filtering the subactivities ... please wait</source>
         <translation>فرز الأنشطة الفرعية ... فضلا انتظر</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="522"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="527"/>
         <source>You canceled the filtering of the subactivities - the list of subactivities will be incomplete.</source>
         <translation>لقد ألغيت فرز الأنشطة الفرعية - ستكون قائمة الأنشطة الفرعية غير مكتملة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="523"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="528"/>
         <source>Note: if filtering of the subactivities takes too much, it might be because you are filtering on the detailed description with constraints of the subactivities, which checks each subactivity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much. Please consider filtering on the description or detailed description of the subactivities, instead.</source>
         <translation>ملاحظة: إذا كانت عملية فرز الأنشطة الفرعية تتطلب الكثير من الوقت، فقد يكون ذلك بسبب اختيارك الفرز بوصف تفصيلي مع قيود الأنشطة الفرعية ، والتي تتحقق من كل نشاط فرعي مقابل كل قيد زمني ، وكل قيد مكاني ، وأنشطة كل مجموعة في فقرة الترتيب الأولي ، والذي قد يكون أكثر من اللازم. يرجى النظر في فرز الوصف أو الوصف التفصيلي للأنشطة الفرعية ، بدلاً من ذلك.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="526"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="531"/>
         <source>Note: if you are using more filters, like &apos;the subactivity should have a certain teacher&apos;, you might obtain much faster results if you filter on the description/detailed description of the subactivity for the teacher and on the detailed description with constraints for other filters (meaning that you should prefer using the description/detailed description instead of the detailed description with constraints, whenever it is possible).</source>
         <translation>ملاحظة: إذا كنت تستخدم المزيد من عوامل الفرز ، مثل &quot;يجب أن يكون للنشاط مدرس معين&quot; ، فقد تحصل على نتائج أسرع بكثير إذا قمت بالفرز على الوصف / الوصف التفصيلي للنشاط الخاص بالمدرس وعلى الوصف التفصيلي مع قيود  لعوامل أخرى من الفرز (بمعنى أنه يجب أن تفضل استخدام الوصف / الوصف التفصيلي بدلاً من الوصف التفصيلي مع القيود ، كلما كان ذلك ممكنًا).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="567"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="870"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="934"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="572"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="790"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="915"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="979"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active subactivities, %2 is the total number of subactivities. Please leave spaces between fields, so that they are better visible</comment>
         <translation>عدد: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="569"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="872"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="936"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="574"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="792"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="917"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="981"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities. Please leave spaces between fields, so that they are better visible</comment>
         <translation>المدة: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="645"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="650"/>
         <source>Above the (sub)activities list we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
         <translation>فوق قائمة الأنشطة(الفرعية)، لدينا علامتان. العلامة الأولى تحتوي النص: &quot; رقم: a/ b &quot; أول عدد a هو عدد الأنشطة (الفرعية) المفعلة (نحسب على انفراد كل نشاط فرعي 1)، بينما ثاني عدد b هو العدد الاجمالي للأنشطة(الفرعية). العلامة الثانية تحتوي النص: المدة الزمنية &quot; فترة: c / d &quot; العدد الثالث c هو مدة الأنشطة (الفرعية) المفعلة، في الفترات الزمنية (أو ساعات FET)، بينما العدد الرابع d هو المدة الاجمالية للأنشطة(الفرعية) في الفترات الزمنية (أو ساعات FET). إذن، رقم تعني عدد أو رقم و فترة تعني مدة زمنية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="651"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="656"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities, then 102 - the number of total (sub)activities, 114 - the duration of active (sub)activities (in periods or FET hours) and 117 - the duration of total (sub)activities (in periods or FET hours). In this example we have 2 inactive (sub)activities with their combined duration being 3 periods.</source>
         <translation>مثال: رقم: 100/102، فترة: 114/117. تمثل: 100 - عدد الأنشطة(الفرعية) المفعلة، و 102 - العدد الاجمالي للأنشطة(الفرعية)، 114 - مدة الأنشطة(الفرعية) (في الفترات الزمنية أو ساعات FET) و 117 - مدة الأنشطة الاجمالية (في الفترات الزمنية أو ساعات FET). في هذا المثال لدينا نشاطين غير مفعلين مع كون مدتهما معا 3 فترات زمنية(أو 3 ساعات FET).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="657"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="662"/>
         <source>Explanation of the short description of a (sub)activity: first comes the id. If the (sub)activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
         <translation>شرح لوصف مختصر لنشاط(فرعي): يأتي أولا رقم التعريف id. إذا كان النشاط غير مفعل يتبع  بحرف X . ثم المدة الزمنية. ثم، إذا كان النشاط مقسما، خط مائل(/) و المدة الاجمالية. ثم المدرسون، المادة، وسم النشاط(في حالة ما استعمل) و الطلاب ثم عدد الطلاب(إذا تم تحديده).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="661"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="666"/>
         <source>The (sub)activities which are inactive:</source>
         <translation>الأنشطة(الفرعية) التي هي غير مفعّلة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="669"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="674"/>
         <source>To modify a subactivity, you can also double click it.</source>
         <translation>لتعديل النشاط الفرعي، يمكنك أيضا بالنقر عليها نقرتين.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="671"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="676"/>
         <source>Show related: if you select this, there will be listed subactivities for groups and subgroups contained also in the current set (if the current set is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).</source>
         <translation>عرض الارتباط : عند اختيارك سيتم عرض الأنشطة الفرعية للمجموعات و المجموعات الفرعية .المتواجدة أيضا في المجموعة الحالية (إذا كانت المجموعة الحالية هي مستوى أو مجموعة) و كذلك أعلى ترتيبا لقم أو مستوى (إذا كانت المجموعة الحالية عبارة عن مجموعة أو مجموعة فرعية).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="674"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="679"/>
         <source>There are two available filters: one is simple, based on the teacher, students, subject, or activity tag, the other one is more advanced (select the &apos;Filter&apos; check box). The resulted overall filter is the combined AND of these two filters, if both filters are active, or the active one, if only one is active. If no filters are active, all the subactivities will be shown.</source>
         <translation>هناك نوعان متاحان من الفرز: أحدهما بسيط ، بناءً على المدرس ، الطلاب ، المادة أو وسم النشاط ، والآخر أكثر تقدمًا (حدد خانة الاختيار &quot;فرز&quot;). الفرز الإجمالي الناتج هو الفرز المدمج لهذين الفرزين ، إذا كان كلا الفرزين نشطين ، أو الفرز النشط ، إذا كان أحدهما فقط نشطًا. إذا لم تكن هناك أي فرز نشط ، فسيتم عرض جميع الأنشطة الفرعية.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="682"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="687"/>
         <source>Note that it is possible to activate/deactivate a subactivity in two different ways: by modifying a subactivity and selecting/deselecting the &apos;Active&apos; check box, or directly, by clicking the corresponding buttons in this dialog.</source>
         <translation>لاحظ أنه من الممكن تفعيل / تعطيل نشاط فرعي بطريقتين مختلفتين: عن طريق تعديل نشاط فرعي وتحديد / إلغاء تحديد خانة الاختيار &quot;مفعل&quot; ، أو مباشرة بالنقر فوق الأزرار المقابلة في مربع الحوار هذا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="685"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="690"/>
         <source>FET Help</source>
         <translation>FET مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="770"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="815"/>
         <source>Advanced filter for subactivities</source>
         <translation>فرز متقدم للأنشطة الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="946"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="991"/>
         <source>Are you sure you want to activate all the listed subactivities?</source>
         <translation>هل أنت متأكد أنك تريد تفعيل جميع الأنشطة الفرعية المدرجة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="522"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="947"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="987"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="527"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="992"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1032"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="529"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="534"/>
         <source>Also, the order of the detailed description with constraints filters is important: you should put firstly the ones which filter out more subactivities (if you selected the &apos;All&apos; radio button) or put firstly the ones which accept immediately more subactivities (if you selected the &apos;Any&apos; radio button).</source>
         <translation>أيضًا ، يعد ترتيب الوصف التفصيلي مع عوامل فرز القيود أمرًا مهمًا: يجب أولاً وضع هذه الأوصاف التي تقوم بفرز المزيد من الأنشطة الفرعية (إذا حددت زر الاختيار &quot;الكل&quot;) أو وضع أولاً الأوصاف التي تقبل المزيد من الأنشطة الفرعية على الفور (إذا حددت زر الاختيار &quot;أي&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="743"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="748"/>
         <source>Changed a subactivity&apos;s comments. Subactivity before:
 
 %1
@@ -76457,22 +76484,22 @@ Comments after:
 %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="838"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="883"/>
         <source>Activated a subactivity:
 
 %1</source>
         <translation>تم نفعيل النشاط الفرعي: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="900"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="945"/>
         <source>Deactivated a subactivity:
 
 %1</source>
         <translation>تم تعطيل النشاط الفرعي: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="957"/>
-        <location filename="../src/interface/subactivitiesform.cpp" line="997"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1002"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1042"/>
         <source>Subactivity:
 
 %1</source>
@@ -76481,31 +76508,31 @@ Comments after:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="966"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1011"/>
         <source>Activated all the filtered subactivities:
 
 %1</source>
         <translation>تم تفعيل كل الأنشطة الفرعية التي تم فرزها: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="977"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1022"/>
         <source>Activated %1 subactivities</source>
         <translation>تم تفعيل %1 من الأنشطة الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="986"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1031"/>
         <source>Are you sure you want to deactivate all the listed subactivities?</source>
         <translation>هل أنت متأكد أنك تريد تعطيل جميع الأنشطة الفرعية المدرجة؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="1006"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1051"/>
         <source>Deactivated all the filtered subactivities:
 
 %1</source>
         <translation>تم تعطيل كل الأنشطة الفرعية التي تم فرزها: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/subactivitiesform.cpp" line="1017"/>
+        <location filename="../src/interface/subactivitiesform.cpp" line="1062"/>
         <source>Deactivated %1 subactivities</source>
         <translation>تم تعطيل %1 من الأنشطة الفرعية</translation>
     </message>
@@ -78218,216 +78245,217 @@ teachers</source>
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1944"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1960"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2856"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2000"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2896"/>
         <source>End of file.</source>
         <translation>نهاية الملف.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1950"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1990"/>
         <source>Conflicts of %1</source>
         <translation>تعارضات %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1952"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2648"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6646"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1992"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2688"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6686"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>تحذير! الأنشطة المنجزة %1 من %2 فقط!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2645"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2685"/>
         <source>CSS Style sheet of %1</source>
         <comment>%1 is the file name</comment>
         <translation>ملف التصميم CSS للملف %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2649"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2689"/>
         <source>Style sheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation>التصميم انتج بواسطة FET %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2651"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2691"/>
         <source>To do a page-break only after every second timetable, delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</source>
         <comment>Please keep fields in quotes as they are, untranslated.</comment>
         <translation>لجعل صفحة فاصلة(page-break) بعد كل جدول ثانٍ، احذف &quot;page-break-befor: always;&quot;في &quot;table.even_table&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2655"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2695"/>
         <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
         <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
         <translation>لإخفاء عنصر يكفي كتابة الجملة التالية داخل العنصر: %1 (بدون مزدوجتين).</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6648"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6688"/>
         <source>Institution name</source>
         <translation>اسم المنشأة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6649"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6689"/>
         <source>Comments</source>
         <translation>شرح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2900"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2968"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3270"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3336"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3639"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3700"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4322"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4381"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4672"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4736"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5048"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5112"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5424"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5484"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5779"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5842"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6657"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2940"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3008"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3310"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3376"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3679"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3740"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4362"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4421"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4712"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4776"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5088"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5152"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5464"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5524"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5819"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5882"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6697"/>
         <source>Table of contents</source>
         <translation>محتوى الجدول</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2922"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2990"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3155"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3215"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3289"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3355"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3407"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3464"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3523"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3583"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3653"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3714"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3766"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3824"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3883"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3943"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4206"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4266"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4335"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4393"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4555"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4615"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4684"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4748"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4925"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4990"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5060"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5124"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5302"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5367"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5438"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5497"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5662"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5723"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5795"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5858"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6024"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6085"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2962"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3030"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3255"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3329"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3395"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3447"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3504"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3563"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3623"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3693"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3754"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3806"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3864"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3923"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3983"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4246"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4306"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4375"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4433"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4595"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4655"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4724"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4788"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5030"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5100"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5164"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5342"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5407"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5478"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5537"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5702"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5835"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5898"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6064"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6125"/>
         <source>back to the top</source>
         <translation>العودة للأعلى</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2904"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2972"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3274"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3340"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3643"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3704"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18397"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18410"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2944"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3012"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3314"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3380"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3683"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3744"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18437"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18450"/>
         <source>Year</source>
         <translation>العام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2907"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2975"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18417"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18430"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2947"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3015"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3383"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18457"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18470"/>
         <source>Group</source>
         <translation>المجموعة</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="930"/>
         <location filename="../src/engine/timetableexport.cpp" line="1561"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1920"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1991"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2077"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2155"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2232"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2629"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2887"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2955"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3024"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3080"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3136"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3196"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3257"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3323"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3389"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3447"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3504"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3564"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3626"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3687"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3748"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3806"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3864"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3924"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3986"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4032"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4078"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4133"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4188"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4247"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4309"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4426"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4481"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4596"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4656"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4718"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4782"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4842"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4902"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4967"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5032"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5094"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5158"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5218"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5279"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5344"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5411"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5471"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5530"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5586"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5642"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5703"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5766"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5829"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5892"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5948"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6004"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6065"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6126"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6186"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6246"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6292"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1603"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1960"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2031"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2272"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2669"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2927"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3064"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3176"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3236"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3297"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3363"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3429"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3487"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3544"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3604"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3666"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3727"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3788"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3846"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3964"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4026"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4072"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4118"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4173"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4228"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4287"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4349"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4466"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4521"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4576"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4636"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4696"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4758"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4822"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4882"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4942"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5007"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5072"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5134"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5198"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5258"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5384"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5451"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5511"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5570"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5626"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5682"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5743"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5806"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5869"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5932"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5988"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6044"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6105"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6166"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6226"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6332"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>لا يمكن فتح الملف %1 لأجل الكتابة. فضلا تحقق من مساحة القرص. حفظ %1 قد تم اجهاضه.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5427"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5487"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5467"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5527"/>
         <source>Subject</source>
         <translation>المادة</translation>
     </message>
@@ -78456,703 +78484,708 @@ teachers</source>
         <translation>البذرة العشوائية في نهاية الانتاج هي:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1935"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1572"/>
+        <source>The list of generated timetables, in chronological order, is:</source>
+        <translation>قائمة الجداول الزمنية المنتجة، مرتبة ترتيبازمنيا، هي:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1975"/>
         <source>Soft conflicts of %1</source>
         <comment>%1 is the file name</comment>
         <translation>التعارضات %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1937"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1953"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1977"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1993"/>
         <source>Generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>انتج بـ FET%1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1939"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1979"/>
         <source>Number of broken soft constraints: %1</source>
         <translation>عدد القيود اللينة التي تم كسرها: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1940"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1980"/>
         <source>Total soft conflicts: %1</source>
         <translation>كل التعارضات اللّينة: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1955"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1995"/>
         <source>Number of broken constraints: %1</source>
         <translation>عدد القيود اللينة التي تم كسرها: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1956"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1996"/>
         <source>Total conflicts: %1</source>
         <translation>مجموع التعارضات: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2261"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2301"/>
         <source>No timetable was written, because from the settings you disabled writing any timetable.</source>
         <translation>لا جدول زمني قد كُتِب، لأنك قد عطلت كتابة أي جدول من الاعدادات.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2262"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2302"/>
         <source>The exception is that after each successful (complete) timetable generation the %1 file will be written.</source>
         <translation>الاستثناء هو أنه بعد كل انتاج ناجح (كامل) لجدول زمني %1 ملف سيكون مكتوبا.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2266"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2306"/>
         <source>File generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>انتج الملف مع نسخة FET %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2279"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2319"/>
         <source>students</source>
         <translation>الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2281"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2321"/>
         <source>students - disabled</source>
         <translation>الطلاب- غير مفعل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2326"/>
         <source>teachers - disabled</source>
         <translation>المدرسون- غير مفعل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2288"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2328"/>
         <source>View statistics: %1, %2.</source>
         <comment>%1 and %2 are two files in HTML format, to show statistics for students and teachers. The user can click on one file to view it</comment>
         <translation>عرض الاحصاءات: %1، %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2334"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2338"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2342"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2346"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2348"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2349"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2350"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2351"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2360"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2364"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2368"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2372"/>
         <location filename="../src/engine/timetableexport.cpp" line="2374"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2376"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2377"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2382"/>
         <location filename="../src/engine/timetableexport.cpp" line="2386"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2388"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2389"/>
         <location filename="../src/engine/timetableexport.cpp" line="2390"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2394"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2398"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2391"/>
         <location filename="../src/engine/timetableexport.cpp" line="2400"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2401"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2402"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2403"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2404"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2408"/>
         <location filename="../src/engine/timetableexport.cpp" line="2412"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2415"/>
         <location filename="../src/engine/timetableexport.cpp" line="2416"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2420"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2424"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2417"/>
         <location filename="../src/engine/timetableexport.cpp" line="2426"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2427"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2428"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2429"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2430"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2434"/>
         <location filename="../src/engine/timetableexport.cpp" line="2438"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2440"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2441"/>
         <location filename="../src/engine/timetableexport.cpp" line="2442"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2444"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2445"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2443"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2452"/>
         <location filename="../src/engine/timetableexport.cpp" line="2456"/>
         <location filename="../src/engine/timetableexport.cpp" line="2460"/>
         <location filename="../src/engine/timetableexport.cpp" line="2464"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2466"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2467"/>
         <location filename="../src/engine/timetableexport.cpp" line="2468"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2470"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2471"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2472"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2473"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2469"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2478"/>
         <location filename="../src/engine/timetableexport.cpp" line="2482"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2486"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2490"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2494"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2484"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2485"/>
         <location filename="../src/engine/timetableexport.cpp" line="2496"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2497"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2498"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2499"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2500"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2504"/>
         <location filename="../src/engine/timetableexport.cpp" line="2508"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2510"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2511"/>
         <location filename="../src/engine/timetableexport.cpp" line="2512"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2516"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2520"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2513"/>
         <location filename="../src/engine/timetableexport.cpp" line="2522"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2523"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2524"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2525"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2526"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2530"/>
         <location filename="../src/engine/timetableexport.cpp" line="2534"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2536"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2537"/>
         <location filename="../src/engine/timetableexport.cpp" line="2538"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2542"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2546"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2539"/>
         <location filename="../src/engine/timetableexport.cpp" line="2548"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2549"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2550"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2551"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2552"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2556"/>
         <location filename="../src/engine/timetableexport.cpp" line="2560"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2562"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2563"/>
         <location filename="../src/engine/timetableexport.cpp" line="2564"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2568"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2572"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2565"/>
         <location filename="../src/engine/timetableexport.cpp" line="2574"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2575"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2576"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2577"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2578"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2582"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2586"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2588"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2589"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2590"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2591"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2600"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2604"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2608"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2612"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2615"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2616"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2617"/>
         <source>disabled</source>
         <translation>غير مفعل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2477"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2517"/>
         <source>Buildings</source>
         <translation>البنايات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2569"/>
         <source>Activity Tags</source>
         <translation>وسوم النشاط</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2581"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8389"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8391"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8558"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8560"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8720"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8722"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8954"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8956"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8965"/>
-        <location filename="../src/engine/timetableexport.cpp" line="8967"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9121"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9275"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9442"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9444"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9618"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9620"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9790"/>
-        <location filename="../src/engine/timetableexport.cpp" line="9792"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10034"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10036"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10045"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10047"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10209"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10211"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10369"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10371"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10539"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10541"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10718"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10720"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10895"/>
-        <location filename="../src/engine/timetableexport.cpp" line="10897"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11143"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11145"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11156"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11324"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11326"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11489"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11491"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11618"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11620"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11756"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11758"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11889"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11891"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12098"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12109"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12111"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12239"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12241"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12366"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12368"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12519"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12521"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12681"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12683"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12837"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12839"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13065"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13067"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13076"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13078"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13226"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13228"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13374"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13376"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13531"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13533"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13697"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13699"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13857"/>
-        <location filename="../src/engine/timetableexport.cpp" line="13859"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14089"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14091"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14102"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14256"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14258"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14407"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14409"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14572"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14574"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14746"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14748"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14914"/>
-        <location filename="../src/engine/timetableexport.cpp" line="14916"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15155"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15157"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15166"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15168"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15330"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15332"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15489"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15491"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15647"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15649"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15815"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15817"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15989"/>
-        <location filename="../src/engine/timetableexport.cpp" line="15991"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16244"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16246"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16255"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16257"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16423"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16425"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16598"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16600"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16757"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16759"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16925"/>
-        <location filename="../src/engine/timetableexport.cpp" line="16927"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17081"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17083"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17316"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17318"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17327"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17329"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17475"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17477"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17630"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17632"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17795"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17797"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17959"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17961"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18137"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18163"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18353"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18384"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18547"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18556"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2621"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8429"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8431"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8598"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8600"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8994"/>
+        <location filename="../src/engine/timetableexport.cpp" line="8996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9005"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9007"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9161"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9163"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9315"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9482"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9484"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9658"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9660"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9830"/>
+        <location filename="../src/engine/timetableexport.cpp" line="9832"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10074"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10076"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10085"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10087"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10249"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10409"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10411"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10579"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10581"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10758"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10935"/>
+        <location filename="../src/engine/timetableexport.cpp" line="10937"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11183"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11185"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11196"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11364"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11531"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11658"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11660"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11796"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11798"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11929"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11931"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12138"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12140"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12149"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12151"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12279"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12281"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12406"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12561"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12721"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12723"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12877"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12879"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13105"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13118"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13266"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13268"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13416"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13571"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13573"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13737"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13739"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13897"/>
+        <location filename="../src/engine/timetableexport.cpp" line="13899"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14129"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14131"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14140"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14142"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14298"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14447"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14449"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14612"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14786"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14788"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14954"/>
+        <location filename="../src/engine/timetableexport.cpp" line="14956"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15197"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15206"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15208"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15370"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15372"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15531"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15687"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15689"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15855"/>
+        <location filename="../src/engine/timetableexport.cpp" line="15857"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16029"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16031"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16284"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16297"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16463"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16465"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16640"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16797"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16799"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="16967"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17121"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17123"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17358"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17367"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17369"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17515"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17517"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17670"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17672"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17835"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17837"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17999"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18001"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18177"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18203"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18393"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18424"/>
         <location filename="../src/engine/timetableexport.cpp" line="18587"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18596"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18627"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>انتج الجدول بواسطة FET %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2653"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2693"/>
         <source>Delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot; and in &quot;table.odd_table&quot; to skip page-breaks.</source>
         <comment>Please keep fields in quotes as they are, untranslated.</comment>
         <translation>حذف &quot;page-break-before: always;&quot; في &quot;table.even_table&quot; و في &quot;table.odd_table&quot; لتخطي page-breaks.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2670"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2710"/>
         <source>Some programs import &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
         <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
         <translation>بعض البرامج تستورد &quot;tfoot&quot; بشكل خاطئ. لذلك نستخدم &quot;tr.foot&quot; بدلا من &quot;tfoot&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2806"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2846"/>
         <source>Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.</source>
         <translation>كن حذراً. قد تحصل على أنماط (CSS) متباينة وغامضة. CSS يعني أن التعريف الأخير سيتم استخدامه.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2840"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2880"/>
         <source>Style the teachers&apos; free periods</source>
         <translation>تصميم جدول الفترات الحرة للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4670"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4734"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4796"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4856"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4917"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4982"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4710"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4774"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4836"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4896"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4957"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5022"/>
         <source>No buildings recorded in FET for %1.</source>
         <comment>%1 is the institution name</comment>
         <translation>لم تسجل بنايات لـ %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5046"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5110"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5172"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5232"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5359"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5086"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5150"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5212"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5272"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5334"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5399"/>
         <source>No rooms recorded in FET for %1.</source>
         <comment>%1 is the institution name</comment>
         <translation>لم تسجل قاعات لـ %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5783"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5846"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5823"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5886"/>
         <source>Activity Tag</source>
         <translation>وسم النشاط</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6200"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6180"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6240"/>
         <source>Teacher has a single gap</source>
         <translation>مدرس يملك ساعة فارغة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6201"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6181"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6241"/>
         <source>Teacher has a border gap</source>
         <translation>مدرس يملك حصتين فارغتين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6142"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6202"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6182"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6242"/>
         <source>Teacher has a big gap</source>
         <translation>مدرس يملك فجوة كبيرة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6143"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6203"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6183"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6243"/>
         <source>Teacher must come earlier</source>
         <translation>مدرس يضطر للحضور مبكراً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6144"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6204"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6184"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6244"/>
         <source>Teacher must come much earlier</source>
         <translation>مدرس يضطر للحضور مبكراً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6145"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6205"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6185"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6245"/>
         <source>Teacher must stay longer</source>
         <translation>مدرس يضطر للإنتظار طويلاً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6146"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6206"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6186"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6246"/>
         <source>Teacher must stay much longer</source>
         <translation>مدرس يضطر للإنتظار طويلاً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6147"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6207"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6187"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6247"/>
         <source>Teacher has a free day</source>
         <translation>مدرس مفرغ اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6148"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6208"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6188"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6248"/>
         <source>Teacher is not available</source>
         <translation>مدرس غير متاح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17717"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17882"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17757"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17922"/>
         <source>Single gap</source>
         <translation>فجوة واحدة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17718"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17883"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17758"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17923"/>
         <source>Border gap</source>
         <translation>حصتين فارغتين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17719"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17884"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17759"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17924"/>
         <source>Big gap</source>
         <translation>فجوة كلبرة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17720"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17885"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17925"/>
         <source>Must come earlier</source>
         <translation>يجب الحضور مبكراً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17721"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17886"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17761"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17926"/>
         <source>Must stay longer</source>
         <translation>ينتظر طويلاً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17722"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17887"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17927"/>
         <source>Must come much earlier</source>
         <translation>يجب الحضور مبكراً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17723"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17888"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17928"/>
         <source>Must stay much longer</source>
         <translation>ينتظر طويلاً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17724"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17889"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17764"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17929"/>
         <source>Free day</source>
         <translation>مفرغ اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17725"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17765"/>
         <source>Not available</source>
         <comment>It refers to a teacher</comment>
         <translation>غير متاح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17890"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17930"/>
         <source>Not available</source>
         <translation>غير متاح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17978"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18180"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18018"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18220"/>
         <source>This is a teaser only. Values are not correct!</source>
         <translation>هذه دعابة فقط. القيم خاطئة!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="17982"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18184"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18022"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18224"/>
         <source>This file doesn&apos;t list limits that are set by constraints. It contains statistics about the minimum and the maximum values of the currently generated solution.</source>
         <translation>لا يسرد هذا الملف الحدود التي تم تعيينها بواسطة القيود.  إنه يحتوي على إحصائيات حول الحد الأدنى والحد الأقصى لقيم الحل الذي تم إنشاؤه حاليا.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18100"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18140"/>
         <source>All teachers</source>
         <translation>كل المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18101"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18148"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18317"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18369"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18572"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18141"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18188"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18409"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18612"/>
         <source>Hours per week</source>
         <translation>ساعات في الأسبوع</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18102"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18149"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18318"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18370"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18573"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18142"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18189"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18358"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18410"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18613"/>
         <source>Free days</source>
         <translation>الأيام الحرة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18103"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18143"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18359"/>
         <source>Gaps</source>
         <translation>فجوات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18104"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18320"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18144"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18360"/>
         <source>Gaps per day</source>
         <translation>فجوات في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18105"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18321"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18145"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18361"/>
         <source>Hours per day</source>
         <translation>ساعات في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18108"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18324"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18148"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18364"/>
         <source>Sum</source>
         <translation>مجموع</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18331"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18155"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18371"/>
         <source>Average</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18122"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18338"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18162"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18378"/>
         <source>Min</source>
         <translation>أدنى</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18129"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18345"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18169"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18385"/>
         <source>Max</source>
         <translation>أقصى</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18147"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18157"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18187"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18197"/>
         <source>Teacher</source>
         <translation>مدرس</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18150"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18371"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18574"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18190"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18411"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18614"/>
         <source>Total gaps</source>
         <translation>مجموع الفجوات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18151"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18372"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18406"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18426"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18575"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18191"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18412"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18446"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18466"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18615"/>
         <source>Min gaps per day</source>
         <translation>أدنى فجوات في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18152"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18373"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18407"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18427"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18576"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18192"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18413"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18447"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18467"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18616"/>
         <source>Max gaps per day</source>
         <translation>أقصى فجوات في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18153"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18374"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18402"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18422"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18577"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18193"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18442"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18462"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18617"/>
         <source>Min hours per day</source>
         <translation>أدنى ساعات في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18403"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18423"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18578"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18415"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18443"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18463"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18618"/>
         <source>Max hours per day</source>
         <translation>أقصى ساعات في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18356"/>
         <source>All students</source>
         <translation>كل الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18398"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18418"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18438"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18458"/>
         <source>Min hours per week</source>
         <translation>أدنى ساعات في الأسبوع</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18399"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18419"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18439"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18459"/>
         <source>Max hours per week</source>
         <translation>أقصى ساعات في الأسبوع</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18400"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18420"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18440"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18460"/>
         <source>Min free days</source>
         <translation>أدنى أيام حرة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18401"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18421"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18441"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18461"/>
         <source>Max free days</source>
         <translation>أقصى أيام حرة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18404"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18424"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18444"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18464"/>
         <source>Min gaps per week</source>
         <translation>أدنى فجوات في الأسبوع</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18405"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18425"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18445"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18465"/>
         <source>Max gaps per week</source>
         <translation>أقصى فجوات في الأسبوع</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18876"/>
-        <location filename="../src/engine/timetableexport.cpp" line="19002"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18916"/>
+        <location filename="../src/engine/timetableexport.cpp" line="19042"/>
         <source>Subjects legend:</source>
         <comment>It means the list of the complete information for the subjects: name, long name, code, and comments</comment>
         <translatorcomment>تعني قائمة المعلومات الكاملة للمواد: الاسم، الاسم الطويل، الرمز والتعليقات</translatorcomment>
         <translation>دليل المواد:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18901"/>
-        <location filename="../src/engine/timetableexport.cpp" line="19028"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18941"/>
+        <location filename="../src/engine/timetableexport.cpp" line="19068"/>
         <source>Activity tags legend:</source>
         <comment>It means the list of the complete information for the activity tag: name, long name, code, and comments</comment>
         <translatorcomment>تعني قائمة المعلومات الكاملة لوسوم النشاط: الاسم، الاسم الطويل، الرمز والتعليقات</translatorcomment>
         <translation>دليل وسوم النشاط:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18926"/>
-        <location filename="../src/engine/timetableexport.cpp" line="19054"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18966"/>
+        <location filename="../src/engine/timetableexport.cpp" line="19094"/>
         <source>Teachers legend:</source>
         <comment>It means the list of the complete information for the teachers: name, long name, code, and comments</comment>
         <translatorcomment>تعني قائمة المعلومات الكاملة للمدرسين: الاسم، الاسم الطويل، الرمز والتعليقات</translatorcomment>
         <translation>دليل المدرسين:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18951"/>
-        <location filename="../src/engine/timetableexport.cpp" line="19080"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18991"/>
+        <location filename="../src/engine/timetableexport.cpp" line="19120"/>
         <source>Students legend:</source>
         <comment>It means the list of the complete information for the students: name, long name, code, and comments</comment>
         <translatorcomment>تعني قائمة المعلومات الكاملة للطلاب: الاسم، الاسم الطويل، الرمز والتعليقات</translatorcomment>
         <translation>دليل الطلاب:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18976"/>
-        <location filename="../src/engine/timetableexport.cpp" line="19106"/>
+        <location filename="../src/engine/timetableexport.cpp" line="19016"/>
+        <location filename="../src/engine/timetableexport.cpp" line="19146"/>
         <source>Rooms legend:</source>
         <comment>It means the list of the complete information for the rooms: name, long name, code, and comments</comment>
         <translatorcomment>تعني قائمة المعلومات الكاملة للقاعات: الاسم، الاسم الطويل، الرمز والتعليقات</translatorcomment>
         <translation>دليل القاعات:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="18368"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18378"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18571"/>
-        <location filename="../src/engine/timetableexport.cpp" line="18581"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18418"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18611"/>
+        <location filename="../src/engine/timetableexport.cpp" line="18621"/>
         <source>Subgroup</source>
         <translation>مجموعة فرعية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2433"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17655"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17657"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17820"/>
-        <location filename="../src/engine/timetableexport.cpp" line="17822"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2473"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17695"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17697"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17860"/>
+        <location filename="../src/engine/timetableexport.cpp" line="17862"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>الساعات الفارغة للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1941"/>
-        <source>Soft conflicts list (in decreasing order):</source>
-        <translation>قائمة التعارضات اللينة (مرتبة تنازلياً):</translation>
+        <location filename="../src/engine/timetableexport.cpp" line="1981"/>
+        <source>Soft conflicts list (in descending order):</source>
+        <translation>قائمة التعارضات اللينة (مرتبة تنازليا):</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1957"/>
-        <source>Conflicts list (in decreasing order):</source>
+        <location filename="../src/engine/timetableexport.cpp" line="1997"/>
+        <source>Conflicts list (in descending order):</source>
         <translation>قائمة التعارضات (مرتبة تنازليا):</translation>
     </message>
     <message>
@@ -79164,71 +79197,72 @@ teachers</source>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="973"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1578"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1965"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2051"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2129"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2211"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2591"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2860"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2928"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2997"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3053"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3109"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3169"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3229"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3296"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3362"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3420"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3477"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3537"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3597"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3660"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3721"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3779"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3837"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3897"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3957"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4005"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4051"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4106"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4161"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4220"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4280"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4341"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4399"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4454"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4509"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4569"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4629"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4691"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4755"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4815"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4875"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4940"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5005"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5067"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5131"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5191"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5252"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5317"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5382"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5444"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5503"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5559"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5615"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5676"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5737"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5802"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5865"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5921"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5977"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6038"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6099"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6159"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6219"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6265"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6311"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1579"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1618"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2005"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2169"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2631"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2900"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2968"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3149"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3209"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3269"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3336"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3402"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3460"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3517"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3577"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3637"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3700"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3761"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3819"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3877"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3937"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3997"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4045"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4146"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4201"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4260"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4320"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4381"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4439"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4494"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4549"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4609"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4669"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4731"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4795"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4855"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4915"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4980"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5045"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5171"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5231"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5292"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5422"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5484"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5543"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5599"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5655"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5716"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5777"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5842"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5905"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5961"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6017"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6139"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6199"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6259"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6305"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6351"/>
         <source>Writing &apos;%1&apos; gave the error message &apos;%2&apos;, which means the writing is compromised. Please check your disk&apos;s free space.</source>
         <comment>%1 is the name of a file</comment>
         <translation>كتابة %1 تجلب رسالة الخطأ %2 و التي تعني أن الكتابة لم تكتمل. فضلا تحقق من مساحة القرص.</translation>
@@ -79262,135 +79296,137 @@ teachers</source>
         <location filename="../src/engine/timetableexport.cpp" line="972"/>
         <location filename="../src/engine/timetableexport.cpp" line="1203"/>
         <location filename="../src/engine/timetableexport.cpp" line="1560"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1577"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1919"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1964"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1990"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2050"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2076"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2128"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2210"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2231"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2590"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2628"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2859"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2886"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2927"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2954"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2996"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3023"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3052"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3079"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3108"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3135"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3168"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3195"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3228"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3256"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3295"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3322"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3361"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3388"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3419"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3446"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3476"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3503"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3563"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3596"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3625"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3659"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3686"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3720"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3747"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3778"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3805"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3836"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3863"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3896"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3923"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3956"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3985"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4004"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4031"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4050"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4077"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4105"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4132"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4160"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4187"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4219"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4246"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4279"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4308"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4340"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4367"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4398"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4425"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4453"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4480"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4508"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4535"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4568"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4595"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4628"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4655"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4690"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4717"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4754"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4781"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4814"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4841"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4874"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4901"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4939"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4966"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5004"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5031"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5066"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5093"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5130"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5157"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5190"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5217"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5251"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5316"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5343"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5381"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5410"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5443"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5470"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5502"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5529"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5558"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5585"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5614"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5641"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5675"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5702"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5736"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5765"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5801"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5828"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5864"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5891"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5920"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5947"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5976"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6003"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6037"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6064"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6098"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6125"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6158"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6185"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6218"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6245"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6264"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6291"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6310"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1578"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1602"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1617"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1959"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2004"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2030"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2090"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2168"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2250"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2271"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2668"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2899"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2926"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2967"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2994"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3036"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3063"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3119"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3148"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3175"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3208"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3235"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3268"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3335"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3362"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3401"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3428"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3459"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3486"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3516"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3543"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3576"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3603"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3636"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3665"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3699"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3726"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3787"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3818"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3845"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3876"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3903"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3936"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3963"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4025"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4044"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4071"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4090"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4145"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4172"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4200"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4227"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4259"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4348"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4380"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4407"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4438"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4465"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4493"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4520"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4548"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4575"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4608"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4635"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4668"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4695"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4730"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4757"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4794"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4821"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4854"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4881"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4914"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4941"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4979"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5006"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5044"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5071"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5106"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5133"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5170"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5197"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5230"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5257"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5318"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5383"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5421"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5450"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5483"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5510"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5542"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5569"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5598"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5625"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5654"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5681"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5715"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5742"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5776"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5805"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5841"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5868"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5931"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5960"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5987"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6016"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6043"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6077"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6104"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6138"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6165"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6198"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6225"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6258"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6285"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6304"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6331"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6350"/>
         <source>FET critical</source>
         <translation>FET - حرج</translation>
     </message>
@@ -79408,173 +79444,173 @@ teachers</source>
         <translation>لم يتم حفظ البيانات والجدول على القرص الصلب - ربما كان القرص الصلب ممتلئ</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2273"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2313"/>
         <source>Soft conflicts list - disabled.</source>
         <translation>قائمة التعارضات اللينة - غير مفعلة.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2299"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2339"/>
         <source>subgroups - disabled</source>
         <comment>It means the subgroups XML timetables are disabled</comment>
         <translation>مجموعات فرعية- غير مفعلة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2303"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2343"/>
         <source>teachers - disabled</source>
         <comment>It means the teachers XML timetables are disabled</comment>
         <translation>مدرسون- غير مفعل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2307"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2347"/>
         <source>activities - disabled</source>
         <comment>It means the activities XML timetables are disabled</comment>
         <translation>أنشطة - غير مفعلة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2308"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2348"/>
         <source>View XML: %1, %2, %3.</source>
         <comment>%1, %2, and %3 are three files in XML format, subgroups, teachers and activities timetables. The user can click on one file to view it</comment>
         <translation>عرض XML: %1، %2، %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2357"/>
         <source>Timetables</source>
         <translation>الجداول</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2359"/>
         <source>Days Horizontal</source>
         <translation>الأيام أفقية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2359"/>
         <source>Days Vertical</source>
         <translation>الأيام رأسية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2359"/>
         <source>Time Horizontal</source>
         <translation>الزمن أفقي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2319"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2359"/>
         <source>Time Vertical</source>
         <translation>الزمن رأسي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2329"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2369"/>
         <source>Subgroups</source>
         <translation>المجموعات الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2332"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2336"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2340"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2344"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2358"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2362"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2366"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2370"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2372"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2376"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2380"/>
         <location filename="../src/engine/timetableexport.cpp" line="2384"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2388"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2392"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2396"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2398"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2402"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2406"/>
         <location filename="../src/engine/timetableexport.cpp" line="2410"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2414"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2418"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2422"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2424"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2428"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2432"/>
         <location filename="../src/engine/timetableexport.cpp" line="2436"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2440"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2450"/>
         <location filename="../src/engine/timetableexport.cpp" line="2454"/>
         <location filename="../src/engine/timetableexport.cpp" line="2458"/>
         <location filename="../src/engine/timetableexport.cpp" line="2462"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2466"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2476"/>
         <location filename="../src/engine/timetableexport.cpp" line="2480"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2484"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2488"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2492"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2494"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2498"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2502"/>
         <location filename="../src/engine/timetableexport.cpp" line="2506"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2510"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2514"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2518"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2520"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2524"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2528"/>
         <location filename="../src/engine/timetableexport.cpp" line="2532"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2540"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2544"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2546"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2550"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2554"/>
         <location filename="../src/engine/timetableexport.cpp" line="2558"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2562"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2566"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2570"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2572"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2576"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2580"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2584"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2598"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2602"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2606"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2610"/>
         <source>view</source>
         <translation>عرض</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2355"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2395"/>
         <source>Groups</source>
         <translation>المجموعات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2381"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2421"/>
         <source>Years</source>
         <translation>الأعوام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2407"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2447"/>
         <source>Teachers</source>
         <translation>المدرسون</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2451"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2491"/>
         <source>Rooms</source>
         <translation>القاعات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2503"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2543"/>
         <source>Subjects</source>
         <translation>المواد</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2271"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2311"/>
         <source>View the soft conflicts list.</source>
         <translation>عرض قائمة التعارضات اللينة.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2555"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2595"/>
         <source>Activities</source>
         <translation>الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="11517"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11655"/>
-        <location filename="../src/engine/timetableexport.cpp" line="11798"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12038"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12091"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12327"/>
-        <location filename="../src/engine/timetableexport.cpp" line="12361"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11557"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11695"/>
+        <location filename="../src/engine/timetableexport.cpp" line="11838"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12131"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12367"/>
+        <location filename="../src/engine/timetableexport.cpp" line="12401"/>
         <source>All Activities</source>
         <translation>كل الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2305"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2345"/>
         <source>activities</source>
         <translation>الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2284"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2301"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2324"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2341"/>
         <source>teachers</source>
         <translation>المدرسون</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2297"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2337"/>
         <source>subgroups</source>
         <translation>المجموعات الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1934"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1949"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2644"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1974"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1989"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2684"/>
         <source>unnamed</source>
         <translation>غير مسمى</translation>
     </message>
@@ -79636,8 +79672,8 @@ teachers</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="688"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1122"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1202"/>
-        <source>Conflicts listing (in decreasing order):</source>
-        <translation>قائمة التعارضات البرمجية (مرتبة تنازلياً):</translation>
+        <source>Conflicts listing (in descending order):</source>
+        <translation>قائمة التعارضات اللينة (مرتبة تنازليا):</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="346"/>
@@ -79758,8 +79794,8 @@ teachers</source>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="890"/>
-        <source>Soft conflicts listing (in decreasing order):</source>
-        <translation>قائمة التعارضات البرمجية (مرتبة تنازلياً):</translation>
+        <source>Soft conflicts listing (in descending order):</source>
+        <translation>قائمة التعارضات اللينة (مرتبة تنازليا):</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1009"/>
@@ -80049,344 +80085,364 @@ teachers</source>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="556"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="641"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="655"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1314"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1534"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="576"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="661"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="675"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1373"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1616"/>
         <source>FET information</source>
         <translation>FET معلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="635"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="655"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="635"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="655"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation>البيانات خاطئة. فضلاً صححها ثم اعد المحاولة</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="652"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="672"/>
         <source>Cannot optimize - please modify your data</source>
         <translation>لم تتم المعالجة - فضلاً عدل بياناتك</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="868"/>
-        <source>Soft conflicts listing (in decreasing order):</source>
-        <translation>قائمة التعارضات البرمجية (مرتبة تنازلياً):</translation>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="902"/>
+        <source>Soft conflicts listing (in descending order):</source>
+        <translation>قائمة التعارضات اللينة (مرتبة تنازليا):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1306"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1487"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1340"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1546"/>
         <source>This file was automatically generated by FET %1 on %2.</source>
         <comment>%1 is the FET version, %2 is the date and time when this file was generated.</comment>
         <translation>تم انتاج هذا الجدول آليا باستخدام برنامج FET %1 في %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="444"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="464"/>
         <source>Current timetable: 0 out of 0 activities placed, 0h 0m 0s
 Max placed activities: 0 (at 0 s)</source>
         <translation>الجدول الحالي:0 من0 نشاط منجز، 0سا 0د 0ثا
 أكبر أنشطة منجزة: 0 (في 0 ثا)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="526"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="546"/>
         <source>For finished timetables, there are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later.</source>
         <translation>للجداول الزمنية التي تم انهاؤها، يوجد أيضا جداول زمنية محفوظة في هيئة fet. (بيانات + قيود لقفل الجدول الزمني)، حتى تتمكن من فتح كل واحد منها لاحقا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="531"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="551"/>
         <source>Limit each</source>
         <translation>زمن كل جدول</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="518"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="538"/>
         <source>You can see the generated timetables on the hard disk, in HTML and XML formats and the soft conflicts in text format, or the latest timetable (or the latest highest-stage timetable, if no timetable was completed) in the Timetable/View menu.</source>
         <translation>بامكانك رؤية الجداول الزمنية الناتجة على القرص الصلب، على هيأة HTML أو XML و التعارضات اللينة في هيأة نص(.txt)، أو رؤية آخر جدول زمني (أو آخر أعلى مرحلة  من الجدول الزمني إذا لم يكتمل أي جدول زمني) من قائمة جدول/عرض.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="460"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="480"/>
         <source>Restart</source>
         <comment>Restart the generation (stop the current generation and begin a new different one). Please make a clear distinction between &apos;Restart the generation&apos; and &apos;Continue the generation&apos;.</comment>
         <translation>إعادة الإنتاج</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="521"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="541"/>
         <source>Note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution). Each attempted timetable will correspond to a folder in %1 that contains information about the random seed that was used, but only completed timetables will contain the full set of timetable files.</source>
         <translation>لاحظ أنه بالنسبة للبيانات الكبيرة ، قد يشغل كل جدول زمني مساحة أكبر بالميغابايت من مساحة القرص الصلب ، لذا تأكد من وجود مساحة كافية (يمكنك التحقق من أبعاد جدول زمني واحد كإجراء احترازي). سيتوافق كل جدول زمني تمت محاولته مع مجلد في %1 والذي يحتوي على معلومات حول البذرة العشوائية التي تم استخدامها ، لكن الجداول الزمنية المكتملة فقط ستحتوي على المجموعة الكاملة من ملفات الجدول الزمني.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="529"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="549"/>
         <source>If you get an impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities; this might help.</source>
         <translation>إذا حصلت على جدول زمني مستحيل، فضلا أدخل إلى القائمة انتاج جدول (وحيد) وشاهد التقدير الأولي لترتيب الأنشطة، هذا الأمر بامكانه تقديم المساعدة.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="539"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="559"/>
         <source>(If the component of a such computed seed will be all zeroes, we will add to the components of that seed the total number of threads instead of the thread number starting from zero.)</source>
         <translation>(إذا كان المكون لمثل هذه البذرة المحسوبة ستكون كلها أصفارا، سنضيف لبذرة هذه المكونات العدد الاجمالي للمسالك بدلا من رقم المسلك الذي ينطلق من الصفر)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="552"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="572"/>
         <source>Note: If your file is very big, containing a very large number of teachers or total subgroups, generating on more threads might consume the processor cache and the generation might become very slow compared to generating on a single thread.</source>
         <translation>ملاحظة: إذا كان ملفك كبيرًا جدًا، ويحتوي على عدد كبير جدًا من المدرسين أو إجمالي المجموعات الفرعية، فإنّ الإنتاج على مزيد من المسالك قد يؤدي إلى استهلاك ذاكرة التخزين المؤقت(cache memory) للمعالج المركزي وقد تصبح عملية الإنتاج بطيئة جدًا مقارنةً بعملية الإنتاج على مسلك واحد.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="727"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="791"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="747"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="815"/>
         <source>Generated: %1</source>
         <translation>المنتجة: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="728"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="794"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="748"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="818"/>
         <source>Successfully: %1</source>
         <translation>بنجاح: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1063"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1097"/>
         <source>Continue</source>
         <comment>Continue the generation (it was previously paused, and now it will continue from where it was paused). Please make a clear distinction between &apos;Continue the generation&apos; and &apos;Restart the generation&apos;.</comment>
         <translation>استمر</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1167"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1201"/>
         <source>Generation interrupted!</source>
         <translation>تم اعتراض الانتاج!</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1195"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1372"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1229"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1431"/>
         <source>From the interface you can access the last successfully generated timetable.</source>
         <translation>من واجهة البرنامج تستطيع الولوج إلى آخر جدول زمني تم انتاجه بنجاح.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1223"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1400"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1257"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1459"/>
         <source>(Thread %1)</source>
         <translation>(مسلك %1)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1227"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1404"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1261"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1463"/>
         <source>Time exceeded.</source>
         <translation>تجاوز الوقت.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1274"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1451"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1308"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1510"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation>تعارضات</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1277"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1454"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1311"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1513"/>
         <source>Number of broken constraints: %1</source>
         <translation>عدد القيود اللينة التي تم كسرها: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1281"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1458"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1315"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1517"/>
         <source>Total conflicts: %1</source>
         <translation>مجموع التعارضات: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1284"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1461"/>
-        <source>Conflicts listing (in decreasing order):</source>
-        <translation>قائمة التعارضات البرمجية (مرتبة تنازلياً):</translation>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1318"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1520"/>
+        <source>Conflicts listing (in descending order):</source>
+        <translation>قائمة التعارضات اللينة (مرتبة تنازليا):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1296"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1301"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1473"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1478"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1330"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1335"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1532"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1537"/>
         <source>The results were saved in the directory %1.</source>
         <translation>النتائج تم حفظها في المجلد %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1298"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1303"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1332"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1337"/>
         <source>Total searching time was: %1h %2m %3s.</source>
         <translation>الوقت الكلي للبحث كان: %1سا %2د %3ثا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1364"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1351"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1358"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1559"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1566"/>
+        <source>The list of generated timetables, in ascending order of their total conflicts, is:</source>
+        <translation>قائمة الجداول الزمنية المنتجة، مرتبة ترتيبا تصاعديا حسب العدد الإجمالي لتعارضاتها، هي:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1348"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1556"/>
+        <source>The list of generated timetables, in ascending order of their total soft conflicts, is:</source>
+        <translation>قائمة الجداول الزمنية المنتجة، مرتبة ترتيبا تصاعديا حسب العدد الإجمالي لتعارضاتها اللينة، هي:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1423"/>
         <source>Generation finished!</source>
         <translation>تم انتهاء الإنتاج!</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1475"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1480"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1534"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1539"/>
         <source>Total searching time was %1h %2m %3s.</source>
         <translation>الوقت الكلي للبحث كان: %1سا %2د %3ثا.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1654"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1736"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation>FET - معلومات تتعلق بتقدير الترتيب الأولي للأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1660"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1742"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1237"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1414"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1614"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1271"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1473"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1696"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 سا</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1199"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1376"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1233"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1435"/>
         <source>From the interface you can access the last highest-stage timetable and on the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation>من خلال الواجهة يمكنك الوصول إلى الجدول الزمني لأعلى مرحلة أخيرة، وقد تم حفظ جميع الجداول الزمنية لأعلى مرحلة على القرص (أعلى عدد من الأنشطة المجدولة هو %1، وتم الوصول إليه في %2 من الجداول الزمنية).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1204"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1381"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1238"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1440"/>
         <source>On the disk there were saved all the highest-stage timetables (the highest number of scheduled activities is %1, reached in %2 timetables).</source>
         <translation>تم حفظ جميع جداول المراحل الأعلى على القرص (أعلى عدد من الأنشطة المجدولة هو %1، وتم الوصول إليه في %2 من الجداول الزمنية).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1229"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1406"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1263"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1465"/>
         <source>Generation stopped.</source>
         <translation>تم توقيف الانتاج.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1241"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1418"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1618"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1275"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1477"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1700"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 د</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1245"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1422"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1622"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1279"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1481"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1704"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 ثا</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1248"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1425"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1282"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1484"/>
         <source>Maximum placed activities: %1 (at %2).</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>أكبر أنشطة منجزة: %1 (عند %2).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1626"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1354"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1562"/>
+        <source>The list of generated timetables, in ascending order of their total (soft) conflicts, is:</source>
+        <translation>قائمة الجداول الزمنية المنتجة، مرتبة ترتيبا تصاعديا حسب العدد الإجمالي لتعارضاتها (اللينة)، هي:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1708"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>أكبر أنشطة منجزة: %1 (عند %2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1633"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1715"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation>الجدول الحالي: %1 من %2 نشاط منجز، %3س %4د %5ث</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="531"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="551"/>
         <source>You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).</source>
         <translation>يمكنك حصر زمن البحث، بواسطة تحديد العدد الأقصى من الدقائق المسموح بإنفاقها لكل جدول زمني (خيار %1).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="344"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="450"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="685"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1034"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1078"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1100"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1545"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="364"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="470"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="705"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1068"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1112"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1134"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1627"/>
         <source>Pause</source>
         <comment>Pause the generation</comment>
         <translation>توقف</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="437"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="457"/>
         <source>[PAUSED]</source>
         <comment>The generation is paused</comment>
         <translation>[متوقف]</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="532"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="552"/>
         <source>The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.</source>
         <translation>القيمة القصوى و أيضا المعينة مسبقا هي %1 دقيقة، و التي تعني %2 ساعة، لذلك فهي غير محدودة بشكل افتراضي.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="534"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="554"/>
         <source>Note that if you start the multiple generation with the same global seed, the timetables will be identical (if you let the generations finish).</source>
         <translation>ملاحظة: إذا قمت باستخدام الانتاج المتعدد مع نفس البذرة العشوائية الشاملة، فإن الجداول الزمنية ستكون متطابقة (إذا تركت الانتاج ينتهي).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="535"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="555"/>
         <source>The seed of the first thread will be the global seed multiplied in each component with the number of threads (modulo m1=%1 and respectively m2=%2), for the second thread the seed will be the same as for the first thread, but +1 in each component (modulo m1 and respectively m2), for the third thread the seed will be the same as for the first thread, but +2 in each component, and so on.</source>
         <translation>البذرة الموافقة للمسلك الأول ستكون البذرة الشاملة مضروب في كل مكون مع عدد المسالك (عداد موديولو m1=%1، و m2=%2 على التوالي)، بالنسبة للمسلك الثاني البذرة ستكون مماثلة كما في المسلك الأول، ولكن +1 في كل مكون (عداد موديولو m1 و m2 على التوالي)، بالنسبة للمسلك الثالث البذرة ستكون مماثلة كما في المسلك الأول، ولكن +2 في كل مكون، وهكذا دواليك.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="541"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="561"/>
         <source>This method was suggested by %1.</source>
         <comment>%1 is a person</comment>
         <translation>هذه الطريقة تم اقتراحها من طرف: %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="542"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="562"/>
         <source>After generating multiple, the global seed will become equal to the seed of the first thread.</source>
         <translation>بعد الإنتاج المتعدد، البذرة الشاملة يتصبح مساوية لبذرة المسلك الأول.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="544"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="564"/>
         <source>The number of threads is limited by your computer processor(s). If you have for example an 8 core/16 thread processor, the maximum allowed number of threads is 16. In this case you can make a comparison of generation time with 8 threads or with 16 threads. If you generate on a single thread, the speed of generation of a timetable will be in general a bit higher than that of obtaining a single timetable by generating on multiple threads, because the processor slows down if you are using more threads, but you will obtain more timetables in a comparable time.</source>
         <translation>عدد المسالك هو محدود من قبل المعالج(المعالجات) المركزي(ة) للحاسوب الخاص بك. إذا كان لديك على سبيل المثال معالج مركزي من 8 أنوية(cores) / 16 مسلكا(threads)، العد الأقصى من المسالك المسموح بها هو 16. في هذه الحالة يمكنك اجراء مقارنة وقت الانتاج مع 8 مسالك أو مع 16 مسلكا. إذا قمت بالانتاج في مسلك واحد، سرعة الانتاج للجدول الزمني ستكون عموما أفضل قليلا من سرعة الحصول على جدول زمني واحد بواسطة الانتاج على مسالك متعددة، لأن المعالج المركزي يتباطأ إذا كنت تستخدم المزيد من المسالك، لكنك ستحصل على المزيد من الجداول الزمنية في وقت مماثل.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="549"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="569"/>
         <source>WARNING: As you use more threads, the processor will be used to a greater extent and it might overheat. Also, the system might become slow or nonreponsive.</source>
         <translation>تحذير: كلما استخدمت المزيد من المسالك، سيتم استخدام المعالج المركزي بدرجة أكبر وقد ترتفع درجة حرارته. أيضًا ، قد يصبح نظام التشغيل بطيئًا أو لا يستجيب.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="642"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="662"/>
         <source>You have entered the generation with uninitialized rules or 0 activities...aborting</source>
         <translation>لقد قمت بإدخال الإنتاج بقواعد غير مهيأة أو 0 أنشطة... جارٍ الإجهاض</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="656"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="676"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation>بياناتك لا يمكن معالجتها - يرجى تغييرها حسب التعليمات.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="833"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1252"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1255"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1257"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1429"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1432"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1434"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="857"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1286"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1289"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1291"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1488"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1491"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="1493"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
         <translation>رقم الجدول: %1 =&gt; %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="858"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="892"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation>تعارضات لينة</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="861"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="895"/>
         <source>Number of broken soft constraints: %1</source>
         <translation>عدد القيود اللينة التي تم كسرها: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="865"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="899"/>
         <source>Total soft conflicts: %1</source>
         <translation>كل التعارضات اللّينة: %1</translation>
     </message>
@@ -84975,55 +85031,55 @@ Bottom: %4</source>
 <context>
     <name>TimetablingThread</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="165"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="167"/>
         <source>(Thread %1)</source>
         <translation>(مسلك %1)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="170"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="172"/>
         <source>Generation was stopped by user</source>
         <translation>الإنتاج تم إيقافه من طرف المستخدم</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="207"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="215"/>
         <source>Timetable impossible to generate</source>
         <translation>انتاج الجدول مستحيل</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="212"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="226"/>
         <source>Time exceeded for current timetable</source>
         <translation>تجاوز الوقت للجدول الحالي</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="229"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="195"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="249"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 سا</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="191"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="233"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="199"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="253"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 د</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="195"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="237"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="203"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="257"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 ثا</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="199"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="241"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="207"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="261"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>أكبر أنشطة منجزة: %1 (عند %2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="266"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="286"/>
         <source>Timetable breaks %1 soft constraints, has %2 soft conflicts total, and was generated in %3 hours, %4 minutes and %5 seconds.</source>
         <translation>الجدول الزمني تكسير ليّن %1 من القيود، له %2 مجموع التعارضات اللينة، و تم انتاجه في %3 ساعة، %4 دقيقة و %5 ثانية.</translation>
     </message>

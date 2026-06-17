@@ -1,3 +1,15 @@
+ 7.8.6
+	- Updated to Qt 6.11.1.
+	- Rare crash bug fixes and other bug fixes (the program crashed in the constraints' dialogs if the filter was enabled and the user changed
+	a constraint's comments and the new constraint was filtered out; also, in the activities/subactivities/group activities in the initial order
+	dialogs, when changing an item's comments and the new item should have been filtered out, it was still shown until the user filtered the list
+	again). Reported by mrtvillaret.
+	- Improved the instructions for the constraints of type max terms between activities (suggested by mikkojoo).
+	- Corrected the Arabic translation, by Benahmed Abdelkrim.
+	- Added a new example file, by Benahmed Abdelkrim.
+ 7.8.5
+	- When generating multiple timetables, there is now an additional report file which lists the timetables in ascending order of conflicts
+	(suggested by Frank Rump).
  7.8.4
 	- Corrected and improved the instructions for the new constraints of type room(s) max activities per teacher and building(s) min one
 	activity in each available slot.
@@ -1358,9 +1370,11 @@
  5.31.0
 	- Updated to Qt 5.8.0.
 	- Added a new type of constraint: teacher(s)/students (set) max span per day (the maximum time spent in the institution on a day).
-	Suggested by Vangelis Karafillidis and Rodolfo Ribeiro Gomes.
+	Suggested by Vangelis Karafillidis and Rodolfo Ribeiro Gomes (Rodolfo Ribeiro Gomes contributed an initial code for the constraints of type teacher(s)
+	max span per day).
 	- Added a new type of constraint: teacher(s)/students (set) min resting hours (the minimum free time slots between the last working hour on a day and
-	the first working hour on the next day). Suggested by Rodolfo Ribeiro Gomes.
+	the first working hour on the next day). Suggested by Rodolfo Ribeiro Gomes, who contributed an initial code for the constraints of type teacher(s)
+	min resting hours.
 	- Fixed some typos in the German translation (reported by math user, corrected by Bob Hairgrove).
 	- Added 3 new example files from Namibia, by Bobby Wise.
  5.30.8
@@ -2510,9 +2524,6 @@
  4.0.9
 	- Bug fix - when dealing only with one year or group, the results are now
 	displayed correctly (bug introduced in 4.0 versions).
-	- Liviu Lalescu,
-	- German translation by Volker Dirr
-	- FAQ improvement by Les Richardson
  4.0.8
 	- Bug fix - after pressing "stop" and "write", the program crashed.
 	Reported by Pat Siddharta. This was a bug previous to 4.0.0
@@ -2547,20 +2558,17 @@
  4.0.0
 	- Changed MY into MS (Malay language).
 	- Improved the languages menu.
-	- Improved Polish translation (by Radoslaw Pasiok).
-	- Bug fix (when pressing the "Write results",FET crashed)
+	- Improved Polish translation (by Radosław Pasiok).
+	- Bug fix (when pressing the "Write results", FET crashed)
 	- Began porting to Qt 4
 	- Improved the threads code in the allocate menus
 	- Made MAX_SUBGROUPS_PER_GROUP=100 (suggested by Andreas Goranson)
  3.18.1
 	- Small bug fix.
-	- Liviu Lalescu,
-	Polish translation update by Radoslaw Pasiok
  3.18.0
 	- Added the possibility to export to iCalendar (suggested by Simon Bohlin).
  3.17.12
 	- Began Dutch translation (by Niels Fikse).
-	- Liviu Lalescu
  3.17.11
 	- Improvement in conflicts reporting English language: instead of "this increases the
 	conflicts factor with" we have "this increases the conflicts total by" (reported by
@@ -2586,9 +2594,9 @@
  3.17.4
 	- Improvement in Romanian translation (by Liviu Lalescu)
  3.17.3
-	- Improvement in Polish translation (by Radoslaw Pasiok)
+	- Improvement in Polish translation (by Radosław Pasiok)
  3.17.2
-	- Improvement in Polish translation (by Radoslaw Pasiok)
+	- Improvement in Polish translation (by Radosław Pasiok)
  3.17.1
 	- Improved the saving in .html of the teachers' timetable (suggested
 	by Sebastian O'Halloran).
@@ -2598,7 +2606,7 @@
  3.16.9
 	- Bug fix in ConstraintActivityPreferredTime (suggested by Yush Yuen).
 	- The weight of the constraints can be 0 (suggested by Yush Yuen).
-	- Liviu Lalescu, Polish translation by Radoslaw Pasiok,
+	- Liviu Lalescu, Polish translation by Radosław Pasiok,
 	Turkish translation by Mehmet Gezmisoglu,
 	Dutch translation by Niels Fikse.
  3.16.8
@@ -2629,7 +2637,6 @@
  3.15.4
 	- Bug fix - the interface now only permits MAX_TEACHERS_PER_ACTIVITY (currently 6)
 	for an activity.
-	- Liviu Lalescu
  3.15.3
 	- Time allocation now generates a .html file for students timetable ordered by
 	students subgroup and days and hours.
@@ -2658,7 +2665,7 @@
  3.14.18
 	- Updated Malay translation (by Abdul Hadi Kamel).
  3.14.17
-	- Added Polish translation (by Radoslaw Pasiok).
+	- Added Polish translation (by Radosław Pasiok).
  3.14.16
 	- Bug fix (when viewing the timetable).
  3.14.15
@@ -2711,7 +2718,7 @@
  3.13.8
 	- Small bug fix (when adding a new ConstraintActivityPreferredTime).
 	- Liviu Lalescu,
-	- Polish translation by Radoslaw Pasiok,
+	- Polish translation by Radosław Pasiok,
 	- Malay translation update by Abdul Hadi Kamel.
  3.13.7
 	- Now the selected language has a check mark near it.

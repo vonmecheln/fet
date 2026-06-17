@@ -76,6 +76,11 @@ const int NOTREGEXP=3;
 SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName): QDialog(parent)
 {
 	setupUi(this);
+
+	NA=0;
+	NT=0;
+	DA=0;
+	DT=0;
 	
 	filterCheckBox->setChecked(false);
 	
@@ -749,8 +754,48 @@ void SubactivitiesForm::subactivityComments()
 		students_schedule_ready=false;
 		rooms_buildings_schedule_ready=false;
 
-		subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-		subactivityChanged();
+		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
+			//Comment from the file activitiesform.cpp:
+			//We must firstly set the current row to -1, before the removeAt(ind),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(activitiesListWidget->count()==visibleActivitiesList.count()).
+			//There was a crash bug reported by mrtvillaret on 30 May 2026 in the file alltimeconstraintsform.cpp, in a similar situation.
+			//Then we saw that in the activitiesform.cpp file the list of filtered activities was not updated on a comment change, so we copied
+			//the code section from the alltimeconstraintsform.cpp file.
+			subactivitiesListWidget->setCurrentRow(-1);
+			visibleSubactivitiesList.removeAt(ind);
+			QListWidgetItem* item=subactivitiesListWidget->takeItem(ind);
+			delete item;
+
+			if(ind>=subactivitiesListWidget->count())
+				ind=subactivitiesListWidget->count()-1;
+			if(ind>=0)
+				subactivitiesListWidget->setCurrentRow(ind);
+			else
+				currentSubactivityTextEdit->setText(QString(""));
+
+			///////
+			if(act->active){
+				NA--;
+				assert(NA>=0);
+				
+				DA-=act->duration;
+				assert(DA>=0);
+			}
+			NT--;
+			assert(NT>=0);
+
+			DT-=act->duration;
+			assert(DT>=0);
+
+			numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
+				" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
+			durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
+				" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+		}
+		else{
+			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
+			subactivityChanged();
+		}
 	}
 }
 
@@ -845,8 +890,8 @@ void SubactivitiesForm::activateSubactivity()
 		rooms_buildings_schedule_ready=false;
 
 		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
-			visibleSubactivitiesList.removeAt(i);
 			subactivitiesListWidget->setCurrentRow(-1);
+			visibleSubactivitiesList.removeAt(i);
 			QListWidgetItem* item=subactivitiesListWidget->takeItem(i);
 			delete item;
 
@@ -907,8 +952,8 @@ void SubactivitiesForm::deactivateSubactivity()
 		rooms_buildings_schedule_ready=false;
 
 		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
-			visibleSubactivitiesList.removeAt(i);
 			subactivitiesListWidget->setCurrentRow(-1);
+			visibleSubactivitiesList.removeAt(i);
 			QListWidgetItem* item=subactivitiesListWidget->takeItem(i);
 			delete item;
 

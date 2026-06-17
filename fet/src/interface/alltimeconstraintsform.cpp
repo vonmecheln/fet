@@ -1009,8 +1009,10 @@ void AllTimeConstraintsForm::constraintComments()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
-			visibleTimeConstraintsList.removeAt(i);
+			//Crash bug reported by mrtvillaret on 30 May 2026, and fixed on the same day: we must firstly set the current row to -1, before the removeAt(i),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(constraintsListWidget->count()==visibleTimeConstraintsList.count()).
 			constraintsListWidget->setCurrentRow(-1);
+			visibleTimeConstraintsList.removeAt(i);
 			QListWidgetItem* item=constraintsListWidget->takeItem(i);
 			delete item;
 

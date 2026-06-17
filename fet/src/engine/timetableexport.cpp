@@ -1548,7 +1548,7 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);
-		
+	
 	QString filename=destDir+FILE_SEP+QString("report.txt");
 
 	QFile file(filename);
@@ -1569,7 +1569,47 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 #endif
 	if(begin){
 		tos.setGenerateByteOrderMark(true);
+		tos<<tr("The list of generated timetables, in chronological order, is:")<<QString("\n\n");
 	}
+	
+	tos<<description<<Qt::endl;
+	
+	if(file.error()!=QFileDevice::NoError){
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
+		 TimetableExport::tr("Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(filename).arg(file.errorString()));
+	}
+	file.close();
+}
+
+void TimetableExport::writeReportSortedForMultiple(QWidget* parent, const QString& description)
+{
+	QDir dir;
+	
+	QString destDir=MULTIPLE_OUTPUT_DIRECTORY;
+	
+	if(!dir.exists(destDir))
+		dir.mkpath(destDir);
+	
+	QString filename=destDir+FILE_SEP+QString("report_sorted.txt");
+
+	QFile file(filename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
+	if(!file.open(QIODevice::WriteOnly)){
+#endif
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
+		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
+		return;
+	}
+	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
+	tos.setCodec("UTF-8");
+#endif
+	tos.setGenerateByteOrderMark(true);
 	
 	tos<<description<<Qt::endl;
 	
@@ -1938,7 +1978,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 
 		tos<<TimetableExport::tr("Number of broken soft constraints: %1").arg(best_solution.conflictsWeightList.count())<<"\n";
 		tos<<TimetableExport::tr("Total soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal))<<"\n\n";
-		tos<<TimetableExport::tr("Soft conflicts list (in decreasing order):")<<"\n\n";
+		tos<<TimetableExport::tr("Soft conflicts list (in descending order):")<<"\n\n";
 		for(const QString& t : std::as_const(best_solution.conflictsDescriptionList))
 			tos<<t<<"\n";
 		tos<<"\n"<<TimetableExport::tr("End of file.")<<"\n";
@@ -1954,7 +1994,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 
 		tos<<TimetableExport::tr("Number of broken constraints: %1").arg(best_solution.conflictsWeightList.count())<<"\n";
 		tos<<TimetableExport::tr("Total conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal))<<"\n\n";
-		tos<<TimetableExport::tr("Conflicts list (in decreasing order):")<<"\n\n";
+		tos<<TimetableExport::tr("Conflicts list (in descending order):")<<"\n\n";
 		for(const QString& t : std::as_const(best_solution.conflictsDescriptionList))
 			tos<<t<<"\n";
 		tos<<"\n"<<TimetableExport::tr("End of file.")<<"\n";

@@ -2915,8 +2915,11 @@ void ListSpaceConstraints::helpClicked()
 				s+="\n\n";
 				s+=tr("This constraint is used for exams in some countries, such as Algeria and Morocco.");
 				s+="\n\n";
-				s+=tr("For each affected room we count the number of activities with each possible teacher, separately, and for this teacher the"
-				 " count of his/her activities in the affected room must be bounded by the specified maximum limit.");
+				s+=tr("For each affected room we count the number of activities with each possible teacher, separately, and for each teacher the"
+				 " total count of his/her activities in the affected room must not exceed the specified maximum limit.");
+				s+=" ";
+				s+="("+tr("An alternative explanation could be: %1").arg(tr("For each specified room, the total number of activities in that room"
+				 " for any teacher must not exceed the specified maximum limit."))+")";
 				s+=" ";
 				s+=tr("If an activity has two or more teachers, the constraint will be considered for each teacher, separately.");
 				s+="\n\n";
@@ -3395,8 +3398,10 @@ void ListSpaceConstraints::constraintComments()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
-			visibleSpaceConstraintsList.removeAt(i);
+			//Crash bug reported by mrtvillaret on 30 May 2026, and fixed on the same day: we must firstly set the current row to -1, before the removeAt(i),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(constraintsListWidget->count()==visibleSpaceConstraintsList.count()).
 			constraintsListWidget->setCurrentRow(-1);
+			visibleSpaceConstraintsList.removeAt(i);
 			QListWidgetItem* item=constraintsListWidget->takeItem(i);
 			delete item;
 

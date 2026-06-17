@@ -8262,6 +8262,18 @@ void ListTimeConstraints::helpClicked()
 				s+=tr("This constraint was suggested for the following situation: a user needed that a set of activities to be in three consecutive terms."
 				 " In this case add a constraint of type max terms between activities for these activities with max terms between activities = 2 (it is supposed that"
 				 " there are also other constraints that ensure that these activities occupy at least three terms).");
+				s+="\n\n";
+				s+=tr("The exact behavior of this constraint is this: for each pair of activities (A1, A2) of this constraint, we compute the term distance"
+				 " between them (by subtracting the term number of activity A1 from the term number of activity A2, assuming that A1 is scheduled earlier in"
+				 " the week compared to A2), and this distance must be less than or equal to the specified value of max terms between activities of this constraint.",
+				 "'Term' here refers to the same notion as in the Terms mode.");
+				s+=" ";
+				s+=tr("For instance, if we have 5 terms per week, and activities A1, A2, and A3 scheduled respectively in the terms number 1, 2, and 4,"
+				 " the term distance between A1 and A2 is 1, the term distance between A2 and A3 is 2, and the term distance between A1 and A3 is 3."
+				 " If we specified max terms between activities for a constraint of this type = 2, this constraint is not respected, and FET will reallocate"
+				 " the activities. If we specified max terms between activities for a constraint of this type = 3, the constraint is respected and"
+				 " FET will allow the current schedule.",
+				 "'Term' here refers to the same notion as in the Terms mode.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 
@@ -9040,8 +9052,10 @@ void ListTimeConstraints::constraintComments()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
-			visibleTimeConstraintsList.removeAt(i);
+			//Crash bug reported by mrtvillaret on 30 May 2026, and fixed on the same day: we must firstly set the current row to -1, before the removeAt(i),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(constraintsListWidget->count()==visibleTimeConstraintsList.count()).
 			constraintsListWidget->setCurrentRow(-1);
+			visibleTimeConstraintsList.removeAt(i);
 			QListWidgetItem* item=constraintsListWidget->takeItem(i);
 			delete item;
 

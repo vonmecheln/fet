@@ -1014,8 +1014,10 @@ void ListOfRelatedSpaceConstraintsForm::constraintComments()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
-			visibleSpaceConstraintsList.removeAt(i);
+			//Crash bug reported by mrtvillaret on 30 May 2026, and fixed on the same day: we must firstly set the current row to -1, before the removeAt(i),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(constraintsListWidget->count()==visibleSpaceConstraintsList.count()).
 			constraintsListWidget->setCurrentRow(-1);
+			visibleSpaceConstraintsList.removeAt(i);
 			QListWidgetItem* item=constraintsListWidget->takeItem(i);
 			delete item;
 

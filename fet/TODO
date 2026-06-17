@@ -1493,14 +1493,7 @@ difficult to find the years.
 
 that filter is also useful for students set not available.
 
-89---------------------------------------------------------
-From Paolo (on forum):
-
-Well, for me it would be very very (very) important thinking over the constraints while fet is working.
-
-So i ask, kindly, if it is possible getting a print function of all constraints (at least of time constraints).
-
-Liviu: A temporary solution would be to open two FET programs simultaneously.
+89--------------------------DONE---------------------------
 
 90---------------------------------------------------------
 From daviodan:
@@ -13208,3 +13201,339 @@ Room(s) max activities for a teacher?
 
 Is it possible to add the constraint "room(s) max activities for a teacher" which would apply individually to each teacher, in case some teachers need
 more than one activity in a room, while other teachers have max activities=1?
+
+850---------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+For multiple generation, can we have some kind of id (the number of the generated timetable) inside the generated HTML files?
+
+---
+
+More words from Vangelis Karafillidis:
+
+So, about multiple generation, I had this issue, there was no sign inside the html (or pdf) file that discriminates the multiple timetables from each other.
+If the user could know form some kind of information stored inside the pdf or html file, the respective number of the multiple generation, this would be very useful.
+
+I would suggest:
+Multiple generation [number of timetable] from [filename] on the bottom of the html file. So, "Timetable generated with FET..."
+and another line with
+Multiple generation [number of timetable] from [filename]
+...
+maybe this second line with 'single generation from [filename]' would be useful as well, for single generation.
+
+851---------------------------------------------------------
+From boubata (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6824.0
+
+Here's an attachment about possible colour customization suggestion. This tool helps us to revise the final results for possible errors.
+
+Liviu Lalescu:
+
+I do not understand exactly your suggestion. Do you mean to set a specific color for each teacher and subject?
+
+boubata:
+
+Yes, exactly. When the final table is produced, the colours will be shown as what the user set before.
+
+852---------------------------------------------------------
+From Anthony Siaudeau (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6825.0
+
+I've noticed that to start generating a timetable, you have to open the dedicated window from the main window and then start the generation process.
+
+Would it be possible for that dedicated window to operate independently of the main window?
+
+The idea would be to be able to work on a FET file, save the file, start a generation, and continue working on the FET file at the same time
+(and perhaps not be able to save until the generation is finished). With timetable generations that take several minutes, this would save valuable time.
+It could also be used to simultaneously verify certain aspects of the selected constraints, as well as the teachers or students involved.
+
+Liviu Lalescu:
+
+You could open two FET instances, one for generating and one for modifying the file.
+
+Anthony Siaudeau:
+
+It is indeed possible to open two instances of FET on the same file, but the two instances are independent. Any changes (including saves) made in one
+instance will not be reflected in the other.
+
+Currently, you must first close any child window of the second instance, then reload the FET file there so that the changes are visible, and then reopen
+the closed child window.
+
+In other words, you can currently only have a single child window open on the same FET instance, whereas sometimes you might want to have several.
+And be able to generate a timetable in parallel.
+
+Liviu Lalescu:
+
+Unfortunately, FET was designed from the start as going in a single opened window (with the exception of view timetables and help dialogs). It would be
+quite complicated to improve this now.
+
+Anthony Siaudeau:
+
+Perhaps it would be easier to link multiple FET instances with a well-placed FET file reload button (for example, in the subwindow for generating timetables)?
+
+Liviu Lalescu:
+
+I kind of don't like this idea.
+
+Anthony Siaudeau:
+
+It's up to you — I obviously don't know all the ins and outs of FET's internal coding.
+
+I'm looking for alternatives that would be more acceptable to FET. Another idea might be to add a "Generate in a new instance" button in addition to the
+"Generate" button.
+
+Liviu Lalescu:
+
+Yes, this is an interesting suggestion!
+
+853---------------------------------------------------------
+From TAHIR (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6828.0
+
+How is it possible that no teacher has two consecutive free periods?
+
+Liviu Lalescu:
+
+Currently, not possible in FET. Maybe as a customization or a new official constraint.
+
+854---------------------------------------------------------
+From Marinho Medeiros:
+
+   1. As a timetable is generated, a “counter-timetable” is also
+   produced—that is, a schedule showing the teacher’s available (free)
+   periods. It would be an interesting feature if the program could generate
+   this schedule of teachers’ free periods, especially for possible
+   substitutions. In Brazil, full-time schools cannot have gaps in their
+   schedules. Therefore, when a teacher is absent, another teacher who is
+   available or free at that time must step in as a substitute.
+
+   2. Building on the idea above, you could consider a subprogram that,
+   based on the generated timetable, identifies which teachers are free during
+   a specific class period for a given group, and from there suggests a
+   possible substitute teacher for that class.
+
+Liviu Lalescu:
+
+1. I am not sure I understand the problem. There is a timetable,
+"teachers' free periods", which does exactly this.
+
+Marinho Medeiros:
+
+  Regarding the first suggestion: when the timetable is generated and made
+available for printing, the teacher’s classes are displayed. However, the
+suggestion is to also make it possible to generate the opposite—that is, to
+generate and print a PDF/sheet showing the teacher’s free periods. I
+believe the second suggestion might even make the first unnecessary, but I
+still find this first suggestion interesting as an option.
+
+Liviu Lalescu:
+
+About 1.: There is an HTML and a PDF timetable called "Teachers' free
+periods" available in FET, which is a table hours x days, and which
+lists all teachers available in a time slot. Isn't this useful?
+
+Marinho Medeiros:
+
+Yes, now I see it. That could help! I just think it would be simpler if the
+system could directly generate a list of all the people available at that
+time for a substitution—in other words, those who are free and eligible to
+cover the class.
+
+This is because there are other factors and constraints that can influence
+the decision. For example, some teachers work 30 hours while others work 40
+hours. Those who work 30 hours are not allowed to substitute, and all
+teachers have a planning day on which they are not allowed to substitute
+under any circumstances.
+
+Marinho Medeiros:
+
+  And let me take the opportunity to ask a question: when the timetable is
+generated, I noticed that when a teacher has two or more consecutive
+classes with the same group, there isn’t a line separating those classes in
+the schedule. Is it possible to force the creation of a line separating
+them? If so, how?
+
+855---------------------------------------------------------
+From Michael Chourdakis (on Facebook):
+
+i perhaps plan to create a collaboration server for fet
+would you be willing to support that in fet executable ? that is, hot
+reload a file on change. I will give you a .hpp library.
+
+Liviu Lalescu:
+
+hmm... I am not sure.
+I would not like to use other library.
+and I never worked with these, I don't know what they are.
+
+Michael Chourdakis:
+
+the idea is for more than 2 people to work on the same fet
+simultaneously basically the idea is -> when you get notified that
+.fet is changed -> reload.
+
+Liviu Lalescu:
+
+interesting idea, I'll add this in the TODO,
+but I am not sure we can work on this soon. I'll think about it.
+
+Michael Chourdakis:
+
+its very important because in reality, in schools more than one people
+is involved in editing. in my school 10 people edit the tt. basically,
+your work in that would be a) when a user saves a file notify the
+server and b) get notified by a server when another user saves the file
+you are working on and hot reload.
+
+Liviu Lalescu:
+
+I understood. we had a related
+request some time ago. it's very important for such apps collaboration
+editing he asked that the first user opening the file to have
+read/write access and the second user opens the file and sees it is
+read-only for him.
+
+Michael Chourdakis:
+
+yea that's not collaboration
+thats simple file sharing
+not very much useful
+
+Liviu Lalescu:
+
+it was very long ago
+many years suggestion
+and I did a small customization for him.
+
+Michael Chourdakis:
+
+i will create it anyway because I use it for my apps so you will be
+able to see a demo in my other apps
+
+Liviu Lalescu:
+
+I will think of this.
+
+856---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6831.0
+
+In the HTML timetables, activities are ordered according to their "IDs". Can they be ordered according to their activity tags?
+
+(Benahmed Abdelkrim provided a screenshot of the timetables, with more activities in a single cell; each cell should have
+the activities ordered by the activity tags.)
+
+...
+
+more details on the forum...
+
+...
+
+Volker Dirr:
+
+Also what about "hidden" tags. Must be removed first.
+
+857---------------------------------------------------------
+From ygoldblatt:
+
+Is there a way to print/export the teacher availability data?
+
+Liviu Lalescu:
+
+Please see the new function Statistics > Human-readable text file! You
+might want to create a dummy file in which you remove all the other
+kinds of constraints (using the filter and multiple selection) and
+export human-readable data for its time constraints.
+
+Or you might want to check the Time constraints > All teachers > All
+teachers' not available times, and you might print screen more times.
+
+858---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6832.0
+
+I'm used to using a set of activities occupies max/min set of time slots from selection. If we can have a keyboard shotcut for ALL, CLEAR and
+SELECTING NEXT GROUP,it would be great. It would make work easier when one has to have constraint for all subjects in all groups. Never easy for
+28 subjects and 30 groups. Moving from one group to another is hectic.
+
+Cyrus Ireri provided a screenshot on the forum topic.
+
+859---------------------------------------------------------
+From Roshan Ali (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6835.0
+
+As we know that its era of AI. All software makers are trying to add AI one way or the other to their software. I have seen so many old software
+now they have AI added. We want you to add AI to FET too. For example we could write all our constraints in a chat like box and hit enter and the
+FET automatically add those constraints. Or I ask FET to guide me how to make a specific kind of timetable (I will write the scenario) and it
+explains to me. It will be like AI help. There could be so many possibilites.
+
+860---------------------------------------------------------
+From Roshan Ali (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6836.0
+
+I suggest to simplify the layout by putting all the submenus on the front of the tool. I mean on the first page. Put them in sequence.
+In this way most of the things will be visible on front page and we could make changes directly without clinking menu and then sub menu
+and sub sub menus etc. So days, teachers names, subject names, rooms, all are visible on the one place.
+
+861---------------------------------------------------------
+From mikkojoo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6411.msg38300#msg38300
+
+Write better instructions for the constraints of type max terms between activities.
+
+862---------------------------------------------------------
+From mrtvillaret:
+
+  I am writing because I have prepared two patches on top of FET 7.8.5 that
+  have been useful for us and might also be useful to other users. I am not
+  a programmer — I made them with the help of an AI (Claude Code) from
+  prompts I wrote.
+
+  1. parallel-subjects.patch — improves the presentation of the exported
+  timetables when we have cross-class optional subjects. It continues the
+  thread of the question I asked you back in 2019
+  (topic 4262):
+  I followed your advice of modelling them as a single activity with all
+  teachers and all student groups, and this patch generates, in addition
+  to the standard timetable, a second timetable that distinguishes each
+  subject.
+
+  2. comments-sections.patch — visual improvement of the constraint
+  list dialogs: a tooltip on every row with the full comment, and the
+  possibility of grouping the rows into sections using a [Section]
+  convention inside the comment. Useful when you have dozens of
+  constraints of the same type.
+
+  Both apply with patch -p1 on top of the original sources, build with
+  CMake and QMake and add no dependencies. They do not touch the generation
+  engine. The first patch does add two new XML tags to the .fet file
+  (<Display_Subjects_List> and <Parallel_Subjects_List>) to store the
+  parallel-subjects configuration, but they are only written when the user
+  has configured them — a .fet file without parallel subjects keeps
+  exactly the same format as today.
+
+ I am attaching the two patch files directly, along with a FET file with
+samples of the features.
+
+863---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6837.0
+
+Is it possible to have teachers total duration in teachers timetables? It can help instead of counting manually once the teachers get their personal timetables.
+
+864---------------------------------------------------------
+From Benahmed Abdelkrim and Liviu Lalescu (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6838.0
+
+Thinking of Benahmed's suggestion: https://lalescu.ro/liviu/fet/forum/index.php?topic=6831.0 , I thought of a possible improvement, allowing to change the order
+of activities in the activities list; also, we could just remove or add one or more subactivities from a group of activities.

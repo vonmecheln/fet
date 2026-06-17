@@ -58,6 +58,9 @@ const int NOTREGEXP=3;
 GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	NA=0;
+	NT=0;
 
 	filterCheckBox->setChecked(false);
 	
@@ -601,17 +604,20 @@ void GroupActivitiesInInitialOrderItemsForm::filterChanged()
 		currentItemTextEdit->setPlainText(QString(""));
 	else
 		itemsListWidget->setCurrentRow(0);
+	
+	NA=n_active;
+	NT=visibleItemsList.count();
 
 	itemsTextLabel->setText(tr("%1 / %2 items",
 	 "%1 represents the number of visible active 'group activities in the initial order' items, %2 represents the total number of visible items")
-	 .arg(n_active).arg(visibleItemsList.count()));
+	 .arg(NA).arg(NT));
 }
 
 void GroupActivitiesInInitialOrderItemsForm::itemChanged(int index)
 {
 	if(index<0){
 		currentItemTextEdit->setPlainText("");
-	
+		
 		return;
 	}
 	assert(index<this->visibleItemsList.size());
@@ -680,7 +686,7 @@ void GroupActivitiesInInitialOrderItemsForm::removeItem()
 		for(int j=0; j<gt.rules.groupActivitiesInInitialOrderList.count(); j++)
 			if(visibleItemsList.at(i) == gt.rules.groupActivitiesInInitialOrderList[j]){
 				QString itd=item->getDetailedDescription(gt.rules);
-			
+				
 				gt.rules.groupActivitiesInInitialOrderList.removeAt(j);
 				
 				gt.rules.addUndoPoint(tr("Removed a 'group activities in the initial order' item:\n\n%1", "%1 is the detailed description of the item").arg(itd));
@@ -691,8 +697,8 @@ void GroupActivitiesInInitialOrderItemsForm::removeItem()
 				break;
 			}
 
-		visibleItemsList.removeAt(i);
 		itemsListWidget->setCurrentRow(-1);
+		visibleItemsList.removeAt(i);
 		itemsListWidget->takeItem(i);
 		delete item;
 
@@ -892,8 +898,41 @@ void GroupActivitiesInInitialOrderItemsForm::itemComments()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
-		itemsListWidget->currentItem()->setText(item->getDescription(gt.rules));
-		itemChanged(itemsListWidget->currentRow());
+		if(!filterOk(item)){ //Maybe the item is no longer visible in the list widget, because of the filter.
+			//Comment from the file activitiesform.cpp:
+			//We must firstly set the current row to -1, before the removeAt(ind),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(activitiesListWidget->count()==visibleActivitiesList.count()).
+			//There was a crash bug reported by mrtvillaret on 30 May 2026 in the file alltimeconstraintsform.cpp, in a similar situation.
+			//Then we saw that in the activitiesform.cpp file the list of filtered activities was not updated on a comment change, so we copied
+			//the code section from the alltimeconstraintsform.cpp file.
+			itemsListWidget->setCurrentRow(-1);
+			visibleItemsList.removeAt(i);
+			QListWidgetItem* listWidgetItem=itemsListWidget->takeItem(i);
+			delete listWidgetItem;
+
+			if(i>=itemsListWidget->count())
+				i=itemsListWidget->count()-1;
+			if(i>=0)
+				itemsListWidget->setCurrentRow(i);
+			else
+				currentItemTextEdit->setPlainText("");
+
+			///////
+			if(item->active){
+				NA--;
+				assert(NA>=0);
+			}
+			NT--;
+			assert(NT>=0);
+
+			itemsTextLabel->setText(tr("%1 / %2 items",
+			 "%1 represents the number of visible active 'group activities in the initial order' items, %2 represents the total number of visible items")
+			 .arg(NA).arg(NT));
+		}
+		else{
+			itemsListWidget->currentItem()->setText(item->getDescription(gt.rules));
+			itemChanged(itemsListWidget->currentRow());
+		}
 	}
 }
 

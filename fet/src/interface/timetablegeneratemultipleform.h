@@ -26,8 +26,11 @@
 //#include <QThread>
 
 #include <QList>
+#include <QPair>
 
 #include <thread>
+
+//extern const double INFINITE_FITNESS;
 
 class TimetablingThread: public QObject
 {
@@ -100,6 +103,10 @@ class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMulti
 	QList<int> nThreadForHighest;
 	QList<bool> generationTimedOutForHighest;
 	QList<int> timeForHighestStageSolutions;
+	
+	QList<QPair<double, QString>> allTimetablesFitnessAndDescription;
+	bool haveHardConflicts;
+	bool haveSoftConflicts;
 
 public:
 	TimetableGenerateMultipleForm(QWidget* parent);

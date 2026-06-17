@@ -44,6 +44,9 @@ private:
 	bool caseSensitive;
 	
 	bool useFilter;
+	
+	int NA;
+	int NT;
 
 public:
 	GroupActivitiesInInitialOrderItemsForm(QWidget* parent);

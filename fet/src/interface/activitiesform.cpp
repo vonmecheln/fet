@@ -83,6 +83,11 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 {
 	setupUi(this);
 
+	NA=0;
+	NT=0;
+	DA=0;
+	DT=0;
+
 	filterCheckBox->setChecked(false);
 	
 	currentActivityTextEdit->setReadOnly(true);
@@ -984,8 +989,47 @@ void ActivitiesForm::activityComments()
 		students_schedule_ready=false;
 		rooms_buildings_schedule_ready=false;
 
-		activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-		activityChanged();
+		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
+			//We must firstly set the current row to -1, before the removeAt(ind),
+			//because this (setting current row to -1) will call selectionChanged(), where we assert(activitiesListWidget->count()==visibleActivitiesList.count()).
+			//There was a crash bug reported by mrtvillaret on 30 May 2026 in the file alltimeconstraintsform.cpp, in a similar situation.
+			//Then we saw that in the activitiesform.cpp file the list of filtered activities was not updated on a comment change, so we copied
+			//the code section from the alltimeconstraintsform.cpp file.
+			activitiesListWidget->setCurrentRow(-1);
+			visibleActivitiesList.removeAt(ind);
+			QListWidgetItem* item=activitiesListWidget->takeItem(ind);
+			delete item;
+
+			if(ind>=activitiesListWidget->count())
+				ind=activitiesListWidget->count()-1;
+			if(ind>=0)
+				activitiesListWidget->setCurrentRow(ind);
+			else
+				currentActivityTextEdit->setText(QString(""));
+
+			///////
+			if(act->active){
+				NA--;
+				assert(NA>=0);
+				
+				DA-=act->duration;
+				assert(DA>=0);
+			}
+			NT--;
+			assert(NT>=0);
+
+			DT-=act->duration;
+			assert(DT>=0);
+
+			numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+				" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
+			durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+				" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+		}
+		else{
+			activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
+			activityChanged();
+		}
 	}
 
 	activitiesListWidget->setFocus();
