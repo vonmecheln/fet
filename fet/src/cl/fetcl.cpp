@@ -243,6 +243,9 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tLEVEL is an integer from 0 to 7 and represents the detail level for the generated HTML timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
 		"\n"
+		"\t--htmlusespan=US\n"
+		"\t\tUS is either true or false and represents if you want the timetables to use span for the activities with duration greater than 1 (default true).\n"
+		"\n"
 		"\t--language=LANG\n"
 		"\t\tLANG is one of: ar, bg, bs, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, "
 		"sr, tr, uk, uz, vi, zh_CN, zh_TW (default en_US).\n"
@@ -1223,6 +1226,8 @@ int main(int argc, char **argv)
 		
 		TIMETABLE_HTML_LEVEL=2;
 		
+		TIMETABLE_HTML_USE_SPAN=true;
+		
 		TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=true;
 
 		TIMETABLE_HTML_PRINT_SUBJECTS=true;
@@ -1971,6 +1976,10 @@ int main(int argc, char **argv)
 				TIMETABLE_HTML_LEVEL=s.right(s.length()-21).toInt();
 			else if(s.left(12)=="--htmllevel=")
 				TIMETABLE_HTML_LEVEL=s.right(s.length()-12).toInt();
+			else if(s.left(14)=="--htmlusespan="){
+				if(s.right(5)=="false")
+					TIMETABLE_HTML_USE_SPAN=false;
+			}
 			else if(s.left(20)=="--printactivitytags="){
 				if(s.right(5)=="false")
 					TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=false;

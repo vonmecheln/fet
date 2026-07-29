@@ -98,6 +98,8 @@ private:
 	QAction* dataTimeConstraintsTeacherMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeachersMaxHoursDailyAction;
 
+	QAction* dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction;
+
 	QAction* dataTimeConstraintsTeacherMaxHoursPerTermAction;
 	QAction* dataTimeConstraintsTeachersMaxHoursPerTermAction;
 
@@ -136,6 +138,8 @@ private:
 	QAction* dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction;
 
 	QAction* dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction;
+
+	QAction* dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction;
 
 	QAction* dataTimeConstraintsActivityPreferredStartingTimeAction;
 	QAction* dataTimeConstraintsStudentsSetMaxGapsPerWeekAction;
@@ -716,6 +720,8 @@ public Q_SLOTS:
 	void dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();
 
+	void dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction_triggered();
+
 	void dataTimeConstraintsActivityEndsStudentsDayAction_triggered();
 	void dataTimeConstraintsActivitiesEndStudentsDayAction_triggered();
 
@@ -785,6 +791,8 @@ public Q_SLOTS:
 	void dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered();
 
 	void dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction_triggered();
+
+	void dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction_triggered();
 
 	void dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered();
 	void dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered();
@@ -1126,6 +1134,8 @@ public Q_SLOTS:
 	void randomSeedAction_triggered();
 	
 	void languageAction_triggered();
+
+	void settingsTimetablesUseSpanAction_toggled();
 	
 	void settingsDivideTimetablesByDaysAction_toggled();
 	void settingsDuplicateVerticalNamesAction_toggled();

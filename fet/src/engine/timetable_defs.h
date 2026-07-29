@@ -105,6 +105,8 @@ Timetable HTML and CSS JavaScript level, added by Volker Dirr
 */
 extern int TIMETABLE_HTML_LEVEL;
 
+extern bool TIMETABLE_HTML_USE_SPAN;
+
 extern bool TIMETABLE_HTML_PRINT_ACTIVITY_TAGS;
 
 extern bool TIMETABLE_HTML_PRINT_SUBJECTS;

@@ -4067,7 +4067,7 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules&r, bool ri
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	
 	s+=tr("Activity id=%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 	
@@ -4371,7 +4371,7 @@ QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules&r, bool r
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	
 	s+=tr("Activity id=%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 	
@@ -13669,7 +13669,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rule
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -13943,7 +13943,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -21454,10 +21454,10 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getXmlDescription(Rules& r)
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -21479,8 +21479,8 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 	QString s=tr("Room max activity tags per day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -21494,8 +21494,8 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -21712,10 +21712,10 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getXmlDescription(Rules&
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -21737,8 +21737,8 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDescription(Rules& r)
 	QString s=tr("Room max activity tags per real day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -21752,8 +21752,8 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDetailedDescription(R
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -21973,10 +21973,10 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getXmlDescription(Rules& r)
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Room>"+protect(this->room)+"</Room>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -21998,8 +21998,8 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDescription(Rules& r){
 	QString s=tr("Room max activity tags per week from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("R:%1", "Room").arg(this->room);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -22013,8 +22013,8 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rule
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -23268,10 +23268,10 @@ QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getXmlDescription(Rules& r)
 	QString s=IL2+"<ConstraintRoomsMaxActivityTagsPerDayFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -23292,8 +23292,8 @@ QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 
 	QString s=tr("Rooms max activity tags per day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -23306,8 +23306,8 @@ QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDetailedDescription(Rule
 	s+=tr("All rooms must respect a maximum number of activity tags per day from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -23518,10 +23518,10 @@ QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getXmlDescription(Rules
 	QString s=IL2+"<ConstraintRoomsMaxActivityTagsPerRealDayFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -23542,8 +23542,8 @@ QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDescription(Rules& r
 
 	QString s=tr("Rooms max activity tags per real day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -23556,8 +23556,8 @@ QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDetailedDescription(
 	s+=tr("All rooms must respect a maximum number of activity tags per real day from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -23771,10 +23771,10 @@ QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getXmlDescription(Rules& r
 	QString s=IL2+"<ConstraintRoomsMaxActivityTagsPerWeekFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -23795,8 +23795,8 @@ QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDescription(Rules& r){
 
 	QString s=tr("Rooms max activity tags per week from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -23809,8 +23809,8 @@ QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rul
 	s+=tr("All rooms must respect a maximum number of activity tags per week from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));

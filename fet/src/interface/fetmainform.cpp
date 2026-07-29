@@ -185,6 +185,8 @@
 #include <QByteArray>
 #include <QDataStream>
 
+extern FetSettings fetSettings;
+
 QRect mainFormSettingsRect;
 int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
@@ -1482,6 +1484,9 @@ FetMainForm::FetMainForm()
 	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setCheckable(true);
 	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 	///////
+
+	settingsTimetablesUseSpanAction->setCheckable(true);
+	settingsTimetablesUseSpanAction->setChecked(TIMETABLE_HTML_USE_SPAN);
 	
 	settingsDivideTimetablesByDaysAction->setCheckable(true);
 	settingsDivideTimetablesByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
@@ -1752,6 +1757,8 @@ FetMainForm::FetMainForm()
 	connect(settingsConfirmActivateDeactivateActivitiesConstraintsAction, &QAction::toggled, this, &FetMainForm::settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled);
 	//////
 
+	connect(settingsTimetablesUseSpanAction, &QAction::toggled, this, &FetMainForm::settingsTimetablesUseSpanAction_toggled);
+
 	connect(settingsDivideTimetablesByDaysAction, &QAction::toggled, this, &FetMainForm::settingsDivideTimetablesByDaysAction_toggled);
 	connect(settingsDuplicateVerticalNamesAction, &QAction::toggled, this, &FetMainForm::settingsDuplicateVerticalNamesAction_toggled);
 	
@@ -1990,6 +1997,8 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsTeacherMaxDaysPerWeekAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxHoursDailyAction = new QAction(this);
 
+	dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction = new QAction(this);
+
 	dataTimeConstraintsTeacherMaxHoursPerTermAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxHoursPerTermAction = new QAction(this);
 
@@ -2028,6 +2037,8 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction = new QAction(this);
 
 	dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction = new QAction(this);
+
+	dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction = new QAction(this);
 
 	dataTimeConstraintsActivityPreferredStartingTimeAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction = new QAction(this);
@@ -2379,6 +2390,8 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsTeacherMaxDaysPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered);
 	connect(dataTimeConstraintsTeachersMaxHoursDailyAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered);
 
+	connect(dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction_triggered);
+
 	connect(dataTimeConstraintsTeacherMaxHoursPerTermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeacherMaxHoursPerTermAction_triggered);
 	connect(dataTimeConstraintsTeachersMaxHoursPerTermAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsTeachersMaxHoursPerTermAction_triggered);
 
@@ -2417,6 +2430,8 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction_triggered);
 
 	connect(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction_triggered);
+
+	connect(dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction_triggered);
 
 	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered);
 	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, &QAction::triggered, this, &FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered);
@@ -2818,6 +2833,8 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsTeacherMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for a teacher", nullptr));
 	dataTimeConstraintsTeachersMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for all teachers", nullptr));
 
+	dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a max number of activity tags from a set in selected time slots", nullptr));
+
 	dataTimeConstraintsTeacherMaxHoursPerTermAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per term for a teacher", nullptr));
 	dataTimeConstraintsTeachersMaxHoursPerTermAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per term for all teachers", nullptr));
 
@@ -2856,6 +2873,8 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a pair of mutually exclusive sets of time slots", nullptr));
 
 	dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities overlap completely or do not overlap", nullptr));
+
+	dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days between each pair of consecutive activities", nullptr));
 
 	dataTimeConstraintsActivityPreferredStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred starting time", nullptr));
 	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a students set", nullptr));
@@ -3436,6 +3455,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
 
@@ -3470,6 +3490,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
+		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction);
 
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
@@ -3968,6 +3991,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
 		//menuActivities_others_1_time_constraints->addSeparator();
@@ -4003,7 +4027,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
 
 		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction);
 
+		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
 
 		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
@@ -4322,6 +4348,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
@@ -4361,6 +4388,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
 
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
+		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction);
 
 		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
@@ -4670,6 +4700,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction);
 
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
@@ -4708,7 +4739,9 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
 
 		menuActivities_others_3_time_constraints->addSeparator();
+		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction);
 
+		menuActivities_others_3_time_constraints->addSeparator();
 		menuActivities_others_3_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
 
 		menuActivities_others_3_time_constraints->addSeparator();
@@ -4906,8 +4939,8 @@ void FetMainForm::checkForUpdatesToggled(bool checked)
 {
 	if(checked==true){
 		QString s;
-		s+=tr("Please note that, by enabling this option, each time you start FET it will get the file %1 from the FET homepage, so the "
-			"request for this file will be visible on the server, along with your IP address and access time.")
+		s+=tr("Please note that, by enabling the option to search for updates on startup, each time you start FET it will get the file %1 from"
+			" the FET homepage, so the request for this file will be visible on the server, along with your IP address and access time.")
 			.arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
 		s+=" ";
 		s+=tr("Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), "
@@ -5414,6 +5447,13 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMin
 					modifiedMinMaxDaysString+=tc->getDetailedDescription(gt.rules)+"\n";
 				}
 			}
+			else if(tc->type==CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES){
+				ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* mdc=(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities*)tc;
+				if(mdc->maxDays>=gt.rules.nDaysPerWeek/2){
+					modifiedTimeConstraintsList.append(tc);
+					modifiedMinMaxDaysString+=tc->getDetailedDescription(gt.rules)+"\n";
+				}
+			}
 		}
 
 	////////////
@@ -5534,6 +5574,11 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMin
 			if(mdc->maxDays>=gt.rules.nDaysPerWeek/2)
 				mdc->maxDays=gt.rules.nDaysPerWeek/2-1;
 		}
+		else if(tc->type==CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES){
+			ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* mdc=(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities*)tc;
+			if(mdc->maxDays>=gt.rules.nDaysPerWeek/2)
+				mdc->maxDays=gt.rules.nDaysPerWeek/2-1;
+		}
 	}
 
 	if(nMinMaxDaysModified!=nullptr)
@@ -5603,6 +5648,11 @@ void FetMainForm::settingsShowShortcutsOnMainWindowAction_toggled()
 void FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled()
 {
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settingsShowToolTipsForConstraintsWithTablesAction->isChecked();
+}
+
+void FetMainForm::settingsTimetablesUseSpanAction_toggled()
+{
+	TIMETABLE_HTML_USE_SPAN=settingsTimetablesUseSpanAction->isChecked();
 }
 
 void FetMainForm::settingsDivideTimetablesByDaysAction_toggled()
@@ -7142,6 +7192,11 @@ void FetMainForm::helpSettingsAction_triggered()
 	QString s;
 	
 	s+=tr("Probably some settings which are more difficult to understand are these ones:");
+
+	s+="\n\n";
+	
+	s+=tr("Option 'Use span in timetables':"
+	" This means that activities with a duration greater than 1 will be printed spanning multiple rows or columns.");
 	
 	s+="\n\n";
 	
@@ -7986,6 +8041,26 @@ void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlot
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS);
 }
 
+void FetMainForm::dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS);
+}
+
 void FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -8004,6 +8079,26 @@ void FetMainForm::dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAc
 	setParentAndOtherThings(&form, this);
 	form.exec();*/
 	ListTimeConstraints ltcdialog(this, CONSTRAINT_ACTIVITIES_OVERLAP_COMPLETELY_OR_DO_NOT_OVERLAP);
+}
+
+void FetMainForm::dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	/*ConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();*/
+	ListTimeConstraints ltcdialog(this, CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES);
 }
 
 void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()
@@ -15194,6 +15289,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("74")+QString(". ")+tr("All the optional keyboard shortcuts will be disabled.");
 	s+="\n";
 
+	s+=tr("75")+QString(". ")+tr("Use span in timetables will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -15313,6 +15411,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
 	///////////
+
+	settingsTimetablesUseSpanAction->setChecked(true);
+	TIMETABLE_HTML_USE_SPAN=true;
 	
 	settingsDivideTimetablesByDaysAction->setChecked(false);
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
@@ -16836,13 +16937,51 @@ void FetMainForm::backupSettings()
 		 QMessageBox::Yes|QMessageBox::No) == QMessageBox::No)
 			return;
 
-	QSettings fetSettings(COMPANY, PROGRAM);
+	///////
+	//QRect rect(x(), y(), width(), height());
+	QRect rect=this->geometry();
+	mainFormSettingsRect=rect;
+	
+	MAIN_FORM_SHORTCUTS_TAB_POSITION=tabWidget->currentIndex();
+	
+	fetSettings.writeGenerationParameters();
+
+	QSettings currentSettings(COMPANY, PROGRAM);
+	
+	currentSettings.setValue(QString("enable-data-states-recording"), USE_UNDO_REDO);
+	currentSettings.setValue(QString("number-of-data-steps-to-record"), UNDO_REDO_STEPS);
+	//currentSettings.setValue(QString("data-states-compression-level"), UNDO_REDO_COMPRESSION_LEVEL);
+
+	currentSettings.setValue(QString("enable-data-states-recording-on-disk"), USE_UNDO_REDO_SAVE);
+	currentSettings.setValue(QString("number-of-data-steps-to-record-on-disk"), UNDO_REDO_STEPS_SAVE);
+	currentSettings.setValue(QString("filename-suffix-save-history"), SUFFIX_FILENAME_SAVE_HISTORY);
+
+	currentSettings.setValue(QString("enable-file-autosave"), USE_AUTOSAVE);
+	currentSettings.setValue(QString("minutes-for-autosave"), MINUTES_AUTOSAVE);
+	currentSettings.setValue(QString("operations-for-autosave"), OPERATIONS_AUTOSAVE);
+	currentSettings.setValue(QString("directory-for-autosave"), DIRECTORY_AUTOSAVE);
+	currentSettings.setValue(QString("filename-suffix-for-autosave"), SUFFIX_FILENAME_AUTOSAVE);
+
+	QFont interfaceFont=qApp->font();
+	currentSettings.setValue(QString("font-is-user-selectable"), fontIsUserSelectable);
+	if(fontIsUserSelectable && userChoseAFont)
+		currentSettings.setValue(QString("font"), interfaceFont.toString());
+	else
+		currentSettings.setValue(QString("font"), QString(""));
+	
+	currentSettings.setValue(QString("FetMainForm/number-of-recent-files"), recentFiles.count());
+	currentSettings.remove(QString("FetMainForm/recent-file"));
+	for(int i=0; i<recentFiles.count(); i++)
+		currentSettings.setValue(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1), recentFiles.at(i));
+	///////
+
+	QSettings crtfetSettings(COMPANY, PROGRAM);
 	QSettings fileSettings(fileName, QSettings::IniFormat);
-	if(fetSettings.allKeys().count()>0){
+	if(crtfetSettings.allKeys().count()>0){
 		fileSettings.clear();
-		QStringList keys=fetSettings.allKeys();
+		QStringList keys=crtfetSettings.allKeys();
 		for(int i=0; i<keys.count(); i++)
-			fileSettings.setValue(keys.at(i), fetSettings.value(keys.at(i)));
+			fileSettings.setValue(keys.at(i), crtfetSettings.value(keys.at(i)));
 	}
 
 	if(pFetMainForm!=nullptr)
@@ -16862,13 +17001,13 @@ void FetMainForm::restoreSettings()
 	QMessageBox::StandardButton res = QMessageBox::question(this, tr("FET confirmation"), tr("Are you sure you want to restore the FET settings from the "
 	 "file %1?").arg(fileName), QMessageBox::Yes|QMessageBox::No);
 	if(res==QMessageBox::Yes){
-		QSettings fetSettings(COMPANY, PROGRAM);
+		QSettings crtfetSettings(COMPANY, PROGRAM);
 		QSettings fileSettings(fileName, QSettings::IniFormat);
 		if(fileSettings.allKeys().count()>0){
-			fetSettings.clear();
+			crtfetSettings.clear();
 			QStringList keys=fileSettings.allKeys();
 			for(int i=0; i<keys.count(); i++)
-				fetSettings.setValue(keys.at(i), fileSettings.value(keys.at(i)));
+				crtfetSettings.setValue(keys.at(i), fileSettings.value(keys.at(i)));
 		}
 	}
 	
@@ -16989,6 +17128,9 @@ void FetMainForm::restoreSettings()
 	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=settings.value("print-activities-with-same-starting-time", "false").toBool();
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=settings.value("print-not-available", "true").toBool();
 	PRINT_BREAK_TIME_SLOTS=settings.value("print-break", "true").toBool();
+
+	TIMETABLE_HTML_USE_SPAN=settings.value("html-use-span", "true").toBool();
+
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=settings.value("divide-html-timetables-with-time-axis-by-days", "false").toBool();
 	TIMETABLE_HTML_REPEAT_NAMES=settings.value("timetables-repeat-vertical-names", "false").toBool();
 	
@@ -17898,13 +18040,18 @@ void FetMainForm::restoreSettings()
 	//overwriteSingleGenerationFilesAction->setCheckable(true);
 	overwriteSingleGenerationFilesAction->setChecked(OVERWRITE_SINGLE_GENERATION_FILES);
 
-	//checkForUpdatesAction->setCheckable(true);
-	checkForUpdatesAction->setChecked(checkForUpdates);
-	
+	///////
+	disconnect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
+	disconnect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
+
 	//settingsShowSubgroupsInComboBoxesAction->setCheckable(true);
 	settingsShowSubgroupsInComboBoxesAction->setChecked(SHOW_SUBGROUPS_IN_COMBO_BOXES);
 	//settingsShowSubgroupsInActivityPlanningAction->setCheckable(true);
 	settingsShowSubgroupsInActivityPlanningAction->setChecked(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING);
+
+	connect(settingsShowSubgroupsInComboBoxesAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInComboBoxesToggled);
+	connect(settingsShowSubgroupsInActivityPlanningAction, &QAction::toggled, this, &FetMainForm::showSubgroupsInActivityPlanningToggled);
+	///////
 	
 	////////confirmations
 	//settingsConfirmActivityPlanningAction->setCheckable(true);
@@ -17922,6 +18069,8 @@ void FetMainForm::restoreSettings()
 	//settingsConfirmActivateDeactivateActivitiesConstraintsAction->setCheckable(true);
 	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 	///////
+
+	settingsTimetablesUseSpanAction->setChecked(TIMETABLE_HTML_USE_SPAN);
 	
 	//settingsDivideTimetablesByDaysAction->setCheckable(true);
 	settingsDivideTimetablesByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
@@ -17963,14 +18112,61 @@ void FetMainForm::restoreSettings()
 	//enableGroupActivitiesInInitialOrderAction->setCheckable(true);
 	//showWarningForGroupActivitiesInInitialOrderAction->setCheckable(true);
 	
+	///////
+	disconnect(showWarningForSubgroupsWithTheSameActivitiesAction, &QAction::toggled, this, &FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled);
+	disconnect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, &QAction::toggled, this, &FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled);
+	disconnect(showWarningForMaxHoursDailyWithUnder100WeightAction, &QAction::toggled, this, &FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled);
+
+	disconnect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
+	
+	disconnect(enableGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::enableGroupActivitiesInInitialOrderToggled);
+	disconnect(showWarningForGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled);
+	///////
+
 	showWarningForSubgroupsWithTheSameActivitiesAction->setChecked(SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
 
 	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
 
 	showWarningForMaxHoursDailyWithUnder100WeightAction->setChecked(SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
 
+	//checkForUpdatesAction->setCheckable(true);
+	if(!checkForUpdatesAction->isChecked() && checkForUpdates){
+		QString s;
+		s+=tr("Please note that the new settings read from the file will enable the option to check for updates on startup.");
+		s+=" ";
+		s+=tr("This implies that each time you start FET it will get the file %1 from the FET homepage, so the "
+		 "request for this file will be visible on the server, along with your IP address and access time.")
+		 .arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
+		s+=" ";
+		s+=tr("Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), "
+			"your operating system name and version, and your processor architecture type.");
+		s+=" ";
+		s+=tr("Thus, it could be deduced if and when you use FET.");
+		
+		s+="\n\n";
+		s+=tr("Do you agree? (If you don't agree, FET will disable this option.)");
+
+		QMessageBox::StandardButton b=QMessageBox::question(this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+		if(b!=QMessageBox::Yes){
+			checkForUpdates=false;
+		}
+	}
+	checkForUpdatesAction->setChecked(checkForUpdates);
+
 	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+
+	///////
+	connect(showWarningForSubgroupsWithTheSameActivitiesAction, &QAction::toggled, this, &FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled);
+	connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, &QAction::toggled, this, &FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled);
+	connect(showWarningForMaxHoursDailyWithUnder100WeightAction, &QAction::toggled, this, &FetMainForm::showWarningForMaxHoursDailyWithUnder100WeightToggled);
+
+	connect(checkForUpdatesAction, &QAction::toggled, this, &FetMainForm::checkForUpdatesToggled);
+	
+	connect(enableGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::enableGroupActivitiesInInitialOrderToggled);
+	connect(showWarningForGroupActivitiesInInitialOrderAction, &QAction::toggled, this, &FetMainForm::showWarningForGroupActivitiesInInitialOrderToggled);
+	///////
 	
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 

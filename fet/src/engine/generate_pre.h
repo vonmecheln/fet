@@ -510,6 +510,26 @@ extern Matrix1D<QList<ActivitiesOverlapCompletelyOrDoNotOverlap_item*>> aocodnoL
 bool computeActivitiesOverlapCompletelyOrDoNotOverlap(QWidget* parent);
 
 
+//2026-07-18 - Constraint max days between each pair of consecutive activities - suggested by Yush Yuen
+extern bool haveMaxDaysBetweenEachPairOfConsecutiveActivities;
+
+class MaxDaysBetweenEachPairOfConsecutiveActivities_item
+{
+public:
+	double weight;
+	QList<int> activitiesList;
+	//QSet<int> activitiesSet;
+	int maxDays;
+	bool circular;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<MaxDaysBetweenEachPairOfConsecutiveActivities_item> mdbepocaList;
+extern Matrix1D<QList<MaxDaysBetweenEachPairOfConsecutiveActivities_item*>> mdbepocaListForActivity;
+
+bool computeMaxDaysBetweenEachPairOfConsecutiveActivities(QWidget* parent);
+
+
 //2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
 extern bool haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots;
 
@@ -1523,6 +1543,26 @@ extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> amins
 bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
 
+//2026-06-28 - Constraint activities max activity tags from set in selected time slots
+class ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item
+{
+public:
+	//double weight; -> must be 100.0%
+	//QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+	QSet<int> activityTagsSet;
+	int maxTags;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item> amatfsistsList;
+extern Matrix1D<QList<ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item*>> amatfsistsListForActivity;
+
+bool computeActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(QWidget* parent);
+
+
 //2025-10-18 - Constraint activities max total number of students in selected time slots
 class ActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots_item
 {
@@ -1550,6 +1590,10 @@ extern Matrix1D<bool> activityHasOccupyMaxConstraints;
 
 extern bool haveActivitiesMaxSimultaneousConstraints;
 extern Matrix1D<bool> activityHasMaxSimultaneousConstraints;
+
+//2026-06-28
+extern bool haveActivitiesMaxTagsConstraints;
+extern Matrix1D<bool> activityHasMaxTagsConstraints;
 
 extern bool haveActivitiesMaxNumberOfStudentsConstraints;
 extern Matrix1D<bool> activityHasMaxNumberOfStudentsConstraints;

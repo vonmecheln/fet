@@ -1,3 +1,21 @@
+ 7.9.2
+	- Added a new type of constraint, max days between each pair of consecutive activities (suggested by Yush Yuen).
+	- Minor improvements.
+ 7.9.1
+	- Bug fixes, when saving/restoring the settings to/from an ini file (discovered with the help of Andrea Primiani). The bugs appeared when
+	saving the settings to an ini file, in which case the settings were not the current ones, but the ones from the previous FET session, and
+	when restoring the settings from an ini file, in which case the user could have met useless warnings for some options, like checking for
+	updates on startup or enabling the option 'group activities in the initial order'; also, in these situations, when restoring the settings
+	from an ini file and meeting these warnings, the settings might have been retrieved/set incorrectly if the user clicked 'No' or 'Cancel'
+	in the respective message boxes.
+	- Corrected a compilation warning, for a variable set but not used (reported by Andrea Primiani).
+	- Minor interface improvements.
+	- Updated the Russian translation, by Alexey Chernous.
+ 7.9.0
+	- Added a new type of constraint, activities max activity tags from set in selected time slots (suggested by Vinicius Rocha).
+	- Added the option to enable/disable the use of span in the HTML timetables (suggested by Marinho Medeiros).
+	- Minor improvements.
+	- Updated the Italian translation, by Andrea Primiani.
  7.8.7
 	- Critical interface bug fixes: When removing an activity tag in the constraints of type teachers/students max activity tags per day/real day
 	from set or modifying/removing an activity tag in the constraints of type room(s) max activity tags per day/real day/week from set, the
@@ -673,8 +691,8 @@
 	the already existing facility of this type for the activity tags. Suggested by Silver, Drago, xtzetzias, and maybe other users.
 	- Updated the German translation, by Volker Dirr.
  6.9.7
-	- Updated to Qt 6.6.0. This involved updating the FET code in many places (using an easy search-and-replace), to get rid of the many new
-	compilation warnings (referring to the use of the deprecated function qAsConst). Now you will need a C++17 complying C++ compiler to compile FET.
+	- Updated to Qt 6.6.0. This involved updating the FET code in many places (using an easy search-and-replace), to eliminate the new compilation
+	warnings (referring to the use of the deprecated function qAsConst). Now you will need a C++17 complying C++ compiler to compile FET.
 	- Minor improvement in an English field.
  6.9.6
 	- Updated to Qt 6.5.3.
@@ -1658,7 +1676,7 @@
 	- Added a new sample file, by Daniel.
  5.18.1
 	- Minor code improvement.
-	- Got rid of MAX_SUBJECTS limitation (now there is a virtually unlimited number of subjects) - suggested by Volker Dirr.
+	- Eliminated the MAX_SUBJECTS limitation (now there is a virtually unlimited number of subjects) - suggested by Volker Dirr.
 	- Updated to Qt 4.8.2.
 	- Added a new sample file (by L. W. Johnstone, from Belize).
  5.18.0
@@ -2918,12 +2936,12 @@
 	- When exiting, the program asks to save the current file (suggested by Nicholas Robinson)
 	- Added ConstraintTeacherRequiresRoom (suggested by Nicholas Robinson).
  3.9.9
-	- Got rid of some "unused variable" compiler warnings.
+	- Eliminated some "unused variable" compiler warnings.
 	- Modified a bit the README file.
  3.9.8
 	- The possibility to add more teachers pe activity (6), by working on the .xml file
 	(suggested by Cristian Gherman).
-	- Got rid of old compatibility loading (file rules_compatibility.cpp).
+	- Eliminated the old compatibility loading (file rules_compatibility.cpp).
  3.9.7
 	- Bug corrected - the program now saves correctly the compulsory argument when working
 	in another language (suggested by Cristian Gherman).
@@ -2969,7 +2987,7 @@
 	XY. This increases the conflicts factor with 0" (thanks to Marek Jaszuk)
  3.8.3
 	- Doxygen options bug corrected
-	- Got rid of some compiler warnings
+	- Eliminated some compiler warnings
  3.8.2
 	- Bug fix when reading ConstraintRoomNotAvailable (thanks to Jerome Durand)
  3.8.1

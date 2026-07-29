@@ -328,6 +328,9 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Incorrect HTML level read from the settings - making it %1.").arg(2));
 		TIMETABLE_HTML_LEVEL=2;
 	}
+
+	TIMETABLE_HTML_USE_SPAN=settings.value("html-use-span", "true").toBool();
+
 	TIMETABLES_SUBGROUPS_SORTED=settings.value("timetables-subgroups-sorted", "false").toBool();
 	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=settings.value("timetables-activities-sorted-by-tags", "false").toBool();
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=settings.value("print-activity-tags", "true").toBool();
@@ -1159,6 +1162,9 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("overwrite-single-generation-files", OVERWRITE_SINGLE_GENERATION_FILES);
 
 	settings.setValue("html-level", TIMETABLE_HTML_LEVEL);
+
+	settings.setValue("html-use-span", TIMETABLE_HTML_USE_SPAN);
+
 	settings.setValue("print-activity-tags", TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	
 	settings.setValue("print-subjects", TIMETABLE_HTML_PRINT_SUBJECTS);

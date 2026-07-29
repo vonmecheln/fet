@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.8.3">
+<fet version="7.9.2">
   <Mode>Terms</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -2189,40 +2189,40 @@
     <ConstraintTeacherMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
       <Teacher>t1</Teacher>
-      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
       <Activity_Tag>at1</Activity_Tag>
       <Activity_Tag>at2</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintTeacherMaxActivityTagsPerDayFromSet>
     <ConstraintTeachersMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
-      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>3</Number_of_Activity_Tags>
       <Activity_Tag>at1</Activity_Tag>
       <Activity_Tag>at2</Activity_Tag>
       <Activity_Tag>at3</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintTeachersMaxActivityTagsPerDayFromSet>
     <ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
       <Students>y1</Students>
-      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
       <Activity_Tag>at1</Activity_Tag>
       <Activity_Tag>at2</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsSetMaxActivityTagsPerDayFromSet>
     <ConstraintStudentsMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
-      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>3</Number_of_Activity_Tags>
       <Activity_Tag>at1</Activity_Tag>
       <Activity_Tag>at2</Activity_Tag>
       <Activity_Tag>at3</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintStudentsMaxActivityTagsPerDayFromSet>
@@ -2792,6 +2792,50 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots>
+    <ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>3</Number_of_Activities>
+      <Activity_Id>1</Activity_Id>
+      <Activity_Id>2</Activity_Id>
+      <Activity_Id>3</Activity_Id>
+      <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+      <Activity_Tag>at1</Activity_Tag>
+      <Activity_Tag>at2</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>2</Maximum_Allowed_Activity_Tags>
+      <Number_of_Selected_Time_Slots>5</Number_of_Selected_Time_Slots>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>08:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>09:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>10:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>11:00</Hour>
+      </Selected_Time_Slot>
+      <Selected_Time_Slot>
+        <Day>Monday</Day>
+        <Hour>12:00</Hour>
+      </Selected_Time_Slot>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots>
+    <ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Number_of_Activities>2</Number_of_Activities>
+      <Activity_Id>2</Activity_Id>
+      <Activity_Id>7</Activity_Id>
+      <MaxDays>2</MaxDays>
+      <Circular>true</Circular>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>
@@ -3181,20 +3225,20 @@
     <ConstraintRoomMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
       <Room>r3</Room>
-      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
       <Activity_Tag>at3</Activity_Tag>
       <Activity_Tag>at1</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintRoomMaxActivityTagsPerDayFromSet>
     <ConstraintRoomMaxActivityTagsPerWeekFromSet>
       <Weight_Percentage>100</Weight_Percentage>
       <Room>r1</Room>
-      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
       <Activity_Tag>at3</Activity_Tag>
       <Activity_Tag>at2</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintRoomMaxActivityTagsPerWeekFromSet>
@@ -3331,19 +3375,19 @@
     </ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection>
     <ConstraintRoomsMaxActivityTagsPerDayFromSet>
       <Weight_Percentage>100</Weight_Percentage>
-      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
       <Activity_Tag>at3</Activity_Tag>
       <Activity_Tag>at2</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintRoomsMaxActivityTagsPerDayFromSet>
     <ConstraintRoomsMaxActivityTagsPerWeekFromSet>
       <Weight_Percentage>100</Weight_Percentage>
-      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Number_of_Activity_Tags>2</Number_of_Activity_Tags>
       <Activity_Tag>at3</Activity_Tag>
       <Activity_Tag>at1</Activity_Tag>
+      <Maximum_Allowed_Activity_Tags>1</Maximum_Allowed_Activity_Tags>
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintRoomsMaxActivityTagsPerWeekFromSet>

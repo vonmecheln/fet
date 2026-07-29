@@ -151,6 +151,8 @@ class AddOrModifyTimeConstraint: public QObject
 	bool ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots; //true only if the constraint is of this type
 	bool ctrActivitiesPairOfMutuallyExclusiveTimeSlots; //true only if the constraint is of this type
 
+	bool ctrActivitiesMaxActivityTagsFromSetInSelectedTimeSlots; //true only if the constraint is of this type
+
 	//for teacher(s)/students (set) pair of mutually exclusive time slots
 	QGroupBox* firstTimeSlotGroupBox;
 	QGroupBox* secondTimeSlotGroupBox;
@@ -324,6 +326,8 @@ class AddOrModifyTimeConstraint: public QObject
 	//For teacher(s)/students (set) pair of mutually exclusive sets of time slots
 	QTabWidget* tabWidgetPairOfMutuallyExclusiveSets;
 
+	QTabWidget* tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots;
+
 	QGroupBox* first_filterGroupBox;
 	QGroupBox* second_filterGroupBox;
 	QGroupBox* third_filterGroupBox;
@@ -355,6 +359,7 @@ class AddOrModifyTimeConstraint: public QObject
 public:
 	AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc=nullptr,
 	 const QString& _preselectedTeacherName=QString(), const QString& _preselectedStudentsSetName=QString(), const QString& _preselectedActivityTagName=QString(),
+	 const QString& _preselectedSelectedActivityTagName=QString(),
 	 const QString& _preselectedFirstActivityTagName=QString(), const QString& _preselectedSecondActivityTagName=QString(), const QList<int>& _filteredActivitiesIdsList=QList<int>());
 	~AddOrModifyTimeConstraint();
 

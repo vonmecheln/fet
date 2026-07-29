@@ -148,6 +148,9 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 	subjectsComboBox=nullptr;
 	activityTagsComboBox=nullptr;
 
+	selectedActivityTagsLabel=nullptr;
+	selectedActivityTagsComboBox=nullptr;
+
 	first_activityTagsComboBox=nullptr;
 	second_activityTagsComboBox=nullptr;
 
@@ -3209,6 +3212,44 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 				
 				break;
 			}
+		//254
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			{
+				dialogTitle=tr("Constraints activities max activity tags from set in selected time slots", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlots");
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				selectedActivityTagsLabel=new QLabel(tr("Selected", "It refers to selected activity tags."));
+				selectedActivityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			{
+				dialogTitle=tr("Constraints max days between each pair of consecutive activities", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsMaxDaysBetweenEachPairOfConsecutiveActivities");
+
+				firstInstructionsLabel=new QLabel(tr("Max days is for real days"));
+				firstInstructionsLabel->setVisible(gt.rules.mode==MORNINGS_AFTERNOONS);
+
+				teachersComboBox=new QComboBox;
+				studentsComboBox=new QComboBox;
+				subjectsComboBox=new QComboBox;
+				activityTagsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -3293,6 +3334,20 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		connect(activityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListTimeConstraints::filter);
 	}
 
+	if(selectedActivityTagsComboBox!=nullptr || selectedActivityTagsLabel!=nullptr){
+		assert(selectedActivityTagsComboBox!=nullptr && selectedActivityTagsLabel!=nullptr);
+		
+		QSize tmp=selectedActivityTagsComboBox->minimumSizeHint();
+		Q_UNUSED(tmp);
+
+		selectedActivityTagsComboBox->addItem("");
+		for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
+			selectedActivityTagsComboBox->addItem(at->name);
+		selectedActivityTagsComboBox->setCurrentIndex(0);
+
+		connect(selectedActivityTagsComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &ListTimeConstraints::filter);
+	}
+
 	if(first_activityTagsComboBox!=nullptr){
 		QSize tmp=first_activityTagsComboBox->minimumSizeHint();
 		Q_UNUSED(tmp);
@@ -3321,6 +3376,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			|| studentsComboBox!=nullptr
 			|| subjectsComboBox!=nullptr
 			|| activityTagsComboBox!=nullptr
+			|| selectedActivityTagsComboBox!=nullptr
 			|| first_activityTagsComboBox!=nullptr
 			|| second_activityTagsComboBox!=nullptr){
 		filterGroupBox=new QGroupBox(tr("Filter"));
@@ -3348,6 +3404,12 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 			layout->addWidget(subjectsComboBox);
 		if(activityTagsComboBox!=nullptr)
 			layout->addWidget(activityTagsComboBox);
+		if(selectedActivityTagsComboBox!=nullptr){
+			QHBoxLayout* tl=new QHBoxLayout;
+			tl->addWidget(selectedActivityTagsLabel);
+			tl->addWidget(selectedActivityTagsComboBox);
+			layout->addLayout(tl);
+		}
 		if(first_activityTagsComboBox!=nullptr)
 			layout->addWidget(first_activityTagsComboBox);
 		if(second_activityTagsComboBox!=nullptr)
@@ -7291,6 +7353,97 @@ filtered_ok:
 
 				break;
 			}
+		//254
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+				assert(selectedActivityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& selectedActivityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots*)tc;
+
+				if(selectedActivityTagsComboBox->currentText()!=QString("") && !ctr->activityTagsList.contains(selectedActivityTagsComboBox->currentText()))
+					return false;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+				
+				for(int id : std::as_const(ctr->activitiesIds)){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			{
+				assert(teachersComboBox!=nullptr);
+				assert(studentsComboBox!=nullptr);
+				assert(subjectsComboBox!=nullptr);
+				assert(activityTagsComboBox!=nullptr);
+
+				if(teachersComboBox->currentText()==QString("")
+						&& subjectsComboBox->currentText()==QString("")
+						&& activityTagsComboBox->currentText()==QString("")
+						&& studentsComboBox->currentText()==QString(""))
+					return true;
+
+				ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* ctr=(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities*)tc;
+
+				bool foundTeacher=false;
+				bool foundSubject=false;
+				bool foundActivityTag=false;
+				bool foundStudents=false;
+
+				for(int id : std::as_const(ctr->activitiesIds)){
+					Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
+
+					if(act!=nullptr){
+						if(teachersComboBox->currentText()==QString("") || act->teachersNames.contains(teachersComboBox->currentText()))
+							foundTeacher=true;
+						if(subjectsComboBox->currentText()==QString("") || subjectsComboBox->currentText()==act->subjectName)
+							foundSubject=true;
+						if(activityTagsComboBox->currentText()==QString("") || act->activityTagsNames.contains(activityTagsComboBox->currentText()))
+							foundActivityTag=true;
+						if(studentsComboBox->currentText()==QString("") || showedStudents.intersects(QSet<QString>(act->studentsNames.constBegin(), act->studentsNames.constEnd())))
+							foundStudents=true;
+					}
+
+					if(foundTeacher && foundSubject && foundActivityTag && foundStudents)
+						return true;
+				}
+
+				return false;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -7348,6 +7501,7 @@ void ListTimeConstraints::addClicked()
 	QString preselectedTeacherName;
 	QString preselectedStudentsSetName;
 	QString preselectedActivityTagName;
+	QString preselectedSelectedActivityTagName;
 	QString preselectedFirstActivityTagName;
 	QString preselectedSecondActivityTagName;
 
@@ -7366,6 +7520,11 @@ void ListTimeConstraints::addClicked()
 	else
 		preselectedActivityTagName=QString();
 
+	if(selectedActivityTagsComboBox!=nullptr)
+		preselectedSelectedActivityTagName=selectedActivityTagsComboBox->currentText();
+	else
+		preselectedSelectedActivityTagName=QString();
+
 	if(first_activityTagsComboBox!=nullptr)
 		preselectedFirstActivityTagName=first_activityTagsComboBox->currentText();
 	else
@@ -7378,6 +7537,7 @@ void ListTimeConstraints::addClicked()
 
 	AddOrModifyTimeConstraint aomtc(dialog, type, nullptr,
 	 preselectedTeacherName, preselectedStudentsSetName, preselectedActivityTagName,
+	 preselectedSelectedActivityTagName,
 	 preselectedFirstActivityTagName, preselectedSecondActivityTagName);
 
 	int finalNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
@@ -8582,6 +8742,70 @@ void ListTimeConstraints::helpClicked()
 				s+="\n\n";
 				s+=tr("To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number "
 				 "of students which can be present, considering the number of students of these activities, in these time slots.");
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//254
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			{
+				QString s;
+				
+				s+=tr("This constraint was suggested by %1 on %2.", "%1 is the name of a person, %2 is a date.").arg("Vinicius Rocha").arg(tr("27 June 2026"));
+				
+				s+="\n\n";
+				
+				s+=tr("To use this constraint, you need to specify a set of activities, a set of activity tags, a set of time slots, and the maximum number"
+				 " of activity tags - from the set of selected activity tags that also belong to the selected activities - which are allowed in all the"
+				 " selected time slots.");
+
+				s+="\n\n";
+				
+				s+=tr("Note about the filters for activity tags: there are two such filters in this dialog: the first one (unlabeled) is for filtering the constraints"
+				 " by their activities, and the second one, labeled 'Selected', is for filtering the constraints by their activity tags.",
+				 "'Selected' refers to activity tags.");
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			{
+				QString s;
+				
+				s+=tr("This constraint was suggested by %1 on %2.", "%1 is the name of a person, %2 is a date.").arg("Yush Yuen").arg(tr("18 July 2026"));
+
+				s+="\n\n";
+
+				s+=tr("This constraint specifies a set of activities and a maximum number of days. FET will place these activities over the week."
+				 " In the final timetable, we consider the affected activities in the ascending (or descending) order of their scheduled days, and each pair of"
+				 " adjacent activities in this order must respect the maximum days between them.");
+
+				s+=" ";
+				
+				s+=tr("The number of days between two activities is considered to be the absolute difference of the index numbers of their days. For instance,"
+				 " if A1 is placed on Monday and A2 is placed on Wednesday, the number of days between them is, considering Monday the first day of the week and"
+				 " Wednesday the third day of the week, 3 - 1 = 2.");
+
+				s+="\n\n";
+
+				s+=tr("For instance, if the activities are A1, A2, A3, and A4, and max days is 3, over an 8 days FET 'week', an accepted solution"
+				 " could be: A1, empty, A2, A3, empty, empty, A4, empty.");
+				s+=" ";
+				s+=tr("(The data file could include also a constraint min 1 days 100% between these 4 activities, but this is not mandatory.)");
+
+				s+="\n\n";
+
+				s+=tr("'Circular' means that FET will also check the number of days between the last activity of the week and the first one, as if"
+				 " the FET week would be repeated without any day of pause.");
+				s+=" ";
+				s+=tr("For instance, if the week is: Monday, Tuesday, Wednesday, Thursday, Friday, and the user selected 'Circular', if the first activity of"
+				 " the week is placed on Tuesday and the last activity of the week is placed on Friday, the number of days between these two activities is"
+				 " 2 (the index of Tuesday) + 5 (the number of days per week) - 5 (the index of Friday) = 2.");
+
+				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 

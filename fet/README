@@ -1,4 +1,4 @@
-This is FET version 7.8.7
+This is FET version 7.9.2
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 7.0.12, Xfce 4.20,
-	Xfce Terminal Emulator 1.2.0, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 26.04.2, KDiff3 0.9.99-beta, grep 3.12, sed 4.10,
-	Thunar Bulk Rename 4.20.8, Qt 6.11.1, QMake 3.1, CMake 4.2.3, Ninja 1.13.2, Qt Creator 19.0.2, GCC 15.2.1, Clang 22.1.6, GNU Make 4.4.1,
-	GDB 16.3, Valgrind 3.27.0, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.4,
-	GIMP 3.2.4, ImageMagick 7.1.2-25, International Ispell 3.1.20 / Aspell 0.60.8.2, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.3,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 7.1.3, Xfce 4.20,
+	Xfce Terminal Emulator 1.2.0, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 26.04.3, KDiff3 0.9.99-beta, grep 3.12, sed 4.10,
+	Thunar Bulk Rename 4.20.8, Qt 6.11.1, QMake 3.1, CMake 4.3.4, Ninja 1.13.2, Qt Creator 20.0.0, GCC 15.3.0, Clang 22.1.8, GNU Make 4.4.1,
+	GDB 16.3, Valgrind 3.27.1, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.4,
+	GIMP 3.2.4, ImageMagick 7.1.2-27, International Ispell 3.1.20 / Aspell 0.60.8.2, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.3,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 11 operating system,
-	Command Prompt, Total Commander 11.57, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.11.1,
-	QMake 3.1, Qt Creator 19.0.2, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 26.01.
+	Command Prompt, Total Commander 11.58, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.30.5, Ninja 1.12.1, Qt 6.11.1,
+	QMake 3.1, Qt Creator 20.0.0, MinGW 13.1.0, Microsoft Visual C++ 2019, 7-Zip 26.02.
 
 	The executable version of FET for GNU/Linux is obtained in the following environment: GNU/Linux Mint 21.3 "Virginia" Xfce Edition
 	with the standard packages, Qt 6.11.1, and possibly linuxdeploy 1-alpha (most of these software packages are free software,
@@ -39,7 +39,7 @@ Requirements:
 	CMake is the new recommended way to compile FET. QMake is the old and not recommended way.
 	For compiling, you will need this software:
 		CMake 3.28 or later (for compiling with CMake).
-		GCC 15.2.1 or similar.
+		GCC 15.3.0 or similar.
 		Qt 6.11.1 or compatible. CMake: Qt 6.10 minimum. QMake: Qt 5.15 or later should be fine.
 		For compiling with QMake: Make 4.2.1 or similar (GNU Make).
 		QMake 3.1 or compatible (usually available with Qt).
@@ -122,6 +122,8 @@ Compiling FET:
 	You will need Qt version >= 6.10.0, and CMake version >= 3.28.
 	
 	Run "qt-cmake -B build" (qt-cmake is located in the bin directory of Qt), then "cmake --build build --parallel 16".
+	Note: to use a different C++ compiler than the standard one, you can use the option "CMAKE_CXX_COMPILER"; for instance,
+	to use Clang, write "qt-cmake -B build -DCMAKE_CXX_COMPILER=clang++".
 	Note: the first command might issue a CMake warning, if you don't have the package Qt LinguistTools installed. This package
 	is only used by the FET authors to update and release the translation files. You can compile FET without this package,
 	so you can safely ignore the possible warning.
@@ -132,6 +134,10 @@ Compiling FET:
 		set PATH=C:\Qt\6.11.1\mingw_64\bin;C:\Qt\Tools\mingw1310_64\bin;%PATH%
 		set PATH=C:\Qt\Tools\CMake_64\bin;%PATH%
 		qt-cmake -G "MinGW Makefiles" -B build
+
+	Note GL CMake: On GNU/Linux, if you get an error related to QtGui, you may need to install additional packages before compiling FET.
+	For instance, on openSUSE GNU/Linux you may need to install Mesa-devel (or maybe only Mesa-libGL-devel); on Mint GNU/Linux you
+	may need to install libgl1-mesa-dev.
 
 	Note NUseSystemLocale: If you want FET to autodetect the system locale language, you can use the custom CMake option
 	"USE_SYSTEM_LOCALE", as: "qt-cmake -B build -DUSE_SYSTEM_LOCALE=ON", then continue with the build, as above.
@@ -174,7 +180,7 @@ Compiling FET:
 	all the intermediary files and recompile), and also if you did not use FET on this machine or if you remove the settings file/registry entry for FET
 	(otherwise FET will retain the language which was already saved in its settings).
 	
-	Note GL: If you get an error like this:
+	Note GL QMake: If you get an error like this:
 	In file included from ../../Qt5.3.2/5.3/gcc_64/include/QtGui/qopenglcontext.h:62:0,
 		from ../../Qt5.3.2/5.3/gcc_64/include/QtGui/QtGui:32,
 		from ../../Qt5.3.2/5.3/gcc_64/include/QtWidgets/QtWidgetsDepends:3,
@@ -240,7 +246,7 @@ Compiling FET:
 	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes some time)
 	in a command line in the FET directory.
 	See also note NUseSystemLocale above.
-	See also Note GL above.
+	See also Note GL QMake above.
 	See also note NMkJobs above ("mingw32-make -j 16" for instance will be much faster on a 16 threads processor).
 	The exact measured time to compile FET-6.28.0: 4 minutes 30 seconds on 16 threads (mingw-make -j 16) on a Ryzen 7 2700X.
 	(You can use the command line prompt of Windows or the Qt command line prompt shortcut in the Qt shortcuts menu.)
@@ -364,6 +370,9 @@ Running FET:
 		--htmllevel=LEVEL
 			LEVEL is an integer from 0 to 7 and represents the detail level for the generated HTML timetables (default 2, larger values have more
 			details/facilities and larger file sizes).
+
+		--htmlusespan=US
+			US is either true or false and represents if you want the timetables to use span for the activities with duration greater than 1 (default true).
 
 		--language=LANG
 			LANG is one of: ar, bg, bs, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru,

@@ -234,6 +234,7 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 
 AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc,
 	 const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedActivityTagName,
+	 const QString& _preselectedSelectedActivityTagName,
 	 const QString& _preselectedFirstActivityTagName, const QString& _preselectedSecondActivityTagName, const QList<int>& _filteredActivitiesIdsList)
 {
 	type=_type;
@@ -324,8 +325,12 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 	ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots=false;
 	ctrActivitiesPairOfMutuallyExclusiveTimeSlots=false;
+	
+	ctrActivitiesMaxActivityTagsFromSetInSelectedTimeSlots=false;
 
 	tabWidgetPairOfMutuallyExclusiveSets=nullptr;
+
+	tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots=nullptr;
 
 	intervalStartHourLabel=nullptr;
 	intervalStartHourComboBox=nullptr;
@@ -8214,6 +8219,138 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//254
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add activities max activity tags from set in selected time slots", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots");
+
+					firstAddInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
+				}
+				else{
+					dialogTitle=tr("Modify activities max activity tags from set in selected time slots", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots");
+
+					firstModifyInstructionsLabel=new QLabel(tr("%1 (%2)=selected, empty (%3)=not selected",
+					 "This is an explanation in a dialog for a constraint. It says that symbol %1 (or color %2) means that this slot is selected, "
+					 "and an empty cell (or color %3) means that the slot is not selected. Typically the %1 symbol is ✓, color %2 is darkcyan, and color %3 "
+					 "is darkgoldenrod - you can see these colors here: https://doc.qt.io/qt-6/qcolorconstants.html.")
+					 .arg("✓")
+					 .arg(tr("darkcyan", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html."))
+					 .arg(tr("darkgoldenrod", "This is the name of a color. You can see this color here: https://doc.qt.io/qt-6/qcolorconstants.html.")));
+				}
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+				QSettings settings(COMPANY, PROGRAM);
+				if(settings.contains(dialogName+QString("/use-colors")))
+					colorsCheckBox->setChecked(settings.value(dialogName+QString("/use-colors")).toBool());
+				else
+					colorsCheckBox->setChecked(false);
+
+				toggleAllPushButton=new QPushButton(tr("Toggle all", "It refers to time slots"));
+
+				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
+
+				labelForSpinBox=new QLabel(tr("Max activity tags"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(1);
+				spinBox->setMaximum(MAX_ACTIVITIES);
+				spinBox->setValue(2);
+
+				activityTagsLabel=new QLabel(tr("Activity tags"));
+				selectedActivityTagsLabel=new QLabel(tr("Selected", "It refers to activity tags"));
+				activityTagsListWidget=new QListWidget;
+				selectedActivityTagsListWidget=new QListWidget;
+				addAllActivityTagsPushButton=new QPushButton(tr("All", "Add all the activity tags to the list of selected activity tags"));
+				clearActivityTagsPushButton=new QPushButton(tr("Clear", "Clear the list of selected activity tags"));
+
+				ctrActivitiesMaxActivityTagsFromSetInSelectedTimeSlots=true;
+
+				tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots=new QTabWidget;
+
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add max days between each pair of consecutive activities", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintMaxDaysBetweenEachPairOfConsecutiveActivities");
+				}
+				else{
+					dialogTitle=tr("Modify max days between each pair of consecutive activities", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("ModifyConstraintMaxDaysBetweenEachPairOfConsecutiveActivities");
+				}
+
+				addEmpty=true;
+				filterGroupBox=new QGroupBox(tr("Filter"));
+
+				//teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				//studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				//subjectLabel=new QLabel(tr("Subject"));
+				subjectsComboBox=new QComboBox;
+
+				//activityTagLabel=new QLabel(tr("Activity tag"));
+				activityTagsComboBox=new QComboBox;
+
+				activitiesLabel=new QLabel(tr("Activities"));
+				selectedActivitiesLabel=new QLabel(tr("Selected", "It refers to activities"));
+				activitiesListWidget=new QListWidget;
+				selectedActivitiesListWidget=new QListWidget;
+				addAllActivitiesPushButton=new QPushButton(tr("All", "Add all filtered activities to the list of selected activities"));
+				clearActivitiesPushButton=new QPushButton(tr("Clear", "Clear the list of selected activities"));
+
+				labelForSpinBox=new QLabel(tr("Max days"));
+				spinBox=new QSpinBox;
+				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+					spinBox->setMinimum(0);
+					spinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+					spinBox->setValue(gt.rules.nDaysPerWeek-1);
+				}
+				else{
+					spinBox->setMinimum(0);
+					spinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
+					spinBox->setValue(gt.rules.nDaysPerWeek/2-1);
+				}
+
+				checkBox=new QCheckBox(tr("Circular"));
+				checkBox->setChecked(true);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -8466,6 +8603,16 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				int q=activityTagsComboBox->findText(_preselectedActivityTagName);
 				if(q>=0){
 					activityTagsComboBox->setCurrentIndex(q);
+				}
+			}
+		}
+	}
+	if(oldtc==nullptr){
+		if(selectedActivityTagsListWidget!=nullptr){
+			if(!_preselectedSelectedActivityTagName.isEmpty()){
+				if(gt.rules.searchActivityTag(_preselectedSelectedActivityTagName)>=0){
+					selectedActivityTagsSet.insert(_preselectedSelectedActivityTagName);
+					selectedActivityTagsListWidget->addItem(_preselectedSelectedActivityTagName);
 				}
 			}
 		}
@@ -9258,9 +9405,142 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	if(tabWidgetAOMSOTSFS!=nullptr)
 		k4=1;
 	
-	assert(k1+k2+k3+k4<=1);
+	int k5=0;
+	if(tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots!=nullptr)
+		k5=1;
 	
-	if(ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots){
+	assert(k1+k2+k3+k4+k5<=1);
+	
+	if(ctrActivitiesMaxActivityTagsFromSetInSelectedTimeSlots){
+		assert(tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots!=nullptr);
+		
+		//activities
+		QWidget* widget0=new QWidget;
+		QVBoxLayout* layout0=new QVBoxLayout;
+		
+		assert(filterGroupBox!=nullptr);
+
+		assert(teacherLayout!=nullptr);
+		assert(studentsLayout!=nullptr);
+		assert(subjectLayout!=nullptr);
+		assert(activityTagLayout!=nullptr);
+
+		QVBoxLayout* layoutLeft=new QVBoxLayout;
+		layoutLeft->addLayout(teacherLayout);
+		layoutLeft->addLayout(studentsLayout);
+
+		QVBoxLayout* layoutRight=new QVBoxLayout;
+		layoutRight->addLayout(subjectLayout);
+		layoutRight->addLayout(activityTagLayout);
+
+		QHBoxLayout* layout=new QHBoxLayout;
+		layout->addLayout(layoutLeft);
+		layout->addLayout(layoutRight);
+
+		filterGroupBox->setLayout(layout);
+
+		layout0->addWidget(filterGroupBox);
+		
+		assert(activitiesListWidget!=nullptr);
+		assert(activitiesLabel!=nullptr);
+		assert(selectedActivitiesLabel!=nullptr);
+		assert(selectedActivitiesListWidget!=nullptr);
+		assert(addAllActivitiesPushButton!=nullptr);
+		assert(clearActivitiesPushButton!=nullptr);
+
+		QVBoxLayout* layout1=new QVBoxLayout;
+		layout1->addWidget(activitiesLabel);
+		layout1->addWidget(activitiesListWidget);
+		layout1->addWidget(addAllActivitiesPushButton);
+
+		QVBoxLayout* layout2=new QVBoxLayout;
+		layout2->addWidget(selectedActivitiesLabel);
+		layout2->addWidget(selectedActivitiesListWidget);
+		layout2->addWidget(clearActivitiesPushButton);
+
+		QHBoxLayout* layout3=new QHBoxLayout;
+		layout3->addLayout(layout1);
+		layout3->addLayout(layout2);
+
+		layout0->addLayout(layout3);
+
+		widget0->setLayout(layout0);
+
+		///////activity tags
+		assert(activityTagsListWidget!=nullptr);
+		assert(activityTagsLabel!=nullptr);
+		assert(selectedActivityTagsLabel!=nullptr);
+		assert(selectedActivityTagsListWidget!=nullptr);
+		assert(addAllActivityTagsPushButton!=nullptr);
+		assert(clearActivityTagsPushButton!=nullptr);
+
+		QVBoxLayout* layoutat1=new QVBoxLayout;
+		layoutat1->addWidget(activityTagsLabel);
+		layoutat1->addWidget(activityTagsListWidget);
+		layoutat1->addWidget(addAllActivityTagsPushButton);
+
+		QVBoxLayout* layoutat2=new QVBoxLayout;
+		layoutat2->addWidget(selectedActivityTagsLabel);
+		layoutat2->addWidget(selectedActivityTagsListWidget);
+		layoutat2->addWidget(clearActivityTagsPushButton);
+
+		QHBoxLayout* layoutat3=new QHBoxLayout;
+		layoutat3->addLayout(layoutat1);
+		layoutat3->addLayout(layoutat2);
+
+		QVBoxLayout* activityTagsLayout=new QVBoxLayout;
+		activityTagsLayout->addLayout(layoutat3);
+		assert(spinBoxLayout!=nullptr);
+		activityTagsLayout->addLayout(spinBoxLayout);
+
+		///////time slots
+		assert(colorsCheckBox!=nullptr);
+		assert(toggleAllPushButton!=nullptr);
+
+		QHBoxLayout* buttons2=new QHBoxLayout;
+		buttons2->addStretch();
+		if(colorsCheckBox!=nullptr)
+			buttons2->addWidget(colorsCheckBox);
+		if(toggleAllPushButton!=nullptr)
+			buttons2->addWidget(toggleAllPushButton);
+
+		QVBoxLayout* timeSlotsLayout2=new QVBoxLayout;
+
+		if(firstAddInstructionsLabel!=nullptr)
+			timeSlotsLayout2->addWidget(firstAddInstructionsLabel);
+		else if(firstModifyInstructionsLabel!=nullptr)
+			timeSlotsLayout2->addWidget(firstModifyInstructionsLabel);
+		else
+			assert(0);
+		
+		assert(secondAddInstructionsLabel==nullptr);
+		assert(secondModifyInstructionsLabel==nullptr);
+		
+		///////
+		
+		assert(timesTable!=nullptr);
+		if(timesTable!=nullptr)
+			timeSlotsLayout2->addWidget(timesTable);
+
+		timeSlotsLayout2->addLayout(buttons2);
+
+		///////
+
+		QWidget* widget1=new QWidget;
+		QWidget* widget2=new QWidget;
+
+		widget1->setLayout(activityTagsLayout);
+		widget2->setLayout(timeSlotsLayout2);
+
+		tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots->addTab(widget0, tr("Activities"));
+		tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots->addTab(widget1, tr("Activity tags"));
+		tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots->addTab(widget2, tr("Selected time slots"));
+
+		wholeDialog->addWidget(tabWidgetActivitiesMaxActivityTagsFromSetInSelectedTimeSlots);
+		wholeDialog->addLayout(weight);
+		wholeDialog->addLayout(buttons);
+	}
+	else if(ctrActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots){
 		assert(tabWidgetPairOfMutuallyExclusiveSets!=nullptr);
 		/*if(oldtc==nullptr){
 			if(firstAddInstructionsLabel!=nullptr)
@@ -13774,6 +14054,65 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					break;
 				}
+			//254
+			case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+				{
+					ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots*)oldtc;
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int actId : std::as_const(ctr->activitiesIds)){
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					fillTimesTable(timesTable, ctr->selectedDays, ctr->selectedHours, true);
+
+					selectedActivityTagsListWidget->clear();
+					selectedActivityTagsSet.clear();
+
+					for(const QString& at : std::as_const(ctr->activityTagsList)){
+						selectedActivityTagsSet.insert(at);
+						selectedActivityTagsListWidget->addItem(at);
+					}
+
+					spinBox->setValue(ctr->maxActivityTags);
+
+					break;
+				}
+			//255
+			case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+				{
+					ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* ctr=(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities*)oldtc;
+
+					selectedActivitiesListWidget->clear();
+					selectedActivitiesList.clear();
+
+					for(int i=0; i<ctr->activitiesIds.count(); i++){
+						int actId=ctr->activitiesIds[i];
+						selectedActivitiesList.append(actId);
+						Activity* act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+						assert(act!=nullptr);
+						selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
+						if(!act->active){
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setBackground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::Window));
+							selectedActivitiesListWidget->item(selectedActivitiesListWidget->count()-1)->setForeground(selectedActivitiesListWidget->palette().brush(QPalette::Disabled, QPalette::WindowText));
+						}
+					}
+
+					spinBox->setValue(ctr->maxDays);
+
+					checkBox->setChecked(ctr->circular);
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -18099,6 +18438,51 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				break;
 			}
+		//254
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+
+				if(selectedActivityTagsListWidget->count()<2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two activity tags"));
+					return;
+				}
+
+				QStringList atl;
+				for(int i=0; i<selectedActivityTagsListWidget->count(); i++)
+					atl.append(selectedActivityTagsListWidget->item(i)->text());
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				tc=new ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(weight, selectedActivitiesList, spinBox->value(), atl, days, hours);
+
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Empty list of selected activities"));
+					return;
+				}
+				if(selectedActivitiesList.count()==1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Only one selected activity"));
+					return;
+				}
+
+				tc=new ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities(weight, selectedActivitiesList, spinBox->value(), checkBox->isChecked());
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -18109,7 +18493,7 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 	if(tmp2){
 		LongTextMessageBox::information(dialog, tr("FET information"), tr("Constraint added:")+"\n\n"+tc->getDetailedDescription(gt.rules));
 
-		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(tc->getDetailedDescription(gt.rules)));
+		gt.rules.addUndoPoint(tr("Added the constraint: %1").arg(QString("<br /><br />\n")+tc->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n")));
 
 		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
@@ -18209,8 +18593,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18227,8 +18611,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18244,8 +18628,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18261,8 +18645,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18292,8 +18676,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18309,8 +18693,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 						bool tmp2=gt.rules.addTimeConstraint(ctr);
 						assert(tmp2);
 
-						ctrs+=ctr->getDetailedDescription(gt.rules);
-						ctrs+=QString("\n");
+						ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+						ctrs+=QString("<br />\n");
 					}
 
 					break;
@@ -18344,8 +18728,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18361,8 +18745,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18378,8 +18762,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18395,8 +18779,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18412,8 +18796,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18429,8 +18813,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18465,8 +18849,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18488,8 +18872,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18505,8 +18889,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18522,8 +18906,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18539,8 +18923,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18556,8 +18940,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18573,8 +18957,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18590,8 +18974,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18617,8 +19001,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18634,8 +19018,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18651,8 +19035,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18668,8 +19052,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 				bool tmp2=gt.rules.addTimeConstraint(ctr);
 				assert(tmp2);
 
-				ctrs+=ctr->getDetailedDescription(gt.rules);
-				ctrs+=QString("\n");
+				ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+				ctrs+=QString("<br />\n");
 			}
 
 			break;
@@ -18685,8 +19069,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 				bool tmp2=gt.rules.addTimeConstraint(ctr);
 				assert(tmp2);
 
-				ctrs+=ctr->getDetailedDescription(gt.rules);
-				ctrs+=QString("\n");
+				ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+				ctrs+=QString("<br />\n");
 			}
 
 			break;
@@ -18702,8 +19086,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 						bool tmp2=gt.rules.addTimeConstraint(ctr);
 						assert(tmp2);
 
-						ctrs+=ctr->getDetailedDescription(gt.rules);
-						ctrs+=QString("\n");
+						ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+						ctrs+=QString("<br />\n");
 					}
 
 					break;
@@ -18725,8 +19109,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18742,8 +19126,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18765,8 +19149,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18782,8 +19166,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18817,8 +19201,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18852,8 +19236,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18869,8 +19253,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 				bool tmp2=gt.rules.addTimeConstraint(ctr);
 				assert(tmp2);
 
-				ctrs+=ctr->getDetailedDescription(gt.rules);
-				ctrs+=QString("\n");
+				ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+				ctrs+=QString("<br />\n");
 			}
 
 			break;
@@ -18886,8 +19270,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18903,8 +19287,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18920,8 +19304,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18937,8 +19321,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18954,8 +19338,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18971,8 +19355,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -18988,8 +19372,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19015,8 +19399,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19038,8 +19422,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19080,8 +19464,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19116,8 +19500,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19133,8 +19517,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19169,8 +19553,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19186,8 +19570,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19203,8 +19587,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 				bool tmp2=gt.rules.addTimeConstraint(ctr);
 				assert(tmp2);
 
-				ctrs+=ctr->getDetailedDescription(gt.rules);
-				ctrs+=QString("\n");
+				ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+				ctrs+=QString("<br />\n");
 			}
 
 			break;
@@ -19254,8 +19638,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19275,8 +19659,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19292,8 +19676,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19352,8 +19736,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19392,8 +19776,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -19411,8 +19795,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		QMessageBox::information(dialog, tr("FET information"), tr("Added %1 time constraints.").arg(gt.rules.teachersList.count()));
 
 	if(gt.rules.teachersList.count()>0)
-		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
-		 .arg(gt.rules.teachersList.count()).arg(ctrs));
+		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:", "%1 is the number of constraints. After this text follows the detailed description of the added constraints")
+		 .arg(gt.rules.teachersList.count())+"<br /><br />\n"+ctrs);
 }
 
 void AddOrModifyTimeConstraint::closeClicked()
@@ -19496,8 +19880,8 @@ void AddOrModifyTimeConstraint::okClicked()
 		}
 	}
 
-	QString oldcs=oldtc->getDetailedDescription(gt.rules);
-	
+	QString oldcs=oldtc->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+
 	switch(type){
 		//1
 		case CONSTRAINT_BASIC_COMPULSORY_TIME:
@@ -24742,6 +25126,63 @@ void AddOrModifyTimeConstraint::okClicked()
 
 				break;
 			}
+		//254
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			{
+				if(selectedActivitiesList.count()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of activities"));
+					return;
+				}
+
+				if(selectedActivityTagsListWidget->count()<2){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Please select at least two activity tags"));
+					return;
+				}
+
+				QList<int> days;
+				QList<int> hours;
+				getTimesTable(timesTable, days, hours, true);
+
+				ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots* ctr=(ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots*)oldtc;
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
+
+				ctr->selectedDays=days;
+				ctr->selectedHours=hours;
+
+				QStringList atl;
+				for(int i=0; i<selectedActivityTagsListWidget->count(); i++)
+					atl.append(selectedActivityTagsListWidget->item(i)->text());
+
+				ctr->activityTagsList=atl;
+				ctr->maxActivityTags=spinBox->value();
+
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			{
+				if(selectedActivitiesList.size()==0){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Empty list of selected activities"));
+					return;
+				}
+				if(selectedActivitiesList.size()==1){
+					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
+					return;
+				}
+
+				ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* ctr=(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities*)oldtc;
+
+				ctr->activitiesIds=selectedActivitiesList;
+				ctr->recomputeActivitiesSet();
+
+				ctr->maxDays=spinBox->value();
+
+				ctr->circular=checkBox->isChecked();
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -24750,8 +25191,8 @@ void AddOrModifyTimeConstraint::okClicked()
 	
 	oldtc->weightPercentage=weight;
 
-	QString newcs=oldtc->getDetailedDescription(gt.rules);
-	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+	QString newcs=oldtc->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+	gt.rules.addUndoPoint(tr("Modified the constraint: %1 into %2").arg(QString("<br /><br />\n")+oldcs+QString("<br />\n")).arg(QString("<br /><br />\n")+newcs+QString("<br />\n")));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
@@ -25299,6 +25740,13 @@ void AddOrModifyTimeConstraint::checkBoxToggled()
 			}
 		//202
 		case CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON:
+			{
+				//nothing, we just avoid the assert below
+
+				break;
+			}
+		//255
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
 			{
 				//nothing, we just avoid the assert below
 

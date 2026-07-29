@@ -1025,10 +1025,14 @@ private:
 	TimeConstraint* readActivitiesOverlapCompletelyOrDontOverlap(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesOverlapCompletelyOrDoNotOverlap(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readMaxDaysBetweenEachPairOfConsecutiveActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 

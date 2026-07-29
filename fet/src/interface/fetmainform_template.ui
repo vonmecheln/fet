@@ -1241,6 +1241,8 @@
      <addaction name="separator"/>
      <addaction name="settingsDataToPrintInTimetablesAction"/>
      <addaction name="separator"/>
+     <addaction name="settingsTimetablesUseSpanAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsPrintDetailedTimetablesAction"/>
      <addaction name="settingsPrintDetailedTeachersFreePeriodsTimetablesAction"/>
      <addaction name="separator"/>
@@ -2239,6 +2241,17 @@
    </property>
    <property name="text">
     <string>Order activities by tags in timetables</string>
+   </property>
+  </action>
+  <action name="settingsTimetablesUseSpanAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string extracomment="Using (enabling) span in the timetables means that the activities with duration greater than 1 will be shown in a single continuous larger table cell.">Use span in timetables</string>
    </property>
   </action>
  </widget>

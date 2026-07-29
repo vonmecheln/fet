@@ -11444,6 +11444,56 @@ The "add/update" part might be critical.
 I think the "easiest" variant will be "if there is a single new not available time slot, then delete all values of the constraint and place the new ones".
 Because if you don't do it that way and if you want to keep the old values, then it mean you also need a variant how to remove old values.
 
+---
+
+Volker Dirr:
+
+I just got again a request by email for this feature.
+
+hmmm... still the question how to write it.
+
+There are different variants for this with different advantages/disadvantages.
+
+Variant 1:
+teacher name, weight, day, hour
+"Tom", 100, "Monday", "1st"
+"Tom", 100, "Monday", "2nd"
+...
+
+This is valid csv. A bit tricky will be the detection if this is only one constraint or more. Might not 100% valid without more information, but i think a good automatic algorithm will care about this in most situations fine without more information.
+
+Variant 2:
+teacher name, weight, day, hour, day, hour, ...
+"Tom", 100, "Monday", "1st", "Monday", "2nd"
+...
+
+This is NOT valid csv. It doesn't has got the disadvantage of variant 1, but in fact this is not valid, since the number of columns is not fixed.
+
+Variant 3:
+teacher name, weight, day-hour-pairs
+"Tom", 100, "Monday|1st|Monday|2nd"
+...
+
+This is valid csv if you check the header. But in fact it is a bit "bad", since it needs at least one more character to split the day and hour names.
+
+So if anyone need a constraint like this: What do you think should we code? Variant 1,2 or 3. Please let me know why do you think these Variants are fine or bad. Maybe you know a better csv variant?
+
+    Quote
+    Quick Edit
+    More...
+
+---
+
+Volker Dirr:
+
+Or Variant 4:
+teacher name, weight, Monday-1, Monday-2, Monday-3, ...
+"Tom", 100, x, x, , ,
+
+I guess this has the advantage that there is a nice matrix for editing in a sheet software.
+The disadvantage is that need to read the header carefully and it must fit more or less (depending on how i code it) to day and hour names in FET.
+So there might be problems like: What to do if there are more or less days/hours in fet?
+
 759---------------------------------------------------------
 From Syed (on forum):
 
@@ -13348,14 +13398,6 @@ hours. Those who work 30 hours are not allowed to substitute, and all
 teachers have a planning day on which they are not allowed to substitute
 under any circumstances.
 
-Marinho Medeiros:
-
-  And let me take the opportunity to ask a question: when the timetable is
-generated, I noticed that when a teacher has two or more consecutive
-classes with the same group, there isn’t a line separating those classes in
-the schedule. Is it possible to force the creation of a line separating
-them? If so, how?
-
 855---------------------------------------------------------
 From Michael Chourdakis (on Facebook):
 
@@ -13627,3 +13669,207 @@ these false positives, especially when comparing timetables to pick the one with
 From ygoldblatt:
 
 Is there any way to hold a "fet" file on the cloud (eg on a google drive) so that more than one person can have access?
+
+868---------------------------------------------------------
+From Anthony Siaudeau (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=3707.msg38421#msg38421
+
+In the Terms mode, he needs a constraint to ensure that a teacher has the same timetable layout every real week.
+
+869---------------------------------------------------------
+From Malamojka:
+
+When importing from CSV, not having the standard header, could FET retain the user's choices (selected rows) for the combo boxes?
+
+870---------------------------------------------------------
+From Vangelis Karafillidis:
+
+About FET edit + print Morocco...
+this type of tools are useful for small modifications.. for
+example if on Wednesday two teachers are absent I think much time
+ago... we discussed about exporting SELECTED activities (from a
+generated timetable) to a new .fet file... is this possible?
+
+Liviu Lalescu
+
+It is possible, even now, with an advanced filter and deactivate/remove
+the filtered activities. 
+
+Vangelis Karafillidis:
+
+Really? export? to a new .fet file?
+
+Liviu Lalescu:
+
+Save as.
+
+Vangelis Karafillidis:
+
+oh.. I see...
+
+so... the user can select the activities of the other days.. (except
+for Wednesday) and delete them all.. right?
+
+Liviu Lalescu:
+
+exactly!
+
+Vangelis Karafillidis:
+
+and... what about the constraints?
+
+Liviu Lalescu:
+
+they will be removed (if you removed the activities), or ignored (if
+you disabled the activities)
+
+Vangelis Karafillidis:
+
+and.. for example.. what about teacher -
+min days per week? 
+
+Liviu Lalescu:
+
+remains
+
+Vangelis Karafillidis:
+
+bad...
+
+Liviu Lalescu:
+
+I thought it was good.
+
+Vangelis Karafillidis:
+
+we need to expand FET's capabilities regarding modifying timetables...
+so.. if you implement a dialogue for the types of constraints that the
+user want to keep or delete/deactivate... the problem would be solved
+very easily... you have filters in the all constraints' dialog so...
+for a timetable for Wednesday... most of the time the user would need
+to keep only not available times,  max span, max hours continuously and
+max gaps daily for teachers.
+
+Liviu Lalescu:
+
+x Teachers x Students x Activities
+
+Vangelis Karafillidis:
+
+too much time.. hmm...
+if an alternative fast way could be implemented... this would be much
+easier... in my opinion...
+1) export selected activities (or activities of a selected day) to a
+new .fet file. the new file has number of days = 1, name of the day =
+name of the selected day... and hours... the hours of the original .fet
+file 2) dialogue for selecting which TYPES of constraints should be
+kept... default not available times, max hours continuously, max span,
+max gaps for teachers delete all constraints that have to do with
+week... maybe some space constraints should be kept as well...
+
+871---------------------------------------------------------
+From Cyrus Ireri (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6871.0
+
+Is it possible to view timetables online for the classes, teachers and rooms? I'm in a school that is very big with around 39 classes (groups) and 91 teachers.
+It's not easy to be printing timetables for them all the time. They wish upon generating, they can be viewing the timetables online. Is this possible?
+
+Liviu Lalescu:
+
+Isn't it very easy - just copy the HTML and CSS files from fet-results? But you need a server to host them.
+
+Cyrus Ireri:
+
+I thought there is a way through a mobile app that can be achieved for teachers. Once I generate, I can upload to cloud and the access is there through an app.
+Just thinking.
+
+872---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6872.0
+
+I would like to suggest a new feature for both Time Constraints and Space Constraints, which could be called Constraint Group.
+
+The idea is to introduce a new type of constraint that acts as a container or group, allowing users to combine two or more existing constraints into a single logical group. Instead of requiring every constraint in the group to be satisfied independently, the user could define the logical relationship between them.
+
+For example, if a group contains two constraints, the group could be considered satisfied if either one of the constraints is satisfied, or if both are satisfied, depending on the option selected by the user.
+
+For groups containing several constraints (four, five, or more), I suggest providing different grouping modes, such as:
+
+All constraints must be satisfied (AND).
+
+At least one constraint must be satisfied (OR).
+
+Exactly N constraints must be satisfied, where N is chosen by the user.
+
+At least N constraints must be satisfied.
+
+At most N constraints may be satisfied.
+
+
+I also believe the most user-friendly implementation would be to add a "Group Constraints" button in the constraints list window.
+
+The user would simply select multiple existing constraints, click the Group Constraints button, and a dialog would appear asking how these constraints should be combined. The dialog would allow the user to choose the grouping mode (AND, OR, Exactly N, At Least N, At Most N, etc.).
+
+This approach would eliminate the need to recreate constraints, since users would only group existing ones. It would also integrate naturally with FET's current interface and workflow.
+
+I believe this feature would significantly increase the flexibility and expressive power of FET, making it possible to model many real-world scheduling situations that are currently difficult or impossible to represent using the existing constraint system alone.
+
+Thank you once again for creating and continuously improving this outstanding software. I hope you will find this suggestion useful, and I sincerely appreciate your consideration.
+
+Liviu Lalescu:
+
+I'll add this in the TODO, but it is impossible. All constraints in FET must be combined with AND.
+
+873---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6873.0
+
+I would like to suggest a feature that I believe would be extremely useful for many FET users: native Microsoft Excel (.xlsx) export and printing.
+
+Currently, FET provides excellent output formats such as HTML and PDF, which are very useful. However, many schools and administrators still rely heavily on Microsoft Excel to review, customize, format, and print timetables before distributing them.
+
+Therefore, I suggest adding Excel (.xlsx) as an additional output format alongside HTML and PDF.
+
+Ideally, this option could be integrated directly into both:
+
+the Timetable View window,
+
+and the Print/Export window,
+
+where the user could simply choose the desired output format:
+
+HTML
+
+PDF
+
+Excel (.xlsx)
+
+The generated Excel files could preserve the current timetable layout, including merged cells, colors, borders, fonts, and page formatting as much as possible, making them immediately ready for printing or further editing.
+
+This feature would provide several important advantages:
+
+Allow users to make final formatting adjustments directly in Excel.
+
+Simplify the preparation of printed timetables according to each institution's preferences.
+
+Enable easy integration with existing Excel-based administrative workflows.
+
+Save users a significant amount of time, since many currently convert HTML files into Excel manually.
+
+I believe that native Excel export would be a valuable addition to FET and would be appreciated by a large number of users worldwide, especially in educational institutions where Excel is the standard tool for document preparation.
+
+Volker Dirr:
+
+I guess it will be possible for teachers, rooms and subgroups timetables as long as there is only a single activity per html cell. It will be difficult (impossible?!) as soon as there are more then 1 activity in an html cell; like in groups and years timetables. So it will be hard/difficult to convert that into Excel.
+
+Maybe you can also add some more words how to export the many timetable variants that FET supports. I guess each html file as an Excel file. But in a single file are a lot of tables. All tables into a single sheet OR each single table into an own sheet? How to care about cell with more than 1 activity?
+
+Liviu Lalescu:
+
+I'll add your words in the TODO.
+
+But: We prefer to promote the use of free software.

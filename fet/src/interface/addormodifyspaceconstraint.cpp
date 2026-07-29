@@ -5964,7 +5964,7 @@ void AddOrModifySpaceConstraint::addConstraintClicked()
 	if(tmp2){
 		LongTextMessageBox::information(dialog, tr("FET information"), tr("Constraint added:")+"\n\n"+sc->getDetailedDescription(gt.rules));
 
-		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(sc->getDetailedDescription(gt.rules)));
+		gt.rules.addUndoPoint(tr("Added the constraint: %1").arg(QString("<br /><br />\n")+sc->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false)+QString("<br />\n")));
 
 		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
@@ -6029,8 +6029,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6046,8 +6046,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6063,8 +6063,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6080,8 +6080,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6097,8 +6097,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6114,8 +6114,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6131,8 +6131,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6148,8 +6148,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6181,8 +6181,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6214,8 +6214,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6247,8 +6247,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6280,8 +6280,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 					bool tmp2=gt.rules.addSpaceConstraint(ctr);
 					assert(tmp2);
 
-					ctrs+=ctr->getDetailedDescription(gt.rules);
-					ctrs+=QString("\n");
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
 				}
 
 				break;
@@ -6299,8 +6299,8 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 		QMessageBox::information(dialog, tr("FET information"), tr("Added %1 space constraints.").arg(gt.rules.teachersList.count()));
 
 	if(gt.rules.teachersList.count()>0)
-		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
-		 .arg(gt.rules.teachersList.count()).arg(ctrs));
+		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:", "%1 is the number of constraints. After this text follows the detailed description of the added constraints")
+		 .arg(gt.rules.teachersList.count())+"<br /><br />\n"+ctrs);
 }
 
 void AddOrModifySpaceConstraint::closeClicked()
@@ -6394,7 +6394,7 @@ void AddOrModifySpaceConstraint::okClicked()
 		}
 	}
 
-	QString oldcs=oldsc->getDetailedDescription(gt.rules);
+	QString oldcs=oldsc->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
 
 	switch(type){
 		//1
@@ -8087,8 +8087,8 @@ void AddOrModifySpaceConstraint::okClicked()
 
 	oldsc->weightPercentage=weight;
 
-	QString newcs=oldsc->getDetailedDescription(gt.rules);
-	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+	QString newcs=oldsc->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+	gt.rules.addUndoPoint(tr("Modified the constraint: %1 into %2").arg(QString("<br /><br />\n")+oldcs+QString("<br />\n")).arg(QString("<br /><br />\n")+newcs+QString("<br />\n")));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

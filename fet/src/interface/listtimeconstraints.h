@@ -113,6 +113,9 @@ class ListTimeConstraints: public QObject
 	QComboBox* studentsComboBox;
 	QComboBox* subjectsComboBox;
 	QComboBox* activityTagsComboBox;
+	
+	QLabel* selectedActivityTagsLabel;
+	QComboBox* selectedActivityTagsComboBox; //only for activities max activity tags from set in selected time slots
 
 	QComboBox* first_activityTagsComboBox;
 	QComboBox* second_activityTagsComboBox;

@@ -15,8 +15,8 @@ SOURCES += \
 	engine/generate.cpp      engine/solution.cpp         engine/timeconstraint.cpp \
 	engine/generate_pre.cpp  engine/spaceconstraint.cpp  engine/timetable.cpp \
 	\
-	cl/clsettings.cpp  cl/fetcl.cpp                 cl/messageboxescl.cpp \
-	cl/exportcl.cpp    cl/longtextmessageboxcl.cpp
+	cl/exportcl.cpp        cl/longtextmessageboxcl.cpp   cl/settingscl.cpp \
+	cl/fetcl.cpp           cl/messageboxescl.cpp
 
 HEADERS += \
 	engine/activity.h      engine/lockunlock.h       engine/studentsset.h     engine/timetable_defs.h \

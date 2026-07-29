@@ -3,11 +3,11 @@ cmake_minimum_required(VERSION 3.28)
 find_package(Qt6 6.10 REQUIRED COMPONENTS Core)
 
 qt_add_executable(${fetcl} ${w32}
-    clsettings.cpp
     exportcl.cpp exportcl.h
     fetcl.cpp fetcl.h
     longtextmessageboxcl.cpp longtextmessageboxcl.h
     messageboxescl.cpp
+    settingscl.cpp
 )
 
 target_link_libraries(${fetcl} PRIVATE

@@ -3327,6 +3327,32 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxTotalN
 	return stream;
 }
 
+//254
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxActivityTags<<tc.activityTagsList<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//255
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxDays<<tc.circular;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6610,6 +6636,32 @@ QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxTotalNumberO
 	return stream;
 }
 
+//254
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxActivityTags>>tc.activityTagsList>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//255
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxDays>>tc.circular;
+
+	return stream;
+}
+
 QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList<int>& hours, bool direct, bool notAvailable, bool colors)
 {
 	QString s;
@@ -7117,6 +7169,8 @@ bool timeConstraintCanHaveAnyWeight(int type)
 		case CONSTRAINT_ACTIVITY_BEGINS_OR_ENDS_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
 			t=true;
 			break;
 		
@@ -7484,6 +7538,10 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
 			t=true;
 			break;
 			
@@ -7992,6 +8050,10 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
 			t=true;
 			break;
 		
@@ -8288,6 +8350,10 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
 			t=true;
 			break;
 		
@@ -8589,6 +8655,10 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY:
 			[[fallthrough]];
 		case CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
+			[[fallthrough]];
+		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
 			t=true;
 			break;
 		
@@ -9928,7 +9998,7 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r, b
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity").arg(this->activitiesIds[i]).arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity").arg(getActivityDescription(r, this->activitiesIds[i])).arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 
@@ -10249,7 +10319,7 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r, boo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i]).arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
+			.arg(getActivityDescription(r, this->activitiesIds[i])).arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 
@@ -10878,7 +10948,7 @@ QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r, boo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -11301,7 +11371,7 @@ QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r, boo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -11664,7 +11734,7 @@ QString ConstraintActivitiesMaxHourlySpan::getDetailedDescription(Rules& r, bool
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -12031,7 +12101,7 @@ QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r, boo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -12346,7 +12416,7 @@ QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r, boo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -19613,7 +19683,7 @@ QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 
@@ -19903,7 +19973,7 @@ QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r, b
 	if(!richText){
 		QString s=tr("Time constraint");s+="\n";
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->p_activityId)
+			.arg(getActivityDescription(r, this->p_activityId))
 			.arg(getActivityDetailedDescription(r, this->p_activityId));
 		s+="\n";
 
@@ -19938,7 +20008,7 @@ QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r, b
 	else{
 		QString begin=tr("Time constraint");begin+="\n";
 		begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->p_activityId)
+			.arg(getActivityDescription(r, this->p_activityId))
 			.arg(getActivityDetailedDescription(r, this->p_activityId));
 		begin+="\n";
 
@@ -21403,7 +21473,7 @@ QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& 
 	if(!richText){
 		QString s=tr("Time constraint");s+="\n";
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activityId)
+			.arg(getActivityDescription(r, this->activityId))
 			.arg(getActivityDetailedDescription(r, this->activityId));
 		
 		s+="\n";
@@ -21438,7 +21508,7 @@ QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& 
 	else{
 		QString begin=tr("Time constraint");begin+="\n";
 		begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activityId)
+			.arg(getActivityDescription(r, this->activityId))
 			.arg(getActivityDetailedDescription(r, this->activityId));
 		
 		begin+="\n";
@@ -22888,7 +22958,7 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r, b
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -23210,7 +23280,7 @@ QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r, bo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -23503,12 +23573,12 @@ QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r, boo
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->firstActivityId)
+		.arg(getActivityDescription(r, this->firstActivityId))
 		.arg(getActivityDetailedDescription(r, this->firstActivityId));
 	s+="\n";
 
 	s+=tr("Second activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->secondActivityId)
+		.arg(getActivityDescription(r, this->secondActivityId))
 		.arg(getActivityDetailedDescription(r, this->secondActivityId));
 	s+="\n";
 
@@ -23785,12 +23855,12 @@ QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r, bool ri
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->firstActivityId)
+		.arg(getActivityDescription(r, this->firstActivityId))
 		.arg(getActivityDetailedDescription(r, this->firstActivityId));
 	s+="\n";
 
 	s+=tr("Second activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->secondActivityId)
+		.arg(getActivityDescription(r, this->secondActivityId))
 		.arg(getActivityDetailedDescription(r, this->secondActivityId));
 	s+="\n";
 
@@ -24104,17 +24174,17 @@ QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r, bool 
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->firstActivityId)
+		.arg(getActivityDescription(r, this->firstActivityId))
 		.arg(getActivityDetailedDescription(r, this->firstActivityId));
 	s+="\n";
 
 	s+=tr("Second activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->secondActivityId)
+		.arg(getActivityDescription(r, this->secondActivityId))
 		.arg(getActivityDetailedDescription(r, this->secondActivityId));
 	s+="\n";
 	
 	s+=tr("Third activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->thirdActivityId)
+		.arg(getActivityDescription(r, this->thirdActivityId))
 		.arg(getActivityDetailedDescription(r, this->thirdActivityId));
 	s+="\n";
 
@@ -24456,12 +24526,12 @@ QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r, bool ri
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->firstActivityId)
+		.arg(getActivityDescription(r, this->firstActivityId))
 		.arg(getActivityDetailedDescription(r, this->firstActivityId));
 	s+="\n";
 
 	s+=tr("Second activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->secondActivityId)
+		.arg(getActivityDescription(r, this->secondActivityId))
 		.arg(getActivityDetailedDescription(r, this->secondActivityId));
 	s+="\n";
 
@@ -24758,7 +24828,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r, b
 	s+=tr("Number of activities=%1").arg(this->firstActivitiesIdsList.count());s+="\n";
 	for(int ai : std::as_const(this->firstActivitiesIdsList)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(ai).arg(getActivityDetailedDescription(r, ai));
+			.arg(getActivityDescription(r, ai)).arg(getActivityDetailedDescription(r, ai));
 		s+="\n";
 	}
 
@@ -24767,7 +24837,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r, b
 	s+=tr("Number of activities=%1").arg(this->secondActivitiesIdsList.count());s+="\n";
 	for(int ai : std::as_const(this->secondActivitiesIdsList)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(ai).arg(getActivityDetailedDescription(r, ai));
+			.arg(getActivityDescription(r, ai)).arg(getActivityDetailedDescription(r, ai));
 		s+="\n";
 	}
 
@@ -25085,12 +25155,12 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDetailedDescription(Rules& r
 	s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->firstActivityId)
+		.arg(getActivityDescription(r, this->firstActivityId))
 		.arg(getActivityDetailedDescription(r, this->firstActivityId));
 	s+="\n";
 
 	s+=tr("Second activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->secondActivityId)
+		.arg(getActivityDescription(r, this->secondActivityId))
 		.arg(getActivityDetailedDescription(r, this->secondActivityId));
 	s+="\n";
 
@@ -25313,7 +25383,7 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r, bool
 	s+=tr("Activity must end students' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
@@ -27903,7 +27973,7 @@ QString ConstraintActivityEndsTeachersDay::getDetailedDescription(Rules& r, bool
 	s+=tr("Activity must end teachers' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
@@ -31203,7 +31273,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -31228,7 +31298,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -31614,7 +31684,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -31639,7 +31709,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -32034,7 +32104,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -32059,7 +32129,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -32445,7 +32515,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -32471,7 +32541,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -32865,7 +32935,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -32890,7 +32960,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -33208,7 +33278,7 @@ QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r, bool ri
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -33483,7 +33553,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r, boo
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -51479,10 +51549,10 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getXmlDescription(Rules& 
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -51504,8 +51574,8 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 	QString s=tr("Teacher max activity tags per day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -51519,8 +51589,8 @@ QString ConstraintTeacherMaxActivityTagsPerDayFromSet::getDetailedDescription(Ru
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -51716,10 +51786,10 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getXmlDescription(Rules&
 	QString s=IL2+"<ConstraintTeachersMaxActivityTagsPerDayFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -51740,8 +51810,8 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 
 	QString s=tr("Teachers max activity tags per day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -51754,8 +51824,8 @@ QString ConstraintTeachersMaxActivityTagsPerDayFromSet::getDetailedDescription(R
 	s+=tr("All teachers must respect a maximum number of activity tags per day from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -63769,7 +63839,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r,
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -64111,7 +64181,7 @@ QString ConstraintActivityPreferredDay::getDetailedDescription(Rules& r, bool ri
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 
@@ -64383,7 +64453,7 @@ QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r, bool ri
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -64704,7 +64774,7 @@ QString ConstraintMaxTermsBetweenActivities::getDetailedDescription(Rules& r, bo
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -64950,10 +65020,10 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getXmlDescription(Rul
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -64975,8 +65045,8 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDescription(Rules&
 	QString s=tr("Students set max activity tags per day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -64990,8 +65060,8 @@ QString ConstraintStudentsSetMaxActivityTagsPerDayFromSet::getDetailedDescriptio
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -65183,10 +65253,10 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getXmlDescription(Rules&
 	QString s=IL2+"<ConstraintStudentsMaxActivityTagsPerDayFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -65207,8 +65277,8 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDescription(Rules& r)
 
 	QString s=tr("Students max activity tags per day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -65221,8 +65291,8 @@ QString ConstraintStudentsMaxActivityTagsPerDayFromSet::getDetailedDescription(R
 	s+=tr("All students must respect a maximum number of activity tags per day from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -65421,10 +65491,10 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getXmlDescription(Rul
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -65446,8 +65516,8 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDescription(Rules&
 	QString s=tr("Teacher max activity tags per real day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -65461,8 +65531,8 @@ QString ConstraintTeacherMaxActivityTagsPerRealDayFromSet::getDetailedDescriptio
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -65661,10 +65731,10 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getXmlDescription(Ru
 	QString s=IL2+"<ConstraintTeachersMaxActivityTagsPerRealDayFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -65685,8 +65755,8 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 
 	QString s=tr("Teachers max activity tags per real day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -65699,8 +65769,8 @@ QString ConstraintTeachersMaxActivityTagsPerRealDayFromSet::getDetailedDescripti
 	s+=tr("All teachers must respect a maximum number of activity tags per real day from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -65910,10 +65980,10 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getXmlDescription
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -65935,8 +66005,8 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDescription(Ru
 	QString s=tr("Students set max activity tags per real day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
 	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -65950,8 +66020,8 @@ QString ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::getDetailedDescri
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -66146,10 +66216,10 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getXmlDescription(Ru
 	QString s=IL2+"<ConstraintStudentsMaxActivityTagsPerRealDayFromSet>\n";
 	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(tagsList.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : std::as_const(tagsList))
 		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxTags)+"</Maximum_Allowed_Activity_Tags>\n";
 
 	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
 	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
@@ -66170,8 +66240,8 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDescription(Rules
 
 	QString s=tr("Students max activity tags per real day from a set");s+=translatedCommaSpace();
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
-	s+=tr("MT:%1", "Max number of tags").arg(maxTags);s+=translatedCommaSpace();
-	s+=tr("SAt:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));
+	s+=tr("SAT:%1", "Set of activity tags").arg(tagsList.join(translatedCommaSpace()));s+=translatedCommaSpace();
+	s+=tr("MT:%1", "Max number of tags").arg(maxTags);
 
 	return begin+s+end;
 }
@@ -66184,8 +66254,8 @@ QString ConstraintStudentsMaxActivityTagsPerRealDayFromSet::getDetailedDescripti
 	s+=tr("All students must respect a maximum number of activity tags per real day from a set");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
-	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 	s+=tr("Set of activity tags=%1").arg(tagsList.join(translatedCommaSpace()));s+="\n";
+	s+=tr("Maximum number of activity tags=%1").arg(maxTags);s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -66484,7 +66554,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r,
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesIds[i])
+			.arg(getActivityDescription(r, this->activitiesIds[i]))
 			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
@@ -66767,7 +66837,7 @@ QString ConstraintActivityBeginsStudentsDay::getDetailedDescription(Rules& r, bo
 	s+=tr("Activity must begin students' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
@@ -67326,7 +67396,7 @@ QString ConstraintActivityBeginsTeachersDay::getDetailedDescription(Rules& r, bo
 	s+=tr("Activity must begin teachers' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
@@ -71585,12 +71655,12 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules&
 	if(!richText){
 		QString actAids=QString("");
 		for(int aid : std::as_const(this->activitiesAIds))
-			actAids+=CustomFETString::number(aid)+translatedCommaSpace();
+			actAids+=getActivityDescription(r, aid)+translatedCommaSpace();
 		actAids.chop(translatedCommaSpace().size());
 
 		QString actBids=QString("");
 		for(int aid : std::as_const(this->activitiesBIds))
-			actBids+=CustomFETString::number(aid)+translatedCommaSpace();
+			actBids+=getActivityDescription(r, aid)+translatedCommaSpace();
 		actBids.chop(translatedCommaSpace().size());
 
 		QString timeslots=QString("");
@@ -71605,7 +71675,7 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules&
 		for(int id : std::as_const(this->activitiesAIds)){
 			s+=tr("First set: activity with id=%1 (%2)", "An activity in the first set of activities of this constraint. "
 			 "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -71613,7 +71683,7 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules&
 		for(int id : std::as_const(this->activitiesBIds)){
 			s+=tr("Second set: activity with id=%1 (%2)", "An activity in the second set of activities of this constraint. "
 			 "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -71633,12 +71703,12 @@ QString ConstraintTwoSetsOfActivitiesSameSections::getDetailedDescription(Rules&
 	else{
 		QString actAids=QString("");
 		for(int aid : std::as_const(this->activitiesAIds))
-			actAids+=CustomFETString::number(aid)+translatedCommaSpace();
+			actAids+=getActivityDescription(r, aid)+translatedCommaSpace();
 		actAids.chop(translatedCommaSpace().size());
 
 		QString actBids=QString("");
 		for(int aid : std::as_const(this->activitiesBIds))
-			actBids+=CustomFETString::number(aid)+translatedCommaSpace();
+			actBids+=getActivityDescription(r, aid)+translatedCommaSpace();
 		actBids.chop(translatedCommaSpace().size());
 
 		QString begin=tr("Time constraint"); begin+="\n";
@@ -75322,7 +75392,7 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedD
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -75358,7 +75428,7 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedD
 		s1+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s1+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s1+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s1+="\n";
 		}
@@ -75756,7 +75826,7 @@ QString ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::getDetailedDescrip
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -77661,7 +77731,7 @@ QString ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::getDetailedDescript
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-		 .arg(id)
+		 .arg(getActivityDescription(r, id))
 		 .arg(getActivityDetailedDescription(r, id));
 		s+="\n";
 	}
@@ -78021,7 +78091,7 @@ QString ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDe
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -78060,7 +78130,7 @@ QString ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDe
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -78397,7 +78467,7 @@ QString ConstraintActivityBeginsOrEndsStudentsDay::getDetailedDescription(Rules&
 	s+=tr("Activity must begin or end students' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
@@ -78976,7 +79046,7 @@ QString ConstraintActivityBeginsOrEndsTeachersDay::getDetailedDescription(Rules&
 	s+=tr("Activity must begin or end teachers' day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-		.arg(this->activityId)
+		.arg(getActivityDescription(r, this->activityId))
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
@@ -79652,7 +79722,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDeta
 		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			s+="\n";
 		}
@@ -79679,7 +79749,7 @@ QString ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::getDeta
 		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
 		for(int id : std::as_const(this->activitiesIds)){
 			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			 .arg(id)
+			 .arg(getActivityDescription(r, id))
 			 .arg(getActivityDetailedDescription(r, id));
 			begin+="\n";
 		}
@@ -79872,6 +79942,746 @@ bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::repairWron
 	
 	r.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS;
+}
+
+ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(double wp,
+	const QList<int>& a_L, int mtg, const QList<QString> &tgl, const QList<int>& d_L, const QList<int>& h_L)
+	: TimeConstraint(wp)
+{
+	assert(d_L.count()==h_L.count());
+
+	this->activitiesIds=a_L;
+	this->maxActivityTags=mtg;
+	this->activityTagsList=tgl;
+	this->selectedDays=d_L;
+	this->selectedHours=h_L;
+	
+	this->type=CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS;
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	for(int id : std::as_const(activitiesIds)){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0)
+			_activitiesIndices.append(i);
+	}
+
+	/*this->_activitiesIndices.clear();
+	
+	QSet<int> req=this->activitiesIds.toSet();
+	assert(req.count()==this->activitiesIds.count());
+	
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	int i;
+	for(i=0; i<r.nInternalActivities; i++)
+		if(req.contains(r.internalActivitiesList[i].id))
+			this->_activitiesIndices.append(i);*/
+			
+	//////////////////////
+	
+	internalTagsSet.clear();
+	for(const QString& at : std::as_const(activityTagsList)){
+		int tgi=r.activityTagsHash.value(at, -1);
+		
+		if(tgi==-1){
+			TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+			 tr("Activity tag %1 is not existing in the following constraint. Please edit or remove the constraint. Constraint is:\n%2").arg(at).arg(this->getDetailedDescription(r)));
+			
+			return false;
+		}
+		
+		assert(tgi>=0);
+		internalTagsSet.insert(tgi);
+	}
+	
+	assert(this->selectedDays.count()==this->selectedHours.count());
+	
+	for(int k=0; k<this->selectedDays.count(); k++){
+		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max activity tags from set in selected time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) == r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max activity tags from set in selected time slots is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedHours.at(k) > r.nHoursPerDay){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max activity tags from set in selected time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+			 tr("Constraint activities max activity tags from set in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+			return false;
+		}
+	}
+	///////////////////////
+	
+	if(this->_activitiesIndices.count()>0)
+		return true;
+	else{
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::hasInactiveActivities(Rules& r)
+{
+	//returns true if all activities are inactive
+	
+	for(int aid : std::as_const(this->activitiesIds))
+		if(!r.inactiveActivities.contains(aid))
+			return false;
+
+	return true;
+}
+
+QString ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::getXmlDescription(Rules& r)
+{
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString s=IL2+"<ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots>\n";
+	
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	
+	s+=IL3+"<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	for(int aid : std::as_const(this->activitiesIds))
+		s+=IL3+"<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+
+	s+=IL3+"<Number_of_Activity_Tags>"+QString::number(activityTagsList.count())+"</Number_of_Activity_Tags>\n";
+	for(const QString& atn : std::as_const(activityTagsList))
+		s+=IL3+"<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
+	s+=IL3+"<Maximum_Allowed_Activity_Tags>"+QString::number(maxActivityTags)+"</Maximum_Allowed_Activity_Tags>\n";
+
+	s+=IL3+"<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	for(int i=0; i<this->selectedDays.count(); i++){
+		s+=IL3+"<Selected_Time_Slot>\n";
+		s+=IL4+"<Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Day>\n";
+		s+=IL4+"<Hour>"+protect(r.hoursOfTheDay[this->selectedHours.at(i)])+"</Hour>\n";
+		s+=IL3+"</Selected_Time_Slot>\n";
+	}
+	
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::getDescription(Rules& r)
+{
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	QString actids=QString("");
+	for(int aid : std::as_const(this->activitiesIds))
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
+	actids.chop(translatedCommaSpace().size());
+	
+	QString timeslots=QString("");
+	for(int i=0; i<this->selectedDays.count(); i++)
+		timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+	timeslots.chop(translatedCommaSpace().size());
+	
+	QString s=tr("Activities max activity tags from set in selected time slots, WP:%1%, NA:%2, A: %3, SAT: %4, MT:%5, STS: %6", "Constraint description. WP means weight percentage, "
+	 "NA means the number of activities, A means activities list, SAT means set of activity tags, MT means max number of tags, STS means selected time slots.")
+	 .arg(CustomFETString::number(this->weightPercentage))
+	 .arg(QString::number(this->activitiesIds.count()))
+	 .arg(actids)
+	 .arg(activityTagsList.join(translatedCommaSpace()))
+	 .arg(maxActivityTags)
+	 .arg(timeslots);
+	
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	if(!richText){
+		QString timeslots=QString("");
+		for(int i=0; i<this->selectedDays.count(); i++)
+			timeslots+=r.daysOfTheWeek[selectedDays.at(i)]+QString(" ")+r.hoursOfTheDay[selectedHours.at(i)]+translatedCommaSpace();
+		timeslots.chop(translatedCommaSpace().size());
+		
+		QString s=tr("Time constraint"); s+="\n";
+		s+=tr("Activities occupy max time slots from selection"); s+="\n";
+		s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+		s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(getActivityDescription(r, id))
+			 .arg(getActivityDetailedDescription(r, id));
+			s+="\n";
+		}
+		
+		s+=tr("Set of activity tags=%1").arg(activityTagsList.join(translatedCommaSpace()));s+="\n";
+		s+=tr("Maximum number of activity tags=%1").arg(maxActivityTags);s+="\n";
+
+		s+=tr("Selected time slots: %1").arg(timeslots); s+="\n";
+
+		if(!active){
+			s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			s+="\n";
+		}
+		if(!comments.isEmpty()){
+			s+=tr("Comments=%1").arg(comments);
+			s+="\n";
+		}
+		
+		return s;
+	}
+	else{
+		QString begin=tr("Time constraint"); begin+="\n";
+		begin+=tr("Activities occupy max time slots from selection"); begin+="\n";
+		begin+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); begin+="\n";
+		begin+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); begin+="\n";
+		for(int id : std::as_const(this->activitiesIds)){
+			begin+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			 .arg(getActivityDescription(r, id))
+			 .arg(getActivityDetailedDescription(r, id));
+			begin+="\n";
+		}
+
+		begin+=tr("Set of activity tags=%1").arg(activityTagsList.join(translatedCommaSpace()));begin+="\n";
+		begin+=tr("Maximum number of activity tags=%1").arg(maxActivityTags);begin+="\n";
+
+		begin+=tr("Selected time slots:"); begin+="\n";
+		//the first Boolean is 'direct', the second Boolean is 'not available/selected', the third Boolean is 'color'.
+		QString middle=listsOfDaysAndHoursToTable(r, selectedDays, selectedHours, true, false, colors);
+		QString end;
+		end+="\n";
+
+		if(!active){
+			end+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+			end+="\n";
+		}
+		if(!comments.isEmpty()){
+			end+=tr("Comments=%1").arg(comments);
+			end+="\n";
+		}
+		
+		return protect4(begin)+middle+protect4(end);
+	}
+}
+
+double ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<QSet<int>> crtTimetableActivityTag;
+	crtTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
+	for(int d=0; d<r.nDaysPerWeek; d++)
+		for(int h=0; h<r.nHoursPerDay; h++)
+			crtTimetableActivityTag[d][h].clear();
+
+	for(int ai : std::as_const(this->_activitiesIndices)) if(c.times[ai]!=UNALLOCATED_TIME){
+		QSet<int> ts=r.internalActivitiesList[ai].iActivityTagsSet;
+		ts.intersect(this->internalTagsSet);
+		assert(ts.count()==1);
+		int at=*ts.constBegin();
+		
+		int d=c.times[ai]%r.nDaysPerWeek;
+		int h=c.times[ai]/r.nDaysPerWeek;
+		for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++)
+			if(!crtTimetableActivityTag[d][h+dur].contains(at))
+				crtTimetableActivityTag[d][h+dur].insert(at);
+	}
+
+	QSet<int> usedTags;
+	assert(this->selectedDays.count()==this->selectedHours.count());
+
+	int nbroken=0;
+	
+	for(int i=0; i<this->selectedDays.count(); i++){
+		int d=this->selectedDays.at(i);
+		int h=this->selectedHours.at(i);
+
+		usedTags.unite(crtTimetableActivityTag[d][h]);
+	}
+
+	if(usedTags.count() > this->maxActivityTags){
+		nbroken++;
+
+		if(conflictsString!=nullptr){
+			QString s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
+			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
+			
+			dl.append(s);
+			cl.append(weightPercentage/100.0);
+		
+			*conflictsString+= s+"\n";
+		}
+	}
+
+	assert(weightPercentage==100);
+	if(weightPercentage==100.0)
+		assert(nbroken==0);
+	return nbroken * weightPercentage / 100.0;
+}
+
+void ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::removeUseless(Rules& r)
+{
+	QList<int> newActs;
+	
+	for(int aid : std::as_const(activitiesIds)){
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
+			newActs.append(aid);
+	}
+	
+	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::recomputeActivitiesSet()
+{
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+
+	return activitiesIdsSet.contains(aid);
+
+	//return this->activitiesIds.contains(a->id);
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::isRelatedToActivityTag(const QString& s)
+{
+	return activityTagsList.contains(s);
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+int ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::hasWrongDayOrHour(Rules& r)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)<0 || selectedDays.at(i)>=r.nDaysPerWeek
+		 || selectedHours.at(i)<0 || selectedHours.at(i)>=r.nHoursPerDay)
+			return true;
+	
+	return false;
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(selectedDays.at(i)>=0 && selectedDays.at(i)<r.nDaysPerWeek
+		 && selectedHours.at(i)>=0 && selectedHours.at(i)<r.nHoursPerDay){
+			newDays.append(selectedDays.at(i));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES;
+
+	this->circular=true;
+}
+
+ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities(double wp, const QList<int>& a_L, int _Md, bool _circ) : TimeConstraint(wp)
+{
+	this->activitiesIds=a_L;
+
+	this->maxDays=_Md;
+	
+	this->circular=_circ;
+
+	this->type=CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	_activitiesIndices.clear();
+	for(int id : std::as_const(activitiesIds)){
+		int i=r.activitiesHash.value(id, -1);
+		if(i>=0)
+			_activitiesIndices.append(i);
+	}
+
+	if(this->_activitiesIndices.count()<=1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int aid : std::as_const(this->activitiesIds))
+		if(r.inactiveActivities.contains(aid))
+			count++;
+
+	if(this->activitiesIds.count()-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities>\n";
+	
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	
+	s+=IL3+"<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	for(int aid : std::as_const(this->activitiesIds))
+		s+=IL3+"<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+
+	s+=IL3+"<MaxDays>"+CustomFETString::number(this->maxDays)+"</MaxDays>\n";
+	s+=IL3+"<Circular>"+trueFalse(circular)+"</Circular>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities>\n";
+	return s;
+}
+
+QString ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::getDescription(Rules& r)
+{
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+	
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+	
+	QString actids=QString("");
+	for(int aid : std::as_const(this->activitiesIds))
+		actids+=getActivityDescription(r, aid)+translatedCommaSpace();
+	actids.chop(translatedCommaSpace().size());
+	
+	QString s=tr("Max days between each pair of consecutive activities, WP:%1%, NA:%2, A: %3, MD:%4, C:%5",
+	 "Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, MD means max days, C means circular.")
+	 .arg(CustomFETString::number(this->weightPercentage))
+	 .arg(QString::number(this->activitiesIds.count()))
+	 .arg(actids)
+	 .arg(QString::number(this->maxDays))
+	 .arg(yesNoTranslated(this->circular));
+	
+	return begin+s+end;
+}
+
+QString ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint"); s+="\n";
+	s+=tr("Max days between each pair of consecutive activities"); s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
+	for(int id : std::as_const(this->activitiesIds)){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(getActivityDescription(r, id))
+		 .arg(getActivityDetailedDescription(r, id));
+		s+="\n";
+	}
+	s+=tr("Maximum number of days=%1").arg(this->maxDays);s+="\n";
+	s+=tr("Circular=%1").arg(yesNoTranslated(circular));s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+	
+	return richText?protect4(s):s;
+}
+
+double ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	int nbroken=0;
+
+	assert(r.internalStructureComputed);
+
+	///////////////////
+	QList<int> placedActivities;
+	for(int ai : std::as_const(this->_activitiesIndices))
+		if(c.times[ai]!=UNALLOCATED_TIME)
+			placedActivities.append(ai);
+			
+	if(r.mode!=MORNINGS_AFTERNOONS)
+		std::stable_sort(placedActivities.begin(), placedActivities.end(), [&c, &r](const int a, const int b){return c.times[a]%r.nDaysPerWeek < c.times[b]%r.nDaysPerWeek;});
+	else
+		std::stable_sort(placedActivities.begin(), placedActivities.end(), [&c, &r](const int a, const int b){return (c.times[a]%r.nDaysPerWeek)/2 < (c.times[b]%r.nDaysPerWeek)/2;});
+	
+	for(int i=0; i<placedActivities.count()-1; i++){
+		int ai1=placedActivities.at(i);
+		int d1=r.mode!=MORNINGS_AFTERNOONS?c.times[ai1]%r.nDaysPerWeek:(c.times[ai1]%r.nDaysPerWeek)/2;
+		int ai2=placedActivities.at(i+1);
+		int d2=r.mode!=MORNINGS_AFTERNOONS?c.times[ai2]%r.nDaysPerWeek:(c.times[ai2]%r.nDaysPerWeek)/2;
+		assert(d1<=d2);
+
+		if(d2-d1 > this->maxDays){
+			nbroken++;
+			
+			if(conflictsString!=nullptr){
+				QString s=(tr(
+				 "Time constraint max days between each pair of consecutive activities broken, these two activities break it: Id %1 and Id %2.")
+				 .arg(r.internalActivitiesList[ai1].id)
+				 .arg(r.internalActivitiesList[ai2].id)
+				 )
+				 +" "
+				 +
+				 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100);
+				
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+	if(circular && !placedActivities.isEmpty()){
+		int ai1=placedActivities.at(placedActivities.count()-1);
+		int d1=r.mode!=MORNINGS_AFTERNOONS?c.times[ai1]%r.nDaysPerWeek:(c.times[ai1]%r.nDaysPerWeek)/2;
+		int ai2=placedActivities.at(0);
+		int d2=r.mode!=MORNINGS_AFTERNOONS?c.times[ai2]%r.nDaysPerWeek+r.nDaysPerWeek:(c.times[ai2]%r.nDaysPerWeek)/2+r.nDaysPerWeek/2;
+		assert(d1<d2);
+
+		if(d2-d1 > this->maxDays){
+			nbroken++;
+			
+			if(conflictsString!=nullptr){
+				QString s=(tr(
+				 "Time constraint max days between each pair of consecutive activities broken, these two activities break it: Id %1 and Id %2.")
+				 .arg(r.internalActivitiesList[ai1].id)
+				 .arg(r.internalActivitiesList[ai2].id)
+				 )
+				 +" "
+				 +
+				 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100);
+				
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0); //for partial solutions this rule might be broken
+	return nbroken * weightPercentage / 100.0;
+}
+
+void ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::removeUseless(Rules& r)
+{
+	QList<int> newActs;
+	
+	for(int aid : std::as_const(activitiesIds)){
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
+			newActs.append(aid);
+	}
+	
+	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::recomputeActivitiesSet()
+{
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+
+	return activitiesIdsSet.contains(aid);
+
+	//return this->activitiesIds.contains(a->id);
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+int ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::categoryOfTimeConstraint()
+{
+	return IS_ACTIVITY_TIME_CONSTRAINT;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::hasWrongDayOrHour(Rules& r)
+{
+	if(r.mode!=MORNINGS_AFTERNOONS){
+		if(maxDays>=r.nDaysPerWeek)
+			return true;
+	}
+	else{
+		if(maxDays>=r.nDaysPerWeek/2)
+			return true;
+	}
+	
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(r.mode!=MORNINGS_AFTERNOONS){
+		if(maxDays>=r.nDaysPerWeek)
+			maxDays=r.nDaysPerWeek-1;
+	}
+	else{
+		if(maxDays>=r.nDaysPerWeek/2)
+			maxDays=r.nDaysPerWeek/2-1;
+	}
 
 	return true;
 }

@@ -424,6 +424,10 @@ const int CONSTRAINT_ACTIVITIES_BEGIN_OR_END_TEACHERS_DAY														=252;
 
 const int CONSTRAINT_ACTIVITIES_MAX_TOTAL_NUMBER_OF_STUDENTS_IN_SELECTED_TIME_SLOTS								=253;
 
+const int CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS								=254;
+
+const int CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES										=255;
+
 ///////
 
 const int IS_BASIC_TIME_CONSTRAINT				=0;
@@ -13401,6 +13405,115 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+class ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+	
+	int maxActivityTags;
+	
+	QList<QString> activityTagsList;
+	
+	QList<int> selectedDays;
+	QList<int> selectedHours;
+	
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	QSet<int> internalTagsSet;
+
+	ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots();
+
+	ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(double wp, const QList<int>& a_L, int mtg, const QList<QString> &tgl,
+	 const QList<int>& d_L, const QList<int>& h_L);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, int aid);
+	
+	bool isRelatedToTeacher(const QString& t);
+
+	bool isRelatedToSubject(const QString& s);
+
+	bool isRelatedToActivityTag(const QString& s);
+	
+	bool isRelatedToStudentsSet(Rules& r, const QString& s);
+
+	int categoryOfTimeConstraint();
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities)
+
+public:
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+	
+	int maxDays;
+	
+	bool circular;
+
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities();
+	ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities(double wp, const QList<int>& a_L, int _Md, bool _circ);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, int aid);
+	
+	bool isRelatedToTeacher(const QString& t);
+
+	bool isRelatedToSubject(const QString& s);
+
+	bool isRelatedToActivityTag(const QString& s);
+	
+	bool isRelatedToStudentsSet(Rules& r, const QString& s);
+
+	int categoryOfTimeConstraint();
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
 //1
 QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
 //2
@@ -13907,6 +14020,10 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsOrEnd
 QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginOrEndTeachersDay& tc);
 //253
 QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots& tc);
+//254
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots& tc);
+//255
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities& tc);
 
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
@@ -14414,5 +14531,9 @@ QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsOrEndsTeach
 QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginOrEndTeachersDay& tc);
 //253
 QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots& tc);
+//254
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots& tc);
+//255
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities& tc);
 
 #endif

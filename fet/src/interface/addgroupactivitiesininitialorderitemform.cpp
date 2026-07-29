@@ -250,10 +250,9 @@ void AddGroupActivitiesInInitialOrderItemForm::addItem()
 	}
 
 	QList<int> ids;
-	int i;
 	QList<int>::const_iterator it;
 	ids.clear();
-	for(i=0, it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++, i++){
+	for(it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++){
 		ids.append(*it);
 	}
 	

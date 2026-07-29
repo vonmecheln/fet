@@ -457,6 +457,16 @@ Matrix1D<QList<ActivitiesOverlapCompletelyOrDoNotOverlap_item*>> aocodnoListForA
 //bool computeActivitiesOverlapCompletelyOrDoNotOverlap(QWidget* parent);
 
 
+//2026-07-18 - Constraint max days between each pair of consecutive activities - suggested by Yush Yuen
+bool haveMaxDaysBetweenEachPairOfConsecutiveActivities;
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<MaxDaysBetweenEachPairOfConsecutiveActivities_item> mdbepocaList;
+Matrix1D<QList<MaxDaysBetweenEachPairOfConsecutiveActivities_item*>> mdbepocaListForActivity;
+
+//bool computeMaxDaysBetweenEachPairOfConsecutiveActivities_item(QWidget* parent);
+
+
 //2025-08-09 - Constraint activities pair of mutually exclusive sets of time slots
 bool haveActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots;
 
@@ -1267,6 +1277,12 @@ Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> aminsistsLis
 //bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
 
+//2026-06-28 - Constraint activities max activity tags from set in selected time slots
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item> amatfsistsList;
+Matrix1D<QList<ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item*>> amatfsistsListForActivity;
+
+
 //2025-10-18 - Constraint activities max total number of students in selected time slots
 
 //We need the references to the elements to be valid, so we need this to be a std::list
@@ -1284,6 +1300,10 @@ Matrix1D<bool> activityHasOccupyMaxConstraints;
 
 bool haveActivitiesMaxSimultaneousConstraints;
 Matrix1D<bool> activityHasMaxSimultaneousConstraints;
+
+//2026-06-28
+bool haveActivitiesMaxTagsConstraints;
+Matrix1D<bool> activityHasMaxTagsConstraints;
 
 bool haveActivitiesMaxNumberOfStudentsConstraints;
 Matrix1D<bool> activityHasMaxNumberOfStudentsConstraints;
@@ -1996,6 +2016,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//
 	activityHasOccupyMaxConstraints.resize(gt.rules.nInternalActivities);
 	activityHasMaxSimultaneousConstraints.resize(gt.rules.nInternalActivities);
+	//2026-06-29
+	activityHasMaxTagsConstraints.resize(gt.rules.nInternalActivities);
 	//2025-10-18
 	activityHasMaxNumberOfStudentsConstraints.resize(gt.rules.nInternalActivities);
 	//
@@ -2236,6 +2258,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//2025-09-22
 	aocodnoListForActivity.resize(gt.rules.nInternalActivities);
 
+	//2026-07-18
+	mdbepocaListForActivity.resize(gt.rules.nInternalActivities);
+
 	//2011-09-25
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
 	//2019-11-16
@@ -2244,6 +2269,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	amsistsListForActivity.resize(gt.rules.nInternalActivities);
 	//2019-11-16
 	aminsistsListForActivity.resize(gt.rules.nInternalActivities);
+
+	//2026-06-28
+	amatfsistsListForActivity.resize(gt.rules.nInternalActivities);
 
 	//2025-10-18
 	amtnosistsListForActivity.resize(gt.rules.nInternalActivities);
@@ -2822,6 +2850,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 
 	////////////////
+	//2026-07-18
+	t=computeMaxDaysBetweenEachPairOfConsecutiveActivities(parent);
+	if(!t)
+		return false;
+
+	////////////////
 	//2025-08-09
 	t=computeActivitiesPairOfMutuallyExclusiveTimeSlots(parent);
 	if(!t)
@@ -2856,6 +2890,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 	////////////////
+
+	////////////////
+	//2026-06-28
+	t=computeActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(parent);
+	if(!t)
+		return false;
 
 	////////////////
 	//2025-10-18
@@ -18737,6 +18777,58 @@ bool computeActivitiesOverlapCompletelyOrDoNotOverlap(QWidget* parent)
 	return ok;
 }
 
+//2026-07-18 - suggested by Yush Yuen
+bool computeMaxDaysBetweenEachPairOfConsecutiveActivities(QWidget* parent)
+{
+	Q_UNUSED(parent);
+
+	haveMaxDaysBetweenEachPairOfConsecutiveActivities=false;
+
+	bool ok=true;
+	
+	mdbepocaList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		mdbepocaListForActivity[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES){
+			if(!haveMaxDaysBetweenEachPairOfConsecutiveActivities)
+				haveMaxDaysBetweenEachPairOfConsecutiveActivities=true;
+
+			ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* cn=(ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities*)gt.rules.internalTimeConstraintsList[i];
+
+			/*if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'max days between each pair of consecutive activities'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}*/
+			
+			MaxDaysBetweenEachPairOfConsecutiveActivities_item item;
+			item.weight=cn->weightPercentage;
+			item.activitiesList=cn->_activitiesIndices;
+			item.maxDays=cn->maxDays;
+			item.circular=cn->circular;
+
+			mdbepocaList.push_back(item);
+			MaxDaysBetweenEachPairOfConsecutiveActivities_item* p_item=&mdbepocaList.back();
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				mdbepocaListForActivity[ai].append(p_item);
+			}
+		}
+	}
+	
+	return ok;
+}
+
 //2025-08-09
 bool computeActivitiesPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
 {
@@ -18889,6 +18981,104 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 				
 				if(activityHasOccupyMaxConstraints[ai]==false)
 					activityHasOccupyMaxConstraints[ai]=true;
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2026-06-28
+bool computeActivitiesMaxActivityTagsFromSetInSelectedTimeSlots(QWidget* parent)
+{
+	haveActivitiesMaxTagsConstraints=false;
+
+	bool ok=true;
+	
+	amatfsistsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		amatfsistsListForActivity[i].clear();
+		activityHasMaxTagsConstraints[i]=false;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS){
+			if(!haveActivitiesMaxTagsConstraints)
+				haveActivitiesMaxTagsConstraints=true;
+
+			ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots* cn=(ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities max activity tags from set in selected time slots'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item item;
+			//item.activitiesList=cn->_activitiesIndices;
+			//item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
+			item.activitiesSet=QSet<int>(cn->_activitiesIndices.constBegin(), cn->_activitiesIndices.constEnd());
+			item.maxTags=cn->maxActivityTags;
+			for(int t=0; t < cn->selectedDays.count(); t++)
+				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
+
+			item.activityTagsSet=cn->internalTagsSet;
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				QSet<int> tset=cn->internalTagsSet;
+				int k=tset.intersect(gt.rules.internalActivitiesList[ai].iActivityTagsSet).count();
+				if(k>=2){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag contained in the list of activity tags of your constraint"
+					 " of type activities max activity tags from set in selected time slots - please correct this!")
+					 .arg(gt.rules.internalActivitiesList[ai].id);
+					s+=" ";
+					s+=GeneratePreTranslate::tr("The constraint is:\n%1", "%1 is the description of the constraint").arg(cn->getDetailedDescription(gt.rules));
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+				else if(k==0){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("Activity with id=%1 has no activity tags contained in the list of activity tags of your constraint"
+					 " of type activities max activity tags from set in selected time slots - please correct this!")
+					 .arg(gt.rules.internalActivitiesList[ai].id);
+					s+=" (";
+					s+=GeneratePreTranslate::tr("The activity is included in the list of activities of the constraint, but this activity cannot affect this constraint.");
+					s+=") ";
+					s+=GeneratePreTranslate::tr("The constraint is:\n%1", "%1 is the description of the constraint").arg(cn->getDetailedDescription(gt.rules));
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return false;
+				}
+				else{
+					assert(k==1);
+				}
+			}
+			
+			amatfsistsList.push_back(item);
+			ActivitiesMaxActivityTagsFromSetInSelectedTimeSlots_item* p_item=&amatfsistsList.back();
+			for(int ai : std::as_const(cn->_activitiesIndices)){
+				amatfsistsListForActivity[ai].append(p_item);
+				
+				if(activityHasMaxTagsConstraints[ai]==false)
+					activityHasMaxTagsConstraints[ai]=true;
 			}
 		}
 	}
@@ -24241,7 +24431,7 @@ bool computeTeachersStudentsMaxActivityTagsFromSet(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ACTIVITY_TAGS_PER_REAL_DAY_FROM_SET){
 			haveTeachersMaxActivityTagsPerRealDayFromSet=true;
 
 			ConstraintTeacherMaxActivityTagsPerRealDayFromSet* tn=(ConstraintTeacherMaxActivityTagsPerRealDayFromSet*)gt.rules.internalTimeConstraintsList[i];
