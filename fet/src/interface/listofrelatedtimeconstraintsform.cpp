@@ -107,16 +107,16 @@ ListOfRelatedTimeConstraintsForm::ListOfRelatedTimeConstraintsForm(QWidget* pare
 	
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ListOfRelatedTimeConstraintsForm::modifyConstraint);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListOfRelatedTimeConstraintsForm::modifyConstraint);
-	connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::filter);
+	//connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::filter);
 
 	connect(moveTimeConstraintUpPushButton, &QPushButton::clicked, this, &ListOfRelatedTimeConstraintsForm::moveTimeConstraintUp);
 	connect(moveTimeConstraintDownPushButton, &QPushButton::clicked, this, &ListOfRelatedTimeConstraintsForm::moveTimeConstraintDown);
 
-	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::sortedChanged);
+	//connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::sortedChanged);
 	connect(activatePushButton, &QPushButton::clicked, this, &ListOfRelatedTimeConstraintsForm::activateConstraints);
 	connect(deactivatePushButton, &QPushButton::clicked, this, &ListOfRelatedTimeConstraintsForm::deactivateConstraints);
 
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::useColorsChanged);
+	//connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::useColorsChanged);
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListOfRelatedTimeConstraintsForm::constraintComments);
 
@@ -222,6 +222,10 @@ ListOfRelatedTimeConstraintsForm::ListOfRelatedTimeConstraintsForm(QWidget* pare
 	sortedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-sorted"), "false").toBool());
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
+
+	connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::filter);
+	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::sortedChanged);
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedTimeConstraintsForm::useColorsChanged);
 	
 	filterChanged();
 }

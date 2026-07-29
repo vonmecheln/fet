@@ -7190,7 +7190,7 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
 	QList<int> allActivities=allActivitiesOriginal;
 	
 	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
-		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](int a1, int a2){
 			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
 				return a1<a2;
 			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
@@ -7414,7 +7414,7 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
 	QList<int> allActivities=allActivitiesOriginal;
 
 	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
-		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](int a1, int a2){
 			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
 				return a1<a2;
 			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
@@ -7630,7 +7630,7 @@ QString TimetableExport::writeActivitiesBuildings(int htmlLevel, const QList<int
 	QList<int> allActivities=allActivitiesOriginal;
 
 	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
-		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](int a1, int a2){
 			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
 				return a1<a2;
 			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
@@ -7849,7 +7849,7 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
 	QList<int> allActivities=allActivitiesOriginal;
 
 	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
-		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](int a1, int a2){
 			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
 				return a1<a2;
 			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
@@ -8016,7 +8016,7 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
 	QList<int> allActivities=allActivitiesOriginal;
 
 	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
-		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](int a1, int a2){
 			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
 				return a1<a2;
 			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});
@@ -8224,7 +8224,7 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
 	QList<int> allActivities=allActivitiesOriginal;
 
 	if(TIMETABLES_ACTIVITIES_SORTED_BY_TAGS)
-		std::stable_sort(allActivities.begin(), allActivities.end(), [](const int a1, const int a2){
+		std::stable_sort(allActivities.begin(), allActivities.end(), [](int a1, int a2){
 			if(a1<0 || a1>=gt.rules.nInternalActivities || a2<0 || a2>=gt.rules.nInternalActivities)
 				return a1<a2;
 			return listOfStringsAscending(gt.rules.internalActivitiesList[a1].activityTagsNames, gt.rules.internalActivitiesList[a2].activityTagsNames);});

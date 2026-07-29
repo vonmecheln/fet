@@ -11972,6 +11972,18 @@ Liviu Lalescu:
 
 Maybe a good thing in FET would be to double each type of home and preferred room(s) constraint to a new constraint type, to action only in a selection of time slots.
 
+YOUSSEF HOUIET:
+
+This can be achieved by assigning preferred rooms to each teacher and adding constraints for unavailable times for both room and teacher — particularly for rooms other than the one the teacher prefers to use at specific times.
+
+Alami Mohammed:
+
+I think your idea of extending the existing Home Room and Preferred Room(s) constraints to work on selected time slots would be an excellent and more general solution than introducing a completely new constraint.
+
+The current workaround using unavailable times for teachers and rooms is possible, but it requires creating many additional constraints, making the timetable more complex and difficult to maintain, especially in large institutions.
+
+Allowing the existing room constraints to apply only to selected time slots would provide a much cleaner and more flexible solution while remaining fully consistent with FET's current design.
+
 781---------------------------------------------------------
 From Michael Chourdakis (on Facebook):
 
@@ -13878,6 +13890,18 @@ Liviu Lalescu:
 
 I'll add this in the TODO, but it is impossible. All constraints in FET must be combined with AND.
 
+Alami Mohammed:
+
+My idea is not to replace the global AND logic used by FET. On the contrary, the solver would still combine all top-level constraints with AND.
+The proposed Constraint Group would simply behave as a single constraint from the solver's point of view. Only the constraints inside that group would be evaluated according to the selected logical mode (AND, OR, Exactly One, At Least N, etc.). Once evaluated, the group itself would return either "satisfied" or "not satisfied", just like any other constraint.
+I realize this may still require significant changes to the solving algorithm, but I wanted to clarify that my proposal keeps the global AND behavior unchanged.
+
+Liviu Lalescu:
+
+Yes, I understood your suggestion, the algorithm should respect an AND of more groups of constraints. Unfortunately, it is nearly impossible to tell FET: in this group of constraints, you must respect at least one (OR of a group of constraints), or other variants different from AND.
+
+For instance, many asked for "activities begin or end students' day". I tried much to obtain this constraint, and I managed in the end, but it was very complicated, and it is still not perfect.
+
 873---------------------------------------------------------
 From Alami Mohammed (on forum):
 
@@ -13928,3 +13952,23 @@ Liviu Lalescu:
 I'll add your words in the TODO.
 
 But: We prefer to promote the use of free software.
+
+Alami Mohammed:
+
+To clarify my suggestion, I think the export feature could initially be limited to Teachers, Rooms, and Students (Groups/Subgroups) timetables, since these usually contain a single activity per cell.
+
+The user could choose the timetable type to export, just as in the current Print Preview window.
+
+Instead of creating many worksheets, each exported spreadsheet could contain a single timetable sheet with a drop-down list at the top, allowing the user to select the teacher, room, or student group to display. The timetable would update automatically according to the selected item.
+
+A similar approach is used in the EDT4FET application, where a selection field allows the user to choose the timetable to display.
+
+Regarding the output format, I fully understand FET's preference for free software. Therefore, I believe that supporting OpenDocument Spreadsheet (.ods) would be an excellent choice, while .xlsx could remain an optional format for users who need Microsoft Office compatibility.
+
+Volker Dirr:
+
+Sadly groups timetables have in most countries/schools more than a single activity per cell.
+
+So max teachers, rooms and subgroups is "possible" (even those can also have multiple activities in a single cell).
+
+I might code it, but it is a big task and I can't see big advantages for it. Out of my personal view it is even unneeded. It is easier and even more flexible to modify the html tables. You can simply add text before and after the tables, so that you can even print a nice letter for each timetable, even if cells contains more than a single activity.

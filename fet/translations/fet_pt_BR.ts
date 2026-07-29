@@ -62846,189 +62846,189 @@ is:</source>
 <context>
     <name>ListOfRelatedSpaceConstraintsForm</name>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="553"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="557"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>Nº: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="345"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="432"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="625"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="873"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="940"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="954"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1082"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="349"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="436"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="629"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="877"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="944"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="958"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1086"/>
         <source>FET information</source>
         <translation>Informação FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="345"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="349"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para cima uma restrição de espaço, a caixa de seleção &apos;Ordenar&apos;deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="400"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="404"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Uma restrição foi movida para cima:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="432"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="436"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para baixo uma restrição de espaço, a caixa de seleção &apos;Ordenar&apos;deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="487"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="491"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Uma restrição foi movida para baixo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="625"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="954"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="629"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="958"/>
         <source>Invalid selected constraint</source>
         <translation>Restrição selecionada é inválida</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="673"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="677"/>
         <source>Your selection contains the basic compulsory space constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation>Sua seleção contém as restrições de espaço obrigatórias básicas. Você realmente deseja remover todas as restrições selecionadas, incluindo esta(s)? Você não pode gerar um horário sem esta(s) restrição(ões).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="676"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="680"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Nota: você pode adicionar novamente uma restrição deste tipo a partir do menu de Dados -&gt; Espaços -&gt; Diversos -&gt; Restrições básicas obrigatórias de espaço.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="679"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="683"/>
         <source>FET warning</source>
         <translation>Aviso FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="693"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="697"/>
         <source>Remove these selected space constraints?</source>
         <comment>Following is the list of detailed descriptions of the constraints marked for removal.</comment>
         <translation>Remover essas restrições de espaço selecionadas?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="697"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="823"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="889"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="701"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="827"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="893"/>
         <source>FET confirmation</source>
         <translation>Confirmação FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="698"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="702"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="698"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="702"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="707"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="711"/>
         <source>Removed %1 space constraints:</source>
         <translation>Removidas %1 restrições de espaço:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="769"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="773"/>
         <source>Advanced filter for space constraints</source>
         <translation>Filtro avançado para restrições de espaço</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="822"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="826"/>
         <source>Activate the selected space constraints?</source>
         <translation>Ativar as restrições de espaço selecionadas?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="850"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="854"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation>%1 restrições de espaço ativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="873"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="877"/>
         <source>Activated %1 space constraints</source>
         <translation>%1 restrições de espaço ativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="887"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="891"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation>Desativar as restrições de espaço selecionadas? (Note que as restrições básicas de espaço obrigatórias não serão desativadas, mesmo que sejam selecionadas.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="917"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="921"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation>%1 restrições de espaço desativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="940"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="944"/>
         <source>Deactivated %1 space constraints</source>
         <translation>%1 restrições de espaço desativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="963"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="967"/>
         <source>Constraint comments</source>
         <translation>Comentários da restrição</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="965"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="969"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="967"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="971"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1003"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1007"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Comentários da restrição foram modificados.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1004"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1008"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Restrição anterior:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1008"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1012"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Comentários posteriores:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1036"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1040"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 restrições de espaço</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1058"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1062"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>Seleção múltipla: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1082"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1086"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Nenhuma restrição da sua seleção pode alterar seu peso (lembre-se de que alguns tipos de restrições aceitam somente o peso de 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1090"/>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1099"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1094"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1103"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Alterar os pesos das restrições de espaço selecionadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1092"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1096"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -63036,7 +63036,7 @@ Please enter the new weight percentage:</source>
 Favor informar o novo valor de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1101"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1105"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -63050,7 +63050,7 @@ das %3 selecionadas não mudarão).
 Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1139"/>
+        <location filename="../src/interface/listofrelatedspaceconstraintsform.cpp" line="1143"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Alterados os pesos das seguintes restrições de espaço selecionadas de %1 para %2%:</translation>
@@ -63145,195 +63145,195 @@ Insira a nova porcentagem de peso:</translation>
 <context>
     <name>ListOfRelatedTimeConstraintsForm</name>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="559"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="563"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>Nº: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="351"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="438"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="631"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="886"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="953"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="967"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1095"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="355"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="442"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="635"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="890"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="957"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="971"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1099"/>
         <source>FET information</source>
         <translation>Informação FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="351"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="355"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para cima uma restrição de tempo, a caixa de seleção &apos;Ordenar&apos; deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="406"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="410"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Uma restrição foi movida para cima:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="438"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="442"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para baixo uma restrição de tempo, a caixa de seleção &apos;Ordenar&apos; deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="493"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="497"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Uma restrição foi movida para baixo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="631"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="967"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="635"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="971"/>
         <source>Invalid selected constraint</source>
         <translation>Restrição selecionada é inválida</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="646"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="692"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="650"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="696"/>
         <source>FET warning</source>
         <translation>Aviso FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="646"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="650"/>
         <source>The constraints of type activity preferred day cannot be edited. They can only be added/removed from the students/teachers timetable view time horizontal dialog or they can be removed from this dialog.</source>
         <translation>As restrições do tipo dia preferido para atividade não podem ser editadas. Elas só podem ser adicionadas/removidas na caixa de diálogo horizontal de horário dos alunos/professores ou podem ser removidas nesta caixa de diálogo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="686"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="690"/>
         <source>Your selection contains the basic compulsory time constraint(s). Do you really want to remove all the selected constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).</source>
         <translation>Sua seleção contém as restrições de tempo obrigatórias básicas. Você realmente deseja remover todas as restrições selecionadas, incluindo esta(s)? Você não pode gerar um horário sem esta(s) restrição(ões).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="689"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="693"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Nota: você pode adicionar novamente uma restrição deste tipo a partir do menu Dados -&gt; Restrições de tempo -&gt; Diversos -&gt; Restrições básicas obrigatórias de tempo.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="706"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="710"/>
         <source>Remove these selected time constraints?</source>
         <comment>Following is the list of detailed descriptions of the constraints marked for removal.</comment>
         <translation>Remover essas restrições de tempo selecionadas?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="710"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="836"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="902"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="714"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="840"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="906"/>
         <source>FET confirmation</source>
         <translation>Confirmação FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="711"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="715"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="711"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="715"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="720"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="724"/>
         <source>Removed %1 time constraints:</source>
         <translation>Removidas %1 restrições de tempo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="782"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="786"/>
         <source>Advanced filter for time constraints</source>
         <translation>Filtro avançado para restrições de tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="835"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="839"/>
         <source>Activate the selected time constraints?</source>
         <translation>Ativar as restrições de tempo selecionadas?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="863"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="867"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation>%1 restrições de tempo ativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="886"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="890"/>
         <source>Activated %1 time constraints</source>
         <translation>%1 restrições de tempo ativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="900"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="904"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation>Desativar as restrições de tempo selecionadas? (Note que as restrições básicas de tempo obrigatórias não serão desativadas, mesmo que sejam selecionadas.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="930"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="934"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation>%1 restrições de tempo desativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="953"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="957"/>
         <source>Deactivated %1 time constraints</source>
         <translation>%1 restrições de tempo desativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="976"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="980"/>
         <source>Constraint comments</source>
         <translation>Comentários da restrição</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="978"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="982"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="980"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="984"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1016"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1020"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Comentários da restrição foram modificados.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1017"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1021"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Restrição anterior:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1021"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1025"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Comentários posteriores:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1049"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1053"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 restrições de tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1071"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1075"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>Seleção múltipla: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1095"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1099"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Nenhuma restrição da sua seleção pode alterar seu peso (lembre-se de que alguns tipos de restrições aceitam somente o peso de 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1103"/>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1112"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1107"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1116"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Alterar os pesos das restrições de tempo selecionadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1105"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1109"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -63341,7 +63341,7 @@ Please enter the new weight percentage:</source>
 Favor informar o novo valor de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1114"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1118"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -63355,7 +63355,7 @@ das %3 selecionadas não mudarão).
 Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1152"/>
+        <location filename="../src/interface/listofrelatedtimeconstraintsform.cpp" line="1156"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Alterados os pesos das seguintes restrições de tempo selecionadas de %1 para %2%:</translation>
@@ -64042,12 +64042,18 @@ Insira a nova porcentagem de peso:</translation>
         <translation>As salas comportarão o número máximo de atividades para cada docente ao longo de toda a semana.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2924"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2832"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2879"/>
+        <source>Note: an affected activity is not allowed to be placed overlapping more than one set of selected time slots.</source>
+        <translation>Nota: não é permitido posicionar uma atividade afetada de modo que ela se sobreponha a mais de um conjunto de janelas de tempo selecionado.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2928"/>
         <source>If an activity has two or more teachers, the constraint will be considered for each teacher, separately.</source>
         <translation>Se uma atividade tiver dois ou mais docentes, a restrição será considerada para cada docente separadamente.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2926"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2930"/>
         <source>If you select the option &apos;Keep same room in a building&apos; then, for each teacher who has activities in a certain building, the affected room(s) must be kept the same over the whole week (the room is constant for the teacher and the building).</source>
         <translation>Se você selecionar a opção &apos;Manter-se na sala de um prédio&apos;, para cada docente com atividades em um certo prédio, a(s) sala(s) afetada(s) deverá(ão) permanecer a mesma(s) durante toda a semana (o/a docente não mudará de sala naquele prédio).</translation>
     </message>
@@ -64061,11 +64067,11 @@ Insira a nova porcentagem de peso:</translation>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2795"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2810"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2825"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2840"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2855"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2870"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2888"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2913"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2842"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2857"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2872"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2892"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2917"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation>Esta restrição foi sugerida por %1.</translation>
@@ -64086,46 +64092,46 @@ Insira a nova porcentagem de peso:</translation>
         <translation>Esta restrição garante que a sala selecionada possa ter atividades em um número máximo de conjuntos de janelas de tempo a partir de uma seleção de conjuntos. As janelas não selecionadas não estão sujeitas a restrições.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2843"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2845"/>
         <source>This constraint ensures that all the rooms can have activities in either the first selected time slot or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Esta restrição garante que todas as salas possam ter atividades alocadas na primeira ou na segunda janela selecionada, mas não em ambas ao mesmo tempo. A restrição não é aplicada nas janelas desmarcadas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2858"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2860"/>
         <source>This constraint ensures that all the rooms can have activities in either the first set of selected time slots or in the second one, but not in both at the same time. The unselected time slots are not subject to constraints.</source>
         <translation>Esta restrição garante que todas as salas possam ter atividades alocadas na primeira ou na segunda janela selecionada, mas não em ambas ao mesmo tempo. A restrição não é aplicada nas janelas desmarcadas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2873"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2875"/>
         <source>This constraint ensures that all the rooms can have activities in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>Esta restrição garante que todas as salas possam ter atividades em um número máximo de conjuntos de janelas de tempo a partir de uma seleção de conjuntos. As janelas não selecionadas não estão sujeitas a restrições.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2891"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2916"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2895"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2920"/>
         <source>This constraint is used for exams in some countries, such as Algeria and Morocco.</source>
         <translation>Essa restrição é útil para exames em alguns países, como a Argélia e Marrocos.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2896"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2929"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2900"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2933"/>
         <source>You have some examples in the %1 directory of the FET examples, and you can read more on these two FET forum links: %2 and %3.</source>
         <translation>Você encontrará alguns exemplos na pasta %1 de exemplos do FET e poderá ler mais sobre isto nestes dois links do fórum do FET: %2 e %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3387"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3391"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Comentários da restrição foram modificados.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3388"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3392"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Restrição anterior:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3392"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3396"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Comentários posteriores:</translation>
@@ -64272,18 +64278,18 @@ Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3023"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3110"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3254"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3321"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3335"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3463"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3027"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3114"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3258"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3325"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3339"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3467"/>
         <source>FET information</source>
         <translation>Informação FET</translation>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2646"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3335"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3339"/>
         <source>Invalid selected constraint</source>
         <translation>Restrição selecionada é inválida</translation>
     </message>
@@ -64304,8 +64310,8 @@ Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2720"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3204"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3270"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3208"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3274"/>
         <source>FET confirmation</source>
         <translation>Confirmação FET</translation>
     </message>
@@ -64333,136 +64339,136 @@ Insira a nova porcentagem de peso:</translation>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2788"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2803"/>
         <location filename="../src/interface/listspaceconstraints.cpp" line="2818"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2833"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2848"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2863"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2878"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2903"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2936"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2835"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2850"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2865"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2882"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2907"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2940"/>
         <source>FET help</source>
         <translation>Ajuda FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2893"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2897"/>
         <source>Note that a building is not available in a time slot if there is a constraint break in that time slot, or if all the rooms in that building are not available in that time slot with a weight of 100% (not lower).</source>
         <translation>Note que um prédio não está disponível em certo horário se houver uma quebra de restrição nesta janela, ou se todas as salas deste prédio não estiverem disponíveis nesse horário com um peso de 100% (não inferior).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2918"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2922"/>
         <source>For each affected room we count the number of activities with each possible teacher, separately, and for each teacher the total count of his/her activities in the affected room must not exceed the specified maximum limit.</source>
         <translation>Para cada sala envolvida, contamos o número de atividades com cada docente possível, separadamente, e para cada docente, o total de suas atividades na sala não deve exceder o limite máximo especificado.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2925"/>
         <source>An alternative explanation could be: %1</source>
         <translation>Uma explicação alternativa poderia ser: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2921"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2925"/>
         <source>For each specified room, the total number of activities in that room for any teacher must not exceed the specified maximum limit.</source>
         <translation>Para cada sala especificada, o número total de atividades nessa sala para qualquer docente não deve exceder o limite máximo especificado.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="2993"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="2997"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>Nº: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3023"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3027"/>
         <source>To move a space constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para cima uma restrição de espaço, a caixa de seleção &apos;Ordenar&apos; deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3078"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3082"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Uma restrição foi movida para cima:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3110"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3114"/>
         <source>To move a space constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para baixo uma restrição de espaço, a caixa de seleção &apos;Ordenar&apos; deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3165"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3169"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Uma restrição foi movida para baixo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3203"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3207"/>
         <source>Activate the selected space constraints?</source>
         <translation>Ativar as restrições de espaço selecionadas?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3231"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3235"/>
         <source>Activated %1 space constraints:</source>
         <comment>%1 is the number of activated space constraints</comment>
         <translation>%1 restrições de espaço ativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3254"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3258"/>
         <source>Activated %1 space constraints</source>
         <translation>%1 restrições de espaço ativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3268"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3272"/>
         <source>Deactivate the selected space constraints? (Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)</source>
         <translation>Desativar as restrições de espaço selecionadas? (Note que as restrições básicas de espaço obrigatórias não serão desativadas, mesmo que sejam selecionadas.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3298"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3302"/>
         <source>Deactivated %1 space constraints:</source>
         <comment>%1 is the number of deactivated space constraints</comment>
         <translation>%1 restrições de espaço desativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3321"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3325"/>
         <source>Deactivated %1 space constraints</source>
         <translation>%1 restrições de espaço desativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3347"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3351"/>
         <source>Constraint comments</source>
         <translation>Comentários da restrição</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3349"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3353"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3351"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3355"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3420"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3424"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
         <translation>%1 / %2 restrições de espaço</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3444"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3448"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected space constraints, %1 is the number of active selected space constraints, %2 is the total number of selected space constraints</comment>
         <translation>Seleção múltipla: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3463"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3467"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Nenhuma restrição da sua seleção pode alterar seu peso (lembre-se de que alguns tipos de restrições aceitam somente o peso de 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3473"/>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3482"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3477"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3486"/>
         <source>Modify the weights of the selected space constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Alterar os pesos das restrições de espaço selecionadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3475"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3479"/>
         <source>You will modify %1 selected space constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -64470,7 +64476,7 @@ Please enter the new weight percentage:</source>
 Favor informar o novo valor de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3484"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3488"/>
         <source>You will modify %1 space constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -64484,7 +64490,7 @@ das %3 selecionadas não mudarão).
 Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listspaceconstraints.cpp" line="3522"/>
+        <location filename="../src/interface/listspaceconstraints.cpp" line="3526"/>
         <source>Changed the weights of the following %1 selected space constraints to %2%:</source>
         <comment>%1 is the number of space constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Alterados os pesos das seguintes restrições de espaço selecionadas de %1 para %2%:</translation>
@@ -66008,12 +66014,12 @@ Insira a nova porcentagem de peso:</translation>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7906"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7917"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7983"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8901"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8988"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9132"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9199"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9213"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9341"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8905"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8992"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9136"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9203"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9217"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9345"/>
         <source>FET information</source>
         <translation>Informação FET</translation>
     </message>
@@ -66509,12 +66515,18 @@ Insira a nova porcentagem de peso:</translation>
         <translation>Mostrar relacionadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8759"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8698"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8730"/>
+        <source>Note: an affected activity is not allowed to be placed overlapping more than one set of selected time slots.</source>
+        <translation>Nota: não é permitido posicionar uma atividade afetada de modo que ela se sobreponha a mais de um conjunto de janelas de tempo selecionado.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8763"/>
         <source>To use this constraint, you need to specify a set of activities, a set of activity tags, a set of time slots, and the maximum number of activity tags - from the set of selected activity tags that also belong to the selected activities - which are allowed in all the selected time slots.</source>
         <translation>Ao usar essa restrição, você precisa especificar um conjunto de atividades, de marcadores e de janelas de tempo, e o número máximo de marcadores — dentre aquelas selecionadas que também pertencem às atividades selecionadas — permitidas em todas as janelas de tempo selecionadas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8765"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8769"/>
         <source>Note about the filters for activity tags: there are two such filters in this dialog: the first one (unlabeled) is for filtering the constraints by their activities, and the second one, labeled &apos;Selected&apos;, is for filtering the constraints by their activity tags.</source>
         <comment>&apos;Selected&apos; refers to activity tags.</comment>
         <translation>Observação sobre os filtros para marcadores de atividade: há dois filtros desse tipo nesta caixa de diálogo; o primeiro (sem rótulo) serve para filtrar as restrições pelas suas atividades, e o segundo, rotulado como &quot;Selecionado&quot;, serve para filtrar as restrições pelos seus marcadores.</translation>
@@ -66623,7 +66635,7 @@ Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="7574"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9213"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9217"/>
         <source>Invalid selected constraint</source>
         <translation>Restrição selecionada é inválida</translation>
     </message>
@@ -66658,42 +66670,42 @@ Insira a nova porcentagem de peso:</translation>
         <translation>Aviso FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8788"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8792"/>
         <source>The number of days between two activities is considered to be the absolute difference of the index numbers of their days. For instance, if A1 is placed on Monday and A2 is placed on Wednesday, the number of days between them is, considering Monday the first day of the week and Wednesday the third day of the week, 3 - 1 = 2.</source>
         <translation>O número de dias entre duas atividades é a diferença absoluta entre os índices dos respectivos dias da semana. Por exemplo, se A1 ocorre na segunda-feira e A2 na quarta-feira, o número de dias entre elas, considerando segunda-feira como o primeiro dia da semana e quarta-feira como o terceiro dia da semana, será 3 - 1 = 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8794"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8798"/>
         <source>For instance, if the activities are A1, A2, A3, and A4, and max days is 3, over an 8 days FET &apos;week&apos;, an accepted solution could be: A1, empty, A2, A3, empty, empty, A4, empty.</source>
         <translation>Por exemplo, se as atividades forem A1, A2, A3 e A4, e o número máximo de dias for 3, em uma &quot;semana&quot; do FET de 8 dias, uma solução aceitável poderia ser: A1, vazio, A2, A3, vazio, vazio, A4, vazio.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8801"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8805"/>
         <source>&apos;Circular&apos; means that FET will also check the number of days between the last activity of the week and the first one, as if the FET week would be repeated without any day of pause.</source>
         <translation>&quot;Circular&quot; significa que o FET também verificará o número de dias entre a última e a primeira atividade da semana, como se a semana do FET se repetisse sem nenhum dia de pausa.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9265"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9269"/>
         <source>Changed a constraint&apos;s comments.</source>
         <comment>The user changed the constraint&apos;s comments</comment>
         <translation>Comentários da restrição foram modificados.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9266"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9270"/>
         <source>Constraint before:</source>
         <comment>The detailed description of a constraint before the change.</comment>
         <translation>Restrição anterior:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9270"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9274"/>
         <source>Comments after:</source>
         <comment>The comments of the constraint were changed to this new value (Comments after).</comment>
         <translation>Comentários posteriores:</translation>
     </message>
     <message>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8092"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9082"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9148"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9086"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9152"/>
         <source>FET confirmation</source>
         <translation>Confirmação FET</translation>
     </message>
@@ -66739,28 +66751,28 @@ Insira a nova porcentagem de peso:</translation>
         <translation>Esta restrição garante que as atividades selecionadas possam ser alocadas na primeira ou na segunda janela selecionada, mas não em ambas ao mesmo tempo. A restrição não é aplicada nas janelas desmarcadas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8709"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8711"/>
         <source>This constraint has specified a set of activities, which must all have the same duration, greater than 1, and ensures that each pair of activities from this set are either overlapping completely (they have the same starting day and hour), or are not overlapping at all (have no common time slot(s)).</source>
         <translation>Essa restrição faz as atividades escolhidas não se &quot;cruzem&quot; (sem sobreposição parcial). Ou elas terão exatamente o mesmo horário (se sobrepõem completamente), ou elas terão horários completamente diferentes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8721"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8723"/>
         <source>This constraint was suggested by %1, and maybe by other users in the past.</source>
         <comment>%1 is a person who suggested this constraint.</comment>
         <translation>Esta restrição foi sugerida pelo usuário %1 e talvez por outros anteriormente.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8739"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8743"/>
         <source>This constraint was suggested by %1.</source>
         <translation>Esta restrição foi sugerida por %1.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8741"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8745"/>
         <source>18 October 2025</source>
         <translation>18.out.2025</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8743"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8747"/>
         <source>To use this constraint, you need to specify a set of activities, a set of time slots, and a maximum number of students which can be present, considering the number of students of these activities, in these time slots.</source>
         <translation>Para usar esta restrição, você precisa especificar um conjunto de atividades, um conjunto de janelas de tempo, e um número máximo de alunos que podem estar presentes, considerando o número de alunos destas ativdades, nestas janelas.</translation>
     </message>
@@ -66887,12 +66899,12 @@ Insira a nova porcentagem de peso:</translation>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8642"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8660"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8675"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8699"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8714"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8729"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8746"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8769"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8810"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8701"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8716"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8733"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8750"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8773"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8814"/>
         <source>FET help</source>
         <translation>Ajuda FET</translation>
     </message>
@@ -67175,7 +67187,7 @@ Exemplo 2:
         <location filename="../src/interface/listtimeconstraints.cpp" line="8631"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8649"/>
         <location filename="../src/interface/listtimeconstraints.cpp" line="8691"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8706"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8708"/>
         <source>This constraint was suggested by %1.</source>
         <comment>%1 is the person who suggested this constraint.</comment>
         <translation>Esta restrição foi sugerida por %1.</translation>
@@ -67191,12 +67203,12 @@ Exemplo 2:
         <translation>Esta restrição garante que um ou mais docentes ou uma ou mais turmas possam ter atividades em um número máximo de conjuntos de janelas de tempo a partir de uma seleção de conjuntos. As janelas não selecionadas não estão sujeitas a restrições.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8724"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8726"/>
         <source>This constraint ensures that the selected activities can take place in a specified maximum number of sets of time slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.</source>
         <translation>Esta restrição garante que as atividades selecionadas ocorrer em um número máximo de conjuntos de janelas de tempo a partir de uma seleção de conjuntos. As janelas não selecionadas não estão sujeitas a restrições.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8741"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8745"/>
         <source>This constraint type was added on %1.</source>
         <comment>%1 is the date at which this constraint type was implemented in FET</comment>
         <translation>Este tipo de restrição foi incluída em %1.</translation>
@@ -67347,138 +67359,138 @@ Exemplo 2:
         <translation>Por exemplo, se tivermos 5 módulos (períodos) por semana e as atividades A1, A2 e A3 estiverem agendadas respectivamente nos módulos 1, 2 e 4, a distância entre A1 e A2 é 1, a distância entre A2 e A3 é 2 e a distância entre A1 e A3 é 3. Se especificarmos um número máximo de módulos entre atividades para uma restrição desse tipo igual a 2, essa restrição não será respeitada e o FET realocará as atividades. Se especificarmos um número máximo de módulos&#xa0;entre atividades para uma restrição desse tipo igual a 3, a restrição será respeitada e o FET permitirá o horário atual.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8755"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8778"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8759"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8782"/>
         <source>This constraint was suggested by %1 on %2.</source>
         <comment>%1 is the name of a person, %2 is a date.</comment>
         <translation>Esta restrição foi sugerida por %1 em %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8755"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8759"/>
         <source>27 June 2026</source>
         <translation>27.jun.2026</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8778"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8782"/>
         <source>18 July 2026</source>
         <translation>18.jul.2026</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8782"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8786"/>
         <source>This constraint specifies a set of activities and a maximum number of days. FET will place these activities over the week. In the final timetable, we consider the affected activities in the ascending (or descending) order of their scheduled days, and each pair of adjacent activities in this order must respect the maximum days between them.</source>
         <translation>Esta restrição especifica um conjunto de atividades e um número máximo de dias. O FET distribuirá essas atividades ao longo da semana. No horário final, consideramos as atividades afetadas em ordem crescente (ou decrescente) de seus dias programados, e cada par de atividades adjacentes nessa ordem deve respeitar o intervalo máximo de dias entre elas.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8797"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8801"/>
         <source>(The data file could include also a constraint min 1 days 100% between these 4 activities, but this is not mandatory.)</source>
         <translation>(O arquivo de dados também pode incluir uma restrição de no mínimo 1 dia (100%) entre essas 4 atividades, mas isso não é obrigatório.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8804"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8808"/>
         <source>For instance, if the week is: Monday, Tuesday, Wednesday, Thursday, Friday, and the user selected &apos;Circular&apos;, if the first activity of the week is placed on Tuesday and the last activity of the week is placed on Friday, the number of days between these two activities is 2 (the index of Tuesday) + 5 (the number of days per week) - 5 (the index of Friday) = 2.</source>
         <translation>Por exemplo, se a semana for: segunda, terça, quarta, quinta e sexta-feira, e o usuário tiver selecionado &apos;Circular&apos;; se a primeira atividade da semana estiver posicionada na terça-feira e a última na sexta-feira, o número de dias entre essas duas atividades será 2 (o índice da terça-feira) + 5 (o número de dias da semana) - 5 (o índice da sexta-feira) = 2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8871"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8875"/>
         <source>No: %1 / %2</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>Nº: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8901"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8905"/>
         <source>To move a time constraint up, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para cima uma restrição de tempo, a caixa de seleção &apos;Ordenar&apos; deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8956"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8960"/>
         <source>A constraint was moved up:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved up.</comment>
         <translation>Uma restrição foi movida para cima:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="8988"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="8992"/>
         <source>To move a time constraint down, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation>Para mover para baixo uma restrição de tempo, a caixa de seleção &apos;Ordenar&apos; deve estar desmarcada.</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9043"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9047"/>
         <source>A constraint was moved down:</source>
         <comment>This is a History item. Following is the detailed description of the constraint which was moved down.</comment>
         <translation>Uma restrição foi movida para baixo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9081"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9085"/>
         <source>Activate the selected time constraints?</source>
         <translation>Ativar as restrições de tempo selecionadas?</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9109"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9113"/>
         <source>Activated %1 time constraints:</source>
         <comment>%1 is the number of activated time constraints</comment>
         <translation>%1 restrições de tempo ativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9132"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9136"/>
         <source>Activated %1 time constraints</source>
         <translation>%1 restrições de tempo ativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9146"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9150"/>
         <source>Deactivate the selected time constraints? (Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)</source>
         <translation>Desativar as restrições de tempo selecionadas? (Note que as restrições básicas de tempo obrigatórias não serão desativadas, mesmo que sejam selecionadas.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9176"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9180"/>
         <source>Deactivated %1 time constraints:</source>
         <comment>%1 is the number of deactivated time constraints</comment>
         <translation>%1 restrições de tempo desativadas:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9199"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9203"/>
         <source>Deactivated %1 time constraints</source>
         <translation>%1 restrições de tempo desativadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9225"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9229"/>
         <source>Constraint comments</source>
         <translation>Comentários da restrição</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9227"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9231"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9229"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9233"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9298"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9302"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation>%1 / %2 restrições de tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9322"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9326"/>
         <source>Multiple selection: %1 / %2</source>
         <comment>It refers to the list of selected time constraints, %1 is the number of active selected time constraints, %2 is the total number of selected time constraints</comment>
         <translation>Seleção múltipla: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9341"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9345"/>
         <source>No constraints from your selection can change their weight (remember that some types of constraints are allowed to have only 100% weight).</source>
         <translation>Nenhuma restrição da sua seleção pode alterar seu peso (lembre-se de que alguns tipos de restrições aceitam somente o peso de 100%).</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9351"/>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9360"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9355"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9364"/>
         <source>Modify the weights of the selected time constraints</source>
         <comment>The title of a dialog to modify the weights of the selected constraints with a single click</comment>
         <translation>Alterar os pesos das restrições de tempo selecionadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9353"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9357"/>
         <source>You will modify %1 selected time constraints.
 Please enter the new weight percentage:</source>
         <comment>Translators: please split this field with new line characters, similarly to the original field, so that it is not too wide. You can use more lines (3 or even 4), if needed. %1 is the number of constraints which will change.</comment>
@@ -67486,7 +67498,7 @@ Please enter the new weight percentage:</source>
 Favor informar o novo valor de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9362"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9366"/>
         <source>You will modify %1 time constraints from your
 selection (remember that some types of constraints
 are only allowed to have 100% weight, so %2
@@ -67500,7 +67512,7 @@ das %3 selecionadas não mudarão).
 Insira a nova porcentagem de peso:</translation>
     </message>
     <message>
-        <location filename="../src/interface/listtimeconstraints.cpp" line="9400"/>
+        <location filename="../src/interface/listtimeconstraints.cpp" line="9404"/>
         <source>Changed the weights of the following %1 selected time constraints to %2%:</source>
         <comment>%1 is the number of time constraints for which the user has changed the weight, %2 is the new weight for all the selected constraints</comment>
         <translation>Alterados os pesos das seguintes restrições de tempo selecionadas de %1 para %2%:</translation>

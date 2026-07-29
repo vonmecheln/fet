@@ -10690,7 +10690,7 @@ impossiblemaxhalfdays:
 				
 				if((n==1 && circ) || n>=2){
 					if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-						std::stable_sort(placedActivitiesList.begin(), placedActivitiesList.end(), [ai, d, this](const int a, const int b){
+						std::stable_sort(placedActivitiesList.begin(), placedActivitiesList.end(), [ai, d, this](int a, int b){
 							int da=d;
 							int db=d;
 							if(a!=ai)
@@ -10700,7 +10700,7 @@ impossiblemaxhalfdays:
 							return da<db;});
 					}
 					else{
-						std::stable_sort(placedActivitiesList.begin(), placedActivitiesList.end(), [ai, d, this](const int a, const int b){
+						std::stable_sort(placedActivitiesList.begin(), placedActivitiesList.end(), [ai, d, this](int a, int b){
 							int da=d/2;
 							int db=d/2;
 							if(a!=ai)

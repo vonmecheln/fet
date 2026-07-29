@@ -8694,6 +8694,8 @@ void ListTimeConstraints::helpClicked()
 				s+=tr("This constraint ensures that the teachers (or the specified teacher), or the students (or the specified"
 				 " students set) can have activities in a specified maximum number of sets of time"
 				 " slots from a selection of sets of time slots. The unselected time slots are not subject to constraints.");
+				s+="\n\n";
+				s+=tr("Note: an affected activity is not allowed to be placed overlapping more than one set of selected time slots.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
@@ -8724,6 +8726,8 @@ void ListTimeConstraints::helpClicked()
 				s+=tr("This constraint ensures that the selected activities can take place in a specified maximum number"
 				 " of sets of time slots from a selection of sets of time slots."
 				 " The unselected time slots are not subject to constraints.");
+				s+="\n\n";
+				s+=tr("Note: an affected activity is not allowed to be placed overlapping more than one set of selected time slots.");
 				s+="\n";
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);

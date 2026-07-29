@@ -101,16 +101,16 @@ ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* pa
 	
 	connect(modifyConstraintPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::modifyConstraint);
 	connect(constraintsListWidget, &QListWidget::itemDoubleClicked, this, &ListOfRelatedSpaceConstraintsForm::modifyConstraint);
-	connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::filter);
+	//connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::filter);
 
 	connect(moveSpaceConstraintUpPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::moveSpaceConstraintUp);
 	connect(moveSpaceConstraintDownPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::moveSpaceConstraintDown);
 
-	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::sortedChanged);
+	//connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::sortedChanged);
 	connect(activatePushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::activateConstraints);
 	connect(deactivatePushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::deactivateConstraints);
 
-	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::useColorsChanged);
+	//connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::useColorsChanged);
 
 	connect(commentsPushButton, &QPushButton::clicked, this, &ListOfRelatedSpaceConstraintsForm::constraintComments);
 
@@ -216,6 +216,10 @@ ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* pa
 	sortedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/list-sorted"), "false").toBool());
 
 	colorsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/use-colors"), "false").toBool());
+
+	connect(filterCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::filter);
+	connect(sortedCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::sortedChanged);
+	connect(colorsCheckBox, &QCheckBox::toggled, this, &ListOfRelatedSpaceConstraintsForm::useColorsChanged);
 	
 	filterChanged();
 }

@@ -80522,9 +80522,9 @@ double ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::fitness(Solution
 			placedActivities.append(ai);
 			
 	if(r.mode!=MORNINGS_AFTERNOONS)
-		std::stable_sort(placedActivities.begin(), placedActivities.end(), [&c, &r](const int a, const int b){return c.times[a]%r.nDaysPerWeek < c.times[b]%r.nDaysPerWeek;});
+		std::stable_sort(placedActivities.begin(), placedActivities.end(), [&c, &r](int a, int b){return c.times[a]%r.nDaysPerWeek < c.times[b]%r.nDaysPerWeek;});
 	else
-		std::stable_sort(placedActivities.begin(), placedActivities.end(), [&c, &r](const int a, const int b){return (c.times[a]%r.nDaysPerWeek)/2 < (c.times[b]%r.nDaysPerWeek)/2;});
+		std::stable_sort(placedActivities.begin(), placedActivities.end(), [&c, &r](int a, int b){return (c.times[a]%r.nDaysPerWeek)/2 < (c.times[b]%r.nDaysPerWeek)/2;});
 	
 	for(int i=0; i<placedActivities.count()-1; i++){
 		int ai1=placedActivities.at(i);
