@@ -53254,7 +53254,7 @@ G1 ستظهر مرتين في الجدول</translation>
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="9446"/>
+        <location filename="../src/engine/generate.cpp" line="9450"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>عند الوقت %1 سا %2 د %3 ثا، توصل FET إلى وضع %4 نشاط</translation>

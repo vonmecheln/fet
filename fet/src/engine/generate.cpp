@@ -8533,32 +8533,36 @@ inline bool Generate::getOptimumActivitiesToDisplace(int level, const QList<QLis
 		int _nConflActivities=gt.rules.nInternalActivities;
 		int _minIndexAct=gt.rules.nInternalActivities;
 		
-		for(const QList<int>& tl : std::as_const(activitiesList)){
-			int _mW=INF;
-			int _nW=0;
-			int _nCA=tl.count();
-			int _mIA=gt.rules.nInternalActivities;
+		for(int i=0; i<activitiesList.count(); i++){
+			if(canEmpty.at(i)){
+				const QList<int>& tl=activitiesList.at(i);
 
-			for(int ai2 : std::as_const(tl)){
-				_mW = std::min (_mW, triedRemovals(ai2,c.times[ai2]));
-				_nW+=triedRemovals(ai2,c.times[ai2]);
-				_mIA=std::min(_mIA, invPermutation[ai2]);
-			}
-			
-			if(_minWrong>_mW ||
-			 (_minWrong==_mW && _nWrong>_nW) ||
-			 (_minWrong==_mW && _nWrong==_nW && _nConflActivities>_nCA) ||
-			 (_minWrong==_mW && _nWrong==_nW && _nConflActivities==_nCA && _minIndexAct>_mIA)){
-				_minWrong=_mW;
-				_nWrong=_nW;
-				_nConflActivities=_nCA;
-				_minIndexAct=_mIA;
+				int _mW=INF;
+				int _nW=0;
+				int _nCA=tl.count();
+				int _mIA=gt.rules.nInternalActivities;
+
+				for(int ai2 : std::as_const(tl)){
+					_mW = std::min (_mW, triedRemovals(ai2,c.times[ai2]));
+					_nW+=triedRemovals(ai2,c.times[ai2]);
+					_mIA=std::min(_mIA, invPermutation[ai2]);
+				}
 				
-				optionsList.clear();
-				optionsList.append(tl);
-			}
-			else if(_minWrong==_mW && _nWrong==_nW && _nConflActivities==_nCA && _minIndexAct==_mIA){
-				optionsList.append(tl);
+				if(_minWrong>_mW ||
+				 (_minWrong==_mW && _nWrong>_nW) ||
+				 (_minWrong==_mW && _nWrong==_nW && _nConflActivities>_nCA) ||
+				 (_minWrong==_mW && _nWrong==_nW && _nConflActivities==_nCA && _minIndexAct>_mIA)){
+					_minWrong=_mW;
+					_nWrong=_nW;
+					_nConflActivities=_nCA;
+					_minIndexAct=_mIA;
+					
+					optionsList.clear();
+					optionsList.append(tl);
+				}
+				else if(_minWrong==_mW && _nWrong==_nW && _nConflActivities==_nCA && _minIndexAct==_mIA){
+					optionsList.append(tl);
+				}
 			}
 		}
 	}

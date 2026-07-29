@@ -52839,7 +52839,7 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="9446"/>
+        <location filename="../src/engine/generate.cpp" line="9450"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>Al cap de %1 h %2 m %3 s, FET ha arribat a col·locar %4 activitats</translation>

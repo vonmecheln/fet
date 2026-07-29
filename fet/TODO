@@ -11494,6 +11494,61 @@ I guess this has the advantage that there is a nice matrix for editing in a shee
 The disadvantage is that need to read the header carefully and it must fit more or less (depending on how i code it) to day and hour names in FET.
 So there might be problems like: What to do if there are more or less days/hours in fet?
 
+Steffen Schiedek:
+
+I would maybe propose more of a table style with each lesson of the day as a column and each day a row. Best solution could than be the weight of each lesson in this "table" - putting a weight of 0 for "teacher is available". So:
+
+teacher name, day, weight_1st_lesson, weight_2nd_lesson, ..., comments
+"Tom", "Monday", 100, 100, 0, 0, 90, 90, 0, 0, ..., comments
+"Tom", "Tuesday", 0, 0, 0, 0, 0, 0, 0, 0, ..., comments
+"Tom", "Wednesday", 100, 100, 100, 100, 100, 100, 100, 100, ..., comments
+"Tom", ...
+
+Advantages:
+The "table style" should be easy to view/understand/edit and allows for different weights throughout the week (which allows variations of "teacher is available", "teacher is truly 100% not available Monday 1st/2nd" and "teacher whishes rather not to be available Monday 5th/6th, but could be as it is only a wish").
+The number of columns is fixed and can be checked for matching the number of lessons a day before importing, the number of rows for a teacher can be checked for matching the number of days.
+Comments can be added/imported/exported, for example for writing the date the restriction was put - this way maybe a check could be made for existing not available times before/while importing (i.e. "do you really want to import times for "Tom"? There are times with comments "01.04.2026" in this file.")
+Disadvantages:
+Easy viewing of the individual weights of each lesson does not equal easy collecting into a restriction of the same weight for each teacher. :-(
+
+Would it maybe be possible to also export/import the other ("easier") restrictions of each teacher (max days per week, min days per week, a teacher does not work two consecutive days, ..., min resting hours for a teacher) as well? Those I also collect from my teachers before starting to build a timetable.
+That could/would just be
+teacher name, weight, name of restriction, value of restriction
+
+Liviu Lalescu:
+
+Note that teacher not available can have only 100% weight; I did this because the gaps are not counted, and I need to have something constant to not count gaps. If you want <100%, you need to add activities preferred time slots for this teacher.
+
+Steffen Schiedek:
+
+Uups - that I did oversee. But that could be the perfect import: If the weight is below 100%, than fill the "a set of activities has a set of preferred time slots" with only this teacher selected and the given weight?
+
+Liviu Lalescu:
+
+Exactly!
+ 
+Volker Dirr:
+
+Ah... Sorry. I was the guy who added the weight "wrong".
+
+hmm...
+Also a variant.
+The small problem might be if you write different comments in different rows. In that case I need to a) add a second constraint or b) merge the comments.
+
+Of course stuff like that could be done with every constraint, but it will be a lot of work to code it.
+
+Volker Dirr:
+
+About the use of the comments:
+I think the comment should just be added as comment.
+
+Asking/checking for special comments if it should be imported or not is, in my opinion, not good, since you also get problems with only want to modify 1st hour, but not 2nd hour.
+
+In my opinion before importing such a csv file, we can max. ask for 3 situations:
+a) keep old data and also add the new data from csv
+b) delete all old constraints of that type (and import the new data)
+c) only delete constraint of teachers that are in the csb file (and import all other data in the file and also keep the data of teachers that are not mention in the csv file)
+
 759---------------------------------------------------------
 From Syed (on forum):
 

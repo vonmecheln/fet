@@ -1,3 +1,7 @@
+ 7.9.3
+	- Rare crash bug fixed, when using constraints of type activities/teacher(s)/students (set)/room(s) occupy max sets of time slots from
+	selection, teacher(s)/students (set)/room(s) max activity tags per day/real day/week from set, or activities max activity tags from set
+	in selected time slots, if the maximum allowed number of sets of time slots or tags from set was above 2 (reported by Yush Yuen).
  7.9.2
 	- Added a new type of constraint, max days between each pair of consecutive activities (suggested by Yush Yuen).
 	- Minor improvements.

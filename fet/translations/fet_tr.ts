@@ -53170,7 +53170,7 @@ Bir alt grubun haftalık çok az çalışma saati varsa, bu ders etkinliklerini 
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="9446"/>
+        <location filename="../src/engine/generate.cpp" line="9450"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>%1 sa %2 dk %3 sn anında, FET %4 ders etkinliğini yerleştirdi</translation>

@@ -53175,7 +53175,7 @@ Avoir un sous-groupe avec trop peu d&apos;heures de travail par semaine signifie
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="9446"/>
+        <location filename="../src/engine/generate.cpp" line="9450"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>À %1 h %2 m %3 s ,FET a atteint %4 activités placées</translation>
