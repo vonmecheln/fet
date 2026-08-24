@@ -268,6 +268,7 @@ private:
 	
 	//the following functions write the CSS and HTML timetable files
 	static void writeIndexHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+	static void removeOldStylesheetCss(const QString& cssfilename);
 	static void writeStylesheetCss(QWidget* parent, const QString& cssfilename, const QString& saveTime, int placedActivities);
 	static void writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static void writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
@@ -329,6 +330,9 @@ private:
 	static void writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeTeachersStatisticsHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeStudentsStatisticsHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+
+	//the following function returns the QString of CSS
+	static void getCssString();
 	
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeXyzHtml functions
 	static QString writeActivityStudents(int htmlLevel, int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan,

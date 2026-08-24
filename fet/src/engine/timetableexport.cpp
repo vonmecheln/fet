@@ -73,6 +73,10 @@ File timetableexport.cpp
 //std::stable_sort and std::reverse
 #include <algorithm>
 
+extern bool TIMETABLE_ADD_CSS_IN_HEAD;
+//maybe TODO: make cssString local only?
+static QString cssString;
+
 static const bool removeOldFiles=false;
 
 //Represents the current status of the generation - running or stopped.
@@ -475,9 +479,14 @@ void TimetableExport::writeGenerationResults(QWidget* parent){
 	writeConflictsTxt(parent, s, sTime, na);
 	
 	//now write the solution in html files
-	if(TIMETABLE_HTML_LEVEL>=1){
+	getCssString();
+	if(TIMETABLE_HTML_LEVEL>=1 && !TIMETABLE_ADD_CSS_IN_HEAD){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
 		writeStylesheetCss(parent, s, sTime, na);
+	}
+	else{
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
+		removeOldStylesheetCss(s);
 	}
 	
 	//indexHtml
@@ -655,6 +664,7 @@ void TimetableExport::writeGenerationResults(QWidget* parent){
 	if(VERBOSE){
 		std::cout<<"Writing the generation results to disk completed successfully"<<std::endl;
 	}
+	cssString.clear();
 }
 
 void TimetableExport::writeHighestStageResults(QWidget* parent){
@@ -745,9 +755,14 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	writeConflictsTxt(parent, s, sTime, na);
 	
 	//now write the solution in html files
-	if(TIMETABLE_HTML_LEVEL>=1){
+	getCssString();
+	if(TIMETABLE_HTML_LEVEL>=1 && !TIMETABLE_ADD_CSS_IN_HEAD){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
 		writeStylesheetCss(parent, s, sTime, na);
+	}
+	else{
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
+		removeOldStylesheetCss(s);
 	}
 	
 	//indexHtml
@@ -924,6 +939,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	if(VERBOSE){
 		std::cout<<"Writing highest stage results to disk completed successfully"<<std::endl;
 	}
+	cssString.clear();
 }
 
 void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool before)
@@ -1351,10 +1367,16 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 	writeConflictsTxt(parent, s, sTime, na);
 	
 	//now write the solution in html files
-	if(TIMETABLE_HTML_LEVEL>=1){
+	getCssString();
+	if(TIMETABLE_HTML_LEVEL>=1 && !TIMETABLE_ADD_CSS_IN_HEAD){
 		s=finalDestDir+STYLESHEET_CSS;
 		writeStylesheetCss(parent, s, sTime, na);
 	}
+	else{
+		s=finalDestDir+STYLESHEET_CSS;
+		removeOldStylesheetCss(s);
+	}
+
 	//indexHtml
 	s=finalDestDir+INDEX_HTML;
 	writeIndexHtml(parent, s, sTime, na);
@@ -1528,6 +1550,7 @@ void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highes
 	if(VERBOSE){
 		std::cout<<"Writing the multiple generation results to disk completed successfully"<<std::endl;
 	}
+	cssString.clear();
 }
 
 void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int n, bool before){
@@ -1735,11 +1758,18 @@ void TimetableExport::writeGenerationResultsCommandLine(QWidget* parent, const Q
 	TimetableExport::writeConflictsTxt(parent, s, sTime, na);
 	
 	//now write the solution in html files
-	if(TIMETABLE_HTML_LEVEL>=1){
+	getCssString();
+	if(TIMETABLE_HTML_LEVEL>=1 && !TIMETABLE_ADD_CSS_IN_HEAD){
 		s=add+STYLESHEET_CSS;
 		s.prepend(outputDirectory);
 		TimetableExport::writeStylesheetCss(parent, s, sTime, na);
 	}
+	else{
+		s=add+STYLESHEET_CSS;
+		s.prepend(outputDirectory);
+		removeOldStylesheetCss(s);
+	}
+	
 	//indexHtml
 	s=add+INDEX_HTML;
 	s.prepend(outputDirectory);
@@ -1968,6 +1998,8 @@ void TimetableExport::writeGenerationResultsCommandLine(QWidget* parent, const Q
 	hashActivityColorBySubjectAndStudents.clear();
 	activeHashActivityColorBySubject.clear();
 	activeHashActivityColorBySubjectAndStudents.clear();*/
+
+	cssString.clear();
 }
 
 void TimetableExport::writeRandomSeedCommandLine(QWidget* parent, const MRG32k3a& rng, const QString& outputDirectory, bool before){ //outputDirectory contains trailing FILE_SEP
@@ -2689,10 +2721,254 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 	file.close();
 }
 
+// get the style sheet in CSS by Volker Dirr.
+void TimetableExport::getCssString(){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
+
+	cssString.clear();
+	
+	if(TIMETABLE_HTML_LEVEL==0)
+		return;
+
+	//get used students	//TODO: do it the same way in statistics.cpp
+	QSet<QString> usedStudents;
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		for(const QString& st : std::as_const(gt.rules.internalActivitiesList[i].studentsNames)){
+			if(!usedStudents.contains(st))
+				usedStudents<<st;
+		}
+	}
+
+	cssString+="/* "+protect3(TimetableExport::tr("To do a page-break only after every second timetable, delete \"page-break-before: always;\" in \"table.even_table\".",
+		"Please keep fields in quotes as they are, untranslated."))+" */\n";
+	cssString+="/* "+protect3(TimetableExport::tr("Delete \"page-break-before: always;\" in \"table.even_table\" and in \"table.odd_table\" to skip page-breaks.",
+		"Please keep fields in quotes as they are, untranslated."))+" */\n";
+	cssString+="/* "+protect3(TimetableExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
+		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display: none;\""))+" */\n\n";
+	cssString+="p.back {\n  margin-top: 4ex;\n  margin-bottom: 5ex;\n}\n\n";
+	cssString+="table {\n  text-align: center;\n  page-break-inside: avoid;\n}\n\n";
+	cssString+="table.odd_table {\n  page-break-before: always;\n}\n\n";
+	cssString+="table.even_table {\n  page-break-before: always;\n}\n\n";
+	cssString+="table.detailed {\n  margin-left: auto; margin-right: auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
+	cssString+="caption {\n\n}\n\n";
+	cssString+="span.institution {\n  font-weight: bold;\n}\n\n";
+	cssString+="span.name {\n\n}\n\n";
+	cssString+="span.comment {\n  /*font-style: italic;*/\n}\n\n";
+	cssString+="span.legend_title {\n  font-weight: bold;\n}\n\n";
+	cssString+="thead {\n\n}\n\n";
+
+	//workaround begin.
+	cssString+="/* "+protect3(TimetableExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
+	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase"))+" */\n\n";
+	//cssString+="tfoot {\n\n}\n\n";
+	cssString+="tr.foot {\n\n}\n\n";
+	//workaround end
+
+	cssString+="tbody {\n\n}\n\n";
+	cssString+="th {\n\n}\n\n";
+	cssString+="td {\n\n}\n\n";
+	cssString+="td.detailed {\n  border: 1px dashed silver;\n  border-bottom: 0;\n  border-top: 0;\n}\n\n";
+	if(TIMETABLE_HTML_LEVEL>=2){
+		cssString+="th.xAxis {\n/* width: 8em; */\n}\n\n";
+		cssString+="th.yAxis {\n  height: 8ex;\n}\n\n";
+	}
+
+	//By Liviu, with ideas from Volker
+	if(TIMETABLE_HTML_LEVEL==7){ //must be written before LEVEL 3, because LEVEL 3 should have higher priority
+		int cnt=0;
+		for(int i : std::as_const(activeHashActivityColorBySubject)){
+			Activity* act=&gt.rules.internalActivitiesList[i];
+
+			QString cssStringString=act->subjectName;
+
+			//similar to the coloring by Marco Vassura (start)
+			int r,g,b;
+			stringToColor(cssStringString, r, g, b);
+			cssString+= "td.c_"+QString::number(cnt+1)+" { /* Activity id: "+QString::number(act->id)+" (subject) */\n  ";
+			cssString+="background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");\n";
+			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+			if (brightness<127.5)
+				cssString+="  color: white;\n";
+			else
+				cssString+="  color: black;\n";
+			cssString+="}\n\n";
+			//similar to the coloring by Marco Vassura (end)
+			cnt++;
+		}
+		for(int i : std::as_const(activeHashActivityColorBySubjectAndStudents)){
+			Activity* act=&gt.rules.internalActivitiesList[i];
+
+			QString cssStringString=act->subjectName+" "+act->studentsNames.join(", ");
+
+			//similar to the coloring by Marco Vassura (start)
+			int r,g,b;
+			stringToColor(cssStringString, r, g, b);
+			cssString+= "td.c_"+QString::number(cnt+1)+" { /* Activity id: "+QString::number(act->id)+" (subject+students) */\n  ";
+			cssString+="background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");\n";
+			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+			if (brightness<127.5)
+				cssString+="  color: white;\n";
+			else
+				cssString+="  color: black;\n";
+			cssString+="}\n\n";
+			//similar to the coloring by Marco Vassura (end)
+			cnt++;
+		}
+	}
+
+//	if(TIMETABLE_HTML_LEVEL==7){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
+//		QHashIterator<QString, QString> i(hashColorStringIDsTimetable);
+//		while(i.hasNext()) {
+//			i.next();
+//			cssString+= "td.c_"+i.value()+" { /* "+i.key()+" */\n ";
+//
+//			//similar to the coloring by Marco Vassura (start)
+//			int r, g, b;
+//			stringToColor(i.key(), r, g, b);
+//			cssString+="background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");\n";
+//			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
+//			if (brightness<127.5)
+//				cssString+=" color: white;\n";
+//			else
+//				cssString+=" color: black;\n";
+//			//similar to the coloring by Marco Vassura (end)
+//			cssString+="}\n\n";
+//		}
+//	}
+	else if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
+		for(int i=0; i<gt.rules.nInternalSubjects; i++){
+			cssString+= "span.s_"+hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[i]->name)+" { /* subject "+protect3(gt.rules.internalSubjectsList[i]->name)+" */\n\n}\n\n";
+		}
+		for(int i=0; i<gt.rules.nInternalActivityTags; i++){
+			if(gt.rules.internalActivityTagsList[i]->printable){
+				cssString+= "span.at_"+hashActivityTagIDsTimetable.value(gt.rules.internalActivityTagsList[i]->name)+" { /* activity tag "+protect3(gt.rules.internalActivityTagsList[i]->name)+" */\n\n}\n\n";
+			}
+		}
+		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
+			StudentsYear* sty=gt.rules.augmentedYearsList[i];
+			if(usedStudents.contains(sty->name))
+				cssString+= "span.ss_"+hashStudentIDsTimetable.value(sty->name)+" { /* students set "+protect3(sty->name)+" */\n\n}\n\n";
+			for(int j=0; j<sty->groupsList.size(); j++){
+				StudentsGroup* stg=sty->groupsList[j];
+				if(usedStudents.contains(stg->name))
+					cssString+= "span.ss_"+hashStudentIDsTimetable.value(stg->name)+" { /* students set "+protect3(stg->name)+" */\n\n}\n\n";
+				for(int k=0; k<stg->subgroupsList.size(); k++){
+					StudentsSubgroup* sts=stg->subgroupsList[k];
+					if(usedStudents.contains(sts->name))
+						cssString+= "span.ss_"+hashStudentIDsTimetable.value(sts->name)+" { /* students set "+protect3(sts->name)+" */\n\n}\n\n";
+				}
+			}
+		}
+		for(int i=0; i<gt.rules.nInternalTeachers; i++){
+			cssString+= "span.t_"+hashTeacherIDsTimetable.value(gt.rules.internalTeachersList[i]->name)+" { /* teacher "+protect3(gt.rules.internalTeachersList[i]->name)+" */\n\n}\n\n";
+		}
+		for(int room=0; room<gt.rules.nInternalRooms; room++){
+			cssString+= "span.r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[room]->name)+" { /* room "+protect3(gt.rules.internalRoomsList[room]->name)+" */\n\n}\n\n";
+		}
+	}
+	if(TIMETABLE_HTML_LEVEL>=3){
+		cssString+="span.subject {\n\n}\n\n";
+		cssString+="span.activitytag {\n\n}\n\n";
+
+		cssString+="span.empty {\n  color: gray;\n}\n\n";
+		cssString+="td.empty {\n  border-color: silver;\n  border-right-style: none;\n  border-bottom-style: none;\n  border-left-style: dotted;\n  border-top-style: dotted;\n}\n\n";
+
+		cssString+="span.notAvailable {\n  color: gray;\n}\n\n";
+		cssString+="td.notAvailable {\n  border-color: silver;\n  border-right-style: none;\n  border-bottom-style: none;\n  border-left-style: dotted;\n  border-top-style: dotted;\n}\n\n";
+
+		cssString+="span.break {\n  color: gray;\n}\n\n";
+		cssString+="td.break {\n  border-color: silver;\n  border-right-style: none;\n  border-bottom-style: none;\n  border-left-style: dotted;\n  border-top-style: dotted;\n}\n\n";
+
+		cssString+="tr.studentsset, div.studentsset {\n\n}\n\n";
+		cssString+="tr.teacher, div.teacher {\n\n}\n\n";
+		cssString+="tr.room, div.room {\n\n}\n\n";
+		if(TIMETABLE_HTML_LEVEL!=7){
+			cssString+="tr.line0, div.line0 {\n  font-size: smaller;\n}\n\n";
+			cssString+="tr.line1, div.line1 {\n\n}\n\n";
+			cssString+="tr.line2, div.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
+			cssString+="tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
+		} else {
+			cssString+="tr.line0, div.line0 {\n  font-size: smaller;\n}\n\n";
+			cssString+="tr.line1, div.line1 {\n\n}\n\n";
+			cssString+="tr.line2, div.line2 {\n  font-size: smaller;\n}\n\n";
+			cssString+="tr.line3, div.line3 {\n  font-size: smaller;\n}\n\n";
+		}
+	}
+	if(TIMETABLE_HTML_LEVEL==6){
+		cssString+="/* "+protect3(TimetableExport::tr("Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used."))+" */\n\n";
+		for(int i=0; i<gt.rules.nInternalSubjects; i++){
+			cssString+= "td.s_"+hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[i]->name)+" { /* subject "+protect3(gt.rules.internalSubjectsList[i]->name)+" */\n\n}\n\n";
+		}
+		for(int i=0; i<gt.rules.nInternalActivityTags; i++){
+			if(gt.rules.internalActivityTagsList[i]->printable){
+				cssString+= "td.at_"+hashActivityTagIDsTimetable.value(gt.rules.internalActivityTagsList[i]->name)+" { /* activity tag "+protect3(gt.rules.internalActivityTagsList[i]->name)+" */\n\n}\n\n";
+			}
+		}
+		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
+			StudentsYear* sty=gt.rules.augmentedYearsList[i];
+			if(usedStudents.contains(sty->name))
+				cssString+= "td.ss_"+hashStudentIDsTimetable.value(sty->name)+" { /* students set "+protect3(sty->name)+" */\n\n}\n\n";
+			for(int j=0; j<sty->groupsList.size(); j++){
+				StudentsGroup* stg=sty->groupsList[j];
+				if(usedStudents.contains(stg->name))
+					cssString+= "td.ss_"+hashStudentIDsTimetable.value(stg->name)+" { /* students set "+protect3(stg->name)+" */\n\n}\n\n";
+				for(int k=0; k<stg->subgroupsList.size(); k++){
+					StudentsSubgroup* sts=stg->subgroupsList[k];
+					if(usedStudents.contains(sts->name))
+						cssString+= "td.ss_"+hashStudentIDsTimetable.value(sts->name)+" { /* students set "+protect3(sts->name)+" */\n\n}\n\n";
+				}
+			}
+		}
+		for(int i=0; i<gt.rules.nInternalTeachers; i++){
+			cssString+= "td.t_"+hashTeacherIDsTimetable.value(gt.rules.internalTeachersList[i]->name)+" { /* teacher "+protect3(gt.rules.internalTeachersList[i]->name)+" */\n\n}\n\n";
+		}
+
+		//not included yet
+		//for(int room=0; room<gt.rules.nInternalRooms; room++){
+		//	cssString+= "span.r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[room]->name)+" { /* room "+gt.rules.internalRoomsList[room]->name+" */\n\n}\n\n";
+		//}
+	}
+	if(PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS){
+		cssString+="/* "+protect3(TimetableExport::tr("Style the teachers' free periods"))+" */\n\n";
+		if(TIMETABLE_HTML_LEVEL>=2){
+			cssString+="div.DESCRIPTION {\n  text-align: left;\n  font-size: smaller;\n}\n\n";
+		}
+		if(TIMETABLE_HTML_LEVEL>=3){
+			cssString+="div.TEACHER_HAS_SINGLE_GAP {\n  color: black;\n}\n\n";
+			cssString+="div.TEACHER_HAS_BORDER_GAP {\n  color: gray;\n}\n\n";
+			cssString+="div.TEACHER_HAS_BIG_GAP {\n  color: silver;\n}\n\n";
+			cssString+="div.TEACHER_MUST_COME_EARLIER {\n  color: purple;\n}\n\n";
+			cssString+="div.TEACHER_MUST_COME_MUCH_EARLIER {\n  font-size: smaller;\n  color: fuchsia;\n}\n\n";
+			cssString+="div.TEACHER_MUST_STAY_LONGER {\n  color: teal;\n}\n\n";
+			cssString+="div.TEACHER_MUST_STAY_MUCH_LONGER {\n  font-size: smaller;\n  color: aqua;\n}\n\n";
+			cssString+="div.TEACHER_HAS_A_FREE_DAY {\n  font-size: smaller;\n  color: red;\n}\n\n";
+			cssString+="div.TEACHER_IS_NOT_AVAILABLE {\n  font-size: smaller;\n  color: olive;\n}\n\n";
+		}
+	}
+	
+	if(TIMETABLE_ADD_CSS_IN_HEAD){
+		if(cssString.endsWith("\n\n"))
+			cssString.chop(2);
+
+		cssString.replace('\n', QString('\n')+QString(6, ' '));
+		cssString.replace(QString('\n')+QString(6, ' ')+QString('\n'), QString("\n\n"));
+		cssString.prepend(QString(6, ' '));
+	}
+}
+
+void TimetableExport::removeOldStylesheetCss(const QString& cssfilename){
+	if(removeOldFiles)
+		if(QFile::exists(cssfilename))
+			QFile::remove(cssfilename);
+}
+
 // writing the style sheet in CSS format to a file by Volker Dirr.
 void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready);
+	assert(!cssString.isEmpty());
+	assert(TIMETABLE_HTML_LEVEL>0);
 	
 	bool _writeAtLeastATimetable = writeAtLeastATimetable();
 
@@ -2702,15 +2978,6 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 				QFile::remove(cssfilename);
 
 		return;
-	}
-
-	//get used students	//TODO: do it the same way in statistics.cpp
-	QSet<QString> usedStudents;
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		for(const QString& st : std::as_const(gt.rules.internalActivitiesList[i].studentsNames)){
-			if(!usedStudents.contains(st))
-				usedStudents<<st;
-		}
 	}
 
 	//Now we print the results to a CSS file
@@ -2743,211 +3010,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 		tos<<"   "<<protect3(TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities))<<"\n";
 	tos<<"   "<<protect3(TimetableExport::tr("Style sheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime))<<" */\n\n";
 
-	tos<<"/* "<<protect3(TimetableExport::tr("To do a page-break only after every second timetable, delete \"page-break-before: always;\" in \"table.even_table\".",
-		"Please keep fields in quotes as they are, untranslated."))<<" */\n";
-	tos<<"/* "<<protect3(TimetableExport::tr("Delete \"page-break-before: always;\" in \"table.even_table\" and in \"table.odd_table\" to skip page-breaks.",
-		"Please keep fields in quotes as they are, untranslated."))<<" */\n";
-	tos<<"/* "<<protect3(TimetableExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
-		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display: none;\""))<<" */\n\n";
-	tos<<"p.back {\n  margin-top: 4ex;\n  margin-bottom: 5ex;\n}\n\n";
-	tos<<"table {\n  text-align: center;\n  page-break-inside: avoid;\n}\n\n";
-	tos<<"table.odd_table {\n  page-break-before: always;\n}\n\n";
-	tos<<"table.even_table {\n  page-break-before: always;\n}\n\n";
-	tos<<"table.detailed {\n  margin-left: auto; margin-right: auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
-	tos<<"caption {\n\n}\n\n";
-	tos<<"span.institution {\n  font-weight: bold;\n}\n\n";
-	tos<<"span.name {\n\n}\n\n";
-	tos<<"span.comment {\n  /*font-style: italic;*/\n}\n\n";
-	tos<<"span.legend_title {\n  font-weight: bold;\n}\n\n";
-	tos<<"thead {\n\n}\n\n";
-	
-	//workaround begin.
-	tos<<"/* "<<protect3(TimetableExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
-	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase"))<<" */\n\n";
-	//tos<<"tfoot {\n\n}\n\n";
-	tos<<"tr.foot {\n\n}\n\n";
-	//workaround end
-
-	tos<<"tbody {\n\n}\n\n";
-	tos<<"th {\n\n}\n\n";
-	tos<<"td {\n\n}\n\n";
-	tos<<"td.detailed {\n  border: 1px dashed silver;\n  border-bottom: 0;\n  border-top: 0;\n}\n\n";
-	if(TIMETABLE_HTML_LEVEL>=2){
-		tos<<"th.xAxis {\n/* width: 8em; */\n}\n\n";
-		tos<<"th.yAxis {\n  height: 8ex;\n}\n\n";
-	}
-	
-	//By Liviu, with ideas from Volker
-	if(TIMETABLE_HTML_LEVEL==7){ //must be written before LEVEL 3, because LEVEL 3 should have higher priority
-		int cnt=0;
-		for(int i : std::as_const(activeHashActivityColorBySubject)){
-			Activity* act=&gt.rules.internalActivitiesList[i];
-			
-			QString tmpString=act->subjectName;
-			
-			//similar to the coloring by Marco Vassura (start)
-			int r,g,b;
-			stringToColor(tmpString, r, g, b);
-			tos << "td.c_"<<QString::number(cnt+1)<<" { /* Activity id: "<<QString::number(act->id)<<" (subject) */\n ";
-			tos<<"background-color: rgb("<<QString::number(r)<<", "<<QString::number(g)<<", "<<QString::number(b)<<");\n";
-			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
-			if (brightness<127.5)
-				tos<<" color: white;\n";
-			else
-				tos<<" color: black;\n";
-			tos<<"}\n\n";
-			//similar to the coloring by Marco Vassura (end)
-			cnt++;
-		}
-		for(int i : std::as_const(activeHashActivityColorBySubjectAndStudents)){
-			Activity* act=&gt.rules.internalActivitiesList[i];
-			
-			QString tmpString=act->subjectName+" "+act->studentsNames.join(", ");
-			
-			//similar to the coloring by Marco Vassura (start)
-			int r,g,b;
-			stringToColor(tmpString, r, g, b);
-			tos << "td.c_"<<QString::number(cnt+1)<<" { /* Activity id: "<<QString::number(act->id)<<" (subject+students) */\n ";
-			tos<<"background-color: rgb("<<QString::number(r)<<", "<<QString::number(g)<<", "<<QString::number(b)<<");\n";
-			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
-			if (brightness<127.5)
-				tos<<" color: white;\n";
-			else
-				tos<<" color: black;\n";
-			tos<<"}\n\n";
-			//similar to the coloring by Marco Vassura (end)
-			cnt++;
-		}
-	}
-//	if(TIMETABLE_HTML_LEVEL==7){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
-//		QHashIterator<QString, QString> i(hashColorStringIDsTimetable);
-//		while(i.hasNext()) {
-//			i.next();
-//			tos << "td.c_"<<i.value()<<" { /* "<<i.key()<<" */\n ";
-//			
-//			//similar to the coloring by Marco Vassura (start)
-//			int r, g, b;
-//			stringToColor(i.key(), r, g, b);
-//			tos<<"background-color: rgb("<<QString::number(r)<<", "<<QString::number(g)<<", "<<QString::number(b)<<");\n";
-//			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
-//			if (brightness<127.5)
-//				tos<<" color: white;\n";
-//			else
-//				tos<<" color: black;\n";
-//			//similar to the coloring by Marco Vassura (end)
-//			tos<<"}\n\n";
-//		}
-//	}
-	else if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
-		for(int i=0; i<gt.rules.nInternalSubjects; i++){
-			tos << "span.s_"<<hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[i]->name)<<" { /* subject "<<protect3(gt.rules.internalSubjectsList[i]->name)<<" */\n\n}\n\n";
-		}
-		for(int i=0; i<gt.rules.nInternalActivityTags; i++){
-			if(gt.rules.internalActivityTagsList[i]->printable){
-				tos << "span.at_"<<hashActivityTagIDsTimetable.value(gt.rules.internalActivityTagsList[i]->name)<<" { /* activity tag "<<protect3(gt.rules.internalActivityTagsList[i]->name)<<" */\n\n}\n\n";
-			}
-		}
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			if(usedStudents.contains(sty->name))
-				tos << "span.ss_"<<hashStudentIDsTimetable.value(sty->name)<<" { /* students set "<<protect3(sty->name)<<" */\n\n}\n\n";
-			for(int j=0; j<sty->groupsList.size(); j++){
-				StudentsGroup* stg=sty->groupsList[j];
-				if(usedStudents.contains(stg->name))
-					tos << "span.ss_"<<hashStudentIDsTimetable.value(stg->name)<<" { /* students set "<<protect3(stg->name)<<" */\n\n}\n\n";
-				for(int k=0; k<stg->subgroupsList.size(); k++){
-					StudentsSubgroup* sts=stg->subgroupsList[k];
-					if(usedStudents.contains(sts->name))
-						tos << "span.ss_"<<hashStudentIDsTimetable.value(sts->name)<<" { /* students set "<<protect3(sts->name)<<" */\n\n}\n\n";
-				}
-			}
-		}
-		for(int i=0; i<gt.rules.nInternalTeachers; i++){
-			tos << "span.t_"<<hashTeacherIDsTimetable.value(gt.rules.internalTeachersList[i]->name)<<" { /* teacher "<<protect3(gt.rules.internalTeachersList[i]->name)<<" */\n\n}\n\n";
-		}
-		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			tos << "span.r_"<<hashRoomIDsTimetable.value(gt.rules.internalRoomsList[room]->name)<<" { /* room "<<protect3(gt.rules.internalRoomsList[room]->name)<<" */\n\n}\n\n";
-		}
-	}
-	if(TIMETABLE_HTML_LEVEL>=3){
-		tos<<"span.subject {\n\n}\n\n";
-		tos<<"span.activitytag {\n\n}\n\n";
-
-		tos<<"span.empty {\n  color: gray;\n}\n\n";
-		tos<<"td.empty {\n  border-color: silver;\n  border-right-style: none;\n  border-bottom-style: none;\n  border-left-style: dotted;\n  border-top-style: dotted;\n}\n\n";
-
-		tos<<"span.notAvailable {\n  color: gray;\n}\n\n";
-		tos<<"td.notAvailable {\n  border-color: silver;\n  border-right-style: none;\n  border-bottom-style: none;\n  border-left-style: dotted;\n  border-top-style: dotted;\n}\n\n";
-
-		tos<<"span.break {\n  color: gray;\n}\n\n";
-		tos<<"td.break {\n  border-color: silver;\n  border-right-style: none;\n  border-bottom-style: none;\n  border-left-style: dotted;\n  border-top-style: dotted;\n}\n\n";
-
-		tos<<"tr.studentsset, div.studentsset {\n\n}\n\n";
-		tos<<"tr.teacher, div.teacher {\n\n}\n\n";
-		tos<<"tr.room, div.room {\n\n}\n\n";
-		if(TIMETABLE_HTML_LEVEL!=7){
-			tos<<"tr.line0, div.line0 {\n  font-size: smaller;\n}\n\n";
-			tos<<"tr.line1, div.line1 {\n\n}\n\n";
-			tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
-			tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
-		} else {
-			tos<<"tr.line0, div.line0 {\n  font-size: smaller;\n}\n\n";
-			tos<<"tr.line1, div.line1 {\n\n}\n\n";
-			tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n}\n\n";
-			tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n}\n\n";
-		}
-	}
-	if(TIMETABLE_HTML_LEVEL==6){
-		tos<<"/* "<<protect3(TimetableExport::tr("Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used."))<<" */\n\n";
-		for(int i=0; i<gt.rules.nInternalSubjects; i++){
-			tos << "td.s_"<<hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[i]->name)<<" { /* subject "<<protect3(gt.rules.internalSubjectsList[i]->name)<<" */\n\n}\n\n";
-		}
-		for(int i=0; i<gt.rules.nInternalActivityTags; i++){
-			if(gt.rules.internalActivityTagsList[i]->printable){
-				tos << "td.at_"<<hashActivityTagIDsTimetable.value(gt.rules.internalActivityTagsList[i]->name)<<" { /* activity tag "<<protect3(gt.rules.internalActivityTagsList[i]->name)<<" */\n\n}\n\n";
-			}
-		}
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			if(usedStudents.contains(sty->name))
-				tos << "td.ss_"<<hashStudentIDsTimetable.value(sty->name)<<" { /* students set "<<protect3(sty->name)<<" */\n\n}\n\n";
-			for(int j=0; j<sty->groupsList.size(); j++){
-				StudentsGroup* stg=sty->groupsList[j];
-				if(usedStudents.contains(stg->name))
-					tos << "td.ss_"<<hashStudentIDsTimetable.value(stg->name)<<" { /* students set "<<protect3(stg->name)<<" */\n\n}\n\n";
-				for(int k=0; k<stg->subgroupsList.size(); k++){
-					StudentsSubgroup* sts=stg->subgroupsList[k];
-					if(usedStudents.contains(sts->name))
-						tos << "td.ss_"<<hashStudentIDsTimetable.value(sts->name)<<" { /* students set "<<protect3(sts->name)<<" */\n\n}\n\n";
-				}
-			}
-		}
-		for(int i=0; i<gt.rules.nInternalTeachers; i++){
-			tos << "td.t_"<<hashTeacherIDsTimetable.value(gt.rules.internalTeachersList[i]->name)<<" { /* teacher "<<protect3(gt.rules.internalTeachersList[i]->name)<<" */\n\n}\n\n";
-		}
-
-		//not included yet
-		//for(int room=0; room<gt.rules.nInternalRooms; room++){
-		//	tos << "span.r_"<<hashRoomIDsTimetable.value(gt.rules.internalRoomsList[room]->name)<<" { /* room "<<gt.rules.internalRoomsList[room]->name<<" */\n\n}\n\n";
-		//}
-	}
-	if(PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS){
-		tos<<"/* "<<protect3(TimetableExport::tr("Style the teachers' free periods"))<<" */\n\n";
-		if(TIMETABLE_HTML_LEVEL>=2){
-			tos<<"div.DESCRIPTION {\n  text-align: left;\n  font-size: smaller;\n}\n\n";
-		}
-		if(TIMETABLE_HTML_LEVEL>=3){
-			tos<<"div.TEACHER_HAS_SINGLE_GAP {\n  color: black;\n}\n\n";
-			tos<<"div.TEACHER_HAS_BORDER_GAP {\n  color: gray;\n}\n\n";
-			tos<<"div.TEACHER_HAS_BIG_GAP {\n  color: silver;\n}\n\n";
-			tos<<"div.TEACHER_MUST_COME_EARLIER {\n  color: purple;\n}\n\n";
-			tos<<"div.TEACHER_MUST_COME_MUCH_EARLIER {\n  font-size: smaller;\n  color: fuchsia;\n}\n\n";
-			tos<<"div.TEACHER_MUST_STAY_LONGER {\n  color: teal;\n}\n\n";
-			tos<<"div.TEACHER_MUST_STAY_MUCH_LONGER {\n  font-size: smaller;\n  color: aqua;\n}\n\n";
-			tos<<"div.TEACHER_HAS_A_FREE_DAY {\n  font-size: smaller;\n  color: red;\n}\n\n";
-			tos<<"div.TEACHER_IS_NOT_AVAILABLE {\n  font-size: smaller;\n  color: olive;\n}\n\n";
-		}
-	}
+	tos<<cssString;
 	tos<<"/* "<<protect3(TimetableExport::tr("End of file."))<<" */\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -6706,17 +6769,24 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 	tmp+="    <title>"+protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))+"</title>\n";
 	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
-		
-		if(cssfilename.right(4)==".fet")
-			cssfilename=cssfilename.left(cssfilename.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
-		
-		cssfilename+="_"+STYLESHEET_CSS;
-		if(INPUT_FILENAME_XML=="")
-			cssfilename=STYLESHEET_CSS;
-		tmp+="    <link rel=\"stylesheet\" media=\"all\" href=\""+cssfilename+"\" type=\"text/css\" />\n";
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+			
+			if(cssfilename.right(4)==".fet")
+				cssfilename=cssfilename.left(cssfilename.length()-4);
+			//else if(INPUT_FILENAME_XML!="")
+			//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+			
+			cssfilename+="_"+STYLESHEET_CSS;
+			if(INPUT_FILENAME_XML=="")
+				cssfilename=STYLESHEET_CSS;
+			tmp+="    <link rel=\"stylesheet\" media=\"all\" href=\""+cssfilename+"\" type=\"text/css\" />\n";
+		}
+		else{
+			tmp+="    <style>\n";
+			tmp+=cssString+"\n";
+			tmp+="    </style>\n";
+		}
 	}
 	if(java){
 		if(TIMETABLE_HTML_LEVEL>=5 && TIMETABLE_HTML_LEVEL!=7){  // the following JavaScript code is pretty similar to an example of Les Richardson

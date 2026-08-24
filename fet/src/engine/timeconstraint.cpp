@@ -20297,8 +20297,8 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 	if(this->p_nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -20865,8 +20865,8 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 	if(this->p_nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -21785,8 +21785,8 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -22343,8 +22343,8 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -27615,8 +27615,8 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(QWidget* paren
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -28174,8 +28174,8 @@ bool ConstraintActivitiesEndTeachersDay::computeInternalStructure(QWidget* paren
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -67038,8 +67038,8 @@ bool ConstraintActivitiesBeginStudentsDay::computeInternalStructure(QWidget* par
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -67597,8 +67597,8 @@ bool ConstraintActivitiesBeginTeachersDay::computeInternalStructure(QWidget* par
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -78677,8 +78677,8 @@ bool ConstraintActivitiesBeginOrEndStudentsDay::computeInternalStructure(QWidget
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -79258,8 +79258,8 @@ bool ConstraintActivitiesBeginOrEndTeachersDay::computeInternalStructure(QWidget
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (refers to no activities). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET - useless constraint", "The title of a dialog which reports a useless constraint"),
+			tr("The following constraint does not affect any activity (it is useless). Please modify, deactivate, or remove it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }

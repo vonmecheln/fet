@@ -1135,6 +1135,8 @@ public Q_SLOTS:
 	
 	void languageAction_triggered();
 
+	void settingsIncludeCssInHtmlAction_toggled();
+
 	void settingsTimetablesUseSpanAction_toggled();
 	
 	void settingsDivideTimetablesByDaysAction_toggled();

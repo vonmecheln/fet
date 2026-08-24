@@ -329,6 +329,8 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 		TIMETABLE_HTML_LEVEL=2;
 	}
 
+	TIMETABLE_ADD_CSS_IN_HEAD=settings.value("embed-css-in-html-head", "false").toBool();
+
 	TIMETABLE_HTML_USE_SPAN=settings.value("html-use-span", "true").toBool();
 
 	TIMETABLES_SUBGROUPS_SORTED=settings.value("timetables-subgroups-sorted", "false").toBool();
@@ -1162,6 +1164,8 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("overwrite-single-generation-files", OVERWRITE_SINGLE_GENERATION_FILES);
 
 	settings.setValue("html-level", TIMETABLE_HTML_LEVEL);
+
+	settings.setValue("embed-css-in-html-head", TIMETABLE_ADD_CSS_IN_HEAD);
 
 	settings.setValue("html-use-span", TIMETABLE_HTML_USE_SPAN);
 

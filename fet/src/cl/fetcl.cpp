@@ -243,6 +243,10 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tLEVEL is an integer from 0 to 7 and represents the detail level for the generated HTML timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
 		"\n"
+		"\t--embedcssinhtmlhead=WCHH\n"
+		"\t\tWCHH is either true or false and represents whether you want to embed the CSS code in the head of each of the resulted HTML files, instead of writing "
+		"a separate unique CSS file (default false).\n"
+		"\n"
 		"\t--htmlusespan=US\n"
 		"\t\tUS is either true or false and represents if you want the timetables to use span for the activities with duration greater than 1 (default true).\n"
 		"\n"
@@ -1226,6 +1230,8 @@ int main(int argc, char **argv)
 		
 		TIMETABLE_HTML_LEVEL=2;
 		
+		TIMETABLE_ADD_CSS_IN_HEAD=false;
+		
 		TIMETABLE_HTML_USE_SPAN=true;
 		
 		TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=true;
@@ -1976,6 +1982,10 @@ int main(int argc, char **argv)
 				TIMETABLE_HTML_LEVEL=s.right(s.length()-21).toInt();
 			else if(s.left(12)=="--htmllevel=")
 				TIMETABLE_HTML_LEVEL=s.right(s.length()-12).toInt();
+			else if(s.left(21)=="--embedcssinhtmlhead="){
+				if(s.right(4)=="true")
+					TIMETABLE_ADD_CSS_IN_HEAD=true;
+			}
 			else if(s.left(14)=="--htmlusespan="){
 				if(s.right(5)=="false")
 					TIMETABLE_HTML_USE_SPAN=false;

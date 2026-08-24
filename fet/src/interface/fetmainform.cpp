@@ -1485,6 +1485,9 @@ FetMainForm::FetMainForm()
 	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 	///////
 
+	settingsIncludeCssInHtmlAction->setCheckable(true);
+	settingsIncludeCssInHtmlAction->setChecked(TIMETABLE_ADD_CSS_IN_HEAD);
+
 	settingsTimetablesUseSpanAction->setCheckable(true);
 	settingsTimetablesUseSpanAction->setChecked(TIMETABLE_HTML_USE_SPAN);
 	
@@ -1756,6 +1759,8 @@ FetMainForm::FetMainForm()
 	connect(settingsConfirmSaveTimetableAction, &QAction::toggled, this, &FetMainForm::settingsConfirmSaveTimetableAction_toggled);
 	connect(settingsConfirmActivateDeactivateActivitiesConstraintsAction, &QAction::toggled, this, &FetMainForm::settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled);
 	//////
+
+	connect(settingsIncludeCssInHtmlAction, &QAction::toggled, this, &FetMainForm::settingsIncludeCssInHtmlAction_toggled);
 
 	connect(settingsTimetablesUseSpanAction, &QAction::toggled, this, &FetMainForm::settingsTimetablesUseSpanAction_toggled);
 
@@ -5650,6 +5655,11 @@ void FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled()
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settingsShowToolTipsForConstraintsWithTablesAction->isChecked();
 }
 
+void FetMainForm::settingsIncludeCssInHtmlAction_toggled()
+{
+	TIMETABLE_ADD_CSS_IN_HEAD=settingsIncludeCssInHtmlAction->isChecked();
+}
+
 void FetMainForm::settingsTimetablesUseSpanAction_toggled()
 {
 	TIMETABLE_HTML_USE_SPAN=settingsTimetablesUseSpanAction->isChecked();
@@ -7256,6 +7266,19 @@ void FetMainForm::helpSettingsAction_triggered()
 	s+="(";
 	s+=tr("This feature was suggested by %1.", "%1 is the name of a person").arg("Benahmed Abdelkrim");
 	s+=")";
+	
+	s+="\n\n";
+	s+=tr("Embed CSS code in HTML files: if this option is disabled (the default behavior), the program will write a separate CSS file (if the HTML level is"
+		" at least 1, otherwise there will be no CSS file), and write in each HTML file only the location of this CSS file. If this option is enabled,"
+		" the program will write the contents of the CSS code in the head of each HTML file (again, if the HTML level is at least 1, otherwise"
+		" there will be no CSS code at all).");
+	s+="\n";
+	s+=tr("Advantages of disabling this setting: smaller file sizes, and you only need to modify one file to affect all the HTML files."
+		" Therefore, disabling is a better option when hosting the HTML files on a server.");
+	s+="\n";
+	s+=tr("Advantages of enabling this setting: importing the HTML files into other office tools will be better, as most of these external"
+		" tools do not read the extra CSS file; after enabling this setting, the CSS code will be embedded in the HTML files, so these"
+		" tools can also import the design/appearance of the FET HTML files.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET information"), s);
 }
@@ -15292,6 +15315,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("75")+QString(". ")+tr("Use span in timetables will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
+	s+=tr("76")+QString(". ")+tr("Embed CSS code in HTML files will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -15430,6 +15456,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	IMPORT_DIRECTORY=OUTPUT_DIR;
 	
 	TIMETABLE_HTML_LEVEL=2;
+	
+	settingsIncludeCssInHtmlAction->setChecked(false);
+	TIMETABLE_ADD_CSS_IN_HEAD=false;
 	
 	TIMETABLE_HTML_PRINT_SUBJECTS=true;
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=true;
@@ -17112,6 +17141,9 @@ void FetMainForm::restoreSettings()
 		QMessageBox::warning(nullptr, tr("FET warning"), tr("Incorrect HTML level read from the settings - making it %1.").arg(2));
 		TIMETABLE_HTML_LEVEL=2;
 	}
+	
+	TIMETABLE_ADD_CSS_IN_HEAD=settings.value("embed-css-in-html-head", "false").toBool();
+	
 	TIMETABLES_SUBGROUPS_SORTED=settings.value("timetables-subgroups-sorted", "false").toBool();
 
 	TIMETABLES_ACTIVITIES_SORTED_BY_TAGS=settings.value("timetables-activities-sorted-by-tags", "false").toBool();
@@ -18069,6 +18101,8 @@ void FetMainForm::restoreSettings()
 	//settingsConfirmActivateDeactivateActivitiesConstraintsAction->setCheckable(true);
 	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 	///////
+
+	settingsIncludeCssInHtmlAction->setChecked(TIMETABLE_ADD_CSS_IN_HEAD);
 
 	settingsTimetablesUseSpanAction->setChecked(TIMETABLE_HTML_USE_SPAN);
 	

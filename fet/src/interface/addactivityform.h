@@ -84,6 +84,10 @@ public Q_SLOTS:
 	void minDaysChanged();
 	
 	void halfCheckBoxToggled();
+	
+	void filterTeachers(const QString& text);
+	void filterStudents(const QString& text);
+	void filterActivityTags(const QString& text);
 };
 
 class SecondMinDaysDialog: public QDialog

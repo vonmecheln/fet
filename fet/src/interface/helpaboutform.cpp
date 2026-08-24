@@ -83,7 +83,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2026").arg("Liviu Lalescu, Volker Dirr");
 	about+=QString("<br /><br />");
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "July")).arg("2026");
+	 .arg(QCoreApplication::translate("MonthsNames", "August")).arg("2026");
 	about+=QString("<br /><br />");
 	about+=tr("Licensed under the GNU Affero General Public License version 3.");
 	about+=QString("<br /><br />");
@@ -385,9 +385,14 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("uz").arg(tr("Uzbek translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2, or visit FET forum - %3, "
+	translators+=tr("former translator: %1 (%2, or visit FET forum - %3, "
 	 "section about Uzbek translation, or contact forum user %4)", "%1 is the current translator, %2 is his or her email or web address, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Orzubek Eraliyev").arg("o.eraliyev AT gmail.com").arg("https://lalescu.ro/liviu/fet/forum/").arg("sarkor");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (assisted by %2) (%3)",
+	 "%1 is the name of the translator, %2 is the tool which this translator used - such as AI, %3 is his or her email or web address")
+	 .arg("Ulugbek Tulakov").arg("AI").arg("tulakov77 AT gmail.com");
+	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("vi").arg(tr("Vietnamese translation"));
@@ -1571,7 +1576,13 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Vinicius Rocha");
 	thanksTo+=QString("<br />");
+	thanksTo+=QString("poetasandaluces");
+	thanksTo+=QString("<br />");
 	thanksTo+=QString("Steffen Schiedek");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Ulugbek Tulakov");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("gerben");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

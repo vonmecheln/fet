@@ -1,3 +1,13 @@
+ 7.9.5
+	- Added simple filters of type 'Contains text' for the lists of teachers, students, and activity tags, in the Add activity dialog
+	(suggested by gerben).
+	- Added an option to embed the CSS code in the HTML files (suggested by Volker Dirr). In this way, some programs will import better the
+	HTML timetables.
+	- Minor interface bug fix (reported by poetasandaluces): for the constraints of type (sub)activities preferred starting times/time slots
+	and activities begin/end/begin or end teachers'/students' day which did not affect any activity, FET reported an error in the data file;
+	but this was simply a useless constraint (but FET still won't begin the generation in such a case, and you need to modify/deactivate/remove
+	these useless constraints - just that the information message is now clearer and not so alarming).
+	- Added a new Uzbek translation, by Ulugbek Tulakov, who is the new translator (he was assisted by artificial intelligence).
  7.9.4
 	- Crash bugs fixed, when using a filter for the related constraints in the timetable view dialogs (reported by Xardeuss).
 	- Improved the help for the constraints of type activities/teacher(s)/students (set)/room(s) occupy max sets of time slots from selection

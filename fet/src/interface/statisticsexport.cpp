@@ -78,6 +78,10 @@ const char INDEX_STATISTICS[]="index.html";
 QString DIRECTORY_STATISTICS;
 QString PREFIX_STATISTICS;
 
+extern bool TIMETABLE_ADD_CSS_IN_HEAD;
+//maybe TODO: make cssString2 local only?
+static QString cssString2;
+
 class StringListPair{
 public:
 	QStringList list1;
@@ -149,7 +153,30 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 
-	ok=exportStatisticsStylesheetCss(parent, sTime, statisticValues);
+	getCssString(statisticValues);
+
+	if(!TIMETABLE_ADD_CSS_IN_HEAD){
+		ok=exportStatisticsStylesheetCss(parent, sTime);
+	}
+	else{
+		QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
+
+		if(s2.right(4)==".fet")
+			s2=s2.left(s2.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+
+		QString cssfilename=PREFIX_STATISTICS+s2+bar+STYLESHEET_STATISTICS;
+
+		if(QFile::exists(cssfilename))
+			QFile::remove(cssfilename);
+	}
 	if(ok)
 		ok=exportStatisticsIndex(parent, sTime);
 	if(ok)
@@ -172,6 +199,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 		QMessageBox::warning(parent, tr("FET warning"),
 		 StatisticsExport::tr("Statistics export incomplete")+"\n");
 	}
+	cssString2.clear();
 }
 
 void StatisticsExport::computeHashForIDsStatistics(FetStatistics *statisticValues){		// by Volker Dirr
@@ -343,8 +371,121 @@ void StatisticsExport::getNamesAndHours(FetStatistics *statisticValues){
 	tmp.clear();
 }
 
-bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues){
+void StatisticsExport::getCssString(const FetStatistics& statisticValues){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
+	
+	cssString2.clear();
+
+	//get used students	//similar to timetableexport.cpp, so maybe use a function?
+	QSet<QString> usedStudents;
+	for(int i=0; i<gt.rules.activitiesList.size(); i++){
+		for(const QString& st : std::as_const(gt.rules.activitiesList[i]->studentsNames)){
+			if(gt.rules.activitiesList[i]->active){
+				if(!usedStudents.contains(st))
+					usedStudents<<st;
+			}
+		}
+	}
+
+	cssString2+="/* "+protect3(StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
+		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\""))+" */\n\n";
+	cssString2+="table {\n  text-align: center;\n}\n\n";
+	cssString2+="table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
+	cssString2+="caption {\n\n}\n\n";
+	cssString2+="thead {\n\n}\n\n";
+
+	//workaround begin.
+	cssString2+="/* "+protect3(StatisticsExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
+	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase"))+" */\n\n";
+	//cssString2+="tfoot {\n\n}\n\n";
+	cssString2+="tr.foot {\n\n}\n\n";
+	//workaround end
+	
+	cssString2+="tbody {\n\n}\n\n";
+	cssString2+="th {\n\n}\n\n";
+	cssString2+="td {\n\n}\n\n";
+	cssString2+="td.detailed {\n  border: 1px dashed silver;\n  border-bottom: 0;\n  border-top: 0;\n}\n\n";
+	if(TIMETABLE_HTML_LEVEL>=2){
+		cssString2+="th.xAxis {\n/*width: 8em; */\n}\n\n";
+		cssString2+="th.yAxis {\n  height: 8ex;\n}\n\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
+		for(int i=0; i<gt.rules.subjectsList.size(); i++){
+			cssString2+="span.s_"+statisticValues.hashSubjectIDsStatistics.value(gt.rules.subjectsList[i]->name)+" { /* subject "+protect3(gt.rules.subjectsList[i]->name)+" */\n\n}\n\n";
+		}
+		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+			for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+				if(gt.rules.activityTagsList[i]->printable)
+					cssString2+="span.at_"+statisticValues.hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)+" { /* activity tag "+protect3(gt.rules.activityTagsList[i]->name)+" */\n\n}\n\n";
+			}
+		}
+		for(int i=0; i<gt.rules.yearsList.size(); i++){
+			StudentsYear* sty=gt.rules.yearsList[i];
+			if(usedStudents.contains(sty->name))
+				cssString2+="span.ss_"+statisticValues.hashStudentIDsStatistics.value(sty->name)+" { /* students set "+protect3(sty->name)+" */\n\n}\n\n";
+			for(int j=0; j<sty->groupsList.size(); j++){
+				StudentsGroup* stg=sty->groupsList[j];
+				if(usedStudents.contains(stg->name))
+					cssString2+="span.ss_"+statisticValues.hashStudentIDsStatistics.value(stg->name)+" { /* students set "+protect3(stg->name)+" */\n\n}\n\n";
+				for(int k=0; k<stg->subgroupsList.size(); k++){
+					StudentsSubgroup* sts=stg->subgroupsList[k];
+					if(usedStudents.contains(sts->name))
+						cssString2+="span.ss_"+statisticValues.hashStudentIDsStatistics.value(sts->name)+" { /* students set "+protect3(sts->name)+" */\n\n}\n\n";
+				}
+			}
+		}
+		for(int i=0; i<gt.rules.teachersList.size(); i++){
+			cssString2+="span.t_"+statisticValues.hashTeacherIDsStatistics.value(gt.rules.teachersList[i]->name)+" { /* teacher "+protect3(gt.rules.teachersList[i]->name)+" */\n\n}\n\n";
+		}
+		//for(int room=0; room<gt.rules.roomsList.size(); room++){
+		//	cssString2+="span.r_"+statisticValues.hashRoomIDsStatistics.value(gt.rules.roomsList[room]->name)+" { /* room "+gt.rules.roomsList[room]->name+" */\n\n}\n\n";
+		//}
+	}
+	if(TIMETABLE_HTML_LEVEL>=3){
+		cssString2+="span.subject {\n\n}\n\n";
+		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+			bool havePrintableActivityTag=false;
+			for(ActivityTag* at : std::as_const(gt.rules.activityTagsList)){
+				if(at->printable){
+					havePrintableActivityTag=true;
+					break;
+				}
+			}
+			if(havePrintableActivityTag)
+				cssString2+="span.activitytag {\n\n}\n\n";
+		}
+		cssString2+="span.empty {\n  color: gray;\n}\n\n";
+		cssString2+="td.empty {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
+		//cssString2+="span.notAvailable {\n  color: gray;\n}\n\n";
+		//cssString2+="td.notAvailable {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
+		cssString2+="tr.studentsset {\n\n}\n\n";
+		cssString2+="tr.teacher {\n\n}\n\n";
+		//cssString2+="td.room, div.room {\n\n}\n\n";
+		cssString2+="tr.duration {\n\n}\n\n";
+		//cssString2+="tr.line0 {\n  font-size: smaller;\n}\n\n";
+		cssString2+="tr.line1 {\n\n}\n\n";
+		if(TIMETABLE_HTML_LEVEL!=7)
+			cssString2+="tr.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
+		else
+			cssString2+="tr.line2 {\n  font-size: smaller;\n}\n\n";
+		//cssString2+="tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
+	}
+	
+	if(TIMETABLE_ADD_CSS_IN_HEAD){
+		if(cssString2.endsWith("\n\n"))
+			cssString2.chop(2);
+
+		cssString2.replace('\n', QString('\n')+QString(6, ' '));
+		cssString2.replace(QString('\n')+QString(6, ' ')+QString('\n'), QString("\n\n"));
+		cssString2.prepend(QString(6, ' '));
+	}
+	
+	return;
+}
+
+bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QString& saveTime){
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
+	assert(!cssString2.isEmpty());
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
 	if(s2.right(4)==".fet")
@@ -357,7 +498,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 		bar="";
 	else
 		bar="_";
-	
+
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STYLESHEET_STATISTICS;
 
 	QFile file(htmlfilename);
@@ -378,17 +519,6 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 #endif
 	tos.setGenerateByteOrderMark(true);
 
-	//get used students	//similar to timetableexport.cpp, so maybe use a function?
-	QSet<QString> usedStudents;
-	for(int i=0; i<gt.rules.activitiesList.size(); i++){
-		for(const QString& st : std::as_const(gt.rules.activitiesList[i]->studentsNames)){
-			if(gt.rules.activitiesList[i]->active){
-				if(!usedStudents.contains(st))
-					usedStudents<<st;
-			}
-		}
-	}
-
 	tos<<"@charset \"UTF-8\";"<<"\n\n";
 
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
@@ -398,90 +528,8 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 	tos<<"\n";
 	tos<<"   "<<protect3(StatisticsExport::tr("Style sheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime))<<" */\n\n";
 
-	tos<<"/* "<<protect3(StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
-		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\""))<<" */\n\n";
-	tos<<"table {\n  text-align: center;\n}\n\n";
-	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
-	tos<<"caption {\n\n}\n\n";
-	tos<<"thead {\n\n}\n\n";
+	tos<<cssString2;
 
-	//workaround begin.
-	tos<<"/* "<<protect3(StatisticsExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
-	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase"))<<" */\n\n";
-	//tos<<"tfoot {\n\n}\n\n";
-	tos<<"tr.foot {\n\n}\n\n";
-	//workaround end
-	
-	tos<<"tbody {\n\n}\n\n";
-	tos<<"th {\n\n}\n\n";
-	tos<<"td {\n\n}\n\n";
-	tos<<"td.detailed {\n  border: 1px dashed silver;\n  border-bottom: 0;\n  border-top: 0;\n}\n\n";
-	if(TIMETABLE_HTML_LEVEL>=2){
-		tos<<"th.xAxis {\n/*width: 8em; */\n}\n\n";
-		tos<<"th.yAxis {\n  height: 8ex;\n}\n\n";
-	}
-	if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
-		for(int i=0; i<gt.rules.subjectsList.size(); i++){
-			tos << "span.s_"<<statisticValues.hashSubjectIDsStatistics.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<protect3(gt.rules.subjectsList[i]->name)<<" */\n\n}\n\n";
-		}
-		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
-			for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-				if(gt.rules.activityTagsList[i]->printable)
-					tos << "span.at_"<<statisticValues.hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<protect3(gt.rules.activityTagsList[i]->name)<<" */\n\n}\n\n";
-			}
-		}
-		for(int i=0; i<gt.rules.yearsList.size(); i++){
-			StudentsYear* sty=gt.rules.yearsList[i];
-			if(usedStudents.contains(sty->name))
-				tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(sty->name)<<" { /* students set "<<protect3(sty->name)<<" */\n\n}\n\n";
-			for(int j=0; j<sty->groupsList.size(); j++){
-				StudentsGroup* stg=sty->groupsList[j];
-				if(usedStudents.contains(stg->name))
-					tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(stg->name)<<" { /* students set "<<protect3(stg->name)<<" */\n\n}\n\n";
-				for(int k=0; k<stg->subgroupsList.size(); k++){
-					StudentsSubgroup* sts=stg->subgroupsList[k];
-					if(usedStudents.contains(sts->name))
-						tos << "span.ss_"<<statisticValues.hashStudentIDsStatistics.value(sts->name)<<" { /* students set "<<protect3(sts->name)<<" */\n\n}\n\n";
-				}
-			}
-		}
-		for(int i=0; i<gt.rules.teachersList.size(); i++){
-			tos << "span.t_"<<statisticValues.hashTeacherIDsStatistics.value(gt.rules.teachersList[i]->name)<<" { /* teacher "<<protect3(gt.rules.teachersList[i]->name)<<" */\n\n}\n\n";
-		}
-		//for(int room=0; room<gt.rules.roomsList.size(); room++){
-		//	tos << "span.r_"<<statisticValues.hashRoomIDsStatistics.value(gt.rules.roomsList[room]->name)<<" { /* room "<<gt.rules.roomsList[room]->name<<" */\n\n}\n\n";
-		//}
-	}
-	if(TIMETABLE_HTML_LEVEL>=3){
-		tos<<"span.subject {\n\n}\n\n";
-		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
-			bool havePrintableActivityTag=false;
-			for(ActivityTag* at : std::as_const(gt.rules.activityTagsList)){
-				if(at->printable){
-					havePrintableActivityTag=true;
-					break;
-				}
-			}
-			if(havePrintableActivityTag)
-				tos<<"span.activitytag {\n\n}\n\n";
-		}
-		tos<<"span.empty {\n  color: gray;\n}\n\n";
-		tos<<"td.empty {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
-		//tos<<"span.notAvailable {\n  color: gray;\n}\n\n";
-		//tos<<"td.notAvailable {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
-		tos<<"tr.studentsset {\n\n}\n\n";
-		tos<<"tr.teacher {\n\n}\n\n";
-		//tos<<"td.room, div.room {\n\n}\n\n";
-		tos<<"tr.duration {\n\n}\n\n";
-		//tos<<"tr.line0 {\n  font-size: smaller;\n}\n\n";
-		tos<<"tr.line1 {\n\n}\n\n";
-		if(TIMETABLE_HTML_LEVEL!=7)
-			tos<<"tr.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
-		else
-			tos<<"tr.line2 {\n  font-size: smaller;\n}\n\n";
-		//tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
-	}
-	
 	tos<<"/* "<<protect3(StatisticsExport::tr("End of file."))<<" */\n";
 
 	if(file.error()!=QFileDevice::NoError){
@@ -540,14 +588,21 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
 
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
@@ -660,15 +715,22 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
-	if(htmlLevel>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
-	
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
+
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(htmlLevel>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
@@ -998,15 +1060,22 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
-	if(htmlLevel>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
-	
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
+
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(htmlLevel>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
@@ -1334,15 +1403,22 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
-	if(htmlLevel>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
-	
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
+
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(htmlLevel>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
@@ -1672,15 +1748,22 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
-	if(htmlLevel>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
-	
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
+
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(htmlLevel>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
@@ -2010,15 +2093,22 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
-	if(htmlLevel>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
-	
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
+
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(htmlLevel>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
@@ -2346,15 +2436,22 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName).replace(QString("\n"), QString("<br />\n"))<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
-	if(htmlLevel>=1){
-		QString bar;
-		if(INPUT_FILENAME_XML=="")
-			bar="";
-		else
-			bar="_";
-	
-		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
-		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		if(!TIMETABLE_ADD_CSS_IN_HEAD){
+			QString bar;
+			if(INPUT_FILENAME_XML=="")
+				bar="";
+			else
+				bar="_";
+
+			QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
+			tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+		}
+		else{
+			tos<<"    <style>\n";
+			tos<<cssString2<<"\n";
+			tos<<"    </style>\n";
+		}
 	}
 	if(htmlLevel>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";

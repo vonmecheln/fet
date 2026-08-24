@@ -13972,3 +13972,7 @@ Sadly groups timetables have in most countries/schools more than a single activi
 So max teachers, rooms and subgroups is "possible" (even those can also have multiple activities in a single cell).
 
 I might code it, but it is a big task and I can't see big advantages for it. Out of my personal view it is even unneeded. It is easier and even more flexible to modify the html tables. You can simply add text before and after the tables, so that you can even print a nice letter for each timetable, even if cells contains more than a single activity.
+
+Note by Liviu Lalescu:
+
+On 1 August 2026, in FET-7.9.5, we added an option to include the CSS file in the beginning of each HTML timetable file. This will improve importing in some programs.

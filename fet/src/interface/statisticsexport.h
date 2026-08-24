@@ -82,7 +82,7 @@ public:
 	static void getNamesAndHours(FetStatistics* statisticValues);
 private:
 	//the following functions write the CSS and HTML statistics files
-	static bool exportStatisticsStylesheetCss(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues);
+	static bool exportStatisticsStylesheetCss(QWidget* parent, const QString& saveTime);
 	static bool exportStatisticsIndex(QWidget* parent, const QString& saveTime);
 	static bool exportStatisticsTeachersSubjects(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel);
 	static bool exportStatisticsSubjectsTeachers(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel);
@@ -90,6 +90,9 @@ private:
 	static bool exportStatisticsStudentsTeachers(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel);
 	static bool exportStatisticsSubjectsStudents(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel);
 	static bool exportStatisticsStudentsSubjects(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel);
+
+	//the following function returns the QString of CSS
+	static void getCssString(const FetStatistics& statisticValues);
 };
 
 #endif
