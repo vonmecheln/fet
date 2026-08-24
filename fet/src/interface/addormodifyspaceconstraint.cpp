@@ -6299,7 +6299,7 @@ void AddOrModifySpaceConstraint::addConstraintsClicked()
 		QMessageBox::information(dialog, tr("FET information"), tr("Added %1 space constraints.").arg(gt.rules.teachersList.count()));
 
 	if(gt.rules.teachersList.count()>0)
-		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:", "%1 is the number of constraints. After this text follows the detailed description of the added constraints")
+		gt.rules.addUndoPoint(tr("Added %1 space constraints, one for each teacher:", "%1 is the number of space constraints. After this text follows the detailed description of the added space constraints")
 		 .arg(gt.rules.teachersList.count())+"<br /><br />\n"+ctrs);
 }
 

@@ -22,7 +22,7 @@
 #include "utilities.h"
 
 #include <iostream>
-//for std::min
+//for std::min and std::stable_sort
 #include <algorithm>
 
 #include <Qt>
@@ -940,6 +940,8 @@ bool SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=true;
 
 bool SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
 
+bool SHOW_SEARCH_ON_MAIN_WINDOW=true;
+
 bool SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=false;
 
 bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
@@ -1214,6 +1216,14 @@ bool FetMainForm::saveHistory()
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
+
+	QSettings settings(COMPANY, PROGRAM);
+	
+	searchMenu=new QMenu;
+	//searchMenu->setStyleSheet("QMenu { max-height: 600px; }");
+	searchMenu->setTearOffEnabled(true);
+	
+	searchLineEdit->setText(settings.value(QString("FetMainForm/search-menu-text"), QString("")).toString());
 	
 	//As seen on https://stackoverflow.com/questions/48093102/how-does-qt-select-a-default-style
 	ORIGINAL_STYLE=QApplication::style()->objectName();
@@ -1257,8 +1267,6 @@ FetMainForm::FetMainForm()
 	this->statusBar()->addPermanentWidget(&modeLabel);
 	dataAvailable=false;
 	updateMode(true); //true means force
-	
-	QSettings settings(COMPANY, PROGRAM);
 	
 	USE_UNDO_REDO=settings.value(QString("enable-data-states-recording"), QString("true")).toBool();
 	UNDO_REDO_STEPS=settings.value(QString("number-of-data-steps-to-record"), QString("100")).toInt();
@@ -1349,6 +1357,9 @@ FetMainForm::FetMainForm()
 	//toolBox->setCurrentIndex(0);
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 	tabWidget->setCurrentIndex(MAIN_FORM_SHORTCUTS_TAB_POSITION);
+
+	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	
 	shortcutBasicMenu=new QMenu();
 	shortcutBasicMenu->addMenu(menuInstitution_information);
@@ -1453,6 +1464,9 @@ FetMainForm::FetMainForm()
 	
 	settingsShowShortcutsOnMainWindowAction->setCheckable(true);
 	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	
+	settingsShowSearchOnMainWindowAction->setCheckable(true);
+	settingsShowSearchOnMainWindowAction->setChecked(SHOW_SEARCH_ON_MAIN_WINDOW);
 	
 	settingsShowToolTipsForConstraintsWithTablesAction->setCheckable(true);
 	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
@@ -1750,6 +1764,7 @@ FetMainForm::FetMainForm()
 	connect(statisticsPrintAction, &QAction::triggered, this, &FetMainForm::statisticsPrintAction_triggered);
 	
 	connect(settingsShowShortcutsOnMainWindowAction, &QAction::toggled, this, &FetMainForm::settingsShowShortcutsOnMainWindowAction_toggled);
+	connect(settingsShowSearchOnMainWindowAction, &QAction::toggled, this, &FetMainForm::settingsShowSearchOnMainWindowAction_toggled);
 	connect(settingsFontIsUserSelectableAction, &QAction::toggled, this, &FetMainForm::settingsFontIsUserSelectableAction_toggled);
 	connect(settingsShowToolTipsForConstraintsWithTablesAction, &QAction::toggled, this, &FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled);
 	
@@ -1853,6 +1868,13 @@ FetMainForm::FetMainForm()
 	settingsPrintBreakSlotsAction_toggled();
 	
 	settingsPrintActivitiesWithSameStartingTimeAction_toggled();*/
+
+	//updateActionsList();
+	//updateSearchMenu();
+	
+	connect(searchLineEdit, &QLineEdit::textChanged, this, &FetMainForm::updateSearchMenu);
+	connect(searchedMenuButton, &QToolButton::clicked, this, &FetMainForm::showSearchMenu);
+	connect(searchLineEdit, &QLineEdit::returnPressed, this, &FetMainForm::showSearchMenu);
 }
 
 void FetMainForm::retranslateMode()
@@ -1981,6 +2003,9 @@ void FetMainForm::updateMode(bool forceUpdate)
 		dataTermsAction->setEnabled(false);
 
 	createMenusOfActionsForConstraints();
+
+	updateActionsList();
+	updateSearchMenu();
 }
 
 void FetMainForm::createActionsForConstraints()
@@ -5653,6 +5678,14 @@ void FetMainForm::settingsShowShortcutsOnMainWindowAction_toggled()
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 }
 
+void FetMainForm::settingsShowSearchOnMainWindowAction_toggled()
+{
+	SHOW_SEARCH_ON_MAIN_WINDOW=settingsShowSearchOnMainWindowAction->isChecked();
+
+	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+}
+
 void FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled()
 {
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settingsShowToolTipsForConstraintsWithTablesAction->isChecked();
@@ -5815,6 +5848,739 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 	}
 }
 
+void FetMainForm::updateActionsList()
+{
+	actionsList.clear();
+
+	if(menuMisc_time_constraints!=nullptr)
+		actionsList.append(menuMisc_time_constraints->actions());
+
+	if(menuA_teacher_1_time_constraints!=nullptr)
+		actionsList.append(menuA_teacher_1_time_constraints->actions());
+	if(menuA_teacher_2_time_constraints!=nullptr)
+		actionsList.append(menuA_teacher_2_time_constraints->actions());
+	if(menuA_teacher_3_time_constraints!=nullptr)
+		actionsList.append(menuA_teacher_3_time_constraints->actions());
+	if(menuA_teacher_4_time_constraints!=nullptr)
+		actionsList.append(menuA_teacher_4_time_constraints->actions());
+
+	if(menuAll_teachers_1_time_constraints!=nullptr)
+		actionsList.append(menuAll_teachers_1_time_constraints->actions());
+	if(menuAll_teachers_2_time_constraints!=nullptr)
+		actionsList.append(menuAll_teachers_2_time_constraints->actions());
+	if(menuAll_teachers_3_time_constraints!=nullptr)
+		actionsList.append(menuAll_teachers_3_time_constraints->actions());
+	if(menuAll_teachers_4_time_constraints!=nullptr)
+		actionsList.append(menuAll_teachers_4_time_constraints->actions());
+
+	if(menuA_students_set_1_time_constraints!=nullptr)
+		actionsList.append(menuA_students_set_1_time_constraints->actions());
+	if(menuA_students_set_2_time_constraints!=nullptr)
+		actionsList.append(menuA_students_set_2_time_constraints->actions());
+	if(menuA_students_set_3_time_constraints!=nullptr)
+		actionsList.append(menuA_students_set_3_time_constraints->actions());
+	if(menuA_students_set_4_time_constraints!=nullptr)
+		actionsList.append(menuA_students_set_4_time_constraints->actions());
+
+	if(menuAll_students_1_time_constraints!=nullptr)
+		actionsList.append(menuAll_students_1_time_constraints->actions());
+	if(menuAll_students_2_time_constraints!=nullptr)
+		actionsList.append(menuAll_students_2_time_constraints->actions());
+	if(menuAll_students_3_time_constraints!=nullptr)
+		actionsList.append(menuAll_students_3_time_constraints->actions());
+	if(menuAll_students_4_time_constraints!=nullptr)
+		actionsList.append(menuAll_students_4_time_constraints->actions());
+
+	if(menuActivities_preferred_times_time_constraints!=nullptr)
+		actionsList.append(menuActivities_preferred_times_time_constraints->actions());
+	if(menuActivities_begin_end_day_time_constraints!=nullptr)
+		actionsList.append(menuActivities_begin_end_day_time_constraints->actions());
+	if(menuActivities_others_1_time_constraints!=nullptr)
+		actionsList.append(menuActivities_others_1_time_constraints->actions());
+	if(menuActivities_others_2_time_constraints!=nullptr)
+		actionsList.append(menuActivities_others_2_time_constraints->actions());
+	if(menuActivities_others_3_time_constraints!=nullptr)
+		actionsList.append(menuActivities_others_3_time_constraints->actions());
+
+	if(menuMisc_space_constraints!=nullptr)
+		actionsList.append(menuMisc_space_constraints->actions());
+
+	if(menuA_room_space_constraints!=nullptr)
+		actionsList.append(menuA_room_space_constraints->actions());
+	if(menuA_building_space_constraints!=nullptr)
+		actionsList.append(menuA_building_space_constraints->actions());
+
+	if(menuAll_rooms_space_constraints!=nullptr)
+		actionsList.append(menuAll_rooms_space_constraints->actions());
+	if(menuAll_buildings_space_constraints!=nullptr)
+		actionsList.append(menuAll_buildings_space_constraints->actions());
+
+	if(menuActivities_space_constraints!=nullptr)
+		actionsList.append(menuActivities_space_constraints->actions());
+
+	if(menuSubjects_and_activity_tags_space_constraints!=nullptr)
+		actionsList.append(menuSubjects_and_activity_tags_space_constraints->actions());
+
+	if(menuA_students_set_space_constraints!=nullptr)
+		actionsList.append(menuA_students_set_space_constraints->actions());
+
+	if(menuAll_students_space_constraints!=nullptr)
+		actionsList.append(menuAll_students_space_constraints->actions());
+
+	if(menuA_teacher_space_constraints!=nullptr)
+		actionsList.append(menuA_teacher_space_constraints->actions());
+
+	if(menuAll_teachers_space_constraints!=nullptr)
+		actionsList.append(menuAll_teachers_space_constraints->actions());
+
+	/*
+	actionsList.append(dataTimeConstraintsActivitiesPreferredTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsActivitiesSameStartingTimeAction);
+
+	actionsList.append(dataTimeConstraintsTwoSetsOfActivitiesSameSectionsAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlotsAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+	actionsList.append(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+	actionsList.append(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsTeacherNotAvailableTimesAction);
+	actionsList.append(dataTimeConstraintsTeachersNotAvailableTimesAction);
+	actionsList.append(dataTimeConstraintsBasicCompulsoryTimeAction);
+	actionsList.append(dataTimeConstraintsStudentsSetNotAvailableTimesAction);
+	actionsList.append(dataTimeConstraintsStudentsNotAvailableTimesAction);
+	actionsList.append(dataTimeConstraintsBreakTimesAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxHoursDailyAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesMaxActivityTagsFromSetInSelectedTimeSlotsAction);
+
+	actionsList.append(dataTimeConstraintsTeacherMaxHoursPerTermAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxHoursPerTermAction);
+
+	actionsList.append(dataTimeConstraintsTeachersMaxHoursDailyInIntervalAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxHoursDailyInIntervalAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxHoursDailyInIntervalAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxHoursDailyInIntervalAction);
+
+	actionsList.append(dataSpaceConstraintsRoomPairOfMutuallyExclusiveTimeSlotsAction);
+	actionsList.append(dataSpaceConstraintsRoomPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+	actionsList.append(dataSpaceConstraintsRoomOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
+
+	actionsList.append(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveTimeSlotsAction);
+	actionsList.append(dataSpaceConstraintsRoomsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+	actionsList.append(dataSpaceConstraintsRoomsOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+	actionsList.append(dataTimeConstraintsTeacherPairOfMutuallyExclusiveTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsTeachersPairOfMutuallyExclusiveTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsStudentsPairOfMutuallyExclusiveTimeSlotsAction);
+
+	actionsList.append(dataTimeConstraintsTeacherPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsTeachersPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsStudentsPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+
+	actionsList.append(dataTimeConstraintsTeacherOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
+	actionsList.append(dataTimeConstraintsTeachersOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+	actionsList.append(dataTimeConstraintsStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelectionAction);
+	actionsList.append(dataTimeConstraintsStudentsOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesOccupyMaxSetsOfTimeSlotsFromSelectionAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsActivitiesPairOfMutuallyExclusiveSetsOfTimeSlotsAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesOverlapCompletelyOrDoNotOverlapAction);
+
+	actionsList.append(dataTimeConstraintsMaxDaysBetweenEachPairOfConsecutiveActivitiesAction);
+
+	actionsList.append(dataTimeConstraintsActivityPreferredStartingTimeAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsActivitiesNotOverlappingAction);
+	actionsList.append(dataTimeConstraintsActivityTagsNotOverlappingAction);
+	actionsList.append(dataTimeConstraintsMinDaysBetweenActivitiesAction);
+	actionsList.append(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction);
+	actionsList.append(dataSpaceConstraintsBasicCompulsorySpaceAction);
+	actionsList.append(dataSpaceConstraintsRoomNotAvailableTimesAction);
+
+	actionsList.append(dataSpaceConstraintsRoomMaxActivitiesPerTeacherAction);
+	actionsList.append(dataSpaceConstraintsRoomsMaxActivitiesPerTeacherAction);
+
+	actionsList.append(dataSpaceConstraintsBuildingMinOneActivityInEachAvailableTimeSlotAction);
+	actionsList.append(dataSpaceConstraintsBuildingsMinOneActivityInEachAvailableTimeSlotAction);
+
+	actionsList.append(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+	actionsList.append(dataSpaceConstraintsActivityPreferredRoomAction);
+	actionsList.append(dataTimeConstraintsActivitiesSameStartingHourAction);
+	actionsList.append(dataSpaceConstraintsActivityPreferredRoomsAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetHomeRoomAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
+	actionsList.append(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
+	actionsList.append(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
+	actionsList.append(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
+	//2021-12-15
+	actionsList.append(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction);
+	actionsList.append(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction);
+	actionsList.append(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction);
+	actionsList.append(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction);
+	//2024-03-16
+	actionsList.append(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDayAction);
+	//
+	actionsList.append(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsMinGapsBetweenActivityTagPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeacherMinGapsBetweenActivityTagPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMinGapsBetweenActivityTagPerRealDayAction);
+	//2024-05-20
+	actionsList.append(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoonAction);
+	//
+	actionsList.append(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoonAction);
+	//
+	actionsList.append(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+	actionsList.append(dataTimeConstraintsActivityEndsStudentsDayAction);
+	actionsList.append(dataTimeConstraintsActivityEndsTeachersDayAction);
+
+	actionsList.append(dataTimeConstraintsActivityBeginsStudentsDayAction);
+	actionsList.append(dataTimeConstraintsActivityBeginsTeachersDayAction);
+
+	actionsList.append(dataTimeConstraintsActivityBeginsOrEndsStudentsDayAction);
+	actionsList.append(dataTimeConstraintsActivityBeginsOrEndsTeachersDayAction);
+	actionsList.append(dataTimeConstraintsActivitiesBeginOrEndStudentsDayAction);
+	actionsList.append(dataTimeConstraintsActivitiesBeginOrEndTeachersDayAction);
+
+	actionsList.append(dataTimeConstraintsTeachersMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsTeacherMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxGapsPerDayAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxGapsPerDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxSpanPerDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxSpanPerDayAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxSpanPerDayAction);
+	actionsList.append(dataTimeConstraintsTeacherMinRestingHoursAction);
+	actionsList.append(dataTimeConstraintsTeachersMinRestingHoursAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinRestingHoursAction);
+	actionsList.append(dataTimeConstraintsStudentsMinRestingHoursAction);
+	actionsList.append(dataSpaceConstraintsSubjectPreferredRoomAction);
+	actionsList.append(dataSpaceConstraintsSubjectPreferredRoomsAction);
+	actionsList.append(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
+	actionsList.append(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
+	actionsList.append(dataSpaceConstraintsTeacherHomeRoomAction);
+	actionsList.append(dataSpaceConstraintsTeacherHomeRoomsAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+	actionsList.append(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+	actionsList.append(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+	actionsList.append(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+	actionsList.append(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+	actionsList.append(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+	actionsList.append(dataTimeConstraintsActivitiesSameStartingDayAction);
+	actionsList.append(dataTimeConstraintsTwoActivitiesOrderedAction);
+	actionsList.append(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
+	actionsList.append(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsActivitiesPreferredStartingTimesAction);
+	actionsList.append(dataTimeConstraintsActivityPreferredTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsActivityPreferredStartingTimesAction);
+	actionsList.append(dataTimeConstraintsMinGapsBetweenActivitiesAction);
+	actionsList.append(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
+	actionsList.append(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsActivitiesEndStudentsDayAction);
+	actionsList.append(dataTimeConstraintsActivitiesEndTeachersDayAction);
+
+	actionsList.append(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+	actionsList.append(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+
+	actionsList.append(dataTimeConstraintsTwoActivitiesGroupedAction);
+	actionsList.append(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+	actionsList.append(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+	actionsList.append(dataSpaceConstraintsActivityTagPreferredRoomAction);
+	actionsList.append(dataSpaceConstraintsActivityTagPreferredRoomsAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsThreeActivitiesGroupedAction);
+	actionsList.append(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+	actionsList.append(dataTimeConstraintsActivitiesMaxHourlySpanAction);
+	actionsList.append(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction);
+	actionsList.append(dataTimeConstraintsMaxTermsBetweenActivitiesAction);
+	actionsList.append(dataTimeConstraintsTeacherMinDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMinDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
+	actionsList.append(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxGapsPerDayAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxGapsPerDayAction);
+	actionsList.append(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction);
+	actionsList.append(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxDaysPerWeekAction);
+
+	actionsList.append(dataTimeConstraintsStudentsSetMaxSingleGapsInSelectedTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxSingleGapsInSelectedTimeSlotsAction);
+
+	actionsList.append(dataTimeConstraintsTeacherMaxSingleGapsInSelectedTimeSlotsAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxSingleGapsInSelectedTimeSlotsAction);
+
+	//mornings-afternoons
+	actionsList.append(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+
+	actionsList.append(dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction);
+
+	actionsList.append(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsMinHoursPerMorningAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinHoursPerMorningAction);
+	actionsList.append(dataTimeConstraintsTeachersMinHoursPerMorningAction);
+
+	//2022-09-10
+	actionsList.append(dataTimeConstraintsStudentsMinHoursPerAfternoonAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeachersMinHoursPerAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMinHoursPerAfternoonAction);
+
+	actionsList.append(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction);
+	actionsList.append(dataTimeConstraintsTeacherMinHoursPerMorningAction);
+	actionsList.append(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxSpanPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxSpanPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxSpanPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction);
+	actionsList.append(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMinRealDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMinRealDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMinMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMinMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxActivityTagsPerDayFromSetAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxActivityTagsPerDayFromSetAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxActivityTagsPerDayFromSetAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxActivityTagsPerDayFromSetAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxActivityTagsPerRealDayFromSetAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxActivityTagsPerRealDayFromSetAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxActivityTagsPerRealDayFromSetAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxActivityTagsPerRealDayFromSetAction);
+
+	actionsList.append(dataSpaceConstraintsRoomMaxActivityTagsPerDayFromSetAction);
+	actionsList.append(dataSpaceConstraintsRoomMaxActivityTagsPerRealDayFromSetAction);
+	actionsList.append(dataSpaceConstraintsRoomMaxActivityTagsPerWeekFromSetAction);
+
+	actionsList.append(dataSpaceConstraintsRoomsMaxActivityTagsPerDayFromSetAction);
+	actionsList.append(dataSpaceConstraintsRoomsMaxActivityTagsPerRealDayFromSetAction);
+	actionsList.append(dataSpaceConstraintsRoomsMaxActivityTagsPerWeekFromSetAction);
+
+	actionsList.append(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxGapsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMinMorningsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxGapsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxGapsPerRealDayAction);
+	actionsList.append(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction);
+	actionsList.append(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction);
+
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction);
+
+	actionsList.append(dataTimeConstraintsTeacherNoTwoConsecutiveDaysAction);
+	actionsList.append(dataTimeConstraintsTeachersNoTwoConsecutiveDaysAction);
+	
+	actionsList.append(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction);
+	actionsList.append(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction);
+	
+	actionsList.append(dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction);
+	actionsList.append(dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction);
+	
+	//block-planning
+	actionsList.append(dataTimeConstraintsMaxGapsBetweenActivitiesAction);
+	actionsList.append(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction);
+	
+	//terms
+	actionsList.append(dataTimeConstraintsActivitiesMaxInATermAction);
+	actionsList.append(dataTimeConstraintsActivitiesMinInATermAction);
+	actionsList.append(dataTimeConstraintsActivitiesOccupyMaxTermsAction);
+
+	//2024-02-09
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayInIntervalAction);
+
+	//2024-02-19
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxRoomChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxRoomChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxRoomChangesPerDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayInIntervalAction);
+	actionsList.append(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayInIntervalAction);
+	*/
+
+	///////
+	
+	actionsList.append(showWarningForSubgroupsWithTheSameActivitiesAction);
+	actionsList.append(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction);
+	actionsList.append(showWarningForMaxHoursDailyWithUnder100WeightAction);
+
+	actionsList.append(overwriteSingleGenerationFilesAction);
+
+	actionsList.append(checkForUpdatesAction);
+	actionsList.append(settingsShowSubgroupsInComboBoxesAction);
+	actionsList.append(settingsShowSubgroupsInActivityPlanningAction);
+	
+	actionsList.append(enableGroupActivitiesInInitialOrderAction);
+	actionsList.append(showWarningForGroupActivitiesInInitialOrderAction);
+
+	actionsList.append(settingsOptionalKeyboardShortcutsAction);
+
+	//2024-01-25
+	actionsList.append(settingsAutosaveAction);
+
+	actionsList.append(restoreDataStateAction);
+	actionsList.append(settingsHistoryMemoryAction);
+	actionsList.append(settingsHistoryDiskAction);
+	
+	actionsList.append(modeOfficialAction);
+	actionsList.append(modeMorningsAfternoonsAction);
+	actionsList.append(modeBlockPlanningAction);
+	actionsList.append(modeTermsAction);
+	
+	actionsList.append(dataTermsAction);
+
+	actionsList.append(fileNewAction);
+	actionsList.append(fileSaveAction);
+	actionsList.append(fileSaveAsAction);
+	actionsList.append(fileQuitAction);
+	actionsList.append(fileOpenAction);
+	//actionsList.append(fileClearRecentFilesListAction);
+
+	actionsList.append(fileImportCSVActivityTagsAction);
+	actionsList.append(fileImportCSVActivitiesAction);
+	actionsList.append(fileImportCSVRoomsBuildingsAction);
+	actionsList.append(fileImportCSVSubjectsAction);
+	actionsList.append(fileImportCSVTeachersAction);
+	actionsList.append(fileImportCSVYearsGroupsSubgroupsAction);
+	actionsList.append(fileExportCSVAction);
+	actionsList.append(fileImportCSVTeacherNotAvailableAction);
+	
+	actionsList.append(dataInstitutionNameAction);
+	actionsList.append(dataCommentsAction);
+	actionsList.append(dataDaysAction);
+	actionsList.append(dataHoursAction);
+	actionsList.append(dataTeachersAction);
+	actionsList.append(dataTeachersStatisticsAction);
+	actionsList.append(dataSubjectsAction);
+	actionsList.append(dataSubjectsStatisticsAction);
+	actionsList.append(dataActivityTagsAction);
+	actionsList.append(dataYearsAction);
+	actionsList.append(dataGroupsAction);
+	actionsList.append(dataSubgroupsAction);
+	actionsList.append(dataStudentsStatisticsAction);
+	actionsList.append(dataActivitiesRoomsStatisticsAction);
+	actionsList.append(dataTeachersSubjectsQualificationsStatisticsAction);
+	actionsList.append(dataHelpOnStatisticsAction);
+	
+	actionsList.append(helpSettingsAction);
+
+	actionsList.append(settingsFontAction);
+
+	actionsList.append(settingsStyleAndColorSchemeAction);
+
+	actionsList.append(timetablesToWriteOnDiskAction);
+	
+	actionsList.append(studentsComboBoxesStyleAction);
+	
+	actionsList.append(settingsCommandAfterFinishingAction);
+
+	actionsList.append(groupActivitiesInInitialOrderAction);
+	
+	actionsList.append(dataActivitiesAction);
+	actionsList.append(dataSubactivitiesAction);
+	actionsList.append(dataRoomsAction);
+	actionsList.append(dataBuildingsAction);
+	actionsList.append(dataAllTimeConstraintsAction);
+	actionsList.append(dataAllSpaceConstraintsAction);
+
+	actionsList.append(helpMoroccoAction);
+	actionsList.append(helpAlgeriaAction);
+	actionsList.append(helpExamsAlgeriaMoroccoAction);
+	actionsList.append(helpBlockPlanningAction);
+	actionsList.append(helpTermsAction);
+
+	actionsList.append(activityPlanningAction);
+	actionsList.append(spreadActivitiesAction);
+	actionsList.append(removeRedundantConstraintsAction);
+
+	//about
+	actionsList.append(helpAboutFETAction);
+	actionsList.append(helpAboutQtAction);
+	actionsList.append(helpAboutLibrariesAction);
+	//offline
+	actionsList.append(helpFAQAction);
+	actionsList.append(helpTipsAction);
+	actionsList.append(helpInstructionsAction);
+	//online
+	actionsList.append(helpHomepageAction);
+	actionsList.append(helpContentsAction);
+	actionsList.append(helpForumAction);
+	actionsList.append(helpAddressesAction);
+
+	actionsList.append(timetableGenerateAction);
+	actionsList.append(timetableViewStudentsDaysHorizontalAction);
+	actionsList.append(timetableViewStudentsDaysVerticalAction);
+	actionsList.append(timetableViewStudentsTimeHorizontalAction);
+	actionsList.append(timetableViewTeachersDaysHorizontalAction);
+	actionsList.append(timetableViewTeachersDaysVerticalAction);
+	actionsList.append(timetableViewTeachersTimeHorizontalAction);
+	actionsList.append(timetableViewRoomsDaysHorizontalAction);
+	actionsList.append(timetableViewRoomsDaysVerticalAction);
+	actionsList.append(timetableViewRoomsTimeHorizontalAction);
+	actionsList.append(timetableShowConflictsAction);
+	actionsList.append(timetablePrintAction);
+	actionsList.append(timetableGenerateMultipleAction);
+
+	actionsList.append(timetableLockAllActivitiesAction);
+	actionsList.append(timetableUnlockAllActivitiesAction);
+	actionsList.append(timetableLockActivitiesDaysAction);
+	actionsList.append(timetableUnlockActivitiesDaysAction);
+	actionsList.append(timetableLockActivitiesEndStudentsDayAction);
+	actionsList.append(timetableUnlockActivitiesEndStudentsDayAction);
+	actionsList.append(timetableLockActivitiesWithASpecifiedActivityTagAction);
+	actionsList.append(timetableUnlockActivitiesWithASpecifiedActivityTagAction);
+	///
+	actionsList.append(timetableLockActivitiesWithAdvancedFilterAction);
+	actionsList.append(timetableUnlockActivitiesWithAdvancedFilterAction);
+
+	actionsList.append(timetableSaveTimetableAsAction);
+
+	actionsList.append(timetableSaveFileOfASelectionOfDaysAction);
+
+	actionsList.append(randomSeedAction);
+	
+	actionsList.append(languageAction);
+	
+	actionsList.append(settingsRestoreDefaultsAction);
+	
+	actionsList.append(settingsTimetableHtmlLevelAction);
+	
+	actionsList.append(settingsDataToPrintInTimetablesAction);
+	
+	actionsList.append(selectOutputDirAction);
+	
+	actionsList.append(statisticsExportToDiskAction);
+	actionsList.append(statisticsPrintAction);
+	
+	actionsList.append(settingsShowShortcutsOnMainWindowAction);
+	actionsList.append(settingsShowSearchOnMainWindowAction);
+	actionsList.append(settingsFontIsUserSelectableAction);
+	actionsList.append(settingsShowToolTipsForConstraintsWithTablesAction);
+	
+	actionsList.append(settingsShowVirtualRoomsInTimetablesAction);
+
+	//////confirmations
+	actionsList.append(settingsConfirmActivityPlanningAction);
+	actionsList.append(settingsConfirmSpreadActivitiesAction);
+	actionsList.append(settingsConfirmRemoveRedundantAction);
+	actionsList.append(settingsConfirmSaveTimetableAction);
+	actionsList.append(settingsConfirmActivateDeactivateActivitiesConstraintsAction);
+	//////
+
+	actionsList.append(settingsIncludeCssInHtmlAction);
+
+	actionsList.append(settingsTimetablesUseSpanAction);
+
+	actionsList.append(settingsDivideTimetablesByDaysAction);
+	actionsList.append(settingsDuplicateVerticalNamesAction);
+	
+	actionsList.append(settingsOrderSubgroupsInTimetablesAction);
+
+	actionsList.append(settingsActivitiesOrderedByTagsInTimetablesAction);
+
+	actionsList.append(settingsPrintDetailedTimetablesAction);
+	actionsList.append(settingsPrintDetailedTeachersFreePeriodsTimetablesAction);
+	actionsList.append(settingsPrintNotAvailableSlotsAction);
+	actionsList.append(settingsPrintBreakSlotsAction);
+	
+	actionsList.append(settingsPrintActivitiesWithSameStartingTimeAction);
+	
+	actionsList.append(humanReadableTextFileAction);
+	actionsList.append(backupSettingsToFileAction);
+	actionsList.append(restoreSettingsFromFileAction);
+	
+	actionsList.append(menuView_students->menuAction());
+	actionsList.append(menuView_teachers->menuAction());
+	actionsList.append(menuView_rooms->menuAction());
+	
+	QList<QAction*> al2;
+	for(QAction* a : actionsList)
+		if(!a->isSeparator())
+			al2.append(a);
+	actionsList=al2;
+	
+	std::stable_sort(actionsList.begin(), actionsList.end(), [](const QAction* a, const QAction* b){return a->text().localeAwareCompare(b->text())<0;});
+}
+
+void FetMainForm::updateSearchMenu()
+{
+	const int maxCount=20;
+
+	if(searchMenu->isTearOffMenuVisible())
+		searchMenu->hideTearOffMenu();
+
+	searchMenu->clear();
+	
+	QStringList tsl=searchLineEdit->text().split(' ', Qt::SkipEmptyParts);
+	
+	QList<QAction*> filteredActionsList;
+	for(QAction* a : std::as_const(actionsList)){
+		bool filterOk=true;
+		for(const QString& s : tsl){
+			if(!a->text().contains(s, Qt::CaseInsensitive)){
+				filterOk=false;
+				break;
+			}
+		}
+		if(filterOk)
+			filteredActionsList.append(a);
+	}
+
+	if(filteredActionsList.count()<=maxCount){
+		for(QAction* a : std::as_const(filteredActionsList)){
+			searchMenu->addAction(a);
+		}
+	}
+	else{
+		QMenu* tm=nullptr;
+		for(int i=0; i<filteredActionsList.count(); i++){
+			if(i%maxCount==0){
+				tm=new QMenu(searchMenu);
+				tm->setTitle(QString::number(i/maxCount+1));
+				searchMenu->addMenu(tm);
+			}
+			QAction* a=filteredActionsList.at(i);
+			assert(tm!=nullptr);
+			tm->addAction(a);
+		}
+	}
+}
+
+void FetMainForm::showSearchMenu()
+{
+	searchMenu->popup(QCursor::pos());
+}
+
 FetMainForm::~FetMainForm()
 {
 	QSettings settings(COMPANY, PROGRAM);
@@ -5844,6 +6610,8 @@ FetMainForm::~FetMainForm()
 	settings.remove(QString("FetMainForm/recent-file"));
 	for(int i=0; i<recentFiles.count(); i++)
 		settings.setValue(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1), recentFiles.at(i));
+		
+	settings.setValue(QString("FetMainForm/search-menu-text"), searchLineEdit->text());
 
 	shortcutBasicMenu->clear();
 	delete shortcutBasicMenu;
@@ -5863,6 +6631,9 @@ FetMainForm::~FetMainForm()
 	
 	shortcutTimetableAdvancedMenu->clear();
 	delete shortcutTimetableAdvancedMenu;
+	
+	searchMenu->clear();
+	delete searchMenu;
 }
 
 void FetMainForm::fileQuitAction_triggered()
@@ -15588,6 +16359,9 @@ void FetMainForm::languageAction_triggered()
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
 
+	updateActionsList();
+	updateSearchMenu();
+
 	//QMessageBox::information(this, tr("FET information"), tr("Language %1 selected").arg( FET_LANGUAGE+" ("+languagesMap.value(FET_LANGUAGE)+")" )+"\n\n"+
 	// tr("Please exit and restart FET to activate language change"));
 }
@@ -15613,8 +16387,11 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("2")+QString(". ")+tr("Show shortcut buttons in main window will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("3")+QString(". ")+tr("In the shortcuts tab from the main window, the first section will be selected/shown", "Section refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, "
-		"Time, Space, Timetable (so it will select/show File tab).");
+	//s+=tr("3")+QString(". ")+tr("In the shortcuts tab from the main window, the first section will be selected/shown", "Section refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, "
+	//	"Time, Space, Timetable (so it will select/show File tab).");
+	//s+="\n";
+	
+	s+=tr("3")+QString(". ")+tr("Show search in menu in main window will be %1", "%1 is true or false. We can search for a text in all the menu items.").arg(tr("true"));
 	s+="\n";
 
 	s+=tr("4")+QString(". ")+tr("Check for updates at startup will be %1", "%1 is true or false").arg(tr("false"));
@@ -15911,6 +16688,14 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
 	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+
+	SHOW_SEARCH_ON_MAIN_WINDOW=true;
+	settingsShowSearchOnMainWindowAction->setChecked(SHOW_SEARCH_ON_MAIN_WINDOW);
+
+	searchLineEdit->setText(QString(""));
+
+	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 
 	tabWidget->setCurrentIndex(0);
 	
@@ -16827,6 +17612,9 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
+
+	updateActionsList();
+	updateSearchMenu();
 }
 
 void FetMainForm::settingsTimetableHtmlLevelAction_triggered()
@@ -17634,6 +18422,9 @@ void FetMainForm::restoreSettings()
 	
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
+
+	updateActionsList();
+	updateSearchMenu();
 	
 	/*QString s=settings.value("mode", "official").toString();
 	if(s==QString("official"))
@@ -18481,6 +19272,20 @@ void FetMainForm::restoreSettings()
 		SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
 	}
 
+	if(settings.contains("FetMainForm/show-search-menu")){
+		SHOW_SEARCH_ON_MAIN_WINDOW=settings.value("FetMainForm/show-search-menu").toBool();
+	}
+	else{
+		SHOW_SEARCH_ON_MAIN_WINDOW=true;
+	}
+	
+	if(settings.contains(QString("FetMainForm/search-menu-text"))){
+		searchLineEdit->setText(settings.value(QString("FetMainForm/search-menu-text"), QString("")).toString());
+	}
+	else{
+		searchLineEdit->setText(QString(""));
+	}
+
 	if(settings.contains("show-tooltips-for-constraints-with-tables")){
 		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settings.value("show-tooltips-for-constraints-with-tables").toBool();
 	}
@@ -18593,6 +19398,9 @@ void FetMainForm::restoreSettings()
 	//toolBox->setCurrentIndex(0);
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 	tabWidget->setCurrentIndex(MAIN_FORM_SHORTCUTS_TAB_POSITION);
+
+	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	
 	if(rect.isValid()){
 		bool ok=false;
@@ -18619,6 +19427,8 @@ void FetMainForm::restoreSettings()
 	
 	//settingsShowShortcutsOnMainWindowAction->setCheckable(true);
 	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+
+	settingsShowSearchOnMainWindowAction->setChecked(SHOW_SEARCH_ON_MAIN_WINDOW);
 	
 	//settingsShowToolTipsForConstraintsWithTablesAction->setCheckable(true);
 	settingsShowToolTipsForConstraintsWithTablesAction->setChecked(SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);

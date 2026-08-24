@@ -481,6 +481,9 @@ private:
 	QMenu* shortcutTimetableLockingMenu;
 	QMenu* shortcutTimetableAdvancedMenu;
 	
+	QList<QAction*> actionsList;
+	QMenu* searchMenu;
+	
 	QNetworkAccessManager* networkManager;
 	
 	QStringList recentFiles;
@@ -525,7 +528,12 @@ public:
 	void retranslateMode();
 	void retranslateConstraints();
 
+	void updateActionsList();
+
 public Q_SLOTS:
+	void updateSearchMenu();
+	void showSearchMenu();
+
 	void settingsOptionalKeyboardShortcutsAction_triggered();
 
 	void settingsAutosaveAction_triggered();
@@ -582,6 +590,7 @@ public Q_SLOTS:
 	void showSubgroupsInComboBoxesToggled(bool checked);
 	void showSubgroupsInActivityPlanningToggled(bool checked);
 	void settingsShowShortcutsOnMainWindowAction_toggled();
+	void settingsShowSearchOnMainWindowAction_toggled();
 	void settingsFontIsUserSelectableAction_toggled();
 	void settingsFontAction_triggered();
 	void settingsShowToolTipsForConstraintsWithTablesAction_toggled();

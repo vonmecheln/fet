@@ -1,3 +1,9 @@
+ 7.10.1
+	- Updated to Qt 6.11.2.
+	- Added a 'Quick search' line edit for the menu items (suggested by Syed, and maybe also by other users in the past).
+	- In the dialog of the constraints activities preferred time slots related to a selection of activities in the view timetable dialogs,
+	the user can now add multiple constraints, one for each filtered activity, with a single click (suggested by Vangelis Karafillidis).
+	- Updated the Italian translation, by Andrea Primiani.
  7.10.0
 	- Bug fix, when using constraints of type building min one activity in each available time slot (found by Volker Dirr, using
 	ChatGPT).
@@ -11,7 +17,7 @@
 	Vangelis Karafillidis). The activities placed in the unselected days will be deactivated. For this new feature, some new English
 	text fields were suggested by Vangelis Karafillidis.
 	- Added 'teachers not available'/'activities preferred time slots' constraints' import/export from/to a CSV file (suggested by
-	Vangelis Karafillidis, Fritzlang, TongThanhKieu, and Steffen Schiedek, and maybe by other users in the past). For this new feaure,
+	Vangelis Karafillidis, Fritzlang, TongThanhKieu, and Steffen Schiedek, and maybe by other users in the past). For this new feature,
 	some new English text fields were suggested by Vangelis Karafillidis.
 	- It is now possible to lock/unlock the timetable for a selection of days, not only for a single day at a time (suggested by
 	YOUSSEF HOUIET).

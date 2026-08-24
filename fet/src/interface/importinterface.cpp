@@ -3234,14 +3234,14 @@ void Import::importCSVTeacherNotAvailable(QWidget* parent){
 							tnaMatrix[t][d][h]=100;
 							activate100Constraint[t]=true;
 							if(weight>100){
-								warnings+=tr("In the line %1, the field %2 contains a value larger than 100. It will be set equal to 100.")
+								warnings+=tr("In line %1, the field %2 contains a value larger than 100. It will be set equal to 100.")
 								 .arg(lineNumber).arg(2+d)+"\n";
 							}
 						} else if(weight>0){
 							tnaMatrix[t][d][h]=weight;
 							activateLess100Constraint[t]=true;
 						} else if(weight<0){
-							warnings+=tr("In the line %1, the field %2 contains a value smaller than 0. It will be skipped.")
+							warnings+=tr("In line %1, the field %2 contains a value smaller than 0. It will be skipped.")
 							 .arg(lineNumber).arg(2+d)+"\n";
 						}
 					} else {
@@ -3261,27 +3261,27 @@ void Import::importCSVTeacherNotAvailable(QWidget* parent){
 		} else {
 			if(fields.count()>0)
 				if(fields.at(0)!="Teacher Name"){
-					warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+					warnings+=tr("In line 1, the field %1 should contain '%2'.",
 					 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
 					 .arg(1).arg("Teacher Name")+"\n";
 				}
 			if(fields.count()>1)
 				if(fields.at(1)!="Hour"){
-					warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+					warnings+=tr("In line 1, the field %1 should contain '%2'.",
 					 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
 					 .arg(2).arg("Hour")+"\n";
 				}
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
 				if(fields.count()>2+d){
 					if(fields.at(2+d)!=gt.rules.daysOfTheWeek.at(d))
-						warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+						warnings+=tr("In line 1, the field %1 should contain '%2'.",
 						 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
 						.arg(2+d).arg(gt.rules.daysOfTheWeek.at(d))+"\n";
 				}
 			}
 			if(fields.count()>gt.rules.nDaysPerWeek+2)
 				if(fields.at(gt.rules.nDaysPerWeek+2)!="Comments"){
-					warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+					warnings+=tr("In line 1, the field %1 should contain '%2'.",
 					 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
 					.arg(2+gt.rules.nDaysPerWeek).arg("Comments")+"\n";
 				}
@@ -3306,7 +3306,7 @@ void Import::importCSVTeacherNotAvailable(QWidget* parent){
 			numberOf100ConstraintsInFET++;
 		}
 	}
-	warnings+=tr("There will be deleted %1 'teacher - not available' constraints in the current FET data.").arg(numberOf100ConstraintsInFET)+"\n";
+	warnings+=tr("From the current FET data will be deleted %1 constraints 'teacher - not available'.").arg(numberOf100ConstraintsInFET)+"\n";
 
 	QList<TimeConstraint*> tless;
 	int numberOfLess100ConstraintsInFET=0;
@@ -3322,7 +3322,7 @@ void Import::importCSVTeacherNotAvailable(QWidget* parent){
 		}
 	}
 	assert(tless.count()==numberOfLess100ConstraintsInFET);
-	warnings+=tr("There will be deleted in the current FET data %1 constraints 'activities - preferred times', which (constraints) have only the teacher specified"
+	warnings+=tr("From the current FET data will be deleted %1 constraints 'activities - preferred times', which (constraints) have only the teacher specified"
 	 " (while the other parameters: subject, activity tag, students set, and duration, are not specified in these constraints).")
 	 .arg(numberOfLess100ConstraintsInFET)+"\n";
 
@@ -3335,7 +3335,7 @@ void Import::importCSVTeacherNotAvailable(QWidget* parent){
 		if(activateLess100Constraint[t])
 			numberOfLess100ContraintsToAdd++;
 	}
-	warnings+=tr("There will be added %1 'teacher - not available' constraints from the CSV file.").arg(numberOf100ContraintsToAdd)+"\n";
+	warnings+=tr("In the FET data there will be %1 new constraints 'teacher - not available', added from the CSV file.").arg(numberOf100ContraintsToAdd)+"\n";
 	warnings+=tr("%1 teachers will get 'activities - preferred times' constraints from the CSV file.").arg(numberOfLess100ContraintsToAdd)+"\n";
 
 	warnings+=tr("Should I delete the old constraints and import the new constraints now?")+"\n";

@@ -82531,6 +82531,13 @@ ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::ConstraintMaxDaysBetwee
 
 bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	if(this->maxDays<1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because max days must be greater than or equal to 1). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
 	assert(this->maxDays>=1);
 
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()

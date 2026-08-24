@@ -593,7 +593,7 @@ void ListOfRelatedTimeConstraintsForm::addConstraint()
 	int initialNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
 
 	AddOrModifyTimeConstraint aomtc(this, CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS, nullptr,
-									QString(), QString(), QString(), QString(), QString(), QString(), filterId);
+									QString(), QString(), QString(), QString(), QString(), QString(), filterId, true);
 
 	int finalNumberOfTimeConstraints=gt.rules.timeConstraintsList.count();
 

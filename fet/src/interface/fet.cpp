@@ -1111,6 +1111,13 @@ void FetSettings::readGenerationParameters(QApplication& qapplication)
 		SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
 	}
 
+	if(settings.contains("FetMainForm/show-search-menu")){
+		SHOW_SEARCH_ON_MAIN_WINDOW=settings.value("FetMainForm/show-search-menu").toBool();
+	}
+	else{
+		SHOW_SEARCH_ON_MAIN_WINDOW=true;
+	}
+
 	if(settings.contains("show-tooltips-for-constraints-with-tables")){
 		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=settings.value("show-tooltips-for-constraints-with-tables").toBool();
 	}
@@ -1926,6 +1933,8 @@ void FetSettings::writeGenerationParameters()
 	//settings.setValue("FetMainForm/shortcuts-tab-position", MAIN_FORM_SHORTCUTS_TAB_POSITION);
 	//settings.setValue("FetMainForm/shortcuts-tab-position", 0); //always starting on the first page, as suggested by a user
 	settings.setValue("FetMainForm/show-shortcut-buttons", SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+
+	settings.setValue("FetMainForm/show-search-menu", SHOW_SEARCH_ON_MAIN_WINDOW);
 
 	settings.setValue("show-tooltips-for-constraints-with-tables", SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
 

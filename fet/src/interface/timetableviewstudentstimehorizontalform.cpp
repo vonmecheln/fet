@@ -2156,11 +2156,11 @@ void TimetableViewStudentsTimeHorizontalForm::lockDays()
 		}
 	}
 
-	QMessageBox::information(this, tr("FET information"), tr("There were added %1 constraints").arg(nLocked));
+	QMessageBox::information(this, tr("FET information"), tr("There were added %1 time constraints").arg(nLocked));
 
 	if(nLocked>0)
 		gt.rules.addUndoPoint(tr("Locked to days a selection of activities in the"
-		  " timetable view students time horizontal dialog. There were added %1 locking constraints.").arg(nLocked)+QString("\n"));
+		  " timetable view students time horizontal dialog. There were added %1 locking time constraints.").arg(nLocked)+QString("\n"));
 
 	LockUnlock::increaseCommunicationSpinBox();
 }

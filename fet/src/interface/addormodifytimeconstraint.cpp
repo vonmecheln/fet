@@ -235,7 +235,8 @@ AddOrModifyTimeConstraintDialog::~AddOrModifyTimeConstraintDialog()
 AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc,
 	 const QString& _preselectedTeacherName, const QString& _preselectedStudentsSetName, const QString& _preselectedActivityTagName,
 	 const QString& _preselectedSelectedActivityTagName,
-	 const QString& _preselectedFirstActivityTagName, const QString& _preselectedSecondActivityTagName, const QList<int>& _filteredActivitiesIdsList)
+	 const QString& _preselectedFirstActivityTagName, const QString& _preselectedSecondActivityTagName, const QList<int>& _filteredActivitiesIdsList,
+	 bool _showAddMultipleConstraintsPushButton)
 {
 	type=_type;
 	oldtc=_oldtc;
@@ -410,6 +411,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			filteredActivitiesList.append(act);
 		}
 	}
+	showAddMultipleConstraintsPushButton=_showAddMultipleConstraintsPushButton;
 
 	helpPushButton=nullptr;
 
@@ -9274,6 +9276,10 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 				break;
+			case CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS:
+				if(showAddMultipleConstraintsPushButton)
+					addConstraintsPushButton=new QPushButton(tr("Add constraints"));
+				break;
 			
 			default:
 				//nothing
@@ -14678,8 +14684,8 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 						}
 					}
 
-					gt.rules.addUndoPoint(tr("Added %1 constraints (using the option to add multiple constraints):\n\n%2",
-											 "%1 is the number of constraints, %2 is their detailed description")
+					gt.rules.addUndoPoint(tr("Added %1 time constraints (using the option to add multiple constraints):\n\n%2",
+											 "%1 is the number of time constraints, %2 is their detailed description")
 											 .arg(nConstraints).arg(ctrs));
 
 					return; //very important!!!
@@ -18532,6 +18538,60 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 void AddOrModifyTimeConstraint::addConstraintsClicked()
 {
+	if(type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+		if(showAddMultipleConstraintsPushButton){
+			QMessageBox::StandardButton res=QMessageBox::question(dialog, tr("FET confirmation"),
+			 tr("This operation will add multiple constraints, one for each filtered activity. Do you want to continue?"),
+			 QMessageBox::Cancel | QMessageBox::Yes);
+			if(res==QMessageBox::Cancel)
+				return;
+			
+			double weight;
+			QString tmp=weightLineEdit->text();
+				weight_sscanf(tmp, "%lf", &weight);
+			if(weight<0.0 || weight>100.0){
+				QMessageBox::warning(dialog, tr("FET information"), tr("Invalid weight (percentage)"));
+				return;
+			}
+			
+			assert(activitiesComboBox!=nullptr);
+			assert(activitiesComboBox->count()==activitiesList.count());
+			QString ctrs;
+			for(int id : std::as_const(activitiesList)){
+				QList<int> days_L;
+				QList<int> hours_L;
+				getTimesTable(timesTable, days_L, hours_L, false);
+				int n=days_L.count();
+				assert(n==hours_L.count());
+
+				if(n<=0){
+					int t=QMessageBox::question(dialog, tr("FET question"),
+					 tr("Warning: 0 slots selected. Are you sure?"),
+					 QMessageBox::Yes, QMessageBox::Cancel);
+
+					if(t==QMessageBox::Cancel)
+							return;
+				}
+
+				TimeConstraint* ctr=new ConstraintActivityPreferredTimeSlots(weight, id, n, days_L, hours_L);
+				bool tmp2=gt.rules.addTimeConstraint(ctr);
+				assert(tmp2);
+				
+				ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+				ctrs+=QString("<br />\n");
+			}
+			
+			QMessageBox::information(dialog, tr("FET information"), tr("Added %1 time constraints.").arg(activitiesList.count()));
+
+			if(activitiesList.count()>0)
+				gt.rules.addUndoPoint(tr("Added %1 time constraints, one for each filtered activity:", "%1 is the number of time constraints. "
+				 "After this text follows the detailed description of the added time constraints")
+				 .arg(activitiesList.count())+"<br /><br />\n"+ctrs);
+		}
+		
+		return;
+	}
+
 	QMessageBox::StandardButton res=QMessageBox::question(dialog, tr("FET confirmation"),
 	 tr("This operation will add multiple constraints, one for each teacher. Do you want to continue?"),
 	 QMessageBox::Cancel | QMessageBox::Yes);
@@ -19801,7 +19861,8 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 		QMessageBox::information(dialog, tr("FET information"), tr("Added %1 time constraints.").arg(gt.rules.teachersList.count()));
 
 	if(gt.rules.teachersList.count()>0)
-		gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:", "%1 is the number of constraints. After this text follows the detailed description of the added constraints")
+		gt.rules.addUndoPoint(tr("Added %1 time constraints, one for each teacher:", "%1 is the number of time constraints. After this text"
+		 " follows the detailed description of the added time constraints")
 		 .arg(gt.rules.teachersList.count())+"<br /><br />\n"+ctrs);
 }
 

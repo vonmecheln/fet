@@ -149,26 +149,32 @@ void CornerEnabledTableWidgetOfSpinBoxes::keyPressEvent(QKeyEvent* event)
 	if(event->key()==Qt::Key_Tab){
 		int i=currentRow();
 		int j=currentColumn();
-		i++;
-		if(i==rowCount()){
-			i=0;
-			j++;
-			if(j==columnCount())
-				j=0;
+		if(i>=0 && i<rowCount() && j>=0 && j<columnCount()){
+			i++;
+			if(i==rowCount()){
+				i=0;
+				j++;
+				if(j==columnCount())
+					j=0;
+			}
+			assert(i>=0 && i<rowCount() && j>=0 && j<columnCount());
+			setCurrentCell(i, j);
 		}
-		setCurrentCell(i, j);
 	}
 	else if(event->key()==Qt::Key_Backtab){
 		int i=currentRow();
 		int j=currentColumn();
-		i--;
-		if(i<0){
-			i=rowCount()-1;
-			j--;
-			if(j<0)
-				j=columnCount()-1;
+		if(i>=0 && i<rowCount() && j>=0 && j<columnCount()){
+			i--;
+			if(i<0){
+				i=rowCount()-1;
+				j--;
+				if(j<0)
+					j=columnCount()-1;
+			}
+			assert(i>=0 && i<rowCount() && j>=0 && j<columnCount());
+			setCurrentCell(i, j);
 		}
-		setCurrentCell(i, j);
 	}
 	else{
 		QTableWidget::keyPressEvent(event);

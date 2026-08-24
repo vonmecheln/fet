@@ -229,6 +229,7 @@ class AddOrModifyTimeConstraint: public QObject
 	QList<int> activitiesList;
 	int initialActivityId;
 	QList<Activity*> filteredActivitiesList;
+	bool showAddMultipleConstraintsPushButton;
 
 	QLabel* labelForSpinBox;
 	QSpinBox* spinBox;
@@ -360,7 +361,8 @@ public:
 	AddOrModifyTimeConstraint(QWidget* parent, int _type, TimeConstraint* _oldtc=nullptr,
 	 const QString& _preselectedTeacherName=QString(), const QString& _preselectedStudentsSetName=QString(), const QString& _preselectedActivityTagName=QString(),
 	 const QString& _preselectedSelectedActivityTagName=QString(),
-	 const QString& _preselectedFirstActivityTagName=QString(), const QString& _preselectedSecondActivityTagName=QString(), const QList<int>& _filteredActivitiesIdsList=QList<int>());
+	 const QString& _preselectedFirstActivityTagName=QString(), const QString& _preselectedSecondActivityTagName=QString(), const QList<int>& _filteredActivitiesIdsList=QList<int>(),
+	 bool _showAddMultipleConstraintsPushButton=false);
 	~AddOrModifyTimeConstraint();
 
 private:
