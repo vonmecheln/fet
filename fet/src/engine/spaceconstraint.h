@@ -28,7 +28,10 @@ File spaceconstraint.h
 #include <QString>
 #include <QList>
 #include <QStringList>
+
 #include <QSet>
+
+#include <QHash>
 
 class Rules;
 class SpaceConstraint;
@@ -282,11 +285,15 @@ public:
 	*/
 	virtual bool isRelatedToRoom(const QString& r)=0;
 
+	virtual bool isRelatedToBuilding(const QString& b)=0;
+
 	virtual int categoryOfSpaceConstraint()=0;
 
 	virtual bool hasWrongDayOrHour(Rules& r)=0;
 	virtual bool canRepairWrongDayOrHour(Rules& r)=0;
 	virtual bool repairWrongDayOrHour(Rules& r)=0;
+
+	virtual void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash)=0;
 };
 
 /**
@@ -325,11 +332,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomNotAvailableTimes: public SpaceConstraint{
@@ -378,11 +389,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherRoomNotAvailableTimes: public SpaceConstraint{
@@ -435,11 +450,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -503,11 +522,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -560,11 +583,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetHomeRoom: public SpaceConstraint{
@@ -609,11 +636,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetHomeRooms: public SpaceConstraint{
@@ -660,11 +691,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherHomeRoom: public SpaceConstraint{
@@ -709,11 +744,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherHomeRooms: public SpaceConstraint{
@@ -760,11 +799,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -813,11 +856,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -865,11 +912,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -920,11 +971,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -974,11 +1029,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //addded on 6 apr 2009
@@ -1024,11 +1083,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityTagPreferredRooms: public SpaceConstraint{
@@ -1072,11 +1135,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 ///////
 
@@ -1119,11 +1186,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -1161,11 +1232,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1210,11 +1285,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1254,11 +1333,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1303,11 +1386,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1347,11 +1434,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -1396,11 +1487,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -1440,11 +1535,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1489,11 +1588,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1533,11 +1636,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -1579,11 +1686,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -1621,11 +1732,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1667,11 +1782,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1709,11 +1828,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -1755,11 +1878,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1804,11 +1931,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1848,11 +1979,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1897,11 +2032,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1941,11 +2080,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -1990,11 +2133,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -2034,11 +2181,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -2083,11 +2234,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -2127,11 +2282,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -2169,11 +2328,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -2215,11 +2378,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -2257,11 +2424,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -2303,11 +2474,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -2345,11 +2520,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2019-11-14
@@ -2392,11 +2571,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerDay: public SpaceConstraint{
@@ -2434,11 +2617,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2480,11 +2667,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2522,11 +2713,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -2568,11 +2763,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -2610,11 +2809,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerDay: public SpaceConstraint{
@@ -2656,11 +2859,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerDay: public SpaceConstraint{
@@ -2698,11 +2905,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2744,11 +2955,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2786,11 +3001,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -2832,11 +3051,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -2874,11 +3097,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOccupyMaxDifferentRooms: public SpaceConstraint{
@@ -2926,11 +3153,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesSameRoomIfConsecutive: public SpaceConstraint{
@@ -2976,11 +3207,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3018,11 +3253,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3064,11 +3303,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3110,11 +3353,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3152,11 +3399,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3194,11 +3445,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3240,11 +3495,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3286,11 +3545,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3328,11 +3591,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivityTagsPerDayFromSet: public SpaceConstraint{
@@ -3384,11 +3651,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivityTagsPerRealDayFromSet: public SpaceConstraint{
@@ -3440,11 +3711,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivityTagsPerWeekFromSet: public SpaceConstraint{
@@ -3496,11 +3771,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomPairOfMutuallyExclusiveTimeSlots: public SpaceConstraint{
@@ -3544,11 +3823,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots: public SpaceConstraint{
@@ -3599,11 +3882,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection: public SpaceConstraint{
@@ -3651,11 +3938,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivityTagsPerDayFromSet: public SpaceConstraint{
@@ -3697,11 +3988,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivityTagsPerRealDayFromSet: public SpaceConstraint{
@@ -3743,11 +4038,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivityTagsPerWeekFromSet: public SpaceConstraint{
@@ -3789,11 +4088,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsPairOfMutuallyExclusiveTimeSlots: public SpaceConstraint{
@@ -3833,11 +4136,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots: public SpaceConstraint{
@@ -3884,11 +4191,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection: public SpaceConstraint{
@@ -3932,11 +4243,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintBuildingMinOneActivityInEachAvailableTimeSlot: public SpaceConstraint{
@@ -3976,11 +4291,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot: public SpaceConstraint{
@@ -4015,11 +4334,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivitiesPerTeacher: public SpaceConstraint{
@@ -4069,11 +4392,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivitiesPerTeacher: public SpaceConstraint{
@@ -4113,11 +4440,15 @@ public:
 
 	bool isRelatedToRoom(const QString& r);
 
+	bool isRelatedToBuilding(const QString& b);
+
 	int categoryOfSpaceConstraint();
 
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //1

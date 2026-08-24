@@ -541,7 +541,7 @@ QString Activity::getXmlDescription(Rules& r)
 	s+=IL3+"<Activity_Group_Id>"+CustomFETString::number(this->activityGroupId)+"</Activity_Group_Id>\n";
 
 	if(this->computeNTotalStudents==false)
-		s+=IL3+"<Number_Of_Students>"+CustomFETString::number(this->nTotalStudents)+"</Number_Of_Students>\n";
+		s+=IL3+"<Number_of_Students>"+CustomFETString::number(this->nTotalStudents)+"</Number_of_Students>\n";
 
 	s+=IL3+"<Active>";
 	if(this->active==true)

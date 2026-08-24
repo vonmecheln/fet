@@ -6487,13 +6487,13 @@ Nel chiedere se sono normali questi tempi di elaborazione, faccio notare delle c
 424---------------------------------------------------------
 From Vangelis Karafillidis:
 
-Import not available constraints for teachers and students from CSV files.
+Import not available constraints for teachers (DONE in FET-7.10.0) and students from CSV files.
 Overall matrix view of not available times in the FET interface (DONE).
 
 Also from Fritzlang, on the forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=5010.0):
 
 FET importa alcuni file con le impostazioni principali in formato CSV
-E' possibile in qualche modo importare anche le ore di assenza degli insegnanti ossia le ore non disponibili per ogni singolo insegnante
+E' possibile in qualche modo importare anche le ore di assenza degli insegnanti ossia le ore non disponibili per ogni singolo insegnante? (DONE in FET-7.10.0.)
 
 425---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -11405,149 +11405,7 @@ From Hamou Berkouche (on Facebook):
 
 Would it be possible for you to add a constraint that reduces the break period for teachers between the morning and afternoon sessions?
 
-758---------------------------------------------------------
-From TongThanhKieu (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=6543.0
-
-I would like to propose a new feature for your consideration:
-
-Feature Request:
-In the Time → All time constraints tab, please add two new buttons:
-
-Export: to extract all existing "Teacher not available times" constraints into a CSV file (UTF-8 encoded).
-
-Import: to load such constraints back into FET from a previously exported CSV (UTF-8).
-
-Motivation / Use Case:
-
-Many schools frequently update teacher unavailability data. Having an export/import mechanism would make it much easier to back up constraints,
-share them between different FET files, or update them in bulk using external tools like Excel.
-
-Currently, this process requires manual editing or re-entering the constraints, which is time-consuming and prone to human error.
-
-A standardized CSV (UTF-8) format would ensure compatibility and avoid encoding issues.
-
-Possible Implementation Idea:
-
-The CSV structure could follow a simple format with teacher ID/name, day, and time slots.
-
-The Export button would write all constraints into a CSV file.
-
-The Import button would parse a CSV file and add/update the corresponding constraints in the FET project.
-
-I believe this feature would significantly improve usability for schools with large numbers of teachers and frequent schedule updates.
-
-Volker Dirr:
-
-The "add/update" part might be critical.
-I think the "easiest" variant will be "if there is a single new not available time slot, then delete all values of the constraint and place the new ones".
-Because if you don't do it that way and if you want to keep the old values, then it mean you also need a variant how to remove old values.
-
----
-
-Volker Dirr:
-
-I just got again a request by email for this feature.
-
-hmmm... still the question how to write it.
-
-There are different variants for this with different advantages/disadvantages.
-
-Variant 1:
-teacher name, weight, day, hour
-"Tom", 100, "Monday", "1st"
-"Tom", 100, "Monday", "2nd"
-...
-
-This is valid csv. A bit tricky will be the detection if this is only one constraint or more. Might not 100% valid without more information, but i think a good automatic algorithm will care about this in most situations fine without more information.
-
-Variant 2:
-teacher name, weight, day, hour, day, hour, ...
-"Tom", 100, "Monday", "1st", "Monday", "2nd"
-...
-
-This is NOT valid csv. It doesn't has got the disadvantage of variant 1, but in fact this is not valid, since the number of columns is not fixed.
-
-Variant 3:
-teacher name, weight, day-hour-pairs
-"Tom", 100, "Monday|1st|Monday|2nd"
-...
-
-This is valid csv if you check the header. But in fact it is a bit "bad", since it needs at least one more character to split the day and hour names.
-
-So if anyone need a constraint like this: What do you think should we code? Variant 1,2 or 3. Please let me know why do you think these Variants are fine or bad. Maybe you know a better csv variant?
-
-    Quote
-    Quick Edit
-    More...
-
----
-
-Volker Dirr:
-
-Or Variant 4:
-teacher name, weight, Monday-1, Monday-2, Monday-3, ...
-"Tom", 100, x, x, , ,
-
-I guess this has the advantage that there is a nice matrix for editing in a sheet software.
-The disadvantage is that need to read the header carefully and it must fit more or less (depending on how i code it) to day and hour names in FET.
-So there might be problems like: What to do if there are more or less days/hours in fet?
-
-Steffen Schiedek:
-
-I would maybe propose more of a table style with each lesson of the day as a column and each day a row. Best solution could than be the weight of each lesson in this "table" - putting a weight of 0 for "teacher is available". So:
-
-teacher name, day, weight_1st_lesson, weight_2nd_lesson, ..., comments
-"Tom", "Monday", 100, 100, 0, 0, 90, 90, 0, 0, ..., comments
-"Tom", "Tuesday", 0, 0, 0, 0, 0, 0, 0, 0, ..., comments
-"Tom", "Wednesday", 100, 100, 100, 100, 100, 100, 100, 100, ..., comments
-"Tom", ...
-
-Advantages:
-The "table style" should be easy to view/understand/edit and allows for different weights throughout the week (which allows variations of "teacher is available", "teacher is truly 100% not available Monday 1st/2nd" and "teacher whishes rather not to be available Monday 5th/6th, but could be as it is only a wish").
-The number of columns is fixed and can be checked for matching the number of lessons a day before importing, the number of rows for a teacher can be checked for matching the number of days.
-Comments can be added/imported/exported, for example for writing the date the restriction was put - this way maybe a check could be made for existing not available times before/while importing (i.e. "do you really want to import times for "Tom"? There are times with comments "01.04.2026" in this file.")
-Disadvantages:
-Easy viewing of the individual weights of each lesson does not equal easy collecting into a restriction of the same weight for each teacher. :-(
-
-Would it maybe be possible to also export/import the other ("easier") restrictions of each teacher (max days per week, min days per week, a teacher does not work two consecutive days, ..., min resting hours for a teacher) as well? Those I also collect from my teachers before starting to build a timetable.
-That could/would just be
-teacher name, weight, name of restriction, value of restriction
-
-Liviu Lalescu:
-
-Note that teacher not available can have only 100% weight; I did this because the gaps are not counted, and I need to have something constant to not count gaps. If you want <100%, you need to add activities preferred time slots for this teacher.
-
-Steffen Schiedek:
-
-Uups - that I did oversee. But that could be the perfect import: If the weight is below 100%, than fill the "a set of activities has a set of preferred time slots" with only this teacher selected and the given weight?
-
-Liviu Lalescu:
-
-Exactly!
- 
-Volker Dirr:
-
-Ah... Sorry. I was the guy who added the weight "wrong".
-
-hmm...
-Also a variant.
-The small problem might be if you write different comments in different rows. In that case I need to a) add a second constraint or b) merge the comments.
-
-Of course stuff like that could be done with every constraint, but it will be a lot of work to code it.
-
-Volker Dirr:
-
-About the use of the comments:
-I think the comment should just be added as comment.
-
-Asking/checking for special comments if it should be imported or not is, in my opinion, not good, since you also get problems with only want to modify 1st hour, but not 2nd hour.
-
-In my opinion before importing such a csv file, we can max. ask for 3 situations:
-a) keep old data and also add the new data from csv
-b) delete all old constraints of that type (and import the new data)
-c) only delete constraint of teachers that are in the csb file (and import all other data in the file and also keep the data of teachers that are not mention in the csv file)
+758--------------DONE in FET-7.10.0-------------------------
 
 759---------------------------------------------------------
 From Syed (on forum):
@@ -13976,3 +13834,139 @@ I might code it, but it is a big task and I can't see big advantages for it. Out
 Note by Liviu Lalescu:
 
 On 1 August 2026, in FET-7.9.5, we added an option to include the CSS file in the beginning of each HTML timetable file. This will improve importing in some programs.
+
+874---------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+about CSV importing for long names, etc... I think
+that this part is quite crucial for facilitating the importing
+process.... I mean that if the user could import "at once" long names,
+regular names and short names for subjects, teachers, etc, this would
+vastly facilitate the user who needs all these forms of the names...
+
+---
+
+I think that even if a new import feature (from CSV) does not support the multi-line long names, this would not be a problem for most users.
+Moreover, if the user needs a multi-line long name, they could edit the specific subject (with the already existing dialog) in order to make
+the corresponding long name multi-line. The void and not unique of the long names and codes is what internally FET supports. So, if the new
+import from CSV can be implemented in a way that supports void and not unique names, this would be compatible with the internal FET functionality.
+I am not a coder, but this seems to be very easy; empty value (void, blank, no value) for void long names and/or codes, and identical values
+for not unique long names and/or codes. And one more question... Liviu... the current implementation of the dialogue needs many clicks in order
+to add the name, the long name, the code of a subject and the comments. I think it would be much better (much faster) if the user could add
+in the same dialog all this information. So. when clicking on "Add" I would expect a unified dialog for "Name", "Long Name", "Code" and "Comments".
+The current implementation of the UI has "Add", "Rename", "Remove", "Long name", "Code", :Comments". Under my perspective the variant with "Add"
+(with the new dialog as I described it), "Edit" (instead of "Rename" and with the new dialog as I described it), "Remove" (this one is the same),
+and with "Long name", "Code" and "Comments" omitted, would be clearer...
+
+---
+
+is it possible to add an option for selecting names, long names
+and codes in the dialogs? for example: not only for subjects... but
+this is the idea... also... for example.. when adding a subject... I
+think that it's easier of the user to add + edit the name, long name
+and the code.. in the same window... with the current user interface...
+the user adds the name.. and then adds the long name and/or the code...
+
+(Vangelis sent Liviu a modified screenshot with the Activities dialog,
+in which the subject filter had 3 radio buttons: N, LN, and C.)
+
+Liviu Lalescu:
+
+one problem: the long names/codes might be empty or
+not unique
+
+Vangelis Karafillidis:
+
+you can add a warning when selecting for example "code" or
+"long name". for example... if at least one of the "code" names of the
+subjects is missing... the user should be informed... OR... you could
+implement this option to be activated for the respective option (for
+example "code") IF AND ONLY IF all the code names of the subjects were
+added by the user... even if a single one is missing... the option
+should remain de-activated... OR... when a "code" name is missing... it
+could be replaced with the respective "normal" name...
+
+875---------------------------------------------------------
+From MOHAMED AIT ICHOU (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6892.0
+
+Add an option to group teachers by subject in the following FET sections:
+
+Timetable → Teachers → Days Vertical
+Data → Teachers
+
+This would make it easier to navigate and manage teachers, especially in schools with a large number of teachers
+
+876---------------------------------------------------------
+From Alami Mohammed (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6895.0
+
+I would like to suggest two new constraints for FET related to the number of activities per day, one for teachers and another for students.
+
+1. Allowed number of activities per day for a teacher
+
+This constraint would allow the user to control the number of activities assigned to a teacher each day.
+
+The user could specify:
+
+- One exact number, for example: exactly 4 activities per day.
+- Several allowed numbers, for example: 2, 4, or 6 activities per day.
+- A general condition, such as only even numbers of activities per day.
+
+This could be useful when an institution wants to organize teachers' workloads in a specific way or avoid undesirable daily workloads.
+
+2. Allowed number of activities per day for students
+
+A similar but separate constraint could be provided for students, groups, or subgroups.
+
+For example, the user could specify:
+
+- Exactly 2 activities per day.
+- Exactly 4 activities per day.
+- 2 or 4 activities per day.
+- Any other selected set of numbers.
+- Only even numbers of activities per day.
+
+This could be particularly useful for schools where student transportation affects the timetable. For example, a large group of students may need to have exactly 2 or 4 activities on a particular day so that they finish at an appropriate time and can take the school bus.
+
+I think having these as two separate constraints would provide greater flexibility, because the requirements for teachers and students are often different.
+
+877---------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+in the generated timetable view... the additional functionalities of modifying, removing and deactivating the selected ACTIVITIES would be highly useful...
+
+---
+
+what about a button for modifying/deleting/deactivating activities on this view? (Vangelis refers to the teachers time horizontal view.)
+(and other similar views of course)
+much time ago..
+both of you and Volker... didn't like the idea... because of "confusing" the ideas of modifying a timetable... with the data entering process... 
+but... it's much easier for the user..
+to select (for examples) the activities of teacher_a (if he is absent)... and deactivate (or delete) them with a single click...
+or you might implement this feature not with a new button...
+but... by opening a little window when right-clicking after selecting some activities
+
+---
+
+I need to test this... but.. let's say that we work on the teachers time horizontal view... when selecting an activity with TWO TEACHERS (let's say
+teacher_a and teacher_b) only by clicking on the raw of teacher_a... what does happen? does this activity becomes automatically selected for teacher_b as well?
+
+I think that when we have a generated timetable (in the teachers time horizontal view) and click on an activity which has two teachers... only the cell that
+we click on appears "selected"... I would expect both cells to appear selected...
+
+when we have this view...
+and we select an activity
+or... the activities (let's say) of teacher_a, who is absent...
+I suggested to have some kind of "shortcut" of the activities dialog... this IDENTICAL dialog... could open... and have as FILTERED activities...
+ONLY the SELECTED ones... you are the coder... but... if the user can do this procedure manually... they can take some notes about the activities
+IDs... and search these IDs in this dialog..., why can't this be done in an "automated" way?
+
+878---------------------------------------------------------
+From Željko Vrabec (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6896.msg38622#msg38622
+
+Can you please make that all teacher/group/subject data are exported to CSV? For instance long name and abbreviation i.e. code?

@@ -1384,8 +1384,8 @@ FetMainForm::FetMainForm()
 	shortcutTimetableLockingMenu->addAction(timetableLockAllActivitiesAction);
 	shortcutTimetableLockingMenu->addAction(timetableUnlockAllActivitiesAction);
 	shortcutTimetableLockingMenu->addSeparator();
-	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesDayAction);
-	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesDayAction);
+	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesDaysAction);
+	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesDaysAction);
 	shortcutTimetableLockingMenu->addSeparator();
 	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesEndStudentsDayAction);
 	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesEndStudentsDayAction);
@@ -1640,6 +1640,7 @@ FetMainForm::FetMainForm()
 	connect(fileImportCSVTeachersAction, &QAction::triggered, this, &FetMainForm::fileImportCSVTeachersAction_triggered);
 	connect(fileImportCSVYearsGroupsSubgroupsAction, &QAction::triggered, this, &FetMainForm::fileImportCSVYearsGroupsSubgroupsAction_triggered);
 	connect(fileExportCSVAction, &QAction::triggered, this, &FetMainForm::fileExportCSVAction_triggered);
+	connect(fileImportCSVTeacherNotAvailableAction, &QAction::triggered, this, &FetMainForm::fileImportCSVTeacherNotAvailableAction_triggered);
 	
 	connect(dataInstitutionNameAction, &QAction::triggered, this, &FetMainForm::dataInstitutionNameAction_triggered);
 	connect(dataCommentsAction, &QAction::triggered, this, &FetMainForm::dataCommentsAction_triggered);
@@ -1719,8 +1720,8 @@ FetMainForm::FetMainForm()
 
 	connect(timetableLockAllActivitiesAction, &QAction::triggered, this, &FetMainForm::timetableLockAllActivitiesAction_triggered);
 	connect(timetableUnlockAllActivitiesAction, &QAction::triggered, this, &FetMainForm::timetableUnlockAllActivitiesAction_triggered);
-	connect(timetableLockActivitiesDayAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesDayAction_triggered);
-	connect(timetableUnlockActivitiesDayAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesDayAction_triggered);
+	connect(timetableLockActivitiesDaysAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesDaysAction_triggered);
+	connect(timetableUnlockActivitiesDaysAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesDaysAction_triggered);
 	connect(timetableLockActivitiesEndStudentsDayAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesEndStudentsDayAction_triggered);
 	connect(timetableUnlockActivitiesEndStudentsDayAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesEndStudentsDayAction_triggered);
 	connect(timetableLockActivitiesWithASpecifiedActivityTagAction, &QAction::triggered, this, &FetMainForm::timetableLockActivitiesWithASpecifiedActivityTagAction_triggered);
@@ -1730,6 +1731,8 @@ FetMainForm::FetMainForm()
 	connect(timetableUnlockActivitiesWithAdvancedFilterAction, &QAction::triggered, this, &FetMainForm::timetableUnlockActivitiesWithAdvancedFilterAction_triggered);
 
 	connect(timetableSaveTimetableAsAction, &QAction::triggered, this, &FetMainForm::timetableSaveTimetableAsAction_triggered);
+
+	connect(timetableSaveFileOfASelectionOfDaysAction, &QAction::triggered, this, &FetMainForm::timetableSaveFileOfASelectionOfDaysAction_triggered);
 
 	connect(randomSeedAction, &QAction::triggered, this, &FetMainForm::randomSeedAction_triggered);
 	
@@ -6525,6 +6528,28 @@ void FetMainForm::fileImportCSVYearsGroupsSubgroupsAction_triggered()
 	Import::importCSVStudents(this);
 }
 
+void FetMainForm::fileImportCSVTeacherNotAvailableAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+	Import::importCSVTeacherNotAvailable(this);
+
+	//TODO: if the import takes care of locked activities, then we need
+	//to do:
+	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	//LockUnlock::increaseCommunicationSpinBox();
+	//after the importing
+}
+
 void FetMainForm::fileExportCSVAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -6671,8 +6696,8 @@ void FetMainForm::timetableSaveTimetableAsAction_triggered()
 			if(QFile::exists(s)){
 				QString t=tr("File exists");
 				t+="\n\n";
-				t+=tr("For safety (so you don't lose work), it is not allowed to overwrite an existing file with"
-					" locking and saving a current data+timetable");
+				t+=tr("For security reasons (so that you don't lose your work), it is not allowed to overwrite an existing file with a new"
+					" file with the current data and current timetable.");
 				t+="\n\n";
 				t+=tr("Please choose a non-existing name");
 		
@@ -6864,6 +6889,535 @@ void FetMainForm::timetableSaveTimetableAsAction_triggered()
 	
 	if(pc_form!=nullptr)
 		delete pc_form;
+}
+
+void FetMainForm::timetableSaveFileOfASelectionOfDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
+		QMessageBox::warning(this, tr("FET - Warning"), tr("You have not yet generated a timetable - please generate firstly"));
+		return;
+	}
+	
+	QDialog dialog(this);
+	
+	dialog.setWindowTitle(tr("Please select the days for which you would like to save the data:"));
+	
+	QListWidget* lw=new QListWidget;
+	lw->setSelectionMode(QAbstractItemView::MultiSelection);
+	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+		lw->addItem(gt.rules.daysOfTheWeek[i]);
+	
+	QHBoxLayout* selectUnselect=new QHBoxLayout;
+	QPushButton* pbSelectAll=new QPushButton(tr("All", "Refers to a list of days, select all."));
+	QPushButton* pbUnselectAll=new QPushButton(tr("None", "Refers to a list of days, select none."));
+	selectUnselect->addWidget(pbSelectAll);
+	selectUnselect->addWidget(pbUnselectAll);
+	
+	QVBoxLayout* layout1=new QVBoxLayout;
+	layout1->addWidget(lw);
+	layout1->addLayout(selectUnselect);
+
+	QDialogButtonBox* buttonBox=new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+
+	QFrame* line=new QFrame;
+	line->setFrameShape(QFrame::HLine);
+	line->setFrameShadow(QFrame::Sunken);
+
+	QVBoxLayout* layout2=new QVBoxLayout;
+	layout2->addLayout(layout1);
+	layout2->addWidget(line);
+	layout2->addWidget(buttonBox);
+
+	dialog.setLayout(layout2);
+
+	connect(pbSelectAll, &QPushButton::clicked, [lw](){lw->selectAll();});
+	connect(pbUnselectAll, &QPushButton::clicked, [lw](){lw->clearSelection();});
+
+	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+	
+	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, "TimetableSaveFileOfASelectionOfDaysForm");
+
+	int res=dialog.exec();
+	if(res==QDialog::Accepted){
+		bool atLeastOneDaySelected=false;
+		QSet<int> selectedDaysSet;
+		QList<int> selectedDaysList;
+		QHash<int, int> selectedDayToNewDayHash;
+		assert(lw->count()==gt.rules.nDaysPerWeek);
+		for(int i=0; i<lw->count(); i++)
+			if(lw->item(i)->isSelected()){
+				atLeastOneDaySelected=true;
+				selectedDaysSet.insert(i);
+				selectedDaysList.append(i);
+				selectedDayToNewDayHash.insert(i, selectedDaysList.count()-1);
+			}
+		
+		if(!atLeastOneDaySelected){
+			QMessageBox::information(this, tr("FET information"), tr("Please select at least one day!"));
+		}
+		else{
+			Solution* tc=&best_solution;
+
+			QString s;
+
+			for(;;){
+				s = QFileDialog::getSaveFileName(this, tr("Choose a filename for the chosen data:"),
+					INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+					"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)",
+					nullptr, QFileDialog::DontConfirmOverwrite);
+				if(s==QString())
+					return;
+
+				int tmp2=s.lastIndexOf(FILE_SEP);
+				QString s2=s.right(s.length()-tmp2-1);
+
+				if(s2.length()>=1){
+					if(s2.at(0).isSpace()){
+						QMessageBox::warning(this, tr("FET information"),
+						tr("Please do not use a filename starting with white space(s), the HTML CSS code does not work.")
+						+"\n\n"+tr("File was not saved."));
+						return;
+					}
+				}
+				QString s3;
+				bool ewf;
+				if(s2.endsWith(".fet")){
+					s3=s2.left(s2.length()-4);
+					ewf=true;
+				}
+				else{
+					s3=s2;
+					ewf=false;
+				}
+				if(s3.length()>=1){
+					if(s3.at(s3.length()-1).isSpace()){
+						if(ewf)
+							QMessageBox::warning(this, tr("FET information"),
+							tr("Please do not use a filename ending with white space(s) before the '.fet' termination, problems might arise.")
+							+"\n\n"+tr("File was not saved."));
+						else
+							QMessageBox::warning(this, tr("FET information"),
+							tr("Please do not use a filename ending with white space(s), problems might arise.")
+							+"\n\n"+tr("File was not saved."));
+						return;
+					}
+				}
+				if(s2.indexOf("\"") >= 0){
+					QMessageBox::warning(this, tr("FET information"), tr("Please do not use quotation marks \" in filename, the HTML CSS code does not work")
+					+"\n\n"+tr("File was not saved."));
+					return;
+				}
+				if(s2.indexOf(";") >= 0){
+					QMessageBox::warning(this, tr("FET information"), tr("Please do not use semicolon ; in filename, the HTML CSS code does not work")
+					+"\n\n"+tr("File was not saved."));
+					return;
+				}
+				if(s2.indexOf("#") >= 0){
+					QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the HTML CSS code does not work")
+					+"\n\n"+tr("File was not saved."));
+					return;
+				}
+
+				if(s.right(4)!=".fet")
+					s+=".fet";
+
+				int tmp=s.lastIndexOf(FILE_SEP);
+				WORKING_DIRECTORY=s.left(tmp);
+
+				if(QFile::exists(s)){
+					QString t=tr("File exists");
+					t+="\n\n";
+					t+=tr("For security reasons (so that you don't lose your work), it is not allowed to overwrite an existing file with a new"
+					 " file with the data and timetable for the selected days.");
+					t+="\n\n";
+					t+=tr("Please choose a non-existing name!");
+
+					QMessageBox::warning( this, tr("FET warning"), t);
+				}
+				else
+					break;
+			}
+			
+			QByteArray ba;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			QDataStream ds1(&ba, QIODeviceBase::WriteOnly);
+#else
+			QDataStream ds1(&ba, QIODevice::WriteOnly);
+#endif
+			ds1<<gt.rules;
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			QDataStream ds2(&ba, QIODeviceBase::ReadOnly);
+#else
+			QDataStream ds2(&ba, QIODevice::ReadOnly);
+#endif
+
+			//clear these below before restoring rules2... we have some asserts that they are empty there.
+			/*
+			rules2.permanentStudentsHash.clear();
+
+			rules2.activitiesPointerHash.clear();
+
+			rules2.bctSet.clear();
+			rules2.btSet.clear();
+			rules2.apstHash.clear();
+			rules2.apdHash.clear();
+			rules2.mdbaHash.clear();
+			rules2.mhdbaHash.clear();
+			rules2.tnatHash.clear();
+			rules2.ssnatHash.clear();
+
+			rules2.bcsSet.clear();
+			rules2.aprHash.clear();
+			*/
+			///////
+
+			ds2>>rules2;
+
+			//rules2.initialized=true;
+
+			rules2.nDaysPerWeek=selectedDaysList.count();
+			rules2.daysOfTheWeek.clear();
+			rules2.daysOfTheWeek_longNames.clear();
+			for(int i=0; i<rules2.nDaysPerWeek; i++){
+				rules2.daysOfTheWeek.append(gt.rules.daysOfTheWeek[selectedDaysList.at(i)]);
+				rules2.daysOfTheWeek_longNames.append(gt.rules.daysOfTheWeek_longNames[selectedDaysList.at(i)]);
+			}
+			
+			if(rules2.mode==MORNINGS_AFTERNOONS){
+				rules2.nRealDaysPerWeek=selectedDaysList.count()/2;
+				rules2.realDaysOfTheWeek.clear();
+				rules2.realDaysOfTheWeek_longNames.clear();
+				for(int i=0; i<rules2.nDaysPerWeek; i+=2){
+					rules2.realDaysOfTheWeek.append(gt.rules.realDaysOfTheWeek[selectedDaysList.at(i)/2]);
+					rules2.realDaysOfTheWeek_longNames.append(gt.rules.realDaysOfTheWeek_longNames[selectedDaysList.at(i)/2]);
+				}
+			}
+
+			QSet<int> selectedDaysActivitiesIdsSet;
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				int time=tc->times[ai];
+				if(time!=UNALLOCATED_TIME){
+					int day=time%gt.rules.nDaysPerWeek;
+					if(selectedDaysSet.contains(day))
+						selectedDaysActivitiesIdsSet.insert(gt.rules.internalActivitiesList[ai].id);
+				}
+			}
+			for(Activity* act : std::as_const(rules2.activitiesList))
+				if(act->active && !selectedDaysActivitiesIdsSet.contains(act->id))
+					act->active=false;
+
+			/*rules2.activitiesPointerHash.clear();
+			for(Activity* act : std::as_const(rules2.activitiesList)){
+				assert(!rules2.activitiesPointerHash.contains(act->id));
+				rules2.activitiesPointerHash.insert(act->id, act);
+			}
+
+			rules2.bctSet.clear();
+			rules2.btSet.clear();
+			rules2.apstHash.clear();
+			rules2.apdHash.clear();
+			rules2.mdbaHash.clear();
+			rules2.mhdbaHash.clear();
+			rules2.tnatHash.clear();
+			rules2.ssnatHash.clear();
+			for(TimeConstraint* ctr : std::as_const(rules2.timeConstraintsList)){
+				rules2.recomputeActivitiesSetForTimeConstraint(ctr);
+				rules2.insertTimeConstraintInHash(ctr);
+			}
+
+			rules2.bcsSet.clear();
+			rules2.aprHash.clear();
+			for(SpaceConstraint* ctr : std::as_const(rules2.spaceConstraintsList)){
+				rules2.recomputeActivitiesSetForSpaceConstraint(ctr);
+				rules2.insertSpaceConstraintInHash(ctr);
+			}*/
+			
+			/*
+			rules2.initialized=true;
+
+			rules2.mode=gt.rules.mode;
+
+			rules2.institutionName=gt.rules.institutionName;
+			rules2.comments=gt.rules.comments;
+
+			rules2.nTerms=gt.rules.nTerms;
+			rules2.nDaysPerTerm=gt.rules.nDaysPerTerm;
+
+			rules2.nDaysPerWeek=selectedDaysList.count();
+			rules2.daysOfTheWeek.clear();
+			for(int i=0; i<rules2.nDaysPerWeek; i++){
+				rules2.daysOfTheWeek.append(gt.rules.daysOfTheWeek[selectedDaysList.at(i)]);
+				rules2.daysOfTheWeek_longNames.append(gt.rules.daysOfTheWeek_longNames[selectedDaysList.at(i)]);
+			}
+
+			//rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
+			//rules2.daysOfTheWeek=gt.rules.daysOfTheWeek;
+			//rules2.daysOfTheWeek_longNames=gt.rules.daysOfTheWeek_longNames;
+			//TODO -> take care for real days per week
+			rules2.nRealDaysPerWeek=gt.rules.nRealDaysPerWeek;
+			rules2.realDaysOfTheWeek=gt.rules.realDaysOfTheWeek;
+			rules2.realDaysOfTheWeek_longNames=gt.rules.realDaysOfTheWeek_longNames;
+
+			rules2.nHoursPerDay=gt.rules.nHoursPerDay;
+			rules2.hoursOfTheDay=gt.rules.hoursOfTheDay;
+			rules2.hoursOfTheDay_longNames=gt.rules.hoursOfTheDay_longNames;
+
+			rules2.nRealHoursPerDay=gt.rules.nRealHoursPerDay;
+			rules2.realHoursOfTheDay=gt.rules.realHoursOfTheDay;
+			rules2.realHoursOfTheDay_longNames=gt.rules.realHoursOfTheDay_longNames;
+
+			rules2.subjectsList=gt.rules.subjectsList;
+
+			rules2.activityTagsList=gt.rules.activityTagsList;
+
+			rules2.teachersList=gt.rules.teachersList;
+
+			rules2.yearsList=gt.rules.yearsList;
+
+			//rules2.activitiesList=gt.rules.activitiesList;
+			QSet<int> selectedDaysActivitiesIdsSet;
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				int time=tc->times[ai];
+				if(time!=UNALLOCATED_TIME){
+					int day=time%gt.rules.nDaysPerWeek;
+					if(selectedDaysSet.contains(day))
+						selectedDaysActivitiesIdsSet.insert(gt.rules.internalActivitiesList[ai].id);
+				}
+			}
+			rules2.activitiesList.clear();
+			for(Activity* act : std::as_const(gt.rules.activitiesList))
+				if(selectedDaysActivitiesIdsSet.contains(act->id))
+					rules2.activitiesList.append(act);
+
+			rules2.buildingsList=gt.rules.buildingsList;
+
+			rules2.roomsList=gt.rules.roomsList;
+
+			rules2.timeConstraintsList=gt.rules.timeConstraintsList;
+
+			rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
+
+			rules2.apstHash=gt.rules.apstHash;
+			rules2.apdHash=gt.rules.apdHash;
+			rules2.mdbaHash=gt.rules.mdbaHash;
+			rules2.mhdbaHash=gt.rules.mhdbaHash;
+			rules2.tnatHash=gt.rules.tnatHash;
+			rules2.ssnatHash=gt.rules.ssnatHash;
+			rules2.bctSet=gt.rules.bctSet;
+			
+			rules2.aprHash=gt.rules.aprHash;
+			rules2.bcsSet=gt.rules.bcsSet;
+
+			rules2.groupActivitiesInInitialOrderList=gt.rules.groupActivitiesInInitialOrderList;
+			*/
+
+			///////
+			//rules2.updateConstraintsAfterRemoval(false); //not needed, because we only inactivated some activities, not removed them.
+			
+			QHash<int, int> newExistingDaysHash;
+			for(int i=0; i<rules2.nDaysPerWeek; i++)
+				newExistingDaysHash.insert(selectedDaysList.at(i), i);
+
+			TimeConstraintsList toBeRemovedTime;
+			for(TimeConstraint* tc : std::as_const(rules2.timeConstraintsList)){
+				tc->updateConstraintsForNewDays(rules2, newExistingDaysHash);
+
+				if(tc->hasWrongDayOrHour(rules2)){
+					bool tmp=tc->canRepairWrongDayOrHour(rules2);
+					if(tmp){
+						int tmp2=tc->repairWrongDayOrHour(rules2);
+						assert(tmp2);
+					}
+					else{
+						toBeRemovedTime.append(tc);
+					}
+				}
+			}
+			rules2.removeTimeConstraints(toBeRemovedTime);
+			
+			SpaceConstraintsList toBeRemovedSpace;
+			for(SpaceConstraint* sc : std::as_const(rules2.spaceConstraintsList)){
+				sc->updateConstraintsForNewDays(rules2, newExistingDaysHash);
+
+				if(sc->hasWrongDayOrHour(rules2)){
+					bool tmp=sc->canRepairWrongDayOrHour(rules2);
+					if(tmp){
+						int tmp2=sc->repairWrongDayOrHour(rules2);
+						assert(tmp2);
+					}
+					else{
+						toBeRemovedSpace.append(sc);
+					}
+				}
+			}
+			rules2.removeSpaceConstraints(toBeRemovedSpace);
+			///////
+
+			//add locking constraints
+			QList<TimeConstraint*> lockTimeConstraintsList;
+			QList<SpaceConstraint*> lockSpaceConstraintsList;
+
+			//bool report=true;
+
+			int addedTime=0, duplicatesTime=0;
+			int addedSpace=0, duplicatesSpace=0;
+
+			QString constraintsString=QString("");
+
+			//lock selected activities
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				if(selectedDaysActivitiesIdsSet.contains(act->id)){
+					int time=tc->times[ai];
+					if(time>=0 && time<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay){
+						int hour=time/gt.rules.nDaysPerWeek;
+						int day=time%gt.rules.nDaysPerWeek;
+						int newDay=selectedDayToNewDayHash.value(day, -1);
+						assert(newDay>=0 && newDay<rules2.nDaysPerWeek);
+
+						ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, newDay, hour, false); //permanently locked is false
+						bool t=rules2.addTimeConstraint(ctr);
+
+						if(t){
+							addedTime++;
+							lockTimeConstraintsList.append(ctr);
+						}
+						else
+							duplicatesTime++;
+
+						QString s;
+
+						//std::swap(gt.rules.nDaysPerWeek, rules2.nDaysPerWeek); //trick so that the next constraints are shown using the new days, correctly
+						//std::swap(gt.rules.daysOfTheWeek, rules2.daysOfTheWeek);
+						if(t)
+							s=tr("Added to the saved file:", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(rules2);
+						else{
+							s=tr("NOT added to the saved file (already existing):", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(rules2);
+							delete ctr;
+						}
+						//std::swap(gt.rules.nDaysPerWeek, rules2.nDaysPerWeek); //restore
+						//std::swap(gt.rules.daysOfTheWeek, rules2.daysOfTheWeek);
+
+						constraintsString+=QString("\n");
+						constraintsString+=s;
+					}
+
+					int ri=tc->rooms[ai];
+					if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
+						QStringList tl;
+						if(gt.rules.internalRoomsList[ri]->isVirtual==false)
+							assert(tc->realRoomsList[ai].isEmpty());
+						else
+							for(int rr : std::as_const(tc->realRoomsList[ai]))
+								tl.append(gt.rules.internalRoomsList[rr]->name);
+
+						ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false); //false means not permanently locked
+						bool t=rules2.addSpaceConstraint(ctr);
+
+						QString s;
+
+						if(t){
+							addedSpace++;
+							lockSpaceConstraintsList.append(ctr);
+						}
+						else
+							duplicatesSpace++;
+
+						if(t)
+							s=tr("Added to the saved file:", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(rules2);
+						else{
+							s=tr("NOT added to the saved file (already existing):", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(rules2);
+							delete ctr;
+						}
+
+						constraintsString+=QString("\n");
+						constraintsString+=s;
+					}
+				}
+			}
+
+			LongTextMessageBox::largeInformation(this, tr("FET information"), tr("Added %1 locking time constraints and %2 locking space constraints to saved file,"
+			 " ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.").arg(addedTime).arg(addedSpace).arg(duplicatesTime).arg(duplicatesSpace)
+			 +QString("\n\n")+tr("Detailed information about each locking constraint which was added or not (if already existing) to the saved file:")+QString("\n")+constraintsString
+			 +QString("\n")+tr("Note that some constraints might have been updated or even removed in the saved file, because some days might have been removed in the saved file.")
+			 +QString("\n\n")+tr("Note that the saved file might contain some constraints which could make the generation impossible (for example, a constraint of type"
+			 " teacher min days per week). You might need to remove some constraints from the saved file, so that its generation is possible.")
+			 +QString("\n\n")+tr("Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables."));
+
+			bool result=rules2.write(this, s);
+
+			Q_UNUSED(result);
+
+			rules2.clear();
+			/*for(TimeConstraint* tc : std::as_const(lockTimeConstraintsList))
+				delete tc;
+			lockTimeConstraintsList.clear();
+			for(SpaceConstraint* sc : std::as_const(lockSpaceConstraintsList))
+				delete sc;
+			lockSpaceConstraintsList.clear();
+
+			rules2.nDaysPerWeek=0;
+			rules2.daysOfTheWeek.clear();
+			rules2.daysOfTheWeek_longNames.clear();
+
+			rules2.nRealDaysPerWeek=0;
+			rules2.realDaysOfTheWeek.clear();
+			rules2.realDaysOfTheWeek_longNames.clear();
+
+			rules2.nHoursPerDay=0;
+			rules2.hoursOfTheDay.clear();
+			rules2.hoursOfTheDay_longNames.clear();
+
+			rules2.nRealHoursPerDay=0;
+			rules2.realHoursOfTheDay.clear();
+			rules2.realHoursOfTheDay_longNames.clear();
+
+			rules2.subjectsList.clear();
+
+			rules2.activityTagsList.clear();
+
+			rules2.teachersList.clear();
+
+			rules2.yearsList.clear();
+
+			rules2.activitiesList.clear();
+
+			rules2.buildingsList.clear();
+
+			rules2.roomsList.clear();
+
+			rules2.timeConstraintsList.clear();
+
+			rules2.spaceConstraintsList.clear();
+
+			rules2.apstHash.clear();
+			rules2.apdHash.clear();
+			rules2.mdbaHash.clear();
+			rules2.mhdbaHash.clear();
+			rules2.tnatHash.clear();
+			rules2.ssnatHash.clear();
+			rules2.bctSet.clear();
+			
+			rules2.aprHash.clear();
+			rules2.bcsSet.clear();
+
+			rules2.activitiesPointerHash.clear();
+			
+			rules2.groupActivitiesInInitialOrderList.clear();
+			*/
+		}
+	}
+
+	saveFETDialogGeometry(&dialog, "TimetableSaveFileOfASelectionOfDaysForm");
 }
 
 bool FetMainForm::fileSave()
@@ -14771,7 +15325,7 @@ void FetMainForm::timetableUnlockAllActivitiesAction_triggered()
 	AdvancedLockUnlockForm::unlockAllWithoutTimetable(this);
 }
 
-void FetMainForm::timetableLockActivitiesDayAction_triggered()
+void FetMainForm::timetableLockActivitiesDaysAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -14784,10 +15338,10 @@ void FetMainForm::timetableLockActivitiesDayAction_triggered()
 		return;
 	}
 
-	AdvancedLockUnlockForm::lockDay(this);
+	AdvancedLockUnlockForm::lockDays(this);
 }
 
-void FetMainForm::timetableUnlockActivitiesDayAction_triggered()
+void FetMainForm::timetableUnlockActivitiesDaysAction_triggered()
 {
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
@@ -14799,13 +15353,13 @@ void FetMainForm::timetableUnlockActivitiesDayAction_triggered()
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
 		
-		AdvancedLockUnlockForm::unlockDayWithoutTimetable(this);
+		AdvancedLockUnlockForm::unlockDaysWithoutTimetable(this);
 		
 		return;
 	}
 
 	//AdvancedLockUnlockForm::unlockDay(this);
-	AdvancedLockUnlockForm::unlockDayWithoutTimetable(this);
+	AdvancedLockUnlockForm::unlockDaysWithoutTimetable(this);
 }
 
 void FetMainForm::timetableLockActivitiesEndStudentsDayAction_triggered()

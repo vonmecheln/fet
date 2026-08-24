@@ -907,6 +907,7 @@
       <addaction name="fileImportCSVYearsGroupsSubgroupsAction"/>
       <addaction name="fileImportCSVRoomsBuildingsAction"/>
       <addaction name="fileImportCSVActivitiesAction"/>
+      <addaction name="fileImportCSVTeacherNotAvailableAction"/>
      </widget>
      <addaction name="menuImport_CSV"/>
     </widget>
@@ -952,8 +953,8 @@
      <addaction name="timetableLockAllActivitiesAction"/>
      <addaction name="timetableUnlockAllActivitiesAction"/>
      <addaction name="separator"/>
-     <addaction name="timetableLockActivitiesDayAction"/>
-     <addaction name="timetableUnlockActivitiesDayAction"/>
+     <addaction name="timetableLockActivitiesDaysAction"/>
+     <addaction name="timetableUnlockActivitiesDaysAction"/>
      <addaction name="separator"/>
      <addaction name="timetableLockActivitiesEndStudentsDayAction"/>
      <addaction name="timetableUnlockActivitiesEndStudentsDayAction"/>
@@ -989,6 +990,7 @@
      <addaction name="timetableViewRoomsTimeHorizontalAction"/>
     </widget>
     <addaction name="timetableGenerateAction"/>
+    <addaction name="timetableGenerateMultipleAction"/>
     <addaction name="separator"/>
     <addaction name="menuView_teachers"/>
     <addaction name="menuView_students"/>
@@ -1000,8 +1002,7 @@
     <addaction name="menuAdvancedLockUnlock"/>
     <addaction name="separator"/>
     <addaction name="timetableSaveTimetableAsAction"/>
-    <addaction name="separator"/>
-    <addaction name="timetableGenerateMultipleAction"/>
+    <addaction name="timetableSaveFileOfASelectionOfDaysAction"/>
    </widget>
    <widget class="QMenu" name="menuStatistics">
     <property name="title">
@@ -1593,6 +1594,11 @@
     <string>Import years, groups and subgroups from CSV file</string>
    </property>
   </action>
+  <action name="fileImportCSVTeacherNotAvailableAction">
+   <property name="text">
+    <string>Import teacher not available constraints from CSV file</string>
+   </property>
+  </action>
   <action name="settingsPrintNotAvailableSlotsAction">
    <property name="checkable">
     <bool>true</bool>
@@ -1619,14 +1625,14 @@
     <string>Remove redundant constraints</string>
    </property>
   </action>
-  <action name="timetableLockActivitiesDayAction">
+  <action name="timetableLockActivitiesDaysAction">
    <property name="text">
-    <string>Lock all activities of a specified day</string>
+    <string>Lock all activities of a selection of days</string>
    </property>
   </action>
-  <action name="timetableUnlockActivitiesDayAction">
+  <action name="timetableUnlockActivitiesDaysAction">
    <property name="text">
-    <string>Unlock all activities of a specified day</string>
+    <string>Unlock all activities of a selection of days</string>
    </property>
   </action>
   <action name="timetableLockActivitiesEndStudentsDayAction">
@@ -2264,6 +2270,11 @@
    </property>
    <property name="text">
     <string>Embed CSS code in HTML files</string>
+   </property>
+  </action>
+  <action name="timetableSaveFileOfASelectionOfDaysAction">
+   <property name="text">
+    <string>Save data and timetable for a selection of days as...</string>
    </property>
   </action>
  </widget>

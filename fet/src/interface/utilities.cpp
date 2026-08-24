@@ -144,6 +144,37 @@ void CornerEnabledTableWidgetOfSpinBoxes::selectAll()
 			((QSpinBox*)cellWidget(i, j))->setValue(0);
 }
 
+void CornerEnabledTableWidgetOfSpinBoxes::keyPressEvent(QKeyEvent* event)
+{
+	if(event->key()==Qt::Key_Tab){
+		int i=currentRow();
+		int j=currentColumn();
+		i++;
+		if(i==rowCount()){
+			i=0;
+			j++;
+			if(j==columnCount())
+				j=0;
+		}
+		setCurrentCell(i, j);
+	}
+	else if(event->key()==Qt::Key_Backtab){
+		int i=currentRow();
+		int j=currentColumn();
+		i--;
+		if(i<0){
+			i=rowCount()-1;
+			j--;
+			if(j<0)
+				j=columnCount()-1;
+		}
+		setCurrentCell(i, j);
+	}
+	else{
+		QTableWidget::keyPressEvent(event);
+	}
+}
+
 void centerWidgetOnScreen(QWidget* widget)
 {
 	Q_UNUSED(widget);

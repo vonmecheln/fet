@@ -556,6 +556,7 @@ public Q_SLOTS:
 	void fileImportCSVTeachersAction_triggered();
 	void fileImportCSVYearsGroupsSubgroupsAction_triggered();
 	void fileExportCSVAction_triggered();
+	void fileImportCSVTeacherNotAvailableAction_triggered();
 	
 	void dataInstitutionNameAction_triggered();
 	void dataCommentsAction_triggered();
@@ -1119,8 +1120,8 @@ public Q_SLOTS:
 
 	void timetableLockAllActivitiesAction_triggered();
 	void timetableUnlockAllActivitiesAction_triggered();
-	void timetableLockActivitiesDayAction_triggered();
-	void timetableUnlockActivitiesDayAction_triggered();
+	void timetableLockActivitiesDaysAction_triggered();
+	void timetableUnlockActivitiesDaysAction_triggered();
 	void timetableLockActivitiesEndStudentsDayAction_triggered();
 	void timetableUnlockActivitiesEndStudentsDayAction_triggered();
 	void timetableLockActivitiesWithASpecifiedActivityTagAction_triggered();
@@ -1130,6 +1131,8 @@ public Q_SLOTS:
 	void timetableUnlockActivitiesWithAdvancedFilterAction_triggered();
 
 	void timetableSaveTimetableAsAction_triggered();
+
+	void timetableSaveFileOfASelectionOfDaysAction_triggered();
 
 	void randomSeedAction_triggered();
 	

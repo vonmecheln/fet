@@ -9168,6 +9168,12 @@ bool ConstraintBasicCompulsoryTime::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintBasicCompulsoryTime::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -9486,6 +9492,26 @@ bool ConstraintTeacherNotAvailableTimes::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeacherNotAvailableTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(days.count()==hours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<days.count(); i++)
+		if(newExistingDaysHash.contains(days.at(i))){
+			newDays.append(newExistingDaysHash.value(days.at(i)));
+			newHours.append(hours.at(i));
+		}
+	
+	days=newDays;
+	hours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -9844,6 +9870,26 @@ bool ConstraintStudentsSetNotAvailableTimes::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetNotAvailableTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(days.count()==hours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<days.count(); i++)
+		if(newExistingDaysHash.contains(days.at(i))){
+			newDays.append(newExistingDaysHash.value(days.at(i)));
+			newHours.append(hours.at(i));
+		}
+	
+	days=newDays;
+	hours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10164,6 +10210,12 @@ bool ConstraintActivitiesSameStartingTime::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivitiesSameStartingTime::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -10503,6 +10555,12 @@ bool ConstraintActivitiesNotOverlapping::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesNotOverlapping::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10769,6 +10827,12 @@ bool ConstraintActivityTagsNotOverlapping::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityTagsNotOverlapping::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -11215,6 +11279,12 @@ bool ConstraintMinDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintMinDaysBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -11576,6 +11646,12 @@ bool ConstraintMaxDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
 	}
 
 	return true;
+}
+
+void ConstraintMaxDaysBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -11946,6 +12022,12 @@ bool ConstraintActivitiesMaxHourlySpan::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesMaxHourlySpan::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -12264,6 +12346,12 @@ bool ConstraintMinGapsBetweenActivities::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintMinGapsBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -12579,6 +12667,12 @@ bool ConstraintMaxGapsBetweenActivities::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintMaxGapsBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -12802,6 +12896,12 @@ bool ConstraintTeachersMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -13031,6 +13131,12 @@ bool ConstraintTeacherMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -13265,6 +13371,12 @@ bool ConstraintTeachersMaxHoursContinuously::repairWrongDayOrHour(Rules& r)
 		maxHoursContinuously=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -13504,6 +13616,12 @@ bool ConstraintTeacherMaxHoursContinuously::repairWrongDayOrHour(Rules& r)
 		maxHoursContinuously=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -13783,6 +13901,12 @@ bool ConstraintTeachersActivityTagMaxHoursContinuously::repairWrongDayOrHour(Rul
 		maxHoursContinuously=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersActivityTagMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -14069,6 +14193,12 @@ bool ConstraintTeacherActivityTagMaxHoursContinuously::repairWrongDayOrHour(Rule
 	return true;
 }
 
+void ConstraintTeacherActivityTagMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -14316,6 +14446,12 @@ bool ConstraintTeacherMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		maxDaysPerWeek=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintTeacherMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -14572,6 +14708,12 @@ bool ConstraintTeachersMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeachersMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -14784,6 +14926,12 @@ bool ConstraintTeachersMaxGapsPerWeek::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxGapsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -15005,6 +15153,12 @@ bool ConstraintTeacherMaxGapsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxGapsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -15216,6 +15370,12 @@ bool ConstraintTeachersMaxGapsPerDay::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxGapsPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -15436,6 +15596,12 @@ bool ConstraintTeacherMaxGapsPerDay::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxGapsPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -15666,6 +15832,12 @@ bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::repairWrongDayOrHour(Rules
 		maxGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxGapsPerMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -15903,6 +16075,12 @@ bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::repairWrongDayOrHour(Rules&
 		maxGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxGapsPerMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -16214,6 +16392,26 @@ bool ConstraintBreakTimes::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintBreakTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(days.count()==hours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<days.count(); i++)
+		if(newExistingDaysHash.contains(days.at(i))){
+			newDays.append(newExistingDaysHash.value(days.at(i)));
+			newHours.append(hours.at(i));
+		}
+	
+	days=newDays;
+	hours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -16431,6 +16629,12 @@ bool ConstraintStudentsMaxGapsPerWeek::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxGapsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -16703,6 +16907,12 @@ bool ConstraintStudentsSetMaxGapsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxGapsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -16957,6 +17167,12 @@ bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHour(Rule
 		maxBeginningsAtSecondHour=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintStudentsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -17264,6 +17480,12 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHour(R
 	return true;
 }
 
+void ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -17473,6 +17695,12 @@ bool ConstraintStudentsMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -17735,6 +17963,12 @@ bool ConstraintStudentsSetMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -17969,6 +18203,12 @@ bool ConstraintStudentsMaxHoursContinuously::repairWrongDayOrHour(Rules& r)
 		maxHoursContinuously=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -18255,6 +18495,12 @@ bool ConstraintStudentsSetMaxHoursContinuously::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -18537,6 +18783,12 @@ bool ConstraintStudentsActivityTagMaxHoursContinuously::repairWrongDayOrHour(Rul
 		maxHoursContinuously=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsActivityTagMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -18870,6 +19122,12 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::repairWrongDayOrHour(
 	return true;
 }
 
+void ConstraintStudentsSetActivityTagMaxHoursContinuously::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -19181,6 +19439,12 @@ bool ConstraintStudentsMinHoursDaily::repairWrongDayOrHour(Rules& r)
 		minHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -19546,6 +19810,12 @@ bool ConstraintStudentsSetMinHoursDaily::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -19826,6 +20096,23 @@ bool ConstraintActivityPreferredStartingTime::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 
 	return false;
+}
+
+void ConstraintActivityPreferredStartingTime::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	int newDay=-1;
+	int newHour=-1;
+	
+	if(newExistingDaysHash.contains(day)){
+		newDay=newExistingDaysHash.value(day);
+		newHour=hour;
+	}
+	
+	day=newDay;
+	hour=newHour;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -20182,6 +20469,30 @@ bool ConstraintActivityPreferredTimeSlots::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivityPreferredTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(p_nPreferredTimeSlots_L==p_days_L.count());
+	assert(p_nPreferredTimeSlots_L==p_hours_L.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	int newNPref=0;
+	
+	for(int i=0; i<p_nPreferredTimeSlots_L; i++)
+		if(newExistingDaysHash.contains(p_days_L.at(i))){
+			newDays.append(newExistingDaysHash.value(p_days_L.at(i)));
+			newHours.append(p_hours_L.at(i));
+			newNPref++;
+		}
+	
+	p_nPreferredTimeSlots_L=newNPref;
+	p_days_L=newDays;
+	p_hours_L=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -20746,6 +21057,30 @@ bool ConstraintActivitiesPreferredTimeSlots::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivitiesPreferredTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(p_nPreferredTimeSlots_L==p_days_L.count());
+	assert(p_nPreferredTimeSlots_L==p_hours_L.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	int newNPref=0;
+	
+	for(int i=0; i<p_nPreferredTimeSlots_L; i++)
+		if(newExistingDaysHash.contains(p_days_L.at(i))){
+			newDays.append(newExistingDaysHash.value(p_days_L.at(i)));
+			newHours.append(p_hours_L.at(i));
+			newNPref++;
+		}
+	
+	p_nPreferredTimeSlots_L=newNPref;
+	p_days_L=newDays;
+	p_hours_L=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -21337,6 +21672,30 @@ bool ConstraintSubactivitiesPreferredTimeSlots::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintSubactivitiesPreferredTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(p_nPreferredTimeSlots_L==p_days_L.count());
+	assert(p_nPreferredTimeSlots_L==p_hours_L.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	int newNPref=0;
+	
+	for(int i=0; i<p_nPreferredTimeSlots_L; i++)
+		if(newExistingDaysHash.contains(p_days_L.at(i))){
+			newDays.append(newExistingDaysHash.value(p_days_L.at(i)));
+			newHours.append(p_hours_L.at(i));
+			newNPref++;
+		}
+	
+	p_nPreferredTimeSlots_L=newNPref;
+	p_days_L=newDays;
+	p_hours_L=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21677,6 +22036,30 @@ bool ConstraintActivityPreferredStartingTimes::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivityPreferredStartingTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(nPreferredStartingTimes_L==days_L.count());
+	assert(nPreferredStartingTimes_L==hours_L.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	int newNPref=0;
+	
+	for(int i=0; i<nPreferredStartingTimes_L; i++)
+		if(newExistingDaysHash.contains(days_L.at(i))){
+			newDays.append(newExistingDaysHash.value(days_L.at(i)));
+			newHours.append(hours_L.at(i));
+			newNPref++;
+		}
+	
+	nPreferredStartingTimes_L=newNPref;
+	days_L=newDays;
+	hours_L=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -22231,6 +22614,30 @@ bool ConstraintActivitiesPreferredStartingTimes::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivitiesPreferredStartingTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(nPreferredStartingTimes_L==days_L.count());
+	assert(nPreferredStartingTimes_L==hours_L.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	int newNPref=0;
+	
+	for(int i=0; i<nPreferredStartingTimes_L; i++)
+		if(newExistingDaysHash.contains(days_L.at(i))){
+			newDays.append(newExistingDaysHash.value(days_L.at(i)));
+			newHours.append(hours_L.at(i));
+			newNPref++;
+		}
+	
+	nPreferredStartingTimes_L=newNPref;
+	days_L=newDays;
+	hours_L=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -22804,6 +23211,30 @@ bool ConstraintSubactivitiesPreferredStartingTimes::repairWrongDayOrHour(Rules& 
 	return true;
 }
 
+void ConstraintSubactivitiesPreferredStartingTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(nPreferredStartingTimes_L==days_L.count());
+	assert(nPreferredStartingTimes_L==hours_L.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	int newNPref=0;
+	
+	for(int i=0; i<nPreferredStartingTimes_L; i++)
+		if(newExistingDaysHash.contains(days_L.at(i))){
+			newDays.append(newExistingDaysHash.value(days_L.at(i)));
+			newHours.append(hours_L.at(i));
+			newNPref++;
+		}
+	
+	nPreferredStartingTimes_L=newNPref;
+	days_L=newDays;
+	hours_L=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23123,6 +23554,12 @@ bool ConstraintActivitiesSameStartingHour::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivitiesSameStartingHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23445,6 +23882,12 @@ bool ConstraintActivitiesSameStartingDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesSameStartingDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23725,6 +24168,12 @@ bool ConstraintTwoActivitiesConsecutive::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTwoActivitiesConsecutive::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -24019,6 +24468,12 @@ bool ConstraintTwoActivitiesGrouped::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTwoActivitiesGrouped::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -24398,6 +24853,12 @@ bool ConstraintThreeActivitiesGrouped::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintThreeActivitiesGrouped::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24663,6 +25124,12 @@ bool ConstraintTwoActivitiesOrdered::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTwoActivitiesOrdered::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -25025,6 +25492,12 @@ bool ConstraintTwoSetsOfActivitiesOrdered::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTwoSetsOfActivitiesOrdered::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25294,6 +25767,12 @@ bool ConstraintTwoActivitiesOrderedIfSameDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTwoActivitiesOrderedIfSameDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25514,6 +25993,12 @@ bool ConstraintActivityEndsStudentsDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityEndsStudentsDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -25761,6 +26246,12 @@ bool ConstraintTeachersMinHoursDaily::repairWrongDayOrHour(Rules& r)
 		minHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -26015,6 +26506,12 @@ bool ConstraintTeacherMinHoursDaily::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26229,6 +26726,12 @@ bool ConstraintTeacherMinDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26439,6 +26942,12 @@ bool ConstraintTeachersMinDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		minDaysPerWeek=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintTeachersMinDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -26709,6 +27218,12 @@ bool ConstraintTeacherIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26967,6 +27482,12 @@ bool ConstraintTeachersIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		this->maxDaysPerWeek=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintTeachersIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -27286,6 +27807,12 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27545,6 +28072,12 @@ bool ConstraintStudentsIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		this->maxDaysPerWeek=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintStudentsIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -27884,6 +28417,12 @@ bool ConstraintActivitiesEndStudentsDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesEndStudentsDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -28104,6 +28643,12 @@ bool ConstraintActivityEndsTeachersDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityEndsTeachersDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -28443,6 +28988,12 @@ bool ConstraintActivitiesEndTeachersDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesEndTeachersDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -28686,6 +29237,12 @@ bool ConstraintTeachersActivityTagMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersActivityTagMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -28939,6 +29496,12 @@ bool ConstraintTeacherActivityTagMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherActivityTagMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29188,6 +29751,12 @@ bool ConstraintStudentsActivityTagMaxHoursDaily::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsActivityTagMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -29488,6 +30057,12 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::repairWrongDayOrHour(Rules& 
 	return true;
 }
 
+void ConstraintStudentsSetActivityTagMaxHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29747,6 +30322,12 @@ bool ConstraintTeachersActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& r)
 		minDaysWithTag=r.nDaysPerWeek;
 	
 	return true;
+}
+
+void ConstraintTeachersActivityTagMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -30016,6 +30597,12 @@ bool ConstraintTeacherActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherActivityTagMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30283,6 +30870,12 @@ bool ConstraintStudentsActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& r)
 		minDaysWithTag=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintStudentsActivityTagMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -30600,6 +31193,12 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::repairWrongDayOrHour(Rules& 
 	return true;
 }
 
+void ConstraintStudentsSetActivityTagMinHoursDaily::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30819,6 +31418,12 @@ bool ConstraintStudentsMaxGapsPerDay::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxGapsPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -31091,6 +31696,12 @@ bool ConstraintStudentsSetMaxGapsPerDay::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxGapsPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -31502,6 +32113,26 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::repairWrongDayOrHour(R
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -31924,6 +32555,26 @@ bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::repairWrongDayOrHour(R
 	return true;
 }
 
+void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -32329,6 +32980,26 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::repairWrongDayOrHou
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -32755,6 +33426,26 @@ bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::repairWrongDayOrHou
 	return true;
 }
 
+void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -33156,6 +33847,26 @@ bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::repairWrongDayOrHou
 	return true;
 }
 
+void ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -33429,6 +34140,12 @@ bool ConstraintActivitiesMaxInATerm::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 
 	return true;
+}
+
+void ConstraintActivitiesMaxInATerm::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -33710,6 +34427,12 @@ bool ConstraintActivitiesOccupyMaxTerms::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesOccupyMaxTerms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -33969,6 +34692,12 @@ bool ConstraintStudentsSetMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -34173,6 +34902,12 @@ bool ConstraintStudentsMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		this->maxDaysPerWeek=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintStudentsMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -34398,6 +35133,12 @@ bool ConstraintTeacherMaxSpanPerDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxSpanPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -34615,6 +35356,12 @@ bool ConstraintTeachersMaxSpanPerDay::repairWrongDayOrHour(Rules& r)
 		maxSpanPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxSpanPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -34869,6 +35616,12 @@ bool ConstraintStudentsSetMaxSpanPerDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxSpanPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35068,6 +35821,12 @@ bool ConstraintStudentsMaxSpanPerDay::repairWrongDayOrHour(Rules& r)
 		maxSpanPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxSpanPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -35280,6 +36039,12 @@ bool ConstraintTeacherMinRestingHours::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinRestingHours::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35484,6 +36249,12 @@ bool ConstraintTeachersMinRestingHours::repairWrongDayOrHour(Rules& r)
 		minRestingHours=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinRestingHours::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -35741,6 +36512,12 @@ bool ConstraintStudentsSetMinRestingHours::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMinRestingHours::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35943,6 +36720,12 @@ bool ConstraintStudentsMinRestingHours::repairWrongDayOrHour(Rules& r)
 		minRestingHours=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinRestingHours::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -36282,6 +37065,12 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::repairWrongDa
 	return true;
 }
 
+void ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -36562,6 +37351,12 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOr
 		minGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -36861,6 +37656,12 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOrH
 	return true;
 }
 
+void ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -37143,6 +37944,12 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::repairWrongDayOr
 		minGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -37474,6 +38281,12 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTag::repairWrongDayOrHour(Rules&
 	return true;
 }
 
+void ConstraintStudentsSetMinGapsBetweenActivityTag::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -37747,6 +38560,12 @@ bool ConstraintStudentsMinGapsBetweenActivityTag::repairWrongDayOrHour(Rules& r)
 		minGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenActivityTag::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -38038,6 +38857,12 @@ bool ConstraintTeacherMinGapsBetweenActivityTag::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinGapsBetweenActivityTag::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -38312,6 +39137,12 @@ bool ConstraintTeachersMinGapsBetweenActivityTag::repairWrongDayOrHour(Rules& r)
 		minGaps=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenActivityTag::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2024-03-15
@@ -38652,6 +39483,12 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::rep
 	return true;
 }
 
+void ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -38932,6 +39769,12 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::repair
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -39231,6 +40074,12 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::repairW
 	return true;
 }
 
+void ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -39513,6 +40362,12 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::repair
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -39844,6 +40699,12 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::repairWrongDayOrH
 	return true;
 }
 
+void ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40117,6 +40978,12 @@ bool ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::repairWrongDayOrHour
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenActivityTagPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -40408,6 +41275,12 @@ bool ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::repairWrongDayOrHour(
 	return true;
 }
 
+void ConstraintTeacherMinGapsBetweenActivityTagPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40682,6 +41555,12 @@ bool ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::repairWrongDayOrHour
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenActivityTagPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2024-05-18
@@ -41024,6 +41903,12 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningA
 	return true;
 }
 
+void ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -41306,6 +42191,12 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndA
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -41607,6 +42498,12 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAf
 	return true;
 }
 
+void ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -41891,6 +42788,12 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndA
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -42216,6 +43119,12 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::r
 	return true;
 }
 
+void ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42483,6 +43392,12 @@ bool ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::repa
 		minGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -42768,6 +43683,12 @@ bool ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::repai
 	return true;
 }
 
+void ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43038,6 +43959,12 @@ bool ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::repa
 	return true;
 }
 
+void ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43271,6 +44198,12 @@ bool ConstraintTeachersMaxHoursDailyRealDays::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeachersMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43501,6 +44434,12 @@ bool ConstraintTeacherMaxHoursDailyRealDays::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -43757,6 +44696,12 @@ bool ConstraintTeacherMaxRealDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		maxDaysPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeacherMaxRealDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -44019,6 +44964,12 @@ bool ConstraintTeachersMaxRealDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeachersMaxRealDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -44276,6 +45227,12 @@ bool ConstraintTeachersMaxGapsPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxGapsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -44542,6 +45499,12 @@ bool ConstraintTeacherMaxGapsPerRealDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxGapsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -44752,6 +45715,12 @@ bool ConstraintStudentsMaxHoursDailyRealDays::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -45016,6 +45985,12 @@ bool ConstraintStudentsSetMaxHoursDailyRealDays::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45262,6 +46237,12 @@ bool ConstraintTeachersMinHoursPerMorning::repairWrongDayOrHour(Rules& r)
 		minHoursPerMorning=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinHoursPerMorning::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -45517,6 +46498,12 @@ bool ConstraintTeacherMinHoursPerMorning::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinHoursPerMorning::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45765,6 +46752,12 @@ bool ConstraintTeachersMinHoursDailyRealDays::repairWrongDayOrHour(Rules& r)
 		minHoursDaily=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -46022,6 +47015,12 @@ bool ConstraintTeacherMinHoursDailyRealDays::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -46233,6 +47232,12 @@ bool ConstraintTeacherMinRealDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinRealDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -46440,6 +47445,12 @@ bool ConstraintTeachersMinRealDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		minDaysPerWeek=r.nDaysPerWeek;
 
 	return true;
+}
+
+void ConstraintTeachersMinRealDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -46709,6 +47720,12 @@ bool ConstraintTeacherMorningIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules&
 	return true;
 }
 
+void ConstraintTeacherMorningIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -46967,6 +47984,12 @@ bool ConstraintTeachersMorningIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules
 		this->maxDaysPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeachersMorningIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -47236,6 +48259,12 @@ bool ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rule
 	return true;
 }
 
+void ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47496,6 +48525,12 @@ bool ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rul
 	return true;
 }
 
+void ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47740,6 +48775,12 @@ bool ConstraintTeachersActivityTagMaxHoursDailyRealDays::repairWrongDayOrHour(Ru
 		maxHoursDaily=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersActivityTagMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -47992,6 +49033,12 @@ bool ConstraintTeacherActivityTagMaxHoursDailyRealDays::repairWrongDayOrHour(Rul
 		maxHoursDaily=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherActivityTagMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -48247,6 +49294,12 @@ bool ConstraintStudentsActivityTagMaxHoursDailyRealDays::repairWrongDayOrHour(Ru
 		maxHoursDaily=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsActivityTagMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -48552,6 +49605,12 @@ bool ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::repairWrongDayOrHour
 	return true;
 }
 
+void ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -48788,6 +49847,12 @@ bool ConstraintStudentsMaxGapsPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxGaps=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxGapsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -49076,6 +50141,12 @@ bool ConstraintStudentsSetMaxGapsPerRealDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxGapsPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49341,6 +50412,12 @@ bool ConstraintStudentsSetMaxRealDaysPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxRealDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49551,6 +50628,12 @@ bool ConstraintStudentsMaxRealDaysPerWeek::repairWrongDayOrHour(Rules& r)
 		this->maxDaysPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMaxRealDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -49779,6 +50862,12 @@ bool ConstraintTeacherMaxSpanPerRealDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxSpanPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49999,6 +51088,12 @@ bool ConstraintTeachersMaxSpanPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxSpanPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxSpanPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -50259,6 +51354,12 @@ bool ConstraintStudentsSetMaxSpanPerRealDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxSpanPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50464,6 +51565,12 @@ bool ConstraintStudentsMaxSpanPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxSpanPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxSpanPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -50718,6 +51825,12 @@ bool ConstraintTeacherMaxAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 		maxAfternoonsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeacherMaxAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -50978,6 +52091,12 @@ bool ConstraintTeachersMaxAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeachersMaxAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51230,6 +52349,12 @@ bool ConstraintTeacherMaxMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 		maxMorningsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeacherMaxMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -51490,6 +52615,12 @@ bool ConstraintTeachersMaxMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeachersMaxMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51726,6 +52857,12 @@ bool ConstraintTeacherMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& 
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeacherMaxActivityTagsPerDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -51965,6 +53102,12 @@ bool ConstraintTeachersMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules&
 	return true;
 }
 
+void ConstraintTeachersMaxActivityTagsPerDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52176,6 +53319,12 @@ bool ConstraintTeacherMinMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52383,6 +53532,12 @@ bool ConstraintTeachersMinMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 		minMorningsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeachersMinMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -52596,6 +53751,12 @@ bool ConstraintTeacherMinAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMinAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52803,6 +53964,12 @@ bool ConstraintTeachersMinAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 		minAfternoonsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeachersMinAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -53073,6 +54240,12 @@ bool ConstraintTeacherMaxTwoConsecutiveMornings::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 
 	return true;
+}
+
+void ConstraintTeacherMaxTwoConsecutiveMornings::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -53346,6 +54519,12 @@ bool ConstraintTeachersMaxTwoConsecutiveMornings::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeachersMaxTwoConsecutiveMornings::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53614,6 +54793,12 @@ bool ConstraintTeacherMaxTwoConsecutiveAfternoons::repairWrongDayOrHour(Rules& r
 	assert(hasWrongDayOrHour(r));
 
 	return true;
+}
+
+void ConstraintTeacherMaxTwoConsecutiveAfternoons::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -53888,6 +55073,12 @@ bool ConstraintTeachersMaxTwoConsecutiveAfternoons::repairWrongDayOrHour(Rules& 
 	return true;
 }
 
+void ConstraintTeachersMaxTwoConsecutiveAfternoons::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -54145,6 +55336,12 @@ bool ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::repairWrongDayO
 		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -54411,6 +55608,12 @@ bool ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::repairWrongDayOr
 	return true;
 }
 
+void ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 //2020-06-14
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -54672,6 +55875,12 @@ bool ConstraintStudentsMinHoursPerMorning::repairWrongDayOrHour(Rules& r)
 		minHoursPerMorning=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinHoursPerMorning::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -54986,6 +56195,12 @@ bool ConstraintStudentsSetMinHoursPerMorning::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMinHoursPerMorning::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -55197,6 +56412,12 @@ bool ConstraintTeacherMaxZeroGapsPerAfternoon::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxZeroGapsPerAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -55400,6 +56621,12 @@ bool ConstraintTeachersMaxZeroGapsPerAfternoon::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 
 	return true;
+}
+
+void ConstraintTeachersMaxZeroGapsPerAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2020-06-25
@@ -55668,6 +56895,12 @@ bool ConstraintStudentsSetMaxAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -55880,6 +57113,12 @@ bool ConstraintStudentsMaxAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 		this->maxAfternoonsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMaxAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -56147,6 +57386,12 @@ bool ConstraintStudentsSetMaxMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMaxMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56359,6 +57604,12 @@ bool ConstraintStudentsMaxMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 		this->maxMorningsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMaxMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2020-06-26
@@ -56627,6 +57878,12 @@ bool ConstraintStudentsSetMinAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMinAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56839,6 +58096,12 @@ bool ConstraintStudentsMinAfternoonsPerWeek::repairWrongDayOrHour(Rules& r)
 		this->minAfternoonsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMinAfternoonsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -57106,6 +58369,12 @@ bool ConstraintStudentsSetMinMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMinMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57318,6 +58587,12 @@ bool ConstraintStudentsMinMorningsPerWeek::repairWrongDayOrHour(Rules& r)
 		this->minMorningsPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMinMorningsPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2020-06-26
@@ -57636,6 +58911,12 @@ bool ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::repairWrongDayOrHour(Ru
 	return true;
 }
 
+void ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57894,6 +59175,12 @@ bool ConstraintStudentsMorningIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rules
 		this->maxDaysPerWeek=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMorningIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -58211,6 +59498,12 @@ bool ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::repairWrongDayOrHour(
 	return true;
 }
 
+void ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -58471,6 +59764,12 @@ bool ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::repairWrongDayOrHour(Rul
 	return true;
 }
 
+void ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 //2020-06-28
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -58666,6 +59965,12 @@ bool ConstraintTeacherMaxHoursPerAllAfternoons::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxHoursPerAllAfternoons::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -58852,6 +60157,12 @@ bool ConstraintTeachersMaxHoursPerAllAfternoons::repairWrongDayOrHour(Rules& r)
 		maxHoursPerAllAfternoons=r.nDaysPerWeek*r.nHoursPerDay/2;
 
 	return true;
+}
+
+void ConstraintTeachersMaxHoursPerAllAfternoons::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2020-06-28
@@ -59094,6 +60405,12 @@ bool ConstraintStudentsSetMaxHoursPerAllAfternoons::repairWrongDayOrHour(Rules& 
 	return true;
 }
 
+void ConstraintStudentsSetMaxHoursPerAllAfternoons::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59280,6 +60597,12 @@ bool ConstraintStudentsMaxHoursPerAllAfternoons::repairWrongDayOrHour(Rules& r)
 		maxHoursPerAllAfternoons=r.nDaysPerWeek*r.nHoursPerDay/2;
 
 	return true;
+}
+
+void ConstraintStudentsMaxHoursPerAllAfternoons::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -59484,6 +60807,12 @@ bool ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::repairWrongDayO
 	return true;
 }
 
+void ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59680,6 +61009,12 @@ bool ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::repairWrongDay
 		minRestingHours=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -59932,6 +61267,12 @@ bool ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::repairWrong
 	return true;
 }
 
+void ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60129,6 +61470,12 @@ bool ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::repairWrongDay
 		minRestingHours=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -60388,6 +61735,12 @@ bool ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::repairWrongDayO
 		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -60698,6 +62051,12 @@ bool ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::repairWrongD
 	return true;
 }
 
+void ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 //2020-07-29
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -60925,6 +62284,12 @@ bool ConstraintTeachersMaxGapsPerWeekForRealDays::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxGapsPerWeekForRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -61157,6 +62522,12 @@ bool ConstraintTeacherMaxGapsPerWeekForRealDays::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxGapsPerWeekForRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -61393,6 +62764,12 @@ bool ConstraintStudentsMaxGapsPerWeekForRealDays::repairWrongDayOrHour(Rules& r)
 		maxGaps=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxGapsPerWeekForRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -61679,6 +63056,12 @@ bool ConstraintStudentsSetMaxGapsPerWeekForRealDays::repairWrongDayOrHour(Rules&
 	return true;
 }
 
+void ConstraintStudentsSetMaxGapsPerWeekForRealDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 //2021-08-12
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -61937,6 +63320,12 @@ bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrH
 		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -62203,6 +63592,12 @@ bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHo
 	return true;
 }
 
+void ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62460,6 +63855,12 @@ bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrH
 		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
 
 	return true;
+}
+
+void ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -62770,6 +64171,12 @@ bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDay
 	return true;
 }
 
+void ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62981,6 +64388,12 @@ bool ConstraintTeacherMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxThreeConsecutiveDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63189,6 +64602,12 @@ bool ConstraintTeachersMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTeachersMaxThreeConsecutiveDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -63453,6 +64872,12 @@ bool ConstraintStudentsSetMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r
 	return true;
 }
 
+void ConstraintStudentsSetMaxThreeConsecutiveDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63660,6 +65085,12 @@ bool ConstraintStudentsMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintStudentsMaxThreeConsecutiveDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -64063,6 +65494,12 @@ bool ConstraintMinHalfDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintMinHalfDaysBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64322,6 +65759,14 @@ bool ConstraintActivityPreferredDay::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 
 	return false;
+}
+
+void ConstraintActivityPreferredDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day=newExistingDaysHash.value(day, -1);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -64616,6 +66061,12 @@ bool ConstraintActivitiesMinInATerm::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 
 	return true;
+}
+
+void ConstraintActivitiesMinInATerm::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -64953,6 +66404,12 @@ bool ConstraintMaxTermsBetweenActivities::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintMaxTermsBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65198,6 +66655,12 @@ bool ConstraintStudentsSetMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rul
 	return true;
 }
 
+void ConstraintStudentsSetMaxActivityTagsPerDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65430,6 +66893,12 @@ bool ConstraintStudentsMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules&
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintStudentsMaxActivityTagsPerDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -65673,6 +67142,12 @@ bool ConstraintTeacherMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rul
 	return true;
 }
 
+void ConstraintTeacherMaxActivityTagsPerRealDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65911,6 +67386,12 @@ bool ConstraintTeachersMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Ru
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeachersMaxActivityTagsPerRealDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -66161,6 +67642,12 @@ bool ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour
 	return true;
 }
 
+void ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66396,6 +67883,12 @@ bool ConstraintStudentsMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Ru
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintStudentsMaxActivityTagsPerRealDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -66748,6 +68241,12 @@ bool ConstraintMaxHalfDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintMaxHalfDaysBetweenActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66968,6 +68467,12 @@ bool ConstraintActivityBeginsStudentsDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityBeginsStudentsDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -67307,6 +68812,12 @@ bool ConstraintActivitiesBeginStudentsDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesBeginStudentsDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67527,6 +69038,12 @@ bool ConstraintActivityBeginsTeachersDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityBeginsTeachersDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -67866,6 +69383,12 @@ bool ConstraintActivitiesBeginTeachersDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesBeginTeachersDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 //2022-09-10
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -68113,6 +69636,12 @@ bool ConstraintTeachersMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
 		minHoursPerAfternoon=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinHoursPerAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -68366,6 +69895,12 @@ bool ConstraintTeacherMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
 		minHoursPerAfternoon=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMinHoursPerAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -68628,6 +70163,12 @@ bool ConstraintStudentsMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
 		minHoursPerAfternoon=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinHoursPerAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -68942,6 +70483,12 @@ bool ConstraintStudentsSetMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsSetMinHoursPerAfternoon::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69208,6 +70755,12 @@ bool ConstraintTeacherMaxHoursDailyInInterval::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxHoursDailyInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69468,6 +71021,12 @@ bool ConstraintTeachersMaxHoursDailyInInterval::repairWrongDayOrHour(Rules& r)
 		maxHoursDaily=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxHoursDailyInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -69769,6 +71328,12 @@ bool ConstraintStudentsSetMaxHoursDailyInInterval::repairWrongDayOrHour(Rules& r
 	return true;
 }
 
+void ConstraintStudentsSetMaxHoursDailyInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70015,6 +71580,12 @@ bool ConstraintStudentsMaxHoursDailyInInterval::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintStudentsMaxHoursDailyInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70217,6 +71788,12 @@ bool ConstraintTeacherNoTwoConsecutiveDays::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherNoTwoConsecutiveDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70416,6 +71993,12 @@ bool ConstraintTeachersNoTwoConsecutiveDays::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTeachersNoTwoConsecutiveDays::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -70678,6 +72261,15 @@ bool ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Rul
 	return true;
 }
 
+void ConstraintTeacherPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70929,6 +72521,15 @@ bool ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Ru
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintTeachersPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -71201,6 +72802,15 @@ bool ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour
 	return true;
 }
 
+void ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71452,6 +73062,15 @@ bool ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Ru
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintStudentsPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -71959,6 +73578,26 @@ bool ConstraintTwoSetsOfActivitiesSameSections::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTwoSetsOfActivitiesSameSections::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(oDays.count()==oHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<oDays.count(); i++)
+		if(newExistingDaysHash.contains(oDays.at(i))){
+			newDays.append(newExistingDaysHash.value(oDays.at(i)));
+			newHours.append(oHours.at(i));
+		}
+	
+	oDays=newDays;
+	oHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72304,6 +73943,26 @@ bool ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour
 	return true;
 }
 
+void ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72632,6 +74291,26 @@ bool ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Ru
 	return true;
 }
 
+void ConstraintStudentsMaxSingleGapsInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72958,6 +74637,26 @@ bool ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Ru
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeachersMaxSingleGapsInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -73306,6 +75005,26 @@ bool ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::repairWrongDayOrHour(Rul
 	return true;
 }
 
+void ConstraintTeacherMaxSingleGapsInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73500,6 +75219,12 @@ bool ConstraintTeacherMaxHoursPerTerm::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintTeacherMaxHoursPerTerm::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73686,6 +75411,12 @@ bool ConstraintTeachersMaxHoursPerTerm::repairWrongDayOrHour(Rules& r)
 		maxHoursPerTerm=r.nDaysPerTerm*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxHoursPerTerm::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -74070,6 +75801,40 @@ bool ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHo
 	return true;
 }
 
+void ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -74442,6 +76207,40 @@ bool ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrH
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -74837,6 +76636,40 @@ bool ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDay
 	return true;
 }
 
+void ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75209,6 +77042,40 @@ bool ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrH
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -75672,6 +77539,40 @@ bool ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayO
 	return true;
 }
 
+void ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -76001,6 +77902,15 @@ bool ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -76406,6 +78316,38 @@ bool ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrH
 	return true;
 }
 
+void ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -76801,6 +78743,38 @@ bool ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHo
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -77215,6 +79189,38 @@ bool ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::repairWrongDa
 	return true;
 }
 
+void ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77611,6 +79617,38 @@ bool ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHo
 	return true;
 }
 
+void ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77891,6 +79929,12 @@ bool ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::repairWrongDayOrHour(R
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivitiesOverlapCompletelyOrDoNotOverlap::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -78378,6 +80422,38 @@ bool ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOr
 	return true;
 }
 
+void ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -78607,6 +80683,12 @@ bool ConstraintActivityBeginsOrEndsStudentsDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityBeginsOrEndsStudentsDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -78957,6 +81039,12 @@ bool ConstraintActivitiesBeginOrEndStudentsDay::repairWrongDayOrHour(Rules& r)
 	return true;
 }
 
+void ConstraintActivitiesBeginOrEndStudentsDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79188,6 +81276,12 @@ bool ConstraintActivityBeginsOrEndsTeachersDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityBeginsOrEndsTeachersDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -79535,6 +81629,12 @@ bool ConstraintActivitiesBeginOrEndTeachersDay::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivitiesBeginOrEndTeachersDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -79944,6 +82044,26 @@ bool ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::repairWron
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -80367,6 +82487,26 @@ bool ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::repairWrongD
 	return true;
 }
 
+void ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<selectedDays.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays.at(i))){
+			newDays.append(newExistingDaysHash.value(selectedDays.at(i)));
+			newHours.append(selectedHours.at(i));
+		}
+	
+	selectedDays=newDays;
+	selectedHours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -80391,6 +82531,8 @@ ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::ConstraintMaxDaysBetwee
 
 bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	assert(this->maxDays>=1);
+
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
 	for(int id : std::as_const(activitiesIds)){
@@ -80682,6 +82824,15 @@ bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::repairWrongDayOrHo
 		if(maxDays>=r.nDaysPerWeek/2)
 			maxDays=r.nDaysPerWeek/2-1;
 	}
+	
+	if(maxDays<1) //so that we won't get an assertion failed in computeInternalStructure or an assertion failed or a division by 0 in generate.cpp
+		maxDays=1;
 
 	return true;
+}
+
+void ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }

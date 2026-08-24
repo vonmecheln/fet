@@ -1,5 +1,4 @@
-This is FET version 7.9.5
-
+This is FET version 7.10.0
 
 Program description:
 
@@ -14,9 +13,9 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 7.1.5, Xfce 4.20,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 7.1.8, Xfce 4.20,
 	Xfce Terminal Emulator 1.2.0, Midnight Commander 4.8.33, Krusader 2.9.0, Kate 26.04.3, KDiff3 0.9.99-beta, grep 3.12, sed 4.10,
-	Thunar Bulk Rename 4.20.9, Qt 6.11.1, QMake 3.1, CMake 4.4.0, Ninja 1.13.2, Qt Creator 20.0.1, GCC 16.1.1, Clang 22.1.8, GNU Make 4.4.1,
+	Thunar Bulk Rename 4.20.9, Qt 6.11.1, QMake 3.1, CMake 4.4.2, Ninja 1.13.2, Qt Creator 20.0.1, GCC 16.2.0, Clang 22.1.8, GNU Make 4.4.1,
 	GDB 16.3, Valgrind 3.27.1, Coverity Scan 2024.12.1, Cppcheck 2.19, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.4.4,
 	GIMP 3.2.4, ImageMagick 7.1.2-28, International Ispell 3.1.20 / Aspell 0.60.8.2, tar 1.35, Gzip 1.14, bzip2 1.0.8, xz 5.8.3,
 	other great software (most of these software packages are free software, in the sense defined by The Free Software Foundation).
@@ -39,7 +38,7 @@ Requirements:
 	CMake is the new recommended way to compile FET. QMake is the old and not recommended way.
 	For compiling, you will need this software:
 		CMake 3.28 or later (for compiling with CMake).
-		GCC 16.1.1 or similar.
+		GCC 16.2.0 or similar.
 		Qt 6.11.1 or compatible. CMake: Qt 6.10 minimum. QMake: Qt 5.15 or later should be fine.
 		For compiling with QMake: Make 4.2.1 or similar (GNU Make).
 		QMake 3.1 or compatible (usually available with Qt).
@@ -371,8 +370,8 @@ Running FET:
 			LEVEL is an integer from 0 to 7 and represents the detail level for the generated HTML timetables (default 2, larger values have more
 			details/facilities and larger file sizes).
 
-		--embedcssinhtmlhead=WCHH
-			WCHH is either true or false and represents whether you want to embed the CSS code in the head of each of the resulted HTML files, instead of
+		--embedcssinhtmlhead=ECHH
+			ECHH is either true or false and represents whether you want to embed the CSS code in the head of each of the resulted HTML files, instead of
 			writing a separate unique CSS file (default false).
 
 		--htmlusespan=US

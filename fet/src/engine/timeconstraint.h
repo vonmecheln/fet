@@ -31,6 +31,8 @@ File timeconstraint.h
 
 #include <QSet>
 
+#include <QHash>
+
 class Rules;
 class Solution;
 class TimeConstraint;
@@ -558,6 +560,8 @@ public:
 	virtual bool hasWrongDayOrHour(Rules& r)=0;
 	virtual bool canRepairWrongDayOrHour(Rules& r)=0;
 	virtual bool repairWrongDayOrHour(Rules& r)=0;
+	
+	virtual void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash)=0;
 };
 
 /**
@@ -599,6 +603,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherNotAvailableTimes: public TimeConstraint{
@@ -649,6 +655,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetNotAvailableTimes: public TimeConstraint{
@@ -699,6 +707,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesSameStartingTime: public TimeConstraint{
@@ -769,6 +779,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -844,6 +856,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityTagsNotOverlapping: public TimeConstraint{
@@ -888,6 +902,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -976,6 +992,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMaxDaysBetweenActivities: public TimeConstraint{
@@ -1050,6 +1068,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMaxHourlySpan: public TimeConstraint{
@@ -1124,6 +1144,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMinGapsBetweenActivities: public TimeConstraint{
@@ -1199,6 +1221,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMaxGapsBetweenActivities: public TimeConstraint{
@@ -1274,6 +1298,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxHoursDaily: public TimeConstraint{
@@ -1316,6 +1342,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxHoursDaily: public TimeConstraint{
@@ -1362,6 +1390,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxHoursDailyInInterval: public TimeConstraint{
@@ -1411,6 +1441,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxHoursDailyInInterval: public TimeConstraint{
@@ -1456,6 +1488,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxHoursDailyInInterval: public TimeConstraint{
@@ -1516,6 +1550,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxHoursDailyInInterval: public TimeConstraint{
@@ -1558,6 +1594,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -1604,6 +1642,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxHoursContinuously: public TimeConstraint{
@@ -1650,6 +1690,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersActivityTagMaxHoursContinuously: public TimeConstraint{
@@ -1698,6 +1740,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherActivityTagMaxHoursContinuously: public TimeConstraint{
@@ -1750,6 +1794,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -1808,6 +1854,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxDaysPerWeek: public TimeConstraint{
@@ -1850,6 +1898,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinDaysPerWeek: public TimeConstraint{
@@ -1899,6 +1949,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinDaysPerWeek: public TimeConstraint{
@@ -1938,6 +1990,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -1983,6 +2037,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -2028,6 +2084,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -2089,6 +2147,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxGapsPerWeek: public TimeConstraint{
@@ -2128,6 +2188,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxGapsPerWeek: public TimeConstraint{
@@ -2171,6 +2233,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxGapsPerDay: public TimeConstraint{
@@ -2210,6 +2274,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxGapsPerDay: public TimeConstraint{
@@ -2253,6 +2319,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxGapsPerMorningAndAfternoon: public TimeConstraint{
@@ -2292,6 +2360,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxGapsPerMorningAndAfternoon: public TimeConstraint{
@@ -2335,6 +2405,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -2383,6 +2455,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -2438,6 +2512,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxHoursDaily: public TimeConstraint{
@@ -2477,6 +2553,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxHoursDaily: public TimeConstraint{
@@ -2534,6 +2612,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxHoursContinuously: public TimeConstraint{
@@ -2573,6 +2653,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxHoursContinuously: public TimeConstraint{
@@ -2630,6 +2712,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsActivityTagMaxHoursContinuously: public TimeConstraint{
@@ -2675,6 +2759,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetActivityTagMaxHoursContinuously: public TimeConstraint{
@@ -2738,6 +2824,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinHoursDaily: public TimeConstraint{
@@ -2779,6 +2867,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinHoursDaily: public TimeConstraint{
@@ -2838,6 +2928,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -2910,6 +3002,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -2981,6 +3075,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityPreferredStartingTimes: public TimeConstraint{
@@ -3047,6 +3143,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -3146,6 +3244,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintSubactivitiesPreferredTimeSlots: public TimeConstraint{
@@ -3240,6 +3340,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesPreferredStartingTimes: public TimeConstraint{
@@ -3332,6 +3434,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintSubactivitiesPreferredStartingTimes: public TimeConstraint{
@@ -3424,6 +3528,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesSameStartingHour: public TimeConstraint{
@@ -3494,6 +3600,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesSameStartingDay: public TimeConstraint{
@@ -3564,6 +3672,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTwoActivitiesConsecutive: public TimeConstraint{
@@ -3622,6 +3732,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTwoActivitiesGrouped: public TimeConstraint{
@@ -3680,6 +3792,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintThreeActivitiesGrouped: public TimeConstraint{
@@ -3742,6 +3856,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTwoActivitiesOrdered: public TimeConstraint{
@@ -3800,6 +3916,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTwoSetsOfActivitiesOrdered: public TimeConstraint{
@@ -3854,6 +3972,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTwoActivitiesOrderedIfSameDay: public TimeConstraint{
@@ -3912,6 +4032,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityEndsStudentsDay: public TimeConstraint{
@@ -3960,6 +4082,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinHoursDaily: public TimeConstraint{
@@ -4004,6 +4128,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinHoursDaily: public TimeConstraint{
@@ -4052,6 +4178,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -4108,6 +4236,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -4154,6 +4284,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -4217,6 +4349,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -4263,6 +4397,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesEndStudentsDay: public TimeConstraint{
@@ -4334,6 +4470,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityEndsTeachersDay: public TimeConstraint{
@@ -4382,6 +4520,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesEndTeachersDay: public TimeConstraint{
@@ -4454,6 +4594,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersActivityTagMaxHoursDaily: public TimeConstraint{
@@ -4502,6 +4644,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherActivityTagMaxHoursDaily: public TimeConstraint{
@@ -4554,6 +4698,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsActivityTagMaxHoursDaily: public TimeConstraint{
@@ -4599,6 +4745,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetActivityTagMaxHoursDaily: public TimeConstraint{
@@ -4662,6 +4810,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersActivityTagMinHoursDaily: public TimeConstraint{
@@ -4712,6 +4862,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherActivityTagMinHoursDaily: public TimeConstraint{
@@ -4766,6 +4918,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsActivityTagMinHoursDaily: public TimeConstraint{
@@ -4813,6 +4967,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetActivityTagMinHoursDaily: public TimeConstraint{
@@ -4878,6 +5034,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxGapsPerDay: public TimeConstraint{
@@ -4917,6 +5075,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxGapsPerDay: public TimeConstraint{
@@ -4973,6 +5133,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOccupyMaxTimeSlotsFromSelection: public TimeConstraint{
@@ -5026,6 +5188,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOccupyMinTimeSlotsFromSelection: public TimeConstraint{
@@ -5079,6 +5243,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots: public TimeConstraint{
@@ -5132,6 +5298,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMinSimultaneousInSelectedTimeSlots: public TimeConstraint{
@@ -5187,6 +5355,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots: public TimeConstraint{
@@ -5240,6 +5410,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMaxInATerm: public TimeConstraint{
@@ -5290,6 +5462,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOccupyMaxTerms: public TimeConstraint{
@@ -5340,6 +5514,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxDaysPerWeek: public TimeConstraint{
@@ -5399,6 +5575,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxDaysPerWeek: public TimeConstraint{
@@ -5441,6 +5619,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxSpanPerDay: public TimeConstraint{
@@ -5489,6 +5669,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxSpanPerDay: public TimeConstraint{
@@ -5533,6 +5715,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinRestingHours: public TimeConstraint{
@@ -5578,6 +5762,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinRestingHours: public TimeConstraint{
@@ -5619,6 +5805,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxSpanPerDay: public TimeConstraint{
@@ -5675,6 +5863,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxSpanPerDay: public TimeConstraint{
@@ -5714,6 +5904,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinRestingHours: public TimeConstraint{
@@ -5772,6 +5964,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinRestingHours: public TimeConstraint{
@@ -5813,6 +6007,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags: public TimeConstraint{
@@ -5864,6 +6060,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags: public TimeConstraint{
@@ -5913,6 +6111,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags: public TimeConstraint{
@@ -5964,6 +6164,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags: public TimeConstraint{
@@ -6013,6 +6215,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenActivityTag: public TimeConstraint{
@@ -6062,6 +6266,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenActivityTag: public TimeConstraint{
@@ -6109,6 +6315,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenActivityTag: public TimeConstraint{
@@ -6158,6 +6366,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenActivityTag: public TimeConstraint{
@@ -6205,6 +6415,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
@@ -6256,6 +6468,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
@@ -6305,6 +6519,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
@@ -6356,6 +6572,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsPerRealDay: public TimeConstraint{
@@ -6405,6 +6623,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
@@ -6454,6 +6674,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
@@ -6501,6 +6723,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
@@ -6550,6 +6774,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenActivityTagPerRealDay: public TimeConstraint{
@@ -6597,6 +6823,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6648,6 +6876,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6697,6 +6927,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6748,6 +6980,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6797,6 +7031,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenActivityTagBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6846,6 +7082,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenActivityTagBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6893,6 +7131,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenActivityTagBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6942,6 +7182,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenActivityTagBetweenMorningAndAfternoon: public TimeConstraint{
@@ -6989,6 +7231,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //Begin for mornings-afternoons
@@ -7032,6 +7276,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxHoursDailyRealDays: public TimeConstraint{
@@ -7078,6 +7324,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -7136,6 +7384,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRealDaysPerWeek: public TimeConstraint{
@@ -7178,6 +7428,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinRealDaysPerWeek: public TimeConstraint{
@@ -7227,6 +7479,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinRealDaysPerWeek: public TimeConstraint{
@@ -7266,6 +7520,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxGapsPerRealDay: public TimeConstraint{
@@ -7307,6 +7563,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxGapsPerRealDay: public TimeConstraint{
@@ -7352,6 +7610,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxHoursDailyRealDays: public TimeConstraint{
@@ -7391,6 +7651,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxHoursDailyRealDays: public TimeConstraint{
@@ -7448,6 +7710,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinHoursPerMorning: public TimeConstraint{
@@ -7492,6 +7756,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinHoursPerMorning: public TimeConstraint{
@@ -7540,6 +7806,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinHoursDailyRealDays: public TimeConstraint{
@@ -7584,6 +7852,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinHoursDailyRealDays: public TimeConstraint{
@@ -7632,6 +7902,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //morning
@@ -7689,6 +7961,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMorningIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -7735,6 +8009,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //afternoon
@@ -7792,6 +8068,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -7838,6 +8116,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersActivityTagMaxHoursDailyRealDays: public TimeConstraint{
@@ -7886,6 +8166,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherActivityTagMaxHoursDailyRealDays: public TimeConstraint{
@@ -7938,6 +8220,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsActivityTagMaxHoursDailyRealDays: public TimeConstraint{
@@ -7983,6 +8267,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetActivityTagMaxHoursDailyRealDays: public TimeConstraint{
@@ -8046,6 +8332,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxGapsPerRealDay: public TimeConstraint{
@@ -8085,6 +8373,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxGapsPerRealDay: public TimeConstraint{
@@ -8141,6 +8431,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRealDaysPerWeek: public TimeConstraint{
@@ -8200,6 +8492,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRealDaysPerWeek: public TimeConstraint{
@@ -8242,6 +8536,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxSpanPerRealDay: public TimeConstraint{
@@ -8290,6 +8586,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxSpanPerRealDay: public TimeConstraint{
@@ -8334,6 +8632,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxSpanPerRealDay: public TimeConstraint{
@@ -8390,6 +8690,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxSpanPerRealDay: public TimeConstraint{
@@ -8429,6 +8731,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxAfternoonsPerWeek: public TimeConstraint{
@@ -8481,6 +8785,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxAfternoonsPerWeek: public TimeConstraint{
@@ -8523,6 +8829,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxMorningsPerWeek: public TimeConstraint{
@@ -8575,6 +8883,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxMorningsPerWeek: public TimeConstraint{
@@ -8617,6 +8927,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxActivityTagsPerDayFromSet: public TimeConstraint{
@@ -8671,6 +8983,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxActivityTagsPerDayFromSet: public TimeConstraint{
@@ -8715,6 +9029,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinMorningsPerWeek: public TimeConstraint{
@@ -8764,6 +9080,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinMorningsPerWeek: public TimeConstraint{
@@ -8803,6 +9121,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinAfternoonsPerWeek: public TimeConstraint{
@@ -8852,6 +9172,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinAfternoonsPerWeek: public TimeConstraint{
@@ -8891,6 +9213,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxTwoConsecutiveMornings: public TimeConstraint{
@@ -8938,6 +9262,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxTwoConsecutiveMornings: public TimeConstraint{
@@ -8975,6 +9301,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxTwoConsecutiveAfternoons: public TimeConstraint{
@@ -9022,6 +9350,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxTwoConsecutiveAfternoons: public TimeConstraint{
@@ -9059,6 +9389,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -9099,6 +9431,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -9143,6 +9477,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -9183,6 +9519,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -9227,6 +9565,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-06-14
@@ -9269,6 +9609,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinHoursPerMorning: public TimeConstraint{
@@ -9328,6 +9670,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxZeroGapsPerAfternoon: public TimeConstraint{
@@ -9369,6 +9713,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxZeroGapsPerAfternoon: public TimeConstraint{
@@ -9406,6 +9752,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-06-25
@@ -9446,6 +9794,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxAfternoonsPerWeek: public TimeConstraint{
@@ -9489,6 +9839,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxMorningsPerWeek: public TimeConstraint{
@@ -9528,6 +9880,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxMorningsPerWeek: public TimeConstraint{
@@ -9571,6 +9925,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-06-26
@@ -9611,6 +9967,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinAfternoonsPerWeek: public TimeConstraint{
@@ -9654,6 +10012,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinMorningsPerWeek: public TimeConstraint{
@@ -9693,6 +10053,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinMorningsPerWeek: public TimeConstraint{
@@ -9736,6 +10098,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-06-26
@@ -9800,6 +10164,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMorningIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -9847,6 +10213,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -9910,6 +10278,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
@@ -9956,6 +10326,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-06-28
@@ -10000,6 +10372,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxHoursPerAllAfternoons: public TimeConstraint{
@@ -10039,6 +10413,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-06-28
@@ -10083,6 +10459,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxHoursPerAllAfternoons: public TimeConstraint{
@@ -10122,6 +10500,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon: public TimeConstraint{
@@ -10165,6 +10545,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon: public TimeConstraint{
@@ -10204,6 +10586,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon: public TimeConstraint{
@@ -10260,6 +10644,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon: public TimeConstraint{
@@ -10299,6 +10685,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -10339,6 +10727,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -10394,6 +10784,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -10434,6 +10826,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
@@ -10489,6 +10883,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2020-07-29
@@ -10529,6 +10925,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxGapsPerWeekForRealDays: public TimeConstraint{
@@ -10572,6 +10970,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxGapsPerWeekForRealDays: public TimeConstraint{
@@ -10611,6 +11011,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxGapsPerWeekForRealDays: public TimeConstraint{
@@ -10667,6 +11069,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 //End for mornings-afternoons
 
@@ -10718,6 +11122,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxThreeConsecutiveDays: public TimeConstraint{
@@ -10757,6 +11163,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 //End   mornings-afternoons 2021-09-26
 
@@ -10809,6 +11217,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxThreeConsecutiveDays: public TimeConstraint{
@@ -10848,6 +11258,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 //End   mornings-afternoons 2022-02-15
 
@@ -10933,6 +11345,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 //End   mornings-afternoons 2022-05-14
 
@@ -10994,6 +11408,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMinInATerm: public TimeConstraint{
@@ -11046,6 +11462,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMaxTermsBetweenActivities: public TimeConstraint{
@@ -11120,6 +11538,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxActivityTagsPerDayFromSet: public TimeConstraint{
@@ -11174,6 +11594,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxActivityTagsPerDayFromSet: public TimeConstraint{
@@ -11218,6 +11640,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
@@ -11272,6 +11696,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
@@ -11316,6 +11742,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
@@ -11370,6 +11798,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxActivityTagsPerRealDayFromSet: public TimeConstraint{
@@ -11414,6 +11844,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMaxHalfDaysBetweenActivities: public TimeConstraint{
@@ -11488,6 +11920,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityBeginsStudentsDay: public TimeConstraint{
@@ -11536,6 +11970,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesBeginStudentsDay: public TimeConstraint{
@@ -11607,6 +12043,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityBeginsTeachersDay: public TimeConstraint{
@@ -11655,6 +12093,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesBeginTeachersDay: public TimeConstraint{
@@ -11727,6 +12167,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2022-09-10
@@ -11772,6 +12214,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinHoursPerAfternoon: public TimeConstraint{
@@ -11820,6 +12264,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinHoursPerAfternoon: public TimeConstraint{
@@ -11861,6 +12307,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinHoursPerAfternoon: public TimeConstraint{
@@ -11920,6 +12368,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2024-09-04
@@ -11968,6 +12418,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersNoTwoConsecutiveDays: public TimeConstraint{
@@ -12005,6 +12457,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherPairOfMutuallyExclusiveTimeSlots: public TimeConstraint{
@@ -12051,6 +12505,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersPairOfMutuallyExclusiveTimeSlots: public TimeConstraint{
@@ -12093,6 +12549,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetPairOfMutuallyExclusiveTimeSlots: public TimeConstraint{
@@ -12139,6 +12597,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsPairOfMutuallyExclusiveTimeSlots: public TimeConstraint{
@@ -12181,6 +12641,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTwoSetsOfActivitiesSameSections: public TimeConstraint{
@@ -12236,6 +12698,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxSingleGapsInSelectedTimeSlots: public TimeConstraint{
@@ -12278,6 +12742,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxSingleGapsInSelectedTimeSlots: public TimeConstraint{
@@ -12324,6 +12790,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxSingleGapsInSelectedTimeSlots: public TimeConstraint{
@@ -12371,6 +12839,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxSingleGapsInSelectedTimeSlots: public TimeConstraint{
@@ -12413,6 +12883,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxHoursPerTerm: public TimeConstraint{
@@ -12462,6 +12934,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxHoursPerTerm: public TimeConstraint{
@@ -12501,6 +12975,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherPairOfMutuallyExclusiveSetsOfTimeSlots: public TimeConstraint{
@@ -12554,6 +13030,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersPairOfMutuallyExclusiveSetsOfTimeSlots: public TimeConstraint{
@@ -12603,6 +13081,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetPairOfMutuallyExclusiveSetsOfTimeSlots: public TimeConstraint{
@@ -12656,6 +13136,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsPairOfMutuallyExclusiveSetsOfTimeSlots: public TimeConstraint{
@@ -12705,6 +13187,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesPairOfMutuallyExclusiveSetsOfTimeSlots: public TimeConstraint{
@@ -12764,6 +13248,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesPairOfMutuallyExclusiveTimeSlots: public TimeConstraint{
@@ -12816,6 +13302,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
@@ -12866,6 +13354,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersOccupyMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
@@ -12912,6 +13402,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetOccupiesMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
@@ -12962,6 +13454,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsOccupyMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
@@ -13008,6 +13502,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOverlapCompletelyOrDoNotOverlap: public TimeConstraint{
@@ -13055,6 +13551,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOccupyMaxSetsOfTimeSlotsFromSelection: public TimeConstraint{
@@ -13111,6 +13609,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityBeginsOrEndsStudentsDay: public TimeConstraint{
@@ -13159,6 +13659,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesBeginOrEndStudentsDay: public TimeConstraint{
@@ -13230,6 +13732,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityBeginsOrEndsTeachersDay: public TimeConstraint{
@@ -13278,6 +13782,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesBeginOrEndTeachersDay: public TimeConstraint{
@@ -13350,6 +13856,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMaxTotalNumberOfStudentsInSelectedTimeSlots: public TimeConstraint{
@@ -13403,6 +13911,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesMaxActivityTagsFromSetInSelectedTimeSlots: public TimeConstraint{
@@ -13461,6 +13971,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities: public TimeConstraint{
@@ -13512,6 +14024,8 @@ public:
 	bool hasWrongDayOrHour(Rules& r);
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
+
+	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //1

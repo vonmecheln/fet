@@ -57,6 +57,7 @@ private:
 	static bool exportCSVTeachers(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator);
 	static bool exportCSVStudents(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator);
 	static bool exportCSVTimetable(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head);
+	static bool exportCSVTeacherNotAvailable(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head);
 };
 
 void exportExportCSV(Solution* bestOrHighest, Solution* current=nullptr);

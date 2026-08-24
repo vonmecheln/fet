@@ -8336,12 +8336,12 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 				labelForSpinBox=new QLabel(tr("Max days"));
 				spinBox=new QSpinBox;
 				if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-					spinBox->setMinimum(0);
+					spinBox->setMinimum(1);
 					spinBox->setMaximum(gt.rules.nDaysPerWeek-1);
 					spinBox->setValue(gt.rules.nDaysPerWeek-1);
 				}
 				else{
-					spinBox->setMinimum(0);
+					spinBox->setMinimum(1);
 					spinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
 					spinBox->setValue(gt.rules.nDaysPerWeek/2-1);
 				}
@@ -18479,6 +18479,12 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 					return;
 				}
 
+				if(spinBox->value()<1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Max days must be at least 1."));
+					return;
+				}
+
 				tc=new ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities(weight, selectedActivitiesList, spinBox->value(), checkBox->isChecked());
 
 				break;
@@ -25169,6 +25175,12 @@ void AddOrModifyTimeConstraint::okClicked()
 				}
 				if(selectedActivitiesList.size()==1){
 					QMessageBox::warning(dialog, tr("FET information"), tr("Only one selected activity"));
+					return;
+				}
+
+				if(spinBox->value()<1){
+					QMessageBox::warning(dialog, tr("FET information"),
+						tr("Max days must be at least 1."));
 					return;
 				}
 

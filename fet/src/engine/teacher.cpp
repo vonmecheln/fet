@@ -324,7 +324,11 @@ bool teachersCodesAscending(const Teacher* t1, const Teacher* t2)
 	//return t1->name < t2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return t1->code.localeAwareCompare(t2->code)<0;
+	int result=t1->code.localeAwareCompare(t2->code);
+	if(result!=0)
+		return result<0;
+		
+	return t1->name.localeAwareCompare(t2->name)<0;
 }
 
 void Teacher::recomputeQualifiedSubjectsHash()

@@ -290,5 +290,9 @@ bool roomsCodesAscending(const Room* r1, const Room* r2)
 	//return r1->name < r2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return r1->code.localeAwareCompare(r2->code)<0;
+	int result=r1->code.localeAwareCompare(r2->code);
+	if(result!=0)
+		return result<0;
+		
+	return r1->name.localeAwareCompare(r2->name)<0;
 }

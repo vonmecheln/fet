@@ -7104,6 +7104,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	//This is the first phase of the buildings min one activity in each available time slot.
 	QList<int> nsrtCandidates;
 	int nsrtNeeded=0;
+	//Old comment below:
 	//all buildings or none have this constraint, as a prerequisite
 	if(haveBuildingsMinOneActivityInEachAvailableTimeSlot){
 		for(int bu=0; bu<gt.rules.nInternalBuildings; bu++){
@@ -7753,13 +7754,14 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 												}
 											}
 											else if(gt.rules.internalActivitiesList[ai2].iTeachersList.count()>=2){
-												if(act->iTeachersSet.intersects(gt.rules.internalActivitiesList[ai2].iTeachersSet)){
-													for(int tch : std::as_const(gt.rules.internalActivitiesList[ai2].iTeachersList)){
-														if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
-															QSet<int> ts=duplicateTeacherActivities.value(tch, QSet<int>());
-															ts.insert(ai2);
-															duplicateTeacherActivities.insert(tch, ts);
-														}
+											//In the code below we fixed a logic bug, discovered by Volker Dirr, using ChatGPT, on 2026-08-14
+												if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+													QSet<int> commonTeachersSet=gt.rules.internalActivitiesList[ai2].iTeachersSet;
+													commonTeachersSet.intersect(act->iTeachersSet);
+													for(int tch : std::as_const(commonTeachersSet)){
+														QSet<int> ts=duplicateTeacherActivities.value(tch, QSet<int>());
+														ts.insert(ai2);
+														duplicateTeacherActivities.insert(tch, ts);
 													}
 												}
 											}
@@ -8006,26 +8008,32 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 								assert(c.rooms[remAct]!=UNALLOCATED_SPACE && c.rooms[remAct]!=UNSPECIFIED_ROOM);
 								int remActBu=gt.rules.internalRoomsList[c.rooms[remAct]]->buildingIndex;
 								assert(remActBu>=0);
-								assert(c.times[remAct]!=UNALLOCATED_TIME);
-								int remActD=c.times[remAct]%gt.rules.nDaysPerWeek;
-								int remActH=c.times[remAct]/gt.rules.nDaysPerWeek;
-								for(int dur=0; dur<gt.rules.internalActivitiesList[remAct].duration; dur++){
-									const QList<int>& tl=buildingsTimetable(remActBu,remActD,remActH+dur);
-									QList<int> tl2;
-									
-									assert(tl.contains(remAct));
-									for(int ai2 : std::as_const(tl)){
-										if(ai2!=remAct){
-											if(!globalConflActivities.contains(ai2) && !localRemovedActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
-												tl2.append(ai2);
+								if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[remActBu]==100.0){
+								//In the line above, it was bu instead of remActBu, previously (which was wrong!!!).
+								//Volker Dirr, using ChatGPT, found the logic bug, on 2026-08-14.
+									assert(c.times[remAct]!=UNALLOCATED_TIME);
+									int remActD=c.times[remAct]%gt.rules.nDaysPerWeek;
+									int remActH=c.times[remAct]/gt.rules.nDaysPerWeek;
+									for(int dur=0; dur<gt.rules.internalActivitiesList[remAct].duration; dur++){
+										const QList<int>& tl=buildingsTimetable(remActBu,remActD,remActH+dur);
+										QList<int> tl2;
+										
+										assert(tl.contains(remAct));
+										for(int ai2 : std::as_const(tl)){
+											if(ai2!=remAct){
+												if(!globalConflActivities.contains(ai2) && !localRemovedActivities.contains(ai2) /*&& !tmp_list.contains(ai2)*/){
+													tl2.append(ai2);
+												}
 											}
 										}
-									}
-									
-									if(buildingsMinOneActivityInEachAvailableTimeSlotPercentages[bu]==100.0){
+										
 										if(tl2.count()==0){
 											//assert(0); //don't assert, because of activities with duration >=2
-											localNsrtNeeded++; //for activities with duration >= 2.
+											
+											//The instruction below (the increment of localNsrtNeeded) was commented by Liviu Lalescu, on 2026-08-14.
+											//The thing is that we gain a free hour from the dealocated activity and lose an hour for the new empty building,
+											//and not only lose an hour for the new empty building.
+											//localNsrtNeeded++; //for activities with duration >= 2.
 										}
 										else if(tl2.count()==1){
 											if(gt.rules.internalActivitiesList[tl2.at(0)].duration==1){
@@ -8045,9 +8053,9 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 											localNsrtNeeded--;
 										}
 									}
-									else{
-										localNsrtNeeded--;
-									}
+								}
+								else{
+									localNsrtNeeded-=gt.rules.internalActivitiesList[remAct].duration;
 								}
 							}
 						}
@@ -10665,6 +10673,7 @@ impossiblemaxhalfdays:
 				int m=item->activitiesList.count();
 				int n=0;
 				int Md=item->maxDays;
+				assert(Md>0); //Crash bug if Md was 0, found by Volker Dirr, using ChatGPT, on 2026-08-14.
 				double wp=item->weight;
 				QList<int> placedActivitiesList;
 				bool circ=item->circular;

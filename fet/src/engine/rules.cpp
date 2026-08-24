@@ -19,6 +19,7 @@ File rules.cpp
  ***************************************************************************/
 
 #include "timetable_defs.h"
+#include "timetable.h"
 #include "rules.h"
 
 #include <QIODevice>
@@ -76,6 +77,8 @@ File rules.cpp
 extern bool students_schedule_ready;
 extern bool rooms_buildings_schedule_ready;
 extern bool teachers_schedule_ready;
+
+extern Timetable gt;
 
 #include <ctime>
 
@@ -7079,9 +7082,11 @@ void Rules::clear() //clears the memory for the rules.
 	this->internalStructureComputed=false;
 	this->initialized=false;
 
-	teachers_schedule_ready=false;
-	students_schedule_ready=false;
-	rooms_buildings_schedule_ready=false;
+	if(this==&gt.rules){
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
+	}
 }
 
 Rules::Rules()
@@ -12772,7 +12777,7 @@ void Rules::updateActivitiesWhenRemovingStudents(const QSet<StudentsSet*>& stude
 	removeActivities(toBeRemovedIds, updateConstraints);
 }
 
-void Rules::updateConstraintsAfterRemoval()
+void Rules::updateConstraintsAfterRemoval(bool recompute)
 {
 	bool recomputeTime=false;
 	bool recomputeSpace=false;
@@ -14782,14 +14787,16 @@ void Rules::updateConstraintsAfterRemoval()
 		assert(t);
 	}
 	
-	if(recomputeTime){
-		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
-	}
-	if(recomputeSpace){
-		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
-	}
-	if(recomputeTime || recomputeSpace){
-		LockUnlock::increaseCommunicationSpinBox();
+	if(recompute){
+		if(recomputeTime){
+			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		}
+		if(recomputeSpace){
+			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+		}
+		if(recomputeTime || recomputeSpace){
+			LockUnlock::increaseCommunicationSpinBox();
+		}
 	}
 }
 
@@ -16509,6 +16516,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							QString text=xmlReader.readElementText();
 							sty->numberOfStudents=text.toInt();
 							xmlReadingLog+="    Read year number of students: "+CustomFETString::number(sty->numberOfStudents)+"\n";
+							
+							if(sty->numberOfStudents<0){
+								xmlReader.raiseError(tr("%1 is incorrect").arg("Number_of_Students"));
+								okStudents=false;
+							}
 						}
 						else if(xmlReader.name()==QString("Comments")){
 							QString text=xmlReader.readElementText();
@@ -16717,6 +16729,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 									QString text=xmlReader.readElementText();
 									stg->numberOfStudents=text.toInt();
 									xmlReadingLog+="     Read group number of students: "+CustomFETString::number(stg->numberOfStudents)+"\n";
+									
+									if(stg->numberOfStudents<0){
+										xmlReader.raiseError(tr("%1 is incorrect").arg("Number_of_Students"));
+										okStudents=false;
+									}
 								}
 								else if(xmlReader.name()==QString("Comments")){
 									QString text=xmlReader.readElementText();
@@ -16839,6 +16856,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 											QString text=xmlReader.readElementText();
 											sts->numberOfStudents=text.toInt();
 											xmlReadingLog+="     Read subgroup number of students: "+CustomFETString::number(sts->numberOfStudents)+"\n";
+											
+											if(sts->numberOfStudents<0){
+												xmlReader.raiseError(tr("%1 is incorrect").arg("Number_of_Students"));
+												okStudents=false;
+											}
 										}
 										else if(xmlReader.name()==QString("Comments")){
 											QString text=xmlReader.readElementText();
@@ -17173,7 +17195,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 							gid=text.toInt();
 							xmlReadingLog+="    Crt. activity group id="+CustomFETString::number(gid)+"\n";
 						}
-						else if(xmlReader.name()==QString("Number_Of_Students")){
+						else if(xmlReader.name()==QString("Number_of_Students") || xmlReader.name()==QString("Number_Of_Students")){
 							QString text=xmlReader.readElementText();
 							cnos=false;
 							nos=text.toInt();
@@ -17204,6 +17226,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						xmlReader.raiseError(tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that").arg(id).arg(_duplicateStudentsCount));
 					else if(_duplicateActivityTagsCount>0)
 						xmlReader.raiseError(tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that").arg(id).arg(_duplicateActivityTagsCount));
+					else if(!cnos && nos<0)
+						xmlReader.raiseError(tr("%1 is incorrect").arg("Number_of_Students"));
 					else if(correct){
 						assert(id>=0 && gid>=0);
 						assert(d>0);
@@ -18165,7 +18189,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 ////////////////2026-07-18 - for Yush Yuen
 				else if(xmlReader.name()==QString("ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities")){
-					crt_constraint=readMaxDaysBetweenEachPairOfConsecutiveActivities(xmlReader, xmlReadingLog);
+					crt_constraint=readMaxDaysBetweenEachPairOfConsecutiveActivities(parent, xmlReader, xmlReadingLog);
 				}
 ////////////////2011-09-25
 				else if(xmlReader.name()==QString("ConstraintActivitiesOccupyMaxTimeSlotsFromSelection")){
@@ -32483,7 +32507,7 @@ TimeConstraint* Rules::readActivitiesOverlapCompletelyOrDoNotOverlap(QXmlStreamR
 ////////////////
 
 //2026-07-18 - for Yush Yuen
-TimeConstraint* Rules::readMaxDaysBetweenEachPairOfConsecutiveActivities(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+TimeConstraint* Rules::readMaxDaysBetweenEachPairOfConsecutiveActivities(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities"));
 	ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities* cn=new ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities();
 	
@@ -32521,6 +32545,11 @@ TimeConstraint* Rules::readMaxDaysBetweenEachPairOfConsecutiveActivities(QXmlStr
 		else if(xmlReader.name()==QString("MaxDays")){
 			QString text=xmlReader.readElementText();
 			cn->maxDays=text.toInt();
+			if(cn->maxDays==0){
+				RulesReconcilableMessage::information(parent, tr("FET information"),
+					tr("Constraint MaxDaysBetweenEachPairOfConsecutiveActivities max days is 0, but it should be at least 1. It will be set to 1."));
+				cn->maxDays=1;
+			}
 			xmlReadingLog+="    Read MaxDays="+CustomFETString::number(cn->maxDays)+"\n";
 		}
 		else if(xmlReader.name()==QString("Circular")){

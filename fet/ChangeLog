@@ -1,13 +1,40 @@
+ 7.10.0
+	- Bug fix, when using constraints of type building min one activity in each available time slot (found by Volker Dirr, using
+	ChatGPT).
+	- Crash bug fix, if a constraint max days between each pair of consecutive activities had max days = 0 (found by Volker Dirr,
+	using ChatGPT).
+	- Bug fix, when using constraints of type room(s) max activities per teacher, and when some activities had multiple teachers
+	(discovered by Volker Dirr, using ChatCPT). The bug made the algorithm reject some correct solutions.
+	- Generation bug fix in the constraints of type building min one activity in each available time slot, if the data file contained
+	activities with duration greater than 1.
+	- Added an option to save the data and timetable for a selection of days as a new file, after generating a timetable (suggested by
+	Vangelis Karafillidis). The activities placed in the unselected days will be deactivated. For this new feature, some new English
+	text fields were suggested by Vangelis Karafillidis.
+	- Added 'teachers not available'/'activities preferred time slots' constraints' import/export from/to a CSV file (suggested by
+	Vangelis Karafillidis, Fritzlang, TongThanhKieu, and Steffen Schiedek, and maybe by other users in the past). For this new feaure,
+	some new English text fields were suggested by Vangelis Karafillidis.
+	- It is now possible to lock/unlock the timetable for a selection of days, not only for a single day at a time (suggested by
+	YOUSSEF HOUIET).
+	- Minor improvement: we now check that the number of students of a students set is greater or equal to zero when reading a data file
+	(potential bug reported by Yush Yuen). Also, if the number of students is specified for an activity, we also check that it is greater
+	or equal to zero.
+	- Minor improvement: if an activity has a specified number of students, the fet data file will contain the field 'Number_of_Students'
+	instead of 'Number_Of_Students', to use the same capitalization as the corresponding years', groups', and subgroups' fields.
+	- Minor improvement: the 'Generate multiple' menu item is now placed immediately under the 'Generate new' menu item, and before
+	the 'View' menu items.
+	- Interface improvement: in the constraints with a table of spin boxes (constraints of type teacher(s)/students (set)/room(s)/activities
+	occupy max sets of time slots from selection), the tab key now moves vertically instead of horizontally (suggested by YOUSSEF HOUIET).
+	- Other corrections and improvements (found by Volker Dirr, using ChatGPT).
  7.9.5
-	- Added simple filters of type 'Contains text' for the lists of teachers, students, and activity tags, in the Add activity dialog
-	(suggested by gerben).
+	- Added simple filters of type 'Contains text (case insensitive)' for the lists of teachers, students, and activity tags, in the Add
+	activity dialog (suggested by gerben).
 	- Added an option to embed the CSS code in the HTML files (suggested by Volker Dirr). In this way, some programs will import better the
 	HTML timetables.
 	- Minor interface bug fix (reported by poetasandaluces): for the constraints of type (sub)activities preferred starting times/time slots
 	and activities begin/end/begin or end teachers'/students' day which did not affect any activity, FET reported an error in the data file;
 	but this was simply a useless constraint (but FET still won't begin the generation in such a case, and you need to modify/deactivate/remove
 	these useless constraints - just that the information message is now clearer and not so alarming).
-	- Added a new Uzbek translation, by Ulugbek Tulakov, who is the new translator (he was assisted by artificial intelligence).
+	- Added a new Uzbek translation, by Ulugbek Tulakov, who is the new translator (he was assisted by AI).
  7.9.4
 	- Crash bugs fixed, when using a filter for the related constraints in the timetable view dialogs (reported by Xardeuss).
 	- Improved the help for the constraints of type activities/teacher(s)/students (set)/room(s) occupy max sets of time slots from selection

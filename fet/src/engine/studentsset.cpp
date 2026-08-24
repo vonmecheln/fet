@@ -546,9 +546,9 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r, bool r
 		}
 
 		QString s3;
-		s2+="--------------------------------------------------\n";
-		s2+=tr("Space constraints directly related to this students subgroup:");
-		s2+="\n";
+		s3+="--------------------------------------------------\n";
+		s3+=tr("Space constraints directly related to this students subgroup:");
+		s3+="\n";
 		QString s4;
 		for(int i=0; i<r.spaceConstraintsList.size(); i++){
 			SpaceConstraint* c=r.spaceConstraintsList[i];
@@ -577,7 +577,11 @@ bool studentsSetsCodesAscending(const StudentsSet* st1, const StudentsSet* st2)
 	//return y1->name < y2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return st1->code.localeAwareCompare(st2->code)<0;
+	int result=st1->code.localeAwareCompare(st2->code);
+	if(result!=0)
+		return result<0;
+
+	return st1->name.localeAwareCompare(st2->name)<0;
 }
 
 bool yearsAscending(const StudentsYear* y1, const StudentsYear* y2)

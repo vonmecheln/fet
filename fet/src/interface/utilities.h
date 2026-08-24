@@ -38,6 +38,8 @@ class QTableWidgetItem;
 #include <QTableWidget>
 #include <QSpinBox>
 
+#include <QKeyEvent>
+
 class CornerEnabledTableWidget: public QTableWidget
 {
 public:
@@ -57,6 +59,8 @@ public:
 
 private:
 	void selectAll();
+	
+	void keyPressEvent(QKeyEvent* event);
 };
 
 void centerWidgetOnScreen(QWidget* widget);

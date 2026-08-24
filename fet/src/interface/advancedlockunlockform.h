@@ -115,10 +115,10 @@ public:
 
 	static void unlockAllWithoutTimetable(QWidget* parent);
 	
-	static void lockDay(QWidget* parent);
+	static void lockDays(QWidget* parent);
 //	static void unlockDay(QWidget* parent);
 
-	static void unlockDayWithoutTimetable(QWidget* parent);
+	static void unlockDaysWithoutTimetable(QWidget* parent);
 	
 	static void lockEndStudentsDay(QWidget* parent);
 	static void unlockEndStudentsDay(QWidget* parent);

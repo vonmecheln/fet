@@ -2637,9 +2637,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
-	t=computeStudentsMaxHoursContinuously(parent);
+	/*t=computeStudentsMaxHoursContinuously(parent);
 	if(!t)
-		return false;
+		return false;*/
 
 	t=computeStudentsActivityTagMaxHoursDaily(parent);
 	if(!t)

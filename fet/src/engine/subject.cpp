@@ -141,5 +141,9 @@ bool subjectsCodesAscending(const Subject* s1, const Subject* s2)
 	//return s1->name < s2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return s1->code.localeAwareCompare(s2->code)<0;
+	int result=s1->code.localeAwareCompare(s2->code);
+	if(result!=0)
+		return result<0;
+		
+	return s1->name.localeAwareCompare(s2->name)<0;
 }

@@ -30,6 +30,8 @@ File importinterface.cpp
 
 #include "utilities.h"
 
+#include "longtextmessagebox.h"
+
 #include <Qt>
 
 #include <QtGlobal>
@@ -879,7 +881,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 						tmp+=textquote;
 						tmpLine.remove(0,1);
 					} else {
-						QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
+						QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing field separator or text quote in the first line. Import might be incorrect.")+"\n");
 					}
 				}
 				tmpLine.remove(0,1);
@@ -888,7 +890,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 				if(tmpLine.left(1)==textquote){
 					tmpLine.remove(0,1);
 				} else {
-					QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
+					QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing closing text quote in the first line. Import might be incorrect.")+"\n");
 					tmp+=tmpLine.left(1);
 					tmpLine.remove(0,1);
 				}
@@ -3055,4 +3057,371 @@ ifUserCanceledProgress4:
 	if(count>0 || count2>0 || cnttch>0 || cntsb>0 || cntat>0)
 		gt.rules.addUndoPoint(tr("%1 container activities (%2 total activities) imported from the CSV file %3.").arg(count).arg(count2).arg(fileName)
 		 +QString(" ")+tr("This operation involved importing also %1 teachers, %2 subjects and %3 activity tags.").arg(cnttch).arg(cntsb).arg(cntat));
+}
+
+void Import::csvLine2StringList(QStringList& fields, QString& warnText, const bool printWarning, const QString& line, const int lineNumber, const QString& textquote, const QString& fieldSeparator){
+	fields.clear();
+	QString tmp;
+	QString tmpLine=line;
+	while(!tmpLine.isEmpty()){
+		tmp.clear();
+		bool foundField=false;
+		if(tmpLine.left(1)==textquote){
+			tmpLine.remove(0,1);
+			while(!foundField && tmpLine.size()>1){
+				if(tmpLine.left(1)!=textquote){
+					tmp+=tmpLine.left(1);
+				} else {
+					if(tmpLine.mid(1,1)==fieldSeparator){
+						foundField=true;
+						tmpLine.remove(0,1);
+					} else if(tmpLine.mid(1,1)==textquote){
+						tmp+=textquote;
+						tmpLine.remove(0,1);
+					} else
+						if(printWarning)
+							warnText+=tr("Missing field separator or text separator in line %1. Import might be incorrect.").arg(lineNumber)+"\n";
+				}
+				tmpLine.remove(0,1);
+			}
+			if(!foundField && tmpLine.size()==1){
+				if(tmpLine.left(1)==textquote){
+					tmpLine.remove(0,1);
+				} else {
+					if(printWarning)
+						warnText+=tr("Missing closing text separator in line %1. Import might be incorrect.").arg(lineNumber)+"\n";
+					tmp+=tmpLine.left(1);
+					tmpLine.remove(0,1);
+				}
+			}
+		} else {
+			while(!foundField && !tmpLine.isEmpty()){
+				if(tmpLine.left(1)!=fieldSeparator)
+					tmp+=tmpLine.left(1);
+				else
+					foundField=true;
+				tmpLine.remove(0,1);
+			}
+		}
+		fields << tmp;
+		if(foundField && tmpLine.isEmpty())
+			fields << "";
+	}
+}
+
+void Import::importCSVTeacherNotAvailable(QWidget* parent){
+	//THIS BREAKS WITH THE OLD IMPORT STYLE!
+	//The user can't select the rows manually anymore. There are too many! The head is fixed now.
+	//This simplifies a lot. The old "fieldNumber" variables are not needed anymore.
+
+	fileName=QFileDialog::getOpenFileName(parent, Import::tr("FET - Import %1 from CSV file").arg(tr("Teacher not available")), IMPORT_DIRECTORY,
+		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + ";;" + Import::tr("All Files") + " (*)");
+	if(fileName.isEmpty()){
+		return;
+	}
+
+	QFile file(fileName);
+	if(fileName.isEmpty()){
+		QMessageBox::warning(parent, tr("FET warning"), tr("Empty filename."));
+		return;
+	}
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::ReadOnly)){
+#else
+	if(!file.open(QIODevice::ReadOnly)){
+#endif
+		QMessageBox::warning(parent, tr("Error! Can't open file."), fileName);
+		return;
+	}
+	QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	in.setEncoding(QStringConverter::Utf8);
+#else
+	in.setCodec("UTF-8");
+#endif
+
+	qint64 size=file.size();
+	QProgressDialog* _progress=new QProgressDialog(parent);
+	QProgressDialog& progress=(*_progress);
+	progress.setWindowTitle(tr("Importing", "Title of a progress dialog"));
+	progress.setLabelText(tr("Loading file"));
+	progress.setModal(true);
+	progress.setRange(0, qMax(size, qint64(1)));
+	//cout<<"progress in readFields starts"<<endl;
+	qint64 crt=0;
+
+	//code similar to timetableviewteacherstimehorizontalform by Liviu Lalescu (start)
+	Matrix3D<double> tnaMatrix;
+	Matrix1D<bool> activate100Constraint;
+	Matrix1D<bool> activateLess100Constraint;
+	Matrix1D<QString> comments;
+	tnaMatrix.resize(gt.rules.teachersList.count(), gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
+	activate100Constraint.resize(gt.rules.teachersList.count());
+	activateLess100Constraint.resize(gt.rules.teachersList.count());
+	comments.resize(gt.rules.teachersList.count());
+	for(int t=0; t<gt.rules.teachersList.count(); t++){
+		activate100Constraint[t]=false;
+		activateLess100Constraint[t]=false;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				tnaMatrix[t][d][h]=0;
+	}
+	//code similar to timetableviewteacherstimehorizontalform by Liviu Lalescu (end)
+
+	//workaround start
+	//maybe TODO: I need later this, but it is impossible, because it is privat. Also: Speedup by a hash/map?!
+	//t=gt.rules.teachersList.indexOf(fields.at(0));
+	QStringList tList;
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		tList<<gt.rules.teachersList.at(i)->name;
+	}
+	//workaround end
+
+	//read the file now
+	QStringList fields;
+	QString warnings;
+	const QString textquote="\"";
+	const QString fieldSeparator=",";
+	int lineNumber=0;
+	QSet<QString> teacher_day_set;
+	const int numberOfExpectedFields=gt.rules.nDaysPerWeek+3;
+	while(!in.atEnd()){
+		progress.setValue(crt);
+		QString line = in.readLine();
+		lineNumber++;
+		crt+=line.length();
+		if(progress.wasCanceled()){
+			progress.setValue(size);
+			QMessageBox::warning(parent, "FET", Import::tr("Loading canceled by user."));
+			file.close();
+			return;
+		}
+		csvLine2StringList(fields, warnings, true, line, lineNumber, textquote, fieldSeparator);
+		if(numberOfExpectedFields!=fields.count()){
+			warnings+=tr("The line %1 expected %2 fields, but found %3 fields.").arg(lineNumber).arg(numberOfExpectedFields).arg(fields.count())+" "+tr("Attempting to import anyway.")+"\n";
+		}
+		if(lineNumber!=1){
+			int t=-1;
+			int h=-1;
+			if(fields.count()>0){
+				//t=gt.rules.teachersList.indexOf(fields.at(0));
+				t=tList.indexOf(fields.at(0));
+				if(t<0){
+					warnings+=tr("Line %1, field %2: The line was skipped, because teacher '%3' is unknown.").arg(lineNumber).arg(1).arg(fields.at(0))+"\n";
+					continue;
+				}
+			}
+			if(fields.count()>1){
+				h=gt.rules.hoursOfTheDay.indexOf(fields.at(1));
+				if(h<0){
+					warnings+=tr("Line %1, field %2: The line was skipped, because hour '%3' is unknown.").arg(lineNumber).arg(2).arg(fields.at(1))+"\n";
+					continue;
+				}
+				teacher_day_set<<fields.at(0)+"_"+fields.at(1);
+			} else {
+				warnings+=tr("Line %1: The line was skipped, because it contained too little data.").arg(lineNumber)+"\n";
+				continue;
+			}
+			assert(t>-1);
+			assert(h>-1);
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				if(fields.count()>2+d){
+					QString tmp=fields.at(2+d).simplified();
+					bool okDouble=false;
+					double weight=tmp.toDouble(&okDouble);
+					if(okDouble){
+						if(weight>=100){
+							tnaMatrix[t][d][h]=100;
+							activate100Constraint[t]=true;
+							if(weight>100){
+								warnings+=tr("In the line %1, the field %2 contains a value larger than 100. It will be set equal to 100.")
+								 .arg(lineNumber).arg(2+d)+"\n";
+							}
+						} else if(weight>0){
+							tnaMatrix[t][d][h]=weight;
+							activateLess100Constraint[t]=true;
+						} else if(weight<0){
+							warnings+=tr("In the line %1, the field %2 contains a value smaller than 0. It will be skipped.")
+							 .arg(lineNumber).arg(2+d)+"\n";
+						}
+					} else {
+						if(!(tmp=="" || tmp=="false")){
+							tnaMatrix[t][d][h]=100;
+							activate100Constraint[t]=true;
+						}
+					}
+				}
+			}
+			if(fields.count()>gt.rules.nHoursPerDay+2){
+				if(!comments[t].isEmpty()){
+					comments[t]+=" ";
+				}
+				comments[t]+=fields.at(gt.rules.nHoursPerDay+2);
+			}
+		} else {
+			if(fields.count()>0)
+				if(fields.at(0)!="Teacher Name"){
+					warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+					 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
+					 .arg(1).arg("Teacher Name")+"\n";
+				}
+			if(fields.count()>1)
+				if(fields.at(1)!="Hour"){
+					warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+					 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
+					 .arg(2).arg("Hour")+"\n";
+				}
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				if(fields.count()>2+d){
+					if(fields.at(2+d)!=gt.rules.daysOfTheWeek.at(d))
+						warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+						 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
+						.arg(2+d).arg(gt.rules.daysOfTheWeek.at(d))+"\n";
+				}
+			}
+			if(fields.count()>gt.rules.nDaysPerWeek+2)
+				if(fields.at(gt.rules.nDaysPerWeek+2)!="Comments"){
+					warnings+=tr("In the line 1, the field %1 should contain '%2'.",
+					 "Here, %1 is an integer number, such as '1', and %2 is an English text, such as 'Teacher name'")
+					.arg(2+gt.rules.nDaysPerWeek).arg("Comments")+"\n";
+				}
+			if(!warnings.isEmpty()){
+				warnings+=tr("You can export a CSV file from FET to check the expected format.")+"\n";
+				warnings+=tr("Invalid header format. Attempting to import anyway.")+"\n";
+			}
+		}
+	}
+	if(teacher_day_set.count() != gt.rules.nHoursPerDay * gt.rules.teachersList.count()){
+		warnings+=tr("Expected %1 data lines in the CSV file, but found %2 data lines.").arg(gt.rules.nHoursPerDay * gt.rules.teachersList.count()).arg(teacher_day_set.count())+"\n";
+	}
+	progress.setValue(qMax(size, qint64(1)));
+	file.close();
+
+	//count number of not available constraints in FET memory
+	int numberOf100ConstraintsInFET=0;
+	for(int t=0; t<gt.rules.teachersList.count(); t++){
+		QSet<ConstraintTeacherNotAvailableTimes*> stc=gt.rules.tnatHash.value(gt.rules.teachersList.at(t)->name, QSet<ConstraintTeacherNotAvailableTimes*>());
+		assert(stc.count()<=1);
+		if(!stc.isEmpty()){
+			numberOf100ConstraintsInFET++;
+		}
+	}
+	warnings+=tr("There will be deleted %1 'teacher - not available' constraints in the current FET data.").arg(numberOf100ConstraintsInFET)+"\n";
+
+	QList<TimeConstraint*> tless;
+	int numberOfLess100ConstraintsInFET=0;
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
+		if(tc->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* pc=(ConstraintActivitiesPreferredTimeSlots*)tc;
+			
+			if(pc->active && !pc->p_teacherName.isEmpty() && pc->p_studentsName.isEmpty() && pc->p_subjectName.isEmpty() && pc->p_activityTagName.isEmpty()){
+				assert(pc->p_days_L.count() == pc->p_hours_L.count());
+				numberOfLess100ConstraintsInFET++;
+				tless.append(tc);
+			}
+		}
+	}
+	assert(tless.count()==numberOfLess100ConstraintsInFET);
+	warnings+=tr("There will be deleted in the current FET data %1 constraints 'activities - preferred times', which (constraints) have only the teacher specified"
+	 " (while the other parameters: subject, activity tag, students set, and duration, are not specified in these constraints).")
+	 .arg(numberOfLess100ConstraintsInFET)+"\n";
+
+	//count number of not available constraints in csv file
+	int numberOf100ContraintsToAdd=0;
+	int numberOfLess100ContraintsToAdd=0;
+	for(int t=0; t<gt.rules.teachersList.count(); t++){
+		if(activate100Constraint[t])
+			numberOf100ContraintsToAdd++;
+		if(activateLess100Constraint[t])
+			numberOfLess100ContraintsToAdd++;
+	}
+	warnings+=tr("There will be added %1 'teacher - not available' constraints from the CSV file.").arg(numberOf100ContraintsToAdd)+"\n";
+	warnings+=tr("%1 teachers will get 'activities - preferred times' constraints from the CSV file.").arg(numberOfLess100ContraintsToAdd)+"\n";
+
+	warnings+=tr("Should I delete the old constraints and import the new constraints now?")+"\n";
+
+	int result=LongTextMessageBox::confirmation(parent, tr("FET"), warnings, tr("Yes"), tr("No"), QString(), 0, 1);
+	if(result!=0){
+		return;
+	}
+
+	//remove the constraints and assert by counting this time with a diffirent algorithm
+	QList<TimeConstraint*> tl;
+	for(TimeConstraint* ctr : std::as_const(gt.rules.timeConstraintsList)){
+		if(ctr->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+			tl.append(ctr);
+		}
+	}
+	assert(tl.count() == numberOf100ConstraintsInFET);
+	gt.rules.removeTimeConstraints(tl);
+	gt.rules.removeTimeConstraints(tless);
+
+	//add the constraint
+	int count100=0;
+	int countLess100=0;
+	for(int t=0; t<gt.rules.teachersList.count(); t++){
+		if(activate100Constraint[t]){
+			QList<int> tmpDays;
+			QList<int> tmpHours;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				for(int h=0; h<gt.rules.nHoursPerDay; h++){
+					if(tnaMatrix[t][d][h] == 100){
+						tmpDays<<d;
+						tmpHours<<h;
+					}
+				}
+			}
+			ConstraintTeacherNotAvailableTimes* cn=new ConstraintTeacherNotAvailableTimes(100,  gt.rules.teachersList.at(t)->name, tmpDays, tmpHours);
+			cn->active=true;
+			cn->comments=comments[t];
+			bool ok=gt.rules.addTimeConstraint(cn);
+			assert(ok);
+			count100++;
+		} // DON'T add an 'else'! A techer migth have 100 and less100 in the same week
+		if(activateLess100Constraint[t]){
+			QSet<double> usedWeights;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				for(int h=0; h<gt.rules.nHoursPerDay; h++){
+					if(tnaMatrix[t][d][h] < 100 && tnaMatrix[t][d][h] > 0)
+						usedWeights<<tnaMatrix[t][d][h];
+				}
+			for(double weight : usedWeights){
+				QList<int> tmpDays;
+				QList<int> tmpHours;
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(tnaMatrix[t][d][h] != weight){
+							tmpDays<<d;
+							tmpHours<<h;
+						}
+				ConstraintActivitiesPreferredTimeSlots* cn = nullptr;
+				QString students;
+				QString subject;
+				QString activityTag;
+				cn=new ConstraintActivitiesPreferredTimeSlots(weight, gt.rules.teachersList.at(t)->name, students, subject, activityTag, 1, tmpDays.count(), tmpDays, tmpHours);
+				cn->active=true;
+				cn->comments=comments[t];
+				bool ok=gt.rules.addTimeConstraint(cn);
+				assert(ok);
+				countLess100++;
+			}
+		}
+	}
+
+	QMessageBox::information(parent, tr("FET information"),
+		Import::tr("There were removed %1 'teacher - not available' constraints.").arg(numberOf100ConstraintsInFET)+"\n"+
+		Import::tr("There were added %1 'teacher - not available' constraints.").arg(count100)+"\n"+
+		Import::tr("There were removed %1 'activities - preferred times' constraints, which (constraints) have only the teacher specified"
+		 " (while the other parameters: subject, activity tag, students set, and duration, were not specified in these constraints).")
+		 .arg(numberOfLess100ConstraintsInFET)+"\n"+
+		Import::tr("There were added %1 'activities - preferred times' constraints, which (constraints) have only the teacher specified"
+		 " (while the other parameters: subject, activity tag, students set, and duration, are not specified in these constraints).")
+		 .arg(countLess100));
+
+	int tmp=fileName.lastIndexOf(FILE_SEP);
+	IMPORT_DIRECTORY=fileName.left(tmp);
+	if(count100>0 || countLess100>0)
+		gt.rules.addUndoPoint(tr("%1 teacher not available constraints imported from the CSV file %2.",
+		 "%1 is the number of the imported constraints, %2 is the CSV file name")
+		 .arg(count100 + countLess100).arg(fileName));
 }

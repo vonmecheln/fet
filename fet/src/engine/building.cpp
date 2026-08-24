@@ -113,17 +113,17 @@ QString Building::getDetailedDescriptionWithConstraints(Rules& r)
 
 	QString s=this->getDetailedDescription();
 
-	/*s+="--------------------------------------------------\n";
+	s+="--------------------------------------------------\n";
 	s+=tr("Space constraints directly related to this building:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
-		if(c->isRelatedToBuilding(this)){
+		if(c->isRelatedToBuilding(this->name)){
 			s+="\n";
 			s+=c->getDetailedDescription(r);
 		}
 	}
-	s+="--------------------------------------------------\n";*/
+	s+="--------------------------------------------------\n";
 
 	return s;
 }

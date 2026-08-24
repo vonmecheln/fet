@@ -173,5 +173,13 @@ bool activityTagsCodesAscending(const ActivityTag* at1, const ActivityTag* at2)
 	//return at1->name < at2->name;
 	
 	//by Rodolfo Ribeiro Gomes
-	return at1->code.localeAwareCompare(at2->code)<0;
+	//On 2026-08-15, reported by Volker Dirr, assisted by ChatGPT, we added also a secondary sorting by
+	//names, so that the order is always deterministic (in timetableexport.cpp, we generate a QList of
+	//activity tags from a QSet, which might be in an arbitrary order, then we sort it. If some codes
+	//are identical, the final order might not have been be deterministic).
+	int result=at1->code.localeAwareCompare(at2->code);
+	if(result!=0)
+		return result<0;
+	
+	return at1->name.localeAwareCompare(at2->name)<0;
 }

@@ -92,12 +92,15 @@ public:
 	static void importCSVSubjects(QWidget* parent);
 	static void importCSVTeachers(QWidget* parent);
 	static void importCSVStudents(QWidget* parent);
+	static void importCSVTeacherNotAvailable(QWidget* parent);
 
 private:
 	static void prearrangement();
 	static int getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent);
 	static int readFields(QWidget* parent);
 	static int showFieldsAndWarnings(QWidget* parent, QDialog* &newParent);
+
+	static void csvLine2StringList(QStringList& fields, QString& warnText, bool printWarning, const QString& line, int lineNumber, const QString& textquote, const QString& fieldSeparator);
 };
 
 class ChooseFieldsDialog: public QDialog{

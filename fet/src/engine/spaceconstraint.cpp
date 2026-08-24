@@ -3188,6 +3188,13 @@ bool ConstraintBasicCompulsorySpace::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintBasicCompulsorySpace::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintBasicCompulsorySpace::categoryOfSpaceConstraint()
 {
 	return IS_BASIC_SPACE_CONSTRAINT;
@@ -3213,6 +3220,12 @@ bool ConstraintBasicCompulsorySpace::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintBasicCompulsorySpace::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -3493,6 +3506,13 @@ bool ConstraintRoomNotAvailableTimes::isRelatedToRoom(const QString& r)
 	return this->room==r;
 }
 
+bool ConstraintRoomNotAvailableTimes::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomNotAvailableTimes::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -3540,6 +3560,26 @@ bool ConstraintRoomNotAvailableTimes::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomNotAvailableTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(days.count()==hours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<days.count(); i++)
+		if(newExistingDaysHash.contains(days.at(i))){
+			newDays.append(newExistingDaysHash.value(days.at(i)));
+			newHours.append(hours.at(i));
+		}
+	
+	days=newDays;
+	hours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -3857,6 +3897,13 @@ bool ConstraintTeacherRoomNotAvailableTimes::isRelatedToRoom(const QString& r)
 	return this->room==r;
 }
 
+bool ConstraintTeacherRoomNotAvailableTimes::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherRoomNotAvailableTimes::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -3904,6 +3951,26 @@ bool ConstraintTeacherRoomNotAvailableTimes::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintTeacherRoomNotAvailableTimes::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(days.count()==hours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<days.count(); i++)
+		if(newExistingDaysHash.contains(days.at(i))){
+			newDays.append(newExistingDaysHash.value(days.at(i)));
+			newHours.append(hours.at(i));
+		}
+	
+	days=newDays;
+	hours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4228,6 +4295,13 @@ bool ConstraintActivityPreferredRoom::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintActivityPreferredRoom::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintActivityPreferredRoom::categoryOfSpaceConstraint()
 {
 	return IS_ACTIVITY_SPACE_CONSTRAINT;
@@ -4253,6 +4327,12 @@ bool ConstraintActivityPreferredRoom::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityPreferredRoom::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4493,6 +4573,13 @@ bool ConstraintActivityPreferredRooms::isRelatedToRoom(const QString& r)
 	return this->roomsNames.contains(r);
 }
 
+bool ConstraintActivityPreferredRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintActivityPreferredRooms::categoryOfSpaceConstraint()
 {
 	return IS_ACTIVITY_SPACE_CONSTRAINT;
@@ -4518,6 +4605,12 @@ bool ConstraintActivityPreferredRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityPreferredRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4766,6 +4859,13 @@ bool ConstraintStudentsSetHomeRoom::isRelatedToRoom(const QString& r)
 	return r==this->roomName;
 }
 
+bool ConstraintStudentsSetHomeRoom::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetHomeRoom::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -4792,6 +4892,12 @@ bool ConstraintStudentsSetHomeRoom::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintStudentsSetHomeRoom::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5057,6 +5163,13 @@ bool ConstraintStudentsSetHomeRooms::isRelatedToRoom(const QString& r)
 	return this->roomsNames.contains(r);
 }
 
+bool ConstraintStudentsSetHomeRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetHomeRooms::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -5082,6 +5195,12 @@ bool ConstraintStudentsSetHomeRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintStudentsSetHomeRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5328,6 +5447,13 @@ bool ConstraintTeacherHomeRoom::isRelatedToRoom(const QString& r)
 	return r==this->roomName;
 }
 
+bool ConstraintTeacherHomeRoom::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherHomeRoom::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -5353,6 +5479,12 @@ bool ConstraintTeacherHomeRoom::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTeacherHomeRoom::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -5616,6 +5748,13 @@ bool ConstraintTeacherHomeRooms::isRelatedToRoom(const QString& r)
 	return this->roomsNames.contains(r);
 }
 
+bool ConstraintTeacherHomeRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherHomeRooms::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -5641,6 +5780,12 @@ bool ConstraintTeacherHomeRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintTeacherHomeRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -5856,6 +6001,13 @@ bool ConstraintSubjectPreferredRoom::isRelatedToRoom(const QString& r)
 	return r==this->roomName;
 }
 
+bool ConstraintSubjectPreferredRoom::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintSubjectPreferredRoom::categoryOfSpaceConstraint()
 {
 	return IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT;
@@ -5881,6 +6033,12 @@ bool ConstraintSubjectPreferredRoom::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintSubjectPreferredRoom::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -6111,6 +6269,13 @@ bool ConstraintSubjectPreferredRooms::isRelatedToRoom(const QString& r)
 	return this->roomsNames.contains(r);
 }
 
+bool ConstraintSubjectPreferredRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintSubjectPreferredRooms::categoryOfSpaceConstraint()
 {
 	return IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT;
@@ -6136,6 +6301,12 @@ bool ConstraintSubjectPreferredRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintSubjectPreferredRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -6357,6 +6528,13 @@ bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToRoom(const QString& r
 	return r==this->roomName;
 }
 
+bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintSubjectActivityTagPreferredRoom::categoryOfSpaceConstraint()
 {
 	return IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT;
@@ -6382,6 +6560,12 @@ bool ConstraintSubjectActivityTagPreferredRoom::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintSubjectActivityTagPreferredRoom::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -6618,6 +6802,13 @@ bool ConstraintSubjectActivityTagPreferredRooms::isRelatedToRoom(const QString& 
 	return this->roomsNames.contains(r);
 }
 
+bool ConstraintSubjectActivityTagPreferredRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintSubjectActivityTagPreferredRooms::categoryOfSpaceConstraint()
 {
 	return IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT;
@@ -6643,6 +6834,12 @@ bool ConstraintSubjectActivityTagPreferredRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintSubjectActivityTagPreferredRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -6859,6 +7056,13 @@ bool ConstraintActivityTagPreferredRoom::isRelatedToRoom(const QString& r)
 	return r==this->roomName;
 }
 
+bool ConstraintActivityTagPreferredRoom::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintActivityTagPreferredRoom::categoryOfSpaceConstraint()
 {
 	return IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT;
@@ -6884,6 +7088,12 @@ bool ConstraintActivityTagPreferredRoom::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityTagPreferredRoom::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7115,6 +7325,13 @@ bool ConstraintActivityTagPreferredRooms::isRelatedToRoom(const QString& r)
 	return this->roomsNames.contains(r);
 }
 
+bool ConstraintActivityTagPreferredRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintActivityTagPreferredRooms::categoryOfSpaceConstraint()
 {
 	return IS_SUBJECT_AND_TAG_SPACE_CONSTRAINT;
@@ -7140,6 +7357,12 @@ bool ConstraintActivityTagPreferredRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivityTagPreferredRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7408,6 +7631,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::isRelatedToRoom(const QStrin
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxBuildingChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -7436,6 +7666,12 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& 
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxBuildingChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7656,6 +7892,13 @@ bool ConstraintStudentsMaxBuildingChangesPerDay::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxBuildingChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -7684,6 +7927,12 @@ bool ConstraintStudentsMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxBuildingChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7951,6 +8200,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::isRelatedToRoom(const QStri
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxBuildingChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -7979,6 +8235,12 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules&
 		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxBuildingChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8199,6 +8461,13 @@ bool ConstraintStudentsMaxBuildingChangesPerWeek::isRelatedToRoom(const QString&
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxBuildingChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -8227,6 +8496,12 @@ bool ConstraintStudentsMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxBuildingChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8507,6 +8782,13 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::isRelatedToRoom(const Q
 	return false;
 }
 
+bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMinGapsBetweenBuildingChanges::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -8535,6 +8817,12 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Ru
 		minGapsBetweenBuildingChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMinGapsBetweenBuildingChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8767,6 +9055,13 @@ bool ConstraintStudentsMinGapsBetweenBuildingChanges::isRelatedToRoom(const QStr
 	return false;
 }
 
+bool ConstraintStudentsMinGapsBetweenBuildingChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMinGapsBetweenBuildingChanges::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -8795,6 +9090,12 @@ bool ConstraintStudentsMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules
 		minGapsBetweenBuildingChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenBuildingChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -9027,6 +9328,13 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::isRelatedToRoom(const QString& r
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxBuildingChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -9055,6 +9363,12 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxBuildingChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -9275,6 +9589,13 @@ bool ConstraintTeachersMaxBuildingChangesPerDay::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxBuildingChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -9303,6 +9624,12 @@ bool ConstraintTeachersMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxBuildingChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -9535,6 +9862,13 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxBuildingChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -9563,6 +9897,12 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxBuildingChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -9783,6 +10123,13 @@ bool ConstraintTeachersMaxBuildingChangesPerWeek::isRelatedToRoom(const QString&
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxBuildingChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -9811,6 +10158,12 @@ bool ConstraintTeachersMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxBuildingChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -10055,6 +10408,13 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::isRelatedToRoom(const QStri
 	return false;
 }
 
+bool ConstraintTeacherMinGapsBetweenBuildingChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMinGapsBetweenBuildingChanges::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -10083,6 +10443,12 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules&
 		minGapsBetweenBuildingChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMinGapsBetweenBuildingChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -10315,6 +10681,13 @@ bool ConstraintTeachersMinGapsBetweenBuildingChanges::isRelatedToRoom(const QStr
 	return false;
 }
 
+bool ConstraintTeachersMinGapsBetweenBuildingChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMinGapsBetweenBuildingChanges::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -10343,6 +10716,12 @@ bool ConstraintTeachersMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules
 		minGapsBetweenBuildingChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenBuildingChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //2019-11-14
@@ -10612,6 +10991,13 @@ bool ConstraintStudentsSetMaxRoomChangesPerDay::isRelatedToRoom(const QString& r
 	return false;
 }
 
+bool ConstraintStudentsSetMaxRoomChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxRoomChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -10640,6 +11026,12 @@ bool ConstraintStudentsSetMaxRoomChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxRoomChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -10860,6 +11252,13 @@ bool ConstraintStudentsMaxRoomChangesPerDay::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintStudentsMaxRoomChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxRoomChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -10888,6 +11287,12 @@ bool ConstraintStudentsMaxRoomChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxRoomChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11155,6 +11560,13 @@ bool ConstraintStudentsSetMaxRoomChangesPerWeek::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintStudentsSetMaxRoomChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxRoomChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -11183,6 +11595,12 @@ bool ConstraintStudentsSetMaxRoomChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxRoomChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11403,6 +11821,13 @@ bool ConstraintStudentsMaxRoomChangesPerWeek::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintStudentsMaxRoomChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxRoomChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -11431,6 +11856,12 @@ bool ConstraintStudentsMaxRoomChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxRoomChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11711,6 +12142,13 @@ bool ConstraintStudentsSetMinGapsBetweenRoomChanges::isRelatedToRoom(const QStri
 	return false;
 }
 
+bool ConstraintStudentsSetMinGapsBetweenRoomChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMinGapsBetweenRoomChanges::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -11739,6 +12177,12 @@ bool ConstraintStudentsSetMinGapsBetweenRoomChanges::repairWrongDayOrHour(Rules&
 		minGapsBetweenRoomChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMinGapsBetweenRoomChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11971,6 +12415,13 @@ bool ConstraintStudentsMinGapsBetweenRoomChanges::isRelatedToRoom(const QString&
 	return false;
 }
 
+bool ConstraintStudentsMinGapsBetweenRoomChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMinGapsBetweenRoomChanges::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -11999,6 +12450,12 @@ bool ConstraintStudentsMinGapsBetweenRoomChanges::repairWrongDayOrHour(Rules& r)
 		minGapsBetweenRoomChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMinGapsBetweenRoomChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12231,6 +12688,13 @@ bool ConstraintTeacherMaxRoomChangesPerDay::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintTeacherMaxRoomChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxRoomChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -12259,6 +12723,12 @@ bool ConstraintTeacherMaxRoomChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxRoomChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12479,6 +12949,13 @@ bool ConstraintTeachersMaxRoomChangesPerDay::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintTeachersMaxRoomChangesPerDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxRoomChangesPerDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -12507,6 +12984,12 @@ bool ConstraintTeachersMaxRoomChangesPerDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxRoomChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12739,6 +13222,13 @@ bool ConstraintTeacherMaxRoomChangesPerWeek::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintTeacherMaxRoomChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxRoomChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -12767,6 +13257,12 @@ bool ConstraintTeacherMaxRoomChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxRoomChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12987,6 +13483,13 @@ bool ConstraintTeachersMaxRoomChangesPerWeek::isRelatedToRoom(const QString& r)
 	return false;
 }
 
+bool ConstraintTeachersMaxRoomChangesPerWeek::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxRoomChangesPerWeek::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -13015,6 +13518,12 @@ bool ConstraintTeachersMaxRoomChangesPerWeek::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxRoomChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13259,6 +13768,13 @@ bool ConstraintTeacherMinGapsBetweenRoomChanges::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintTeacherMinGapsBetweenRoomChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMinGapsBetweenRoomChanges::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -13287,6 +13803,12 @@ bool ConstraintTeacherMinGapsBetweenRoomChanges::repairWrongDayOrHour(Rules& r)
 		minGapsBetweenRoomChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMinGapsBetweenRoomChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13519,6 +14041,13 @@ bool ConstraintTeachersMinGapsBetweenRoomChanges::isRelatedToRoom(const QString&
 	return false;
 }
 
+bool ConstraintTeachersMinGapsBetweenRoomChanges::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMinGapsBetweenRoomChanges::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -13547,6 +14076,12 @@ bool ConstraintTeachersMinGapsBetweenRoomChanges::repairWrongDayOrHour(Rules& r)
 		minGapsBetweenRoomChanges=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMinGapsBetweenRoomChanges::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -13801,6 +14336,13 @@ bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToRoom(const QString&
 	return false;
 }
 
+bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintActivitiesOccupyMaxDifferentRooms::categoryOfSpaceConstraint()
 {
 	return IS_ACTIVITY_SPACE_CONSTRAINT;
@@ -13826,6 +14368,12 @@ bool ConstraintActivitiesOccupyMaxDifferentRooms::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivitiesOccupyMaxDifferentRooms::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -14083,6 +14631,13 @@ bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToRoom(const QString& r
 	return false;
 }
 
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintActivitiesSameRoomIfConsecutive::categoryOfSpaceConstraint()
 {
 	return IS_ACTIVITY_SPACE_CONSTRAINT;
@@ -14108,6 +14663,12 @@ bool ConstraintActivitiesSameRoomIfConsecutive::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+void ConstraintActivitiesSameRoomIfConsecutive::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -14335,6 +14896,13 @@ bool ConstraintStudentsMaxRoomChangesPerRealDay::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintStudentsMaxRoomChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxRoomChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -14363,6 +14931,12 @@ bool ConstraintStudentsMaxRoomChangesPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxRoomChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -14642,6 +15216,13 @@ bool ConstraintStudentsSetMaxRoomChangesPerRealDay::isRelatedToRoom(const QStrin
 	return false;
 }
 
+bool ConstraintStudentsSetMaxRoomChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxRoomChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -14670,6 +15251,12 @@ bool ConstraintStudentsSetMaxRoomChangesPerRealDay::repairWrongDayOrHour(Rules& 
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxRoomChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -14911,6 +15498,13 @@ bool ConstraintTeacherMaxRoomChangesPerRealDay::isRelatedToRoom(const QString& r
 	return false;
 }
 
+bool ConstraintTeacherMaxRoomChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxRoomChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -14939,6 +15533,12 @@ bool ConstraintTeacherMaxRoomChangesPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxRoomChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15167,6 +15767,13 @@ bool ConstraintTeachersMaxRoomChangesPerRealDay::isRelatedToRoom(const QString& 
 	return false;
 }
 
+bool ConstraintTeachersMaxRoomChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxRoomChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -15195,6 +15802,12 @@ bool ConstraintTeachersMaxRoomChangesPerRealDay::repairWrongDayOrHour(Rules& r)
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxRoomChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -15422,6 +16035,13 @@ bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToRoom(const QStri
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxBuildingChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -15450,6 +16070,12 @@ bool ConstraintStudentsMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules&
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxBuildingChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15729,6 +16355,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToRoom(const QS
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxBuildingChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -15757,6 +16390,12 @@ bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rul
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxBuildingChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -15998,6 +16637,13 @@ bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToRoom(const QStrin
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxBuildingChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -16026,6 +16672,12 @@ bool ConstraintTeacherMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules& 
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxBuildingChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16254,6 +16906,13 @@ bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToRoom(const QStri
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxBuildingChangesPerRealDay::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -16282,6 +16941,12 @@ bool ConstraintTeachersMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules&
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxBuildingChangesPerRealDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16577,6 +17242,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::isRelatedToRoom(co
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -16614,6 +17286,12 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::repairWrongDayOrHo
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16861,6 +17539,13 @@ bool ConstraintStudentsMaxBuildingChangesPerDayInInterval::isRelatedToRoom(const
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxBuildingChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -16898,6 +17583,12 @@ bool ConstraintStudentsMaxBuildingChangesPerDayInInterval::repairWrongDayOrHour(
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxBuildingChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17157,6 +17848,13 @@ bool ConstraintTeacherMaxBuildingChangesPerDayInInterval::isRelatedToRoom(const 
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxBuildingChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -17194,6 +17892,12 @@ bool ConstraintTeacherMaxBuildingChangesPerDayInInterval::repairWrongDayOrHour(R
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxBuildingChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17441,6 +18145,13 @@ bool ConstraintTeachersMaxBuildingChangesPerDayInInterval::isRelatedToRoom(const
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxBuildingChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -17478,6 +18189,12 @@ bool ConstraintTeachersMaxBuildingChangesPerDayInInterval::repairWrongDayOrHour(
 		maxBuildingChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxBuildingChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17813,6 +18530,13 @@ bool ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::isRelatedToRoo
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -17850,6 +18574,12 @@ bool ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::repairWrongDay
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18137,6 +18867,13 @@ bool ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::isRelatedToRoom(c
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -18174,6 +18911,12 @@ bool ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::repairWrongDayOrH
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18474,6 +19217,13 @@ bool ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::isRelatedToRoom(co
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -18511,6 +19261,12 @@ bool ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::repairWrongDayOrHo
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18798,6 +19554,13 @@ bool ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::isRelatedToRoom(c
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -18835,6 +19598,12 @@ bool ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::repairWrongDayOrH
 		maxBuildingChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19130,6 +19899,13 @@ bool ConstraintStudentsSetMaxRoomChangesPerDayInInterval::isRelatedToRoom(const 
 	return false;
 }
 
+bool ConstraintStudentsSetMaxRoomChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxRoomChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -19167,6 +19943,12 @@ bool ConstraintStudentsSetMaxRoomChangesPerDayInInterval::repairWrongDayOrHour(R
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxRoomChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19414,6 +20196,13 @@ bool ConstraintStudentsMaxRoomChangesPerDayInInterval::isRelatedToRoom(const QSt
 	return false;
 }
 
+bool ConstraintStudentsMaxRoomChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxRoomChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -19451,6 +20240,12 @@ bool ConstraintStudentsMaxRoomChangesPerDayInInterval::repairWrongDayOrHour(Rule
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxRoomChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19710,6 +20505,13 @@ bool ConstraintTeacherMaxRoomChangesPerDayInInterval::isRelatedToRoom(const QStr
 	return false;
 }
 
+bool ConstraintTeacherMaxRoomChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxRoomChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -19747,6 +20549,12 @@ bool ConstraintTeacherMaxRoomChangesPerDayInInterval::repairWrongDayOrHour(Rules
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxRoomChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19994,6 +20802,13 @@ bool ConstraintTeachersMaxRoomChangesPerDayInInterval::isRelatedToRoom(const QSt
 	return false;
 }
 
+bool ConstraintTeachersMaxRoomChangesPerDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxRoomChangesPerDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -20031,6 +20846,12 @@ bool ConstraintTeachersMaxRoomChangesPerDayInInterval::repairWrongDayOrHour(Rule
 		maxRoomChangesPerDay=r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxRoomChangesPerDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20366,6 +21187,13 @@ bool ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::isRelatedToRoom(co
 	return false;
 }
 
+bool ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -20403,6 +21231,12 @@ bool ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::repairWrongDayOrHo
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20690,6 +21524,13 @@ bool ConstraintStudentsMaxRoomChangesPerRealDayInInterval::isRelatedToRoom(const
 	return false;
 }
 
+bool ConstraintStudentsMaxRoomChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintStudentsMaxRoomChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_STUDENTS_SPACE_CONSTRAINT;
@@ -20727,6 +21568,12 @@ bool ConstraintStudentsMaxRoomChangesPerRealDayInInterval::repairWrongDayOrHour(
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintStudentsMaxRoomChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21027,6 +21874,13 @@ bool ConstraintTeacherMaxRoomChangesPerRealDayInInterval::isRelatedToRoom(const 
 	return false;
 }
 
+bool ConstraintTeacherMaxRoomChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeacherMaxRoomChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -21064,6 +21918,12 @@ bool ConstraintTeacherMaxRoomChangesPerRealDayInInterval::repairWrongDayOrHour(R
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeacherMaxRoomChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21351,6 +22211,13 @@ bool ConstraintTeachersMaxRoomChangesPerRealDayInInterval::isRelatedToRoom(const
 	return false;
 }
 
+bool ConstraintTeachersMaxRoomChangesPerRealDayInInterval::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintTeachersMaxRoomChangesPerRealDayInInterval::categoryOfSpaceConstraint()
 {
 	return IS_TEACHER_SPACE_CONSTRAINT;
@@ -21388,6 +22255,12 @@ bool ConstraintTeachersMaxRoomChangesPerRealDayInInterval::repairWrongDayOrHour(
 		maxRoomChangesPerDay=2*r.nHoursPerDay;
 
 	return true;
+}
+
+void ConstraintTeachersMaxRoomChangesPerRealDayInInterval::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -21618,6 +22491,13 @@ bool ConstraintRoomMaxActivityTagsPerDayFromSet::isRelatedToRoom(const QString& 
 	return this->room==r;
 }
 
+bool ConstraintRoomMaxActivityTagsPerDayFromSet::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomMaxActivityTagsPerDayFromSet::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -21646,6 +22526,12 @@ bool ConstraintRoomMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomMaxActivityTagsPerDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -21879,6 +22765,13 @@ bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::isRelatedToRoom(const QStri
 	return this->room==r;
 }
 
+bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomMaxActivityTagsPerRealDayFromSet::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -21907,6 +22800,12 @@ bool ConstraintRoomMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules&
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomMaxActivityTagsPerRealDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -22136,6 +23035,13 @@ bool ConstraintRoomMaxActivityTagsPerWeekFromSet::isRelatedToRoom(const QString&
 	return this->room==r;
 }
 
+bool ConstraintRoomMaxActivityTagsPerWeekFromSet::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomMaxActivityTagsPerWeekFromSet::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -22164,6 +23070,12 @@ bool ConstraintRoomMaxActivityTagsPerWeekFromSet::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomMaxActivityTagsPerWeekFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -22394,6 +23306,13 @@ bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToRoom(const QStri
 	return this->room==r;
 }
 
+bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomPairOfMutuallyExclusiveTimeSlots::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -22426,6 +23345,15 @@ bool ConstraintRoomPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Rules&
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintRoomPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -22737,6 +23665,13 @@ bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToRoom(const
 	return this->room==r;
 }
 
+bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -22810,6 +23745,40 @@ bool ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour(
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -23140,6 +24109,13 @@ bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToRoom(cons
 	return this->room==r;
 }
 
+bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -23217,6 +24193,37 @@ bool ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHour
 	return true;
 }
 
+void ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+}
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23437,6 +24444,13 @@ bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToRoom(const QString&
 	return true;
 }
 
+bool ConstraintRoomsMaxActivityTagsPerDayFromSet::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsMaxActivityTagsPerDayFromSet::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -23465,6 +24479,12 @@ bool ConstraintRoomsMaxActivityTagsPerDayFromSet::repairWrongDayOrHour(Rules& r)
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomsMaxActivityTagsPerDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -23690,6 +24710,13 @@ bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToRoom(const QStr
 	return true;
 }
 
+bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsMaxActivityTagsPerRealDayFromSet::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -23718,6 +24745,12 @@ bool ConstraintRoomsMaxActivityTagsPerRealDayFromSet::repairWrongDayOrHour(Rules
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomsMaxActivityTagsPerRealDayFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -23939,6 +24972,13 @@ bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToRoom(const QString
 	return true;
 }
 
+bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsMaxActivityTagsPerWeekFromSet::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -23967,6 +25007,12 @@ bool ConstraintRoomsMaxActivityTagsPerWeekFromSet::repairWrongDayOrHour(Rules& r
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomsMaxActivityTagsPerWeekFromSet::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -24192,6 +25238,13 @@ bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToRoom(const QStr
 	return true;
 }
 
+bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -24224,6 +25277,15 @@ bool ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::repairWrongDayOrHour(Rules
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	day1=newExistingDaysHash.value(day1, r.nDaysPerWeek);
+	day2=newExistingDaysHash.value(day2, r.nDaysPerWeek);
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -24529,6 +25591,13 @@ bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToRoom(cons
 	return true;
 }
 
+bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -24602,6 +25671,40 @@ bool ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::repairWrongDayOrHour
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays1.count()==selectedHours1.count());
+	
+	QList<int> newDays1;
+	QList<int> newHours1;
+	
+	for(int i=0; i<selectedDays1.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays1.at(i))){
+			newDays1.append(newExistingDaysHash.value(selectedDays1.at(i)));
+			newHours1.append(selectedHours1.at(i));
+		}
+	
+	selectedDays1=newDays1;
+	selectedHours1=newHours1;
+	
+	assert(selectedDays2.count()==selectedHours2.count());
+	
+	QList<int> newDays2;
+	QList<int> newHours2;
+	
+	for(int i=0; i<selectedDays2.count(); i++)
+		if(newExistingDaysHash.contains(selectedDays2.at(i))){
+			newDays2.append(newExistingDaysHash.value(selectedDays2.at(i)));
+			newHours2.append(selectedHours2.at(i));
+		}
+	
+	selectedDays2=newDays2;
+	selectedHours2=newHours2;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -24926,6 +26029,13 @@ bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToRoom(const
 	return true;
 }
 
+bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -25001,6 +26111,38 @@ bool ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::repairWrongDayOrHour(
 	setRulesModifiedAndOtherThings(&r);
 
 	return true;
+}
+
+void ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	assert(selectedDays.count()==selectedHours.count());
+	
+	QList<QList<int>> newSelectedDays;
+	QList<QList<int>> newSelectedHours;
+	
+	for(int q=0; q<selectedDays.count(); q++){
+		const QList<int>& days=selectedDays.at(q);
+		const QList<int>& hours=selectedHours.at(q);
+		
+		QList<int> newDays;
+		QList<int> newHours;
+		
+		for(int i=0; i<days.count(); i++){
+			if(newExistingDaysHash.contains(days.at(i))){
+				newDays.append(newExistingDaysHash.value(days.at(i)));
+				newHours.append(hours.at(i));
+			}
+		}
+		
+		newSelectedDays.append(newDays);
+		newSelectedHours.append(newHours);
+	}
+	
+	selectedDays=newSelectedDays;
+	selectedHours=newSelectedHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
 }
 
 //2026-03-04
@@ -25194,6 +26336,11 @@ bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToRoom(co
 	return false;
 }
 
+bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::isRelatedToBuilding(const QString& b)
+{
+	return this->building==b;
+}
+
 int ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::categoryOfSpaceConstraint()
 {
 	return IS_BUILDING_SPACE_CONSTRAINT;
@@ -25219,6 +26366,12 @@ bool ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::repairWrongDayOrHo
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -25405,6 +26558,13 @@ bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToRoom(c
 	return false;
 }
 
+bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return true;
+}
+
 int ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::categoryOfSpaceConstraint()
 {
 	return IS_BUILDING_SPACE_CONSTRAINT;
@@ -25430,6 +26590,12 @@ bool ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::repairWrongDayOrH
 	assert(0);
 	
 	return true;
+}
+
+void ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -25670,6 +26836,13 @@ bool ConstraintRoomMaxActivitiesPerTeacher::isRelatedToRoom(const QString& r)
 	return this->room==r;
 }
 
+bool ConstraintRoomMaxActivitiesPerTeacher::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomMaxActivitiesPerTeacher::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -25694,6 +26867,12 @@ bool ConstraintRoomMaxActivitiesPerTeacher::repairWrongDayOrHour(Rules& r)
 	assert(hasWrongDayOrHour(r));
 	
 	return true;
+}
+
+void ConstraintRoomMaxActivitiesPerTeacher::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -25916,6 +27095,13 @@ bool ConstraintRoomsMaxActivitiesPerTeacher::isRelatedToRoom(const QString& r)
 	return true;
 }
 
+bool ConstraintRoomsMaxActivitiesPerTeacher::isRelatedToBuilding(const QString& b)
+{
+	Q_UNUSED(b);
+
+	return false;
+}
+
 int ConstraintRoomsMaxActivitiesPerTeacher::categoryOfSpaceConstraint()
 {
 	return IS_ROOM_SPACE_CONSTRAINT;
@@ -25941,3 +27127,10 @@ bool ConstraintRoomsMaxActivitiesPerTeacher::repairWrongDayOrHour(Rules& r)
 	
 	return true;
 }
+
+void ConstraintRoomsMaxActivitiesPerTeacher::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+

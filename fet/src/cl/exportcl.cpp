@@ -60,6 +60,7 @@ const char CSVSubjects[]="subjects.csv";
 const char CSVTeachers[]="teachers.csv";
 const char CSVStudents[]="students.csv";
 const char CSVTimetable[]="timetable.csv";
+const char CSVTeacherNotAvailable[]="teacher_not_available.csv";
 QString DIRECTORY_CSV;
 QString PREFIX_CSV;
 
@@ -162,7 +163,7 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 
 	QString lastWarnings;
 
-	bool okat, okr, oks, okt, okst, okact, okacts, oktim1, oktim2;
+	bool okat, okr, oks, okt, okst, okact, okacts, oktim1, oktim2, oktna;
 
 	okat=exportCSVActivityTags(lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator);
 	okr=exportCSVRoomsAndBuildings(lastWarnings, textquote, fieldSeparator, head);
@@ -171,6 +172,7 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 	okst=exportCSVStudents(lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator);
 	okact=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
 	okacts=exportCSVActivitiesStatistics(lastWarnings, textquote, fieldSeparator, head);
+	oktna=exportCSVTeacherNotAvailable(lastWarnings, textquote, fieldSeparator, head);
 	
 	if(current==nullptr){
 		best_solution.copy(gt.rules, *bestOrHighest);
@@ -205,7 +207,7 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 		PREFIX_CSV=DIRECTORY_CSV+FILE_SEP;
 	}
 	
-	ok=okat && okr && oks && okt && okst && okact && okacts && oktim1 && oktim2;
+	ok=okat && okr && oks && okt && okst && okact && okacts && oktim1 && oktim2 && oktna;
 	
 	lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(QDir::toNativeSeparators(DIRECTORY_CSV))+"\n");
 	if(ok)
@@ -1500,6 +1502,146 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 	} else {
 		lastWarnings+=Export::tr("0 scheduled activities exported, because no timetable was generated.")+"\n";
 	}
+	if(fileExport.error()!=QFileDevice::NoError){
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+"\n";
+		return false;
+	}
+	fileExport.close();
+	return true;
+}
+
+bool Export::exportCSVTeacherNotAvailable(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head){
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString UNDERSCORE="_";
+	if(INPUT_FILENAME_XML=="")
+		UNDERSCORE="";
+	QString file=PREFIX_CSV+s2+UNDERSCORE+CSVTeacherNotAvailable;
+
+	if(!Export::okToWrite(file))
+		return false;
+
+	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
+	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
+		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
+		return false;
+	}
+	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
+	tosExport.setCodec("UTF-8");
+#endif
+	tosExport.setGenerateByteOrderMark(true);
+
+	if(head){
+		tosExport
+				<<textquote<<protectCSV("Teacher Name")<<textquote<<fieldSeparator
+				<<textquote<<protectCSV("Hour")<<textquote<<fieldSeparator;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			tosExport<<textquote<<protectCSV(/* "Weight_"+ */gt.rules.daysOfTheWeek.at(d))<<textquote<<fieldSeparator;
+		}
+		tosExport<<textquote<<protectCSV("Comments")<<textquote<<Qt::endl;
+	}
+
+	//code similar to timetableviewteacherstimehorizontalform by Liviu Lalescu (start)
+	Matrix3D<double> tnaMatrix;
+	Matrix1D<bool> inactiveConstraint;
+	Matrix1D<QString> comments;
+	tnaMatrix.resize(gt.rules.teachersList.count(), gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
+	inactiveConstraint.resize(gt.rules.teachersList.count());
+	comments.resize(gt.rules.teachersList.count());
+	for(int t=0; t<gt.rules.teachersList.count(); t++){
+		inactiveConstraint[t]=false;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				tnaMatrix[t][d][h]=0;
+
+		QSet<ConstraintTeacherNotAvailableTimes*> stc=gt.rules.tnatHash.value(gt.rules.teachersList.at(t)->name, QSet<ConstraintTeacherNotAvailableTimes*>());
+		assert(stc.count()<=1);
+		if(!stc.isEmpty()){
+			ConstraintTeacherNotAvailableTimes* ctr=*stc.constBegin();
+			for(int i=0; i<ctr->days.count(); i++){
+				int d=ctr->days.at(i);
+				int h=ctr->hours.at(i);
+				tnaMatrix[t][d][h]=100;
+			}
+			if(ctr->active==false)
+				inactiveConstraint[t]=true;
+			comments[t]=ctr->comments;
+		}
+	}
+	//code similar to timetableviewteacherstimehorizontalform by Liviu Lalescu (end)
+
+	//workaround start
+	//maybe TODO: I need later this, but it is impossible, because it is privat. Also: Speedup by a hash/map?!
+	//t=gt.rules.teachersList.indexOf(fields.at(0));
+	QStringList tList;
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		tList<<gt.rules.teachersList.at(i)->name;
+	}
+	//workaround end
+
+	//add CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS
+	//TODO rethink: what about duration? What about the starting time constraimt?
+	for(TimeConstraint* ctr : std::as_const(gt.rules.timeConstraintsList)){
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* pc=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(pc->active && !pc->p_teacherName.isEmpty() && pc->p_studentsName.isEmpty() && pc->p_subjectName.isEmpty() && pc->p_activityTagName.isEmpty()){
+				assert(pc->p_days_L.count() == pc->p_hours_L.count());
+				QSet<QString> prefDay_Hour;
+				for(int i=0; i<pc->p_days_L.count(); i++){
+					prefDay_Hour<<QString::number(pc->p_days_L.at(i))+"_"+QString::number(pc->p_hours_L.at(i));
+				}
+				int t=tList.indexOf(pc->p_teacherName);
+				assert(t>-1);
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(!prefDay_Hour.contains(QString::number(d)+"_"+QString::number(h))){
+							if(tnaMatrix[t][d][h] < pc->weightPercentage)
+								tnaMatrix[t][d][h]=pc->weightPercentage;
+						}
+				if(!pc->comments.isEmpty()){
+					comments[t]+=" "+pc->comments.replace("\n", " ");
+				}
+			}
+		}
+	}
+
+	int countExportedTeachers=0;
+	for(int t=0; t<gt.rules.teachersList.size(); t++){
+		countExportedTeachers++;
+		for(int h=0; h<gt.rules.nHoursPerDay; h++){
+			tosExport<<textquote;
+			tosExport<<protectCSV(gt.rules.teachersList.at(t)->name);
+			tosExport<<textquote<<fieldSeparator<<textquote;
+			tosExport<<protectCSV(gt.rules.hoursOfTheDay.at(h));
+			tosExport<<textquote<<fieldSeparator;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				if(tnaMatrix[t][d][h]>0){
+					tosExport<<CustomFETString::number(tnaMatrix[t][d][h]);
+				}
+				tosExport<<fieldSeparator;
+			}
+			tosExport<<textquote;
+			if(h==0)
+				tosExport<<protectCSV(comments[t].replace("\n", " "));
+			tosExport<<textquote;
+			tosExport<<Qt::endl;
+		}
+	}
+
+	lastWarnings+=Export::tr("%1 not available teachers exported.").arg(countExportedTeachers)+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
 		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+"\n";
