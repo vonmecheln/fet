@@ -181,7 +181,7 @@ void YearsForm::addYear()
 void YearsForm::removeYear()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -321,7 +321,7 @@ void YearsForm::modifyYear()
 	int valh=yearsListWidget->horizontalScrollBar()->value();
 
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -354,7 +354,7 @@ void YearsForm::modifyYear()
 void YearsForm::activateStudents()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	
@@ -369,7 +369,7 @@ void YearsForm::activateStudents()
 void YearsForm::deactivateStudents()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	
@@ -384,7 +384,7 @@ void YearsForm::deactivateStudents()
 void YearsForm::divideYear()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	
@@ -399,7 +399,7 @@ void YearsForm::comments()
 {
 	int ind=yearsListWidget->currentRow();
 	if(ind<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	
@@ -463,7 +463,7 @@ void YearsForm::longName()
 {
 	int ind=yearsListWidget->currentRow();
 	if(ind<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	
@@ -527,7 +527,7 @@ void YearsForm::code()
 {
 	int ind=yearsListWidget->currentRow();
 	if(ind<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	

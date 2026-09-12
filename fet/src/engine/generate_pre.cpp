@@ -6947,7 +6947,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
+					 GeneratePreTranslate::tr("For subgroup %1 you have too few activities to respect the constraint(s)"
 					 " of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalSubgroupsList[i]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6966,8 +6966,8 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 						ok=false;
 
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-						 GeneratePreTranslate::tr("For subgroup %1 cannot respect the constraint(s)"
-						 " of type min hours daily (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break."
+						 GeneratePreTranslate::tr("The constraint(s) of type min hours daily cannot be respected for subgroup %1"
+						 " (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break."
 						 " Please modify your data accordingly and try again")
 						 .arg(gt.rules.internalSubgroupsList[i]->name)
 						 .arg(gt.rules.daysOfTheWeek[j]),
@@ -7028,7 +7028,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
+					 GeneratePreTranslate::tr("For subgroup %1 you have too few activities to respect the constraint(s)"
 					 " of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalSubgroupsList[i]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -7101,7 +7101,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
+					 GeneratePreTranslate::tr("For subgroup %1 you have too few activities to respect the constraint(s)"
 					 " of type min hours per morning (the constraint(s) do not allow empty mornings). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalSubgroupsList[i]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -7117,7 +7117,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
+					 GeneratePreTranslate::tr("For subgroup %1 you have too few activities to respect the constraint(s)"
 					 " of type min hours per afternoon (the constraint(s) do not allow empty afternoons). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalSubgroupsList[i]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9899,7 +9899,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For teacher %1 you have too little activities to respect the constraint(s)"
+					 GeneratePreTranslate::tr("For teacher %1 you have too few activities to respect the constraint(s)"
 					 " of type min hours per morning (the constraint(s) do not allow empty mornings). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalTeachersList[tc]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9915,7 +9915,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For teacher %1 you have too little activities to respect the constraint(s)"
+					 GeneratePreTranslate::tr("For teacher %1 you have too few activities to respect the constraint(s)"
 					 " of type min hours per afternoon (the constraint(s) do not allow empty afternoons). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalTeachersList[tc]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),

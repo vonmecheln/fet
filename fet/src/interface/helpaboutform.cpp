@@ -133,6 +133,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+
 	 tr("The colors of the timetables, in the timetable view dialogs and in the XHTML results (using CRC-24 based on RFC 2440 Section 6.1).",
 	 "CRC means Cyclic Redundancy Check, RFC means Request for Comments. Please keep the fields CRC-24, RFC 2440, and 6.1 unmodified.");
+	contributors+=QString("<br /><br />");
+	contributors+=QString("Michael Towers");
+	contributors+=QString("<br />");
+	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Help for creating and improving the CMake files.");
 	contributors+=QString("<br />");
 	contributorsTextBrowser->setHtml(contributors);
 	
@@ -1583,6 +1587,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Ulugbek Tulakov");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("gerben");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("kieronsalmon");
 	thanksTo+=QString("<br />");
 	
 	thanksToTextBrowser->setHtml(thanksTo);

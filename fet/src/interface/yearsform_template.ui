@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Title of dialog">Years (forms, classes) of students</string>
+   <string extracomment="Title of dialog">Student years (grades/forms/classes)</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

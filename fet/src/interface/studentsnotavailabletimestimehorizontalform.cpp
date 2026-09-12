@@ -988,7 +988,7 @@ void StudentsNotAvailableTimesTimeHorizontalForm::ok()
 			}
 		}
 
-		QString s=tr("Details about the operations which were done on the list of constraints of type 'students set not available time slots':");
+		QString s=tr("Details about the operations which were done on the list of constraints of type 'students set not available times':");
 		s+="\n\n";
 		if(added>0)
 			s+=addedS;

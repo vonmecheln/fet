@@ -43,6 +43,10 @@
 
 #include <QScrollBar>
 
+#include <QHash>
+#include <QSet>
+#include <QPair>
+
 QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList<int>& hours, bool direct, bool notAvailable, bool colors); //implemented in timeconstraint.cpp
 
 extern const QString COMPANY;
@@ -68,6 +72,7 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 
 	connect(targetNumberOfHoursPushButton, &QPushButton::clicked, this, &TeachersForm::targetNumberOfHours);
 	connect(qualifiedSubjectsPushButton, &QPushButton::clicked, this, &TeachersForm::qualifiedSubjects);
+	connect(importQualifiedSubjectsPushButton, &QPushButton::clicked, this, &TeachersForm::importQualifiedSubjects);
 
 	connect(moveTeacherUpPushButton, &QPushButton::clicked, this, &TeachersForm::moveTeacherUp);
 	connect(moveTeacherDownPushButton, &QPushButton::clicked, this, &TeachersForm::moveTeacherDown);
@@ -386,6 +391,47 @@ void TeachersForm::qualifiedSubjects()
 	teacherChanged(teachersListWidget->currentRow());
 }
 
+void TeachersForm::importQualifiedSubjects()
+{
+	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET confirmation"),
+	 tr("Are you sure you want to import all the subject qualifications for teachers from the current activities list?"), QMessageBox::Cancel | QMessageBox::Ok);
+	if(res==QMessageBox::Cancel)
+		return;
+	
+	QHash<QString, Teacher*> allTeachersHash;
+	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+		allTeachersHash.insert(tch->name, tch);
+
+		tch->qualifiedSubjectsList.clear();
+		tch->qualifiedSubjectsHash.clear();
+	}
+	
+	QSet<QPair<QString, QString>> allTeachersSubjectsSet;
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
+		for(const QString& teacher : std::as_const(act->teachersNames)){
+			if(!allTeachersSubjectsSet.contains(QPair<QString, QString>(teacher, act->subjectName))){
+				allTeachersSubjectsSet.insert(QPair<QString, QString>(teacher, act->subjectName));
+				
+				Teacher* tch=allTeachersHash.value(teacher, nullptr);
+				assert(tch!=nullptr);
+				
+				tch->qualifiedSubjectsList.push_back(act->subjectName);
+				tch->qualifiedSubjectsHash.insert(act->subjectName, std::prev(tch->qualifiedSubjectsList.end()));
+			}
+		}
+	}
+
+	gt.rules.addUndoPoint(tr("Imported the list of qualified subjects for all teachers from the list of all activities."));
+
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+
+	if(teachersListWidget->count()>0){
+		teachersListWidget->setCurrentRow(0);
+		teacherChanged(0);
+	}
+}
+
 void TeachersForm::moveTeacherUp()
 {
 	if(teachersListWidget->count()<=1)
@@ -511,6 +557,10 @@ void TeachersForm::teacherChanged(int index)
 	if(!cs.isEmpty())
 		ctr=*cs.constBegin();
 	if(ctr!=nullptr){
+		if(!ctr->active){
+			s2+=tr("Inactive time constraint of type 'teacher not available times':");
+			s2+="<br />\n";
+		}
 		s2+=listsOfDaysAndHoursToTable(gt.rules, ctr->days, ctr->hours, true, true, colorsCheckBox->isChecked());
 		s2+="<br />\n";
 	}

@@ -1,6 +1,27 @@
+ 7.10.2
+	- The qm translation files will no longer be included in the FET sources package (suggested by Michael Towers).
+	- The activities and the subactivities dialogs have new tristate check boxes, "Unique", for teachers/students/activity tags
+	(suggested by Vangelis Karafillidis). Their use is explained in the dialog's Help function.
+	- It is now possible to import the teachers' qualifications from the activities list (suggested by GUEFFAZ REDA).
+	- The constraints of type teacher home room(s) will now show the teacher's mornings/afternoons behavior (in the Mornings-Afternoons
+	mode), and the associated constraint of type teacher not available times for that teacher (suggested by YOUSSEF HOUIET).
+	- The modify activity and modify subactivity dialogs now have a filter for teachers/students sets/activity tags, similar
+	to the add activity dialog (suggested by GUEFFAZ REDA).
+	- The search in menu line edit has now an explanation (suggested by Michael Towers).
+	- Corrected and improved many English text fields, by Volker Dirr, using ChatGPT.
+	- Corrected the Romanian translation, by Liviu Lalescu, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Corrected the Greek translation, by Vangelis Karafillidis, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Corrected the Uzbek translation, by Ulugbek Tulakov, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Corrected the French translation, by Pascal Cohen, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Corrected the Brazilian Portuguese translation, by Alexandre R. Soares, as suggested by Volker Dirr, who found some errors
+	using ChatGPT.
+	- Corrected the Italian translation, by Andrea Primiani, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Corrected the Arabic translation, by Benahmed Abdelkrim, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Minor other corrections and improvements.
  7.10.1
 	- Updated to Qt 6.11.2.
-	- Added a 'Quick search' line edit for the menu items (suggested by Syed, and maybe also by other users in the past).
+	- Added a 'Quick search' line edit for the menu items (suggested by Syed, and maybe also by other users in the past). This feature
+	is optional (enabled by default), and can be disabled from the Settings menu.
 	- In the dialog of the constraints activities preferred time slots related to a selection of activities in the view timetable dialogs,
 	the user can now add multiple constraints, one for each filtered activity, with a single click (suggested by Vangelis Karafillidis).
 	- Updated the Italian translation, by Andrea Primiani.
@@ -17,7 +38,7 @@
 	Vangelis Karafillidis). The activities placed in the unselected days will be deactivated. For this new feature, some new English
 	text fields were suggested by Vangelis Karafillidis.
 	- Added 'teachers not available'/'activities preferred time slots' constraints' import/export from/to a CSV file (suggested by
-	Vangelis Karafillidis, Fritzlang, TongThanhKieu, and Steffen Schiedek, and maybe by other users in the past). For this new feature,
+	Vangelis Karafillidis, Fritzlang, TongThanhKieu, Steffen Schiedek, and maybe by other users in the past). For this new feature,
 	some new English text fields were suggested by Vangelis Karafillidis.
 	- It is now possible to lock/unlock the timetable for a selection of days, not only for a single day at a time (suggested by
 	YOUSSEF HOUIET).

@@ -2937,10 +2937,11 @@ QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("These are the basic compulsory constraints (referring to rooms allocation) for any timetable");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -3308,8 +3309,10 @@ QString ConstraintRoomNotAvailableTimes::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
+	Q_UNUSED(showTeacherDetails);
+
 	if(!richText){
 		QString s=tr("Space constraint");s+="\n";
 		s+=tr("Room not available");s+="\n";
@@ -3663,7 +3666,9 @@ QString ConstraintTeacherRoomNotAvailableTimes::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherRoomNotAvailableTimes::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintTeacherRoomNotAvailableTimes::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
+	Q_UNUSED(showTeacherDetails);
+
 	if(!richText){
 		QString s=tr("Space constraint");s+="\n";
 		s+=tr("Teacher room not available");s+="\n";
@@ -4125,9 +4130,10 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity preferred room"); s+="\n";
@@ -4442,9 +4448,10 @@ QString ConstraintActivityPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity preferred rooms"); s+="\n";
@@ -4715,10 +4722,11 @@ QString ConstraintStudentsSetHomeRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Students set home room"); s+="\n";
@@ -5014,10 +5022,11 @@ QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Students set home rooms"); s+="\n";
@@ -5305,10 +5314,11 @@ QString ConstraintTeacherHomeRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
-	Q_UNUSED(r);
+	/*Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);*/
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Teacher home room"); s+="\n";
@@ -5326,8 +5336,68 @@ QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules&r, bool richText
 		s+=tr("Comments=%1").arg(comments);
 		s+="\n";
 	}
-
-	return richText?protect4(s):s;
+	
+	if(!richText){
+		assert(!showTeacherDetails);
+		return s;
+	}
+	
+	assert(richText);
+	QString s2;
+	if(showTeacherDetails){
+		int teacher_ID=r.searchTeacher(this->teacherName);
+		if(teacher_ID>=0){
+			Teacher* t=r.teachersList.at(teacher_ID);
+			
+			if(r.mode==MORNINGS_AFTERNOONS){
+				QString mab;
+				if(t->morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+					mab=tr("Unrestricted mornings/afternoons");
+				else if(t->morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+					mab=tr("Exclusive mornings/afternoons");
+				else if(t->morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+					mab=tr("One day exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+					mab=tr("Two days exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+					mab=tr("Three days exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+					mab=tr("Four days exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+					mab=tr("Five days exception");
+				else
+					assert(0);
+				s2+=tr("Mornings-afternoons behavior=%1").arg(mab);
+				s2+="<br />\n";
+			}
+			QSet<ConstraintTeacherNotAvailableTimes*> cs=r.tnatHash.value(this->teacherName, QSet<ConstraintTeacherNotAvailableTimes*>());
+			assert(cs.count()<=1);
+			ConstraintTeacherNotAvailableTimes* ctr=nullptr;
+			if(!cs.isEmpty())
+				ctr=*cs.constBegin();
+			if(ctr!=nullptr){
+				if(ctr->active)
+					s2+=tr("Not available time slots:")+"<br />\n";
+				else
+					s2+=tr("Inactive time constraint of type 'teacher not available times':")+"<br />\n";
+				s2+=listsOfDaysAndHoursToTable(r, ctr->days, ctr->hours, true, true, colors);
+				s2+="<br />\n";
+			}
+		}
+	}
+	
+	if(!s2.isEmpty()){
+		QString s1_5;
+		s1_5+="<br />\n";
+		s1_5+=tr("More details about the constrained teacher, %1:", "%1 is the name of the constrained teacher. After this field follow details about the"
+		 " constrained teacher, such as mornings-afternoons behavior (in the Mornings/Afternoons mode) and not available time slots.").arg(this->teacherName);
+		s1_5+="<br />\n";
+		
+		return protect4(s)+s1_5+s2;
+	}
+	else{
+		return protect4(s)+s2;
+	}
 }
 
 double ConstraintTeacherHomeRoom::fitness(
@@ -5601,10 +5671,11 @@ QString ConstraintTeacherHomeRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
-	Q_UNUSED(r);
+	/*Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);*/
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Teacher home rooms"); s+="\n";
@@ -5626,7 +5697,67 @@ QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules&r, bool richTex
 		s+="\n";
 	}
 
-	return richText?protect4(s):s;
+	if(!richText){
+		assert(!showTeacherDetails);
+		return s;
+	}
+	
+	assert(richText);
+	QString s2;
+	if(showTeacherDetails){
+		int teacher_ID=r.searchTeacher(this->teacherName);
+		if(teacher_ID>=0){
+			Teacher* t=r.teachersList.at(teacher_ID);
+			
+			if(r.mode==MORNINGS_AFTERNOONS){
+				QString mab;
+				if(t->morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+					mab=tr("Unrestricted mornings/afternoons");
+				else if(t->morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+					mab=tr("Exclusive mornings/afternoons");
+				else if(t->morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+					mab=tr("One day exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+					mab=tr("Two days exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+					mab=tr("Three days exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+					mab=tr("Four days exception");
+				else if(t->morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+					mab=tr("Five days exception");
+				else
+					assert(0);
+				s2+=tr("Mornings-afternoons behavior=%1").arg(mab);
+				s2+="<br />\n";
+			}
+			QSet<ConstraintTeacherNotAvailableTimes*> cs=r.tnatHash.value(this->teacherName, QSet<ConstraintTeacherNotAvailableTimes*>());
+			assert(cs.count()<=1);
+			ConstraintTeacherNotAvailableTimes* ctr=nullptr;
+			if(!cs.isEmpty())
+				ctr=*cs.constBegin();
+			if(ctr!=nullptr){
+				if(ctr->active)
+					s2+=tr("Not available time slots:")+"<br />\n";
+				else
+					s2+=tr("Inactive time constraint of type 'teacher not available times':")+"<br />\n";
+				s2+=listsOfDaysAndHoursToTable(r, ctr->days, ctr->hours, true, true, colors);
+				s2+="<br />\n";
+			}
+		}
+	}
+
+	if(!s2.isEmpty()){
+		QString s1_5;
+		s1_5+="<br />\n";
+		s1_5+=tr("More details about the constrained teacher, %1:", "%1 is the name of the constrained teacher. After this field follow details about the"
+		 " constrained teacher, such as mornings-afternoons behavior (in the Mornings/Afternoons mode) and not available time slots.").arg(this->teacherName);
+		s1_5+="<br />\n";
+		
+		return protect4(s)+s1_5+s2;
+	}
+	else{
+		return protect4(s)+s2;
+	}
 }
 
 double ConstraintTeacherHomeRooms::fitness(
@@ -5873,10 +6004,11 @@ QString ConstraintSubjectPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject preferred room"); s+="\n";
@@ -6135,10 +6267,11 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject preferred rooms"); s+="\n";
@@ -6398,10 +6531,11 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject activity tag preferred room"); s+="\n";
@@ -6666,10 +6800,11 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject activity tag preferred rooms"); s+="\n";
@@ -6927,10 +7062,11 @@ QString ConstraintActivityTagPreferredRoom::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity tag preferred room"); s+="\n";
@@ -7190,10 +7326,11 @@ QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity tag preferred rooms"); s+="\n";
@@ -7482,10 +7619,11 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -7742,10 +7880,11 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8052,10 +8191,11 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8312,10 +8452,11 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8621,10 +8762,11 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDescription(Rules
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -8893,10 +9035,11 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9178,10 +9321,11 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9439,10 +9583,11 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9712,10 +9857,11 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -9973,10 +10119,11 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -10246,10 +10393,11 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -10519,10 +10667,11 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -10842,10 +10991,11 @@ QString ConstraintStudentsSetMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxRoomChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11102,10 +11252,11 @@ QString ConstraintStudentsMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxRoomChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11412,10 +11563,11 @@ QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11672,10 +11824,11 @@ QString ConstraintStudentsMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxRoomChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -11981,10 +12134,11 @@ QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12253,10 +12407,11 @@ QString ConstraintStudentsMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12538,10 +12693,11 @@ QString ConstraintTeacherMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxRoomChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -12799,10 +12955,11 @@ QString ConstraintTeachersMaxRoomChangesPerDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxRoomChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -13072,10 +13229,11 @@ QString ConstraintTeacherMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxRoomChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -13333,10 +13491,11 @@ QString ConstraintTeachersMaxRoomChangesPerWeek::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerWeek::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxRoomChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -13606,10 +13765,11 @@ QString ConstraintTeacherMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -13879,10 +14039,11 @@ QString ConstraintTeachersMinGapsBetweenRoomChanges::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinGapsBetweenRoomChanges::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMinGapsBetweenRoomChanges::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -14189,9 +14350,10 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
@@ -14476,9 +14638,10 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString actids=QString("");
 	for(int aid : std::as_const(this->activitiesIds))
@@ -14738,10 +14901,11 @@ QString ConstraintStudentsMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15057,10 +15221,11 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15338,10 +15503,11 @@ QString ConstraintTeacherMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15608,10 +15774,11 @@ QString ConstraintTeachersMaxRoomChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxRoomChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -15877,10 +16044,11 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -16196,10 +16364,11 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -16477,10 +16646,11 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -16747,10 +16917,11 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17086,10 +17257,11 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17382,10 +17554,11 @@ QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17691,10 +17864,11 @@ QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -17988,10 +18162,11 @@ QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxBuildingChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -18364,10 +18539,11 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDescript
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -18700,10 +18876,11 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -19049,10 +19226,11 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -19387,10 +19565,11 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxBuildingChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -19743,10 +19922,11 @@ QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -20039,10 +20219,11 @@ QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -20348,10 +20529,11 @@ QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -20645,10 +20827,11 @@ QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxRoomChangesPerDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -21021,10 +21204,11 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -21357,10 +21541,11 @@ QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintStudentsMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -21706,10 +21891,11 @@ QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDescription(Rule
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeacherMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -22044,10 +22230,11 @@ QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintTeachersMaxRoomChangesPerRealDayInInterval::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint"); s+="\n";
 
@@ -22358,9 +22545,10 @@ QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintRoomMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -22629,9 +22817,10 @@ QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintRoomMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -22903,9 +23092,10 @@ QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintRoomMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room must respect a maximum number of activity tags per week from a set");s+="\n";
@@ -23197,10 +23387,11 @@ QString ConstraintRoomPairOfMutuallyExclusiveTimeSlots::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintRoomPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("A room has a pair of mutually exclusive time slots");s+="\n";
@@ -23504,9 +23695,10 @@ QString ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(showTeacherDetails);
 
 	if(!richText){
 		QString s=tr("Space constraint");s+="\n";
@@ -23941,9 +24133,10 @@ QString ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(showTeacherDetails);
 
 	if(!richText){
 		QString s=tr("Space constraint");s+="\n";
@@ -24305,9 +24498,10 @@ QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintRoomsMaxActivityTagsPerDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("All rooms must respect a maximum number of activity tags per day from a set");s+="\n";
@@ -24568,9 +24762,10 @@ QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintRoomsMaxActivityTagsPerRealDayFromSet::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("All rooms must respect a maximum number of activity tags per real day from a set");s+="\n";
@@ -24834,9 +25029,10 @@ QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules&r, bool richText, bool colors){
+QString ConstraintRoomsMaxActivityTagsPerWeekFromSet::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails){
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("All rooms must respect a maximum number of activity tags per week from a set");s+="\n";
@@ -25128,10 +25324,11 @@ QString ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::getDescription(Rules& r
 	return begin+s+end;
 }
 
-QString ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintRoomsPairOfMutuallyExclusiveTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("All rooms have a pair of mutually exclusive time slots");s+="\n";
@@ -25430,9 +25627,10 @@ QString ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::getDescription(Ru
 	return begin+s+end;
 }
 
-QString ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(showTeacherDetails);
 
 	if(!richText){
 		QString s=tr("Space constraint");s+="\n";
@@ -25861,9 +26059,10 @@ QString ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::getDescription(Rul
 	return begin+s+end;
 }
 
-QString ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
+	Q_UNUSED(showTeacherDetails);
 
 	if(!richText){
 		QString s=tr("Space constraint");s+="\n";
@@ -26214,10 +26413,11 @@ QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDescription(
 	return begin+s+end;
 }
 
-QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintBuildingMinOneActivityInEachAvailableTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
 	QString s=tr("Space constraint");s+="\n";
@@ -26436,10 +26636,11 @@ QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDescription
 	return begin+s+end;
 }
 
-QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors)
+QString ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
 	QString s=tr("Space constraint");s+="\n";
@@ -26665,10 +26866,11 @@ QString ConstraintRoomMaxActivitiesPerTeacher::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomMaxActivitiesPerTeacher::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintRoomMaxActivitiesPerTeacher::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
 	QString s=tr("Space constraint");s+="\n";
@@ -26939,10 +27141,11 @@ QString ConstraintRoomsMaxActivitiesPerTeacher::getDescription(Rules& r)
 	return begin+s+end;
 }
 
-QString ConstraintRoomsMaxActivitiesPerTeacher::getDetailedDescription(Rules&r, bool richText, bool colors)
+QString ConstraintRoomsMaxActivitiesPerTeacher::getDetailedDescription(Rules& r, bool richText, bool colors, bool showTeacherDetails)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(colors);
+	Q_UNUSED(showTeacherDetails);
 
 	//QString s=tr("Exam space constraint", "A space constraint designed for exams timetables");s+="\n";
 	QString s=tr("Space constraint");s+="\n";

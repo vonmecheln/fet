@@ -14,34 +14,6 @@
    <string extracomment="Title of dialog">Teachers</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QSplitter" name="splitter">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QListWidget" name="teachersListWidget"/>
-     <widget class="QWidget" name="">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QTextEdit" name="currentTeacherTextEdit"/>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="colorsCheckBox">
-         <property name="text">
-          <string>Colors</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </item>
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -88,39 +60,49 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QPushButton" name="targetNumberOfHoursPushButton">
-       <property name="text">
-        <string comment="It means the target number of hours for a teacher, but keep translation short">Target hours</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="qualifiedSubjectsPushButton">
-       <property name="text">
-        <string comment="It means a list of qualified (allowed) subjects for the teacher. Keep translation short.">Qualified subjects</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="3" column="0">
-    <widget class="QPushButton" name="activateTeacherPushButton">
-     <property name="text">
-      <string>Activate all activities for selected teacher</string>
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QListWidget" name="teachersListWidget"/>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTextEdit" name="currentTeacherTextEdit"/>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="colorsCheckBox">
+         <property name="text">
+          <string>Colors</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <widget class="QPushButton" name="deactivateTeacherPushButton">
      <property name="text">
       <string>Deactivate all activities for selected teacher</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="4" column="0">
+    <widget class="QPushButton" name="activateTeacherPushButton">
+     <property name="text">
+      <string>Activate all activities for selected teacher</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="moveTeacherUpPushButton">
@@ -151,6 +133,31 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="targetNumberOfHoursPushButton">
+       <property name="text">
+        <string comment="It means the target number of hours for a teacher, but keep translation short">Target hours</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="qualifiedSubjectsPushButton">
+       <property name="text">
+        <string comment="It means a list of qualified (allowed) subjects for the teacher. Keep translation short.">Qualified subjects</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="importQualifiedSubjectsPushButton">
+     <property name="text">
+      <string>Import teachers' qualified subjects from activities</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -90,6 +90,26 @@
              </widget>
             </item>
             <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="singleTeacherCheckBox">
+              <property name="text">
+               <string comment="Activities which have a unique teacher">Unique</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QCheckBox" name="invertedTeacherCheckBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -112,7 +132,7 @@
             <item>
              <widget class="QLabel" name="studentsTextLabel">
               <property name="text">
-               <string comment="It refers to students sets, but I want to keep the string short">Students</string>
+               <string>Students set</string>
               </property>
              </widget>
             </item>
@@ -120,6 +140,26 @@
              <widget class="QCheckBox" name="showRelatedCheckBox">
               <property name="text">
                <string>Show related</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="singleStudentsSetCheckBox">
+              <property name="text">
+               <string comment="Activities which have a unique students set">Unique</string>
               </property>
              </widget>
             </item>
@@ -151,6 +191,19 @@
              </widget>
             </item>
             <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QCheckBox" name="invertedSubjectCheckBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -174,6 +227,26 @@
              <widget class="QLabel" name="activityTagsTextLabel">
               <property name="text">
                <string>Activity tag</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="singleActivityTagCheckBox">
+              <property name="text">
+               <string comment="Activities which have a unique activity tag">Unique</string>
               </property>
              </widget>
             </item>

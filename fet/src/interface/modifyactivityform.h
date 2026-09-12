@@ -60,6 +60,10 @@ public:
 
 	void populateSubactivitiesTabWidget(int n);
 
+	void filterTeachers(const QString& text);
+	void filterStudents(const QString& text);
+	void filterActivityTags(const QString& text);
+
 public Q_SLOTS:
 	void allTeachersRadioButtonToggled(bool checked);
 	void qualifiedTeachersRadioButtonToggled(bool checked);

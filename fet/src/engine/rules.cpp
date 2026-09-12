@@ -16456,7 +16456,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						if(xmlReader.name()==QString("Name")){
 							cntYearNameFound++;
 							if(cntYearNameFound>=2){
-								xmlReader.raiseError(tr("The field '%1' is met more than once in the students year's description.").arg("Name"));
+								xmlReader.raiseError(tr("The field '%1' occurs more than once in the students year's description.").arg("Name"));
 								okStudents=false;
 							}
 							
@@ -16575,12 +16575,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 									//ok
 								}
 								else{
-									xmlReader.raiseError(tr("The specified number of divisions was not found, but there were found specified the divisions."));
+									xmlReader.raiseError(tr("Divisions were specified, but their number was not specified."));
 									okStudents=false;
 								}
 							}
 							else if(readDivisions!=metDivisions){
-								xmlReader.raiseError(tr("The specified number of divisions is not equal with the met number of divisions."));
+								xmlReader.raiseError(tr("The specified number of divisions is not equal to the met number of divisions."));
 								okStudents=false;
 							}
 							else{
@@ -16622,7 +16622,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								if(xmlReader.name()==QString("Name")){
 									cntGroupNameFound++;
 									if(cntGroupNameFound>=2){
-										xmlReader.raiseError(tr("The field '%1' is met more than once in the students group's description.").arg("Name"));
+										xmlReader.raiseError(tr("The field '%1' occurs more than once in the students group's description.").arg("Name"));
 										okStudents=false;
 									}
 
@@ -16756,7 +16756,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 										if(xmlReader.name()==QString("Name")){
 											cntSubgroupNameFound++;
 											if(cntSubgroupNameFound>=2){
-												xmlReader.raiseError(tr("The field '%1' is met more than once in the students subgroup's description.").arg("Name"));
+												xmlReader.raiseError(tr("The field '%1' occurs more than once in the students subgroup's description.").arg("Name"));
 												okStudents=false;
 											}
 
@@ -16917,7 +16917,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 						}
 					}
 					else if(readCategories!=metCategories){
-						xmlReader.raiseError(tr("The specified number of categories is not equal with the met number of categories."));
+						xmlReader.raiseError(tr("The specified number of categories is not equal to the met number of categories."));
 						okStudents=false;
 					}
 					else{
@@ -17450,7 +17450,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								correct=false;
 							}
 							else if(metNumberOfRooms!=specifiedNumberOfRooms){
-								xmlReader.raiseError(tr("The specified number of real rooms is not equal with the met number of real rooms"
+								xmlReader.raiseError(tr("The specified number of real rooms is not equal to the met number of real rooms"
 								 " for the virtual room %1").arg(rm->name));
 								correct=false;
 							}
@@ -17496,7 +17496,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 								delete rm;
 							}
 							else if(metNumberOfSetsOfRooms!=specifiedNumberOfSetsOfRooms){
-								xmlReader.raiseError(tr("The specified number of sets of real rooms is not equal with the met number of sets of real rooms"
+								xmlReader.raiseError(tr("The specified number of sets of real rooms is not equal to the met number of sets of real rooms"
 								 " for the virtual room %1").arg(rm->name));
 								correct=false;
 								
@@ -27851,7 +27851,8 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesOrdered(QXmlStreamReader& xmlReade
 				return nullptr;
 			}
 			else if(rnfa!=cn->firstActivitiesIdsList.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal to the number of %2 fields which were read",
+				 "For instance, (%1, %2) might be ('Number_of_Activities', 'Activity_Id'), respectively.").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -27888,7 +27889,8 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesOrdered(QXmlStreamReader& xmlReade
 				return nullptr;
 			}
 			else if(rnsa!=cn->secondActivitiesIdsList.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal to the number of %2 fields which were read",
+				 "For instance, (%1, %2) might be ('Number_of_Activities', 'Activity_Id'), respectively.").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -31346,7 +31348,8 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 				return nullptr;
 			}
 			else if(rnfa!=cn->activitiesAIds.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal to the number of %2 fields which were read",
+				 "For instance, (%1, %2) might be ('Number_of_Activities', 'Activity_Id'), respectively.").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;
@@ -31383,7 +31386,8 @@ TimeConstraint* Rules::readTwoSetsOfActivitiesSameSections(QXmlStreamReader& xml
 				return nullptr;
 			}
 			else if(rnsa!=cn->activitiesBIds.count()){
-				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of %2 fields which were read").arg("Number_of_Activities").arg("Activity_Id"));
+				xmlReader.raiseError(tr("The value in field %1 is not equal to the number of %2 fields which were read",
+				 "For instance, (%1, %2) might be ('Number_of_Activities', 'Activity_Id'), respectively.").arg("Number_of_Activities").arg("Activity_Id"));
 				delete cn;
 				cn=nullptr;
 				return nullptr;

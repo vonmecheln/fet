@@ -247,6 +247,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 				roomsComboBox=new QComboBox;
 
+				colorsCheckBox=new QCheckBox(tr("Colors"));
+
 				break;
 			}
 		//8
@@ -262,6 +264,8 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 				teachersComboBox=new QComboBox;
 
 				roomsComboBox=new QComboBox;
+
+				colorsCheckBox=new QCheckBox(tr("Colors"));
 
 				break;
 			}
@@ -3013,7 +3017,7 @@ void ListSpaceConstraints::constraintChanged()
 	assert(index<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false); //'true' means 'richText'
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false, SHOW_TEACHER_DETAILS_IN_SPACE_CONSTRAINTS); //'true' means 'richText'
 	constraintDescriptionTextEdit->setText(s);
 }
 

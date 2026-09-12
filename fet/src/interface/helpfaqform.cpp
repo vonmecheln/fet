@@ -907,7 +907,7 @@ void HelpFaqForm::setText()
 		" keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable"
 		" might become impossible (taking too much time to generate).");
 	s+=" ";
-	s+=tr("Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but"
+	s+=tr("Maybe a reasonable number of categories could be 2, 3 or at most 4. The divide year dialog allows much higher values, but"
 		" these are not at all recommended.");
 	s+="\n\n";
 	s+=tr("Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into"

@@ -1979,9 +1979,9 @@ void Import::importCSVStudents(QWidget* parent){
 				if(!usedCSVGroupNames.contains(groupName))
 					usedCSVGroupNames<<groupName;
 			if(usedCSVYearNames.contains(groupName))
-				warnText+=Import::tr("Problem in line %1: Group name %2 is taken for a year - please consider another name").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(groupName)+"\n";
+				warnText+=Import::tr("Problem in line %1: Group name %2 is taken for a year - please consider another name!").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(groupName)+"\n";
 			if(usedCSVGroupNames.contains(yearName))
-				warnText+=Import::tr("Problem in line %1: Year name %2 is taken for a group - please consider another name").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(yearName)+"\n";
+				warnText+=Import::tr("Problem in line %1: Year name %2 is taken for a group - please consider another name!").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(yearName)+"\n";
 
 		}
 		if((fieldNumber[FIELD_SUBGROUP_NAME])>=IMPORT_DEFAULT_ITEM){
@@ -1989,13 +1989,13 @@ void Import::importCSVStudents(QWidget* parent){
 				if(!usedCSVSubgroupNames.contains(subgroupName))
 					usedCSVSubgroupNames<<subgroupName;
 			if(usedCSVYearNames.contains(subgroupName))
-				warnText+=Import::tr("Problem in line %1: Subgroup name %2 is taken for a year - please consider another name").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(subgroupName)+"\n";
+				warnText+=Import::tr("Problem in line %1: Subgroup name %2 is taken for a year - please consider another name!").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(subgroupName)+"\n";
 			if(usedCSVGroupNames.contains(subgroupName))
-				warnText+=Import::tr("Problem in line %1: Subgroup name %2 is taken for a group - please consider another name").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(subgroupName)+"\n";
+				warnText+=Import::tr("Problem in line %1: Subgroup name %2 is taken for a group - please consider another name!").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(subgroupName)+"\n";
 			if(usedCSVSubgroupNames.contains(groupName))
-				warnText+=Import::tr("Problem in line %1: Group name %2 is taken for a subgroup - please consider another name").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(groupName)+"\n";
+				warnText+=Import::tr("Problem in line %1: Group name %2 is taken for a subgroup - please consider another name!").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(groupName)+"\n";
 			if(usedCSVSubgroupNames.contains(yearName))
-				warnText+=Import::tr("Problem in line %1: Year name %2 is taken for a subgroup - please consider another name").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(yearName)+"\n";
+				warnText+=Import::tr("Problem in line %1: Year name %2 is taken for a subgroup - please consider another name!").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(yearName)+"\n";
 		}
 	}
 	progress.setValue(qMax(fieldList[FIELD_YEAR_NAME].size(), 1));

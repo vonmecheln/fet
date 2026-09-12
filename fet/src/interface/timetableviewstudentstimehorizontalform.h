@@ -27,7 +27,7 @@
 
 #include <QString>
 #include <QSet>
-//#include <QHash>
+#include <QHash>
 #include <QStringList>
 
 #include "ui_timetableviewstudentstimehorizontalform_template.h"
@@ -65,6 +65,7 @@ private:
 
 	QStringList usedStudentsList;
 	QSet<QString> usedStudentsSet;
+	QHash<QString, int> usedStudentsHash;
 	//QHash<QString, QList<int>> activitiesForStudentsSet; //activity index in internal activities list
 	
 	//QHash<QString, ConstraintStudentsSetNotAvailableTimes*> notAvailableHash;
@@ -111,6 +112,8 @@ public Q_SLOTS:
 	void activitiesSpace();
 
 	void constraints();
+
+	void selectionChanged();
 
 	void help();
 	

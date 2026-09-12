@@ -3442,7 +3442,7 @@ void LockAdvancedDialog::filterChanged()
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		progress.setValue(i);
 		if(progress.wasCanceled()){
-			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You cancelled activity filtering - the list of activities will be incomplete.")+QString(" ")+
 			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
 			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
 			 " Please consider filtering on the description or detailed description of the activities, instead.")+QString("\n\n")+tr("Note: if you are using more filters,"
@@ -4032,7 +4032,7 @@ void UnlockAdvancedDialog::filterChanged()
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		progress.setValue(i);
 		if(progress.wasCanceled()){
-			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You cancelled activity filtering - the list of activities will be incomplete.")+QString(" ")+
 			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
 			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
 			 " Please consider filtering on the description or detailed description of the activities, instead.")+QString("\n\n")+tr("Note: if you are using more filters,"

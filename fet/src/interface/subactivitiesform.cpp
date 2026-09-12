@@ -162,6 +162,23 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	connect(invertedSubjectCheckBox, &QCheckBox::toggled, this, &SubactivitiesForm::filterChanged);
 	connect(invertedActivityTagCheckBox, &QCheckBox::toggled, this, &SubactivitiesForm::filterChanged);
 
+	singleTeacherCheckBox->setTristate(true);
+	singleTeacherCheckBox->setCheckState(Qt::Unchecked);
+	singleStudentsSetCheckBox->setTristate(true);
+	singleStudentsSetCheckBox->setCheckState(Qt::Unchecked);
+	singleActivityTagCheckBox->setTristate(true);
+	singleActivityTagCheckBox->setCheckState(Qt::Unchecked);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,7,0)
+	connect(singleTeacherCheckBox, &QCheckBox::checkStateChanged, this, &SubactivitiesForm::filterChanged);
+	connect(singleStudentsSetCheckBox, &QCheckBox::checkStateChanged, this, &SubactivitiesForm::studentsFilterChanged);
+	connect(singleActivityTagCheckBox, &QCheckBox::checkStateChanged, this, &SubactivitiesForm::filterChanged);
+#else
+	connect(singleTeacherCheckBox, &QCheckBox::clicked, this, &SubactivitiesForm::filterChanged);
+	connect(singleStudentsSetCheckBox, &QCheckBox::clicked, this, &SubactivitiesForm::studentsFilterChanged);
+	connect(singleActivityTagCheckBox, &QCheckBox::clicked, this, &SubactivitiesForm::filterChanged);
+#endif
+
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	QSize tmp2=studentsComboBox->minimumSizeHint();
@@ -277,6 +294,21 @@ SubactivitiesForm::~SubactivitiesForm()
 
 bool SubactivitiesForm::filterOk(Activity* act)
 {
+	if(singleTeacherCheckBox->checkState()==Qt::Checked && act->teachersNames.count()!=1)
+		return false;
+	else if(singleTeacherCheckBox->checkState()==Qt::PartiallyChecked && act->teachersNames.count()==1)
+		return false;
+	
+	if(singleStudentsSetCheckBox->checkState()==Qt::Checked && act->studentsNames.count()!=1)
+		return false;
+	else if(singleStudentsSetCheckBox->checkState()==Qt::PartiallyChecked && act->studentsNames.count()==1)
+		return false;
+	
+	if(singleActivityTagCheckBox->checkState()==Qt::Checked && act->activityTagsNames.count()!=1)
+		return false;
+	else if(singleActivityTagCheckBox->checkState()==Qt::PartiallyChecked && act->activityTagsNames.count()==1)
+		return false;
+	
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
@@ -524,7 +556,7 @@ void SubactivitiesForm::filterChanged()
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		progress.setValue(i);
 		if(progress.wasCanceled()){
-			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You canceled the filtering of the subactivities - the list of subactivities will be incomplete.")
+			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You cancelled subactivity filtering - the list of subactivities will be incomplete.")
 			 +QString(" ")+tr("Note: if filtering of the subactivities takes too much, it might be because you are filtering on the detailed description with constraints"
 			 " of the subactivities, which checks each subactivity against each time constraint, each space constraint, and each group activities in the initial order item,"
 			 " which might be too much. Please consider filtering on the description or detailed description of the subactivities, instead.")+QString("\n\n")
@@ -681,6 +713,11 @@ void SubactivitiesForm::help()
 		" The resulted overall filter is the combined AND of these two filters, if both filters are active, or the active one, if only one is active. If no filters are active,"
 		" all the subactivities will be shown.");
 	
+	s+="\n\n";
+	s+=tr("Unique: this will filter all the activities which have exactly one teacher, one students set, or one activity tag, respectively, if the corresponding 'Unique'"
+		" check box is checked, and all the activities which have no teachers or have at least two teachers, have no students sets or have at least two students sets,"
+		" or have no activity tags or have at least two activity tags, respectively, if the corresponding 'Unique' check box is partially checked.");
+
 	s+="\n\n";
 	s+=tr("Inverted: this will show all the subactivities which _don't_ respect the selected filter for the teacher, students, subject, or activity tag.");
 	

@@ -98,6 +98,8 @@ public Q_SLOTS:
 	void activitiesSpace();
 	
 	void constraints();
+	
+	void selectionChanged();
 
 	void help();
 

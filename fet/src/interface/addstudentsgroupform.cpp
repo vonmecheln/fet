@@ -70,7 +70,7 @@ void AddStudentsGroupForm::addStudentsGroup()
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
 	if(ss!=nullptr && ss->type==STUDENTS_YEAR){
 		QMessageBox::information( this, tr("Group insertion dialog"),
-			tr("This name is taken for a year - please consider another name"));
+			tr("This name is already used by a year - please consider another name!"));
 
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();
@@ -79,7 +79,7 @@ void AddStudentsGroupForm::addStudentsGroup()
 	}
 	if(ss!=nullptr && ss->type==STUDENTS_SUBGROUP){
 		QMessageBox::information( this, tr("Group insertion dialog"),
-			tr("This name is taken for a subgroup - please consider another name"));
+			tr("This name is already used by a subgroup - please consider another name!"));
 
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();

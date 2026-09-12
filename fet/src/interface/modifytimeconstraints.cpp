@@ -114,8 +114,8 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 				dialogName=QString("ModifyConstraintsTeacherMaxGapsPerWeek");
 
 				firstModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. "
-														   "Try to fix firstly a rather large value for max gaps per week and lower it as you find "
-														   "new timetables.\nNote: teacher not available and break are not counted as gaps."));
+														   "First, set a relatively large value for max gaps per week and lower it as you find "
+														   "new timetables.\nNote: teacher unavailability and breaks are not counted as gaps."));
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
@@ -191,8 +191,8 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 				dialogName=QString("ModifyConstraintsTeacherMaxGapsPerDay");
 
 				firstModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. "
-														   "Try to fix firstly a rather large value for max gaps per day and lower it as you find "
-														   "new timetables.\nNote: teacher not available and break are not counted as gaps."));
+														   "First, set a relatively large value for max gaps per day and lower it as you find "
+														   "new timetables.\nNote: teacher unavailability and breaks are not counted as gaps."));
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
@@ -347,9 +347,9 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 				dialogTitle=tr("Modify multiple teacher max gaps per real day", "The title of the dialog to modify multiple constraints of this type at once");
 				dialogName=QString("ModifyConstraintsTeacherMaxGapsPerRealDay");
 
-				firstModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. Try "
-														   "to fix firstly a rather large value for max gaps per real day and lower it as you find new timetables.\n"
-														   "Note: teacher not available and break are not counted as gaps."));
+				firstModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. First, "
+														   "set a relatively large value for max gaps per real day and lower it as you find new timetables.\n"
+														   "Note: teacher unavailability and breaks are not counted as gaps."));
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
@@ -448,8 +448,8 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 				dialogName=QString("ModifyConstraintsTeacherMaxGapsPerWeekForRealDays");
 
 				firstModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. "
-														   "Try to fix firstly a rather large value for max gaps per real day and lower it as you "
-														   "find new timetables.\nNote: teacher not available and break are not counted as gaps."));
+														   "First, set a relatively large value for max gaps per real day and lower it as you "
+														   "find new timetables.\nNote: teacher unavailability and breaks are not counted as gaps."));
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;
@@ -470,9 +470,9 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 
 				firstModifyInstructionsLabel=new QLabel(tr("This constraint considers the gaps = the sum of gaps of the morning and of the afternoon of "
 														   "each real day."));
-				secondModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. Try to "
-															"fix firstly a rather large value for max gaps per morning and afternoon and lower it as you "
-															"find new timetables.\nNote: teacher not available and break are not counted as gaps."));
+				secondModifyInstructionsLabel=new QLabel(tr("You must use weight percentage 100%, because otherwise you will get poor timetables. First, "
+															"set a relatively large value for max gaps per morning and afternoon and lower it as you "
+															"find new timetables.\nNote: teacher unavailability and breaks are not counted as gaps."));
 
 				teacherLabel=new QLabel(tr("Teacher"));
 				teachersComboBox=new QComboBox;

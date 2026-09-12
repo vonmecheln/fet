@@ -253,7 +253,7 @@ public:
 	/**
 	Returns a detailed description string for this constraint
 	*/
-	virtual QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false)=0;
+	virtual QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false)=0;
 	
 	/**
 	Returns true if this constraint is related to this activity
@@ -293,7 +293,7 @@ public:
 	virtual bool canRepairWrongDayOrHour(Rules& r)=0;
 	virtual bool repairWrongDayOrHour(Rules& r)=0;
 
-	virtual void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash)=0;
+	virtual void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)=0;
 };
 
 /**
@@ -316,7 +316,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -340,7 +340,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomNotAvailableTimes: public SpaceConstraint{
@@ -373,7 +373,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -397,7 +397,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherRoomNotAvailableTimes: public SpaceConstraint{
@@ -434,7 +434,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -458,7 +458,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -506,7 +506,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -530,7 +530,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -567,7 +567,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -591,7 +591,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetHomeRoom: public SpaceConstraint{
@@ -620,7 +620,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -644,7 +644,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetHomeRooms: public SpaceConstraint{
@@ -675,7 +675,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -699,7 +699,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherHomeRoom: public SpaceConstraint{
@@ -728,7 +728,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -752,7 +752,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherHomeRooms: public SpaceConstraint{
@@ -783,7 +783,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -807,7 +807,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -840,7 +840,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -864,7 +864,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -896,7 +896,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -920,7 +920,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -955,7 +955,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -979,7 +979,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 /**
@@ -1013,7 +1013,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1037,7 +1037,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //addded on 6 apr 2009
@@ -1067,7 +1067,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1091,7 +1091,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivityTagPreferredRooms: public SpaceConstraint{
@@ -1119,7 +1119,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1143,7 +1143,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 ///////
 
@@ -1170,7 +1170,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1194,7 +1194,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -1216,7 +1216,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1240,7 +1240,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1269,7 +1269,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1293,7 +1293,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1317,7 +1317,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1341,7 +1341,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1370,7 +1370,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1394,7 +1394,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1418,7 +1418,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1442,7 +1442,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -1471,7 +1471,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1495,7 +1495,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -1519,7 +1519,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1543,7 +1543,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1572,7 +1572,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1596,7 +1596,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -1620,7 +1620,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1644,7 +1644,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -1670,7 +1670,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1694,7 +1694,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -1716,7 +1716,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1740,7 +1740,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1766,7 +1766,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1790,7 +1790,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1812,7 +1812,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1836,7 +1836,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -1862,7 +1862,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1886,7 +1886,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1915,7 +1915,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1939,7 +1939,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerDayInInterval: public SpaceConstraint{
@@ -1963,7 +1963,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -1987,7 +1987,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -2016,7 +2016,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2040,7 +2040,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerRealDayInInterval: public SpaceConstraint{
@@ -2064,7 +2064,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2088,7 +2088,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -2117,7 +2117,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2141,7 +2141,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerDayInInterval: public SpaceConstraint{
@@ -2165,7 +2165,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2189,7 +2189,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -2218,7 +2218,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2242,7 +2242,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerRealDayInInterval: public SpaceConstraint{
@@ -2266,7 +2266,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2290,7 +2290,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -2312,7 +2312,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2336,7 +2336,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -2362,7 +2362,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2386,7 +2386,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -2408,7 +2408,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2432,7 +2432,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -2458,7 +2458,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2482,7 +2482,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -2504,7 +2504,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2528,7 +2528,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //2019-11-14
@@ -2555,7 +2555,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2579,7 +2579,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerDay: public SpaceConstraint{
@@ -2601,7 +2601,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2625,7 +2625,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2651,7 +2651,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2675,7 +2675,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2697,7 +2697,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2721,7 +2721,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -2747,7 +2747,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2771,7 +2771,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -2793,7 +2793,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2817,7 +2817,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerDay: public SpaceConstraint{
@@ -2843,7 +2843,7 @@ public:
 	
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2867,7 +2867,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerDay: public SpaceConstraint{
@@ -2889,7 +2889,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2913,7 +2913,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2939,7 +2939,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -2963,7 +2963,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerWeek: public SpaceConstraint{
@@ -2985,7 +2985,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3009,7 +3009,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -3035,7 +3035,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3059,7 +3059,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMinGapsBetweenRoomChanges: public SpaceConstraint{
@@ -3081,7 +3081,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3105,7 +3105,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesOccupyMaxDifferentRooms: public SpaceConstraint{
@@ -3133,7 +3133,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3161,7 +3161,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintActivitiesSameRoomIfConsecutive: public SpaceConstraint{
@@ -3187,7 +3187,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3215,7 +3215,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3237,7 +3237,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3261,7 +3261,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3287,7 +3287,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3311,7 +3311,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3337,7 +3337,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3361,7 +3361,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxRoomChangesPerRealDay: public SpaceConstraint{
@@ -3383,7 +3383,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3407,7 +3407,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3429,7 +3429,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3453,7 +3453,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3479,7 +3479,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3503,7 +3503,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3529,7 +3529,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3553,7 +3553,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerRealDay: public SpaceConstraint{
@@ -3575,7 +3575,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3599,7 +3599,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivityTagsPerDayFromSet: public SpaceConstraint{
@@ -3635,7 +3635,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3659,7 +3659,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivityTagsPerRealDayFromSet: public SpaceConstraint{
@@ -3695,7 +3695,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3719,7 +3719,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivityTagsPerWeekFromSet: public SpaceConstraint{
@@ -3755,7 +3755,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3779,7 +3779,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomPairOfMutuallyExclusiveTimeSlots: public SpaceConstraint{
@@ -3807,7 +3807,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3831,7 +3831,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomPairOfMutuallyExclusiveSetsOfTimeSlots: public SpaceConstraint{
@@ -3866,7 +3866,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3890,7 +3890,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomOccupiesMaxSetsOfTimeSlotsFromSelection: public SpaceConstraint{
@@ -3922,7 +3922,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -3946,7 +3946,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivityTagsPerDayFromSet: public SpaceConstraint{
@@ -3972,7 +3972,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -3996,7 +3996,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivityTagsPerRealDayFromSet: public SpaceConstraint{
@@ -4022,7 +4022,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -4046,7 +4046,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivityTagsPerWeekFromSet: public SpaceConstraint{
@@ -4072,7 +4072,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -4096,7 +4096,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsPairOfMutuallyExclusiveTimeSlots: public SpaceConstraint{
@@ -4120,7 +4120,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -4144,7 +4144,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsPairOfMutuallyExclusiveSetsOfTimeSlots: public SpaceConstraint{
@@ -4175,7 +4175,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -4199,7 +4199,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsOccupyMaxSetsOfTimeSlotsFromSelection: public SpaceConstraint{
@@ -4227,7 +4227,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -4251,7 +4251,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintBuildingMinOneActivityInEachAvailableTimeSlot: public SpaceConstraint{
@@ -4275,7 +4275,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -4299,7 +4299,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintBuildingsMinOneActivityInEachAvailableTimeSlot: public SpaceConstraint{
@@ -4318,7 +4318,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
@@ -4342,7 +4342,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomMaxActivitiesPerTeacher: public SpaceConstraint{
@@ -4376,7 +4376,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -4400,7 +4400,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 class ConstraintRoomsMaxActivitiesPerTeacher: public SpaceConstraint{
@@ -4424,7 +4424,7 @@ public:
 
 	QString getDescription(Rules& r);
 
-	QString getDetailedDescription(Rules&r, bool richText=false, bool colors=false);
+	QString getDetailedDescription(Rules& r, bool richText=false, bool colors=false, bool showTeacherDetails=false);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 	
@@ -4448,7 +4448,7 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 
-	void updateConstraintsForNewDays(Rules&r, const QHash<int, int>& newExistingDaysHash);
+	void updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash);
 };
 
 //1

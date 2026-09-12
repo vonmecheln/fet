@@ -88,7 +88,7 @@ if(TARGET Qt::lupdate AND TARGET Qt::lrelease)
             LRELEASE_TARGET lrelease
             TS_FILE_BASE fet
             TS_OUTPUT_DIRECTORY translations
-            QM_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/translations
+            QM_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/translations"
             NO_GENERATE_PLURALS_TS_FILE
             QM_FILES_OUTPUT_VARIABLE qm_files
             MERGE_QT_TRANSLATIONS

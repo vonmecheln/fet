@@ -573,7 +573,7 @@ void ListOfRelatedSpaceConstraintsForm::constraintChanged()
 	assert(index<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
 	assert(ctr!=nullptr);
-	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked()); //'true' means 'richText'
+	QString s=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox->isChecked(), SHOW_TEACHER_DETAILS_IN_SPACE_CONSTRAINTS); //'true' means 'richText'
 	currentConstraintTextEdit->setText(s);
 }
 

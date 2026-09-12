@@ -1,7 +1,7 @@
 This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2003.
-Last modified on: 25 February 2025.
+Last modified on: 21 August 2026.
 
 
 FET - How to add new translations (languages):
@@ -20,7 +20,8 @@ fet_**.ts (** means your language).
 
 (alternative procedure using CMake:
 Modify the file "fet-v.v.v/CMakeLists.txt", by adding a corresponding short string
-in the I18N_TRANSLATED_LANGUAGES section, and then run "cmake --build . --target lupdate"
+in the I18N_TRANSLATED_LANGUAGES section, and then run "cmake --build build --target lupdate"
+(where "--build" is the CMake parameter and "build" is you chosen build directory)
 in the corresponding directory. This will create the needed file, named
 "fet-v.v.v/translations/fet_**.ts").
 
@@ -28,7 +29,7 @@ in the corresponding directory. This will create the needed file, named
 Modify the file "fet-v.v.v/src/src.pro", by adding a line
 in the TRANSLATIONS section for your language (for instance, adding
 a backslash after the last translation and then "../translations/fet_it.ts" for Italian).
-Enter the directory "fet-v.v.v/src/" and type "lupdate src.pro".
+Enter the directory "fet-v.v.v/src/" and type "lupdate-pro src.pro".
 This will create the needed file, named "fet-v.v.v/translations/fet_**.ts").
 
 STEP 2.
@@ -170,6 +171,6 @@ New trick: to translate more identical fields, you could use the Edit -> Search 
 Old trick (might be obsolete by the new functions of Qt Linguist above).
 
 There are some small fields which are repeated more times, in different contexts (sections). If you translated such a field at least once,
-running lupdate will automatically fill the other identical fields (using the 'same text' heuristic), so you will only need to check these
-fields and mark them as finished (if the field has a specific disambiguation/comment, check that it corresponds). These fields will be marked
-as translated, but unfinished (probably with a yellow question mark).
+running CMake for the lupdate target (or lupdate-pro) will automatically fill the other identical fields (using the 'same text' heuristic),
+so you will only need to check these fields and mark them as finished (if the field has a specific disambiguation/comment, check that it
+corresponds). These fields will be marked as translated, but unfinished (probably with a yellow question mark).

@@ -970,6 +970,8 @@ bool SHORTCUT_U=false;
 bool SHORTCUT_J=false;
 bool SHORTCUT_W=false;
 
+bool SHOW_TEACHER_DETAILS_IN_SPACE_CONSTRAINTS=true;
+
 //extern MRG32k3a rng;
 
 const int STATUS_BAR_MILLISECONDS=2500;
@@ -1360,6 +1362,7 @@ FetMainForm::FetMainForm()
 
 	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchInMenuLabel->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	
 	shortcutBasicMenu=new QMenu();
 	shortcutBasicMenu->addMenu(menuInstitution_information);
@@ -5684,6 +5687,7 @@ void FetMainForm::settingsShowSearchOnMainWindowAction_toggled()
 
 	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchInMenuLabel->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 }
 
 void FetMainForm::settingsShowToolTipsForConstraintsWithTablesAction_toggled()
@@ -16387,13 +16391,10 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("2")+QString(". ")+tr("Show shortcut buttons in main window will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	//s+=tr("3")+QString(". ")+tr("In the shortcuts tab from the main window, the first section will be selected/shown", "Section refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, "
-	//	"Time, Space, Timetable (so it will select/show File tab).");
-	//s+="\n";
-	
-	s+=tr("3")+QString(". ")+tr("Show search in menu in main window will be %1", "%1 is true or false. We can search for a text in all the menu items.").arg(tr("true"));
+	s+=tr("3")+QString(". ")+tr("In the shortcuts tab from the main window, the first section will be selected/shown", "Section refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, "
+		"Time, Space, Timetable (so it will select/show File tab).");
 	s+="\n";
-
+	
 	s+=tr("4")+QString(". ")+tr("Check for updates at startup will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
@@ -16649,6 +16650,12 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 	s+=tr("76")+QString(". ")+tr("Embed CSS code in HTML files will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
+	s+=tr("77")+QString(". ")+tr("Show search in menu in main window will be %1", "%1 is true or false. We can search for a text in all the menu items.").arg(tr("true"));
+	s+="\n";
+
+	s+=tr("78")+QString(". ")+tr("The text of the 'Search in menu' line edit from the main window will be cleared.");
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -16696,6 +16703,7 @@ void FetMainForm::settingsRestoreDefaultsAction_triggered()
 
 	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+	searchInMenuLabel->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 
 	tabWidget->setCurrentIndex(0);
 	
@@ -19401,7 +19409,8 @@ void FetMainForm::restoreSettings()
 
 	searchLineEdit->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
 	searchedMenuButton->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
-	
+	searchInMenuLabel->setVisible(SHOW_SEARCH_ON_MAIN_WINDOW);
+
 	if(rect.isValid()){
 		bool ok=false;
 		for(QScreen* screen : QGuiApplication::screens()){

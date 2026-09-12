@@ -1476,7 +1476,7 @@
        <item row="0" column="0" colspan="3">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>Years timetables days horizontal/vertical</string>
+          <string>Year timetables with days displayed horizontally/vertically</string>
          </property>
         </widget>
        </item>

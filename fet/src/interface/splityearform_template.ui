@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>VERY IMPORTANT: For generation feasibility, keep the number of categories and the number of subgroups to a minimum! It is recommended that no more than 2, 3 or maximum 4 categories to be used. The generation time of the timetable is directly proportional with the total number of subgroups! Press Help for details.</string>
+      <string>VERY IMPORTANT: For generation feasibility, keep the number of categories and the number of subgroups to a minimum! It is recommended that no more than 2, 3 or at most 4 categories to be used. The generation time of the timetable is directly proportional to the total number of subgroups! Press Help for details.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

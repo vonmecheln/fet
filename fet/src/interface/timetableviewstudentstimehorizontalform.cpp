@@ -198,6 +198,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::close);
 	connect(studentsTimetableTable, &QTableWidget::currentItemChanged, this, &TimetableViewStudentsTimeHorizontalForm::currentItemChanged);
+	connect(studentsTimetableTable, &QTableWidget::itemSelectionChanged, this, &TimetableViewStudentsTimeHorizontalForm::selectionChanged);
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewStudentsTimeHorizontalForm::lockTimeSpace);
@@ -416,6 +417,10 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 		item->setToolTip(usedStudentsList.at(t));
 		studentsTimetableTable->setVerticalHeaderItem(t, item);
 	}
+
+	usedStudentsHash.clear();
+	for(int t=0; t<usedStudentsList.count(); t++)
+		usedStudentsHash.insert(usedStudentsList.at(t), t);
 
 	for(int t=0; t<usedStudentsList.count(); t++){
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
@@ -750,6 +755,10 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 		item->setToolTip(usedStudentsList.at(t));
 		studentsTimetableTable->setVerticalHeaderItem(t, item);
 	}
+
+	usedStudentsHash.clear();
+	for(int t=0; t<usedStudentsList.count(); t++)
+		usedStudentsHash.insert(usedStudentsList.at(t), t);
 
 	for(int t=0; t<usedStudentsList.count(); t++){
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
@@ -2616,4 +2625,62 @@ void TimetableViewStudentsTimeHorizontalForm::activitiesSpace()
 		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
 	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);
 	form.exec();
+}
+
+void TimetableViewStudentsTimeHorizontalForm::selectionChanged()
+{
+	QSet<int> selectedActivitiesIndices;
+	
+	QList<QTableWidgetItem*> selectedItems=studentsTimetableTable->selectedItems();
+	for(QTableWidgetItem* item : std::as_const(selectedItems)){
+		int t=item->row();
+		assert(t<usedStudentsList.count());
+
+		if(!gt.rules.studentsHash.contains(usedStudentsList.at(t)))
+			continue;
+		
+		assert(gt.rules.studentsHash.contains(usedStudentsList.at(t)));
+		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), nullptr);
+		assert(ss!=nullptr);
+		int sbg=-1;
+		if(ss->type==STUDENTS_YEAR){
+			StudentsYear* year=(StudentsYear*)ss;
+			sbg=year->groupsList.at(0)->subgroupsList.at(0)->indexInInternalSubgroupsList;
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			StudentsGroup* group=(StudentsGroup*)ss;
+			sbg=group->subgroupsList.at(0)->indexInInternalSubgroupsList;
+		}
+		else if(ss->type==STUDENTS_SUBGROUP){
+			StudentsSubgroup* subgroup=(StudentsSubgroup*)ss;
+			sbg=subgroup->indexInInternalSubgroupsList;
+		}
+		else{
+			assert(0);
+		}
+		
+		assert(sbg>=0 && sbg<gt.rules.nInternalSubgroups);
+
+		int d=item->column()/gt.rules.nHoursPerDay;
+		int h=item->column()%gt.rules.nHoursPerDay;
+
+		int ai=students_timetable_weekly[sbg][d][h]; //activity index
+		if(ai!=UNALLOCATED_ACTIVITY)
+			if(!selectedActivitiesIndices.contains(ai))
+				selectedActivitiesIndices.insert(ai);
+	}
+	
+	for(int ai : std::as_const(selectedActivitiesIndices)){
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(act->studentsNames.count()>=2){
+			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
+			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
+			for(const QString& studentsSetName : std::as_const(act->studentsNames))
+				if(usedStudentsHash.contains(studentsSetName)){
+					int t=usedStudentsHash.value(studentsSetName);
+					for(int dur=0; dur<act->duration; dur++)
+						studentsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h+dur)->setSelected(true);
+				}
+		}
+	}
 }

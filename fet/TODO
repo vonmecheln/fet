@@ -13975,3 +13975,35 @@ Can you please make that all teacher/group/subject data are exported to CSV? For
 From GUEFFAZ REDA (on Facebook):
 
 He sent Liviu Lalescu a modified screenshot. When selecting which days to unlock, FET will show the locked days with a bold font.
+
+880--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6907.0
+
+When adding a constraint for a students set or for all students, implement the possibility to add a constraint for each students set,
+"Add constraints", as it is possible for teachers.
+
+881--------------------------------------------------------
+From GUEFFAZ REDA (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6908.0
+
+What if the research was deeper and more precise to include the names of the teachers and students?
+
+(GUEFFAZ REDA refers to the new feature, introduced in FET-7.10.1, to search in the menus for specific words.)
+
+882--------------------------------------------------------
+From Anisse Hanifi (on Facebook):
+
+Could you provide us with tags for professors — or even for a selected group of professors — all at once?
+
+883--------------------------------------------------------
+From kieronsalmon (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6911.0
+
+I was wondering if there's any way to export a really clean .fet file.
+I know that you can export a selection of days, and can remove redundant constraints.
+I also know that TiTiTo can do a clean export, but that file still includes unused teachers, student groups and rooms.
+Ideally I'd like to export a .fet file that only includes active activities, assigned teachers, assigned students / groups, and assigned rooms.

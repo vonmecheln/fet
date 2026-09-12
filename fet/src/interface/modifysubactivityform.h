@@ -79,6 +79,10 @@ public Q_SLOTS:
 	void showGroupsChanged();
 	void showSubgroupsChanged();
 	
+	void filterTeachers(const QString& text);
+	void filterStudents(const QString& text);
+	void filterActivityTags(const QString& text);
+
 	void help();
 };
 

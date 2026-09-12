@@ -186,7 +186,7 @@ SubgroupsForm::~SubgroupsForm()
 void SubgroupsForm::addSubgroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -215,7 +215,7 @@ void SubgroupsForm::addSubgroup()
 void SubgroupsForm::addExistingSubgroups()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -265,7 +265,7 @@ void SubgroupsForm::addExistingSubgroups()
 void SubgroupsForm::removeSubgroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -348,7 +348,7 @@ void SubgroupsForm::removeSubgroup()
 void SubgroupsForm::purgeSubgroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -582,7 +582,7 @@ void SubgroupsForm::moveSubgroupDown()
 void SubgroupsForm::sortSubgroups()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -607,7 +607,7 @@ void SubgroupsForm::sortSubgroups()
 void SubgroupsForm::modifySubgroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -658,7 +658,7 @@ void SubgroupsForm::modifySubgroup()
 void SubgroupsForm::activateStudents()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -689,7 +689,7 @@ void SubgroupsForm::activateStudents()
 void SubgroupsForm::deactivateStudents()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();

@@ -144,6 +144,10 @@ ModifySubactivityForm::ModifySubactivityForm(QWidget* parent, int id, int activi
 	selectedStudentsListWidget->clear();
 	for(QStringList::const_iterator it=this->_students.constBegin(); it!=this->_students.constEnd(); it++)
 		selectedStudentsListWidget->addItem(*it);
+
+	connect(teachersFilterLineEdit, &QLineEdit::textChanged, this, &ModifySubactivityForm::filterTeachers);
+	connect(studentsFilterLineEdit, &QLineEdit::textChanged, this, &ModifySubactivityForm::filterStudents);
+	connect(activityTagsFilterLineEdit, &QLineEdit::textChanged, this, &ModifySubactivityForm::filterActivityTags);
 	
 	okPushButton->setDefault(true);
 	okPushButton->setFocus();
@@ -193,6 +197,9 @@ void ModifySubactivityForm::updateAllTeachersListWidget()
 			}
 		}
 	}
+	
+	if(!teachersFilterLineEdit->text().isEmpty())
+		filterTeachers(teachersFilterLineEdit->text());
 }
 
 void ModifySubactivityForm::addTeacher()
@@ -364,6 +371,9 @@ void ModifySubactivityForm::updateStudentsListWidget()
 		}
 	}
 
+	if(!studentsFilterLineEdit->text().isEmpty())
+		filterStudents(studentsFilterLineEdit->text());
+	
 	int q=allStudentsListWidget->verticalScrollBar()->minimum();
 	allStudentsListWidget->verticalScrollBar()->setValue(q);
 }
@@ -490,6 +500,10 @@ void ModifySubactivityForm::help()
 	s+="\n";
 	s+=tr("'Qualified' means that only the teachers who are qualified to teach the selected subject will be shown in the 'Teachers' list.",
 	 "Qualified refers to teachers");
+	s+="\n";
+	s+=tr("You can filter the list of all teachers, the list of all students sets, and the list of all activities tags, using a simple filter of type "
+	 "'contains text (case insensitive)' - there are three editable text boxes for this purpose, placed correspondingly.");
+	s+="\n";
 	
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -515,4 +529,31 @@ void ModifySubactivityForm::help()
 
 	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
+}
+
+void ModifySubactivityForm::filterTeachers(const QString& text)
+{
+	for(int i=0; i<allTeachersListWidget->count(); i++)
+		if(allTeachersListWidget->item(i)->text().contains(text, Qt::CaseInsensitive))
+			allTeachersListWidget->item(i)->setHidden(false);
+		else
+			allTeachersListWidget->item(i)->setHidden(true);
+}
+
+void ModifySubactivityForm::filterStudents(const QString& text)
+{
+	for(int i=0; i<allStudentsListWidget->count(); i++)
+		if(allStudentsListWidget->item(i)->text().contains(text, Qt::CaseInsensitive))
+			allStudentsListWidget->item(i)->setHidden(false);
+		else
+			allStudentsListWidget->item(i)->setHidden(true);
+}
+
+void ModifySubactivityForm::filterActivityTags(const QString& text)
+{
+	for(int i=0; i<allActivityTagsListWidget->count(); i++)
+		if(allActivityTagsListWidget->item(i)->text().contains(text, Qt::CaseInsensitive))
+			allActivityTagsListWidget->item(i)->setHidden(false);
+		else
+			allActivityTagsListWidget->item(i)->setHidden(true);
 }

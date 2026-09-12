@@ -71,7 +71,7 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 	StudentsSubgroup* sts;
 	if(ss!=nullptr && ss->type==STUDENTS_YEAR){
 		QMessageBox::information( this, tr("Subgroup insertion dialog"),
-			tr("This name is taken for a year - please consider another name"));
+			tr("This name is already used by a year - please consider another name!"));
 
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();
@@ -80,7 +80,7 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 	}
 	if(ss!=nullptr && ss->type==STUDENTS_GROUP){
 		QMessageBox::information( this, tr("Subgroup insertion dialog"),
-			tr("This name is taken for a group - please consider another name"));
+			tr("This name is already used by a group - please consider another name!"));
 
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();

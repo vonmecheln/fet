@@ -865,6 +865,8 @@ extern bool CONFIRM_SAVE_TIMETABLE;
 
 extern bool VERBOSE;
 
+extern bool SHOW_TEACHER_DETAILS_IN_SPACE_CONSTRAINTS;
+
 /**
 The maximum total number of different subgroups of students
 */

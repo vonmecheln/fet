@@ -175,7 +175,7 @@ GroupsForm::~GroupsForm()
 void GroupsForm::addGroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -196,7 +196,7 @@ void GroupsForm::addGroup()
 void GroupsForm::addExistingGroups()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
@@ -230,7 +230,7 @@ void GroupsForm::addExistingGroups()
 void GroupsForm::removeGroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
@@ -304,7 +304,7 @@ void GroupsForm::removeGroup()
 void GroupsForm::purgeGroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
@@ -489,7 +489,7 @@ void GroupsForm::moveGroupDown()
 void GroupsForm::sortGroups()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
@@ -505,7 +505,7 @@ void GroupsForm::sortGroups()
 void GroupsForm::modifyGroup()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	
@@ -551,7 +551,7 @@ void GroupsForm::modifyGroup()
 void GroupsForm::activateStudents()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
@@ -573,7 +573,7 @@ void GroupsForm::activateStudents()
 void GroupsForm::deactivateStudents()
 {
 	if(yearsListWidget->currentRow()<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("The selected year is invalid"));
 		return;
 	}
 	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());

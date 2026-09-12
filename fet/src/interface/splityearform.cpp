@@ -387,8 +387,8 @@ void SplitYearForm::ok()
 {
 	if(categoriesSpinBox->value()>4){
 		QMessageBox::StandardButton ret=QMessageBox::warning(this, tr("FET warning"),
-		 tr("You want to divide the year by %1 categories. The recommended number of categories"
-		 " is 2, 3 or maximum 4 (to ensure the timetable generation speed and feasibility). Are you sure?")
+		 tr("You want to divide the year into %1 categories. The recommended number of categories"
+		 " is 2, 3 or at most 4 (to ensure that solving the timetable will be quick and feasible). Are you sure?")
 		 .arg(categoriesSpinBox->value()),
 		 QMessageBox::Yes|QMessageBox::Cancel);
 		if(ret==QMessageBox::Cancel)
@@ -689,7 +689,7 @@ again_here_2:
 			description+=tr("Probably you can safely ignore the warning about the removal of the subgroups.");
 			description+=" ";
 		}
-		description+=tr("Read the divide year dialog Help for details.");
+		description+=tr("See the Help section in the 'Divide year' dialog for details!");
 		description+=")";
 	}
 	
@@ -941,8 +941,8 @@ again_here_4:
 		assert(nGroupActivitiesInInitialOrderItemsBefore==nGroupActivitiesInInitialOrderItemsAfter);
 	}
 	
-	QMessageBox::information(this, tr("FET information"), tr("Split of the year complete, please check the groups and subgroups"
-	 " of the year to make sure that everything is OK.")+s);
+	QMessageBox::information(this, tr("FET information"), tr("The year was split successfully. Please check the groups and subgroups"
+	 " of the year to make sure that everything is OK!")+s);
 	
 	//saving page
 	_firstCategoryIsPermanent=firstCategoryPermanentCheckBox->isChecked();
@@ -1055,10 +1055,10 @@ void SplitYearForm::help()
 		" keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable"
 		" might become impossible (taking too much time to generate).");
 	s+=" ";
-	s+=tr("Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but"
+	s+=tr("Maybe a reasonable number of categories could be 2, 3 or at most 4. The divide year dialog allows much higher values, but"
 		" these are not at all recommended.");
 	s+=" ";
-	s+=tr("The generation time of the timetable is directly proportional with the total number of subgroups!");
+	s+=tr("The generation time of the timetable is directly proportional to the total number of subgroups!");
 	s+=" ";
 	s+=tr("For instance, by reducing the total number of subgroups from 10000 to 100 the generation time might decrease 100 times!");
 	s+="\n";

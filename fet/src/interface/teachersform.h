@@ -40,6 +40,7 @@ public Q_SLOTS:
 	
 	void targetNumberOfHours();
 	void qualifiedSubjects();
+	void importQualifiedSubjects();
 
 	void moveTeacherUp();
 	void moveTeacherDown();

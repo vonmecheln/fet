@@ -191,6 +191,7 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 	
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::close);
 	connect(teachersTimetableTable, &QTableWidget::currentItemChanged, this, &TimetableViewTeachersTimeHorizontalForm::currentItemChanged);
+	connect(teachersTimetableTable, &QTableWidget::itemSelectionChanged, this, &TimetableViewTeachersTimeHorizontalForm::selectionChanged);
 	connect(lockTimePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockTime);
 	connect(lockSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockSpace);
 	connect(lockTimeSpacePushButton, &QPushButton::clicked, this, &TimetableViewTeachersTimeHorizontalForm::lockTimeSpace);
@@ -2229,4 +2230,32 @@ void TimetableViewTeachersTimeHorizontalForm::activitiesSpace()
 		s=tr("%1 activities selected", "%1 is the number of selected activities").arg(actl.count());
 	ListOfRelatedSpaceConstraintsForm form(this, FILTER_IS_ACTIVITY, actl, s, tscl);
 	form.exec();
+}
+
+void TimetableViewTeachersTimeHorizontalForm::selectionChanged()
+{
+	QSet<int> selectedActivitiesIndices;
+	
+	QList<QTableWidgetItem*> selectedItems=teachersTimetableTable->selectedItems();
+	for(QTableWidgetItem* item : std::as_const(selectedItems)){
+		int t=item->row();
+		int d=item->column()/gt.rules.nHoursPerDay;
+		int h=item->column()%gt.rules.nHoursPerDay;
+
+		int ai=teachers_timetable_weekly[t][d][h]; //activity index
+		if(ai!=UNALLOCATED_ACTIVITY)
+			if(!selectedActivitiesIndices.contains(ai))
+				selectedActivitiesIndices.insert(ai);
+	}
+	
+	for(int ai : std::as_const(selectedActivitiesIndices)){
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		if(act->iTeachersList.count()>=2){
+			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
+			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
+			for(int t : std::as_const(act->iTeachersList))
+				for(int dur=0; dur<act->duration; dur++)
+					teachersTimetableTable->item(t, d*gt.rules.nHoursPerDay+h+dur)->setSelected(true);
+		}
+	}
 }

@@ -214,6 +214,23 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	connect(invertedSubjectCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filterChanged);
 	connect(invertedActivityTagCheckBox, &QCheckBox::toggled, this, &ActivitiesForm::filterChanged);
 
+	singleTeacherCheckBox->setTristate(true);
+	singleTeacherCheckBox->setCheckState(Qt::Unchecked);
+	singleStudentsSetCheckBox->setTristate(true);
+	singleStudentsSetCheckBox->setCheckState(Qt::Unchecked);
+	singleActivityTagCheckBox->setTristate(true);
+	singleActivityTagCheckBox->setCheckState(Qt::Unchecked);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,7,0)
+	connect(singleTeacherCheckBox, &QCheckBox::checkStateChanged, this, &ActivitiesForm::filterChanged);
+	connect(singleStudentsSetCheckBox, &QCheckBox::checkStateChanged, this, &ActivitiesForm::studentsFilterChanged);
+	connect(singleActivityTagCheckBox, &QCheckBox::checkStateChanged, this, &ActivitiesForm::filterChanged);
+#else
+	connect(singleTeacherCheckBox, &QCheckBox::clicked, this, &ActivitiesForm::filterChanged);
+	connect(singleStudentsSetCheckBox, &QCheckBox::clicked, this, &ActivitiesForm::studentsFilterChanged);
+	connect(singleActivityTagCheckBox, &QCheckBox::clicked, this, &ActivitiesForm::filterChanged);
+#endif
+
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	QSize tmp2=studentsComboBox->minimumSizeHint();
@@ -329,6 +346,21 @@ ActivitiesForm::~ActivitiesForm()
 
 bool ActivitiesForm::filterOk(Activity* act)
 {
+	if(singleTeacherCheckBox->checkState()==Qt::Checked && act->teachersNames.count()!=1)
+		return false;
+	else if(singleTeacherCheckBox->checkState()==Qt::PartiallyChecked && act->teachersNames.count()==1)
+		return false;
+	
+	if(singleStudentsSetCheckBox->checkState()==Qt::Checked && act->studentsNames.count()!=1)
+		return false;
+	else if(singleStudentsSetCheckBox->checkState()==Qt::PartiallyChecked && act->studentsNames.count()==1)
+		return false;
+	
+	if(singleActivityTagCheckBox->checkState()==Qt::Checked && act->activityTagsNames.count()!=1)
+		return false;
+	else if(singleActivityTagCheckBox->checkState()==Qt::PartiallyChecked && act->activityTagsNames.count()==1)
+		return false;
+	
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
@@ -578,7 +610,7 @@ void ActivitiesForm::filterChanged()
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		progress.setValue(i);
 		if(progress.wasCanceled()){
-			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You cancelled activity filtering - the list of activities will be incomplete.")+QString(" ")+
 			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
 			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
 			 " Please consider filtering on the description or detailed description of the activities, instead.")+QString("\n\n")+tr("Note: if you are using more filters,"
@@ -917,6 +949,11 @@ void ActivitiesForm::help()
 	s+=tr("There are two available filters: one is simple, based on the teacher, students, subject, or activity tag, the other one is more advanced (select the 'Filter' check box)."
 		" The resulted overall filter is the combined AND of these two filters, if both filters are active, or the active one, if only one is active. If no filters are active,"
 		" all the activities will be shown.");
+	
+	s+="\n\n";
+	s+=tr("Unique: this will filter all the activities which have exactly one teacher, one students set, or one activity tag, respectively, if the corresponding 'Unique'"
+		" check box is checked, and all the activities which have no teachers or have at least two teachers, have no students sets or have at least two students sets,"
+		" or have no activity tags or have at least two activity tags, respectively, if the corresponding 'Unique' check box is partially checked.");
 	
 	s+="\n\n";
 	s+=tr("Inverted: this will show all the activities which _don't_ respect the selected filter for the teacher, students, subject, or activity tag.");
