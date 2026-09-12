@@ -894,6 +894,15 @@ private:
 	TimeConstraint* readTeacherActivityTagMinHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersActivityTagMinHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherMaxActivityTagChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxActivityTagChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxActivityTagChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxActivityTagChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxActivityTagChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxActivityTagChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxActivityTagChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxActivityTagChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeachersMinHoursDaily(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMinHoursDaily(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);

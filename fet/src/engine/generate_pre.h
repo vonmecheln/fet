@@ -781,6 +781,21 @@ extern Matrix1D<QList<RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> rpomes
 bool computeRoomsPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   room pair of mutually exclusive sets of time slots
 
+extern Matrix1D<double> teachersMaxActivityTagChangesPerDayPercentages;
+extern Matrix1D<int> teachersMaxActivityTagChangesPerDayMaxChanges;
+bool computeTeachersMaxActivityTagChangesPerDay(QWidget* parent);
+
+extern Matrix1D<double> subgroupsMaxActivityTagChangesPerDayPercentages;
+extern Matrix1D<int> subgroupsMaxActivityTagChangesPerDayMaxChanges;
+bool computeStudentsMaxActivityTagChangesPerDay(QWidget* parent);
+
+extern Matrix1D<double> teachersMaxActivityTagChangesPerWeekPercentages;
+extern Matrix1D<int> teachersMaxActivityTagChangesPerWeekMaxChanges;
+bool computeTeachersMaxActivityTagChangesPerWeek(QWidget* parent);
+
+extern Matrix1D<double> subgroupsMaxActivityTagChangesPerWeekPercentages;
+extern Matrix1D<int> subgroupsMaxActivityTagChangesPerWeekMaxChanges;
+bool computeStudentsMaxActivityTagChangesPerWeek(QWidget* parent);
 
 ////////BEGIN teacher(s) max hours daily
 extern Matrix1D<double> teachersMaxHoursDailyPercentages1;

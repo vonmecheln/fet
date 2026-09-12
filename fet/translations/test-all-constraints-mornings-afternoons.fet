@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<fet version="7.9.2">
+<fet version="7.10.3">
   <Mode>Mornings_Afternoons</Mode>
   <Institution_Name>Default institution</Institution_Name>
   <Comments>Default comments</Comments>
@@ -3517,6 +3517,58 @@
       <Active>true</Active>
       <Comments></Comments>
     </ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities>
+    <ConstraintTeacherMaxActivityTagChangesPerDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher>t1</Teacher>
+      <Max_Activity_Tag_Changes_Per_Day>1</Max_Activity_Tag_Changes_Per_Day>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeacherMaxActivityTagChangesPerDay>
+    <ConstraintTeacherMaxActivityTagChangesPerWeek>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Teacher>t1</Teacher>
+      <Max_Activity_Tag_Changes_Per_Week>3</Max_Activity_Tag_Changes_Per_Week>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeacherMaxActivityTagChangesPerWeek>
+    <ConstraintTeachersMaxActivityTagChangesPerDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Activity_Tag_Changes_Per_Day>1</Max_Activity_Tag_Changes_Per_Day>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeachersMaxActivityTagChangesPerDay>
+    <ConstraintTeachersMaxActivityTagChangesPerWeek>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Activity_Tag_Changes_Per_Week>3</Max_Activity_Tag_Changes_Per_Week>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintTeachersMaxActivityTagChangesPerWeek>
+    <ConstraintStudentsSetMaxActivityTagChangesPerDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Students>y1</Students>
+      <Max_Activity_Tag_Changes_Per_Day>1</Max_Activity_Tag_Changes_Per_Day>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsSetMaxActivityTagChangesPerDay>
+    <ConstraintStudentsSetMaxActivityTagChangesPerWeek>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Students>y1</Students>
+      <Max_Activity_Tag_Changes_Per_Week>3</Max_Activity_Tag_Changes_Per_Week>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsSetMaxActivityTagChangesPerWeek>
+    <ConstraintStudentsMaxActivityTagChangesPerDay>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Activity_Tag_Changes_Per_Day>1</Max_Activity_Tag_Changes_Per_Day>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMaxActivityTagChangesPerDay>
+    <ConstraintStudentsMaxActivityTagChangesPerWeek>
+      <Weight_Percentage>100</Weight_Percentage>
+      <Max_Activity_Tag_Changes_Per_Week>3</Max_Activity_Tag_Changes_Per_Week>
+      <Active>true</Active>
+      <Comments></Comments>
+    </ConstraintStudentsMaxActivityTagChangesPerWeek>
   </Time_Constraints_List>
   <Space_Constraints_List>
     <ConstraintBasicCompulsorySpace>

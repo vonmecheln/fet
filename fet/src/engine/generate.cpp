@@ -10275,6 +10275,11 @@ again_if_impossible_activity:
 		//2022-05-19
 		bool okactivitiesmininaterm;
 
+		bool okteachersmaxactivitytagchangesperday;
+		bool okstudentsmaxactivitytagchangesperday;
+		bool okteachersmaxactivitytagchangesperweek;
+		bool okstudentsmaxactivitytagchangesperweek;
+		
 		if(c.times[ai]!=UNALLOCATED_TIME)
 			goto skip_here_if_already_allocated_in_time;
 
@@ -35788,6 +35793,623 @@ impossibleteachersmaxhoursperterm:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//2026-08-29 - for Vangelis Karafillidis and Abdeljalil LAABAD
+		////////////////////////////BEGIN teachers max activity tag changes per day
+		okteachersmaxactivitytagchangesperday=true;
+
+		if(!act->iActivityTagsSet.isEmpty()){
+			for(int tch : std::as_const(act->iTeachersList)){
+				if(teachersMaxActivityTagChangesPerDayMaxChanges[tch]>=0){
+					assert(teachersMaxActivityTagChangesPerDayPercentages[tch]==100);
+
+					bool skip=skipRandom(teachersMaxActivityTagChangesPerDayPercentages[tch]);
+					if(!skip){
+						int mc=teachersMaxActivityTagChangesPerDayMaxChanges[tch];
+
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+							int ai2=newTeachersTimetable(tch,d,h2);
+
+							if(ai2>=0 && !conflActivities[newtime].contains(ai2)){
+								if(h2>=h && h2<h+act->duration){
+									assert(ai2==ai);
+									activities[h2]=ai;
+								}
+								else{
+									if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.isEmpty())
+										activities[h2]=-1;
+									else
+										activities[h2]=ai2;
+								}
+							}
+							else{
+								activities[h2]=-1;
+							}
+						}
+
+						int crt_ai=-1;
+						int n_changes=0;
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+							if(activities[h2]!=-1){
+								if(crt_ai!=activities[h2]){
+									if(crt_ai!=-1){
+										if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[activities[h2]].iActivityTagsSet)){
+											n_changes++;
+										}
+									}
+									crt_ai=activities[h2];
+								}
+							}
+						}
+
+						if(n_changes>mc){ //not OK
+							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+								okteachersmaxactivitytagchangesperday=false;
+								goto impossibleteachersmaxactivitytagchangesperday;
+							}
+
+							QList<int> removableActsList;
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								if(!(h2>=h && h2<h+act->duration)){
+									if(activities[h2]>=0 && !swappedActivities[activities[h2]] && !fixedTimeActivity[activities[h2]]){
+										if(!removableActsList.contains(activities[h2])){
+											removableActsList.append(activities[h2]);
+											assert(!conflActivities[newtime].contains(activities[h2]));
+										}
+									}
+								}
+							}
+
+							for(;;){
+								int ai2=-1;
+								QList<int> optimalRemovableActs;
+								if(level==0){
+									int nWrong=INF;
+									for(int a : std::as_const(removableActsList))
+										if(nWrong>triedRemovals(a,c.times[a])){
+											nWrong=triedRemovals(a,c.times[a]);
+										}
+									for(int a : std::as_const(removableActsList))
+										if(nWrong==triedRemovals(a,c.times[a]))
+											optimalRemovableActs.append(a);
+								}
+								else
+									optimalRemovableActs=removableActsList;
+
+								if(removableActsList.count()>0)
+									assert(optimalRemovableActs.count()>0);
+
+								if(optimalRemovableActs.count()==0){
+									okteachersmaxactivitytagchangesperday=false;
+									goto impossibleteachersmaxactivitytagchangesperday;
+								}
+
+								ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+								assert(!swappedActivities[ai2]);
+								assert(!fixedTimeActivity[ai2]);
+								assert(!conflActivities[newtime].contains(ai2));
+								assert(ai2>=0);
+
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+
+								int t=removableActsList.removeAll(ai2);
+								assert(t==1);
+
+								int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+								int dura=gt.rules.internalActivitiesList[ai2].duration;
+								for(int h2=ha; h2<ha+dura; h2++){
+									assert(activities[h2]==ai2);
+									activities[h2]=-1;
+								}
+
+								int crt_ai=-1;
+								int n_changes=0;
+								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+									if(activities[h2]!=-1){
+										if(crt_ai!=activities[h2]){
+											if(crt_ai!=-1){
+												if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[activities[h2]].iActivityTagsSet)){
+													n_changes++;
+												}
+											}
+											crt_ai=activities[h2];
+										}
+									}
+								}
+
+								if(n_changes<=mc){ //OK
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossibleteachersmaxactivitytagchangesperday:
+		if(!okteachersmaxactivitytagchangesperday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END teachers max activity tag changes per day
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2026-08-29 - for Vangelis Karafillidis
+		////////////////////////////BEGIN teachers max activity tag changes per week
+		okteachersmaxactivitytagchangesperweek=true;
+
+		if(!act->iActivityTagsSet.isEmpty()){
+			for(int tch : std::as_const(act->iTeachersList)){
+				if(teachersMaxActivityTagChangesPerWeekMaxChanges[tch]>=0){
+					assert(teachersMaxActivityTagChangesPerWeekPercentages[tch]==100);
+
+					bool skip=skipRandom(teachersMaxActivityTagChangesPerWeekPercentages[tch]);
+					if(!skip){
+						int mc=teachersMaxActivityTagChangesPerWeekMaxChanges[tch];
+
+						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								int ai2=newTeachersTimetable(tch,d2,h2);
+
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2)){
+									if(d2==d && h2>=h && h2<h+act->duration){
+										assert(ai2==ai);
+										weekActivities[d2][h2]=ai;
+									}
+									else{
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.isEmpty())
+											weekActivities[d2][h2]=-1;
+										else
+											weekActivities[d2][h2]=ai2;
+									}
+								}
+								else{
+									weekActivities[d2][h2]=-1;
+								}
+							}
+						}
+
+						int n_changes=0;
+						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+							int crt_ai=-1;
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								if(weekActivities[d2][h2]!=-1){
+									if(crt_ai!=weekActivities[d2][h2]){
+										if(crt_ai!=-1){
+											if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[weekActivities[d2][h2]].iActivityTagsSet)){
+												n_changes++;
+											}
+										}
+										crt_ai=weekActivities[d2][h2];
+									}
+								}
+							}
+						}
+
+						if(n_changes>mc){ //not OK
+							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+								okteachersmaxactivitytagchangesperweek=false;
+								goto impossibleteachersmaxactivitytagchangesperweek;
+							}
+
+							QList<int> removableActsList;
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+									if(!(d2==d && h2>=h && h2<h+act->duration)){
+										if(weekActivities[d2][h2]>=0 && !swappedActivities[weekActivities[d2][h2]] && !fixedTimeActivity[weekActivities[d2][h2]]){
+											if(!removableActsList.contains(weekActivities[d2][h2])){
+												removableActsList.append(weekActivities[d2][h2]);
+												assert(!conflActivities[newtime].contains(weekActivities[d2][h2]));
+											}
+										}
+									}
+								}
+							}
+
+							for(;;){
+								int ai2=-1;
+								QList<int> optimalRemovableActs;
+								if(level==0){
+									int nWrong=INF;
+									for(int a : std::as_const(removableActsList))
+										if(nWrong>triedRemovals(a,c.times[a])){
+											nWrong=triedRemovals(a,c.times[a]);
+										}
+									for(int a : std::as_const(removableActsList))
+										if(nWrong==triedRemovals(a,c.times[a]))
+											optimalRemovableActs.append(a);
+								}
+								else
+									optimalRemovableActs=removableActsList;
+
+								if(removableActsList.count()>0)
+									assert(optimalRemovableActs.count()>0);
+
+								if(optimalRemovableActs.count()==0){
+									okteachersmaxactivitytagchangesperweek=false;
+									goto impossibleteachersmaxactivitytagchangesperweek;
+								}
+
+								ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+								assert(!swappedActivities[ai2]);
+								assert(!fixedTimeActivity[ai2]);
+								assert(!conflActivities[newtime].contains(ai2));
+								assert(ai2>=0);
+
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+
+								int t=removableActsList.removeAll(ai2);
+								assert(t==1);
+
+								int da=c.times[ai2]%gt.rules.nDaysPerWeek;
+								int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+								int dura=gt.rules.internalActivitiesList[ai2].duration;
+								for(int h2=ha; h2<ha+dura; h2++){
+									assert(weekActivities[da][h2]==ai2);
+									weekActivities[da][h2]=-1;
+								}
+
+								int n_changes=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									int crt_ai=-1;
+									for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+										if(weekActivities[d2][h2]!=-1){
+											if(crt_ai!=weekActivities[d2][h2]){
+												if(crt_ai!=-1){
+													if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[weekActivities[d2][h2]].iActivityTagsSet)){
+														n_changes++;
+													}
+												}
+												crt_ai=weekActivities[d2][h2];
+											}
+										}
+									}
+								}
+
+								if(n_changes<=mc){ //OK
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossibleteachersmaxactivitytagchangesperweek:
+		if(!okteachersmaxactivitytagchangesperweek){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END teachers max activity tag changes per week
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2026-08-29 - for Vangelis Karafillidis
+		////////////////////////////BEGIN students max activity tag changes per day
+		okstudentsmaxactivitytagchangesperday=true;
+
+		if(!act->iActivityTagsSet.isEmpty()){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
+				if(subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]>=0){
+					assert(subgroupsMaxActivityTagChangesPerDayPercentages[sbg]==100);
+
+					bool skip=skipRandom(subgroupsMaxActivityTagChangesPerDayPercentages[sbg]);
+					if(!skip){
+						int mc=subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg];
+
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+							int ai2=newSubgroupsTimetable(sbg,d,h2);
+
+							if(ai2>=0 && !conflActivities[newtime].contains(ai2)){
+								if(h2>=h && h2<h+act->duration){
+									assert(ai2==ai);
+									activities[h2]=ai;
+								}
+								else{
+									if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.isEmpty())
+										activities[h2]=-1;
+									else
+										activities[h2]=ai2;
+								}
+							}
+							else{
+								activities[h2]=-1;
+							}
+						}
+
+						int crt_ai=-1;
+						int n_changes=0;
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+							if(activities[h2]!=-1){
+								if(crt_ai!=activities[h2]){
+									if(crt_ai!=-1){
+										if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[activities[h2]].iActivityTagsSet)){
+											n_changes++;
+										}
+									}
+									crt_ai=activities[h2];
+								}
+							}
+						}
+
+						if(n_changes>mc){ //not OK
+							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+								okstudentsmaxactivitytagchangesperday=false;
+								goto impossiblestudentsmaxactivitytagchangesperday;
+							}
+
+							QList<int> removableActsList;
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								if(!(h2>=h && h2<h+act->duration)){
+									if(activities[h2]>=0 && !swappedActivities[activities[h2]] && !fixedTimeActivity[activities[h2]]){
+										if(!removableActsList.contains(activities[h2])){
+											removableActsList.append(activities[h2]);
+											assert(!conflActivities[newtime].contains(activities[h2]));
+										}
+									}
+								}
+							}
+
+							for(;;){
+								int ai2=-1;
+								QList<int> optimalRemovableActs;
+								if(level==0){
+									int nWrong=INF;
+									for(int a : std::as_const(removableActsList))
+										if(nWrong>triedRemovals(a,c.times[a])){
+											nWrong=triedRemovals(a,c.times[a]);
+										}
+									for(int a : std::as_const(removableActsList))
+										if(nWrong==triedRemovals(a,c.times[a]))
+											optimalRemovableActs.append(a);
+								}
+								else
+									optimalRemovableActs=removableActsList;
+
+								if(removableActsList.count()>0)
+									assert(optimalRemovableActs.count()>0);
+
+								if(optimalRemovableActs.count()==0){
+									okstudentsmaxactivitytagchangesperday=false;
+									goto impossiblestudentsmaxactivitytagchangesperday;
+								}
+
+								ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+								assert(!swappedActivities[ai2]);
+								assert(!fixedTimeActivity[ai2]);
+								assert(!conflActivities[newtime].contains(ai2));
+								assert(ai2>=0);
+
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+
+								int t=removableActsList.removeAll(ai2);
+								assert(t==1);
+
+								int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+								int dura=gt.rules.internalActivitiesList[ai2].duration;
+								for(int h2=ha; h2<ha+dura; h2++){
+									assert(activities[h2]==ai2);
+									activities[h2]=-1;
+								}
+
+								int crt_ai=-1;
+								int n_changes=0;
+								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+									if(activities[h2]!=-1){
+										if(crt_ai!=activities[h2]){
+											if(crt_ai!=-1){
+												if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[activities[h2]].iActivityTagsSet)){
+													n_changes++;
+												}
+											}
+											crt_ai=activities[h2];
+										}
+									}
+								}
+
+								if(n_changes<=mc){ //OK
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossiblestudentsmaxactivitytagchangesperday:
+		if(!okstudentsmaxactivitytagchangesperday){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END students max activity tag changes per day
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2026-08-29 - for Vangelis Karafillidis
+		////////////////////////////BEGIN students max activity tag changes per week
+		okstudentsmaxactivitytagchangesperweek=true;
+
+		if(!act->iActivityTagsSet.isEmpty()){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
+				if(subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]>=0){
+					assert(subgroupsMaxActivityTagChangesPerWeekPercentages[sbg]==100);
+
+					bool skip=skipRandom(subgroupsMaxActivityTagChangesPerWeekPercentages[sbg]);
+					if(!skip){
+						int mc=subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg];
+
+						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								int ai2=newSubgroupsTimetable(sbg,d2,h2);
+
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2)){
+									if(d2==d && h2>=h && h2<h+act->duration){
+										assert(ai2==ai);
+										weekActivities[d2][h2]=ai;
+									}
+									else{
+										if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.isEmpty())
+											weekActivities[d2][h2]=-1;
+										else
+											weekActivities[d2][h2]=ai2;
+									}
+								}
+								else{
+									weekActivities[d2][h2]=-1;
+								}
+							}
+						}
+
+						int n_changes=0;
+						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+							int crt_ai=-1;
+							for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+								if(weekActivities[d2][h2]!=-1){
+									if(crt_ai!=weekActivities[d2][h2]){
+										if(crt_ai!=-1){
+											if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[weekActivities[d2][h2]].iActivityTagsSet)){
+												n_changes++;
+											}
+										}
+										crt_ai=weekActivities[d2][h2];
+									}
+								}
+							}
+						}
+
+						if(n_changes>mc){ //not OK
+							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+								okstudentsmaxactivitytagchangesperweek=false;
+								goto impossiblestudentsmaxactivitytagchangesperweek;
+							}
+
+							QList<int> removableActsList;
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+									if(!(d2==d && h2>=h && h2<h+act->duration)){
+										if(weekActivities[d2][h2]>=0 && !swappedActivities[weekActivities[d2][h2]] && !fixedTimeActivity[weekActivities[d2][h2]]){
+											if(!removableActsList.contains(weekActivities[d2][h2])){
+												removableActsList.append(weekActivities[d2][h2]);
+												assert(!conflActivities[newtime].contains(weekActivities[d2][h2]));
+											}
+										}
+									}
+								}
+							}
+
+							for(;;){
+								int ai2=-1;
+								QList<int> optimalRemovableActs;
+								if(level==0){
+									int nWrong=INF;
+									for(int a : std::as_const(removableActsList))
+										if(nWrong>triedRemovals(a,c.times[a])){
+											nWrong=triedRemovals(a,c.times[a]);
+										}
+									for(int a : std::as_const(removableActsList))
+										if(nWrong==triedRemovals(a,c.times[a]))
+											optimalRemovableActs.append(a);
+								}
+								else
+									optimalRemovableActs=removableActsList;
+
+								if(removableActsList.count()>0)
+									assert(optimalRemovableActs.count()>0);
+
+								if(optimalRemovableActs.count()==0){
+									okstudentsmaxactivitytagchangesperweek=false;
+									goto impossiblestudentsmaxactivitytagchangesperweek;
+								}
+
+								ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+								assert(!swappedActivities[ai2]);
+								assert(!fixedTimeActivity[ai2]);
+								assert(!conflActivities[newtime].contains(ai2));
+								assert(ai2>=0);
+
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+
+								int t=removableActsList.removeAll(ai2);
+								assert(t==1);
+
+								int da=c.times[ai2]%gt.rules.nDaysPerWeek;
+								int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+								int dura=gt.rules.internalActivitiesList[ai2].duration;
+								for(int h2=ha; h2<ha+dura; h2++){
+									assert(weekActivities[da][h2]==ai2);
+									weekActivities[da][h2]=-1;
+								}
+
+								int n_changes=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									int crt_ai=-1;
+									for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+										if(weekActivities[d2][h2]!=-1){
+											if(crt_ai!=weekActivities[d2][h2]){
+												if(crt_ai!=-1){
+													if(!gt.rules.internalActivitiesList[crt_ai].iActivityTagsSet.intersects(gt.rules.internalActivitiesList[weekActivities[d2][h2]].iActivityTagsSet)){
+														n_changes++;
+													}
+												}
+												crt_ai=weekActivities[d2][h2];
+											}
+										}
+									}
+								}
+
+								if(n_changes<=mc){ //OK
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossiblestudentsmaxactivitytagchangesperweek:
+		if(!okstudentsmaxactivitytagchangesperweek){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END students max activity tag changes per week
+
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 

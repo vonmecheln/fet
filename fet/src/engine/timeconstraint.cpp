@@ -3353,6 +3353,110 @@ QDataStream& operator<<(QDataStream& stream, const ConstraintMaxDaysBetweenEachP
 	return stream;
 }
 
+//256
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxActivityTagChangesPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges<<tc.teacherName;
+
+	return stream;
+}
+
+//257
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxActivityTagChangesPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges;
+
+	return stream;
+}
+
+//258
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxActivityTagChangesPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges<<tc.teacherName;
+
+	return stream;
+}
+
+//259
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxActivityTagChangesPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges;
+
+	return stream;
+}
+
+//260
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxActivityTagChangesPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges<<tc.students;
+
+	return stream;
+}
+
+//261
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxActivityTagChangesPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges;
+
+	return stream;
+}
+
+//262
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxActivityTagChangesPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges<<tc.students;
+
+	return stream;
+}
+
+//263
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxActivityTagChangesPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxChanges;
+
+	return stream;
+}
+
 //1
 QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
 {
@@ -6662,6 +6766,110 @@ QDataStream& operator>>(QDataStream& stream, ConstraintMaxDaysBetweenEachPairOfC
 	return stream;
 }
 
+//256
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxActivityTagChangesPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges>>tc.teacherName;
+
+	return stream;
+}
+
+//257
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxActivityTagChangesPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges;
+
+	return stream;
+}
+
+//258
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxActivityTagChangesPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges>>tc.teacherName;
+
+	return stream;
+}
+
+//259
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxActivityTagChangesPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges;
+
+	return stream;
+}
+
+//260
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxActivityTagChangesPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges>>tc.students;
+
+	return stream;
+}
+
+//261
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxActivityTagChangesPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges;
+
+	return stream;
+}
+
+//262
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxActivityTagChangesPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges>>tc.students;
+
+	return stream;
+}
+
+//263
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxActivityTagChangesPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxChanges;
+
+	return stream;
+}
+
 QString listsOfDaysAndHoursToTable(Rules& r, const QList<int>& days, const QList<int>& hours, bool direct, bool notAvailable, bool colors)
 {
 	QString s;
@@ -7542,6 +7750,22 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
 			t=true;
 			break;
 			
@@ -8054,6 +8278,22 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
 			t=true;
 			break;
 		
@@ -8354,6 +8594,22 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
 			t=true;
 			break;
 		
@@ -8659,6 +8915,22 @@ bool TimeConstraint::canBeUsedInTermsMode()
 		case CONSTRAINT_ACTIVITIES_MAX_ACTIVITY_TAGS_FROM_SET_IN_SELECTED_TIME_SLOTS:
 			[[fallthrough]];
 		case CONSTRAINT_MAX_DAYS_BETWEEN_EACH_PAIR_OF_CONSECUTIVE_ACTIVITIES:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
 			t=true;
 			break;
 		
@@ -82839,6 +83111,1970 @@ bool ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::repairWrongDayOrHo
 }
 
 void ConstraintMaxDaysBetweenEachPairOfConsecutiveActivities::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxActivityTagChangesPerDay::ConstraintTeacherMaxActivityTagChangesPerDay()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+ConstraintTeacherMaxActivityTagChangesPerDay::ConstraintTeacherMaxActivityTagChangesPerDay(double wp, int _maxChanges, const QString& _teacher)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+	this->teacherName=_teacher;
+
+	this->type=CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+	assert(this->teacher_ID>=0);
+	return true;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMaxActivityTagChangesPerDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeacherMaxActivityTagChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Day>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Day>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxActivityTagChangesPerDay>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxActivityTagChangesPerDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Teacher max activity tag changes per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxActivityTagChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect the maximum number of activity tag changes per day");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintTeacherMaxActivityTagChangesPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	int tch=this->teacher_ID;
+
+	//Better, less memory
+	Teacher* tchpointer=r.internalTeachersList[tch];
+	for(int d2=0; d2<r.nDaysPerWeek; d2++)
+		for(int h2=0; h2<r.nHoursPerDay; h2++)
+			crtActivitiesTimetable[d2][h2]=-1;
+	
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher)){
+		if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+			if(c.times[ai]!=UNALLOCATED_TIME){
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+				
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+					crtActivitiesTimetable[d2][h2+dur]=ai;
+				}
+			}
+		}
+	}
+	/////////////
+	
+	for(int d2=0; d2<r.nDaysPerWeek; d2++){
+		int crt_act=-1;
+		int n_changes=0;
+		for(int h2=0; h2<r.nHoursPerDay; h2++){
+			if(crtActivitiesTimetable[d2][h2]!=-1){
+				if(crt_act!=crtActivitiesTimetable[d2][h2]){
+					if(crt_act!=-1){
+						if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+							n_changes++;
+						}
+					}
+					crt_act=crtActivitiesTimetable[d2][h2];
+				}
+			}
+		}
+		
+		if(n_changes>this->maxChanges){
+			nbroken+=n_changes-this->maxChanges;
+		
+			if(conflictsString!=nullptr){
+				QString s=tr("Time constraint teacher max activity tag changes per day broken for teacher %1 on day %2")
+					.arg(this->teacherName)
+					.arg(r.daysOfTheWeek[d2]);
+				s += ". ";
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* (n_changes-maxChanges));
+				
+				*conflictsString+=s+"\n";
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::isRelatedToTeacher(const QString& t)
+{
+	if(this->teacherName==t)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+int ConstraintTeacherMaxActivityTagChangesPerDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nHoursPerDay)
+		maxChanges=r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintTeacherMaxActivityTagChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxActivityTagChangesPerDay::ConstraintTeachersMaxActivityTagChangesPerDay()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+ConstraintTeachersMaxActivityTagChangesPerDay::ConstraintTeachersMaxActivityTagChangesPerDay(double wp, int _maxChanges)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+
+	this->type=CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxActivityTagChangesPerDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeachersMaxActivityTagChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Day>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Day>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxActivityTagChangesPerDay>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxActivityTagChangesPerDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Teachers max activity tag changes per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxActivityTagChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect the maximum number of activity tag changes per day");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintTeachersMaxActivityTagChangesPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	for(int tch=0; tch<r.nInternalTeachers; tch++){
+		//Better, less memory
+		Teacher* tchpointer=r.internalTeachersList[tch];
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtActivitiesTimetable[d2][h2]=-1;
+		
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher)){
+			if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+				if(c.times[ai]!=UNALLOCATED_TIME){
+					int d2=c.times[ai]%r.nDaysPerWeek;
+					int h2=c.times[ai]/r.nDaysPerWeek;
+					
+					for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+						assert(h2+dur<r.nHoursPerDay);
+						assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+						crtActivitiesTimetable[d2][h2+dur]=ai;
+					}
+				}
+			}
+		}
+		/////////////
+		
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
+			int crt_act=-1;
+			int n_changes=0;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtActivitiesTimetable[d2][h2]!=-1){
+					if(crt_act!=crtActivitiesTimetable[d2][h2]){
+						if(crt_act!=-1){
+							if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+								n_changes++;
+							}
+						}
+						crt_act=crtActivitiesTimetable[d2][h2];
+					}
+				}
+			}
+			
+			if(n_changes>this->maxChanges){
+				nbroken+=n_changes-this->maxChanges;
+				
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint teachers max activity tag changes per day broken for teacher %1 on day %2")
+						.arg(r.internalTeachersList[tch]->name)
+						.arg(r.daysOfTheWeek[d2]);
+					s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+					
+					dl.append(s);
+					cl.append(weightPercentage/100* (n_changes-maxChanges));
+					
+					*conflictsString+=s+"\n";
+				}
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+int ConstraintTeachersMaxActivityTagChangesPerDay::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nHoursPerDay)
+		maxChanges=r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintTeachersMaxActivityTagChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxActivityTagChangesPerWeek::ConstraintTeacherMaxActivityTagChangesPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+ConstraintTeacherMaxActivityTagChangesPerWeek::ConstraintTeacherMaxActivityTagChangesPerWeek(double wp, int _maxChanges, const QString& _teacher)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+	this->teacherName=_teacher;
+
+	this->type=CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+	assert(this->teacher_ID>=0);
+	return true;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMaxActivityTagChangesPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeacherMaxActivityTagChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Week>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Week>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeacherMaxActivityTagChangesPerWeek>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxActivityTagChangesPerWeek::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Teacher max activity tag changes per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxActivityTagChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect the maximum number of activity tag changes per week");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintTeacherMaxActivityTagChangesPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	int tch=this->teacher_ID;
+
+	//Better, less memory
+	Teacher* tchpointer=r.internalTeachersList[tch];
+	for(int d2=0; d2<r.nDaysPerWeek; d2++)
+		for(int h2=0; h2<r.nHoursPerDay; h2++)
+			crtActivitiesTimetable[d2][h2]=-1;
+	
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher)){
+		if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+			if(c.times[ai]!=UNALLOCATED_TIME){
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+				
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+					crtActivitiesTimetable[d2][h2+dur]=ai;
+				}
+			}
+		}
+	}
+	/////////////
+	
+	int n_changes=0;
+	for(int d2=0; d2<r.nDaysPerWeek; d2++){
+		int crt_act=-1;
+		for(int h2=0; h2<r.nHoursPerDay; h2++){
+			if(crtActivitiesTimetable[d2][h2]!=-1){
+				if(crt_act!=crtActivitiesTimetable[d2][h2]){
+					if(crt_act!=-1){
+						if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+							n_changes++;
+						}
+					}
+					crt_act=crtActivitiesTimetable[d2][h2];
+				}
+			}
+		}
+	}
+	
+	if(n_changes>this->maxChanges){
+		nbroken+=n_changes-this->maxChanges;
+	
+		if(conflictsString!=nullptr){
+			QString s=tr("Time constraint teacher max activity tag changes per week broken for teacher %1")
+				.arg(this->teacherName);
+			s += ". ";
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+			
+			dl.append(s);
+			cl.append(weightPercentage/100* (n_changes-maxChanges));
+			
+			*conflictsString+=s+"\n";
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::isRelatedToTeacher(const QString& t)
+{
+	if(this->teacherName==t)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+int ConstraintTeacherMaxActivityTagChangesPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherMaxActivityTagChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nDaysPerWeek*r.nHoursPerDay)
+		maxChanges=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintTeacherMaxActivityTagChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxActivityTagChangesPerWeek::ConstraintTeachersMaxActivityTagChangesPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+ConstraintTeachersMaxActivityTagChangesPerWeek::ConstraintTeachersMaxActivityTagChangesPerWeek(double wp, int _maxChanges)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+
+	this->type=CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxActivityTagChangesPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintTeachersMaxActivityTagChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Week>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Week>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintTeachersMaxActivityTagChangesPerWeek>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxActivityTagChangesPerWeek::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Teachers max activity tag changes per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxActivityTagChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect the maximum number of activity tag changes per week");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintTeachersMaxActivityTagChangesPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	for(int tch=0; tch<r.nInternalTeachers; tch++){
+		//Better, less memory
+		Teacher* tchpointer=r.internalTeachersList[tch];
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtActivitiesTimetable[d2][h2]=-1;
+		
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher)){
+			if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+				if(c.times[ai]!=UNALLOCATED_TIME){
+					int d2=c.times[ai]%r.nDaysPerWeek;
+					int h2=c.times[ai]/r.nDaysPerWeek;
+					
+					for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+						assert(h2+dur<r.nHoursPerDay);
+						assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+						crtActivitiesTimetable[d2][h2+dur]=ai;
+					}
+				}
+			}
+		}
+		/////////////
+		
+		int n_changes=0;
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
+			int crt_act=-1;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtActivitiesTimetable[d2][h2]!=-1){
+					if(crt_act!=crtActivitiesTimetable[d2][h2]){
+						if(crt_act!=-1){
+							if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+								n_changes++;
+							}
+						}
+						crt_act=crtActivitiesTimetable[d2][h2];
+					}
+				}
+			}
+		}
+		
+		if(n_changes>this->maxChanges){
+			nbroken+=n_changes-this->maxChanges;
+		
+			if(conflictsString!=nullptr){
+				QString s=tr("Time constraint teachers max activity tag changes per week broken for teacher %1")
+					.arg(r.internalTeachersList[tch]->name);
+				s += ". ";
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* (n_changes-maxChanges));
+				
+				*conflictsString+=s+"\n";
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+int ConstraintTeachersMaxActivityTagChangesPerWeek::categoryOfTimeConstraint()
+{
+	return IS_TEACHER_TIME_CONSTRAINT;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxActivityTagChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nDaysPerWeek*r.nHoursPerDay)
+		maxChanges=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintTeachersMaxActivityTagChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMaxActivityTagChangesPerDay::ConstraintStudentsSetMaxActivityTagChangesPerDay()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+ConstraintStudentsSetMaxActivityTagChangesPerDay::ConstraintStudentsSetMaxActivityTagChangesPerDay(double wp, int _maxChanges, const QString& _students)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+	this->students=_students;
+
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
+
+	if(ss==nullptr){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("A constraint students set max activity tag changes per day is wrong because it refers to a nonexistent students set."
+		 " Please correct it! (Removing it might be a solution.) Please report potential bug! The constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	assert(ss!=nullptr);
+
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMaxActivityTagChangesPerDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintStudentsSetMaxActivityTagChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Day>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Day>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxActivityTagChangesPerDay>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMaxActivityTagChangesPerDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Students set max activity tag changes per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMaxActivityTagChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A students set must respect the maximum number of activity tag changes per day");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students=%1").arg(this->students);s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintStudentsSetMaxActivityTagChangesPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	for(int i : std::as_const(this->iSubgroupsList)){
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtActivitiesTimetable[d][h]=-1;
+
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)){
+			if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+				if(c.times[ai]!=UNALLOCATED_TIME){
+					int d2=c.times[ai]%r.nDaysPerWeek;
+					int h2=c.times[ai]/r.nDaysPerWeek;
+					
+					for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+						assert(h2+dur<r.nHoursPerDay);
+						assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+						crtActivitiesTimetable[d2][h2+dur]=ai;
+					}
+				}
+			}
+		}
+		/////////////
+		
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
+			int crt_act=-1;
+			int n_changes=0;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtActivitiesTimetable[d2][h2]!=-1){
+					if(crt_act!=crtActivitiesTimetable[d2][h2]){
+						if(crt_act!=-1){
+							if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+								n_changes++;
+							}
+						}
+						crt_act=crtActivitiesTimetable[d2][h2];
+					}
+				}
+			}
+			
+			if(n_changes>this->maxChanges){
+				nbroken+=n_changes-this->maxChanges;
+			
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint students set max activity tag changes per day broken for subgroup %1 on day %2")
+						.arg(sbg->name)
+						.arg(r.daysOfTheWeek[d2]);
+					s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+					
+					dl.append(s);
+					cl.append(weightPercentage/100* (n_changes-maxChanges));
+					
+					*conflictsString+=s+"\n";
+				}
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	return r.setsShareStudents(this->students, s);
+}
+
+int ConstraintStudentsSetMaxActivityTagChangesPerDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nHoursPerDay)
+		maxChanges=r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintStudentsSetMaxActivityTagChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMaxActivityTagChangesPerDay::ConstraintStudentsMaxActivityTagChangesPerDay()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+ConstraintStudentsMaxActivityTagChangesPerDay::ConstraintStudentsMaxActivityTagChangesPerDay(double wp, int _maxChanges)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+
+	this->type=CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMaxActivityTagChangesPerDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintStudentsMaxActivityTagChangesPerDay>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Day>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Day>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxActivityTagChangesPerDay>\n";
+	return s;
+}
+
+QString ConstraintStudentsMaxActivityTagChangesPerDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Students max activity tag changes per day");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMaxActivityTagChangesPerDay::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students must respect the maximum number of activity tag changes per day");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintStudentsMaxActivityTagChangesPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalSubgroups; i++){
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtActivitiesTimetable[d][h]=-1;
+
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)){
+			if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+				if(c.times[ai]!=UNALLOCATED_TIME){
+					int d2=c.times[ai]%r.nDaysPerWeek;
+					int h2=c.times[ai]/r.nDaysPerWeek;
+					
+					for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+						assert(h2+dur<r.nHoursPerDay);
+						assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+						crtActivitiesTimetable[d2][h2+dur]=ai;
+					}
+				}
+			}
+		}
+		/////////////
+		
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
+			int crt_act=-1;
+			int n_changes=0;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtActivitiesTimetable[d2][h2]!=-1){
+					if(crt_act!=crtActivitiesTimetable[d2][h2]){
+						if(crt_act!=-1){
+							if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+								n_changes++;
+							}
+						}
+						crt_act=crtActivitiesTimetable[d2][h2];
+					}
+				}
+			}
+			
+			if(n_changes>this->maxChanges){
+				nbroken+=n_changes-this->maxChanges;
+				
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint students max activity tag changes per day broken for subgroup %1 on day %2")
+						.arg(sbg->name)
+						.arg(r.daysOfTheWeek[d2]);
+					s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+					
+					dl.append(s);
+					cl.append(weightPercentage/100* (n_changes-maxChanges));
+					
+					*conflictsString+=s+"\n";
+				}
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+int ConstraintStudentsMaxActivityTagChangesPerDay::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nHoursPerDay)
+		maxChanges=r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintStudentsMaxActivityTagChangesPerDay::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMaxActivityTagChangesPerWeek::ConstraintStudentsSetMaxActivityTagChangesPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+ConstraintStudentsSetMaxActivityTagChangesPerWeek::ConstraintStudentsSetMaxActivityTagChangesPerWeek(double wp, int _maxChanges, const QString& _students)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+	this->students=_students;
+
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
+
+	if(ss==nullptr){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("A constraint students set max activity tag changes per week is wrong because it refers to a nonexistent students set."
+		 " Please correct it! (Removing it might be a solution.) Please report potential bug! The constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	assert(ss!=nullptr);
+
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMaxActivityTagChangesPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintStudentsSetMaxActivityTagChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Students>"+protect(this->students)+"</Students>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Week>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Week>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsSetMaxActivityTagChangesPerWeek>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMaxActivityTagChangesPerWeek::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Students set max activity tag changes per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("St:%1", "Students").arg(this->students);s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMaxActivityTagChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A students set must respect the maximum number of activity tag changes per week");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students=%1").arg(this->students);s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintStudentsSetMaxActivityTagChangesPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	for(int i : std::as_const(this->iSubgroupsList)){
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtActivitiesTimetable[d][h]=-1;
+
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)){
+			if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+				if(c.times[ai]!=UNALLOCATED_TIME){
+					int d2=c.times[ai]%r.nDaysPerWeek;
+					int h2=c.times[ai]/r.nDaysPerWeek;
+					
+					for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+						assert(h2+dur<r.nHoursPerDay);
+						assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+						crtActivitiesTimetable[d2][h2+dur]=ai;
+					}
+				}
+			}
+		}
+		/////////////
+		
+		int n_changes=0;
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
+			int crt_act=-1;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtActivitiesTimetable[d2][h2]!=-1){
+					if(crt_act!=crtActivitiesTimetable[d2][h2]){
+						if(crt_act!=-1){
+							if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+								n_changes++;
+							}
+						}
+						crt_act=crtActivitiesTimetable[d2][h2];
+					}
+				}
+			}
+		}
+		
+		if(n_changes>this->maxChanges){
+			nbroken+=n_changes-this->maxChanges;
+		
+			if(conflictsString!=nullptr){
+				QString s=tr("Time constraint students set max activity tag changes per week broken for subgroup %1")
+					.arg(sbg->name);
+				s += ". ";
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* (n_changes-maxChanges));
+				
+				*conflictsString+=s+"\n";
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	return r.setsShareStudents(this->students, s);
+}
+
+int ConstraintStudentsSetMaxActivityTagChangesPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsSetMaxActivityTagChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nDaysPerWeek*r.nHoursPerDay)
+		maxChanges=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintStudentsSetMaxActivityTagChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(newExistingDaysHash);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMaxActivityTagChangesPerWeek::ConstraintStudentsMaxActivityTagChangesPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+ConstraintStudentsMaxActivityTagChangesPerWeek::ConstraintStudentsMaxActivityTagChangesPerWeek(double wp, int _maxChanges)
+ : TimeConstraint(wp)
+ {
+	assert(_maxChanges>=0);
+	this->maxChanges=_maxChanges;
+
+	this->type=CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMaxActivityTagChangesPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=IL2+"<ConstraintStudentsMaxActivityTagChangesPerWeek>\n";
+	s+=IL3+"<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+=IL3+"<Max_Activity_Tag_Changes_Per_Week>"+CustomFETString::number(this->maxChanges)+"</Max_Activity_Tag_Changes_Per_Week>\n";
+	s+=IL3+"<Active>"+trueFalse(active)+"</Active>\n";
+	s+=IL3+"<Comments>"+protect(comments)+"</Comments>\n";
+	s+=IL2+"</ConstraintStudentsMaxActivityTagChangesPerWeek>\n";
+	return s;
+}
+
+QString ConstraintStudentsMaxActivityTagChangesPerWeek::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="✗ - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=translatedCommaSpace()+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Students max activity tag changes per week");s+=translatedCommaSpace();
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=translatedCommaSpace();
+	s+=tr("MC:%1", "Max changes").arg(this->maxChanges);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMaxActivityTagChangesPerWeek::getDetailedDescription(Rules& r, bool richText, bool colors)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(colors);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students must respect the maximum number of activity tag changes per week");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum activity tag changes=%1").arg(this->maxChanges);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return richText?protect4(s):s;
+}
+
+double ConstraintStudentsMaxActivityTagChangesPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculationTeachers=false;
+		c.changedForMatrixCalculationStudents=false;
+	}
+
+	Matrix2D<int> crtActivitiesTimetable;
+	crtActivitiesTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	int nbroken=0;
+
+	for(int i=0; i<r.nInternalSubgroups; i++){
+		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			for(int h=0; h<r.nHoursPerDay; h++)
+				crtActivitiesTimetable[d][h]=-1;
+
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)){
+			if(!r.internalActivitiesList[ai].iActivityTagsSet.isEmpty()){
+				if(c.times[ai]!=UNALLOCATED_TIME){
+					int d2=c.times[ai]%r.nDaysPerWeek;
+					int h2=c.times[ai]/r.nDaysPerWeek;
+					
+					for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+						assert(h2+dur<r.nHoursPerDay);
+						assert(crtActivitiesTimetable[d2][h2+dur]==-1);
+						crtActivitiesTimetable[d2][h2+dur]=ai;
+					}
+				}
+			}
+		}
+		/////////////
+		
+		int n_changes=0;
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
+			int crt_act=-1;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtActivitiesTimetable[d2][h2]!=-1){
+					if(crt_act!=crtActivitiesTimetable[d2][h2]){
+						if(crt_act!=-1){
+							if(!r.internalActivitiesList[crt_act].iActivityTagsSet.intersects(r.internalActivitiesList[crtActivitiesTimetable[d2][h2]].iActivityTagsSet)){
+								n_changes++;
+							}
+						}
+						crt_act=crtActivitiesTimetable[d2][h2];
+					}
+				}
+			}
+		}
+		
+		if(n_changes>this->maxChanges){
+			nbroken+=n_changes-this->maxChanges;
+		
+			if(conflictsString!=nullptr){
+				QString s=tr("Time constraint students max activity tag changes per week broken for subgroup %1")
+					.arg(sbg->name);
+				s += ". ";
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxChanges)));
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* (n_changes-maxChanges));
+				
+				*conflictsString+=s+"\n";
+			}
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::isRelatedToActivity(Rules& r, int aid)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(aid);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::isRelatedToTeacher(const QString& t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::isRelatedToSubject(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::isRelatedToActivityTag(const QString& s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::isRelatedToStudentsSet(Rules& r, const QString& s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+int ConstraintStudentsMaxActivityTagChangesPerWeek::categoryOfTimeConstraint()
+{
+	return IS_STUDENTS_TIME_CONSTRAINT;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxChanges>r.nHoursPerDay*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsMaxActivityTagChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxChanges>r.nHoursPerDay*r.nHoursPerDay)
+		maxChanges=r.nHoursPerDay*r.nHoursPerDay;
+
+	return true;
+}
+
+void ConstraintStudentsMaxActivityTagChangesPerWeek::updateConstraintsForNewDays(Rules& r, const QHash<int, int>& newExistingDaysHash)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(newExistingDaysHash);

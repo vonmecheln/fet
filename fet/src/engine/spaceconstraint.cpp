@@ -12765,7 +12765,7 @@ double ConstraintTeacherMaxRoomChangesPerDay::fitness(
 		}
 	/////////////
 	
-	for(int d2=0; d2<r.nDaysPerWeek; d2++){			
+	for(int d2=0; d2<r.nDaysPerWeek; d2++){
 		int crt_room=-1;
 		int n_changes=0;
 		for(int h2=0; h2<r.nHoursPerDay; h2++){
@@ -12777,10 +12777,10 @@ double ConstraintTeacherMaxRoomChangesPerDay::fitness(
 				}
 			}
 		}
-					
+		
 		if(n_changes>this->maxRoomChangesPerDay){
 			nbroken+=-this->maxRoomChangesPerDay+n_changes;
-	
+		
 			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teacher max room changes per day broken for teacher=%1 on day %2")
 					.arg(this->teacherName)

@@ -1,3 +1,8 @@
+ 7.10.3
+	- Added a new type of constraint: teacher(s)/students (set) max activity tag changes per day/week (suggested by Vangelis
+	Karafillidis and Abdeljalil LAABAD).
+	- Corrected the Arabic translation, by Benahmed Abdelkrim, as suggested by Volker Dirr, who found some errors using ChatGPT.
+	- Corrected the Uzbek translation, by Ulugbek Tulakov, as suggested by Volker Dirr, who found some errors using ChatGPT.
  7.10.2
 	- The qm translation files will no longer be included in the FET sources package (suggested by Michael Towers).
 	- The activities and the subactivities dialogs have new tristate check boxes, "Unique", for teachers/students/activity tags

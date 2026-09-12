@@ -3250,6 +3250,94 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 				break;
 			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				dialogTitle=tr("Constraints teacher max activity tag changes per day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherMaxActivityTagChangesPerDay");
+
+				teachersComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				dialogTitle=tr("Constraints teachers max activity tag changes per day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersMaxActivityTagChangesPerDay");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				dialogTitle=tr("Constraints teacher max activity tag changes per week", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeacherMaxActivityTagChangesPerWeek");
+
+				teachersComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//259
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				dialogTitle=tr("Constraints teachers max activity tag changes per week", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsTeachersMaxActivityTagChangesPerWeek");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//260
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				dialogTitle=tr("Constraints students set max activity tag changes per day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsSetMaxActivityTagChangesPerDay");
+
+				studentsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//261
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				dialogTitle=tr("Constraints students max activity tag changes per day", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsMaxActivityTagChangesPerDay");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//262
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				dialogTitle=tr("Constraints students set max activity tag changes per week", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsSetMaxActivityTagChangesPerWeek");
+
+				studentsComboBox=new QComboBox;
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
+		//263
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				dialogTitle=tr("Constraints students max activity tag changes per week", "The title of the dialog to list the constraints of this type");
+				dialogName=QString("ConstraintsStudentsMaxActivityTagChangesPerWeek");
+
+				helpPushButton=new QPushButton(tr("Help"));
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -3510,6 +3598,10 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 		case CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES:
 			[[fallthrough]];
 		case CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
 			modifyMultiplePushButton=new QPushButton(tr("Modify selected", "It refers to time constraints"));
 			break;
 		
@@ -7444,6 +7536,70 @@ filtered_ok:
 
 				break;
 			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherMaxActivityTagChangesPerDay* ctr=(ConstraintTeacherMaxActivityTagChangesPerDay*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacherName;
+
+				break;
+			}
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				return true;
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				assert(teachersComboBox!=nullptr);
+				ConstraintTeacherMaxActivityTagChangesPerWeek* ctr=(ConstraintTeacherMaxActivityTagChangesPerWeek*)tc;
+				return teachersComboBox->currentText()==QString("") || teachersComboBox->currentText()==ctr->teacherName;
+
+				break;
+			}
+		//259
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				return true;
+
+				break;
+			}
+		//260
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				assert(studentsComboBox!=nullptr);
+				ConstraintStudentsSetMaxActivityTagChangesPerDay* ctr=(ConstraintStudentsSetMaxActivityTagChangesPerDay*)tc;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
+
+				break;
+			}
+		//261
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				return true;
+
+				break;
+			}
+		//262
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				assert(studentsComboBox!=nullptr);
+				ConstraintStudentsSetMaxActivityTagChangesPerWeek* ctr=(ConstraintStudentsSetMaxActivityTagChangesPerWeek*)tc;
+				return studentsComboBox->currentText()==QString("") || showedStudents.contains(ctr->students);
+
+				break;
+			}
+		//263
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				return true;
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -8810,6 +8966,71 @@ void ListTimeConstraints::helpClicked()
 				 " 2 (the index of Tuesday) + 5 (the number of days per week) - 5 (the index of Friday) = 2.");
 
 				s+="\n";
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				QString s=tr("This constraint was suggested by %1 and %2.", "%1 and %2 are the persons who suggested this constraint.")
+				 .arg("Vangelis Karafillidis").arg("Abdeljalil LAABAD");
+				s+="\n\n";
+				s+=tr("The rules for activity tag changes are: if an activity has no tags, it is completely ignored; if we have activity A1"
+				 " (set of tags 1), followed (not necessarily immediately - between them there can be empty periods or other activities without tags)"
+				 " by A2 (set of tags 2), we do not count a tag change if set of tags 1 has at least a common tag with set of tags 2,"
+				 " and we count a tag change if set of tags 1 does not have any common tag with set of tags 2 (assuming, of"
+				 " course, that set of tags 1 and set of tags 2 are not empty).");
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//260
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		//261
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				 .arg("Vangelis Karafillidis");
+				s+="\n\n";
+				s+=tr("The rules for activity tag changes are: if an activity has no tags, it is completely ignored; if we have activity A1"
+				 " (set of tags 1), followed (not necessarily immediately - between them there can be empty periods or other activities without tags)"
+				 " by A2 (set of tags 2), we do not count a tag change if set of tags 1 has at least a common tag with set of tags 2,"
+				 " and we count a tag change if set of tags 1 does not have any common tag with set of tags 2 (assuming, of"
+				 " course, that set of tags 1 and set of tags 2 are not empty).");
+
+				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		//259
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		//262
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		//263
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				QString s=tr("This constraint was suggested by %1.", "%1 is the person who suggested this constraint.")
+				 .arg("Vangelis Karafillidis");
+				s+="\n\n";
+				s+=tr("The rules for activity tag changes are: if an activity has no tags, it is completely ignored; if we have activity A1"
+				 " (set of tags 1), followed (not necessarily immediately - between them there can be empty periods or other activities without tags)"
+				 " by A2 (set of tags 2), we do not count a tag change if set of tags 1 has at least a common tag with set of tags 2,"
+				 " and we count a tag change if set of tags 1 does not have any common tag with set of tags 2 (assuming, of"
+				 " course, that set of tags 1 and set of tags 2 are not empty).");
+				s+="\n\n";
+				s+=tr("The number of activity tag changes per week is computed as the sum of the number of activity tag changes on each day.");
 
 				LongTextMessageBox::largeInformation(dialog, tr("FET help"), s);
 

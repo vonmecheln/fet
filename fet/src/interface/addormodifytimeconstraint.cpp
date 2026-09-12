@@ -8353,6 +8353,178 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				break;
 			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher max activity tag changes per day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherMaxActivityTagChangesPerDay");
+				}
+				else{
+					dialogTitle=tr("Modify teacher max activity tag changes per day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherMaxActivityTagChangesPerDay");
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per day"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
+				spinBox->setValue(1);
+
+				break;
+			}
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers max activity tag changes per day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersMaxActivityTagChangesPerDay");
+				}
+				else{
+					dialogTitle=tr("Modify teachers max activity tag changes per day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersMaxActivityTagChangesPerDay");
+				}
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per day"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
+				spinBox->setValue(1);
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teacher max activity tag changes per week", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeacherMaxActivityTagChangesPerWeek");
+				}
+				else{
+					dialogTitle=tr("Modify teacher max activity tag changes per week", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeacherMaxActivityTagChangesPerWeek");
+				}
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per week"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(3);
+
+				break;
+			}
+		//259
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add teachers max activity tag changes per week", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintTeachersMaxActivityTagChangesPerWeek");
+				}
+				else{
+					dialogTitle=tr("Modify teachers max activity tag changes per week", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintTeachersMaxActivityTagChangesPerWeek");
+				}
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per week"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(3);
+
+				break;
+			}
+		//260
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students set max activity tag changes per day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsSetMaxActivityTagChangesPerDay");
+				}
+				else{
+					dialogTitle=tr("Modify students set max activity tag changes per day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsSetMaxActivityTagChangesPerDay");
+				}
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per day"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
+				spinBox->setValue(1);
+
+				break;
+			}
+		//261
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students max activity tag changes per day", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsMaxActivityTagChangesPerDay");
+				}
+				else{
+					dialogTitle=tr("Modify students max activity tag changes per day", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsMaxActivityTagChangesPerDay");
+				}
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per day"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
+				spinBox->setValue(1);
+
+				break;
+			}
+		//262
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students set max activity tag changes per week", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsSetMaxActivityTagChangesPerWeek");
+				}
+				else{
+					dialogTitle=tr("Modify students set max activity tag changes per week", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsSetMaxActivityTagChangesPerWeek");
+				}
+
+				studentsLabel=new QLabel(tr("Students set"));
+				studentsComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per week"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(3);
+
+				break;
+			}
+		//263
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				if(oldtc==nullptr){
+					dialogTitle=tr("Add students max activity tag changes per week", "The title of the dialog to add a new constraint of this type");
+					dialogName=QString("AddConstraintStudentsMaxActivityTagChangesPerWeek");
+				}
+				else{
+					dialogTitle=tr("Modify students max activity tag changes per week", "The title of the dialog to modify a constraint of this type");
+					dialogName=QString("ModifyConstraintStudentsMaxActivityTagChangesPerWeek");
+				}
+
+				labelForSpinBox=new QLabel(tr("Max changes", "Max activity tag changes per week"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(3);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -9274,6 +9446,14 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 			case CONSTRAINT_TEACHER_OCCUPIES_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
 				[[fallthrough]];
 			case CONSTRAINT_TEACHERS_OCCUPY_MAX_SETS_OF_TIME_SLOTS_FROM_SELECTION:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+				[[fallthrough]];
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
 				addConstraintsPushButton=new QPushButton(tr("Add constraints"));
 				break;
 			case CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS:
@@ -14119,6 +14299,94 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 					break;
 				}
+			//256
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+				{
+					ConstraintTeacherMaxActivityTagChangesPerDay* ctr=(ConstraintTeacherMaxActivityTagChangesPerDay*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//257
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+				{
+					ConstraintTeachersMaxActivityTagChangesPerDay* ctr=(ConstraintTeachersMaxActivityTagChangesPerDay*)oldtc;
+
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//258
+			case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+				{
+					ConstraintTeacherMaxActivityTagChangesPerWeek* ctr=(ConstraintTeacherMaxActivityTagChangesPerWeek*)oldtc;
+
+					teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//259
+			case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+				{
+					ConstraintTeachersMaxActivityTagChangesPerWeek* ctr=(ConstraintTeachersMaxActivityTagChangesPerWeek*)oldtc;
+
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//260
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+				{
+					ConstraintStudentsSetMaxActivityTagChangesPerDay* ctr=(ConstraintStudentsSetMaxActivityTagChangesPerDay*)oldtc;
+
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//261
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+				{
+					ConstraintStudentsMaxActivityTagChangesPerDay* ctr=(ConstraintStudentsMaxActivityTagChangesPerDay*)oldtc;
+
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//262
+			case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+				{
+					ConstraintStudentsSetMaxActivityTagChangesPerWeek* ctr=(ConstraintStudentsSetMaxActivityTagChangesPerWeek*)oldtc;
+
+					int j=studentsComboBox->findText(ctr->students);
+					if(j<0)
+						showWarningForInvisibleSubgroupConstraint(parent, ctr->students);
+					else
+						assert(j>=0);
+					studentsComboBox->setCurrentIndex(j);
+
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
+			//263
+			case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+				{
+					ConstraintStudentsMaxActivityTagChangesPerWeek* ctr=(ConstraintStudentsMaxActivityTagChangesPerWeek*)oldtc;
+
+					spinBox->setValue(ctr->maxChanges);
+
+					break;
+				}
 
 			default:
 				assert(0);
@@ -18495,6 +18763,62 @@ void AddOrModifyTimeConstraint::addConstraintClicked()
 
 				break;
 			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				tc=new ConstraintTeacherMaxActivityTagChangesPerDay(weight, spinBox->value(), teachersComboBox->currentText());
+
+				break;
+			}
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				tc=new ConstraintTeachersMaxActivityTagChangesPerDay(weight, spinBox->value());
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				tc=new ConstraintTeacherMaxActivityTagChangesPerWeek(weight, spinBox->value(), teachersComboBox->currentText());
+
+				break;
+			}
+		//259
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				tc=new ConstraintTeachersMaxActivityTagChangesPerWeek(weight, spinBox->value());
+
+				break;
+			}
+		//260
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				tc=new ConstraintStudentsSetMaxActivityTagChangesPerDay(weight, spinBox->value(), studentsComboBox->currentText());
+
+				break;
+			}
+		//261
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				tc=new ConstraintStudentsMaxActivityTagChangesPerDay(weight, spinBox->value());
+
+				break;
+			}
+		//262
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				tc=new ConstraintStudentsSetMaxActivityTagChangesPerWeek(weight, spinBox->value(), studentsComboBox->currentText());
+
+				break;
+			}
+		//263
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				tc=new ConstraintStudentsMaxActivityTagChangesPerWeek(weight, spinBox->value());
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -19839,6 +20163,40 @@ void AddOrModifyTimeConstraint::addConstraintsClicked()
 
 				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
 					TimeConstraint *ctr=new ConstraintTeacherOccupiesMaxSetsOfTimeSlotsFromSelection(weight, tch->name, spinBox->value(), days, hours);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
+				}
+
+				break;
+			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			[[fallthrough]];
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherMaxActivityTagChangesPerDay(weight, spinBox->value(), tch->name);
+					bool tmp2=gt.rules.addTimeConstraint(ctr);
+					assert(tmp2);
+
+					ctrs+=ctr->getDetailedDescription(gt.rules, true, colorsCheckBox!=nullptr?colorsCheckBox->isChecked():false);
+					ctrs+=QString("<br />\n");
+				}
+
+				break;
+			}
+		//260
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			[[fallthrough]];
+		//261
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+					TimeConstraint *ctr=new ConstraintTeacherMaxActivityTagChangesPerWeek(weight, spinBox->value(), tch->name);
 					bool tmp2=gt.rules.addTimeConstraint(ctr);
 					assert(tmp2);
 
@@ -25253,6 +25611,83 @@ void AddOrModifyTimeConstraint::okClicked()
 				ctr->maxDays=spinBox->value();
 
 				ctr->circular=checkBox->isChecked();
+
+				break;
+			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				ConstraintTeacherMaxActivityTagChangesPerDay* ctr=(ConstraintTeacherMaxActivityTagChangesPerDay*)oldtc;
+
+				ctr->teacherName=teachersComboBox->currentText();
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+		//257
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				ConstraintTeachersMaxActivityTagChangesPerDay* ctr=(ConstraintTeachersMaxActivityTagChangesPerDay*)oldtc;
+
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				ConstraintTeacherMaxActivityTagChangesPerWeek* ctr=(ConstraintTeacherMaxActivityTagChangesPerWeek*)oldtc;
+
+				ctr->teacherName=teachersComboBox->currentText();
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+		//259
+		case CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				ConstraintTeachersMaxActivityTagChangesPerWeek* ctr=(ConstraintTeachersMaxActivityTagChangesPerWeek*)oldtc;
+
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+
+		//260
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				ConstraintStudentsSetMaxActivityTagChangesPerDay* ctr=(ConstraintStudentsSetMaxActivityTagChangesPerDay*)oldtc;
+
+				ctr->students=studentsComboBox->currentText();
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+		//261
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				ConstraintStudentsMaxActivityTagChangesPerDay* ctr=(ConstraintStudentsMaxActivityTagChangesPerDay*)oldtc;
+
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+		//262
+		case CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				ConstraintStudentsSetMaxActivityTagChangesPerWeek* ctr=(ConstraintStudentsSetMaxActivityTagChangesPerWeek*)oldtc;
+
+				ctr->students=studentsComboBox->currentText();
+				ctr->maxChanges=spinBox->value();
+
+				break;
+			}
+		//263
+		case CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				ConstraintStudentsMaxActivityTagChangesPerWeek* ctr=(ConstraintStudentsMaxActivityTagChangesPerWeek*)oldtc;
+
+				ctr->maxChanges=spinBox->value();
 
 				break;
 			}

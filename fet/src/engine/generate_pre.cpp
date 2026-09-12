@@ -621,6 +621,21 @@ Matrix1D<QList<RoomsPairOfMutuallyExclusiveSetsOfTimeSlots_item*>> rpomesotsList
 //bool computeTeachersPairOfMutuallyExclusiveSetsOfTimeSlots(QWidget* parent);
 //END   room pair of mutually exclusive sets of time slots
 
+Matrix1D<double> teachersMaxActivityTagChangesPerDayPercentages;
+Matrix1D<int> teachersMaxActivityTagChangesPerDayMaxChanges;
+//bool computeTeachersMaxActivityTagChangesPerDay(QWidget* parent);
+
+Matrix1D<double> subgroupsMaxActivityTagChangesPerDayPercentages;
+Matrix1D<int> subgroupsMaxActivityTagChangesPerDayMaxChanges;
+//bool computeStudentsMaxActivityTagChangesPerDay(QWidget* parent);
+
+Matrix1D<double> teachersMaxActivityTagChangesPerWeekPercentages;
+Matrix1D<int> teachersMaxActivityTagChangesPerWeekMaxChanges;
+//bool computeTeachersMaxActivityTagChangesPerWeek(QWidget* parent);
+
+Matrix1D<double> subgroupsMaxActivityTagChangesPerWeekPercentages;
+Matrix1D<int> subgroupsMaxActivityTagChangesPerWeekMaxChanges;
+//bool computeStudentsMaxActivityTagChangesPerWeek(QWidget* parent);
 
 ////////BEGIN teacher(s) max hours daily
 Matrix1D<double> teachersMaxHoursDailyPercentages1;
@@ -1768,6 +1783,16 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	spomesotsListForSubgroup.resize(gt.rules.nInternalSubgroups);
 	rpomesotsListForRoom.resize(gt.rules.nInternalRooms);
 	//
+	teachersMaxActivityTagChangesPerDayPercentages.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagChangesPerDayMaxChanges.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagChangesPerWeekPercentages.resize(gt.rules.nInternalTeachers);
+	teachersMaxActivityTagChangesPerWeekMaxChanges.resize(gt.rules.nInternalTeachers);
+
+	subgroupsMaxActivityTagChangesPerDayPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagChangesPerDayMaxChanges.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagChangesPerWeekPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxActivityTagChangesPerWeekMaxChanges.resize(gt.rules.nInternalSubgroups);
+	//
 	teachersMaxHoursDailyPercentages1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyMaxHours1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyPercentages2.resize(gt.rules.nInternalTeachers);
@@ -2567,6 +2592,20 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	thereAreTeachersWithMaxHoursDailyOrPerRealDayWithUnder100Weight=false;
 	//deprecated comment below
 	//after teachers max hours daily, because of initializing with false in mhd of the variable which represents true/false <100.0% constraints of this type.
+
+	t=computeTeachersMaxActivityTagChangesPerDay(parent);
+	if(!t)
+		return false;
+	t=computeTeachersMaxActivityTagChangesPerWeek(parent);
+	if(!t)
+		return false;
+	t=computeStudentsMaxActivityTagChangesPerDay(parent);
+	if(!t)
+		return false;
+	t=computeStudentsMaxActivityTagChangesPerWeek(parent);
+	if(!t)
+		return false;
+
 	t=computeTeachersMaxHoursDaily(parent);
 	if(!t)
 		return false;
@@ -3776,7 +3815,7 @@ bool computeSubgroupsPairOfMutuallyExclusiveTimeSlots(QWidget* parent)
 			
 			if(tc->weightPercentage!=100){
 				ok=false;
-		
+				
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a time constraint students set pair of mutually exclusive time slots"
 				 " with weight under 100%. Please correct and try again"),
@@ -7470,6 +7509,257 @@ bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
 					else{
 						assert(0);
 					}
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeTeachersMaxActivityTagChangesPerDay(QWidget* parent)
+{
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersMaxActivityTagChangesPerDayMaxChanges[i]=-1;
+		teachersMaxActivityTagChangesPerDayPercentages[i]=-1;
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY){
+			ConstraintTeacherMaxActivityTagChangesPerDay* tmd=(ConstraintTeacherMaxActivityTagChangesPerDay*)gt.rules.internalTimeConstraintsList[i];
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint teacher max activity tag changes per day for teacher %1 with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!")
+				 .arg(tmd->teacherName),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			if(teachersMaxActivityTagChangesPerDayMaxChanges[tmd->teacher_ID]==-1 ||
+			 (teachersMaxActivityTagChangesPerDayMaxChanges[tmd->teacher_ID]>=0 && teachersMaxActivityTagChangesPerDayMaxChanges[tmd->teacher_ID]>tmd->maxChanges)){
+				teachersMaxActivityTagChangesPerDayPercentages[tmd->teacher_ID]=tmd->weightPercentage;
+				teachersMaxActivityTagChangesPerDayMaxChanges[tmd->teacher_ID]=tmd->maxChanges;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY){
+			ConstraintTeachersMaxActivityTagChangesPerDay* tmd=(ConstraintTeachersMaxActivityTagChangesPerDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint teachers max activity tag changes per day with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				if(teachersMaxActivityTagChangesPerDayMaxChanges[tch]==-1 ||
+				 (teachersMaxActivityTagChangesPerDayMaxChanges[tch]>=0 && teachersMaxActivityTagChangesPerDayMaxChanges[tch]>tmd->maxChanges)){
+					teachersMaxActivityTagChangesPerDayPercentages[tch]=tmd->weightPercentage;
+					teachersMaxActivityTagChangesPerDayMaxChanges[tch]=tmd->maxChanges;
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeTeachersMaxActivityTagChangesPerWeek(QWidget* parent)
+{
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersMaxActivityTagChangesPerWeekMaxChanges[i]=-1;
+		teachersMaxActivityTagChangesPerWeekPercentages[i]=-1;
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK){
+			ConstraintTeacherMaxActivityTagChangesPerWeek* tmd=(ConstraintTeacherMaxActivityTagChangesPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint teacher max activity tag changes per week for teacher %1 with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!")
+				 .arg(tmd->teacherName),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			if(teachersMaxActivityTagChangesPerWeekMaxChanges[tmd->teacher_ID]==-1 ||
+			 (teachersMaxActivityTagChangesPerWeekMaxChanges[tmd->teacher_ID]>=0 && teachersMaxActivityTagChangesPerWeekMaxChanges[tmd->teacher_ID]>tmd->maxChanges)){
+				teachersMaxActivityTagChangesPerWeekPercentages[tmd->teacher_ID]=tmd->weightPercentage;
+				teachersMaxActivityTagChangesPerWeekMaxChanges[tmd->teacher_ID]=tmd->maxChanges;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK){
+			ConstraintTeachersMaxActivityTagChangesPerWeek* tmd=(ConstraintTeachersMaxActivityTagChangesPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint teachers max activity tag changes per week with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				if(teachersMaxActivityTagChangesPerWeekMaxChanges[tch]==-1 ||
+				 (teachersMaxActivityTagChangesPerWeekMaxChanges[tch]>=0 && teachersMaxActivityTagChangesPerWeekMaxChanges[tch]>tmd->maxChanges)){
+					teachersMaxActivityTagChangesPerWeekPercentages[tch]=tmd->weightPercentage;
+					teachersMaxActivityTagChangesPerWeekMaxChanges[tch]=tmd->maxChanges;
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeStudentsMaxActivityTagChangesPerDay(QWidget* parent)
+{
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsMaxActivityTagChangesPerDayMaxChanges[i]=-1;
+		subgroupsMaxActivityTagChangesPerDayPercentages[i]=-1;
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_DAY){
+			ConstraintStudentsSetMaxActivityTagChangesPerDay* tmd=(ConstraintStudentsSetMaxActivityTagChangesPerDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint students set max activity tag changes per day for students set %1 with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!")
+				 .arg(tmd->students),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg : std::as_const(tmd->iSubgroupsList)){
+				if(subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]==-1 ||
+				 (subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]>=0 && subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]>tmd->maxChanges)){
+					subgroupsMaxActivityTagChangesPerDayPercentages[sbg]=tmd->weightPercentage;
+					subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]=tmd->maxChanges;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_DAY){
+			ConstraintStudentsMaxActivityTagChangesPerDay* tmd=(ConstraintStudentsMaxActivityTagChangesPerDay*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint students max activity tag changes per day with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				if(subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]==-1 ||
+				 (subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]>=0 && subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]>tmd->maxChanges)){
+					subgroupsMaxActivityTagChangesPerDayPercentages[sbg]=tmd->weightPercentage;
+					subgroupsMaxActivityTagChangesPerDayMaxChanges[sbg]=tmd->maxChanges;
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeStudentsMaxActivityTagChangesPerWeek(QWidget* parent)
+{
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsMaxActivityTagChangesPerWeekMaxChanges[i]=-1;
+		subgroupsMaxActivityTagChangesPerWeekPercentages[i]=-1;
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK){
+			ConstraintStudentsSetMaxActivityTagChangesPerWeek* tmd=(ConstraintStudentsSetMaxActivityTagChangesPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint students set max activity tag changes per week for students set %1 with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!")
+				 .arg(tmd->students),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg : std::as_const(tmd->iSubgroupsList)){
+				if(subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]==-1 ||
+				 (subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]>=0 && subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]>tmd->maxChanges)){
+					subgroupsMaxActivityTagChangesPerWeekPercentages[sbg]=tmd->weightPercentage;
+					subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]=tmd->maxChanges;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK){
+			ConstraintStudentsMaxActivityTagChangesPerWeek* tmd=(ConstraintStudentsMaxActivityTagChangesPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tmd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint students max activity tag changes per week with"
+				 " weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				if(subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]==-1 ||
+				 (subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]>=0 && subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]>tmd->maxChanges)){
+					subgroupsMaxActivityTagChangesPerWeekPercentages[sbg]=tmd->weightPercentage;
+					subgroupsMaxActivityTagChangesPerWeekMaxChanges[sbg]=tmd->maxChanges;
 				}
 			}
 		}
@@ -24050,6 +24340,8 @@ void computeMustComputeTimetableSubgroups()
 			if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0 ||
 			  subgroupsMaxGapsPerDayPercentage[sbg]>=0 ||
 			  subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
+			  subgroupsMaxActivityTagChangesPerDayPercentages[sbg]>=0 ||
+			  subgroupsMaxActivityTagChangesPerWeekPercentages[sbg]>=0 ||
 			  subgroupsMaxHoursDailyPercentages1[sbg]>=0 ||
 			  subgroupsMaxHoursDailyPercentages2[sbg]>=0 ||
 			  subgroupsMaxHoursDailyInIntervalPercentages[sbg].count()>0 ||
@@ -24137,6 +24429,8 @@ void computeMustComputeTimetableTeachers()
 		for(int tch : std::as_const(act->iTeachersList))
 			if(teachersMaxGapsPerWeekPercentage[tch]>=0 ||
 			  teachersMaxGapsPerDayPercentage[tch]>=0 ||
+			  teachersMaxActivityTagChangesPerDayPercentages[tch]>=0 ||
+			  teachersMaxActivityTagChangesPerWeekPercentages[tch]>=0 ||
 			  teachersMaxHoursDailyPercentages1[tch]>=0 ||
 			  teachersMaxHoursDailyPercentages2[tch]>=0 ||
 			  teachersMaxHoursDailyInIntervalPercentages[tch].count()>0 ||

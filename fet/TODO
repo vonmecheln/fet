@@ -10013,26 +10013,7 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=6185.0
 Inserire la distribuzione per materia. In modo tale che gli insegnanti possono entrare in quella classe con quella materia 1 volta 2 volte fino
 a n volte. In modo tale che distribuisce per una materia o tutte ogni giorno una volta solo o più di una.
 
-644--------------------------------------------------------
-From Vangelis Karafillidis:
-
-max campus changes per day/week.
-for Greece.. this problem occurs only for teachers.
-the real problem is the changes per day.
-the other problem is not so significant (per week).
-
-After a Facebook discussion between Vangelis Karafillidis and Liviu Lalescu, we arrived at this conclusion:
-
-Teacher(s)/students (set) max activity tag changes per day/week... this can solve the problem in a much simpler way.
-
-Unfortunately, an activity can have more tags, so we might also need to add a set of tags to be checked.
-
-Vangelis Karafillidis:
-
-so... max activity tags pair switches per day/week
-input = a pair of activity tags
-number of switches
-so the user could select which activity tags the constraint is going to be applied on
+644---------DONE in FET-7.10.3, on 30 August 2026----------
 
 645--------------------------------------------------------
 From vietphamvan0705 (on forum):
@@ -14007,3 +13988,87 @@ I was wondering if there's any way to export a really clean .fet file.
 I know that you can export a selection of days, and can remove redundant constraints.
 I also know that TiTiTo can do a clean export, but that file still includes unused teachers, student groups and rooms.
 Ideally I'd like to export a .fet file that only includes active activities, assigned teachers, assigned students / groups, and assigned rooms.
+
+884--------------------------------------------------------
+From Michael Towers:
+
+Improve the icons. The background should not be transparent, to look good also in dark colors schemes. Michael Towers submitted some modified icons,
+but we are still not completely satisfied with them.
+
+885--------------------------------------------------------
+From abuayham2016 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6926.0
+
+CSS Suggestion : add option to custom and edit default CSS with level to enhance printing HTML files in output folder.
+
+886--------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6929.0
+
+Would it be possible to improve the "Add activity tag" feature for the activities selected in the Activities dialog?
+
+Currently, the user can add only one activity tag at a time, then has to change the tag and repeat the operation.
+
+Could the current drop-down list be replaced with a multi-selection list, allowing the user to select several tags at once and then add or remove
+them from the selected activities in a single operation?
+
+This would make tag management much faster and more convenient, especially when working with a large number of activities.
+
+Liviu Lalescu:
+
+I don't like the idea. My opinion is that it is overkill. Why should you add/remove multiple tags to the same set of activities? I will only add
+this suggestion in the TODO. Feel free to explain the necessity of this feature and I'll reconsider my opinion.
+
+YOUSSEF HOUIET:
+
+In some cases, we need to add or remove two tags at the same time to srt of activities. The purpose of this suggestion is simply to avoid having
+to repeat the operation multiple times.
+
+887--------------------------------------------------------
+From Gueffaz Reda (on Facebook):
+
+He sent Liviu Lalescu a modified screenshot, showing the generate single timetable dialog, with the text: "Save two text files after generation
+or interrupt", and selected the sections: "1) Without stopping the generation, view initial order of placing the activities" and "2) Without stopping
+the generation, view difficult activities".
+
+888--------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6931.msg38789#msg38789
+
+Would it be possible to add a checkbox to make activities with the same tag consecutive when they are scheduled on the same day, so that they are
+placed back-to-back?
+
+This would help ensure that activities sharing the same tag are grouped together when they occur on the same day.
+
+(YOUSSEF HOUIET refers to the new constraint, introduced on 30 August 2026, in FET-7.10.3, teacher(s)/students (set) max activity tag changes per day/week.)
+
+889--------------------------------------------------------
+From Ahmed Messaoudi (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6934.0
+
+New possible constraint (ConstraintTeacherMinActivitiesDaily)
+
+I would like to propose a new possible constraint named:[ConstraintTeacherMinActivitiesDaily] (and "DailyRealDays"  for "Mornings_Afternoons" mode),
+with option "Allow_Empty_Days".
+
+This constraint would allow assigning minimum number of activities to a teacher in a day.
+It work like contraint [ConstraintTeacherMinHoursDaily], However the constraint [ConstraintTeacherMinHoursDaily] allows a teacher to have a minimum number
+of hours per day, but sometimes we want the teacher to have a minimum number of activities per day.
+For example: a minimum of two activities, which implies a change of work , as required in our case: Each trainee teacher must teach a minimum of two groups
+of students per day.
+
+Of course, considering the total number of activities for this teacher and the number of days per week, we must add the "Allow_Empty_Days" option.
+
+What prompted me to propose this suggestion is that I noticed there are few constraints of type (Min) compared to constraints of type (Max).
+
+For example, if there were a constraint of type (min of Tags per day), I would have the possibility of marking each activity with a tag and using this technique.
+
+Finally, we can generalize this suggestion :
+*) "ConstraintTeacherMinActivitiesDaily" || (DailyRealDays).
+*) "ConstraintTeachersMinActivitiesDaily" || (DailyRealDays) (all teachers).
+*) "ConstraintStudentsSetMinActivitiesDaily" || (DailyRealDays).
+*) "ConstraintStudentsMinActivitiesDaily" || (DailyRealDays) (all students).

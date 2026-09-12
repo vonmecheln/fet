@@ -522,6 +522,40 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 
 				break;
 			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				dialogTitle=tr("Modify multiple teacher max activity tag changes per day", "The title of the dialog to modify multiple constraints of this type at once");
+				dialogName=QString("ModifyConstraintsTeacherMaxActivityTagChangesPerDay");
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max changes"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nHoursPerDay);
+				spinBox->setValue(1);
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				dialogTitle=tr("Modify multiple teacher max activity tag changes per week", "The title of the dialog to modify multiple constraints of this type at once");
+				dialogName=QString("ModifyConstraintsTeacherMaxActivityTagChangesPerWeek");
+
+				teacherLabel=new QLabel(tr("Teacher"));
+				teachersComboBox=new QComboBox;
+
+				labelForSpinBox=new QLabel(tr("Max changes"));
+				spinBox=new QSpinBox;
+				spinBox->setMinimum(0);
+				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+				spinBox->setValue(3);
+
+				break;
+			}
 
 		default:
 			assert(0);
@@ -867,6 +901,26 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 
 				spinBox->setValue(ctr->minHoursPerAfternoon);
 				checkBox->setChecked(ctr->allowEmptyAfternoons);
+
+				break;
+			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				ConstraintTeacherMaxActivityTagChangesPerDay* ctr=(ConstraintTeacherMaxActivityTagChangesPerDay*)oldtc;
+
+				teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+				spinBox->setValue(ctr->maxChanges);
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				ConstraintTeacherMaxActivityTagChangesPerWeek* ctr=(ConstraintTeacherMaxActivityTagChangesPerWeek*)oldtc;
+
+				teachersComboBox->setCurrentIndex(teachersComboBox->findText(ctr->teacherName));
+				spinBox->setValue(ctr->maxChanges);
 
 				break;
 			}
@@ -1385,6 +1439,42 @@ void ModifyTimeConstraints::okClicked()
 
 					ctr->minHoursPerAfternoon=spinBox->value();
 					//ctr->allowEmptyAfternoons=checkBox->isChecked();
+				}
+
+				break;
+			}
+		//256
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_DAY:
+			{
+				performedOperation+=tr("Changed the maximum number of activity tag changes per day to %1 in these %2 time constraints:\n%3",
+						"%2 is the number of modified time constraints and %3 is their description.")
+						.arg(spinBox->value())
+						.arg(tcl.count())
+						.arg(oldConstraints);
+
+				for(TimeConstraint* oldtc : std::as_const(tcl)){
+					ConstraintTeacherMaxActivityTagChangesPerDay* ctr=(ConstraintTeacherMaxActivityTagChangesPerDay*)oldtc;
+
+					//ctr->teacherName=teachersComboBox->currentText();
+					ctr->maxChanges=spinBox->value();
+				}
+
+				break;
+			}
+		//258
+		case CONSTRAINT_TEACHER_MAX_ACTIVITY_TAG_CHANGES_PER_WEEK:
+			{
+				performedOperation+=tr("Changed the maximum number of activity tag changes per week to %1 in these %2 time constraints:\n%3",
+						"%2 is the number of modified time constraints and %3 is their description.")
+						.arg(spinBox->value())
+						.arg(tcl.count())
+						.arg(oldConstraints);
+
+				for(TimeConstraint* oldtc : std::as_const(tcl)){
+					ConstraintTeacherMaxActivityTagChangesPerWeek* ctr=(ConstraintTeacherMaxActivityTagChangesPerWeek*)oldtc;
+
+					//ctr->teacherName=teachersComboBox->currentText();
+					ctr->maxChanges=spinBox->value();
 				}
 
 				break;
