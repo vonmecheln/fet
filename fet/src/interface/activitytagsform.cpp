@@ -129,7 +129,7 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 		//	moveActivityTagDownPushButton->setToolTip(QString("J"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -476,7 +476,7 @@ void ActivityTagsForm::comments()
 	const QString settingsName=QString("ActivityTagCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();
@@ -538,7 +538,7 @@ void ActivityTagsForm::longName()
 	const QString settingsName=QString("ActivityTagLongNameDialog");
 	
 	getLongNameDialog.resize(300, 200);
-	centerWidgetOnScreen(&getLongNameDialog);
+	centerWidgetOnScreenAndOtherThings(&getLongNameDialog);
 	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
 	
 	int t=getLongNameDialog.exec();
@@ -600,7 +600,7 @@ void ActivityTagsForm::code()
 	const QString settingsName=QString("ActivityTagCodeDialog");
 	
 	getCodeDialog.resize(300, 200);
-	centerWidgetOnScreen(&getCodeDialog);
+	centerWidgetOnScreenAndOtherThings(&getCodeDialog);
 	restoreFETDialogGeometry(&getCodeDialog, settingsName);
 	
 	int t=getCodeDialog.exec();

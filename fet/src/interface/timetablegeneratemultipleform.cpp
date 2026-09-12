@@ -355,7 +355,7 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::help);
 	connect(seeInitialOrderPushButton, &QPushButton::clicked, this, &TimetableGenerateMultipleForm::seeInitialOrder);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	generation_running_multi=false;
@@ -1750,7 +1750,7 @@ void TimetableGenerateMultipleForm::seeInitialOrder()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsNameMultiple);
 
 	setParentAndOtherThings(&dialog, this);

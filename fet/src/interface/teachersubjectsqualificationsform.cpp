@@ -46,7 +46,7 @@ TeacherSubjectsQualificationsForm::TeacherSubjectsQualificationsForm(QWidget* pa
 	connect(clearPushButton, &QPushButton::clicked, this, &TeacherSubjectsQualificationsForm::clear);
 	connect(addAllSubjectsPushButton, &QPushButton::clicked, this, &TeacherSubjectsQualificationsForm::addAllSubjects);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QSet<QString> allSubjects;

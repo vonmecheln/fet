@@ -38,7 +38,7 @@ File exportcl.cpp
 #include <QMap>
 
 class QWidget;
-void centerWidgetOnScreen(QWidget* widget);
+void centerWidgetOnScreenAndOtherThings(QWidget* widget);
 
 #include "timetable_defs.h"		//needed, because of QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 #include "exportcl.h"

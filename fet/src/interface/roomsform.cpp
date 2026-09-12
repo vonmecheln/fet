@@ -115,7 +115,7 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 		//	moveRoomDownPushButton->setToolTip(QString("J"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -432,7 +432,7 @@ void RoomsForm::comments()
 	const QString settingsName=QString("RoomCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();
@@ -635,7 +635,7 @@ void RoomsForm::longName()
 	const QString settingsName=QString("RoomLongNameDialog");
 	
 	getLongNameDialog.resize(300, 200);
-	centerWidgetOnScreen(&getLongNameDialog);
+	centerWidgetOnScreenAndOtherThings(&getLongNameDialog);
 	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
 	
 	int t=getLongNameDialog.exec();
@@ -697,7 +697,7 @@ void RoomsForm::code()
 	const QString settingsName=QString("RoomCodeDialog");
 	
 	getCodeDialog.resize(300, 200);
-	centerWidgetOnScreen(&getCodeDialog);
+	centerWidgetOnScreenAndOtherThings(&getCodeDialog);
 	restoreFETDialogGeometry(&getCodeDialog, settingsName);
 	
 	int t=getCodeDialog.exec();

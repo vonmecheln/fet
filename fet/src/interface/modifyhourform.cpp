@@ -22,7 +22,7 @@ ModifyHourForm::ModifyHourForm(QWidget* parent, const QString& name, const QStri
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	nameLineEdit->setText(name);

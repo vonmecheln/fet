@@ -33,7 +33,7 @@ SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm(QWidget* parent):
 	connect(okPushButton, &QPushButton::clicked, this, &SettingsTimetableHtmlLevelForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &SettingsTimetableHtmlLevelForm::cancel);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	if(TIMETABLE_HTML_LEVEL==0)

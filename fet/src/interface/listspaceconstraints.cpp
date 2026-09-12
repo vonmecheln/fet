@@ -89,7 +89,7 @@ ListSpaceConstraintsDialog::ListSpaceConstraintsDialog(QWidget* parent, const QS
 
 	splitter=_splitter;
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, dialogName);
 }
 
@@ -1274,7 +1274,7 @@ ListSpaceConstraints::ListSpaceConstraints(QWidget* parent, int _type)
 
 	//dialog->setWindowTitle(dialogTitle);
 
-	//centerWidgetOnScreen(dialog);
+	//centerWidgetOnScreenAndOtherThings(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
 
 	constraintsListWidget=new QListWidget;
@@ -3381,7 +3381,7 @@ void ListSpaceConstraints::constraintComments()
 	const QString settingsName=QString("SpaceConstraintCommentsDialog");
 
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 
 	int t=getCommentsDialog.exec();

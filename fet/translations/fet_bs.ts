@@ -6703,11 +6703,6 @@ Napomena: učenički set nije dostupan i pauze se ne računaju kao praznine.</tr
         <translation type="unfinished">Izmjena aktivnosti koje zauzimaju maksimalan broj vremenskih intervala iz odabranog programa</translation>
     </message>
     <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="2617"/>
-        <source>Max occupied</source>
-        <translation type="unfinished">Max. zauzeto</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="2631"/>
         <source>Add activities max simultaneous in selected time slots</source>
         <comment>The title of the dialog to add a new constraint of this type</comment>
@@ -7058,11 +7053,6 @@ Napomena: učenički set nije dostupan i pauze se ne računaju kao praznine.</tr
         <source>Modify activities occupy min time slots from selection</source>
         <comment>The title of the dialog to modify a constraint of this type</comment>
         <translation type="unfinished">Izmjena aktivnosti koje zauzimaju min. vremenskih intervala od odabranog</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="3183"/>
-        <source>Min occupied</source>
-        <translation type="unfinished">Min. zauzeto</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="3197"/>
@@ -10404,6 +10394,18 @@ Note: teacher unavailability and breaks are not counted as gaps.</source>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. First, set a relatively large value for max gaps per real day and lower it as you find new timetables.
 Note: teacher unavailability and breaks are not counted as gaps.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="2617"/>
+        <source>Max occupied</source>
+        <comment>It refers to time slots, in a constraint of type &apos;activities occupy max time slots from selection&apos;.</comment>
+        <translation type="unfinished">Max. zauzeto</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addormodifytimeconstraint.cpp" line="3183"/>
+        <source>Min occupied</source>
+        <comment>It refers to time slots, in a constraint of type &apos;activities occupy min time slots from selection&apos;.</comment>
+        <translation type="unfinished">Min. zauzeto</translation>
     </message>
     <message>
         <location filename="../src/interface/addormodifytimeconstraint.cpp" line="6027"/>
@@ -54356,438 +54358,437 @@ Imati podgrupu s premalo radnih sati sedmično znači da ste pogrešno unijeli a
         <location filename="../src/engine/generate_pre.cpp" line="6951"/>
         <location filename="../src/engine/generate_pre.cpp" line="6988"/>
         <location filename="../src/engine/generate_pre.cpp" line="7007"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7044"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7069"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7107"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7142"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7158"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7193"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7211"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7295"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7313"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7496"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7535"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7558"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7620"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7723"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7748"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7832"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7898"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7977"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8038"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8241"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8307"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8391"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8455"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8486"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8502"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8628"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8859"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8941"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8959"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9044"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9126"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9271"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9353"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9408"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9580"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9627"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9682"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9720"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9745"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9776"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9816"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9833"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9859"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9875"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9910"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9927"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9944"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9967"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9983"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9999"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10030"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10047"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10064"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10091"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10107"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10123"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10156"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10174"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10242"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10259"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10285"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10301"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10328"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10346"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10382"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10400"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10483"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10609"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10653"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10703"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10735"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10751"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10777"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10792"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10819"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10839"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10938"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11016"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11030"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11066"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11142"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11156"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11194"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11207"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11272"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11288"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11314"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11329"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11356"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11372"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11398"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11441"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11483"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11505"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11778"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11805"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11820"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11847"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11890"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11905"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11933"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11953"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11998"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12018"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12040"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12064"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12087"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12141"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12163"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12198"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12220"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12257"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12271"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12299"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12312"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12356"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12370"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12400"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12565"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12818"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12843"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12862"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12881"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12900"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12919"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12938"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12968"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12989"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13013"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13167"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13254"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13272"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13342"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13439"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13457"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13516"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13532"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13561"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13591"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13642"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13671"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13701"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13736"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13752"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13781"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13811"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13888"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13907"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13925"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14050"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14067"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14121"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14144"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14165"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14189"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14288"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14326"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14445"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14496"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14517"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14592"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14647"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14729"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14755"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14809"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14847"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14915"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14953"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15021"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15059"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15126"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15152"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15207"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15231"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15285"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15433"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15449"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15505"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15577"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15813"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15859"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15902"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15951"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15979"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16237"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16308"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16372"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16435"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16497"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16518"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16581"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16649"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16706"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16866"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17628"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17655"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17698"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17823"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17855"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17959"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17991"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18092"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18134"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18293"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18325"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18448"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18501"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18717"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18771"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18866"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18880"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18953"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18972"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19045"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19144"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19195"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19247"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19304"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19353"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19409"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19430"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19487"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19537"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19617"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19682"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19737"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19782"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19796"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19812"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19902"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19949"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19974"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20021"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20061"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20178"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20224"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20249"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20296"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20386"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20452"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20499"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20524"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20611"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20728"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20774"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20799"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20846"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20886"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21002"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21074"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21121"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21161"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21212"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21278"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21324"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21349"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21396"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21436"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21486"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21552"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21595"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21859"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21897"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21932"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22206"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22222"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22245"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22267"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22287"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22522"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22543"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22580"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22614"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22649"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22673"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22714"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22750"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22803"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22839"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22892"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22928"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23017"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23068"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23092"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23131"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23155"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23194"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23216"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23257"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23291"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23344"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23431"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23518"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23552"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23603"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23625"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23725"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23749"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23812"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23875"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23914"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23997"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24036"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24058"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24097"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24119"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24158"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24182"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24221"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24243"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24282"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24306"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24633"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24661"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24718"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24745"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24773"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24801"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24830"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24965"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24993"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25019"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25046"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25072"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25099"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25127"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25151"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25168"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25192"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25209"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25233"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25357"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25370"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25393"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25406"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25437"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25473"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25493"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25556"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25680"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25704"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="26284"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7043"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7141"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7192"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7210"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7294"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7683"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7747"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7831"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7976"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8037"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8240"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8306"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8390"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8674"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8905"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8940"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9043"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9179"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9270"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9497"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9650"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9719"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9832"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9926"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9943"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9966"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10029"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10090"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10155"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10241"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10258"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10284"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10327"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10345"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10381"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10439"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10524"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10540"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10581"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10608"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10652"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10702"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10776"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10818"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10838"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10883"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10983"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11015"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11029"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11065"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11078"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11141"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11155"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11193"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11206"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11287"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11313"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11371"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11440"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11460"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11524"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11570"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11761"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11777"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11804"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11819"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11904"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11932"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11952"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11997"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12017"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12039"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12086"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12140"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12162"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12197"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12219"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12256"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12270"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12369"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12564"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12918"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12988"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13012"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13085"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13166"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13253"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13341"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13515"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13531"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13641"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13700"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13735"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13810"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13906"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13924"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14049"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14066"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14120"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14188"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14287"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14325"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14393"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14516"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14591"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14646"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14674"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14728"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14914"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14952"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15020"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15058"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15206"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15284"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15308"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15432"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15448"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15576"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15812"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15901"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15950"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15978"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16236"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16307"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16371"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16434"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16496"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16580"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16865"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17654"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17822"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17854"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18133"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18156"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18324"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18588"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18716"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18770"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18865"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18879"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18952"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18971"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19246"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19303"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19335"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19429"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19486"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19536"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19554"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19795"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19811"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19901"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19948"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19973"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20020"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20060"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20111"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20177"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20223"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20248"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20335"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20385"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20451"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20570"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20727"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20845"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20885"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20935"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21001"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21073"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21120"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21211"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21277"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21348"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21435"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21551"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21635"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21896"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21931"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22205"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22221"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22244"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22266"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22286"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22499"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22521"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22542"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22613"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22672"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22713"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22749"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22838"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22891"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23016"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23067"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23193"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23256"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23343"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23377"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23430"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23551"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23602"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23624"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23724"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23748"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23787"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23811"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23913"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23935"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23996"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24035"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24057"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24096"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24181"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24220"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24242"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24281"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24305"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24632"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24660"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24717"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24800"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24964"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24992"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25018"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25098"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25126"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25150"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25167"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25191"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25208"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25264"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25439"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25475"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25558"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25662"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25706"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25812"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26286"/>
         <location filename="../src/interface/fet.cpp" line="139"/>
         <location filename="../src/cl/fetcl.cpp" line="120"/>
         <source>FET warning</source>
@@ -54891,433 +54892,432 @@ Imati podgrupu s premalo radnih sati sedmično znači da ste pogrešno unijeli a
         <location filename="../src/engine/generate_pre.cpp" line="6955"/>
         <location filename="../src/engine/generate_pre.cpp" line="6992"/>
         <location filename="../src/engine/generate_pre.cpp" line="7013"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7034"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7050"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7073"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7146"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7215"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7299"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7317"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7417"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7459"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7502"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7539"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7561"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7623"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7663"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7687"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7751"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7843"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7909"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8039"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8101"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8167"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8252"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8392"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8505"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8678"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8942"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8960"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9056"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9283"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9365"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9510"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9592"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9654"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9748"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9783"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9839"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9880"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9915"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9933"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9948"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9971"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9988"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10006"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10053"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10068"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10095"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10130"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10164"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10247"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10265"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10289"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10306"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10352"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10386"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10404"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10446"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10529"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10587"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10616"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10637"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10704"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10739"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10757"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10780"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10797"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10826"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10847"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10891"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10985"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11036"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11069"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11084"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11146"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11212"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11276"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11317"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11334"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11448"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11469"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11512"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11578"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11766"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11784"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11825"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11869"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11893"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11910"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11940"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11961"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11983"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12005"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12048"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12094"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12145"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12202"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12223"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12278"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12302"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12377"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12403"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12419"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12548"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12825"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12889"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12908"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12927"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12946"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12974"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12997"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13021"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13087"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13173"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13193"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13260"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13280"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13348"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13368"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13445"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13519"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13568"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13598"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13646"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13678"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13739"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13756"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13818"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13873"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13892"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13910"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13929"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14053"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14128"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14150"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14173"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14293"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14329"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14422"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14453"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14501"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14520"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14572"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14595"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14678"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14734"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14758"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14814"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14850"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14920"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14956"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15131"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15155"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15211"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15234"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15289"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15312"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15439"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15455"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15513"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15695"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15956"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16240"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16438"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16501"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16584"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16709"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16871"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17656"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17722"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17960"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17992"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18093"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18135"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18158"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18330"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18364"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18452"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18632"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18685"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18722"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18775"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18812"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18958"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19148"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19199"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19251"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19308"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19337"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19354"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19417"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19438"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19741"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19786"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19802"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19819"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19864"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19954"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20065"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20116"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20182"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20229"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20253"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20301"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20340"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20390"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20504"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20615"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20732"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20779"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20803"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20890"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20940"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21006"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21054"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21078"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21126"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21165"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21216"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21282"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21329"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21353"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21490"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21556"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21828"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21901"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22210"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22226"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22250"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22272"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22291"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22504"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22526"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22584"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22619"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22676"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22717"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22753"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22842"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22895"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23095"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23134"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23158"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23260"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23347"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23381"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23434"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23468"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23606"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23628"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23728"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23752"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23791"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23815"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23854"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23878"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24000"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24039"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24061"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24122"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24161"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24224"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24246"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24285"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24634"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24690"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24719"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24774"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24802"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24831"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24966"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24994"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25047"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25073"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25128"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25152"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25169"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25193"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25210"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25234"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25263"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25373"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25396"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25409"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25476"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25496"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25559"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25574"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25668"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25811"/>
-        <location filename="../src/engine/generate_pre.cpp" line="26285"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7033"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7049"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7114"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7161"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7316"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7458"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7538"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7600"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7662"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7686"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7908"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8038"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8100"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8166"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8391"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8941"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9055"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9137"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9282"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9364"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9509"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9591"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9630"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9653"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9723"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9747"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9782"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9838"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9879"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9914"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9932"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9970"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9987"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10005"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10034"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10052"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10067"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10111"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10129"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10246"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10264"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10305"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10335"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10351"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10385"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10403"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10445"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10528"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10569"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10586"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10615"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10636"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10659"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10738"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10779"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10796"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10825"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10890"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10984"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11035"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11083"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11161"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11211"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11275"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11316"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11333"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11377"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11468"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11490"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11532"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11554"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11577"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11600"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11765"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11807"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11868"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11892"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11939"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12004"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12047"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12093"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12144"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12201"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12277"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12301"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12402"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12666"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12888"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12907"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12926"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12973"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12996"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13020"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13086"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13107"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13192"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13279"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13347"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13367"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13518"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13597"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13645"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13707"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13738"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13755"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13787"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13872"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13891"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13928"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14052"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14149"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14733"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14757"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14849"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14919"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15061"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15210"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15233"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15512"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15582"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15983"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16239"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16374"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16520"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16708"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16870"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17655"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17991"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18134"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18363"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18451"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18505"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18539"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18774"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18811"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18883"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18957"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19147"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19250"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19307"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19336"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19353"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19490"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19540"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19620"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19740"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19785"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19818"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19863"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19905"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19953"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20064"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20115"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20181"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20228"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20339"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20389"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20503"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20575"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20614"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20731"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20778"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20939"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21005"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21281"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21439"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21489"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21555"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21827"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21900"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21935"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22249"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22503"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22525"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22675"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22716"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22752"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22841"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22894"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22983"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23133"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23218"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23346"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23380"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23520"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23554"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23666"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23727"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23790"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23814"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23853"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23877"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23999"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24038"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24060"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24121"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24223"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24284"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24308"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24830"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25168"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25192"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25233"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25265"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25362"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25375"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25411"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25442"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25478"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25561"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25576"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25710"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26287"/>
         <source>Skip rest</source>
         <translation type="unfinished">Preskoči odmor</translation>
     </message>
@@ -55409,433 +55409,432 @@ Imati podgrupu s premalo radnih sati sedmično znači da ste pogrešno unijeli a
         <location filename="../src/engine/generate_pre.cpp" line="6955"/>
         <location filename="../src/engine/generate_pre.cpp" line="6992"/>
         <location filename="../src/engine/generate_pre.cpp" line="7013"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7034"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7050"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7073"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7146"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7215"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7299"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7317"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7417"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7459"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7502"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7539"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7561"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7623"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7663"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7687"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7751"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7843"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7909"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8039"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8101"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8167"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8252"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8392"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8505"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8678"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8942"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8960"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9056"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9283"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9365"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9510"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9592"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9654"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9748"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9783"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9839"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9880"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9915"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9933"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9948"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9971"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9988"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10006"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10053"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10068"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10095"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10130"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10164"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10247"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10265"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10289"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10306"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10352"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10386"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10404"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10446"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10529"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10587"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10616"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10637"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10704"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10739"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10757"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10780"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10797"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10826"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10847"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10891"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10985"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11036"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11069"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11084"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11146"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11212"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11276"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11317"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11334"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11448"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11469"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11512"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11578"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11766"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11784"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11825"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11869"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11893"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11910"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11940"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11961"/>
-        <location filename="../src/engine/generate_pre.cpp" line="11983"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12005"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12048"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12094"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12145"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12202"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12223"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12278"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12302"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12377"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12403"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12419"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12548"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12825"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12889"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12908"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12927"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12946"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12974"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12997"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13021"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13087"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13173"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13193"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13260"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13280"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13348"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13368"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13445"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13519"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13568"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13598"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13646"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13678"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13739"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13756"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13818"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13873"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13892"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13910"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13929"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14053"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14128"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14150"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14173"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14293"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14329"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14422"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14453"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14501"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14520"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14572"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14595"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14678"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14734"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14758"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14814"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14850"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14920"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14956"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15131"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15155"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15211"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15234"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15289"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15312"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15439"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15455"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15513"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15695"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15956"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16240"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16438"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16501"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16584"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16709"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16871"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17656"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17722"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17960"/>
-        <location filename="../src/engine/generate_pre.cpp" line="17992"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18093"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18135"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18158"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18330"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18364"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18452"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18632"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18685"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18722"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18775"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18812"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18870"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18958"/>
-        <location filename="../src/engine/generate_pre.cpp" line="18978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19148"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19199"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19251"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19308"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19337"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19354"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19417"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19438"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19741"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19786"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19802"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19819"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19864"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19954"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20065"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20116"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20182"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20229"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20253"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20301"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20340"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20390"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20504"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20615"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20732"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20779"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20803"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20890"/>
-        <location filename="../src/engine/generate_pre.cpp" line="20940"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21006"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21054"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21078"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21126"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21165"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21216"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21282"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21329"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21353"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21490"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21556"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21828"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21901"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22210"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22226"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22250"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22272"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22291"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22504"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22526"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22584"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22619"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22676"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22717"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22753"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22842"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22895"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="22984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23095"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23134"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23158"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23197"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23260"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23347"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23381"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23434"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23468"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23606"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23628"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23728"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23752"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23791"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23815"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23854"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23878"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="23978"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24000"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24039"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24061"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24122"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24161"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24224"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24246"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24285"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24634"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24690"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24719"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24774"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24802"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24831"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24966"/>
-        <location filename="../src/engine/generate_pre.cpp" line="24994"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25047"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25073"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25128"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25152"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25169"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25193"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25210"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25234"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25263"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25373"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25396"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25409"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25476"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25496"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25559"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25574"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25668"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="25811"/>
-        <location filename="../src/engine/generate_pre.cpp" line="26285"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7033"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7049"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7114"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7161"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7316"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7458"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7538"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7600"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7662"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7686"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7908"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8038"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8100"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8166"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8391"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8941"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9055"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9137"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9282"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9364"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9509"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9591"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9630"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9653"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9723"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9747"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9782"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9838"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9879"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9914"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9932"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9970"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9987"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10005"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10034"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10052"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10067"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10111"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10129"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10246"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10264"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10305"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10335"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10351"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10385"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10403"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10445"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10528"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10569"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10586"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10615"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10636"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10659"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10738"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10779"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10796"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10825"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10890"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10984"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11035"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11083"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11161"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11211"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11275"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11316"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11333"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11377"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11468"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11490"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11532"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11554"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11577"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11600"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11765"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11807"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11868"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11892"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11939"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12004"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12047"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12093"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12144"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12201"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12277"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12301"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12402"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12666"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12888"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12907"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12926"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12973"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12996"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13020"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13086"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13107"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13192"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13279"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13347"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13367"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13518"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13597"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13645"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13707"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13738"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13755"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13787"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13872"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13891"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13928"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14052"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14149"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14733"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14757"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14849"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14919"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15061"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15210"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15233"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15512"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15582"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15983"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16239"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16374"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16520"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16708"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16870"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17655"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17991"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18134"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18363"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18451"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18505"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18539"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18774"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18811"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18883"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18957"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19147"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19250"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19307"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19336"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19353"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19490"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19540"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19620"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19740"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19785"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19818"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19863"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19905"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19953"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20064"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20115"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20181"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20228"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20339"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20389"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20503"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20575"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20614"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20731"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20778"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20939"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21005"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21281"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21439"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21489"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21555"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21827"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21900"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21935"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22249"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22503"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22525"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22675"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22716"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22752"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22841"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22894"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22983"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23133"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23218"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23346"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23380"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23520"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23554"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23666"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23727"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23790"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23814"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23853"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23877"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23999"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24038"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24060"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24121"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24223"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24284"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24308"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24830"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25168"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25192"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25233"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25265"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25362"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25375"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25411"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25442"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25478"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25561"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25576"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25710"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26287"/>
         <source>See next</source>
         <translation type="unfinished">Vidi sljedeće</translation>
     </message>
@@ -55948,37 +55947,37 @@ Molimo vas da u skladu s tim izmijenite svoje podatke i pokušate ponovo.</trans
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7044"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalnog %1 broja sati dnevno za učenike podgrupe %2, a ograničenje dozvoljava prazne dane. Minimalni broj sati dnevno treba biti najmanje 2 kako bi se dobilo netrivijalno ograničenje. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7965"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8088"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7964"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8087"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8153"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer postoji ograničenje tipa maksimalno %2 sati dnevno sa 100% težine koje se ne može poštovati zbog broja dana u sedmici, broja sati dnevno, maksimalnog broja dana u sedmici koje nastavnik ima, nedostupan je nastavnik i/ili ima pauze. Ukupan broj sati za ovog nastavnika je %3, a broj dostupnih termina je, uzimajući u obzir maksimalan broj sati dnevno i sva ostala ograničenja, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8486"/>
         <source>Cannot optimize, because you have constraint teacher max span per day for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog raspona nastavnika po danu za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8503"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8502"/>
         <source>Cannot optimize, because you have constraint teachers max span per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog raspona nastavnika po danu s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8932"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8950"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8931"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8949"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer postoji ograničenje tipa maks. %2 sati neprekidno koje se ne može poštovati zbog aktivnosti s ID-om %3 (koja ima trajanje %4).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9272"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9354"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9353"/>
         <source>Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints of type activity tag max hours daily per real day relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours daily per real day.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -55991,262 +55990,262 @@ Primjer: dozvoljeno je koristiti 3 ograničenja: 6 sati 95%, 7 sati 100% i 8 sat
 Molimo vas da u skladu s tim izmijenite svoje podatke i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9816"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati dnevno za nastavnika %1 sa težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9833"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati dnevno za nastavnika %1 sa minimalnom količinom sati dnevno od %2, a broj radnih sati dnevno je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9860"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9859"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje na minimalan broj sati dnevno za nastavnike s težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9875"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na minimalni broj sati dnevno za nastavnike sa %1 minimalnim brojem sati dnevno, a broj radnih sati dnevno je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10047"/>
         <source>Cannot optimize, because you have constraint teacher min hours per afternoon for teacher %1 with %2 min hours per afternoon, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati popodne za nastavnika %1 sa minimalnim brojem sati popodne od %2, a broj radnih sati dnevno je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10526"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10525"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja dana u sedmici za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10542"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10541"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with %2 min days per week, and the number of working days per week is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja dana sedmično za nastavnika %1 sa minimalnim brojem dana sedmično od %2, a broj radnih dana sedmično je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10567"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja nastavnika u sedmici sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10582"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with %1 min days per week, and the number of working days per week is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za nastavnike na minimalni broj dana u sedmici sa %1 minimalnim brojem dana u sedmici, a broj radnih dana u sedmici je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10654"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10653"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 &gt; max days per week %3 - impossible (min days must be &lt;= max days). Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj dana u sedmici %2 &gt; maksimalan broj dana u sedmici %3 - nemoguće (minimalan broj dana mora biti &lt;= maksimalan broj dana). Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10688"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available and min hours daily for this teacher. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj dana u sedmici %2 i samo %3 dostupna dana uzimajući u obzir pauze i nedostupan i minimalan broj sati dnevno za ovog nastavnika. Molimo vas da ispravite i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10696"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10695"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available for this teacher. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalni broj dana u sedmici %2 i samo %3 dostupna dana uzimajući u obzir pauze, što nije dostupno za ovog nastavnika. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11330"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11329"/>
         <source>Cannot optimize, because you have constraint teachers min mornings per week with %1 min mornings per week, and the number of working mornings per week is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na minimalan broj jutara sedmično za nastavnike sa %1 minimalnim brojem jutara sedmično, a broj radnih jutara sedmično je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11414"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11413"/>
         <source>Cannot optimize, because you have constraint teachers min afternoons per week with %1 min afternoons per week, and the number of working afternoons per week is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na minimalan broj popodneva sedmično za nastavnike sa %1 minimalnim brojem popodneva sedmično, a broj radnih popodneva sedmično je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11820"/>
         <source>Cannot optimize, because you have constraint students min mornings per week with %1 min mornings per week, and the number of working mornings per week is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja jutara sedmično za učenike sa %1 minimalnim brojem jutara sedmično, a broj radnih jutara sedmično je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11906"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11905"/>
         <source>Cannot optimize, because you have constraint students min afternoons per week with %1 min afternoons per week, and the number of working afternoons per week is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja popodneva sedmično za učenike sa %1 minimalnim brojem popodneva sedmično, a broj radnih popodneva sedmično je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11934"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11933"/>
         <source>Cannot optimize because for subgroup %1 you have min mornings per week %2 and it has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalni broj jutara sedmično %2, a ona ima samo %3 aktivnosti - nemoguće. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11954"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11953"/>
         <source>Cannot optimize because for subgroup %1 you have min mornings per week %2 and min hours daily %3 and it has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalan broj jutara sedmično %2 i minimalan broj sati dnevno %3, a ima samo %4 radnih sati - nemoguće. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11976"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11975"/>
         <source>Cannot optimize because for subgroup %1 you have min mornings per week %2 and min hours per morning %3 and it has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalan broj jutara sedmično %2 i minimalan broj sati ujutro %3, a ima samo %4 radnih sati - nemoguće. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11999"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11998"/>
         <source>Cannot optimize because for subgroup %1 you have min afternoons per week %2 and it has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalni broj popodneva sedmično %2, a ona ima samo %3 aktivnosti - nemoguće. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12018"/>
         <source>Cannot optimize because for subgroup %1 you have min afternoons per week %2 and min hours daily %3 and it has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalan broj popodneva sedmično %2 i minimalan broj sati dnevno %3, a ima samo %4 radnih sati - nemoguće. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12539"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12538"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
         <translation type="unfinished">Ograničenje je nemoguće poštovati, jer postoje aktivnosti sa id-ovima %1 i %2 koje su u međusobnom konfliktu, jer imaju zajedničke skupove učenika ili nastavnika ili se ne smiju preklapati. FET će vam dozvoliti da nastavite, jer je težina ovog ograničenja ispod 100,0%, ali u svakom slučaju najvjerovatnije ste napravili grešku u ovom ograničenju, pa se preporučuje da ga izmijenite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12559"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12558"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
         <translation type="unfinished">Ograničenje je nemoguće poštovati, jer postoje aktivnosti sa id-ovima %1 i %2 koje su u međusobnom konfliktu, jer imaju zajedničke skupove učenika ili nastavnika ili se ne smiju preklapati. Težina ovog ograničenja je 100,0%, tako da je vaš raspored nemoguć. Molimo vas da ispravite ovo ograničenje.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12660"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12659"/>
         <source>You have a set of impossible constraints activities same starting time, considering all the indirect links between activities same starting time constraints</source>
         <translation type="unfinished">Imate skup nemogućih ograničenja za aktivnosti s istim vremenom početka, uzimajući u obzir sve indirektne veze između aktivnosti s istim vremenom početka</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12662"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
         <translation type="unfinished">Aktivnosti sa ID-ovima %1 i %2 moraju biti istovremene (zahtjev se određuje indirektno), ali imaju zajedničke skupove nastavnika i/ili učenika ili se ne smiju preklapati</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12989"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer je broj sati za nastavnika %2, a imate samo %3 dozvoljena dana iz ograničenja nastavnik maksimalni broj dana sedmično x %4 sati u danu. Vjerovatno postoji greška u vašim podacima</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13076"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13075"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1 zbog preograničenog maksimalnog broja dana u sedmici, nedostupnosti nastavnika i/ili pauza. Ukupan broj sati za ovog nastavnika je %2, a broj dostupnih termina je, uzimajući u obzir maksimalan broj dana u sedmici i sva ostala ograničenja, %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13186"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13185"/>
         <source>Cannot optimize for teacher %1, because afternoons early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of afternoons per week is %3, which is less. It must be that the number of afternoons per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer ograničenje maksimalnih početaka u drugi sat popodneva ima maksimalni početak u drugi sat %2, a broj popodneva sedmično je %3, što je manje. Broj popodneva sedmično mora biti veći ili jednak maksimalnom početku u drugi sat
 Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13273"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13272"/>
         <source>Cannot optimize for teacher %1, because mornings early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of mornings per week is %3, which is less. It must be that the number of mornings per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer ograničenje maksimalnih početaka u drugom satu ima maksimalni početak u drugom satu %2, a broj jutara sedmično je %3, što je manje. Broj jutara sedmično mora biti veći ili jednak maksimalnom početku u drugom satu
 Molimo vas da dgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13361"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13360"/>
         <source>Cannot optimize for subgroup %1, because afternoons early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of afternoons per week is %3, which is less. It must be that the number of afternoons per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer ograničenje maksimalnih početaka u drugom satu za popodne ima maksimalni početak u drugom satu %2, a broj popodneva sedmično je %3, što je manje. Broj popodneva sedmično mora biti veći ili jednak maksimalnom početku u drugom satu.
 Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13458"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13457"/>
         <source>Cannot optimize for subgroup %1, because mornings early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of mornings per week is %3, which is less. It must be that the number of mornings per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer ograničenje maksimalnih početaka u drugom satu za rana jutra ima maksimalni početak u drugom satu %2, a broj jutara sedmično je %3, što je manje. Broj jutara sedmično mora biti veći ili jednak maksimalnom broju početaka u drugom satu.
 Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13516"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika da maksimalno razmake sedmično odrede sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13533"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13532"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja praznina za nastavnike sedmično s težinom (procenat) ispod 100 za nastavnika %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13626"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika da maksimalno razmake dnevno odrede s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13642"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja praznina za nastavnika dnevno s težinom (procenat) ispod 100 za nastavnika %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14121"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer je broj sati za podgrupu %2, a imate samo %3 dana x %4 sata u sedmici.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15952"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15951"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa aktivnosti preferiranog vremena početka bez odabranog dana ili sata (za aktivnost s ID-om=%1). Molimo vas da u skladu s tim izmijenite svoje podatke (uklonite ili uredite ograničenje) i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16747"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16746"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.</source>
         <translation type="unfinished">Nije moguće generirati jer nemate ograničenje tipa osnovno obavezno vrijeme ili je njegova težina manja od 100,0%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16749"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21639"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16748"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21638"/>
         <source>Please add a constraint of this type with weight 100%.</source>
         <translation type="unfinished">Molimo dodajte ograničenje ovog tipa sa težinom od 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16750"/>
         <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation type="unfinished">Ovo ograničenje možete dodati iz menija Podaci -&gt; Vremenska ograničenja -&gt; Razno -&gt; Osnovna obavezna vremenska ograničenja.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16757"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21646"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
         <translation type="unfinished">Za potpunu fleksibilnost, dozvoljeno vam je da ga uklonite (čak i ako je to pogrešna ideja).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16759"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21649"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16758"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21648"/>
         <source>Maybe you removed it by mistake from your file.</source>
         <translation type="unfinished">Možda ste ga greškom uklonili iz svoje datoteke.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16761"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21650"/>
         <source>By adding it again, everything should be all right.</source>
         <translation type="unfinished">Ponovnim dodavanjem, sve bi trebalo biti u redu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16866"/>
         <source>%1 cannot be respected because the activity with id=%2 refers to %3 activity tags from this constraint. Each activity should refer to at most one activity tag from each separated constraint of this type.</source>
         <translation type="unfinished">%1 se ne može poštovati jer se aktivnost sa id=%2 odnosi na %3 oznake aktivnosti iz ovog ograničenja. Svaka aktivnost treba da se odnosi na najviše jednu oznaku aktivnosti iz svakog odvojenog ograničenja ovog tipa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17617"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17616"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može poštovati jer sadrži %2 aktivnosti, ima težinu 100% i minimalan broj dana između aktivnosti = %3. Minimalni potreban broj dana u sedmici za to bi bio (nactivities-1)*mindays+1=%4, a imate samo %5 dana u sedmici - nemoguće. Molimo vas da ispravite ovo ograničenje.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17686"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17685"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može poštovati jer nastavnik %2 ima najviše %3 dostupna dana od nastavnika koji nije dostupan, pauza i nastavnika koji ima maksimalan broj dana sedmično. Molimo vas da smanjite težinu ovog ograničenja na vrijednost ispod 100% (zavisi od vaše situacije, ako je 0% premalo, postavite na 90%, 95% ili čak 99,75%). Čak ni velika težina ne bi trebala mnogo usporiti program. Situacija u kojoj ćete možda morati da je učinite većom od 0% je na primjer ako imate 5 aktivnosti sa 4 moguća dana. Želite da ih rasporedite na 1, 1, 1 i 2, a ne na 2, 2 i 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17709"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17708"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer podgrupa %2 ima najviše %3 dostupna dana od učenika koji nisu dostupni i prekidaju se. Molimo smanjite težinu ovog ograničenja na vrijednost ispod 100% (ovisi o vašoj situaciji, ako je 0% premalo, postavite ga na 90%, 95% ili čak 99,75%). Čak ni velika težina ne bi trebala mnogo usporiti program. Situacija u kojoj ćete možda morati povećati vrijednost na više od 0% je na primjer ako imate 5 aktivnosti sa 4 moguća dana. Želite ih rasporediti na 1, 1, 1 i 2, a ne na 2, 2 i 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19045"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities overlap completely or do not overlap&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19555"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities min simultaneous in selected time slots&apos; with the total duration of the selected activities being %1, but the required number of occupying slots is %2 (minimum simultaneous) x %3 (selected slots) = %4, which is greater - impossible (the constraint does not allow empty slots). The constraint is:
 %5
 Please correct and try again.</source>
@@ -56255,7 +56254,7 @@ Please correct and try again.</source>
 Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19797"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19796"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities min in a term&apos; which is impossible to satisfy. The number of activities in the constraint is greater than 0 and less than the minimum number of activities allowed in a term. The constraint is:
 %1
 Please correct and try again.</source>
@@ -56264,17 +56263,17 @@ Please correct and try again.</source>
 Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21553"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21552"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max different rooms&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje tipa &apos;aktivnosti zauzimaju maksimalan broj različitih učionica&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21636"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
         <translation type="unfinished">Nije moguće generirati jer nemate ograničenje tipa osnovni obvezni prostor ili je njegova težina manja od 100,0%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21641"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21640"/>
         <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation type="unfinished">Ovo ograničenje možete dodati iz menija Podaci -&gt; Ograničenja prostora -&gt; Razno -&gt; Osnovna obavezna ograničenja prostora.</translation>
     </message>
@@ -56373,18 +56372,18 @@ Molimo ispravite i pokušajte ponovo.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="5448"/>
         <location filename="../src/engine/generate_pre.cpp" line="5589"/>
         <location filename="../src/engine/generate_pre.cpp" line="5607"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8036"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8098"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8164"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8389"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8453"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8804"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8957"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13084"/>
-        <location filename="../src/engine/generate_pre.cpp" line="14259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8035"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8097"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8388"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8803"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13083"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14258"/>
         <source>Please modify your data accordingly and try again</source>
         <translation type="unfinished">Molimo Vas da u skladu s tim prilagodite svoje podatke i pokušate ponovo</translation>
     </message>
@@ -56454,177 +56453,172 @@ Molimo ispravite i pokušajte ponovo.</translation>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike (postavljeni minimalni broj sati ujutro) za podgrupu %1, ali ne i za nju (minimalni broj sati dnevno). Molimo dodajte ograničenje za učenike (postavljeni minimalni broj sati dnevno) koje utiče na ovu podgrupu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7027"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7108"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7026"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7107"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od najmanje %1 sati dnevno za učenike podgrupe %2 (ograničenje dozvoljava prazne dane). Ova podgrupa ima ukupno samo %3 sati sedmično, tako da je ograničenje nemoguće. Molimo vas da ispravite i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7396"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7395"/>
         <source>Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za učenike, jer ograničenje tipa oznake aktivnosti min sati dnevno koje se odnosi na učenike nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7414"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7413"/>
         <source>Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students set %1 has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za učenike, jer ograničenje tipa oznake aktivnosti min sati dnevno koje se odnosi na učenike skup %1 nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8379"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8443"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8378"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8442"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily per real day with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher(s) max real days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily per real day and all other constraints, %4.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer postoji ograničenje tipa maksimalno %2 sata dnevno po stvarnom danu sa 100% težine koje se ne može poštovati zbog broja dana u sedmici, broja sati dnevno, maksimalnog broja stvarnih dana nastavnika u sedmici, nedostupnosti nastavnika i/ili pauza. Ukupan broj sati za ovog nastavnika je %3, a broj dostupnih termina je, uzimajući u obzir maksimalan broj sati dnevno po stvarnom danu i sva ostala ograničenja, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8615"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 span per day with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max span per day and all other constraints, %4.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer postoji ograničenje tipa maksimalni raspon od %2 po danu sa 100% težine koje se ne može poštovati zbog broja dana u sedmici, broja sati po danu, maksimalnog broja dana u sedmici koje nastavnik ima, nedostupan je nastavnik i/ili ima pauze. Ukupan broj sati za ovog nastavnika je %3, a broj dostupnih termina je, uzimajući u obzir maksimalni raspon po danu i sva ostala ograničenja, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10156"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalno %1 sati dnevno za nastavnika %2 (ograničenje dozvoljava prazne dane). Ovaj nastavnik ima ukupno samo %3 sati sedmično, tako da je ograničenje nemoguće. Molimo vas da ispravite i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10175"/>
-        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
-        <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalnog %1 broja sati dnevno za nastavnika %2 (ograničenje dozvoljava prazne dane). Broj minimalnih sati dnevno treba biti najmanje 2 kako bi se dobilo netrivijalno ograničenje. Ispravite i pokušajte ponovo</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10382"/>
         <source>Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teachers has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnike, jer ograničenje oznake aktivnosti tipa min sati dnevno koje se odnosi na nastavnike nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10400"/>
         <source>Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teacher %1 has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnike, jer ograničenje oznake aktivnosti tipa min sati dnevno koje se odnosi na nastavnika %1 nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11017"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11016"/>
         <source>Cannot optimize, because you have constraint teacher min resting hours for teacher %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnih sati odmora nastavnika %1 sa težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11031"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11030"/>
         <source>Cannot optimize, because you have constraint teacher min resting hours for teacher %1 with %2 min resting hours, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnih sati odmora za nastavnika %1 sa %2 minimalnih sati odmora, a broj radnih sati dnevno je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11067"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11066"/>
         <source>Cannot optimize, because you have constraint teachers min resting hours with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje minimalnih sati odmora nastavnika s težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11080"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11079"/>
         <source>Cannot optimize, because you have constraint teachers min resting hours with %1 min resting hours, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnih sati odmora nastavnika sa %1 minimalnih sati odmora, a broj radnih sati dnevno je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11142"/>
         <source>Cannot optimize, because you have constraint students set min resting hours for students set %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike postavljeno na minimalni broj sati odmora za učenike postavljen na %1 sa težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11157"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11156"/>
         <source>Cannot optimize, because you have constraint students set min resting hours for students set %1 with %2 min resting hours, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike postavljene na minimalne sate odmora za učenike postavljene na %1 sa %2 minimalnih sati odmora, a broj radnih sati dnevno je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11195"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12400"/>
         <source>Cannot optimize, because you have constraint students min resting hours with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje minimalnog broja sati odmora za učenike s težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11208"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11207"/>
         <source>Cannot optimize, because you have constraint students min resting hours with %1 min resting hours, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnih sati odmora učenika sa %1 minimalnih sati odmora, a broj radnih sati dnevno je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12819"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12818"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer je broj sati za nastavnika %2, a imate samo %3 dana x %4 sata u sedmici.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14166"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14165"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 allowed days from constraint students (set) max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer je broj sati za podgrupu %2, a imate samo %3 dozvoljenih dana iz ograničenja učenika (set) maksimalni broj dana sedmično x %4 sati u danu. Vjerovatno postoji greška u vašim podacima</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14250"/>
         <source>Cannot optimize for subgroup %1, because of too constrained students (set) max days per week, students set not available and/or breaks. The number of total hours for this subgroup is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1 zbog previše ograničenog maksimalnog broja dana u sedmici za učenike (postavljeno), nedostupnosti učenika i/ili pauza. Ukupan broj sati za ovu podgrupu je %2, a broj dostupnih termina je, uzimajući u obzir maksimalni broj dana u sedmici i sva ostala ograničenja, %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14289"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14288"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na maksimalan broj dana u sedmici s težinom (procenat) ispod 100 za nastavnika %1. Počevši od FET verzije 5.2.17 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14327"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14326"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na maksimalan broj dana u sedmici s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14729"/>
         <source>Cannot optimize, because you have constraint students set max days per week with weight (percentage) below 100 for students set %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje su učenici postavili na maksimalan broj dana u sedmici s težinom (procenat) ispod 100 za učenike postavljene na %1. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14755"/>
         <source>Cannot optimize, because you have constraint students max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalan broj dana u sedmici za učenike s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15434"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15578"/>
-        <location filename="../src/engine/generate_pre.cpp" line="15690"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15577"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15689"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer imate ograničenje maksimalnih praznina s postotkom težine manjim od 100%. Trenutno, algoritam može optimizirati samo ako nepostojeće ograničenje maksimalnih praznina postoji ili ako postoji sa 100% težine za njega. Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15450"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15449"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer imate ograničenje ranog maksimuma početka u drugom satu s postotkom težine manjim od 100%. Trenutno, algoritam može optimizirati samo ako nepostojeće ograničenje rano mbash ili ako postoji sa 100% težine za njega. Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15814"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15813"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &quot;teacher not available&quot; s postotkom težine manjim od 100% za &quot;teacher %1&quot;. Trenutno, FET može optimizirati samo s ograničenjima &quot;teacher not available&quot; sa 100% težine (ili bez ograničenja). Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15860"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15859"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &quot;učenici postavljeni kao nedostupan&quot; s postotkom težine manjim od 100% za učenike postavljene kao %1. Trenutno, FET može optimizirati samo s ograničenjima tipa &quot;učenici postavljeni kao nedostupan&quot; sa 100% težine (ili bez ograničenja). Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15903"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15902"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer imate ograničenja tipa break s postotkom težine manjim od 100%. Trenutno, FET može optimizirati samo s ograničenjima break sa 100% težine (ili bez ograničenja). Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22500"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation type="unfinished">Nije moguće generirati raspored, jer za aktivnost s id=%1 nemate dozvoljenu učionicu (iz ograničenja koje su postavili učenici i nastavnici)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22522"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
         <translation type="unfinished">Nije moguće generirati raspored jer za aktivnost s id=%1 nemate dozvoljenu preferiranu učionicu (iz ograničenja preferiranih učionica).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22543"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation type="unfinished">Nije moguće generirati raspored, jer za aktivnost s id=%1 nemate dozvoljenu preferiranu učionicu (na osnovu dozvoljenog broja učenika i ograničenja preferiranih učionica)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22581"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22580"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
         <translation type="unfinished">Nije moguće generirati raspored, jer za aktivnost s id=%1 nemate dozvoljenu učionicu za učenje (od dozvoljenog broja učenika)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22615"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22614"/>
         <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation type="unfinished">Nije moguće generirati raspored, jer za aktivnost s id=%1 nemate dozvoljenu preferiranu učionicu (uzimajući u obzir kapacitete učionica i ograničenja preferirane učionice sa 100,0% težinskog procenta)</translation>
     </message>
@@ -56867,79 +56861,79 @@ Molimo vas da u skladu s tim izmijenite svoje podatke i pokušate ponovo.</trans
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati popodne za učenike od %1 minimalnog broja sati popodne, a broj radnih sati dnevno je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7193"/>
         <source>Cannot optimize for students, because the constraint of type max single gaps in selected time slots relating to students has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za učenike, jer ograničenje tipa max pojedinačnih praznina u odabranim vremenskim intervalima koje se odnosi na učenike nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7212"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7211"/>
         <source>Cannot optimize for students, because the constraint of type max single gaps in selected time slots relating to students set %1 has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za učenike, jer ograničenje tipa max pojedinačnih praznina u odabranim vremenskim intervalima koje se odnosi na učenike skup %1 nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7296"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7295"/>
         <source>Cannot optimize for teachers, because the constraint of type max single gaps in selected time slots relating to teachers has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnike, jer ograničenje tipa max pojedinačnih praznina u odabranim vremenskim intervalima koje se odnosi na nastavnike nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7314"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7313"/>
         <source>Cannot optimize for teachers, because the constraint of type max single gaps in selected time slots relating to teacher %1 has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnike, jer ograničenje tipa max pojedinačnih praznina u odabranim vremenskim intervalima koje se odnosi na nastavnika %1 nema 100% težinu. Molimo vas da shodno tome izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7497"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7496"/>
         <source>Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3 requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours per week (the constraint requires %6 nonempty days). Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer ograničenje tipa oznake aktivnosti %1 min %2 sata dnevno koje se odnosi na podgrupu %3 zahtijeva najmanje %4 sati rada sedmično, ali aktivnosti ove podgrupe s ovom oznakom aktivnosti zbirno iznose samo %5 sati sedmično (ograničenje zahtijeva %6 dana koji nisu prazni). Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7536"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7535"/>
         <source>Cannot optimize, because you have a constraint teacher max activity tag changes per day for teacher %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7559"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7558"/>
         <source>Cannot optimize, because you have a constraint teachers max activity tag changes per day with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7597"/>
         <source>Cannot optimize, because you have a constraint teacher max activity tag changes per week for teacher %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7621"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7620"/>
         <source>Cannot optimize, because you have a constraint teachers max activity tag changes per week with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7684"/>
         <source>Cannot optimize, because you have a constraint students max activity tag changes per day with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7749"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7748"/>
         <source>Cannot optimize, because you have a constraint students max activity tag changes per week with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8660"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8659"/>
         <source>Cannot optimize, because you have constraint teacher max span per real day for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog raspona nastavnika po stvarnom danu za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8676"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8675"/>
         <source>Cannot optimize, because you have constraint teachers max span per real day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog raspona nastavnika po stvarnom danu s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8793"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 span per real day with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher(s) max real days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max span per real day and all other constraints, %4.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer postoji ograničenje tipa maksimalni raspon od %2 po stvarnom danu sa 100% težine koje se ne može poštovati zbog broja dana u sedmici, broja sati dnevno, maksimalnog broja stvarnih dana nastavnika u sedmici, nedostupnosti nastavnika i/ili pauza. Ukupan broj sati za ovog nastavnika je %3, a broj dostupnih termina je, uzimajući u obzir maksimalni raspon po stvarnom danu i sva ostala ograničenja, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9045"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9126"/>
         <source>Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -56952,8 +56946,8 @@ Primjer: dozvoljeno je koristiti 3 ograničenja: 6 sati 95%, 7 sati 100% i 8 sat
 Molimo vas da u skladu s tim izmijenite svoje podatke i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9499"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9581"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9580"/>
         <source>Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -56966,792 +56960,792 @@ Primjer: dozvoljeno je koristiti 3 ograničenja: 6 sati 95%, 7 sati 100% i 8 sat
 Molimo vas da u skladu s tim izmijenite svoje podatke i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9627"/>
         <source>Cannot optimize, because you have constraint teacher max hours per all afternoons for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja sati popodne za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9652"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9651"/>
         <source>Cannot optimize, because you have constraint teachers max hours per all afternoons with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za nastavnike na maksimalan broj sati popodneva sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9683"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9682"/>
         <source>Cannot optimize, because you have constraint teacher(s) max hours per all afternoons for teacher %1 which is impossible to respect (allowed afternoon = %2, available morning = %3, total hours for teacher = %4)</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnih sati za nastavnika/e %1 tokom svih popodneva, što je nemoguće poštovati (dozvoljeno popodne = %2, dostupno jutro = %3, ukupno sati za nastavnika = %4)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9720"/>
         <source>Cannot optimize, because you have constraint students set max hours per all afternoons for students set %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje učenici postavljaju na maksimalan broj sati popodne za učenike postavljene na %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9746"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9745"/>
         <source>Cannot optimize, because you have constraint students max hours per all afternoons with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalan broj sati za učenike popodne sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9777"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9776"/>
         <source>Cannot optimize, because you have constraint students (set) max hours per all afternoons for subgroup %1 which is impossible to respect (allowed afternoon = %2, available morning = %3, total hours for subgroup = %4)</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za maksimalan broj sati popodne za učenike (postavljeno) za podgrupu %1, što je nemoguće poštovati (dozvoljeno popodne = %2, dostupno jutro = %3, ukupno sati za podgrupu = %4)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9911"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9910"/>
         <source>Cannot optimize, because you have constraint teacher min hours per morning for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati ujutro za nastavnika %1 sa težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9928"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9927"/>
         <source>Cannot optimize, because you have constraint teacher min hours per morning for teacher %1 with %2 min hours per morning, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati ujutro za nastavnika %1 sa minimalnim brojem sati ujutro od %2, a broj radnih sati dnevno je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9968"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9967"/>
         <source>Cannot optimize, because you have constraint teachers min hours per morning with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje minimalnog broja sati po jutru za nastavnike s težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9984"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9983"/>
         <source>Cannot optimize, because you have constraint teachers min hours per morning with %1 min hours per morning, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati ujutro za nastavnike od %1, a broj radnih sati dnevno je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10031"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10030"/>
         <source>Cannot optimize, because you have constraint teacher min hours per afternoon for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati popodne za nastavnika %1 sa težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10091"/>
         <source>Cannot optimize, because you have constraint teachers min hours per afternoon with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati popodne za nastavnike s težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10108"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10107"/>
         <source>Cannot optimize, because you have constraint teachers min hours per afternoon with %1 min hours per afternoon, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na minimalni broj sati popodne za nastavnike od %1, a broj radnih sati dnevno je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10243"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10242"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for real days for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati dnevno za nastavnika %1 za stvarne dane sa težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10259"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for real days for teacher %1 with %2 min hours daily, and the number of working hours per real day is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati dnevno za nastavnika %1 za stvarne dane sa minimalnim brojem sati dnevno od %2, a broj radnih sati po stvarnom danu je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10286"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10285"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily for real days with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje nastavnika na minimalni broj sati dnevno za stvarne dane s težinom (procenat) ispod 100. Počevši od FET verzije 5.4.0 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10302"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10301"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily for real days with %1 min hours daily, and the number of working hours per real day is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za nastavnike na minimalni broj sati dnevno za stvarne dane sa %1 minimalnih sati dnevno, a broj radnih sati po stvarnom danu je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10328"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for real days for teacher %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalno %1 sati dnevno za nastavnika %2 za stvarne dane (ograničenje dozvoljava prazne dane). Ovaj nastavnik ima ukupno samo %3 sati sedmično, tako da je ograničenje nemoguće. Molimo vas da ispravite i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10347"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10346"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for real days for teacher %2 (the constraint allows empty days). The number of min hours daily for real days should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalnog %1 broja sati dnevno za nastavnika %2 za stvarne dane (ograničenje dozvoljava prazne dane). Broj minimalnih sati dnevno za stvarne dane treba biti najmanje 2, kako bi se dobilo netrivijalno ograničenje. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10441"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10484"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10440"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10483"/>
         <source>Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3 requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours per week (the constraint requires %6 nonempty days). Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer ograničenje tipa oznake aktivnosti %1 min %2 sata dnevno koje se odnosi na nastavnika %3 zahtijeva najmanje %4 sati rada sedmično, ali aktivnosti ovog nastavnika s ovom oznakom aktivnosti zbirno iznose samo %5 sati sedmično (ograničenje zahtijeva %6 dana koji nisu prazni). Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10735"/>
         <source>Cannot optimize, because you have constraint teacher min real days per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja stvarnih dana u sedmici za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10752"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10751"/>
         <source>Cannot optimize, because you have constraint teacher min real days per week for teacher %1 with %2 min days per week, and the number of working real days per week is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na minimalni broj stvarnih dana sedmično za nastavnika %1 sa minimalnim brojem dana sedmično od %2, a broj stvarnih radnih dana sedmično je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10778"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10777"/>
         <source>Cannot optimize, because you have constraint teachers min real days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje nastavnika na minimalni broj stvarnih dana u sedmici s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10793"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10792"/>
         <source>Cannot optimize, because you have constraint teachers min real days per week with %1 min days per week, and the number of working real days per week is only %2. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na minimalni broj stvarnih dana u sedmici sa %1 minimalnim brojem dana u sedmici, a broj stvarnih radnih dana u sedmici je samo %2. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10885"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10884"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 &gt; max real days per week %3 - impossible (min days must be &lt;= max days). Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj stvarnih dana u sedmici %2 &gt; maksimalan broj stvarnih dana u sedmici %3 - nemoguće (minimalan broj dana mora biti &lt;= maksimalan broj dana). Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10924"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10923"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 and only %3 available days considering breaks and not available and min hours daily for this teacher. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj stvarnih dana u sedmici %2 i samo %3 dostupnih dana uzimajući u obzir pauze i nedostupan minimalni broj sati dnevno za ovog nastavnika. Molimo vas da ispravite i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10976"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 and only %3 available days considering breaks and not available for this teacher. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalno %2 stvarnih dana u sedmici i samo %3 dostupna dana uzimajući u obzir pauze, što nije dostupno za ovog nastavnika. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10970"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10969"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 and only %3 available days considering breaks and not available and min hours daily for real days for this teacher. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj stvarnih dana u sedmici %2 i samo %3 dostupnih dana uzimajući u obzir pauze i nedostupan i minimalan broj sati dnevno za stvarne dane za ovog nastavnika. Molimo vas da ispravite i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11273"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11272"/>
         <source>Cannot optimize, because you have constraint teacher min mornings per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja jutara sedmično za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11289"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11288"/>
         <source>Cannot optimize, because you have constraint teacher min mornings per week for teacher %1 with %2 min mornings per week, and the number of working mornings per week is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja jutara sedmično za nastavnika %1 sa minimalnim brojem jutara sedmično od %2, a broj radnih jutara sedmično je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11315"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11314"/>
         <source>Cannot optimize, because you have constraint teachers min mornings per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na minimalan broj jutara sedmično za nastavnike sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11357"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11356"/>
         <source>Cannot optimize, because you have constraint teacher min afternoons per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja popodneva sedmično za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11372"/>
         <source>Cannot optimize, because you have constraint teacher min afternoons per week for teacher %1 with %2 min afternoons per week, and the number of working afternoons per week is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja popodneva sedmično za nastavnika %1 sa %2 minimalnog broja popodneva sedmično, a broj radnih popodneva sedmično je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11398"/>
         <source>Cannot optimize, because you have constraint teachers min afternoons per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalnog broja nastavnika popodne sedmično sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11571"/>
         <source>Cannot optimize because for teacher %1 you have min mornings per week %2 &gt; max mornings per week %3 - impossible (min mornings must be &lt;= max mornings). Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj jutara sedmično %2 &gt; maksimalan broj jutara sedmično %3 - nemoguće (minimalan broj jutara mora biti &lt;= maksimalan broj jutara). Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11594"/>
         <source>Cannot optimize because for teacher %1 you have min afternoons per week %2 &gt; max afternoons per week %3 - impossible (min afternoons must be &lt;= max afternoons). Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za nastavnika %1 imate minimalan broj popodneva sedmično %2 &gt; maksimalan broj popodneva sedmično %3 - nemoguće (minimalan broj popodneva mora biti &lt;= maksimalan broj popodneva). Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11762"/>
         <source>Cannot optimize, because you have constraint students set min mornings per week for students set %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje učenici postavljaju na minimalni broj jutara sedmično za učenike postavljene na %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11779"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11778"/>
         <source>Cannot optimize, because you have constraint students set min mornings per week for students set %1 with %2 min mornings per week, and the number of working mornings per week is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike postavljeno na minimalan broj jutara sedmično za učenike postavljene na %1 sa minimalnim brojem jutara sedmično od %2, a broj radnih jutara sedmično je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11805"/>
         <source>Cannot optimize, because you have constraint students min mornings per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje minimalnog broja jutara učenika sedmično s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11848"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11847"/>
         <source>Cannot optimize, because you have constraint students set min afternoons per week for students set %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje učenici postavljaju na minimalni broj popodneva sedmično za učenike postavljene na %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11864"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11863"/>
         <source>Cannot optimize, because you have constraint students set min afternoons per week for students set %1 with %2 min afternoons per week, and the number of working afternoons per week is only %3. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike postavljeno na minimalan broj popodneva sedmično za učenike postavljene na %1 sa minimalnim brojem popodneva sedmično od %2, a broj radnih popodneva sedmično je samo %3. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11891"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11890"/>
         <source>Cannot optimize, because you have constraint students min afternoons per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja popodneva sedmično za učenike sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12041"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12040"/>
         <source>Cannot optimize because for subgroup %1 you have min afternoons per week %2 and min hours per afternoon %3 and it has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalan broj popodneva sedmično %2 i minimalan broj sati popodne %3, a ima samo %4 radnih sati - nemoguće. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12065"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12064"/>
         <source>Cannot optimize because for subgroup %1 you have min mornings per week %2 &gt; max mornings per week %3 - impossible (min mornings must be &lt;= max mornings). Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalan broj jutara sedmično %2 &gt; maksimalan broj jutara sedmično %3 - nemoguće (minimalan broj jutara mora biti &lt;= maksimalan broj jutara). Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12088"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12087"/>
         <source>Cannot optimize because for subgroup %1 you have min afternoons per week %2 &gt; max afternoons per week %3 - impossible (min afternoons must be &lt;= max afternoons). Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer za podgrupu %1 imate minimalan broj popodneva sedmično %2 &gt; maksimalan broj popodneva sedmično %3 - nemoguće (minimalan broj popodneva mora biti &lt;= maksimalan broj popodneva). Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12142"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12141"/>
         <source>Cannot optimize, because you have constraint teacher max two consecutive mornings for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno dva uzastopna jutra za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12163"/>
         <source>Cannot optimize, because you have constraint teachers max two consecutive mornings with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno dva uzastopna jutra za nastavnike sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12198"/>
         <source>Cannot optimize, because you have constraint teacher max two consecutive afternoons for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno dva uzastopna popodneva za nastavnika %1 sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12221"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12220"/>
         <source>Cannot optimize, because you have constraint teachers max two consecutive afternoons with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno dva uzastopna popodneva za nastavnike sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12258"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12257"/>
         <source>Cannot optimize, because you have constraint teacher min resting hours between morning and afternoon for teacher %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnog broja sati odmora nastavnika između jutra i popodneva za nastavnika %1 sa težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12272"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12271"/>
         <source>Cannot optimize, because you have constraint teacher min resting hours between morning and afternoon for teacher %1 with %2 min resting hours, and the number of working hours per day is only %3. Min resting hours should be at most two times the number of hours per day. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnih sati odmora nastavnika između jutra i popodneva za nastavnika %1 sa %2 minimalnih sati odmora, a broj radnih sati dnevno je samo %3. Minimalni sati odmora trebaju biti najviše dva puta veći od broja sati dnevno. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12299"/>
         <source>Cannot optimize, because you have constraint teachers min resting hours between morning and afternoon with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na minimalni broj sati odmora između jutra i popodneva s težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12313"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12312"/>
         <source>Cannot optimize, because you have constraint teachers min resting hours between morning and afternoon with %1 min resting hours, and the number of working hours per day is only %2. Min resting hours should be at most two times the number of hours per day. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za nastavnike na minimalne sate odmora između jutra i popodneva sa %1 minimalnih sati odmora, a broj radnih sati dnevno je samo %2. Minimalni sati odmora trebaju biti najviše dva puta veći od broja sati dnevno. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12357"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12356"/>
         <source>Cannot optimize, because you have constraint students set min resting hours between morning and afternoon for students set %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje učenici postavljaju na minimalne sate odmora između jutra i popodneva za učenike postavljene na %1 s težinom (procenat) ispod 100. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12371"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12370"/>
         <source>Cannot optimize, because you have constraint students set min resting hours between morning and afternoon for students set %1 with %2 min resting hours, and the number of working hours per day is only %3. Min resting hours should be at most two times the number of hours per day. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje učenici postavljaju na minimalne sate odmora između jutra i popodneva za učenike postavljene na %1 sa %2 minimalnih sati odmora, a broj radnih sati dnevno je samo %3. Minimalni sati odmora trebaju biti najviše dva puta veći od broja sati dnevno. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12414"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12413"/>
         <source>Cannot optimize, because you have constraint students min resting hours between morning and afternoon with %1 min resting hours, and the number of working hours per day is only %2. Min resting hours should be at most two times the number of hours per day. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje minimalnih sati odmora učenika između jutra i popodneva sa %1 minimalnih sati odmora, a broj radnih sati dnevno je samo %2. Minimalni sati odmora trebaju biti najviše dva puta veći od broja sati dnevno. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12849"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12848"/>
         <source>exclusive</source>
         <comment>Mornings-afternoons behavior of a teacher</comment>
         <translation type="unfinished">ekskluzivno</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12868"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12867"/>
         <source>one day exception</source>
         <comment>Mornings-afternoons behavior of a teacher</comment>
         <translation type="unfinished">izuzetak za jedan dan</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12886"/>
         <source>two days exception</source>
         <comment>Mornings-afternoons behavior of a teacher</comment>
         <translation type="unfinished">izuzetak od dva dana</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12906"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12905"/>
         <source>three days exception</source>
         <comment>Mornings-afternoons behavior of a teacher</comment>
         <translation type="unfinished">izuzetak od tri dana</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12925"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12924"/>
         <source>four days exception</source>
         <comment>Mornings-afternoons behavior of a teacher</comment>
         <translation type="unfinished">izuzetak od četiri dana</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12943"/>
         <source>five days exception</source>
         <comment>Mornings-afternoons behavior of a teacher</comment>
         <translation type="unfinished">izuzetak od pet dana</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12969"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12968"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break.</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer je broj sati za nastavnika %2, a imate samo %3 slobodnih termina zbog ograničenja da nastavnik nije dostupan i/ili ima pauzu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13014"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13013"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed real days from constraint teacher max real days per week x %4 hours in a real day. Probably there is an error in your data</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer je broj sati za nastavnika %2, a imate samo %3 dozvoljenih stvarnih dana iz ograničenja nastavnik maksimalni broj stvarnih dana sedmično x %4 sati u stvarnom danu. Vjerovatno postoji greška u vašim podacima</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13101"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13100"/>
         <source>Cannot optimize for teacher %1, because the number of assigned hours for this teacher is %2 and you have constrained this teacher not to work in two consecutive days. The maximum possible number of working hours for this teacher is the integer part of ((n_days_per_week+1)/2) multiplied with n_hours_per_day, which is %3.</source>
         <comment>Translators: you can translate the expressions n_days_per_week and n_hours_per_day in your language.</comment>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer je broj dodijeljenih sati za ovog nastavnika %2, a ograničili ste ovog nastavnika da ne radi dva uzastopna dana. Max. mogući broj radnih sati za ovog nastavnika je cijeli dio od ((n_dana_sedmično_+1)/2) pomnožen sa n_sati_dana_, što je %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13168"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13167"/>
         <source>Cannot optimize for teacher %1, because you have an afternoons early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer imate ograničenje za maksimalni početak popodneva u drugom satu s postotkom težine manjim od 100%. Trenutno, algoritam može optimizirati samo ako nepostojeće ograničenje rano mbash ili ako postoji sa 100% težine za njega. Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13254"/>
         <source>Cannot optimize for teacher %1, because you have an mornings early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za nastavnika %1, jer imate ograničenje za maksimalni početak rada u drugom satu s postotkom težine manjim od 100%. Trenutno, algoritam može optimizirati samo ako ne postoji ograničenje &quot;rani mbash&quot; ili ako postoji ograničenje sa 100% težine. Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13343"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13342"/>
         <source>Cannot optimize for subgroup %1, because you have an afternoons early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer imate ograničenje za popodnevni maksimum koji počinje u drugom satu s postotkom težine manjim od 100%. Trenutno, algoritam može optimizirati samo ako nepostojeće ograničenje rano mbash ili ako postoji sa 100% težine za njega. Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13440"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13439"/>
         <source>Cannot optimize for subgroup %1, because you have an mornings early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer imate ograničenje za rani maksimum početka u drugom satu s postotkom težine manjim od 100%. Trenutno, algoritam može optimizirati samo ako nepostojeće ograničenje rani mbash ili ako postoji sa 100% težine za njega. Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13736"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per morning and afternoon with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika da maksimalno ograniče praznine ujutro i popodne s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13753"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13752"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per morning and afternoon with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalni broj praznina za nastavnika ujutro i poslijepodne s težinom (procenat) ispod 100 za nastavnika %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13871"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13870"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per real day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika da maksimalno razmake po danu sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13888"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per real day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja praznina za nastavnika po stvarnom danu s težinom (procenat) ispod 100 za nastavnika %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13908"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13907"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week for real days with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika da maksimalno ograniče praznine sedmično za stvarne dane sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13926"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13925"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week for real days with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnih praznina za nastavnika sedmično za stvarne dane sa težinom (procenat) ispod 100 za nastavnika %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14051"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14050"/>
         <source>Cannot optimize, because you have constraint teachers max zero gaps per afternoon with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od nula pauza po popodnevu, a težina (procenat) je ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14067"/>
         <source>Cannot optimize, because you have constraint teacher max zero gaps per afternoon with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalnog broja praznina po popodnevu za nastavnika na nula časova sa težinom (procenat) ispod 100 za nastavnika %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14144"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break.</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer je broj sati za podgrupu %2, a imate samo %3 slobodnih termina iz ograničenja koja su učenici postavili: nisu dostupna i/ili ne rade.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14190"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14189"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 allowed real days from constraint students (set) max real days per week x %4 hours in a real day. Probably there is an error in your data</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer je broj sati za podgrupu %2, a imate samo %3 dozvoljenih stvarnih dana iz ograničenja učenika (set) maksimalni stvarni dani sedmično x %4 sati u stvarnom danu. Vjerovatno postoji greška u vašim podacima</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14394"/>
         <source>Cannot optimize, because you have a constraint teacher max hours per term with weight (percentage) below 100% for teacher %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja sati po semestru za nastavnika %1 sa težinom (procenat) ispod 100%. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14419"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14418"/>
         <source>Cannot optimize, because you have a constraint teachers max hours per term with weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za maksimalan broj sati po semestru za nastavnike s težinom (procenat) ispod 100%. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14446"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14445"/>
         <source>Cannot optimize, because you have a constraint teacher max %1 hours per term for teacher %2 which is impossible to respect, because this teacher works %3 hours per week in total and the week has %4 terms. %1 x %4 &lt; %3.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno %1 sati po semestru za nastavnika %2, što je nemoguće poštovati, jer ovaj nastavnik radi ukupno %3 sati sedmično, a sedmica ima %4 semestra. %1 x %4 &lt; %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14497"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14496"/>
         <source>Cannot optimize, because you have constraint teacher no two consecutive days with weight (percentage) below 100% for teacher %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika ne dva uzastopna dana s težinom (procenat) ispod 100% za nastavnika %1. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14518"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14517"/>
         <source>Cannot optimize, because you have constraint teachers no two consecutive days with weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate nastavnike ograničenja koji ne koriste dva uzastopna dana s težinom (procenat) ispod 100%. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14567"/>
         <source>Cannot optimize, because you have constraint teacher max three consecutive days with weight (percentage) below 100% for teacher %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika maksimalno tri uzastopna dana s težinom (procenat) ispod 100% za nastavnika %1. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14592"/>
         <source>Cannot optimize, because you have constraint teachers max three consecutive days with weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno tri uzastopna dana za nastavnike sa težinom (procenat) ispod 100%. Za takva ograničenja je moguće koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14647"/>
         <source>Cannot optimize, because you have constraint students set max three consecutive days with weight (percentage) below 100% for students set %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike od maksimalno tri uzastopna dana sa težinom (procenat) ispod 100% za učenike postavljene na %1. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14676"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14675"/>
         <source>Cannot optimize, because you have constraint students max three consecutive days with weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno tri uzastopna dana za učenike s težinom (procenat) ispod 100%. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14810"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14809"/>
         <source>Cannot optimize, because you have constraint teacher max real days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na maksimalan broj stvarnih dana u sedmici s težinom (procenat) ispod 100 za nastavnika %1. Počevši od FET verzije 5.2.17 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14848"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14847"/>
         <source>Cannot optimize, because you have constraint teachers max real days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na maksimalan broj stvarnih dana u sedmici s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14915"/>
         <source>Cannot optimize, because you have constraint teacher max afternoons per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja popodneva sedmično za nastavnika %1 sa težinom (procenat) ispod 100. Počevši od FET verzije 5.2.17 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="14954"/>
+        <location filename="../src/engine/generate_pre.cpp" line="14953"/>
         <source>Cannot optimize, because you have constraint teachers max afternoons per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na maksimalan broj popodneva sedmično s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15022"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15021"/>
         <source>Cannot optimize, because you have constraint teacher max mornings per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za maksimalan broj jutara sedmično za nastavnika %1 sa težinom (procenat) ispod 100. Počevši od FET verzije 5.2.17 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15060"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15059"/>
         <source>Cannot optimize, because you have constraint teachers max mornings per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje nastavnika na maksimalan broj jutara sedmično s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15126"/>
         <source>Cannot optimize, because you have constraint students set max real days per week with weight (percentage) below 100 for students set %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje učenici postavljaju na maksimalan broj stvarnih dana u sedmici s težinom (procenat) ispod 100 za učenike postavljene na %1. Za takva ograničenja moguće je koristiti samo težinu od 100%. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15153"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15152"/>
         <source>Cannot optimize, because you have constraint students max real days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za maksimalan broj stvarnih dana u sedmici za učenike s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15208"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15207"/>
         <source>Cannot optimize, because you have constraint students set max afternoons per week with weight (percentage) below 100 for students set %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje su učenici postavili na maksimalan broj popodneva sedmično s težinom (procenat) ispod 100 za učenike postavljene na %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15231"/>
         <source>Cannot optimize, because you have constraint students max afternoons per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalan broj popodneva sedmično za učenike s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15286"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15285"/>
         <source>Cannot optimize, because you have constraint students set max mornings per week with weight (percentage) below 100 for students set %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje su učenici postavili na maksimalan broj jutara sedmično s težinom (procenat) ispod 100 za učenike postavljene na %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15309"/>
         <source>Cannot optimize, because you have constraint students max mornings per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalan broj jutara sedmično za učenike s težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15506"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15505"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3, which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished">Nije moguće optimizirati za podgrupu %1, jer ograničenje ranih maksimalnih početaka u drugom satu ima maksimalne početke u drugom satu %2, a broj dana u sedmici je %3, što je manje. Broj dana u sedmici mora biti veći ili jednak maksimalnom broju početaka u drugom satu
 Molimo vas da odgovarajuće izmijenite svoje podatke i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="15980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="15979"/>
         <source>Cannot optimize, because you have constraints of type activity preferred day with no day selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa aktivnosti preferirani dan, a nije odabran nijedan dan (za aktivnost s ID-om=%1). Molimo vas da shodno tome izmijenite svoje podatke (uklonite ili uredite ograničenje) i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16238"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16237"/>
         <source>Cannot optimize, because you have a constraint min days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od minimalnog broja dana između aktivnosti s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16309"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16308"/>
         <source>Cannot optimize, because you have a constraint min half days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od najmanje pola dana između aktivnosti s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16372"/>
         <source>Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja dana između aktivnosti s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16436"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16435"/>
         <source>Cannot optimize, because you have a constraint max half days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje od maksimalno pola dana između aktivnosti s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16497"/>
         <source>Cannot optimize, because you have a constraint activities max hourly span containing the activity with id=%1 having duration=%2, which is greater than the maximum allowed hourly span. The constraint is: %3. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalni satni raspon aktivnosti koje sadrži aktivnost s ID-om=%1 i trajanjem=%2, što je veće od maksimalno dozvoljenog satnog raspona. Ograničenje je: %3. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16518"/>
         <source>Cannot optimize, because you have a constraint activities max hourly span with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje aktivnosti na maksimalni satni raspon s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16582"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16581"/>
         <source>Cannot optimize, because you have a constraint max terms between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnog broja termina između aktivnosti sa duplikatnim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16650"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16649"/>
         <source>Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje minimalnih razmaka između aktivnosti s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16707"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16706"/>
         <source>Cannot optimize, because you have a constraint max gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje maksimalnih razmaka između aktivnosti s dupliciranim aktivnostima. Ograničenje je: %1. Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16753"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16752"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21642"/>
         <source>Explanation:</source>
         <translation type="unfinished">Objašnjenje:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16755"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21645"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21644"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
         <translation type="unfinished">Svaki put kada kreirate novu datoteku, ona sadrži automatski dodano ograničenje ovog tipa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16778"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16777"/>
         <source>Precomputing</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished">Predračunavanje</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16779"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16778"/>
         <source>Precomputing ... please wait</source>
         <translation type="unfinished">Predračunavanje... molimo pričekajte</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16804"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16788"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16803"/>
         <source>FET information</source>
         <translation type="unfinished">FET - informacije</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="16789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="16804"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16788"/>
+        <location filename="../src/engine/generate_pre.cpp" line="16803"/>
         <source>Canceled</source>
         <translation type="unfinished">Otkazano</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17643"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of real days between activities=%3. The minimum required number of real days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 real days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može poštovati jer sadrži %2 aktivnosti, ima težinu 100% i minimalan broj stvarnih dana između aktivnosti = %3. Minimalni potreban broj stvarnih dana u sedmici za to bi bio (nactivities-1)*mindays+1=%4, a imate samo %5 stvarnih dana u sedmici - nemoguće. Molimo vas da ispravite ovo ograničenje.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17814"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17813"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. Currently FET cannot put more than 2 activities on the same day. You have 2*available days&lt;number of activities in this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer nastavnik %2 ima najviše %3 dostupna dana. Trenutno FET ne može staviti više od 2 aktivnosti istog dana. Imate 2*dostupna dana&lt;broj aktivnosti u ovom ograničenju.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17845"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. Currently FET cannot put more than 2 activities on the same day. You have 2*available days&lt;number of activities in this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer podgrupa %2 ima najviše %3 dostupna dana. Trenutno FET ne može staviti više od 2 aktivnosti na isti dan. Imate 2*dostupna dana&lt;broj aktivnosti u ovom ograničenju.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17950"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17949"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available real days. Currently FET cannot put more than 2 activities in the same real day. You have 2*available days&lt;number of activities in this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer nastavnik %2 ima najviše %3 dostupna stvarna dana. Trenutno FET ne može staviti više od 2 aktivnosti u isti stvarni dan. Imate 2*dostupna dana&lt;broj aktivnosti u ovom ograničenju.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="17982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="17981"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available real days. Currently FET cannot put more than 2 activities in the same real day. You have 2*available days&lt;number of activities in this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer podgrupa %2 ima najviše %3 dostupna stvarna dana. Trenutno FET ne može staviti više od 2 aktivnosti u isti stvarni dan. Imate 2*dostupna dana&lt;broj aktivnosti u ovom ograničenju.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18081"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18080"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of half days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može poštovati jer sadrži %2 aktivnosti, ima težinu 100% i minimalan broj poludnevnih aktivnosti = %3. Minimalni potreban broj dana u sedmici za to bi bio (nactivities-1)*mindays+1=%4, a imate samo %5 dana u sedmici - nemoguće. Molimo vas da ispravite ovo ograničenje.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18121"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available half days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može poštovati jer nastavnik %2 ima najviše %3 dostupna pola dana od nastavnika koji nije dostupan, pauze i nastavnik maksimalan broj dana u sedmici. Molimo smanjite težinu ovog ograničenja na vrijednost ispod 100% (zavisi od vaše situacije, ako je 0% premalo, postavite ga na 90%, 95% ili čak 99,75%). Čak ni velika težina ne bi trebala mnogo usporiti program. Situacija u kojoj ćete možda morati povećati vrijednost na više od 0% je na primjer ako imate 5 aktivnosti sa 4 moguća dana. Želite ih rasporediti na 1, 1, 1 i 2, a ne na 2, 2 i 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18144"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available half days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer podgrupa %2 ima najviše %3 dostupna pola dana od učenika koji su postavljeni kao nedostupni i pauze. Molimo smanjite težinu ovog ograničenja na vrijednost ispod 100% (zavisi od vaše situacije, ako je 0% premalo, postavite ga na 90%, 95% ili čak 99,75%). Čak ni velika težina ne bi trebala mnogo usporiti program. Situacija u kojoj ćete možda morati povećati vrijednost na više od 0% je na primjer ako imate 5 aktivnosti sa 4 moguća dana. Želite ih rasporediti na 1, 1, 1 i 2, a ne na 2, 2 i 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18251"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available half days. Currently FET cannot put more than 2 activities on the same day. You have 2*available days&lt;number of activities in this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer nastavnik %2 ima najviše %3 dostupna pola dana. Trenutno FET ne može staviti više od 2 aktivnosti u istom danu. Imate 2*dostupna dana&lt;broj aktivnosti u ovom ograničenju.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18284"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18283"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available half days. Currently FET cannot put more than 2 activities on the same day. You have 2*available days&lt;number of activities in this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished">%1 se ne može ispoštovati jer podgrupa %2 ima najviše %3 dostupna pola dana. Trenutno FET ne može staviti više od 2 aktivnosti u isti dan. Imate 2*dostupna dana&lt;broj aktivnosti u ovom ograničenju.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18326"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18325"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje intervala nastavnika na maksimalan broj dana u sedmici s težinom (procenat) ispod 100 za nastavnika %1. Počevši od FET verzije 5.6.2 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18361"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18360"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje intervala nastavnika na maksimalan broj dana u sedmici sa težinom (procenat) ispod 100. Počevši od FET verzije 5.6.2 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18414"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18413"/>
         <source>Cannot optimize, because you have constraint teacher morning interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje jutarnjeg intervala za nastavnika na maksimalan broj dana u sedmici s težinom (procenat) ispod 100 za nastavnika %1. Počevši od FET verzije 5.6.2 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18449"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18448"/>
         <source>Cannot optimize, because you have constraint teachers morning interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje jutarnjeg intervala za nastavnike na maksimalan broj dana u sedmici sa težinom (procenat) ispod 100. Počevši od FET verzije 5.6.2, moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18502"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18501"/>
         <source>Cannot optimize, because you have constraint teacher afternoon interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalan broj dana u sedmici za nastavnika u popodnevnom intervalu s težinom (procenat) ispod 100 za nastavnika %1. Počevši od FET verzije 5.6.2, moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18537"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18536"/>
         <source>Cannot optimize, because you have constraint teachers afternoon interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje na maksimalan broj dana u sedmici u popodnevnom intervalu za nastavnike s težinom (procenat) ispod 100. Počevši od FET verzije 5.6.2, moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18589"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje za učenike postavljeno na maksimalan broj dana u sedmici sa težinom (procenat) ispod 100 za učenike postavljene na %1. Počevši od FET verzije 5.6.2 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18626"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje intervala učenika na maksimalan broj dana u sedmici s težinom (procenat) ispod 100. Počevši od FET verzije 5.6.2 moguće je koristiti samo težinu od 100% za takva ograničenja. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18681"/>
         <source>Cannot optimize, because you have constraint students set morning interval max days per week with weight (percentage) below 100 for students set %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje su učenici postavili na maksimalan broj dana u sedmici za jutarnji interval, s težinom (procenat) ispod 100 za učenike postavljene na %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18717"/>
         <source>Cannot optimize, because you have constraint students morning interval max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje jutarnjeg intervala za učenike na maksimalan broj dana u sedmici sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18771"/>
         <source>Cannot optimize, because you have constraint students set afternoon interval max days per week with weight (percentage) below 100 for students set %1. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje koje su učenici postavili na maksimalan broj dana u sedmici za popodnevni interval, s težinom (procenat) ispod 100 za učenike postavljene na %1. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18807"/>
         <source>Cannot optimize, because you have constraint students afternoon interval max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje popodnevnog intervala učenika na maksimalan broj dana u sedmici sa težinom (procenat) ispod 100. Molimo vas da postavite težinu na 100% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18866"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;two sets of activities have the same sections&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;dva seta aktivnosti imaju iste odjeljke&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18880"/>
         <source>Cannot optimize, because you have a constraint of type &apos;two sets of activities have the same sections&apos; with a different number of active activities between the first and in the second set. The constraint is:
 %1</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje tipa &apos;dva seta aktivnosti imaju iste odjeljke&apos; s različitim brojem aktivnih aktivnosti između prvog i drugog seta. Ograničenje je:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18954"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18953"/>
         <source>Cannot optimize, because you have a constraint of type &apos;two sets of activities have the same sections&apos; in which the activities are not the same in both sets, having respectively the same students set(s). The constraint is:
 %1</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje tipa &apos;dva seta aktivnosti imaju iste odjeljke&apos; u kojem aktivnosti nisu iste u oba seta, odnosno imaju iste setove učenika. Ograničenje je:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="18973"/>
+        <location filename="../src/engine/generate_pre.cpp" line="18972"/>
         <source>Cannot optimize, because you have a constraint of type &apos;two sets of activities have the same sections&apos; in which there are activities with different durations. The durations of all the activities in such a constraint should be equal. The constraint is:
 %1</source>
         <translation type="unfinished">Ne možete optimizirati jer imate ograničenje tipa &apos;dva seta aktivnosti imaju iste odjeljke&apos; u kojem postoje aktivnosti s različitim trajanjima. Trajanja svih aktivnosti u takvom ograničenju trebaju biti jednaka. Ograničenje je:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19144"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities pair of mutually exclusive time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19196"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19195"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities pair of mutually exclusive sets of time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19248"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19247"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje tipa &apos;aktivnosti zauzimaju maksimalan broj vremenskih intervala iz odabira&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19305"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19304"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max activity tags from set in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19335"/>
-        <location filename="../src/engine/generate_pre.cpp" line="19352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19334"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19351"/>
         <source>The constraint is:
 %1</source>
         <comment>%1 is the description of the constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19350"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19349"/>
         <source>The activity is included in the list of activities of the constraint, but this activity cannot affect this constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19396"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19395"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy min time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;aktivnosti zauzimaju minimalni broj vremenskih intervala od odabira&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19410"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19409"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities occupy min time slots from selection&apos; with the number of selected slots being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:
 %3
 Please correct and try again.</source>
@@ -57760,7 +57754,7 @@ Please correct and try again.</source>
 Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19430"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities occupy min time slots from selection&apos; with the total duration of the selected activities being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:
 %3
 Please correct and try again.</source>
@@ -57769,37 +57763,37 @@ Molimo
 ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19487"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;maksimalni broj istovremenih aktivnosti u odabranim vremenskim intervalima&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19538"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19537"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities min simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni broj simultanih aktivnosti u odabranim vremenskim intervalima&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19617"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max total number of students in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19683"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19682"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;max total activities from set in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;maksimalni ukupan broj aktivnosti iz skupa u odabranim vremenskim intervalima&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19738"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19737"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max in a term&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;maksimalni broj aktivnosti u terminu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19782"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities min in a term&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalne aktivnosti u terminu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19812"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities min in a term&apos; which is impossible to satisfy. The number of activities in the constraint is less than the minimum number of activities allowed in a term x the number of terms (the constraint does not allow empty terms). The constraint is:
 %1
 Please correct and try again.</source>
@@ -57808,385 +57802,391 @@ Please correct and try again.</source>
 Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19860"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max terms&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;aktivnosti zauzimaju maksimalan broj termina&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19903"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19902"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;učenici postavljaju minimalne razmake između uređenog para oznaka aktivnosti&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19950"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19949"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students set min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;učenici postavljaju minimalno %2 praznina između uređenog para oznaka aktivnosti %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19975"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19974"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci učenika između uređenog para oznaka aktivnosti&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20022"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20021"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;učenici min %2 praznina između uređenog para oznaka aktivnosti %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20062"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20061"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between activity tag&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;učenici postavljaju minimalne razmake između oznaka aktivnosti&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20113"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20112"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between activity tag&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci između oznaka aktivnosti za učenike&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20179"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20178"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalne praznine nastavnika između uređenog para oznaka aktivnosti&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20224"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teacher min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Optimizacija nije moguća jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;nastavnik min %2 praznine između uređenog para oznaka aktivnosti %3 i %4&apos;. Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20250"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20249"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci nastavnika između uređenog para oznaka aktivnosti&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20296"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teachers min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;nastavnici min %2 praznine između uređenog para oznaka aktivnosti %3 i %4&apos;. Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20337"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20336"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between activity tag&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci između oznaka aktivnosti nastavnika&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20387"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20386"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between activity tag&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci između oznaka aktivnosti nastavnika&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20452"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between ordered pair of activity tags per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;učenici postavljaju minimalne razmake između uređenog para oznaka aktivnosti po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20499"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students set min %2 gaps between ordered pair of activity tags per real day %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;učenici postavljaju minimalno %2 praznina između uređenog para oznaka aktivnosti po stvarnom danu %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20525"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20524"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between ordered pair of activity tags per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci učenika između uređenog para oznaka aktivnosti po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20571"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students min %2 gaps between ordered pair of activity tags per real day %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;učenici min %2 praznina između uređenog para oznaka aktivnosti po stvarnom danu %3 i %4&apos;. Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20611"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between activity tag per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;učenici postavljaju minimalne razmake između oznaka aktivnosti po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20662"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between activity tag per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci između oznaka aktivnosti za učenike po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20729"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20728"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between ordered pair of activity tags per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci nastavnika između uređenog para oznaka aktivnosti po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20774"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teacher min %2 gaps between ordered pair of activity tags per real day %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;nastavnik minimalno %2 praznina između uređenog para oznaka aktivnosti po stvarnom danu %3 i %4&apos;. Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20800"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20799"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between ordered pair of activity tags per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci nastavnika između uređenog para oznaka aktivnosti po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20847"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20846"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teachers min %2 gaps between ordered pair of activity tags per real day %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;nastavnici min %2 praznine između uređenog para oznaka aktivnosti po stvarnom danu %3 i %4&apos;. Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20886"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between activity tag per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci između oznaka aktivnosti nastavnika po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="20937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="20936"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between activity tag per real day&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenja tipa &apos;minimalni razmaci između oznaka aktivnosti nastavnika po stvarnom danu&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21003"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21002"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between ordered pair of activity tags between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;učenici postavljaju minimalne razmake između uređenog para oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21050"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21049"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students set min %2 gaps between ordered pair of activity tags between morning and afternoon %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;učenici postavljaju minimalno %2 razmaka između uređenog para oznaka aktivnosti između jutra i popodneva %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21074"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between ordered pair of activity tags between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci učenika između uređenog para oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21121"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students min %2 gaps between ordered pair of activity tags between mornings and afternoons %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;učenici min %2 razmaka između uređenog para oznaka aktivnosti između jutara i popodneva %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21162"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21161"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between activity tag between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;učenici postavljaju minimalne razmake između oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21213"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21212"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between activity tag between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci učenika između oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21279"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21278"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between ordered pair of activity tags between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci nastavnika između uređenog para oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21325"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21324"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teacher min %2 gaps between ordered pair of activity tags between morning and afternoon %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;nastavnik minimalno %2 praznine između uređenog para oznaka aktivnosti između jutra i popodneva %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21350"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21349"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between ordered pair of activity tags between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci nastavnika između uređenog para oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21396"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teachers min %2 gaps between ordered pair of activity tags between morning and afternoon %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished">Nije moguće optimizirati jer aktivnost s ID-om %1 ima i prvu i drugu oznaku aktivnosti ograničenja tipa &apos;nastavnici min %2 praznine između uređenog para oznaka aktivnosti između jutra i popodneva %3 i %4&apos;. Ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21436"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between activity tag between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalne pauze nastavnika između oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21486"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between activity tag between morning and afternoon&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;minimalni razmaci nastavnika između oznaka aktivnosti između jutra i popodneva&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21595"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities same room if consecutive&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer imate ograničenje(a) tipa &apos;aktivnosti u istoj prostoriji ako su uzastopne&apos; s težinom (procenat) ispod 100,0%. Molimo vas da postavite težinu na 100,0% i pokušate ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21825"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21860"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21859"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate više od jednog ograničenja tipa učenički set za učenike %1. Molimo vas da ostavite samo jedno od njih</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="21898"/>
-        <location filename="../src/engine/generate_pre.cpp" line="21933"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="21932"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate više od jednog ograničenja tipa učionica/učionica nastavnika za nastavnika %1. Molimo vas da ostavite samo jedno od njih</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22207"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22206"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the preferred room is not virtual. Please correct.</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate ograničenje aktivnosti preferirane učionice za aktivnost s id=%1 koje navodi listu stvarnih učionica, ali preferirana učionica nije virtualna. Molimo ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22223"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22222"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the room %2 from this list is virtual. Please correct.</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate ograničenje aktivnosti preferirane učionice za aktivnost s id=%1 koje navodi listu stvarnih učionica, ali učionica %2 s ove liste je virtualna. Molimo ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22246"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22245"/>
         <source>Cannot generate the timetable, because you have a preferred room constraint for the activity with id=%1 which specifies a real rooms list which does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate ograničenje preferirane učionice za aktivnost s id=%1 koje specificira listu stvarnih učionica koja nema isti broj elemenata kao broj skupova stvarnih učionica za preferiranu virtualnu učionicu (%2). Molimo ispravite ovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22267"/>
         <source>Cannot generate the timetable, because you have more preferred room constraints for the activity with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate više ograničenja preferiranih učionica za aktivnost s id=%1 koja specificiraju jednu ili više lista stvarnih učionica čija rezultirajuća lista stvarnih učionica nema isti broj elemenata kao broj skupova stvarnih učionica za preferiranu virtualnu učionicu (%2). Molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22287"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a nonempty list of real rooms and has weight &lt;100.0%. It is necessary that the weight is exactly 100.0% or the list of real rooms to be empty in this case. Please correct.</source>
         <translation type="unfinished">Nije moguće generirati raspored jer imate ograničenje aktivnosti preferirane učionice za aktivnost s id=%1 koje specificira nepraznu listu stvarnih učionica i ima težinu &lt;100,0%. Potrebno je da težina bude tačno 100,0% ili da lista stvarnih učionica bude prazna u ovom slučaju. Molimo ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22650"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22649"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena zgrade po danu s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22674"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22673"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, maksimalan broj promjena zgrada koje učenici mogu napraviti dnevno s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22715"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22714"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena zgrade dnevno u intervalu od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22750"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog prostornog ograničenja koje učenici mogu mijenjati u danu u intervalima od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24628"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type teacher %2 max activity tags per day from set - please correct this.</source>
         <comment>%2 is the teacher</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa nastavnik %2 maksimum oznaka aktivnosti dnevno iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24684"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type students set %2 max activity tags per day from set - please correct this.</source>
         <comment>%2 is the students set</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa učenici postavljeni na %2 maksimalne oznake aktivnosti dnevno iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24741"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24740"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type teacher %2 max activity tags per real day from set - please correct this.</source>
         <comment>%2 is the teacher</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa nastavnik %2 maksimum oznaka aktivnosti po stvarnom danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24797"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24796"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type students set %2 max activity tags per real day from set - please correct this.</source>
         <comment>%2 is the students set</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa učenici postavljeni na %2 maksimalne oznake aktivnosti po stvarnom danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24989"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type rooms max activity tags per day from set - please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25043"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25042"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type rooms max activity tags per real day from set - please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25067"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type room %2 max activity tags per week from set - please correct this.</source>
         <comment>%2 is the room</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa učionica %2 maksimalne oznake aktivnosti sedmično iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25096"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25095"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type rooms max activity tags per week from set - please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25121"/>
         <source>Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) max activity tags per day from set. It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not appear in any set of real rooms of any virtual room. Please correct this.</source>
         <comment>%1 is the room, %2 is the count of the attached constraints of this type for this room</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25142"/>
         <source>Room %1 is real, it has attached to it a number of %2 constraints of type room(s) max activity tags per day from set, and it appears in a set of real rooms of these virtual rooms: %3. It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not appear in any set of real rooms of any virtual room. Please correct this.</source>
         <comment>%1 is the room, %2 is the count of the attached constraints of this type for this room, %3 is the list of virtual rooms which include the real room %1 in at least one of their sets</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25162"/>
         <source>Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) max activity tags per real day from set. It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not appear in any set of real rooms of any virtual room. Please correct this.</source>
         <comment>%1 is the room, %2 is the count of the attached constraints of this type for this room</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25183"/>
         <source>Room %1 is real, it has attached to it a number of %2 constraints of type room(s) max activity tags per real day from set, and it appears in a set of real rooms of these virtual rooms: %3. It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not appear in any set of real rooms of any virtual room. Please correct this.</source>
         <comment>%1 is the room, %2 is the count of the attached constraints of this type for this room, %3 is the list of virtual rooms which include the real room %1 in at least one of their sets</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25204"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25203"/>
         <source>Room %1 is virtual, but it has attached to it a number of %2 constraints of type room(s) max activity tags per week from set. It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not appear in any set of real rooms of any virtual room. Please correct this.</source>
         <comment>%1 is the room, %2 is the count of the attached constraints of this type for this room</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25224"/>
         <source>Room %1 is real, it has attached to it a number of %2 constraints of type room(s) max activity tags per week from set, and it appears in a set of real rooms of these virtual rooms: %3. It is impossible for FET to start the generation of a timetable in this case. Each constraint of this type must be attached only to a real room, room which should also not appear in any set of real rooms of any virtual room. Please correct this.</source>
         <comment>%1 is the room, %2 is the count of the attached constraints of this type for this room, %3 is the list of virtual rooms which include the real room %1 in at least one of their sets</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25260"/>
+        <source>Activity with id=%1 (%2) has no allowed slot - please correct that.</source>
+        <comment>%1 is the id of the activity, %2 is the detailed description of the activity.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="25360"/>
         <source>Cannot optimize, because there is a space constraint room max activities per teacher with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25371"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25373"/>
         <source>Cannot optimize, because there is a space constraint room max activities per teacher with max activities per teacher less than 1. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25396"/>
         <source>Cannot optimize, because there is a space constraint rooms max activities per teacher with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25409"/>
         <source>Cannot optimize, because there is a space constraint rooms max activities per teacher with max activities per teacher less than 1. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25440"/>
         <source>Cannot optimize, because you have at least a space constraint room(s) max activities per teacher and you have at least a virtual room. To use these constraints all rooms must be real (not virtual). Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25476"/>
         <source>Cannot optimize, because there is a space constraint building min one activity in each available time slot with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25494"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25496"/>
         <source>Cannot optimize, because there is a space constraint buildings min one activity in each available time slot with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25559"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and you have at least a virtual room. To use these constraints all rooms must be real (not virtual). Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25573"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and room %1 is not in a building. To use these constraints each room must be in a certain building. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25597"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and you have activity id %1 which has no related preferred room(s) constraint(s) with weight 100%. To use these constraints each activity must have at least an associated preferred room(s) constraint (not home room(s)) with weight 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25707"/>
         <source>Cannot optimize, because you have a space constraint building(s) min one activity in each available time slot affecting building %1 and it is impossible to respect this constraint for this building, because the building has no room(s). Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58212,7 +58212,7 @@ Molimo ispravite i pokušajte ponovo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6989"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7069"/>
         <source>For subgroup %1 you have too few activities to respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58222,28 +58222,28 @@ Molimo ispravite i pokušajte ponovo.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7142"/>
         <source>For subgroup %1 you have too few activities to respect the constraint(s) of type min hours per morning (the constraint(s) do not allow empty mornings). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7159"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7158"/>
         <source>For subgroup %1 you have too few activities to respect the constraint(s) of type min hours per afternoon (the constraint(s) do not allow empty afternoons). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7660"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7659"/>
         <source>Cannot optimize, because you have a constraint students set max activity tag changes per day for students set %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7724"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7723"/>
         <source>Cannot optimize, because you have a constraint students set max activity tag changes per week for students set %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make the weight 100% and try again!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7833"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7832"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7898"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him/her, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -58252,8 +58252,8 @@ Molimo ispravite i pokušajte ponovo.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8242"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8308"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8241"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8307"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily per real day relating to him/her, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily per real day.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -58262,8 +58262,8 @@ Molimo ispravite i pokušajte ponovo.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8907"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8906"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him/her, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -58272,472 +58272,467 @@ Molimo ispravite i pokušajte ponovo.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9181"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9180"/>
         <source>Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for him/her with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9409"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9408"/>
         <source>Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily per real day for him/her with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9944"/>
         <source>Cannot optimize, because you have constraint teacher min hours per morning for teacher %1 but not also min hours daily for him/her. Please add a constraint teacher(s) min hours daily affecting this teacher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10000"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9999"/>
         <source>Cannot optimize, because you have constraint teachers min hours per morning for teacher %1 but not also min hours daily for him/her. Please add a constraint teacher(s) min hours daily affecting this teacher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10065"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10064"/>
         <source>Cannot optimize, because you have constraint teacher min hours per afternoon for teacher %1 but not also min hours daily for him/her. Please add a constraint teacher(s) min hours daily affecting this teacher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10124"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10123"/>
         <source>Cannot optimize, because you have constraint teachers min hours per afternoon for teacher %1 but not also min hours daily for him/her. Please add a constraint teacher(s) min hours daily affecting this teacher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10609"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and he/she has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10630"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10629"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and min hours daily %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10819"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 and he/she has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10840"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10839"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 and min hours daily %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10860"/>
         <source>Cannot optimize because for teacher %1 you have min real days per week %2 and min hours daily per real day %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11442"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11441"/>
         <source>Cannot optimize because for teacher %1 you have min mornings per week %2 and he/she has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11462"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11461"/>
         <source>Cannot optimize because for teacher %1 you have min mornings per week %2 and min hours daily %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11484"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11483"/>
         <source>Cannot optimize because for teacher %1 you have min mornings per week %2 and min hours per morning %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11506"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11505"/>
         <source>Cannot optimize because for teacher %1 you have min afternoons per week %2 and he/she has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11526"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11525"/>
         <source>Cannot optimize because for teacher %1 you have min afternoons per week %2 and min hours daily %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="11548"/>
+        <location filename="../src/engine/generate_pre.cpp" line="11547"/>
         <source>Cannot optimize because for teacher %1 you have min afternoons per week %2 and min hours per afternoon %3 and he/she has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="12844"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12901"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12920"/>
-        <location filename="../src/engine/generate_pre.cpp" line="12939"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12843"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12900"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12919"/>
+        <location filename="../src/engine/generate_pre.cpp" line="12938"/>
         <source>It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his/her active activities durations, but he/she can work only %3 half days per week (because his/her mornings-afternoons behavior is &apos;%4&apos;) x %5 hours per half day.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13562"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13592"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13561"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13591"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him/her, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and least maximum gaps allowed. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13672"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13702"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13671"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13701"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him/her, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and least maximum gaps allowed. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="13782"/>
-        <location filename="../src/engine/generate_pre.cpp" line="13812"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="13811"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per morning and afternoon relating to him/her, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19331"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19330"/>
         <source>Activity with id=%1 has more than one activity tag contained in the list of activity tags of your constraint of type activities max activity tags from set in selected time slots - please correct this!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="19346"/>
+        <location filename="../src/engine/generate_pre.cpp" line="19345"/>
         <source>Activity with id=%1 has no activity tags contained in the list of activity tags of your constraint of type activities max activity tags from set in selected time slots - please correct this!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22804"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22803"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena zgrade po stvarnom danu u intervalu od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22840"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22839"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog prostornog ograničenja koje učenici mogu maksimalno mijenjati po danu u intervalu od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22893"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22892"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena prostorija dnevno u intervalima od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22929"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22928"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, maksimalan broj promjena u učionicama za učenike po danu u intervalima od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="22982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="22981"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, učenici su postavili maksimalan broj promjena prostorija po stvarnom danu u intervalu od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23018"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23017"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog prostornog ograničenja, odnosno maksimalnog broja promjena u učionicama koje učenici mogu mijenjati po danu u intervalima od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23069"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23068"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, učenici su postavili maksimalan broj promjena zgrada sedmično s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23093"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23092"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, maksimalan broj promjena zgrada sedmično za učenike s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23132"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23131"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Nije moguće optimizirati jer postoji ograničenje prostora koje su učenici postavili - minimalne razmake između promjena zgrada s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23156"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23155"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog prostornog ograničenja koje učenici mogu odrediti minimalnim razmacima između promjena u zgradama s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23195"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23194"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora - maksimalan broj promjena zgrada dnevno za nastavnika s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23217"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23216"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu mijenjati maksimalan broj zgrada dnevno s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23258"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23257"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji prostorno ograničenje koje nastavnik može zadati za maksimalan broj promjena zgrada dnevno u intervalu od satnog intervala s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23291"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu mijenjati maksimalni broj zgrada dnevno u intervalu od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23345"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23344"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji prostorno ograničenje koje nastavnik može zadati za maksimalan broj promjena u zgradi po stvarnom danu u intervalu od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23379"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23378"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu maksimalno mijenjati zgrade po danu u intervalu od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23432"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23431"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji prostorno ograničenje koje nastavnik može mijenjati u učionici dnevno u intervalima od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23466"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23465"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu mijenjati učionice maksimalno dnevno u intervalima od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23518"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji prostorno ograničenje koje nastavnik može mijenjati u učionici maksimalno po danu u intervalu od sat vremena s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23553"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23552"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per real day in hourly interval with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu mijenjati učionice maksimalno po danu u intervalima od sat vremena, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23603"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, odnosno maksimalnog broja promjena zgrada sedmično koje nastavnik može napraviti s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23625"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu mijenjati maksimalni broj zgrada sedmično s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23664"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora za minimalne razmake između promjena u zgradi s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23687"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23686"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Minimalni razmaci između promjena u zgradama s težinom manjom od 100% su dozvoljeni za nastavnike. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23725"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena prostorija po danu s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23749"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora - maksimalan broj promjena učionica za učenike dnevno s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23789"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23788"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena u učionicama sedmično s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23812"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora - maksimalan broj promjena učionica sedmično za učenike s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23852"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23851"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Nije moguće optimizirati jer postoji ograničenje prostora. Učenici su postavili minimalne razmake između promjena u prostoriji s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23875"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora - minimalni razmaci između promjena u prostoriji za učenike s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23915"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23914"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora - maksimalan broj promjena učionica dnevno koje nastavnik može napraviti s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23936"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, a nastavnici mogu mijenjati učionice maksimalno dnevno s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23976"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23975"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora - maksimalan broj promjena učionica sedmično za nastavnika s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="23998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="23997"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, što je maksimalan broj promjena učionica sedmično za nastavnike s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24037"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24036"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora - minimalni razmaci između promjena u prostoriji koje je odredio nastavnik s težinom manjom od 100%. Ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24059"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24058"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Minimalni razmaci između promjena u učionici koje nastavnici mogu odrediti s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24098"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24097"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora - maksimalan broj promjena u učionici po danu, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24120"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24119"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, što nastavnici mogu maksimalno mijenjati učionice po danu s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24159"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24158"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena u prostorijama po stvarnom danu s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24183"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24182"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora, odnosno maksimalnog broja promjena u učionicama za učenike po stvarnom danu, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24221"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća jer postoji ograničenje prostora za maksimalan broj promjena zgrada po stvarnom danu koje nastavnik može napraviti s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24244"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24243"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Nastavnici mogu mijenjati maksimalni broj zgrada po danu s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24283"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24282"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog ograničenja prostora. Učenici su postavili maksimalan broj promjena zgrade po stvarnom danu s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24307"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24306"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per real day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished">Optimizacija nije moguća zbog prostornog ograničenja koje učenici mogu maksimalno mijenjati po danu, s težinom manjom od 100%. Molimo ispravite i pokušajte ponovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24657"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type teachers max activity tags per day from set - please correct this.</source>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa nastavnici maksimalni broj oznaka aktivnosti po danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24715"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24714"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type students max activity tags per day from set - please correct this.</source>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa maksimalni broj oznaka aktivnosti učenika po danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24770"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24769"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type teachers max activity tags per real day from set - please correct this.</source>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa nastavnici maksimalne oznake aktivnosti po stvarnom danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24827"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24826"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type students max activity tags per real day from set - please correct this.</source>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa maksimalne oznake aktivnosti učenika po stvarnom danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="24961"/>
+        <location filename="../src/engine/generate_pre.cpp" line="24960"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type room %2 max activity tags per day from set - please correct this.</source>
         <comment>%2 is the room</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa učionica %2 maksimalne oznake aktivnosti po danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25015"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25014"/>
         <source>Activity with id=%1 has more than one activity tag from the set of activity tags of your constraint of type room %2 max activity tags per real day from set - please correct this.</source>
         <comment>%2 is the room</comment>
         <translation type="unfinished">Aktivnost sa id=%1 ima više od jedne oznake aktivnosti iz skupa oznaka aktivnosti vašeg ograničenja tipa učionica %2 maksimalne oznake aktivnosti po stvarnom danu iz skupa - molimo vas da to ispravite.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25261"/>
-        <source>Activity with id=%1 has no allowed slot - please correct that.</source>
-        <translation type="unfinished">Aktivnost sa id=%1 nema dozvoljeni slot - molimo vas da to ispravite.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25663"/>
         <source>Cannot optimize, because you have a space constraint building(s) min one activity in each available time slot affecting building %1 and it is impossible to respect this constraint for this building, because the total duration of activities possibly being scheduled in this building by preferred room(s) constraints is %2, which is less than the total number of available hours per week for this building, which is %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25683"/>
         <source>Cannot optimize, because you have at least a space constraint building(s) min one activity in each available time slot and it is impossible to respect this(these) constraint(s), because the total duration of activities which will possibly be scheduled in an affected building is %1, which is less than the total number of available hours per week for the affected buildings, which is %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="25808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="25810"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that.</source>
         <translation type="unfinished">Učionica %1 nema dovoljno mjesta za ograničenja početnih učionica (zahtjevano %2, dostupno %3) - molimo ispravite to.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26281"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26283"/>
         <source>Group activities in the initial order item number %1 is ignored, because it contains less than two active activities</source>
         <translation type="unfinished">Grupne aktivnosti u početnoj stavci narudžbe broj %1 se zanemaruju jer sadrži manje od dvije aktivne aktivnosti</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26585"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26587"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished">Ovo je početni redoslijed evaluacije aktivnosti izračunat od strane FET-a. Ako se generiranje zaglavi nakon određenog broja aktivnosti, provjerite aktivnost koja odgovara ovom broju + 1. Moguće je da ćete pronaći greške u svom unosu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26589"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26591"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished">Početni redoslijed aktivnosti (id-ovi):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26596"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation type="unfinished">Ne: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26600"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation type="unfinished">ID: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26615"/>
         <location filename="../src/engine/generate_pre.cpp" line="26617"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26619"/>
         <source>Duration: %1</source>
         <translation type="unfinished">Trajanje: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26624"/>
         <source>Teachers: %1</source>
         <translation type="unfinished">Nastavnici: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26624"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26626"/>
         <source>Subject: %1</source>
         <translation type="unfinished">Predmet: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26629"/>
         <source>Activity tags: %1</source>
         <translation type="unfinished">Oznake aktivnosti: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26631"/>
         <source>Students: %1</source>
         <translation type="unfinished">Učenici: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26635"/>
         <source>nIncompatible: %1</source>
         <translation type="unfinished">Nekompatibilno: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26636"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26638"/>
         <source>nMinDaysConstraintsBroken: %1</source>
         <translation type="unfinished">nMinDaysConstraintsBroken: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26641"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26643"/>
         <source>(grouped with id %1)</source>
         <translation type="unfinished">(grupirano s ID-om %1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="26647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="26649"/>
         <source>End - the order of activities (id-s)</source>
         <translation type="unfinished">Kraj - redoslijed aktivnosti (id-ovi)</translation>
     </message>
@@ -87316,31 +87311,31 @@ Dole: %4</translation>
 <context>
     <name>VariousGlobalWarningMessages</name>
     <message>
-        <location filename="../src/interface/utilities.cpp" line="391"/>
-        <location filename="../src/interface/utilities.cpp" line="404"/>
-        <location filename="../src/interface/utilities.cpp" line="417"/>
+        <location filename="../src/interface/utilities.cpp" line="395"/>
+        <location filename="../src/interface/utilities.cpp" line="408"/>
+        <location filename="../src/interface/utilities.cpp" line="421"/>
         <source>FET warning</source>
         <translation type="unfinished">Upozorenje FET-a</translation>
     </message>
     <message>
-        <location filename="../src/interface/utilities.cpp" line="393"/>
+        <location filename="../src/interface/utilities.cpp" line="397"/>
         <source>Subgroups are invisible in combo boxes, by a global setting which you activated. The current constraint is referring to subgroup %1, so the constraint is displayed incorrectly with a void subgroup here.</source>
         <translation type="unfinished">Podgrupe (odjeljenske grupe) su nevidljive u kombiniranim okvirima zbog globalne postavke koju ste aktivirali. Trenutno ograničenje se odnosi na podgrupu %1, tako da se ograničenje prikazuje neispravno s praznom podgrupom ovdje.</translation>
     </message>
     <message>
-        <location filename="../src/interface/utilities.cpp" line="397"/>
-        <location filename="../src/interface/utilities.cpp" line="410"/>
-        <location filename="../src/interface/utilities.cpp" line="423"/>
+        <location filename="../src/interface/utilities.cpp" line="401"/>
+        <location filename="../src/interface/utilities.cpp" line="414"/>
+        <location filename="../src/interface/utilities.cpp" line="427"/>
         <source>If you want, you can revert to the initial setting to show subgroups in combo boxes.</source>
         <translation type="unfinished">Ako želite, možete se vratiti na početnu postavku da biste prikazali podgrupe u kombiniranim okvirima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/utilities.cpp" line="406"/>
+        <location filename="../src/interface/utilities.cpp" line="410"/>
         <source>Subgroups are invisible in combo boxes, by a global setting which you activated. You are trying to modify a constraint, leaving it to refer to the original subgroup %1, which is invisible in the combo box - but this is impossible.</source>
         <translation type="unfinished">Podgrupe (odjeljenske grupe) su nevidljive u kombiniranim okvirima zbog globalne postavke koju ste aktivirali. Pokušavate izmijeniti ograničenje, ostavljajući ga da se odnosi na originalnu podgrupu %1, koja je nevidljiva u kombiniranom okviru - ali to je nemoguće.</translation>
     </message>
     <message>
-        <location filename="../src/interface/utilities.cpp" line="419"/>
+        <location filename="../src/interface/utilities.cpp" line="423"/>
         <source>Subgroups are invisible in combo boxes, by a global setting which you activated. The current activity is referring to subgroup %1, so the activity is displayed incorrectly with a void subgroup here.</source>
         <translation type="unfinished">Podgrupe (odjeljenske grupe) su nevidljive u kombiniranim okvirima zbog globalne postavke koju ste aktivirali. Trenutna aktivnost se odnosi na podgrupu %1, tako da se aktivnost prikazuje neispravno s praznom podgrupom ovdje.</translation>
     </message>

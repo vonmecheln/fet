@@ -185,7 +185,7 @@ ListOfRelatedTimeConstraintsForm::ListOfRelatedTimeConstraintsForm(QWidget* pare
 		//	weightsPushButton->setToolTip(QString("W"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -1006,7 +1006,7 @@ void ListOfRelatedTimeConstraintsForm::constraintComments()
 	const QString settingsName=QString("TimeConstraintCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();

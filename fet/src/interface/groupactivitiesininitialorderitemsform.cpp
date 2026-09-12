@@ -142,7 +142,7 @@ GroupActivitiesInInitialOrderItemsForm::GroupActivitiesInInitialOrderItemsForm(Q
 		//	moveItemDownPushButton->setToolTip(QString("J"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore splitter state
@@ -880,7 +880,7 @@ void GroupActivitiesInInitialOrderItemsForm::itemComments()
 	const QString settingsName=QString("GroupActivitiesInInitialOrderItemCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();

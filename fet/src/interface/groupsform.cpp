@@ -129,7 +129,7 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 		//	moveGroupDownPushButton->setToolTip(QString("J"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -636,7 +636,7 @@ void GroupsForm::comments()
 	const QString settingsName=QString("StudentsGroupCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();
@@ -700,7 +700,7 @@ void GroupsForm::longName()
 	const QString settingsName=QString("GroupLongNameDialog");
 	
 	getLongNameDialog.resize(300, 200);
-	centerWidgetOnScreen(&getLongNameDialog);
+	centerWidgetOnScreenAndOtherThings(&getLongNameDialog);
 	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
 	
 	int t=getLongNameDialog.exec();
@@ -764,7 +764,7 @@ void GroupsForm::code()
 	const QString settingsName=QString("GroupCodeDialog");
 	
 	getCodeDialog.resize(300, 200);
-	centerWidgetOnScreen(&getCodeDialog);
+	centerWidgetOnScreenAndOtherThings(&getCodeDialog);
 	restoreFETDialogGeometry(&getCodeDialog, settingsName);
 	
 	int t=getCodeDialog.exec();

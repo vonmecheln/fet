@@ -97,7 +97,7 @@ ModifyActivityForm::ModifyActivityForm(QWidget* parent, int id, int activityGrou
 	connect(showSubgroupsCheckBox, &QCheckBox::toggled, this, &ModifyActivityForm::showSubgroupsChanged);
 	connect(helpPushButton, &QPushButton::clicked, this, &ModifyActivityForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
@@ -639,7 +639,7 @@ void ModifyActivityForm::help()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(600,470);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 
 	setParentAndOtherThings(&dialog, this);
 	dialog.exec();

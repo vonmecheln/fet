@@ -137,7 +137,7 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 		//	moveTeacherDownPushButton->setToolTip(QString("J"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -640,7 +640,7 @@ void TeachersForm::comments()
 	const QString settingsName=QString("TeacherCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();
@@ -702,7 +702,7 @@ void TeachersForm::longName()
 	const QString settingsName=QString("TeacherLongNameDialog");
 	
 	getLongNameDialog.resize(300, 200);
-	centerWidgetOnScreen(&getLongNameDialog);
+	centerWidgetOnScreenAndOtherThings(&getLongNameDialog);
 	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
 	
 	int t=getLongNameDialog.exec();
@@ -764,7 +764,7 @@ void TeachersForm::code()
 	const QString settingsName=QString("TeacherCodeDialog");
 	
 	getCodeDialog.resize(300, 200);
-	centerWidgetOnScreen(&getCodeDialog);
+	centerWidgetOnScreenAndOtherThings(&getCodeDialog);
 	restoreFETDialogGeometry(&getCodeDialog, settingsName);
 	
 	int t=getCodeDialog.exec();

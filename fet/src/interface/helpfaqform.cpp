@@ -30,7 +30,7 @@ HelpFaqForm::HelpFaqForm(QWidget* parent): QDialog(parent)
 
 	connect(closePushButton, &QPushButton::clicked, this, &HelpFaqForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	setText();

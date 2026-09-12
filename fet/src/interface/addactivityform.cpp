@@ -120,7 +120,7 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	connect(clearStudentsPushButton, &QPushButton::clicked, this, &AddActivityForm::clearStudents);
 	connect(clearTeachersPushButton, &QPushButton::clicked, this, &AddActivityForm::clearTeachers);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
@@ -579,7 +579,7 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 		hh=380;
 	
 	this->resize(ww, hh);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 }
 
@@ -1389,7 +1389,7 @@ void AddActivityForm::help()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 
 	setParentAndOtherThings(&dialog, this);
 	dialog.exec();

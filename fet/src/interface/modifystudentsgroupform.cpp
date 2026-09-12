@@ -29,7 +29,7 @@ ModifyStudentsGroupForm::ModifyStudentsGroupForm(QWidget* parent, const QString&
 	connect(okPushButton, &QPushButton::clicked, this, &ModifyStudentsGroupForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyStudentsGroupForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	numberSpinBox->setMaximum(MAX_ROOM_CAPACITY);

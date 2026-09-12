@@ -179,7 +179,7 @@ ListOfRelatedSpaceConstraintsForm::ListOfRelatedSpaceConstraintsForm(QWidget* pa
 		//	weightsPushButton->setToolTip(QString("W"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -993,7 +993,7 @@ void ListOfRelatedSpaceConstraintsForm::constraintComments()
 	const QString settingsName=QString("SpaceConstraintCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();

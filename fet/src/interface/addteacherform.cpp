@@ -56,7 +56,7 @@ AddTeacherForm::AddTeacherForm(QWidget* parent, QHash<QString, int>& activeHours
 	connect(addTeacherPushButton, &QPushButton::clicked, this, &AddTeacherForm::addTeacher);
 	connect(helpPushButton, &QPushButton::clicked, this, &AddTeacherForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){

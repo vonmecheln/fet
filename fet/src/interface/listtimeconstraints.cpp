@@ -96,7 +96,7 @@ ListTimeConstraintsDialog::ListTimeConstraintsDialog(QWidget* parent, const QStr
 
 	splitter=_splitter;
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, dialogName);
 }
 
@@ -3528,7 +3528,7 @@ ListTimeConstraints::ListTimeConstraints(QWidget* parent, int _type)
 
 	//dialog->setWindowTitle(dialogTitle);
 	
-	//centerWidgetOnScreen(dialog);
+	//centerWidgetOnScreenAndOtherThings(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
 	
 	constraintsListWidget=new QListWidget;
@@ -9476,7 +9476,7 @@ void ListTimeConstraints::constraintComments()
 	const QString settingsName=QString("TimeConstraintCommentsDialog");
 
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 
 	int t=getCommentsDialog.exec();

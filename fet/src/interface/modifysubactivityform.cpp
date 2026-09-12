@@ -81,7 +81,7 @@ ModifySubactivityForm::ModifySubactivityForm(QWidget* parent, int id, int activi
 	connect(showSubgroupsCheckBox, &QCheckBox::toggled, this, &ModifySubactivityForm::showSubgroupsChanged);
 	connect(helpPushButton, &QPushButton::clicked, this, &ModifySubactivityForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
@@ -525,7 +525,7 @@ void ModifySubactivityForm::help()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(600,470);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 
 	setParentAndOtherThings(&dialog, this);
 	dialog.exec();

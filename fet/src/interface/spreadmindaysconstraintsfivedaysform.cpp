@@ -44,7 +44,7 @@ SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm(QWidg
 {
 	setupUi(this);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	okPushButton->setDefault(true);
@@ -412,7 +412,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	const QString settingsName=QString("SpreadMinDaysBetweenActivitiesConstraintsLastConfirmationForm");
 
 	dialog.resize(600, 500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	acceptPB->setFocus();

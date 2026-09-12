@@ -151,7 +151,7 @@ AddOrModifySpaceConstraintDialog::AddOrModifySpaceConstraintDialog(QWidget* pare
 
 	//resize(600, 400);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, dialogName);
 }
 
@@ -2886,7 +2886,7 @@ AddOrModifySpaceConstraint::AddOrModifySpaceConstraint(QWidget* parent, int _typ
 
 	//dialog->setWindowTitle(dialogTitle);
 
-	//centerWidgetOnScreen(dialog);
+	//centerWidgetOnScreenAndOtherThings(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
 	
 	if(teachersComboBox!=nullptr){

@@ -191,7 +191,7 @@ TimetableViewTeachersDaysVerticalForm::TimetableViewTeachersDaysVerticalForm(QWi
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewTeachersDaysVerticalForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state
@@ -385,7 +385,7 @@ void TimetableViewTeachersDaysVerticalForm::newTimetableGenerated()
 
 	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state

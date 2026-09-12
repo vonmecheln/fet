@@ -34,7 +34,7 @@ AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::AddRemoveMult
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	connect(addAllConstraintsPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllConstraints);

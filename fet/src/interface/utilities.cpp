@@ -181,9 +181,13 @@ void CornerEnabledTableWidgetOfSpinBoxes::keyPressEvent(QKeyEvent* event)
 	}
 }
 
-void centerWidgetOnScreen(QWidget* widget)
+void centerWidgetOnScreenAndOtherThings(QWidget* widget)
 {
-	Q_UNUSED(widget);
+	//Q_UNUSED(widget);
+
+	QDialog* dialog=qobject_cast<QDialog*>(widget);
+	if(dialog!=nullptr)
+		dialog->setSizeGripEnabled(true);
 
 	//widget->setWindowFlags(widget->windowFlags() | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint);
 	
@@ -276,7 +280,7 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 {
 	Q_UNUSED(widget);
 	Q_UNUSED(parent);
-
+	
 /*	if(!widget->parentWidget()){
 		widget->setParent(parent, Qt::Dialog);
 	

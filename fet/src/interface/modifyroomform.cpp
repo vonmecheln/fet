@@ -29,7 +29,7 @@ ModifyRoomForm::ModifyRoomForm(QWidget* parent, const QString& initialRoomName, 
 	connect(okPushButton, &QPushButton::clicked, this, &ModifyRoomForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyRoomForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp5=buildingsComboBox->minimumSizeHint();

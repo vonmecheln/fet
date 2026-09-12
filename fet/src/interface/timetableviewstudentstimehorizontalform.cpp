@@ -232,7 +232,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	unlockRadioButton->setChecked(false);
 	toggleRadioButton->setChecked(false);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state
@@ -560,7 +560,7 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 	unlockRadioButton->setChecked(false);
 	toggleRadioButton->setChecked(false);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state

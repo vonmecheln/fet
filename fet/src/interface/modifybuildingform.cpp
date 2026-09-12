@@ -29,7 +29,7 @@ ModifyBuildingForm::ModifyBuildingForm(QWidget* parent, const QString& initialBu
 	connect(okPushButton, &QPushButton::clicked, this, &ModifyBuildingForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &ModifyBuildingForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	this->_initialBuildingName=initialBuildingName;

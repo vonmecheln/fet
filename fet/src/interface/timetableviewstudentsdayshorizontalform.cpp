@@ -200,7 +200,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewStudentsDaysHorizontalForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical students list splitter state
@@ -438,7 +438,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	connect(lockTimeSpacePushButton, SIG NAL(clicked()), this, SL OT(lockTimeSpace()));
 	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical students list splitter state

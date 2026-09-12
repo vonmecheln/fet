@@ -22834,11 +22834,11 @@ impossiblestudentsminhoursdaily:
 					mhd[1]=1; //afternoon
 					mhd[0]=1; //morning, at least as large as for daily
 					if(subgroupsMinHoursDailyPercentages[sbg][1]==100){
-						assert(mhd[1]<subgroupsMinHoursDailyMinHours[sbg][1]);
+						assert(mhd[1]<=subgroupsMinHoursDailyMinHours[sbg][1]);
 						mhd[1]=subgroupsMinHoursDailyMinHours[sbg][1];
 					}
 					if(subgroupsMinHoursDailyPercentages[sbg][0]==100){
-						assert(mhd[0]<subgroupsMinHoursDailyMinHours[sbg][0]);
+						assert(mhd[0]<=subgroupsMinHoursDailyMinHours[sbg][0]);
 						mhd[0]=subgroupsMinHoursDailyMinHours[sbg][0];
 					}
 
@@ -31178,11 +31178,11 @@ impossibleteachersactivitytagmaxhourscontinuously:
 						mhd[1]=1; //afternoon
 						mhd[0]=1; //morning, at least as large as for daily
 						if(teachersMinHoursDailyPercentages[tch][1]==100){
-							assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+							assert(mhd[1]<=teachersMinHoursDailyMinHours[tch][1]);
 							mhd[1]=teachersMinHoursDailyMinHours[tch][1];
 						}
 						if(teachersMinHoursDailyPercentages[tch][0]==100){
-							assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+							assert(mhd[0]<=teachersMinHoursDailyMinHours[tch][0]);
 							mhd[0]=teachersMinHoursDailyMinHours[tch][0];
 						}
 
@@ -31615,11 +31615,11 @@ impossibleteachersminhoursdaily:
 									mhd[1]=1; //afternoon
 									mhd[0]=1; //morning, at least as large as for daily
 									if(teachersMinHoursDailyPercentages[tch][1]==100){
-										assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+										assert(mhd[1]<=teachersMinHoursDailyMinHours[tch][1]);
 										mhd[1]=teachersMinHoursDailyMinHours[tch][1];
 									}
 									if(teachersMinHoursDailyPercentages[tch][0]==100){
-										assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+										assert(mhd[0]<=teachersMinHoursDailyMinHours[tch][0]);
 										mhd[0]=teachersMinHoursDailyMinHours[tch][0];
 									}
 
@@ -31867,11 +31867,11 @@ impossibleteachersminhoursdaily:
 										mhd[1]=1; //afternoon
 										mhd[0]=1; //morning, at least as large as for daily
 										if(teachersMinHoursDailyPercentages[tch][1]==100){
-											assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+											assert(mhd[1]<=teachersMinHoursDailyMinHours[tch][1]);
 											mhd[1]=teachersMinHoursDailyMinHours[tch][1];
 										}
 										if(teachersMinHoursDailyPercentages[tch][0]==100){
-											assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+											assert(mhd[0]<=teachersMinHoursDailyMinHours[tch][0]);
 											mhd[0]=teachersMinHoursDailyMinHours[tch][0];
 										}
 
@@ -32976,11 +32976,11 @@ impossibleteachersminrealdaysperweek:
 					mhd[1]=1; //afternoon
 					mhd[0]=1; //morning, at least as large as for daily
 					if(teachersMinHoursDailyPercentages[tch][1]==100){
-						assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+						assert(mhd[1]<=teachersMinHoursDailyMinHours[tch][1]);
 						mhd[1]=teachersMinHoursDailyMinHours[tch][1];
 					}
 					if(teachersMinHoursDailyPercentages[tch][0]==100){
-						assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+						assert(mhd[0]<=teachersMinHoursDailyMinHours[tch][0]);
 						mhd[0]=teachersMinHoursDailyMinHours[tch][0];
 					}
 

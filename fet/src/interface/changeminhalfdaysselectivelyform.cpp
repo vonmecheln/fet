@@ -31,7 +31,7 @@ ChangeMinHalfDaysSelectivelyForm::ChangeMinHalfDaysSelectivelyForm(QWidget* pare
 	connect(okPushButton, &QPushButton::clicked, this, &ChangeMinHalfDaysSelectivelyForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &ChangeMinHalfDaysSelectivelyForm::cancel);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QSize tmp5=oldConsecutiveComboBox->minimumSizeHint();

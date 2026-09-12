@@ -40,7 +40,7 @@ CommentsForm::CommentsForm(QWidget* parent): QDialog(parent)
 	connect(okPushButton, &QPushButton::clicked, this, &CommentsForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &CommentsForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	commentsTextEdit->setPlainText(gt.rules.comments);

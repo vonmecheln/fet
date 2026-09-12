@@ -126,7 +126,7 @@ YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 		//	moveYearDownPushButton->setToolTip(QString("J"));
 	}
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -439,7 +439,7 @@ void YearsForm::comments()
 	const QString settingsName=QString("StudentsYearCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();
@@ -503,7 +503,7 @@ void YearsForm::longName()
 	const QString settingsName=QString("YearLongNameDialog");
 	
 	getLongNameDialog.resize(300, 200);
-	centerWidgetOnScreen(&getLongNameDialog);
+	centerWidgetOnScreenAndOtherThings(&getLongNameDialog);
 	restoreFETDialogGeometry(&getLongNameDialog, settingsName);
 	
 	int t=getLongNameDialog.exec();
@@ -567,7 +567,7 @@ void YearsForm::code()
 	const QString settingsName=QString("YearCodeDialog");
 	
 	getCodeDialog.resize(300, 200);
-	centerWidgetOnScreen(&getCodeDialog);
+	centerWidgetOnScreenAndOtherThings(&getCodeDialog);
 	restoreFETDialogGeometry(&getCodeDialog, settingsName);
 	
 	int t=getCodeDialog.exec();

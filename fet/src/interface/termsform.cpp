@@ -38,7 +38,7 @@ TermsForm::TermsForm(QWidget* parent): QDialog(parent)
 	connect(okPushButton, &QPushButton::clicked, this, &TermsForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &TermsForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	numberOfTermsSpinBox->setMinimum(1);

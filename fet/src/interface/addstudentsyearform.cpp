@@ -29,7 +29,7 @@ AddStudentsYearForm::AddStudentsYearForm(QWidget* parent): QDialog(parent)
 	connect(addStudentsYearPushButton, &QPushButton::clicked, this, &AddStudentsYearForm::addStudentsYear);
 	connect(closePushButton, &QPushButton::clicked, this, &AddStudentsYearForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	nameLineEdit->selectAll();

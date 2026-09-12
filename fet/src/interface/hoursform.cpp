@@ -120,7 +120,7 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 	}
 	numberOfRealHoursChanged();
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 }
 

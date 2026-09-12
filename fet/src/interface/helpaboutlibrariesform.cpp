@@ -34,7 +34,7 @@ HelpAboutLibrariesForm::HelpAboutLibrariesForm(QWidget* parent): QDialog(parent)
 	
 	connect(closePushButton, &QPushButton::clicked, this, &HelpAboutLibrariesForm::close);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	aboutLibrariesTextBrowser->setOpenExternalLinks(true);

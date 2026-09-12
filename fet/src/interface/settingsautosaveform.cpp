@@ -31,7 +31,7 @@ SettingsAutosaveForm::SettingsAutosaveForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//connect(buttonBox, SIG NAL(accepted()), this, SL OT(ok()));

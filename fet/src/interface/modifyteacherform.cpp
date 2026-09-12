@@ -62,7 +62,7 @@ ModifyTeacherForm::ModifyTeacherForm(QWidget* parent, Teacher* _tch, QHash<QStri
 	connect(okPushButton, &QPushButton::clicked, this, &ModifyTeacherForm::ok);
 	connect(helpPushButton, &QPushButton::clicked, this, &ModifyTeacherForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){

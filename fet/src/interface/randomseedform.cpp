@@ -40,7 +40,7 @@ RandomSeedForm::RandomSeedForm(QWidget* parent): QDialog(parent)
 	connect(okPushButton, &QPushButton::clicked, this, &RandomSeedForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &RandomSeedForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	component1GroupBox->setTitle(tr("Component 1: each from min %1 to max %2, not all zero.",

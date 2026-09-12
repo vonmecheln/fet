@@ -117,7 +117,7 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	connect(helpPushButton, &QPushButton::clicked, this, &SplitYearForm::help);
 	connect(resetPushButton, &QPushButton::clicked, this, &SplitYearForm::reset);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	//2020-09-03
@@ -1095,7 +1095,7 @@ void SplitYearForm::help()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 
 	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
@@ -1171,7 +1171,7 @@ void SplitYearForm::copyFromAnotherYear()
 	
 	dialog.setLayout(layout);
 
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, "CopyCategoriesAndDivisionsFromAnotherYearForm");
 
 	int res=dialog.exec();

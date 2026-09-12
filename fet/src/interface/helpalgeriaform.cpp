@@ -29,7 +29,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	connect(closePushButton, &QPushButton::clicked, this, &HelpAlgeriaForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QString s=QString("");

@@ -36,7 +36,7 @@ TimetableShowConflictsForm::TimetableShowConflictsForm(QWidget* parent): QDialog
 
 	connect(closePushButton, &QPushButton::clicked, this, &TimetableShowConflictsForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	setWindowTitle(conflictsStringTitle);
@@ -53,7 +53,7 @@ void TimetableShowConflictsForm::newTimetableGenerated()
 
 	connect(closePushButton, SIG NAL(clicked()), this, SL OT(close()));
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);*/
 	
 	setWindowTitle(conflictsStringTitle);

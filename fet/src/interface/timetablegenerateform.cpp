@@ -133,7 +133,7 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 	connect(writeHighestStagePushButton, &QPushButton::clicked, this, &TimetableGenerateForm::writeHighestStage);
 	connect(stopHighestPushButton, &QPushButton::clicked, this, &TimetableGenerateForm::stopHighest);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	generation_running=false;
@@ -440,7 +440,7 @@ void TimetableGenerateForm::stop()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 	
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	setParentAndOtherThings(&dialog, this);
@@ -617,7 +617,7 @@ void TimetableGenerateForm::stopHighest()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	setParentAndOtherThings(&dialog, this);
@@ -783,7 +783,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 
 	setParentAndOtherThings(&dialog, this);
@@ -1318,7 +1318,7 @@ void TimetableGenerateForm::seeImpossible()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 
 	setParentAndOtherThings(&dialog, this);
@@ -1382,7 +1382,7 @@ void TimetableGenerateForm::seeInitialOrder()
 	connect(pb, &QPushButton::clicked, &dialog, &QDialog::close);
 
 	dialog.resize(700,500);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 
 	setParentAndOtherThings(&dialog, this);

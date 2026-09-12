@@ -34,7 +34,7 @@ ActivityPlanningConfirmationForm::ActivityPlanningConfirmationForm(QWidget* pare
 	
 	plainTextEdit->setReadOnly(true);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QString s;

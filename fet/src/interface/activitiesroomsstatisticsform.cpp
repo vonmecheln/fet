@@ -38,7 +38,7 @@ ActivitiesRoomsStatisticsForm::ActivitiesRoomsStatisticsForm(QWidget* parent): Q
 
 	connect(closeButton, &QPushButton::clicked, this, &ActivitiesRoomsStatisticsForm::close);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	possiblyTextEdit->setReadOnly(true);

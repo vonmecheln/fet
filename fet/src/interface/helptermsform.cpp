@@ -30,7 +30,7 @@ HelpTermsForm::HelpTermsForm(QWidget* parent): QDialog(parent)
 
 	connect(closePushButton, &QPushButton::clicked, this, &HelpTermsForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	setText();

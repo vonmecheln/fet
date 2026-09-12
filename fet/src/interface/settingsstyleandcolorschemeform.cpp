@@ -32,7 +32,7 @@ SettingsStyleAndColorSchemeForm::SettingsStyleAndColorSchemeForm(QWidget* parent
 {
 	setupUi(this);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	connect(okPushButton, &QPushButton::clicked, this, &SettingsStyleAndColorSchemeForm::ok);

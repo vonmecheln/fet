@@ -189,7 +189,7 @@ TimetableViewRoomsDaysHorizontalForm::TimetableViewRoomsDaysHorizontalForm(QWidg
 
 	connect(helpPushButton, &QPushButton::clicked, this, &TimetableViewRoomsDaysHorizontalForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state
@@ -395,7 +395,7 @@ void TimetableViewRoomsDaysHorizontalForm::newTimetableGenerated()
 
 	connect(helpPushButton, SIG NAL(clicked()), this, SL OT(help()));
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state

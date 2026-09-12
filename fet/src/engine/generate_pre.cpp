@@ -7019,7 +7019,6 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				}
 			}
 			else if(subgroupsMinHoursDailyMinHours[i][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0 && subgroupsMinHoursDailyAllowEmptyDays[i]==true){
-
 				if(nHoursPerSubgroup[i]>0 && subgroupsMinHoursDailyMinHours[i][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>nHoursPerSubgroup[i]){
 					ok=false;
 
@@ -10168,7 +10167,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 					return false;
 			}
 
-			if(teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY]<2){
+			/*if(teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY]<2){
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
@@ -10182,7 +10181,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 
 				if(t==0)
 					return false;
-			}
+			}*/
 
 			/*if(teachersMinHoursDailyMinHours[tc][0]>=0 && teachersMinHoursPerMorningAllowEmptyMornings[tc]==false){
 				if(gt.rules.nDaysPerWeek/2*teachersMinHoursDailyMinHours[tc][0] > nHoursPerTeacher[tc]){
@@ -25258,7 +25257,10 @@ bool computeFixedActivities(QWidget* parent)
 		if(notAllowedSlots==gt.rules.nHoursPerWeek){
 			ok=false;
 		
-			QString s=GeneratePreTranslate::tr("Activity with id=%1 has no allowed slot - please correct that.").arg(gt.rules.internalActivitiesList[ai].id);
+			QString s=GeneratePreTranslate::tr("Activity with id=%1 (%2) has no allowed slot - please correct that.", "%1 is the id of the activity,"
+			 " %2 is the detailed description of the activity.")
+			 .arg(gt.rules.internalActivitiesList[ai].id)
+			 .arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );

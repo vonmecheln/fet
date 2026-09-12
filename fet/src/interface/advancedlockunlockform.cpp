@@ -190,7 +190,7 @@ void AdvancedLockUnlockForm::lockDays(QWidget* parent)
 	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
 	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
 	
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, lockDaysSettingsString);
 
 	int res=dialog.exec();
@@ -381,7 +381,7 @@ void AdvancedLockUnlockForm::lockDays(QWidget* parent)
 			int lw=lastConfirmationDialog.sizeHint().width();
 			int lh=lastConfirmationDialog.sizeHint().height();
 			lastConfirmationDialog.resize(lw,lh);
-			centerWidgetOnScreen(&lastConfirmationDialog);
+			centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 			restoreFETDialogGeometry(&lastConfirmationDialog, lockDaysConfirmationSettingsString);
 			bool ok=lastConfirmationDialog.exec();
 			saveFETDialogGeometry(&lastConfirmationDialog, lockDaysConfirmationSettingsString);
@@ -503,7 +503,7 @@ void AdvancedLockUnlockForm::lockDays(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockDaySettingsString);
 	bool ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockDaySettingsString);
@@ -663,7 +663,7 @@ void AdvancedLockUnlockForm::lockDays(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockDayConfirmationSettingsString);
@@ -753,7 +753,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockEndStudentsDaySettingsString);
 	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockEndStudentsDaySettingsString);
@@ -961,7 +961,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, lockEndStudentsDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, lockEndStudentsDayConfirmationSettingsString);
@@ -1063,7 +1063,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockEndStudentsDaySettingsString);
 	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockEndStudentsDaySettingsString);
@@ -1229,7 +1229,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockEndStudentsDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockEndStudentsDayConfirmationSettingsString);
@@ -1323,7 +1323,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockAllSettingsString);
 	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockAllSettingsString);
@@ -1500,7 +1500,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, lockAllConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, lockAllConfirmationSettingsString);
@@ -1604,7 +1604,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockAllSettingsString);
 	bool ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockAllSettingsString);
@@ -1750,7 +1750,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
@@ -1847,7 +1847,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockAllSettingsString);
 	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockAllSettingsString);
@@ -2006,7 +2006,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
@@ -2118,7 +2118,7 @@ void AdvancedLockUnlockForm::unlockDaysWithoutTimetable(QWidget* parent)
 	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
 	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
 	
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, unlockDaysSettingsString);
 
 	int res=dialog.exec();
@@ -2302,7 +2302,7 @@ void AdvancedLockUnlockForm::unlockDaysWithoutTimetable(QWidget* parent)
 			int lw=lastConfirmationDialog.sizeHint().width();
 			int lh=lastConfirmationDialog.sizeHint().height();
 			lastConfirmationDialog.resize(lw,lh);
-			centerWidgetOnScreen(&lastConfirmationDialog);
+			centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 			restoreFETDialogGeometry(&lastConfirmationDialog, unlockDaysConfirmationSettingsString);
 			bool ok=lastConfirmationDialog.exec();
 			saveFETDialogGeometry(&lastConfirmationDialog, unlockDaysConfirmationSettingsString);
@@ -2422,7 +2422,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockActivityTagSettingsString);
 	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockActivityTagSettingsString);
@@ -2602,7 +2602,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, lockActivityTagConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, lockActivityTagConfirmationSettingsString);
@@ -2725,7 +2725,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockActivityTagSettingsString);
 	bool ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockActivityTagSettingsString);
@@ -2879,7 +2879,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
@@ -2996,7 +2996,7 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	taDialog.resize(w,h);
-	centerWidgetOnScreen(&taDialog);
+	centerWidgetOnScreenAndOtherThings(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockActivityTagSettingsString);
 	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockActivityTagSettingsString);
@@ -3160,7 +3160,7 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
@@ -3294,7 +3294,7 @@ LockAdvancedDialog::LockAdvancedDialog(QWidget* parent) : QDialog(parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	this->resize(w,h);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, lockAdvancedFilterSettingsString);
 	
 	filterChanged();
@@ -3744,7 +3744,7 @@ void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, lockActivityTagConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, lockActivityTagConfirmationSettingsString);
@@ -3884,7 +3884,7 @@ UnlockAdvancedDialog::UnlockAdvancedDialog(QWidget* parent) : QDialog(parent)
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
 	this->resize(w,h);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, unlockAdvancedFilterSettingsString);
 	
 	filterChanged();
@@ -4319,7 +4319,7 @@ void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* paren
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
 	lastConfirmationDialog.resize(lw,lh);
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);

@@ -143,7 +143,7 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, const QString& title, bo
 	int w=this->sizeHint().width();
 	int h=this->sizeHint().height();
 	this->resize(w, h);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, atts);
 	
 	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){

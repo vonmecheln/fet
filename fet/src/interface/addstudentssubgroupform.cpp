@@ -29,7 +29,7 @@ AddStudentsSubgroupForm::AddStudentsSubgroupForm(QWidget* parent, const QString&
 	connect(addStudentsSubgroupPushButton, &QPushButton::clicked, this, &AddStudentsSubgroupForm::addStudentsSubgroup);
 	connect(closePushButton, &QPushButton::clicked, this, &AddStudentsSubgroupForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	yearNameLineEdit->setText(yearName);

@@ -67,7 +67,7 @@ AddExistingStudentsGroupsForm::AddExistingStudentsGroupsForm(QWidget* parent, St
 	if(settings.contains(this->metaObject()->className()+QString("/sorted-check-box")))
 		sortedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/sorted-check-box")).toBool());
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	selectedGroupsListWidget->clear();

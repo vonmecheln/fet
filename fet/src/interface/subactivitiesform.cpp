@@ -90,7 +90,7 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	
 	subactivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	QSettings settings(COMPANY, PROGRAM);
@@ -772,7 +772,7 @@ void SubactivitiesForm::subactivityComments()
 	const QString settingsName=QString("SubactivityCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();

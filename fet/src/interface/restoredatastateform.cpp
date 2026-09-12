@@ -64,7 +64,7 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 	restoreDataStateListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	QSettings settings(COMPANY, PROGRAM);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))

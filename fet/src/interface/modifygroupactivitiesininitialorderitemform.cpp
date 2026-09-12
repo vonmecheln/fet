@@ -51,7 +51,7 @@ ModifyGroupActivitiesInInitialOrderItemForm::ModifyGroupActivitiesInInitialOrder
 
 	connect(clearPushButton, &QPushButton::clicked, this, &ModifyGroupActivitiesInInitialOrderItemForm::clear);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QSettings settings(COMPANY, PROGRAM);

@@ -198,7 +198,7 @@ TeachersNotAvailableTimesTimeHorizontalForm::TeachersNotAvailableTimesTimeHorizo
 	connect(naTableWidget, &QTableWidget::itemClicked, this, &TeachersNotAvailableTimesTimeHorizontalForm::itemClicked);
 	connect(selectedPushButton, &QPushButton::clicked, this, &TeachersNotAvailableTimesTimeHorizontalForm::selectedClicked);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	naTableWidget->setRowCount(gt.rules.teachersList.count());

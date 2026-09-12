@@ -30,7 +30,7 @@ HelpBlockPlanningForm::HelpBlockPlanningForm(QWidget* parent): QDialog(parent)
 
 	connect(closePushButton, &QPushButton::clicked, this, &HelpBlockPlanningForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	setText();

@@ -44,7 +44,7 @@ GetModeForNewFileForm::GetModeForNewFileForm(QWidget* parent): QDialog(parent)
 	connect(okPushButton, &QPushButton::clicked, this, &GetModeForNewFileForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &GetModeForNewFileForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	officialRadioButton->setChecked(false);

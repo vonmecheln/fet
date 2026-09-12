@@ -39,7 +39,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	
 	connect(closePushButton, &QPushButton::clicked, this, &HelpAboutForm::close);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	tabWidget->setCurrentIndex(0);

@@ -14072,3 +14072,63 @@ Finally, we can generalize this suggestion :
 *) "ConstraintTeachersMinActivitiesDaily" || (DailyRealDays) (all teachers).
 *) "ConstraintStudentsSetMinActivitiesDaily" || (DailyRealDays).
 *) "ConstraintStudentsMinActivitiesDaily" || (DailyRealDays) (all students).
+
+890--------------------------------------------------------
+From Michael Towers (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6942.0
+
+ I've been playing around with some ideas to make graphical installers for FET. My first attempt was for Windows using NSIS. It seemed to work, but is limited to Windows and I find NSIS a bit arcane.
+
+Then I thought it should be possible to make an installer using Qt – one which uses the same program libraries as FET itself, so the additional size would be minimal. I have now got one which works on Linux, with a matching uninstaller. Also desktop menu entries and file-type associations are possible.
+
+There is a single script to compile all the code, including FET, and pack the results in a runnable installer, so it should be quite easy to build the installer. It uses the Qt libraries from the Qt online installer, and "makeself" to create the runnable installer package.
+
+It's still rather new, but should be quite functional. Anyone interested? See fetinstaller (https://github.com/gradgrind/fetinstaller).
+
+891--------------------------------------------------------
+From Volker Dirr:
+
+I added in my tools this lines in the pro file:
+macx {
+    CONFIG+=c++17
+
+    QMAKE_MACOSX_DEPLOYMENT_TARGET = 13.0
+    QMAKE_APPLE_DEVICE_ARCHS = x86_64 arm64
+
+    ...
+}
+
+I think it is not good to give that lines to all default users, but it is probably a good idea to set this as a comment, so other guys (like Darren)
+can uncomment and use it.
+
+892--------------------------------------------------------
+From topposempre (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=6943.0
+
+Ho questa esigenza con:
+min ore al gg per docente = 2
+max ore buche al gg per docente = 1
+però vorrei che se il programma, quando assegna solo 2 ore nella giornata, non mettesse l'ora di buco lì
+
+Liviu Lalescu:
+
+Maybe a new constraint: teacher(s)/students (set) max zero gaps on any day with maximum working hours.
+
+893--------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+I was thinking about this feature, for exporting partially a timetable, by selecting one or more days.
+I think that, when the user selects just one day, the min days constraints should be deactivated as well
+(both for students and teachers) and, when the user selects more than one day, it would be very useful if FET
+asked the user "do you want to keep the min days constraints or deactivate them?" (or something like that).
+(*keep=preserve.)
+
+---
+
+And, even when the user selects multiple days, if they intend to lock the activities into their respective days,
+there is not a real reason to preserve these constraints.
+
+So... if you add a dialog so they can select if they need these constraints activated of deactivated, it would
+be better (I think).

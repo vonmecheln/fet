@@ -59,7 +59,7 @@ ModifyTimeConstraintsDialog::ModifyTimeConstraintsDialog(QWidget* parent, const 
 
 	//resize(600, 400);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, dialogName);
 }
 
@@ -175,7 +175,7 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 
 				labelForSpinBox=new QLabel(tr("Min hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(2);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
@@ -593,7 +593,7 @@ ModifyTimeConstraints::ModifyTimeConstraints(QWidget* parent, int _type, QList<T
 	
 	//dialog->setWindowTitle(dialogTitle);
 	
-	//centerWidgetOnScreen(dialog);
+	//centerWidgetOnScreenAndOtherThings(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
 
 	if(teachersComboBox!=nullptr){

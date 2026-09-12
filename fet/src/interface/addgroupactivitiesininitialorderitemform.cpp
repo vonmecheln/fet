@@ -50,7 +50,7 @@ AddGroupActivitiesInInitialOrderItemForm::AddGroupActivitiesInInitialOrderItemFo
 	connect(selectedActivitiesListWidget, &QListWidget::itemDoubleClicked, this, &AddGroupActivitiesInInitialOrderItemForm::removeActivity);
 	connect(clearPushButton, &QPushButton::clicked, this, &AddGroupActivitiesInInitialOrderItemForm::clear);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QSettings settings(COMPANY, PROGRAM);

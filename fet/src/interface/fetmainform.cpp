@@ -5244,7 +5244,7 @@ void FetMainForm::settingsOptionalKeyboardShortcutsAction_triggered()
 	
 	dialog.setLayout(layout);
 
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, "OptionalKeyboardShortcutsForm");
 
 	int res=dialog.exec();
@@ -5653,7 +5653,7 @@ bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm, int* nMin
 	else
 		assert(0);
 	
-	centerWidgetOnScreen(&lastConfirmationDialog);
+	centerWidgetOnScreenAndOtherThings(&lastConfirmationDialog);
 	restoreFETDialogGeometry(&lastConfirmationDialog, QString("LastConfirmationChangeMode")+newModeString);
 	int ok=lastConfirmationDialog.exec();
 	saveFETDialogGeometry(&lastConfirmationDialog, QString("LastConfirmationChangeMode")+newModeString);
@@ -7795,7 +7795,7 @@ void FetMainForm::timetableSaveFileOfASelectionOfDaysAction_triggered()
 	connect(buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
 	connect(buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
 	
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, "TimetableSaveFileOfASelectionOfDaysForm");
 
 	int res=dialog.exec();
@@ -16569,7 +16569,7 @@ void FetMainForm::languageAction_triggered()
 	if(h<180)
 		h=180;
 	dialog.resize(w,h);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	setParentAndOtherThings(&dialog, this);

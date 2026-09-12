@@ -31,7 +31,7 @@ ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm(QWidget* parent): QDi
 	connect(okPushButton, &QPushButton::clicked, this, &ChangeMinDaysSelectivelyForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &ChangeMinDaysSelectivelyForm::cancel);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QSize tmp5=oldConsecutiveComboBox->minimumSizeHint();

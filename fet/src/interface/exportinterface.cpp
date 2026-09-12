@@ -40,7 +40,7 @@ File exportinterface.cpp
 #include <QMap>
 
 class QWidget;
-void centerWidgetOnScreen(QWidget* widget);
+void centerWidgetOnScreenAndOtherThings(QWidget* widget);
 
 #include "timetable_defs.h"		//needed, because of QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 #include "exportinterface.h"
@@ -183,7 +183,7 @@ void Export::exportCSV(QWidget* parent){
 	int w=lwd.sizeHint().width();
 	int h=lwd.sizeHint().height();
 	lwd.resize(w,h);
-	centerWidgetOnScreen(&lwd);
+	centerWidgetOnScreenAndOtherThings(&lwd);
 	
 	lwd.exec();
 }
@@ -578,7 +578,7 @@ bool Export::selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, Q
 	int h=separatorsDialog.sizeHint().height();
 	separatorsDialog.resize(w,h);
 	
-	centerWidgetOnScreen(&separatorsDialog);
+	centerWidgetOnScreenAndOtherThings(&separatorsDialog);
 	restoreFETDialogGeometry(&separatorsDialog, settingsName);
 
 	int ok=separatorsDialog.exec();

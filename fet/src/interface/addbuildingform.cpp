@@ -29,7 +29,7 @@ AddBuildingForm::AddBuildingForm(QWidget* parent): QDialog(parent)
 	connect(addBuildingPushButton, &QPushButton::clicked, this, &AddBuildingForm::addBuilding);
 	connect(closePushButton, &QPushButton::clicked, this, &AddBuildingForm::close);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 }
 

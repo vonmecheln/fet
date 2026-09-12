@@ -124,7 +124,7 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 	}
 	numberOfRealDaysChanged();
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 }
 

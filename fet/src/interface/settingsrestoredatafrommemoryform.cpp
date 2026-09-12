@@ -43,7 +43,7 @@ SettingsRestoreDataFromMemoryForm::SettingsRestoreDataFromMemoryForm(QWidget* pa
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	connect(buttonBox, &QDialogButtonBox::accepted, this, &SettingsRestoreDataFromMemoryForm::ok);

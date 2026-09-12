@@ -634,7 +634,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 		hh=500;
 	
 	this->resize(ww, hh);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QSettings settings(COMPANY, PROGRAM);

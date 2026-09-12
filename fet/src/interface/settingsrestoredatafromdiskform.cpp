@@ -26,7 +26,7 @@ SettingsRestoreDataFromDiskForm::SettingsRestoreDataFromDiskForm(QWidget* parent
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	connect(buttonBox, &QDialogButtonBox::accepted, this, &SettingsRestoreDataFromDiskForm::ok);

@@ -824,7 +824,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	int w=chooseWidth(separatorsDialog.sizeHint().width());
 	int h=chooseHeight(separatorsDialog.sizeHint().height());
 	separatorsDialog.resize(w,h);
-	centerWidgetOnScreen(&separatorsDialog);
+	centerWidgetOnScreenAndOtherThings(&separatorsDialog);
 	restoreFETDialogGeometry(&separatorsDialog, settingsName);
 	
 	int ok=separatorsDialog.exec();
@@ -1492,7 +1492,7 @@ FILE_STRIPPED_NAME
 	pb1->setDefault(true);
 	pb1->setFocus();
 
-	centerWidgetOnScreen(&addItemsDialog);
+	centerWidgetOnScreenAndOtherThings(&addItemsDialog);
 	restoreFETDialogGeometry(&addItemsDialog, settingsName);
 
 	ok=addItemsDialog.exec();
@@ -1521,7 +1521,7 @@ void Import::importCSVActivityTags(QWidget* parent){
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.resize(w,h);
-		centerWidgetOnScreen(&cfd);
+		centerWidgetOnScreenAndOtherThings(&cfd);
 		restoreFETDialogGeometry(&cfd, settingsName);
 		
 		ok=cfd.exec();
@@ -1603,7 +1603,7 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.resize(w,h);
-		centerWidgetOnScreen(&cfd);
+		centerWidgetOnScreenAndOtherThings(&cfd);
 		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
@@ -1751,7 +1751,7 @@ void Import::importCSVSubjects(QWidget* parent){
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.resize(w,h);
-		centerWidgetOnScreen(&cfd);
+		centerWidgetOnScreenAndOtherThings(&cfd);
 		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
@@ -1833,7 +1833,7 @@ void Import::importCSVTeachers(QWidget* parent){
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.resize(w,h);
-		centerWidgetOnScreen(&cfd);
+		centerWidgetOnScreenAndOtherThings(&cfd);
 		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
@@ -1923,7 +1923,7 @@ void Import::importCSVStudents(QWidget* parent){
 		int h=chooseHeight(cfd.sizeHint().height());
 		cfd.resize(w,h);
 
-		centerWidgetOnScreen(&cfd);
+		centerWidgetOnScreenAndOtherThings(&cfd);
 		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
@@ -2305,7 +2305,7 @@ ifUserCanceledProgress3:
 	int w=chooseWidth(lwd.sizeHint().width());
 	int h=chooseHeight(lwd.sizeHint().height());
 	lwd.resize(w,h);
-	centerWidgetOnScreen(&lwd);
+	centerWidgetOnScreenAndOtherThings(&lwd);
 
 	ok=lwd.exec();
 
@@ -2346,7 +2346,7 @@ void Import::importCSVActivities(QWidget* parent){
 		int w=chooseWidth(cfd.sizeHint().width());
 		int h=chooseHeight(cfd.sizeHint().height());
 		cfd.resize(w,h);
-		centerWidgetOnScreen(&cfd);
+		centerWidgetOnScreenAndOtherThings(&cfd);
 		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
@@ -2511,7 +2511,7 @@ void Import::importCSVActivities(QWidget* parent){
 		int w=chooseWidth(lwd.sizeHint().width());
 		int h=chooseHeight(lwd.sizeHint().height());
 		lwd.resize(w,h);
-		centerWidgetOnScreen(&lwd);
+		centerWidgetOnScreenAndOtherThings(&lwd);
 
 		ok=lwd.exec();
 		return;
@@ -3046,7 +3046,7 @@ ifUserCanceledProgress4:
 	int w=chooseWidth(lwd.sizeHint().width());
 	int h=chooseHeight(lwd.sizeHint().height());
 	lwd.resize(w,h);
-	centerWidgetOnScreen(&lwd);
+	centerWidgetOnScreenAndOtherThings(&lwd);
 
 	ok=lwd.exec();
 

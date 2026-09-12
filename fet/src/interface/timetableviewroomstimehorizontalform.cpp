@@ -217,7 +217,7 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 	unlockRadioButton->setChecked(false);
 	toggleRadioButton->setChecked(false);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state
@@ -516,7 +516,7 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 	unlockRadioButton->setChecked(false);
 	toggleRadioButton->setChecked(false);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	//restore vertical splitter state

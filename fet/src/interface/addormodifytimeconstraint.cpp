@@ -167,7 +167,7 @@ AddOrModifyTimeConstraintDialog::AddOrModifyTimeConstraintDialog(QWidget* parent
 
 	//resize(600, 400);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this, dialogName);
 }
 
@@ -732,7 +732,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Min hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(2);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
@@ -762,7 +762,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				labelForSpinBox=new QLabel(tr("Min hours daily"));
 				spinBox=new QSpinBox;
-				spinBox->setMinimum(2);
+				spinBox->setMinimum(1);
 				spinBox->setMaximum(gt.rules.nHoursPerDay);
 				spinBox->setValue(2);
 
@@ -2614,7 +2614,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
-				labelForSpinBox=new QLabel(tr("Max occupied"));
+				labelForSpinBox=new QLabel(tr("Max occupied", "It refers to time slots, in a constraint of type 'activities occupy max time slots from selection'."));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(0);
 				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
@@ -3180,7 +3180,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 
 				timesTable=new CornerEnabledTableWidget(colorsCheckBox->isChecked(), true);
 
-				labelForSpinBox=new QLabel(tr("Min occupied"));
+				labelForSpinBox=new QLabel(tr("Min occupied", "It refers to time slots, in a constraint of type 'activities occupy min time slots from selection'."));
 				spinBox=new QSpinBox;
 				spinBox->setMinimum(0);
 				spinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
@@ -9086,7 +9086,7 @@ AddOrModifyTimeConstraint::AddOrModifyTimeConstraint(QWidget* parent, int _type,
 	
 	//dialog->setWindowTitle(dialogTitle);
 	
-	//centerWidgetOnScreen(dialog);
+	//centerWidgetOnScreenAndOtherThings(dialog);
 	//restoreFETDialogGeometry(dialog, dialogName);
 
 	if(first_filterTeachersComboBox!=nullptr){

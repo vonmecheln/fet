@@ -34,7 +34,7 @@ AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::AddRemoveMultipleCon
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	connect(addAllConstraintsPushButton, &QPushButton::clicked, this, &AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::addAllConstraints);

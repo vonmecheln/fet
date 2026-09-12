@@ -63,7 +63,7 @@ private:
 	void keyPressEvent(QKeyEvent* event);
 };
 
-void centerWidgetOnScreen(QWidget* widget);
+void centerWidgetOnScreenAndOtherThings(QWidget* widget);
 void forceCenterWidgetOnScreen(QWidget* widget);
 //void centerWidgetOnParent(QWidget* widget, QWidget* parent);
 

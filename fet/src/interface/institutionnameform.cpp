@@ -38,7 +38,7 @@ InstitutionNameForm::InstitutionNameForm(QWidget* parent): QDialog(parent)
 	connect(okPushButton, &QPushButton::clicked, this, &InstitutionNameForm::ok);
 	connect(cancelPushButton, &QPushButton::clicked, this, &InstitutionNameForm::cancel);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	institutionNameTextEdit->setPlainText(gt.rules.institutionName);

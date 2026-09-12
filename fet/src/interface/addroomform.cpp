@@ -32,7 +32,7 @@ AddRoomForm::AddRoomForm(QWidget* parent): QDialog(parent)
 	connect(helpPushButton, &QPushButton::clicked, this, &AddRoomForm::help);
 	connect(addRoomPushButton, &QPushButton::clicked, this, &AddRoomForm::addRoom);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	QSize tmp5=buildingsComboBox->minimumSizeHint();

@@ -24,7 +24,7 @@ TimetablesToWriteOnDiskForm::TimetablesToWriteOnDiskForm(QWidget* parent): QDial
 {
 	setupUi(this);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	okPushButton->setDefault(true);

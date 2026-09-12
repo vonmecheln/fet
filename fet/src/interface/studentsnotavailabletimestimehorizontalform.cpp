@@ -222,7 +222,7 @@ StudentsNotAvailableTimesTimeHorizontalForm::StudentsNotAvailableTimesTimeHorizo
 	connect(naTableWidget, &QTableWidget::itemClicked, this, &StudentsNotAvailableTimesTimeHorizontalForm::itemClicked);
 	connect(selectedPushButton, &QPushButton::clicked, this, &StudentsNotAvailableTimesTimeHorizontalForm::selectedClicked);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 
 	naTableWidget->setRowCount(allStudentsNames.count());

@@ -43,7 +43,7 @@ RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
@@ -390,7 +390,7 @@ void RemoveRedundantForm::wasAccepted()
 	const QString settingsName=QString("RemoveRedundantConstraintsLastConfirmationForm");
 	
 	dialog.resize(600, 400);
-	centerWidgetOnScreen(&dialog);
+	centerWidgetOnScreenAndOtherThings(&dialog);
 	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	acceptPB->setFocus();

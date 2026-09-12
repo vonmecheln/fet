@@ -97,7 +97,7 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	activitiesListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	QSettings settings(COMPANY, PROGRAM);
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
@@ -1009,7 +1009,7 @@ void ActivitiesForm::activityComments()
 	const QString settingsName=QString("ActivityCommentsDialog");
 	
 	getCommentsDialog.resize(500, 320);
-	centerWidgetOnScreen(&getCommentsDialog);
+	centerWidgetOnScreenAndOtherThings(&getCommentsDialog);
 	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	int t=getCommentsDialog.exec();

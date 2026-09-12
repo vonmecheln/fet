@@ -34,7 +34,7 @@ SaveTimetableConfirmationForm::SaveTimetableConfirmationForm(QWidget* parent): Q
 	
 	plainTextEdit->setReadOnly(true);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	QString s;

@@ -62,7 +62,7 @@ NotificationCommandForm::NotificationCommandForm(QWidget* parent): QDialog(paren
 	connect(browsePushButton, &QPushButton::clicked, this, &NotificationCommandForm::browse);
 	connect(browseEachTimetablePushButton, &QPushButton::clicked, this, &NotificationCommandForm::browseEachTimetable);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	beepCheckBox->setChecked(BEEP_AT_END_OF_GENERATION);

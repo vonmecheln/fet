@@ -1,3 +1,19 @@
+ 7.10.4
+	- Crash bug fixed (in the Mornings-Afternoons mode), if using constraints of type students (set) min hours daily with
+	min hours = 1, together with constraints of type students (set) min mornings/afternoons per week.
+	- The constraints of type teacher(s) min hours daily will now allow the value 1 for min hours (suggested by ngoctp29121982,
+	and maybe by other users in the past). In this way you can add the constraints teacher(s) min 1 hours daily, and teacher(s)
+	min 2 hours per morning, and it is now allowed to have only 1 hour per afternoon (the constraints of type min hours per
+	morning/afternoon require you data set to also have the constraints of type min hours daily for the affected teacher(s)).
+	- Interface improvement: if an activity does not have any allowed slot, FET will report its ID, as before, but also its
+	detailed description (suggested by GUEFFAZ REDA).
+	- The majority of the dialogs will now have a size grip (a handle to resize dialogs, usually located in the bottom-right
+	corner of the dialog), for easier resizing (suggested by Michael Towers' report that some dialogs have a too small initial
+	dimension).
+	- Minor improvements in two English text fields (suggested by Vangelis Karafillidis).
+	- Corrected the Arabic translation, by Benahmed Abdelkrim.
+	- Corrected the Romanian translation, by Liviu Lalescu.
+	- Improved the Greek translation, by Vangelis Karafillidis.
  7.10.3
 	- Added a new type of constraint: teacher(s)/students (set) max activity tag changes per day/week (suggested by Vangelis
 	Karafillidis and Abdeljalil LAABAD).

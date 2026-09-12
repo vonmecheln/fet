@@ -22,7 +22,7 @@ ModifyDayForm::ModifyDayForm(QWidget* parent, const QString& name, const QString
 {
 	setupUi(this);
 	
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	nameLineEdit->setText(name);

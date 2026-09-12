@@ -44,7 +44,7 @@ ActivitiesTagsForm::ActivitiesTagsForm(QWidget* parent, const QList<Activity*>& 
 	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		activityTagsComboBox->addItem(at->name);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 }
 

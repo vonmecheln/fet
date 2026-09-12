@@ -57,7 +57,7 @@ RoomMakeEditVirtualForm::RoomMakeEditVirtualForm(QWidget* parent, Room* _editedR
 	
 	connect(helpPushButton, &QPushButton::clicked, this, &RoomMakeEditVirtualForm::help);
 
-	centerWidgetOnScreen(this);
+	centerWidgetOnScreenAndOtherThings(this);
 	restoreFETDialogGeometry(this);
 	
 	editedRoom=_editedRoom;
