@@ -1,3 +1,11 @@
+ 7.10.5
+	- Corrected some non-critical bugs, reported by Volker Dirr, who found them using ChatGPT.
+	- Minor code corrections (reported by Volker Dirr, who found them using Coverity Scan).
+	- The HTML timetables will no longer contain an empty header cell or title, if the names, long names, and possibly codes
+	are all disabled by the user for that category, but they will contain the names, instead (suggested by Vangelis Karafillidis).
+	- Improved the program icon (suggested by Michael Towers, who reported that the previous icons were not correctly visible
+	with a dark color scheme; the new colors were chosen by Michael Towers, Rodica Lalescu, and Liviu Lalescu).
+	- Added a new example file, for the Mornings-Afternoons mode, by Benahmed Abdelkrim.
  7.10.4
 	- Crash bug fixed (in the Mornings-Afternoons mode), if using constraints of type students (set) min hours daily with
 	min hours = 1, together with constraints of type students (set) min mornings/afternoons per week.

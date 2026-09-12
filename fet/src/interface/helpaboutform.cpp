@@ -138,6 +138,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	contributors+=QString("<br />");
 	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Help for creating and improving the CMake files.");
 	contributors+=QString("<br />");
+	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("Improvement of the FET icon.");
+	contributors+=QString("<br />");
 	contributorsTextBrowser->setHtml(contributors);
 	
 	QString translators=QString("");

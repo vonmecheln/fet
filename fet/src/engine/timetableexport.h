@@ -439,6 +439,7 @@ public:
 	static QString getActivityTagString(ActivityTag* at, bool printActivityTagsNames, bool printActivityTagsLongNames, bool printActivityTagsCodes);
 	static QString getTeacherString(Teacher* tch, bool printTeachersNames, bool printTeachersLongNames, bool printTeachersCodes);
 	static QString getStudentsSetString(StudentsSet* ss, bool printStudentsNames, bool printStudentsLongNames, bool printStudentsCodes);
+
 private:
 	static QString getBuildingString(Building* bu, bool printBuildingsNames, bool printBuildingsLongNames, bool printBuildingsCodes);
 	static QString getRoomString(Room* rm, bool printRoomsNames, bool printRoomsLongNames, bool printRoomsCodes);
@@ -454,6 +455,27 @@ private:
 	static QString getVerticalDayString(int d, bool printDaysNames, bool printDaysLongNames);
 	static QString getVerticalRealDayString(int d, bool printDaysNames, bool printDaysLongNames);
 	
+	///////
+	static QString getNonemptySubjectString(Subject* sbj, bool _printSubjectsNames, bool _printSubjectsLongNames, bool _printSubjectsCodes);
+	static QString getNonemptyActivityTagString(ActivityTag* at, bool _printActivityTagsNames, bool _printActivityTagsLongNames, bool _printActivityTagsCodes);
+	static QString getNonemptyTeacherString(Teacher* tch, bool _printTeachersNames, bool _printTeachersLongNames, bool _printTeachersCodes);
+	static QString getNonemptyStudentsSetString(StudentsSet* ss, bool _printStudentsNames, bool _printStudentsLongNames, bool _printStudentsCodes);
+
+	static QString getNonemptyBuildingString(Building* bu, bool _printBuildingsNames, bool _printBuildingsLongNames, bool _printBuildingsCodes);
+	static QString getNonemptyRoomString(Room* rm, bool _printRoomsNames, bool _printRoomsLongNames, bool _printRoomsCodes);
+
+	static QString getNonemptyDayOrRealDayString(int d, bool _printDaysNames, bool _printDaysLongNames);
+	static QString getNonemptyDayString(int d, bool _printDaysNames, bool _printDaysLongNames);
+	static QString getNonemptyRealDayString(int d, bool _printDaysNames, bool _printDaysLongNames);
+
+	static QString getNonemptyHourOrRealHourString(int h, bool _printHoursNames, bool _printHoursLongNames);
+	static QString getNonemptyHourString(int h, bool _printHoursNames, bool _printHoursLongNames);
+	static QString getNonemptyRealHourString(int h, bool _printHoursNames, bool _printHoursLongNames);
+
+	static QString getNonemptyVerticalDayString(int d, bool _printDaysNames, bool _printDaysLongNames);
+	static QString getNonemptyVerticalRealDayString(int d, bool _printDaysNames, bool _printDaysLongNames);
+	///////
+
 	static void addActivitiesLegend(const QList<int>& allActivitiesList, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,
 		bool printSubjectsLegend, bool printActivityTagsLegend, bool printTeachersLegend, bool printStudentsLegend, bool printRoomsLegend);
 	static void printLegend(QString& tmpString, QSet<Subject*>& usedSubjectsSet, QSet<ActivityTag*>& usedActivityTagsSet, QSet<Teacher*>& usedTeachersSet, QSet<StudentsSet*>& usedStudentsSet, QSet<Room*>& usedRoomsSet,

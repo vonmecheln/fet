@@ -1,7 +1,7 @@
 This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2003.
-Last modified on: 6 September 2026.
+Last modified on: 8 September 2026.
 
 
 FET - How to add new translations (languages):
@@ -159,9 +159,10 @@ More notes for the macOS platform, from a user: copying the translation file fet
 is possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
 exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
 
-Please test your translation on the file named test-all-constraints.fet in the directory translations. Check the
-all time constraints and all space constraints dialogs, the constraints should look good (description and detailed description for each one).
-Also, the constraints should be different, like for instance starting times from time slots or same starting time from same starting hour.
+Please test your translation on the 4 files named test-all-constraints-*.fet in the directory translations! (these files appear next to
+the ts translation files, so only in the sources package). Check the all time constraints and all space constraints dialogs, the constraints
+should look good (description and detailed description for each one). Also, the constraints should be different, like for instance starting
+times from time slots or same starting time from same starting hour.
 
 There are some variables written with uppercase letters, like: MAX_TOTAL_SUBGROUPS.
 These names must remain unchanged.

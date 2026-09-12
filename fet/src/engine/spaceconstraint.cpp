@@ -26935,7 +26935,7 @@ double ConstraintRoomMaxActivitiesPerTeacher::fitness(
 
 	int nbroken=0;
 
-	QHash<int, int> teacherBuildingHash;
+	QHash<int, int> teacherRoomHash;
 	QSet<int> teachersWithThisRoom;
 
 	for(int i=0; i<r.nInternalActivities; i++){
@@ -26964,11 +26964,11 @@ double ConstraintRoomMaxActivitiesPerTeacher::fitness(
 				 && r.internalRoomsList[c.rooms[i]]->buildingIndex>=0
 				 && r.internalRoomsList[this->room_ID]->buildingIndex==r.internalRoomsList[c.rooms[i]]->buildingIndex
 				 && teachersWithThisRoom.contains(tch)){
-					int teacherBuilding=r.internalRoomsList[c.rooms[i]]->buildingIndex;
-					int oldBuilding=teacherBuildingHash.value(tch, -1);
-					if(oldBuilding==-1)
-						teacherBuildingHash.insert(tch, teacherBuilding);
-					else if(oldBuilding!=teacherBuilding)
+					int teacherRoom=c.rooms[i];
+					int oldRoom=teacherRoomHash.value(tch, -1);
+					if(oldRoom==-1)
+						teacherRoomHash.insert(tch, teacherRoom);
+					else if(oldRoom!=teacherRoom)
 						nbroken++;
 				}
 			}
@@ -27225,7 +27225,7 @@ double ConstraintRoomsMaxActivitiesPerTeacher::fitness(
 					int teacherBuilding=r.internalRoomsList[rm]->buildingIndex;
 					int oldRoom=teacherBuildingRoomHash.value(QPair<int, int>(tch, teacherBuilding), -1);
 					if(oldRoom==-1)
-						teacherBuildingRoomHash.value(QPair<int, int>(tch, teacherBuilding), rm);
+						teacherBuildingRoomHash.insert(QPair<int, int>(tch, teacherBuilding), rm);
 					else if(oldRoom!=rm)
 						nbroken++;
 				}

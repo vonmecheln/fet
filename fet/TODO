@@ -3,6 +3,7 @@ From different old custom FET-MA users, for the Mornings-Afternoons mode, on the
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 
+->MAYBE DONE with the constraints of type room(s) occupy max sets of time slots from selection:
 - Max days per week for a room (Thai Chi Phuong also suggested, see below, max real days per week for a room, but (in Liviu's opinion), other tricks should work,
 since relying on rooms' constraints might be higly inefficient),
 - Max hours daily (half day) for a room,
@@ -14132,3 +14133,59 @@ there is not a real reason to preserve these constraints.
 
 So... if you add a dialog so they can select if they need these constraints activated of deactivated, it would
 be better (I think).
+
+894--------------------------------------------------------
+From Vangelis Karafillidis (on Facebook):
+
+a Greek user posted on the forum about a teacher who asked to have
+only two days in the week the first three hours, so I responded.
+BUT...
+I think that a constraint with an "inverse"-like usage would be clearer
+for the user; a teacher works in an hourly interval max days per week
+(this is the original constraint). a teacher does not work in a hourly
+interval min days per week (the inverse-like usage). we discussed it
+much time ago, and I know that you have a different opinion,
+but the problem the user needs to solve would be easier (I think)
+with the inverse-like form of the constraint, or, even better,
+a teacher is not available in an hourly interval min days per week.
+
+895--------------------------------------------------------
+From GUEFFAZ REDA and Bourdha Youcef (on Facebook):
+
+Development Request: Add a Reverse Constraint for Student Lesson
+Occurrences
+
+We already have a constraint called “Maximum Occurrences of a Student
+Activity in a Set of Hours”.
+
+We would like to develop a complementary reverse constraint called:
+
+“Minimum Occurrences of a Student Activity in a Set of Hours”
+The objective is to control which periods can be used as the first
+lesson of the student’s day. proposed by bourdha youcef
+The new constraint should allow the user to define a minimum number of
+occurrences of a student's activities within a selected range of
+periods.
+
+This should work as the reverse/complement of the existing Maximum
+Occurrences constraint and should be applicable to student sets.
+
+The main use case is to ensure that Period 2 can never be the first
+occupied period of a student's day, while Period 1 or Period 3 can be
+the first occupied period.
+
+This would provide much finer control over student timetable patterns
+and help avoid undesirable late starts.
+
+---
+
+Liviu Lalescu:
+
+But your method is not useful.
+A useful constraint might be: if a students set has an activity at hour
+2, it should also have an activity at hour 1.
+
+896--------------------------------------------------------
+From ngoctp29121982 (on Facebook):
+
+Max students sets per building.

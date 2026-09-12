@@ -81458,10 +81458,8 @@ double ConstraintActivityBeginsOrEndsTeachersDay::fitness(Solution& c, Rules& r,
 					ae=false;
 					break;
 				}
-			if(!ab && !ae){
-				nbroken=1;
-				break;
-			}
+			if(!ab && !ae)
+				nbroken++;
 			if(nbroken>0)
 				break;
 		}
